@@ -10,6 +10,7 @@
 #import "ContractClauseLoader.h"
 #import "ContractBonusLoader.h"
 #import "FMDateLoader.h"
+#import "GameVersions.h"
 
 @implementation ContractLoader
 

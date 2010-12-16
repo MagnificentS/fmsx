@@ -1708,7 +1708,7 @@ clubLBCView, clubFacilitiesView;
 
 - (void)exportPlayersToCSV:(NSMutableArray *)array
 {
-	NSMutableString *csv = [[NSMutableString alloc] initWithString:@"\"Row ID\",\"UID\",\"Name\",\"Team\",\"Nation\",\"Age\",\"Position\",\"CA\",\"PA\",\"Home Rep\",\"Current Rep\",\"World Rep\",\"Condition\",\"Value\",\"Asking Price\",\"PGP\"\n"];
+	NSMutableString *csv = [[NSMutableString alloc] initWithString:@"\"Row ID\",\"UID\",\"Name\",\"Team\",\"Nation\",\"Age\",\"Position\",\"CA\",\"PA\",\"Home Rep\",\"Current Rep\",\"World Rep\",\"Condition\",\"Value\",\"Asking Price\",\"GP\"\n"];
 	
 	for (Person *item in array) {
 		[csv appendFormat:@"\"%d\",\"%d\",\"%@\",\"%@\",\"%@\",\"%d\",\"%@\",\"%d\",\"%d\",\"%d\",\"%d\",\"%d\",\"%d\",\"%d\",\"%d\",\"%f\"\n",
