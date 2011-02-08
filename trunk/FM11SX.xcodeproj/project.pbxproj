@@ -191,6 +191,7 @@
 		FB280E4110CB03430061B5ED /* status_wnt.png in Resources */ = {isa = PBXBuildFile; fileRef = FB280E3D10CB03430061B5ED /* status_wnt.png */; };
 		FB2B944C10A3149D003203AB /* FootballStadiumLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA40AB710A0D3A200CAD88E /* FootballStadiumLoader.m */; };
 		FB2D7D1E120B05A000808951 /* FMFArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2D7D1D120B05A000808951 /* FMFArchiver.m */; };
+		FB2F65EC1301FC4E0002EC97 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = FB2F65EB1301FC4E0002EC97 /* dsa_pub.pem */; };
 		FB303F01109C8417000C9B58 /* ContinentLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB303F00109C8417000C9B58 /* ContinentLoader.m */; };
 		FB303F04109C8450000C9B58 /* Continent.m in Sources */ = {isa = PBXBuildFile; fileRef = FB303F03109C8450000C9B58 /* Continent.m */; };
 		FB303F1F109C8795000C9B58 /* CurrencyLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB303F1E109C8795000C9B58 /* CurrencyLoader.m */; };
@@ -901,6 +902,7 @@
 		FB280E3D10CB03430061B5ED /* status_wnt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_wnt.png; sourceTree = "<group>"; };
 		FB2D7D1C120B05A000808951 /* FMFArchiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMFArchiver.h; sourceTree = "<group>"; };
 		FB2D7D1D120B05A000808951 /* FMFArchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMFArchiver.m; sourceTree = "<group>"; };
+		FB2F65EB1301FC4E0002EC97 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		FB303EFF109C8417000C9B58 /* ContinentLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContinentLoader.h; sourceTree = "<group>"; };
 		FB303F00109C8417000C9B58 /* ContinentLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContinentLoader.m; sourceTree = "<group>"; };
 		FB303F02109C8450000C9B58 /* Continent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Continent.h; sourceTree = "<group>"; };
@@ -1724,6 +1726,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FB2F65EB1301FC4E0002EC97 /* dsa_pub.pem */,
 				FB24E0AB12A2AD9C00C5EB8F /* default_logo */,
 				FB24E02E12A2A49E00C5EB8F /* club_titlebg */,
 				FB4B6B4012994CB2007C50C1 /* kit_front_effect.png */,
@@ -3283,6 +3286,7 @@
 				FB20D1A912A3EAC90031A9C3 /* scout_staff.png in Resources */,
 				FB20D1AD12A3EAEF0031A9C3 /* history_delete.png in Resources */,
 				FB20D1AE12A3EAEF0031A9C3 /* history.png in Resources */,
+				FB2F65EC1301FC4E0002EC97 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
