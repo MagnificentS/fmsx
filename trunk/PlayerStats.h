@@ -53,4 +53,44 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 - (int)previewStat13;
 - (int)previewStat14;
 
+// positional ratings
+// ST
+- (float)deepLyingForward;
+- (float)advancedForward;
+- (float)targetMan;
+- (float)poacher;
+- (float)stTrequartista;
+
+// AMC
+- (float)amcInsideForward;
+- (float)attackingMidfielder;
+- (float)amcAdvancedPlaymaker;
+- (float)amcTrequartista;
+
+// AML/AMR
+- (float)amlrWinger;
+- (float)amlrInsideForward;
+- (float)amlrAdvancedPlaymaker;
+
+// MC
+- (float)centralMidfielder;
+- (float)mcDeepLyingPlaymaker;
+- (float)mcAdvancedPlaymaker;
+- (float)ballWinningMidfielder;
+
+// ML/MR
+- (float)winger;
+- (float)wideMidfielder;
+
+// DMC
+- (float)defensiveMidfielder;
+- (float)dmcDeepLyingPlaymaker;
+- (float)anchorMan;
+
+// DR/DL
+- (float)wingBack;
+- (float)fullBack;
+
+
+
 @end

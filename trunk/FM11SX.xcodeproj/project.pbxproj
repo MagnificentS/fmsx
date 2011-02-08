@@ -387,7 +387,6 @@
 		FBA19B1311FE4977003B3F74 /* PlayerStatsSaver.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA19B1211FE4977003B3F74 /* PlayerStatsSaver.m */; };
 		FBA2B75210924F5600C1A669 /* SupportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA2B75110924F5600C1A669 /* SupportFunctions.m */; };
 		FBA2B79510925AEF00C1A669 /* SXzlib.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA2B79410925AEF00C1A669 /* SXzlib.m */; };
-		FBA2B7E010926D4200C1A669 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = FBA2B7DF10926D4200C1A669 /* dsa_pub.pem */; };
 		FBA2B7FB109275D700C1A669 /* Updates.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA2B7FA109275D700C1A669 /* Updates.png */; };
 		FBA2B8C7109289E300C1A669 /* MBPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA2B8C6109289E300C1A669 /* MBPreferencesController.m */; };
 		FBA2B8D910928B7800C1A669 /* SXGeneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA2B8BD1092880300C1A669 /* SXGeneralViewController.m */; };
@@ -1234,7 +1233,6 @@
 		FBA2B79310925AEF00C1A669 /* SXzlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXzlib.h; sourceTree = "<group>"; };
 		FBA2B79410925AEF00C1A669 /* SXzlib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXzlib.m; sourceTree = "<group>"; };
 		FBA2B7B610925F9500C1A669 /* LanguageIDs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageIDs.h; sourceTree = "<group>"; };
-		FBA2B7DF10926D4200C1A669 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		FBA2B7FA109275D700C1A669 /* Updates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Updates.png; sourceTree = "<group>"; };
 		FBA2B8B31092874100C1A669 /* PreferencesGeneral.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesGeneral.xib; sourceTree = "<group>"; };
 		FBA2B8B8109287BC00C1A669 /* PreferencesUpdates.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesUpdates.xib; sourceTree = "<group>"; };
@@ -1737,7 +1735,6 @@
 				FBD1EBB310CAF29A00D86A19 /* Person Statuses */,
 				FB42CFD210A370F200D928B0 /* FM11SX.icns */,
 				FB81427B10976A4B004A959D /* Flags */,
-				FBA2B7DF10926D4200C1A669 /* dsa_pub.pem */,
 				FB9D33EC10923BF2000883FF /* Images */,
 				8D1107310486CEB800E47090 /* FM11SX-Info.plist */,
 				FB0C0AC710DE8251009BD9DE /* InfoPlist.strings */,
@@ -2969,7 +2966,6 @@
 				FB9D342110923BFC000883FF /* Graphics.png in Resources */,
 				FB9D342D10923BFC000883FF /* Search-s.png in Resources */,
 				FB9D342E10923BFC000883FF /* Search.png in Resources */,
-				FBA2B7E010926D4200C1A669 /* dsa_pub.pem in Resources */,
 				FBA2B7FB109275D700C1A669 /* Updates.png in Resources */,
 				FBF7A03B10DE798F00ECCECC /* PreferencesGeneral.xib in Resources */,
 				FBF7A03E10DE799A00ECCECC /* PreferencesUpdates.xib in Resources */,

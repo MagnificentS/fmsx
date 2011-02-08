@@ -6,6 +6,7 @@
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
+#import "GameVersions.h"
 #import "HumanLoader.h"
 #import "FMDateLoader.h"
 #import "FMString.h"
@@ -165,10 +166,16 @@
 	[object setUnknownData18:[data subdataWithRange:NSMakeRange(offset, (ibuffer*18))]]; 
 	offset += (ibuffer*18);
 	
-	
 	// ???
-	[object setUnknownData16:[data subdataWithRange:NSMakeRange(offset, 21)]]; 
-	offset += 21;
+	if (version<FM2011_11_2) {
+		[object setUnknownData16:[data subdataWithRange:NSMakeRange(offset, 21)]]; 
+		offset += 21;
+	}
+	else {
+		// 24 bytes, date, char
+		[object setUnknownData16:[data subdataWithRange:NSMakeRange(offset, 29)]]; 
+		offset += 29;
+	}
 	
 	// encrypted strings
 	[object setTwitterLogin:[FMString readFromData:data atOffset:&offset]];
