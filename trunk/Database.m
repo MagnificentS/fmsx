@@ -1045,6 +1045,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 					[object setAlternativeShortName:[item objectForKey:@"alternativeShortName"]];
 				}
 			}
+			NSLog(@"%d - %@",[object UID],[object name]);
 			[tempArray addObject:object]; 
 		}
 	}

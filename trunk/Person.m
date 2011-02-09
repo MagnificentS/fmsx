@@ -8,6 +8,7 @@
 
 #import "DatabaseTypes.h"
 #import "Person.h"
+#import "Agreement.h"
 #import "PlayerForm.h"
 #import "Relationship.h"
 #import "Database.h"
@@ -308,7 +309,8 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 - (BOOL)isECNational
 {
 	if (personData) {
-		if ([[[[controller database] nations] objectAtIndex:[personData nationID]] EECNation]==NGM_EEC_COUNTRY)
+		if ([[[[[controller database] nations] objectAtIndex:[personData nationID]] agreements] containsObject:[NSNumber numberWithInt:EU]] ||
+			[[[[[controller database] nations] objectAtIndex:[personData nationID]] agreements] containsObject:[NSNumber numberWithInt:EEA]])
 		{
 			return TRUE;
 		}
@@ -316,7 +318,8 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 		for (Relationship *item in [personData relationships]) {
 			if ([item relationshipType]==RT_HAS_NATIONALITY)
 			{
-				if ([[[[controller database] nations] objectAtIndex:[item associatedID]] EECNation]==NGM_EEC_COUNTRY)
+				if ([[[[[controller database] nations] objectAtIndex:[item associatedID]] agreements] containsObject:[NSNumber numberWithInt:EU]] ||
+					[[[[[controller database] nations] objectAtIndex:[item associatedID]] agreements] containsObject:[NSNumber numberWithInt:EEA]])
 				{
 					return TRUE;
 				}

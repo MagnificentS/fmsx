@@ -8,6 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
+#define EU		1
+#define EEA		2
+#define COTONOU	3
 
 @interface Agreement : NSObject {
 	char databaseClass;
