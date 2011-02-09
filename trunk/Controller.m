@@ -56,10 +56,17 @@ teamsController, weatherController, currentDate, gameDBVersion, databaseChanges,
 	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"backupBeforeSave"]==nil) {
 		[[NSUserDefaults standardUserDefaults] setObject:@"Yes" forKey:@"backupBeforeSave"];
 	}
+
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"autoUpdate"] ||
+		[[NSUserDefaults standardUserDefaults] boolForKey:@"autoDownload"]) {
+		[[SUUpdater sharedUpdater] checkForUpdatesInBackground];
+	}
+	
 	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"autoUpdate"]==nil) {
 		[[NSUserDefaults standardUserDefaults] setObject:@"Yes" forKey:@"autoUpdate"];
 		[[SUUpdater sharedUpdater] setAutomaticallyChecksForUpdates:[[NSUserDefaults standardUserDefaults] boolForKey:@"autoUpdate"]];
 	}
+	
 	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"autoDownload"]==nil) {
 		[[NSUserDefaults standardUserDefaults] setObject:@"No" forKey:@"autoDownload"];
 		[[SUUpdater sharedUpdater] setAutomaticallyDownloadsUpdates:[[NSUserDefaults standardUserDefaults] boolForKey:@"autoDownload"]];
@@ -73,6 +80,7 @@ teamsController, weatherController, currentDate, gameDBVersion, databaseChanges,
 	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"donateNeverAsk"]==nil) {
 		[[NSUserDefaults standardUserDefaults] setObject:@"No" forKey:@"donateNeverAsk"];
 	}
+	
 	
 	infoStrings = [[NSMutableDictionary alloc] init];
 	database = [[Database alloc] init];
