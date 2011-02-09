@@ -13,7 +13,7 @@
 
 @implementation NewsFilterLoader
 
-+ (NewsFilter *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset
++ (NewsFilter *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version
 {
 	char cbuffer;
 	int ibuffer;
@@ -47,7 +47,7 @@
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	tempArray = [[NSMutableArray alloc] init];
 	for (int i=0;i<ibuffer;i++) {
-		[tempArray addObject:[NewsInfoLoader readFromData:data atOffset:&offset inType:[object type]]];
+		[tempArray addObject:[NewsInfoLoader readFromData:data atOffset:&offset inType:[object type] version:version]];
 	}
 	[object setInfos:tempArray];
 	[tempArray release];

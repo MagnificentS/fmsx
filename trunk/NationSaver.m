@@ -22,7 +22,7 @@
 
 @implementation NationSaver
 
-+ (void)saveNation:(Nation *)object toData:(NSMutableData *)data
++ (void)saveNation:(Nation *)object toData:(NSMutableData *)data version:(short)version
 {
 	char cbuffer;
 	short sbuffer;
@@ -82,7 +82,7 @@
 	ibuffer = [[object infos] count];
 	[data appendBytes:&ibuffer length:4];
 	for (int i = 0; i<[[object infos] count]; i++) {
-		[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:YES];
+		[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:YES version:version];
 	}
 	cbuffer = [[object rankingPoints] count];
 	[data appendBytes:&cbuffer length:1];

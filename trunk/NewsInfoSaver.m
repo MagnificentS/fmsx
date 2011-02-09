@@ -13,7 +13,7 @@
 
 @implementation NewsInfoSaver
 
-+ (void)saveInfo:(NewsInfo *)object toData:(NSMutableData *)data inType:(NSString *)type
++ (void)saveInfo:(NewsInfo *)object toData:(NSMutableData *)data inType:(NSString *)type version:(short)version
 {
 	char cbuffer;
 	int ibuffer;
@@ -130,7 +130,7 @@
 			ibuffer = [[object infos] count];
 			[data appendBytes:&ibuffer length:4];
 			for (int i = 0; i<[[object infos] count]; i++) {
-				[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:NO];
+				[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:NO version:version];
 			}
 			
 			[data appendData:[object unknownData1]];
@@ -160,7 +160,7 @@
 		ibuffer = [[object infos] count];
 		[data appendBytes:&ibuffer length:4];
 		for (int i = 0; i<[[object infos] count]; i++) {
-			[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:YES];
+			[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:YES version:version];
 		}
 	}
 	else if ([[object type] isEqualToString:@"vafp"]) {
@@ -169,7 +169,7 @@
 		ibuffer = [[object infos] count];
 		[data appendBytes:&ibuffer length:4];
 		for (int i = 0; i<[[object infos] count]; i++) {
-			[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:YES];
+			[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:YES version:version];
 		}
 	}
 	else if ([[object type] isEqualToString:@"perp"]) {
@@ -178,7 +178,7 @@
 		ibuffer = [[object infos] count];
 		[data appendBytes:&ibuffer length:4];
 		for (int i = 0; i<[[object infos] count]; i++) {
-			[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:YES];
+			[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:YES version:version];
 		}
 	}
 }

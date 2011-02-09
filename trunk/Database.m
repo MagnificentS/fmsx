@@ -295,7 +295,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	for (i=0; i<count; i++) {
 		[self setCurrentRecord:(i+1)];
 		
-		id object = [Loader readCompetitionFromData:data atOffset:byteOffset];
+		id object = [Loader readCompetitionFromData:data atOffset:byteOffset version:[controller gameDBVersion]];
 		if (![[object className] isEqualToString:@"Competition"]) {
 			return [NSArray arrayWithObjects:
 					@"Competition",
@@ -342,7 +342,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	for (i=0; i<count; i++) {
 		[self setCurrentRecord:(i+1)];
 		
-		id object = [Loader readContinentFromData:data atOffset:byteOffset];
+		id object = [Loader readContinentFromData:data atOffset:byteOffset version:[controller gameDBVersion]];
 		if (![[object className] isEqualToString:@"Continent"]) {
 			return [NSArray arrayWithObjects:
 					@"Continent",
@@ -1313,7 +1313,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
 	[self setDatabaseChanges:count];
 	for (int i=0;i<count;i++) {
-		[GeneralInfoLoader readFromData:data atOffset:byteOffset readInfo:NO];
+		[GeneralInfoLoader readFromData:data atOffset:byteOffset readInfo:NO version:[controller gameDBVersion]];
 	}
 	NSLog(@"End of %d db changes at %d",count,*byteOffset);
 
@@ -1615,7 +1615,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	[self setTotalRecords:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
 		[self setCurrentRecord:(i+1)];
-		[CompetitionSaver saveCompetition:[competitions objectAtIndex:i] toData:data];
+		[CompetitionSaver saveCompetition:[competitions objectAtIndex:i] toData:data version:[controller gameDBVersion]];
 	}
 	[pool drain];
 
@@ -1627,7 +1627,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	[self setTotalRecords:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
 		[self setCurrentRecord:(i+1)];
-		[ContinentSaver saveContinent:[continents objectAtIndex:i] toData:data];
+		[ContinentSaver saveContinent:[continents objectAtIndex:i] toData:data version:[controller gameDBVersion]];
 	}
 	[pool drain];
 
@@ -1687,7 +1687,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	[self setTotalRecords:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
 		[self setCurrentRecord:(i+1)];
-		[NationSaver saveNation:[nations objectAtIndex:i] toData:data];
+		[NationSaver saveNation:[nations objectAtIndex:i] toData:data version:[controller gameDBVersion]];
 	}
 	[pool drain];
 

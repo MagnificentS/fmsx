@@ -38,7 +38,7 @@
 	ibuffer = [[object infos] count];
 	[data appendBytes:&ibuffer length:4];
 	for (int i = 0; i<[[object infos] count]; i++) {
-		[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:YES];
+		[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:YES version:version];
 	}
 	
 	[data appendData:[object unknownData4]];
@@ -66,7 +66,7 @@
 		ibuffer = [[[object mediaDecisions] objectAtIndex:i] count];
 		[data appendBytes:&ibuffer length:4];
 		for (int j = 0; j<[[[object mediaDecisions] objectAtIndex:i] count]; j++) {
-			[GeneralInfoSaver saveInfo:[[[object mediaDecisions] objectAtIndex:i] objectAtIndex:j] toData:data saveInfo:YES];
+			[GeneralInfoSaver saveInfo:[[[object mediaDecisions] objectAtIndex:i] objectAtIndex:j] toData:data saveInfo:YES version:version];
 		}
 		
 	}
@@ -111,7 +111,7 @@
 	[data appendBytes:&sbuffer length:2];
 	
 	if ([object topLevelBookmarkItems]>0) {
-		[BookmarkFolderSaver saveFolder:[object bookmarks] toData:data];
+		[BookmarkFolderSaver saveFolder:[object bookmarks] toData:data version:version];
 	}
 	
 	bbuffer = [object homePageSet];
@@ -121,7 +121,7 @@
 		ibuffer = [[object homePageInfos] count];
 		[data appendBytes:&ibuffer length:4];
 		for (int i = 0; i<[[object homePageInfos] count]; i++) {
-			[GeneralInfoSaver saveInfo:[[object homePageInfos] objectAtIndex:i] toData:data saveInfo:YES];
+			[GeneralInfoSaver saveInfo:[[object homePageInfos] objectAtIndex:i] toData:data saveInfo:YES version:version];
 		}
 	}
 }

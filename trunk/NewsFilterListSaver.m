@@ -26,7 +26,7 @@
 	ibuffer = [[object filters] count];
 	[data appendBytes:&ibuffer length:4];
 	for (int i = 0; i<[[object filters] count]; i++) {
-		[NewsFilterSaver saveFilter:[[object filters] objectAtIndex:i] toData:data];
+		[NewsFilterSaver saveFilter:[[object filters] objectAtIndex:i] toData:data version:version];
 	}
 	
 	if ([[object type] isEqualToString:@"tslntslf"]) {

@@ -14,7 +14,7 @@
 
 @implementation GeneralInfoLoader
 
-+ (id)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset readInfo:(BOOL)readInfo
++ (id)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset readInfo:(BOOL)readInfo version:(short)version
 {
 	char cbuffer;
 	int ibuffer;
@@ -85,7 +85,7 @@
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		tempArray = [[NSMutableArray alloc] init];
 		for (int i=0;i<ibuffer;i++) {
-			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES]];
+			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES version:version]];
 		}
 		[object setInfos:tempArray];
 		[tempArray release];
@@ -95,7 +95,7 @@
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		tempArray = [[NSMutableArray alloc] init];
 		for (int i=0;i<ibuffer;i++) {
-			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:NO]];
+			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:NO version:version]];
 		}
 		[object setInfos:tempArray];
 		[tempArray release];
@@ -113,7 +113,7 @@
 		if ([[object name] isEqualToString:@"lsdm"]) {
 			[object setUnknownData1:[data subdataWithRange:NSMakeRange(offset, 21)]]; 
 			offset += 21;
-			[object setUnknownFixture1:[FixtureLoader readFromData:data atOffset:&offset]];
+			[object setUnknownFixture1:[FixtureLoader readFromData:data atOffset:&offset version:version]];
 		}
 		else {
 			return [NSString stringWithFormat:@"Unknown Info 16 Type - %@ at offset %d",[object name],offset];

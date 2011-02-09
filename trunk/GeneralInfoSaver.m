@@ -14,7 +14,7 @@
 
 @implementation GeneralInfoSaver
 
-+ (void)saveInfo:(GeneralInfo *)object toData:(NSMutableData *)data saveInfo:(BOOL)saveInfo
++ (void)saveInfo:(GeneralInfo *)object toData:(NSMutableData *)data saveInfo:(BOOL)saveInfo version:(short)version
 {
 	char cbuffer;
 	int ibuffer;
@@ -78,14 +78,14 @@
 		ibuffer = [[object infos] count];
 		[data appendBytes:&ibuffer length:4];
 		for (int i = 0; i<[[object infos] count]; i++) {
-			[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:YES];
+			[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:YES version:version];
 		}
 	}
 	else if ([object type]==11) {
 		ibuffer = [[object infos] count];
 		[data appendBytes:&ibuffer length:4];
 		for (int i = 0; i<[[object infos] count]; i++) {
-			[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:NO];
+			[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:NO version:version];
 		}
 	}
 	else if ([object type]==13) {
@@ -99,7 +99,7 @@
 	else if ([object type]==16) {
 		if ([[object name] isEqualToString:@"lsdm"]) {
 			[data appendData:[object unknownData1]];
-			[FixtureSaver saveFixture:[object unknownFixture1] toData:data];
+			[FixtureSaver saveFixture:[object unknownFixture1] toData:data version:version];
 		}
 	}
 }

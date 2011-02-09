@@ -13,7 +13,7 @@
 
 @implementation NewsFilterSaver
 
-+ (void)saveFilter:(NewsFilter *)object toData:(NSMutableData *)data
++ (void)saveFilter:(NewsFilter *)object toData:(NSMutableData *)data version:(short)version
 {
 	char cbuffer;
 	int ibuffer;
@@ -38,7 +38,7 @@
 	ibuffer = [[object infos] count];
 	[data appendBytes:&ibuffer length:4];
 	for (int i = 0; i<[[object infos] count]; i++) {
-		[NewsInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data inType:[object type]];
+		[NewsInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data inType:[object type] version:version];
 	}
 }
 

@@ -13,6 +13,6 @@
 
 }
 
-+ (void)saveFixture:(Fixture *)object toData:(NSMutableData *)data;
++ (void)saveFixture:(Fixture *)object toData:(NSMutableData *)data version:(short)version;
 
 @end

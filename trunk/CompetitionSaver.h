@@ -13,6 +13,6 @@
 
 }
 
-+ (void)saveCompetition:(Competition *)object toData:(NSMutableData *)data;
++ (void)saveCompetition:(Competition *)object toData:(NSMutableData *)data version:(short)version;
 
 @end

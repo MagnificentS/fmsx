@@ -13,6 +13,7 @@
 
 }
 
-+ (Fixture *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset;
++ (Fixture *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version;
+
 
 @end

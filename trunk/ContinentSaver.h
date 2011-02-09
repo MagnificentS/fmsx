@@ -13,6 +13,6 @@
 
 }
 
-+ (void)saveContinent:(Continent *)object toData:(NSMutableData *)data;
++ (void)saveContinent:(Continent *)object toData:(NSMutableData *)data version:(short)version;
 
 @end

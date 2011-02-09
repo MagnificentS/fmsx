@@ -14,7 +14,7 @@
 
 @implementation CompetitionSaver
 
-+ (void)saveCompetition:(Competition *)object toData:(NSMutableData *)data
++ (void)saveCompetition:(Competition *)object toData:(NSMutableData *)data version:(short)version
 {
 	BOOL bbuffer;
 	char cbuffer;
@@ -82,7 +82,7 @@
 		ibuffer = [[object rules] count];
 		[data appendBytes:&ibuffer length:4];
 		for (int i = 0; i<[[object rules] count]; i++) {
-			[GeneralInfoSaver saveInfo:[[object rules] objectAtIndex:i] toData:data saveInfo:NO];
+			[GeneralInfoSaver saveInfo:[[object rules] objectAtIndex:i] toData:data saveInfo:NO version:version];
 		}
 	}
 	

@@ -99,7 +99,7 @@
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	tempArray = [[NSMutableArray alloc] init];
 	for (int i=0;i<ibuffer;i++) {
-		id info = [GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES];
+		id info = [GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES version:version];
 		if ([[info className] isEqualToString:@"GeneralInfo"]) {
 			[tempArray addObject:info];
 		}

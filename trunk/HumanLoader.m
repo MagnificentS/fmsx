@@ -56,7 +56,7 @@
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	tempArray = [[NSMutableArray alloc] init];
 	for (int i=0;i<ibuffer;i++) {
-		[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES]];
+		[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES version:version]];
 	}
 	[object setInfos:tempArray];
 	[tempArray release];
@@ -108,8 +108,8 @@
 		tempArray2 = [[NSMutableArray alloc] init];
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		for (int j=0;j<ibuffer;j++) {
-			[tempArray2 addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES]];
-		//	NSLog(@"%@ done at %d",[[tempArray2 objectAtIndex:j] name],offset);
+			[tempArray2 addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES version:version]];
+			NSLog(@"%@ done at %d",[[tempArray2 objectAtIndex:j] name],offset);
 		}
 		[tempArray addObject:tempArray2];
 		[tempArray2 release];
@@ -192,7 +192,7 @@
 	[object setTopLevelBookmarkItems:sbuffer];
 	
 	if ([object topLevelBookmarkItems]>0) {
-		[object setBookmarks:[BookmarkFolderLoader readFromData:data atOffset:&offset]];
+		[object setBookmarks:[BookmarkFolderLoader readFromData:data atOffset:&offset version:version]];
 	}
 	
 	NSLog(@"at home page at %d",offset);
@@ -203,7 +203,7 @@
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		tempArray = [[NSMutableArray alloc] init];
 		for (int i=0;i<ibuffer;i++) {
-			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES]];
+			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES version:version]];
 		}
 		[object setHomePageInfos:tempArray];
 		[tempArray release];

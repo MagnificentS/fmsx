@@ -13,6 +13,6 @@
 
 }
 
-+ (id)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset readInfo:(BOOL)readInfo;
++ (id)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset readInfo:(BOOL)readInfo version:(short)version;
 
 @end

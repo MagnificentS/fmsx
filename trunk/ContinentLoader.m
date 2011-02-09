@@ -11,7 +11,7 @@
 
 @implementation Loader (ContinentLoader)
 
-+ (Continent *)readContinentFromData:(NSData *)data atOffset:(unsigned int *)byteOffset
++ (Continent *)readContinentFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version
 {
 	char cbuffer;
 	float fbuffer;
@@ -46,7 +46,7 @@
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		tempArray = [[NSMutableArray alloc] init];
 		for (int i=0;i<ibuffer;i++) {
-			id info = [GeneralInfoLoader readFromData:data atOffset:&offset readInfo:NO];
+			id info = [GeneralInfoLoader readFromData:data atOffset:&offset readInfo:NO version:version];
 			if ([[info className] isEqualToString:@"GeneralInfo"]) {
 				[tempArray addObject:info];
 			}

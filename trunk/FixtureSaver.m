@@ -8,10 +8,11 @@
 
 #import "FixtureSaver.h"
 #import "FMDateSaver.h"
+#import "GameVersions.h"
 
 @implementation FixtureSaver
 
-+ (void)saveFixture:(Fixture *)object toData:(NSMutableData *)data
++ (void)saveFixture:(Fixture *)object toData:(NSMutableData *)data version:(short)version
 {
 	char cbuffer;
 	unsigned char ucbuffer;
@@ -156,8 +157,11 @@
 		[data appendBytes:&cbuffer length:1];
 		cbuffer = [object unknownChar50];
 		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar60];
-		[data appendBytes:&cbuffer length:1];
+		
+		if (version<FM2011_11_2) {
+			cbuffer = [object unknownChar60];
+			[data appendBytes:&cbuffer length:1];
+		}
 	}
 	if ([object nameFlags] & FIXTURE_NAME_EXTRA_STAGE_NAME) {
 		cbuffer = [object unknownChar39];

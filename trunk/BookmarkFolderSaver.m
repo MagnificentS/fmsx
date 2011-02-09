@@ -11,14 +11,14 @@
 
 @implementation BookmarkFolderSaver
 
-+ (void)saveFolder:(BookmarkFolder *)object toData:(NSMutableData *)data
++ (void)saveFolder:(BookmarkFolder *)object toData:(NSMutableData *)data version:(short)version
 {
 	int ibuffer;
 	
 	ibuffer = [[object infos] count];
 	[data appendBytes:&ibuffer length:4];
 	for (int i = 0; i<[[object infos] count]; i++) {
-		[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:YES];
+		[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:YES version:version];
 	}
 	
 	ibuffer = [[object bookmarks] count];
@@ -27,14 +27,14 @@
 		ibuffer = [[[object bookmarks] objectAtIndex:i] count];
 		[data appendBytes:&ibuffer length:4];
 		for (int j = 0; j<[[[object bookmarks] objectAtIndex:i] count]; j++) {
-			[GeneralInfoSaver saveInfo:[[[object bookmarks] objectAtIndex:i] objectAtIndex:j] toData:data saveInfo:YES];
+			[GeneralInfoSaver saveInfo:[[[object bookmarks] objectAtIndex:i] objectAtIndex:j] toData:data saveInfo:YES version:version];
 		}
 	}
 	
 	ibuffer = [[object subFolders] count];
 	[data appendBytes:&ibuffer length:4];
 	for (int i = 0; i<[[object subFolders] count]; i++) {
-		[BookmarkFolderSaver saveFolder:[[object subFolders] objectAtIndex:i] toData:data];
+		[BookmarkFolderSaver saveFolder:[[object subFolders] objectAtIndex:i] toData:data version:version];
 	}
 }
 

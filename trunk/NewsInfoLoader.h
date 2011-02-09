@@ -13,6 +13,6 @@
 
 }
 
-+ (NewsInfo *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset inType:(NSString *)type;
++ (NewsInfo *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset inType:(NSString *)type version:(short)version;
 
 @end

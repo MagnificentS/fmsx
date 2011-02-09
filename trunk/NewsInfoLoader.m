@@ -13,7 +13,7 @@
 
 @implementation NewsInfoLoader
 
-+ (NewsInfo *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset inType:(NSString *)type
++ (NewsInfo *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset inType:(NSString *)type version:(short)version
 {
 	char cbuffer;
 	int ibuffer;
@@ -161,7 +161,7 @@
 			[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 			NSMutableArray *tempArray = [[NSMutableArray alloc] init];
 			for (int i=0;i<ibuffer;i++) {
-				[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:NO]];
+				[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:NO version:version]];
 			}
 			[object setInfos:tempArray];
 			[tempArray release];
@@ -200,7 +200,7 @@
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		NSMutableArray *tempArray = [[NSMutableArray alloc] init];
 		for (int i=0;i<ibuffer;i++) {
-			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES]];
+			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES version:version]];
 		}
 		[object setInfos:tempArray];
 		[tempArray release];
@@ -212,7 +212,7 @@
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		NSMutableArray *tempArray = [[NSMutableArray alloc] init];
 		for (int i=0;i<ibuffer;i++) {
-			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES]];
+			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES version:version]];
 		}
 		[object setInfos:tempArray];
 		[tempArray release];
@@ -224,7 +224,7 @@
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		NSMutableArray *tempArray = [[NSMutableArray alloc] init];
 		for (int i=0;i<ibuffer;i++) {
-			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES]];
+			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES version:version]];
 		}
 		[object setInfos:tempArray];
 		[tempArray release];

@@ -33,7 +33,7 @@
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	tempArray = [[NSMutableArray alloc] init];
 	for (int i=0;i<ibuffer;i++) {
-		[tempArray addObject:[NewsFilterLoader readFromData:data atOffset:&offset]];
+		[tempArray addObject:[NewsFilterLoader readFromData:data atOffset:&offset version:version]];
 	}
 	[object setFilters:tempArray];
 	[tempArray release];
