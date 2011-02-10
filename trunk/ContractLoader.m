@@ -110,7 +110,6 @@
 		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 		[object setTransferStatus:cbuffer];
 	
-		
 	//	[data getBytes:&llbuffer range:NSMakeRange(offset, 8)]; offset += 8;
 	//	[object setHappiness:llbuffer];
 		
