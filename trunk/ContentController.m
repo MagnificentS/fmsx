@@ -1269,6 +1269,50 @@ clubLBCView, clubFacilitiesView;
 
 #pragma mark Scout Functions
 
+- (IBAction)importShortlist:(id)sender
+{
+	NSOpenPanel *op = [NSOpenPanel openPanel];
+	
+	[op setAllowedFileTypes:[NSArray arrayWithObjects:@"slf",nil]];
+	[op setDirectory:DEFAULT_SHORTLIST_LOCATION];
+	
+	int result = [op runModal];
+	
+	if (result==NSFileHandlingPanelOKButton) {
+		NSData *shortlistData = [[NSData alloc] initWithContentsOfFile:[op filename]];
+		
+		// skip header
+		unsigned int offset = 2;
+		
+		// check it is actually an slf file
+		if (![[SupportFunctions readCStringFromData:shortlistData atOffset:&offset length:4] isEqualToString:@"fls."]) {
+			// If it isn't, alert user
+			NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Invalid Shortlist", @"error - invalid shortlist") defaultButton:@"OK" alternateButton:nil 
+											   otherButton:nil informativeTextWithFormat:NSLocalizedString(@"This does not appear to be a valid FM shortlist",@"error - not an FM shortlist")];
+			[alert runModal];
+			return;
+		}
+		
+		// skip down to players
+		offset += 8;
+		[FMString readFromData:shortlistData atOffset:&offset];
+		
+		unsigned int count, ibuffer;
+		NSMutableArray *shortlistIDs = [[NSMutableArray alloc] init];
+		[shortlistData getBytes:&count range:NSMakeRange(offset, 4)]; offset += 4;
+		for (int i=0; i<count; i++) {
+			[shortlistData getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
+			[shortlistIDs addObject:[NSNumber numberWithInt:ibuffer]];
+		}
+		
+		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"UID IN %@",shortlistIDs];
+		NSMutableArray *playerResults = [[NSMutableArray alloc] initWithArray:[[[controller database] people] filteredArrayUsingPredicate:predicate]];
+		[self setPlayerScoutResults:playerResults];
+		[playerResults release];
+		[shortlistIDs release];
+	}
+}
+
 - (IBAction)exportShortlist:(id)sender
 {
 	// return an error if the shortlist is empty

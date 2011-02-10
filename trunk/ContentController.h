@@ -173,6 +173,7 @@
 - (void)addToFavourites:(id)sender;
 - (void)saveShortlist:(NSArray *)players atPath:(NSString *)path;
 - (IBAction)showGameInfo:(id)sender;
+- (IBAction)importShortlist:(id)sender;
 - (IBAction)exportShortlist:(id)sender;
 - (IBAction)saveAllScoutResultsToShortlist:(id)sender;
 - (IBAction)saveSelectedScoutResultsToShortlist:(id)sender;
