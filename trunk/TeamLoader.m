@@ -128,6 +128,7 @@
 	for (int i=0;i<sbuffer;i++) {
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		[tempArray addObject:[NSNumber numberWithInt:ibuffer]];
+		NSLog(@"PL: %d",ibuffer);
 	}
 	[object setPlayers:tempArray];
 	[tempArray release];
@@ -170,6 +171,7 @@
 	for (int i=0;i<cbuffer;i++) {
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		[tempArray addObject:[NSNumber numberWithInt:ibuffer]];
+		NSLog(@"U8: %d",ibuffer);
 	}
 	[object setUnknowns1:tempArray];
 	[tempArray release];

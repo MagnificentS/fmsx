@@ -23,6 +23,7 @@
 #import "PersonStats.h"
 #import "PlayerStats.h"
 #import "NonPlayerStats.h"
+#import "Club.h"
 
 @interface Person : NSObject {
 	char databaseClass, unknownChar1;
@@ -91,6 +92,6 @@
 - (BOOL)isTransferListed;
 - (BOOL)isListedForLoan;
 - (BOOL)canTransfer;
-- (void)transfer;
+- (void)transfer:(Club *)newClub;
 
 @end
