@@ -209,6 +209,10 @@
 	if (result==NSFileHandlingPanelOKButton) {
 		[FMFArchiver extractFMF:[op filename]];
 	}
+	
+	NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"File succesfully extracted",@"info message")] defaultButton:@"OK" alternateButton:nil 
+									   otherButton:nil informativeTextWithFormat:NSLocalizedString(@"",@"info message")];
+	[alert runModal];
 }
 
 - (IBAction)extractLangDBFile:(id)sender
@@ -219,6 +223,10 @@
 	if (result==NSFileHandlingPanelOKButton) {
 		[LangDB extractLangDB:[op filename]];
 	}
+	
+	NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"lang_db.dat succesfully extracted",@"info message")] defaultButton:@"OK" alternateButton:nil 
+									   otherButton:nil informativeTextWithFormat:NSLocalizedString(@"",@"info message")];
+	[alert runModal];
 }
 
 - (IBAction)convertFMDateToHuman:(id)sender
