@@ -91,6 +91,26 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 - (float)wingBack;
 - (float)fullBack;
 
+// position ability (Natural, Accomplished, etc.)
+- (NSImage *)strikerPositionAbility;
+- (NSImage *)amrPositionAbility;
+- (NSImage *)amcPositionAbility;
+- (NSImage *)amlPositionAbility;
+- (NSImage *)mrPositionAbility;
+- (NSImage *)mcPositionAbility;
+- (NSImage *)mlPositionAbility;
+- (NSImage *)dmcPositionAbility;
+- (NSImage *)wbrPositionAbility;
+- (NSImage *)wblPositionAbility;
+- (NSImage *)drPositionAbility;
+- (NSImage *)dcPositionAbility;
+- (NSImage *)dlPositionAbility;
+- (NSImage *)gkPositionAbility;
+
+- (NSImage *)playerPositionAbility:(int)total;
+- (NSImage *)goalkeeperPositionAbility:(int)total;
+
+
 
 
 @end

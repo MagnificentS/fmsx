@@ -165,6 +165,107 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 	return @"Unknown";
 }
 	
+// position ability
+- (NSImage *)playerPositionAbility:(int)total
+{
+	if (total>19) { return [NSImage imageNamed:@"natural.png"]; }
+	else if (total>14) { return [NSImage imageNamed:@"accomplished.png"]; }
+	else if (total>11) { return [NSImage imageNamed:@"competent.png"]; }
+	else if (total>8) { return [NSImage imageNamed:@"unconvincing.png"]; }
+	else if (total>4) { return [NSImage imageNamed:@"awkward.png"]; }
+	else if (total>2) { return [NSImage imageNamed:@"ineffectual.png"]; }
+	else { return [NSImage imageNamed:@"posNeverPlayed.png"]; }
+}
+
+- (NSImage *)goalkeeperPositionAbility:(int)total
+{
+	if (total>11) { return [NSImage imageNamed:@"goalkeeperNatural.png"]; }
+	else { return [NSImage imageNamed:@"goalkeeperNotPlayed.png"]; }
+}
+
+- (NSImage *)strikerPositionAbility
+{
+	int skillLevel = centreForward;
+	return [self playerPositionAbility:skillLevel];
+}
+
+- (NSImage *)amrPositionAbility
+{
+	int skillLevel = rightAttackingMidfielder;
+	return [self playerPositionAbility:skillLevel];
+}
+
+- (NSImage *)amcPositionAbility
+{
+	int skillLevel = centralAttackingMidfielder;
+	return [self playerPositionAbility:skillLevel];
+}
+
+- (NSImage *)amlPositionAbility
+{
+	int skillLevel = leftAttackingMidfielder;
+	return [self playerPositionAbility:skillLevel];
+}
+
+- (NSImage *)mrPositionAbility
+{
+	int skillLevel = rightMidfielder;
+	return [self playerPositionAbility:skillLevel];
+}
+
+- (NSImage *)mcPositionAbility
+{
+	int skillLevel = centralMidfielder;
+	return [self playerPositionAbility:skillLevel];
+}
+
+- (NSImage *)mlPositionAbility
+{
+	int skillLevel = leftMidfielder;
+	return [self playerPositionAbility:skillLevel];
+}
+
+- (NSImage *)dmcPositionAbility
+{
+	int skillLevel = centralDefensiveMidfielder;
+	return [self playerPositionAbility:skillLevel];
+}
+
+- (NSImage *)wbrPositionAbility
+{
+	int skillLevel = rightWingBack;
+	return [self playerPositionAbility:skillLevel];
+}
+
+- (NSImage *)wblPositionAbility
+{
+	int skillLevel = leftWingBack;
+	return [self playerPositionAbility:skillLevel];
+}
+
+- (NSImage *)drPositionAbility
+{
+	int skillLevel = rightDefender;
+	return [self playerPositionAbility:skillLevel];
+}
+
+- (NSImage *)dcPositionAbility
+{
+	int skillLevel = centralDefender;
+	return [self playerPositionAbility:skillLevel];
+}
+
+- (NSImage *)dlPositionAbility
+{
+	int skillLevel = leftDefender;
+	return [self playerPositionAbility:skillLevel];
+}
+
+- (NSImage *)gkPositionAbility
+{
+	int skillLevel = goalkeeper;
+	return [self playerPositionAbility:skillLevel];
+}
 
 
 @end
