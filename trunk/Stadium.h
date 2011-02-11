@@ -78,5 +78,7 @@ allSeaterCompetitionCapacity, rowID, UID, nearbyStadiumID, cityID;
 - (NSArray *)pitchTypeStrings;
 - (NSArray *)stateStrings;
 - (NSArray *)pitchDeteriorationRateStrings;
+- (BOOL)localName;
+- (void)setLocalName:(BOOL)val;
 
 @end

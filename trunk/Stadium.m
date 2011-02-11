@@ -70,4 +70,15 @@ pitchDeteriorationRate;
 	return strings;
 }
 
+- (BOOL)localName { 
+	if (flags & SF_STADIUM_NAME_SAVED_LOCALLY) { return TRUE; } 
+	return FALSE; 
+}
+- (void)setLocalName:(BOOL)val {
+	if (flags & SF_STADIUM_NAME_SAVED_LOCALLY) {
+		if (!val) { flags = (flags ^ SF_STADIUM_NAME_SAVED_LOCALLY); }
+	}
+	else { flags = (flags | SF_STADIUM_NAME_SAVED_LOCALLY); }
+}
+
 @end
