@@ -301,6 +301,16 @@
 		FB59A62E10D6CEF800E2991F /* CitySaver.m in Sources */ = {isa = PBXBuildFile; fileRef = FB59A62D10D6CEF800E2991F /* CitySaver.m */; };
 		FB59D8F71097221500E2AE40 /* LangDBLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB59D8F61097221500E2AE40 /* LangDBLoader.m */; };
 		FB59D8FA1097222100E2AE40 /* LangDB.m in Sources */ = {isa = PBXBuildFile; fileRef = FB59D8F91097222100E2AE40 /* LangDB.m */; };
+		FB5A306D1305E91D006D0B6D /* unconvincing.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5A30631305E91D006D0B6D /* unconvincing.png */; };
+		FB5A306E1305E91E006D0B6D /* posNeverPlayed.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5A30641305E91D006D0B6D /* posNeverPlayed.png */; };
+		FB5A306F1305E91E006D0B6D /* natural.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5A30651305E91D006D0B6D /* natural.png */; };
+		FB5A30701305E91E006D0B6D /* ineffectual.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5A30661305E91D006D0B6D /* ineffectual.png */; };
+		FB5A30711305E91E006D0B6D /* goalkeeperNotPlayed.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5A30671305E91D006D0B6D /* goalkeeperNotPlayed.png */; };
+		FB5A30721305E91E006D0B6D /* goalkeeperNatural.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5A30681305E91D006D0B6D /* goalkeeperNatural.png */; };
+		FB5A30731305E91E006D0B6D /* fullpitch.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5A30691305E91D006D0B6D /* fullpitch.png */; };
+		FB5A30741305E91E006D0B6D /* competent.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5A306A1305E91D006D0B6D /* competent.png */; };
+		FB5A30751305E91E006D0B6D /* awkward.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5A306B1305E91D006D0B6D /* awkward.png */; };
+		FB5A30761305E91E006D0B6D /* accomplished.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5A306C1305E91D006D0B6D /* accomplished.png */; };
 		FB6B355B10B2FB900098125F /* FamousPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6B355A10B2FB900098125F /* FamousPlayer.m */; };
 		FB6B35A110B313840098125F /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6B35A010B313840098125F /* Team.m */; };
 		FB6B35A410B314250098125F /* TeamLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6B35A310B314250098125F /* TeamLoader.m */; };
@@ -1052,6 +1062,16 @@
 		FB59D8F61097221500E2AE40 /* LangDBLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LangDBLoader.m; sourceTree = "<group>"; };
 		FB59D8F81097222100E2AE40 /* LangDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LangDB.h; sourceTree = "<group>"; };
 		FB59D8F91097222100E2AE40 /* LangDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LangDB.m; sourceTree = "<group>"; };
+		FB5A30631305E91D006D0B6D /* unconvincing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unconvincing.png; sourceTree = "<group>"; };
+		FB5A30641305E91D006D0B6D /* posNeverPlayed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = posNeverPlayed.png; sourceTree = "<group>"; };
+		FB5A30651305E91D006D0B6D /* natural.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = natural.png; sourceTree = "<group>"; };
+		FB5A30661305E91D006D0B6D /* ineffectual.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ineffectual.png; sourceTree = "<group>"; };
+		FB5A30671305E91D006D0B6D /* goalkeeperNotPlayed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goalkeeperNotPlayed.png; sourceTree = "<group>"; };
+		FB5A30681305E91D006D0B6D /* goalkeeperNatural.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goalkeeperNatural.png; sourceTree = "<group>"; };
+		FB5A30691305E91D006D0B6D /* fullpitch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fullpitch.png; sourceTree = "<group>"; };
+		FB5A306A1305E91D006D0B6D /* competent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = competent.png; sourceTree = "<group>"; };
+		FB5A306B1305E91D006D0B6D /* awkward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awkward.png; sourceTree = "<group>"; };
+		FB5A306C1305E91D006D0B6D /* accomplished.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accomplished.png; sourceTree = "<group>"; };
 		FB6B355910B2FB900098125F /* FamousPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamousPlayer.h; sourceTree = "<group>"; };
 		FB6B355A10B2FB900098125F /* FamousPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamousPlayer.m; sourceTree = "<group>"; };
 		FB6B359F10B313840098125F /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
@@ -2530,6 +2550,16 @@
 			isa = PBXGroup;
 			children = (
 				FB24DFCF12A2A0F300C5EB8F /* Icons */,
+				FB5A30631305E91D006D0B6D /* unconvincing.png */,
+				FB5A30641305E91D006D0B6D /* posNeverPlayed.png */,
+				FB5A30651305E91D006D0B6D /* natural.png */,
+				FB5A30661305E91D006D0B6D /* ineffectual.png */,
+				FB5A30671305E91D006D0B6D /* goalkeeperNotPlayed.png */,
+				FB5A30681305E91D006D0B6D /* goalkeeperNatural.png */,
+				FB5A30691305E91D006D0B6D /* fullpitch.png */,
+				FB5A306A1305E91D006D0B6D /* competent.png */,
+				FB5A306B1305E91D006D0B6D /* awkward.png */,
+				FB5A306C1305E91D006D0B6D /* accomplished.png */,
 				FB53BAC6120780C500DE91FB /* 0star.png */,
 				FB92F56712072B83005F6E57 /* playerscreenblanked.png */,
 				FBDEA42C120720EB00F052DE /* gkscreenblanked.png */,
@@ -3302,6 +3332,16 @@
 				FB20D1AD12A3EAEF0031A9C3 /* history_delete.png in Resources */,
 				FB20D1AE12A3EAEF0031A9C3 /* history.png in Resources */,
 				FB2F65EC1301FC4E0002EC97 /* dsa_pub.pem in Resources */,
+				FB5A306D1305E91D006D0B6D /* unconvincing.png in Resources */,
+				FB5A306E1305E91E006D0B6D /* posNeverPlayed.png in Resources */,
+				FB5A306F1305E91E006D0B6D /* natural.png in Resources */,
+				FB5A30701305E91E006D0B6D /* ineffectual.png in Resources */,
+				FB5A30711305E91E006D0B6D /* goalkeeperNotPlayed.png in Resources */,
+				FB5A30721305E91E006D0B6D /* goalkeeperNatural.png in Resources */,
+				FB5A30731305E91E006D0B6D /* fullpitch.png in Resources */,
+				FB5A30741305E91E006D0B6D /* competent.png in Resources */,
+				FB5A30751305E91E006D0B6D /* awkward.png in Resources */,
+				FB5A30761305E91E006D0B6D /* accomplished.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
