@@ -80,7 +80,7 @@
 	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 	[object setFlags:cbuffer];
 	
-	if ([object flags] & SF_STADIUM_NAME_SAVED_LOCALLY) { [object setName:[FMString readFromData:data atOffset:&offset]]; }
+	if ([object flags] & SF_STADIUM_NAME_SAVED_LOCALLY) { NSLog(@"custom stad at %d",offset); [object setName:[FMString readFromData:data atOffset:&offset]]; }
 	
 	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 	[object setNameGender:cbuffer];

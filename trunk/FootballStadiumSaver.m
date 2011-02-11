@@ -70,7 +70,7 @@
 	[data appendData:[object unknownData2]];
 	ucbuffer = [object flags];
 	[data appendBytes:&ucbuffer length:1];
-	if ([object flags] & SF_STADIUM_NAME_SAVED_LOCALLY) { NSLog(@"HAS ONE - %@",[object name]); [FMString saveString:[object name] toData:data]; }
+	if ([object flags] & SF_STADIUM_NAME_SAVED_LOCALLY) { [FMString saveString:[object name] toData:data]; }
 	cbuffer = [object nameGender];
 	[data appendBytes:&cbuffer length:1];
 	ibuffer = [object cityID];
