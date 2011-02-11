@@ -109,7 +109,6 @@
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		for (int j=0;j<ibuffer;j++) {
 			[tempArray2 addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES version:version]];
-			NSLog(@"%@ done at %d",[[tempArray2 objectAtIndex:j] name],offset);
 		}
 		[tempArray addObject:tempArray2];
 		[tempArray2 release];
