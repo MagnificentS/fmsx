@@ -18,6 +18,11 @@
 #define MGSB_ITEM_IDENTIFIER		@"Identifier"		// string
 #define MGSB_ITEM_NAME				@"Name"				// string
 
+// scout search file types
+#define SCTY_PLAYER		0
+#define SCTY_STAFF		1
+#define SCTY_CLUB		2
+
 @class Controller;
 
 @interface ContentController : NSObject <MGScopeBarDelegate> {
@@ -114,6 +119,12 @@
 	IBOutlet NSComboBox *relationshipType;
 	IBOutlet NSTextField *levelField;
 	
+	// Scout
+	IBOutlet NSSegmentedControl *scoutSectionControl;
+	NSString *currentPlayerExpression;
+	NSString *currentStaffExpression;
+	NSString *currentClubExpression;
+	
 	// Club Scout
 	IBOutlet NSSearchField *clubScoutCompSearchField, *clubScoutNationSearchField, *clubScoutClubSearchField;
 	
@@ -198,6 +209,9 @@
 - (IBAction)scoutPlayers:(id)sender;
 - (void)exportPlayersToCSV:(NSMutableArray *)array;
 
+- (IBAction)loadSearch:(id)sender;
+- (IBAction)saveSearch:(id)sender;
+
 - (void)addRelationship:(id)sender;
 
 - (void)performSpaceKeyPress:(id)sender;
@@ -221,7 +235,7 @@
 *clubRelationshipsView, *nationRelationshipsView, *derbyGeneralView, *derbySearchView,
 *clubKitView, *clubLBCView, *clubFacilitiesView;
 
-@property(readwrite,copy) NSString *locationString;
+@property(readwrite,copy) NSString *locationString, *currentPlayerExpression, *currentStaffExpression, *currentClubExpression;
 @property(readwrite,copy) NSMutableArray *scoutResults, *clubScoutResults, *staffScoutResults, 
 *playerScoutResults, *recentlyViewed;
 @property(readwrite,copy) NSMutableDictionary *selectedRows;

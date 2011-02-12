@@ -41,7 +41,7 @@ competitionController, continentController, injuryController, currencyController
 languageController, localAreaController, mediaController, peopleController, clubKitView,
 sponsorController, stadiumController, stadiumChangeController, weatherController, awardRulesView, 
 awardMainView, derbyGeneralView, derbySearchView, derbyController, agentView, locationString,
-clubLBCView, clubFacilitiesView;
+clubLBCView, clubFacilitiesView, currentPlayerExpression, currentStaffExpression, currentClubExpression;
 
 - (id)init
 {
@@ -1437,6 +1437,37 @@ clubLBCView, clubFacilitiesView;
 	}
 }
 
+- (IBAction)loadSearch:(id)sender
+{
+	
+}
+- (IBAction)saveSearch:(id)sender
+{
+	char type = [scoutSectionControl selectedSegment];
+	
+	NSSavePanel *op = [NSSavePanel savePanel];
+	[op setAllowedFileTypes:[NSArray arrayWithObjects:@"sxs",nil]];
+	[op setCanCreateDirectories:YES];
+	int result = [op runModal];
+	if (result==NSFileHandlingPanelOKButton) {
+		NSMutableData *data = [[NSMutableData alloc] init];
+		
+		[SupportFunctions saveCString:@"sxs." toData:data];
+		[data appendBytes:&type length:1];
+		
+		if (type==SCTY_STAFF) { [FMString saveString:currentStaffExpression toData:data]; }
+		else if (type==SCTY_PLAYER) { [FMString saveString:currentPlayerExpression toData:data]; }
+			
+		if (![[NSFileManager defaultManager] createFileAtPath:[op filename] contents:data attributes:nil]) {
+			NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Unable To Save Searc",@"error saving search") defaultButton:@"OK" alternateButton:nil 
+											   otherButton:nil informativeTextWithFormat:NSLocalizedString(@"The search could not be saved.",@"error saving search")];
+			[alert runModal];
+		}
+		
+		[data release];
+	}
+}
+
 - (IBAction)scoutClubs:(id)sender
 {
 	NSMutableArray *teamResults = [[NSMutableArray alloc] init];
@@ -1594,11 +1625,14 @@ clubLBCView, clubFacilitiesView;
 	
 	if ([expression length] > 0) {
 		[expression appendString:@" AND (nonPlayerData != NIL)"];
+		[self setCurrentStaffExpression:expression];
 		NSPredicate *predicate = [NSPredicate predicateWithFormat:expression];
 		NSLog(@"final predicate: %@",expression);
 		[staffResults addObjectsFromArray:[[[controller database] people] filteredArrayUsingPredicate:predicate]];
 		[self setStaffScoutResults:staffResults];
 	}
+	
+	[expression release];
 }
 
 - (IBAction)scoutPlayers:(id)sender
@@ -1742,12 +1776,15 @@ clubLBCView, clubFacilitiesView;
 	
 	if ([expression length] > 0) {
 		[expression appendString:@" AND (playerData != NIL)"];
+		[self setCurrentPlayerExpression:expression];
 		NSPredicate *predicate = [NSPredicate predicateWithFormat:expression];
 		NSLog(@"final predicate: %@",expression);
 		[playerResults addObjectsFromArray:[[[controller database] people] filteredArrayUsingPredicate:predicate]];
 		NSLog(@"%d results",[playerResults count]);
 		[self setPlayerScoutResults:playerResults];
 	}
+	
+	[expression release];
 }
 
 - (void)exportPlayersToCSV:(NSMutableArray *)array
