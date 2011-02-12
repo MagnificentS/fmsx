@@ -23,6 +23,8 @@
 #define SCTY_STAFF		1
 #define SCTY_CLUB		2
 
+#define SXS_VERSION		1
+
 @class Controller;
 
 @interface ContentController : NSObject <MGScopeBarDelegate> {
@@ -121,6 +123,7 @@
 	
 	// Scout
 	IBOutlet NSSegmentedControl *scoutSectionControl;
+	IBOutlet NSTabView	*scoutSectionTabView;
 	NSString *currentPlayerExpression;
 	NSString *currentStaffExpression;
 	NSString *currentClubExpression;

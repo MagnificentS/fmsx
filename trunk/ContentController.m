@@ -1439,11 +1439,69 @@ clubLBCView, clubFacilitiesView, currentPlayerExpression, currentStaffExpression
 
 - (IBAction)loadSearch:(id)sender
 {
-	
+	NSOpenPanel *op = [NSOpenPanel openPanel];
+	[op setAllowedFileTypes:[NSArray arrayWithObjects:@"sxs",nil]];
+	int result = [op runModal];
+	if (result==NSFileHandlingPanelOKButton) {
+		NSData *data = [[NSData alloc] initWithContentsOfFile:[op filename]];
+		
+		unsigned int offset = 0;
+		
+		if (![[SupportFunctions readCStringFromData:data atOffset:&offset length:4] isEqualToString:@"sxs."]) {
+			// If it isn't, alert user
+			NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Invalid Search File", @"error - invalid search file") defaultButton:@"OK" alternateButton:nil 
+											   otherButton:nil informativeTextWithFormat:NSLocalizedString(@"This does not appear to be a valid FMSX search file",@"error - not an FMSX search file")];
+			[alert runModal];
+			return;
+		}
+		
+		char type, version;
+		[data getBytes:&version range:NSMakeRange(offset, 1)]; offset += 1;
+		
+		if (version < SXS_VERSION) {
+			NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Invalid Search Version", @"error - invalid search file") defaultButton:@"OK" alternateButton:nil 
+											   otherButton:nil informativeTextWithFormat:NSLocalizedString(@"This appears to be an outdated FMSX search file",@"error - outdated FMSX search file")];
+			[alert runModal];
+			return;
+		}
+		
+		[data getBytes:&type range:NSMakeRange(offset, 1)]; offset += 1;
+		
+		if (type!=SCTY_STAFF && type!=SCTY_PLAYER) {
+			// If it isn't, alert user
+			NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Invalid Search File", @"error - invalid search file") defaultButton:@"OK" alternateButton:nil 
+											   otherButton:nil informativeTextWithFormat:NSLocalizedString(@"This does not appear to be a valid FMSX search file",@"error - not an FMSX search file")];
+			[alert runModal];
+			return;
+		}
+		
+		NSString *savedExpression = [FMString readFromData:data atOffset:&offset];
+		
+		NSPredicate *predicate = [NSPredicate predicateWithFormat:savedExpression];
+		NSLog(@"saved predicate: %@",savedExpression);
+		
+		NSMutableArray *results = [[NSMutableArray alloc] init];
+		[results addObjectsFromArray:[[[controller database] people] filteredArrayUsingPredicate:predicate]];
+		NSLog(@"%d results",[results count]);
+		
+		if (type==SCTY_STAFF) { 
+			[scoutSectionControl selectSegmentWithTag:SCTY_STAFF]; 
+			[scoutSectionTabView selectTabViewItemAtIndex:SCTY_STAFF];
+			[self setStaffScoutResults:results]; 
+		}
+		else if (type==SCTY_PLAYER) { 
+			[scoutSectionControl selectSegmentWithTag:SCTY_PLAYER]; 
+			[scoutSectionTabView selectTabViewItemAtIndex:SCTY_PLAYER];
+			[self setPlayerScoutResults:results]; 
+		}
+		
+		[results release];
+	}
 }
 - (IBAction)saveSearch:(id)sender
 {
 	char type = [scoutSectionControl selectedSegment];
+	char version = SXS_VERSION;
 	
 	NSSavePanel *op = [NSSavePanel savePanel];
 	[op setAllowedFileTypes:[NSArray arrayWithObjects:@"sxs",nil]];
@@ -1453,6 +1511,7 @@ clubLBCView, clubFacilitiesView, currentPlayerExpression, currentStaffExpression
 		NSMutableData *data = [[NSMutableData alloc] init];
 		
 		[SupportFunctions saveCString:@"sxs." toData:data];
+		[data appendBytes:&version length:1];
 		[data appendBytes:&type length:1];
 		
 		if (type==SCTY_STAFF) { [FMString saveString:currentStaffExpression toData:data]; }
@@ -1463,7 +1522,6 @@ clubLBCView, clubFacilitiesView, currentPlayerExpression, currentStaffExpression
 											   otherButton:nil informativeTextWithFormat:NSLocalizedString(@"The search could not be saved.",@"error saving search")];
 			[alert runModal];
 		}
-		
 		[data release];
 	}
 }
