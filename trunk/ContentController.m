@@ -1465,6 +1465,8 @@ clubLBCView, clubFacilitiesView, currentPlayerExpression, currentStaffExpression
 			return;
 		}
 		
+		NSString *searchName = [FMString readFromData:data atOffset:&offset];
+		
 		[data getBytes:&type range:NSMakeRange(offset, 1)]; offset += 1;
 		
 		if (type!=SCTY_STAFF && type!=SCTY_PLAYER) {
@@ -1502,6 +1504,7 @@ clubLBCView, clubFacilitiesView, currentPlayerExpression, currentStaffExpression
 {
 	char type = [scoutSectionControl selectedSegment];
 	char version = SXS_VERSION;
+	NSString *searchName;
 	
 	NSSavePanel *op = [NSSavePanel savePanel];
 	[op setAllowedFileTypes:[NSArray arrayWithObjects:@"sxs",nil]];
@@ -1512,11 +1515,12 @@ clubLBCView, clubFacilitiesView, currentPlayerExpression, currentStaffExpression
 		
 		[SupportFunctions saveCString:@"sxs." toData:data];
 		[data appendBytes:&version length:1];
+		[FMString saveString:searchName toData:data];
 		[data appendBytes:&type length:1];
 		
 		if (type==SCTY_STAFF) { [FMString saveString:currentStaffExpression toData:data]; }
 		else if (type==SCTY_PLAYER) { [FMString saveString:currentPlayerExpression toData:data]; }
-			
+		
 		if (![[NSFileManager defaultManager] createFileAtPath:[op filename] contents:data attributes:nil]) {
 			NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Unable To Save Searc",@"error saving search") defaultButton:@"OK" alternateButton:nil 
 											   otherButton:nil informativeTextWithFormat:NSLocalizedString(@"The search could not be saved.",@"error saving search")];
