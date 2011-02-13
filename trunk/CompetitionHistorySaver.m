@@ -10,14 +10,16 @@
 
 @implementation CompetitionHistorySaver
 
-+ (void)saveCompetitionHistory:(CompetitionHistory *)object toData:(NSMutableData *)data
++ (void)saveCompetitionHistory:(CompetitionHistory *)object toData:(NSMutableData *)data archived:(BOOL)archived
 {
 	char cbuffer;
 	short sbuffer;
 	int ibuffer;
 	
-	cbuffer = [object databaseClass];
-	[data appendBytes:&cbuffer length:1];
+	if (!archived) {
+		cbuffer = [object databaseClass];
+		[data appendBytes:&cbuffer length:1];
+	}
 	ibuffer = [object competitionID];
 	[data appendBytes:&ibuffer length:4];
 	sbuffer = [object year];

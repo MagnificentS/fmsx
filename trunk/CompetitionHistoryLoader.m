@@ -10,7 +10,7 @@
 
 @implementation Loader (CompetitionHistoryLoader)
 
-+ (CompetitionHistory *)readCompetitionHistoryFromData:(NSData *)data atOffset:(unsigned int *)byteOffset
++ (CompetitionHistory *)readCompetitionHistoryFromData:(NSData *)data atOffset:(unsigned int *)byteOffset archived:(BOOL)archived
 {
 	char cbuffer;
 	short sbuffer;
@@ -20,8 +20,10 @@
 	
 	CompetitionHistory *object = [[CompetitionHistory alloc] init];
 	
-	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-	[object setDatabaseClass:cbuffer];
+	if (!archived) {
+		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
+		[object setDatabaseClass:cbuffer];
+	}
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	[object setCompetitionID:ibuffer];
 	[data getBytes:&sbuffer range:NSMakeRange(offset, 2)]; offset += 2;

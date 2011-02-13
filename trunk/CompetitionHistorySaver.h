@@ -13,6 +13,6 @@
 	
 }
 
-+ (void)saveCompetitionHistory:(CompetitionHistory *)object toData:(NSMutableData *)data;
++ (void)saveCompetitionHistory:(CompetitionHistory *)object toData:(NSMutableData *)data archived:(BOOL)archived;
 
 @end

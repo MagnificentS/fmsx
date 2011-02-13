@@ -11,6 +11,6 @@
 
 @interface Loader (CompetitionHistoryLoader)
 
-+ (CompetitionHistory *)readCompetitionHistoryFromData:(NSData *)data atOffset:(unsigned int *)byteOffset;
++ (CompetitionHistory *)readCompetitionHistoryFromData:(NSData *)data atOffset:(unsigned int *)byteOffset archived:(BOOL)archived;
 
 @end

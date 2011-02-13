@@ -1199,7 +1199,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	[tempArray removeAllObjects];
 	[pool drain];
 
-#pragma mark Competition Histories
+#pragma mark Latest Competition Histories
 	
 	[self setStatus:NSLocalizedString(@"loading competition histories...", @"editor status")];
 	[self setCurrentRecord:0];
@@ -1208,7 +1208,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	for (i=0; i<count; i++) {
 		[self setCurrentRecord:(i+1)];
 		
-		id object = [Loader readCompetitionHistoryFromData:data atOffset:byteOffset];
+		id object = [Loader readCompetitionHistoryFromData:data atOffset:byteOffset archived:NO];
 		if (![[object className] isEqualToString:@"CompetitionHistory"]) {
 			return [NSArray arrayWithObjects:
 					@"Competition History",
@@ -1248,7 +1248,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		*byteOffset += 8;
 	}
 	*/
-	NSLog(@"End of post-unknowns 1 at %d",*byteOffset);
+	NSLog(@"End of post-unknowns 1 (%d) at %d",count,*byteOffset);
 	
 	// ???
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
@@ -1262,7 +1262,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		*byteOffset += 8;
 	}
 	*/
-	NSLog(@"End of post-unknowns 2 at %d",*byteOffset);
+	NSLog(@"End of post-unknowns 2 (%d) at %d",count,*byteOffset);
 	
 	// ???
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
@@ -1274,7 +1274,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		*byteOffset += 9;
 	}
 	*/
-	NSLog(@"End of post-unknowns 3 at %d",*byteOffset);
+	NSLog(@"End of post-unknowns 3 (%d) at %d",count,*byteOffset);
 	
 	// ???
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
@@ -1286,7 +1286,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		*byteOffset += 10;
 	}
 	*/
-	NSLog(@"End of post-unknowns 4 at %d",*byteOffset);
+	NSLog(@"End of post-unknowns 4 (%d) at %d",count,*byteOffset);
 	
 	[self setUnknownData6:[data subdataWithRange:NSMakeRange(*byteOffset, 4)]]; 
 	*byteOffset += 4;

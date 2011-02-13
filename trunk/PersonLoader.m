@@ -28,7 +28,7 @@
 {
 	char cbuffer;
 	int ibuffer;
-	BOOL debug = YES;
+	BOOL debug = NO;
 	
 	unsigned int offset = *byteOffset;
 	

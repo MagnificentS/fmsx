@@ -71,7 +71,6 @@
 	[object setContractOfferDecisionDateUniqueID:ibuffer];
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	[object setHistoryID:ibuffer];
-	NSLog(@"history: %d",ibuffer);
 	
 	if (debug) { NSLog(@"contracts at %d",offset); }
 	
