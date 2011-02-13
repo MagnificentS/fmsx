@@ -158,10 +158,10 @@
 		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 		[object setUnknownChar50:cbuffer];
 		
-		if (version<FM2011_11_2) {
-			[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-			[object setUnknownChar60:cbuffer];
-		}
+		//if (version>=FM2011_11_2) {
+	//		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
+	//		[object setUnknownChar60:cbuffer];
+		//}
 	}
 	if ([object nameFlags] & FIXTURE_NAME_EXTRA_STAGE_NAME) {
 		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
