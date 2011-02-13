@@ -138,7 +138,6 @@ teamsController, weatherController, currentDate, gameDBVersion, databaseChanges,
 	
 	// Once the user selects a file
 	if (result==NSFileHandlingPanelOKButton) {
-		
 		// Set the saved game path to be what they selected
 		[self setGamePath:[op filename]];
 		

@@ -14,7 +14,7 @@
 + (void)saveMatchForm:(MatchForm *)object toData:(NSMutableData *)data
 {
 	char cbuffer;
-	short sbuffer;
+//	short sbuffer;
 	int ibuffer;
 	BOOL bbuffer;
 	

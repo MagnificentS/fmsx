@@ -55,7 +55,6 @@
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	[object setUID:ibuffer];
 	
-	
 	*byteOffset = offset;
 	
 	return object;

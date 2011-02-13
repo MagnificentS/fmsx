@@ -16,9 +16,7 @@
 + (void)saveContract:(Contract *)object toData:(NSMutableData *)data type:(char)type offer:(BOOL)isOffer
 {
 	char cbuffer;
-	short sbuffer;
 	int ibuffer;
-	long long llbuffer;
 	
 	if (!isOffer) {
 		cbuffer = [object type];
