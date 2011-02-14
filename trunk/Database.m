@@ -1916,7 +1916,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	[self setTotalRecords:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
 		[self setCurrentRecord:(i+1)];
-		[CompetitionHistorySaver saveCompetitionHistory:[competitionHistories objectAtIndex:i] toData:data];
+		[CompetitionHistorySaver saveCompetitionHistory:[competitionHistories objectAtIndex:i] toData:data archived:NO];
 	}
 	[pool drain];
 
