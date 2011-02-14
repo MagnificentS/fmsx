@@ -80,11 +80,11 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 
 - (NSString *)nationString {
 	NSMutableString *string = [[NSMutableString alloc] init];
-	if (personData) {
+	if (personData && [personData nationID] > -1) {
 		[string appendFormat:@"%@",[[[[[controller database] nations] objectAtIndex:[personData nationID]] teamContainer] name]];
 		
 		for (Relationship *item in [personData relationships]) {
-			if ([item relationshipType]==RT_HAS_NATIONALITY)
+			if ([item relationshipType]==RT_HAS_NATIONALITY && [item associatedID] > -1)
 			{
 				[string appendFormat:@" / %@",[[[[[controller database] nations] objectAtIndex:[item associatedID]] teamContainer] name]];
 			}
