@@ -94,23 +94,23 @@ Each Entity has a variety of information available to view (and in most cases) e
 
 *Entities you can edit:*
 ----
-* Awards
-* Cities 
-* Clubs
-* Competitions
-* Continents
-* Currencies
-* Derbies
-* Injuries
-* Languages
-* Local Areas
-* Media
-* Nations
-* People
-* Sponsors
-* Stadiums
-* Stadium Changes
-* Weather
+  * Awards
+  * Cities 
+  * Clubs
+  * Competitions
+  * Continents
+  * Currencies
+  * Derbies
+  * Injuries
+  * Languages
+  * Local Areas
+  * Media
+  * Nations
+  * People
+  * Sponsors
+  * Stadiums
+  * Stadium Changes
+  * Weather
 
 
 In some Entities there are additional views (called Inspectors) available to see and edit even more attributes.  These additional views can be accessed by the _eye_ icon.
