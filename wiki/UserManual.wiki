@@ -93,22 +93,39 @@ https://lh4.googleusercontent.com/_CjLl-iz68fw/TVndHXUJVNI/AAAAAAAAAWE/iLCc2xCfv
 Each Entity has a variety of information available to view (and in most cases) edit.  The following is brief list.  Please note that due to screen space some items are accessed via pull down menus (note the pull down menu with the item titled "General" slightly above the Name attribute for Tottenham in the picture above).
 
 *Awards:* 
+
 *Cities:* 
+
 *Clubs:* 
+
 *Competitions:* 
+
 *Continents:* 
+
 *Currencies:* 
+
 *Derbies:* 
+
 *Injuries:* 
+
 *Languages:*
+
 *Local Areas:*
+
 *Media:* 
+
 *Nations:*
+
 *People:* 
+
 *Sponsors:*
+
 *Stadiums:* 
+
 *Stadium Changes:*
+
 *Weather:* 
+
 
 In some Entities there are additional views (called Inspectors) available to see and edit even more attributes.  These additional views can be accessed by the _eye_ icon.
 
