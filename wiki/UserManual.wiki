@@ -92,6 +92,8 @@ https://lh4.googleusercontent.com/_CjLl-iz68fw/TVndHXUJVNI/AAAAAAAAAWE/iLCc2xCfv
 
 Each Entity has a variety of information available to view (and in most cases) edit.  The following is brief list.  Please note that due to screen space some items are accessed via pull down menus (note the pull down menu with the item titled "General" slightly above the Name attribute for Tottenham in the picture above).
 
+*Entities you can edit:*
+----
 *Awards:* 
 
 *Cities:* 
