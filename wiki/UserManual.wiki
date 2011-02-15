@@ -93,7 +93,7 @@ https://lh4.googleusercontent.com/_CjLl-iz68fw/TVndHXUJVNI/AAAAAAAAAWE/iLCc2xCfv
 Each Entity has a variety of information available to view (and in most cases) edit.  The following is brief list.  Please note that due to screen space some items are accessed via pull down menus (note the pull down menu with the item titled "General" slightly above the Name attribute for Tottenham in the picture above).
 
 *Entities you can edit:*
-----
+
   * Awards
   * Cities 
   * Clubs
@@ -119,9 +119,9 @@ http://lh3.ggpht.com/_CjLl-iz68fw/S0-380JsmEI/AAAAAAAAARg/8c4NzwOla4Y/s800/eye%2
 
 Selecting this icon will open the corresponding inspector view.
 
-A good example of this type of view is the Club Team Inspector which provides access to such items as Players, Coaches and Physio as seen below for Ipswich Town.
+A good example of this type of view is the Club Team Inspector which provides access to such items as Players, Coaches and Physio as seen below for Tottenham.
 
-http://lh5.ggpht.com/_CjLl-iz68fw/S0-5UK-VRxI/AAAAAAAAARo/jwzkYkTO9Xo/s800/club%20team%20inspector.jpg
+https://lh3.googleusercontent.com/_CjLl-iz68fw/TVndHaiIDiI/AAAAAAAAAWI/gVVrLAZA74s/s800/mainmenu3.jpg
 
 === 3.3 Scout Window===
 The Scout window contains the main scouting window to scout for Players, Staff, and Clubs.  Additionally there are pop up windows for setting the various searching criteria.  The scout tool in FM11SX is as powerful as the editor and as such contains a complex scouting engine.  Here you can scout based on a vast set of criteria including regular player attributes (like Finishing, Marking, Composure, etc.) as well as some of the hidden data (like Current Ability (CA) and Potential Ability (PA), Reputation,  Professionalism, etc.).
