@@ -71,14 +71,12 @@ You can save a saved game file either by clicking on the Save Game icon in the u
 === 3.1 Main Menu===
 The Main Menu contains most of the normal OS X functions (including About FM11SX, Preferences (these are discussed in depth in 2.2 Preferences above), File Open, Save As, Print, etc.).  The top apron (shown below) also contains an Open Game button as well as quick access to the Scout features and a Game Info button all located on the left while a Save Game button is opposite on the right.  The Game Info lists some details about the saved game file currently loaded (which leagues are playable, human managers in the game, etc.).
 
-http://lh3.ggpht.com/_CjLl-iz68fw/S0_l3xw0mvI/AAAAAAAAARw/fBqpYJWVzqA/s800/top%20apron.jpg
+https://lh6.googleusercontent.com/_CjLl-iz68fw/TVndHNFUvsI/AAAAAAAAAWA/SYA8g3UO8ic/s800/mainmenu.jpg
 
 Within in the Main Menu are also links to donate to the project, documentation (basically a link back here), and a way to Check For Updates.  Although as noted in the Preferences section there is a means for FM11SX to automatically check for updates.  But for those who wish to check manually, here's your way.  Additionally there are some pretty cool Tools (see the 7. Tools section for more details).  There are also some links to the FMScout and sigames websites.
 
 
 === 3.2 Application Window===
-
-http://lh3.ggpht.com/_CjLl-iz68fw/S0-lzW66srI/AAAAAAAAARQ/4n7fDB9Dzp8/s800/main%20window1.jpg
 
 The application window consists of two main parts below the top apron.  The left side is a navigation frame.  There you have Entities, Favorites, Shortlists, and Game Info from which you select and then can view various degrees of detail.  The right side is where the details of your selection are displayed.
 
@@ -88,7 +86,7 @@ Once a saved game file is loaded you will also see next to each Entity the numbe
 
 When you select an Entity from the list on the left, the right side frame will then show all the records associated with the particular Entity.  In the example above, Clubs has been selected and all the football clubs in the game are listed (currently sorted by Unique ID number) on the right.
 
-To view details of particular records within an Entity merely double click on the record within the right side frame.  For example, double clicking on Ipswich Town within the Clubs Entity will bring up the detailed view as seen below.  _*(Note the top of the detailed view contains tabs of recently viewed Entities or specific records within an Entity.  Enabling you to quickly click back to say, Clubs while still maintaining a link to Ipswich Town).*_
+To view details of particular records within an Entity merely double click on the record within the right side frame.  For example, double clicking on Ipswich Town within the Clubs Entity will bring up the detailed view as seen below.  _*(Note the top of the detailed view contains tabs of recently viewed Entities or specific records within an Entity.  Enabling you to quickly click back to say, Clubs while still maintaining a link to Tottenham).*_
 
 http://lh6.ggpht.com/_CjLl-iz68fw/S0-vHD6uoHI/AAAAAAAAARY/toQv0cwjPYo/s800/main%20window2.jpg
 
