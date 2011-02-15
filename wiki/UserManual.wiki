@@ -88,9 +88,9 @@ When you select an Entity from the list on the left, the right side frame will t
 
 To view details of particular records within an Entity merely double click on the record within the right side frame.  For example, double clicking on Ipswich Town within the Clubs Entity will bring up the detailed view as seen below.  _*(Note the top of the detailed view contains tabs of recently viewed Entities or specific records within an Entity.  Enabling you to quickly click back to say, Clubs while still maintaining a link to Tottenham).*_
 
-http://lh6.ggpht.com/_CjLl-iz68fw/S0-vHD6uoHI/AAAAAAAAARY/toQv0cwjPYo/s800/main%20window2.jpg
+https://lh4.googleusercontent.com/_CjLl-iz68fw/TVndHXUJVNI/AAAAAAAAAWE/iLCc2xCfv1Q/s800/mainmenu2.jpg
 
-Each Entity has a variety of information available to view (and in most cases) edit.  The following is brief list.  Please note that due to screen space some items are accessed via pull down menus (note the pull down menu with the item titled "General" slightly above the Name attribute for Ipswich Town in the picture above).
+Each Entity has a variety of information available to view (and in most cases) edit.  The following is brief list.  Please note that due to screen space some items are accessed via pull down menus (note the pull down menu with the item titled "General" slightly above the Name attribute for Tottenham in the picture above).
 
 *Awards:* For each award various attributes can be edited.  These include: Name (Name of the award), Short Name, Continent, Nation, Competition, Award Reputation, National Reputation, Minimum Age, Maximum Age, Minimum Percentage of Games Played Required, etc.
 
