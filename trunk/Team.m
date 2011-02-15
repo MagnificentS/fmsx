@@ -192,7 +192,9 @@ unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 			NSLog(@"removing injuries for %@",[[[[controller database] people] objectAtIndex:[item intValue]] name]);
 			
 			// remove injuries
-			[[[[[[controller database] people] objectAtIndex:[item intValue]] playerData] mutableArrayValueForKey:@"injuries"] removeAllObjects];
+			if ([[[[[[controller database] people] objectAtIndex:[item intValue]] playerData] injuries] count]>0) {
+				[[[[[[controller database] people] objectAtIndex:[item intValue]] playerData] mutableArrayValueForKey:@"injuries"] removeAllObjects];
+			}
 			
 			NSLog(@"fixing stats for %@",[[[[controller database] people] objectAtIndex:[item intValue]] name]);
 			
