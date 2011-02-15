@@ -119,6 +119,10 @@
 		[object setUnknownData1:[data subdataWithRange:NSMakeRange(offset, 21)]]; 
 		offset += 21;
 	}
+	else if ([[object type] isEqualToString:@"rfhp"]) {
+		[object setUnknownData1:[data subdataWithRange:NSMakeRange(offset, 21)]]; 
+		offset += 21;
+	}
 	else if ([[object type] isEqualToString:@"rfct"]) { 
 		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 		[object setUnknownChar1:cbuffer]; 
