@@ -92,37 +92,23 @@ https://lh4.googleusercontent.com/_CjLl-iz68fw/TVndHXUJVNI/AAAAAAAAAWE/iLCc2xCfv
 
 Each Entity has a variety of information available to view (and in most cases) edit.  The following is brief list.  Please note that due to screen space some items are accessed via pull down menus (note the pull down menu with the item titled "General" slightly above the Name attribute for Tottenham in the picture above).
 
-*Awards:* For each award various attributes can be edited.  These include: Name (Name of the award), Short Name, Continent, Nation, Competition, Award Reputation, National Reputation, Minimum Age, Maximum Age, Minimum Percentage of Games Played Required, etc.
-
-*Cities:* Name, Citizens Name, Local Area, Weather (this is a _type_ of weather see Weather for more details), Inhabitants (i.e., population), etc.
-
-*Clubs:* Too many to list but everything from Name to Training Facilities (how good they are) to Morale to Finances (including Sugar Daddy type) and Transfer Budget (both season amount and remaining amount).  
-
-*Competitions:* tbd
-
-*Continents:* tbd
-
-*Currencies:* tbd
-
-*Injuries:* tbd
-
-*Languages:* tbd
-
-*Local Areas:* tbd
-
-*Media:* tbd
-
-*Nations:* tbd
-
-*People:* tbd
-
-*Sponsors:* tbd
-
-*Stadiums:* tbd
-
-*Stadium Changes:* tbd
-
-*Weather:* tbd
+*Awards:* 
+*Cities:* 
+*Clubs:* 
+*Competitions:* 
+*Continents:* 
+*Currencies:* 
+*Derbies:* 
+*Injuries:* 
+*Languages:*
+*Local Areas:*
+*Media:* 
+*Nations:*
+*People:* 
+*Sponsors:*
+*Stadiums:* 
+*Stadium Changes:*
+*Weather:* 
 
 In some Entities there are additional views (called Inspectors) available to see and edit even more attributes.  These additional views can be accessed by the _eye_ icon.
 
