@@ -50,7 +50,7 @@ There are two checkboxes here.  One allows for FM11SX to automatically check for
 
 http://lh3.ggpht.com/_CjLl-iz68fw/S0-ip4TEJPI/AAAAAAAAARI/Pa4A9e5ldHk/s800/pref%20window3.jpg
 
-Here you can select which language FM11SX will use.  *_(Note: All Languages are currently listed but not all work???  Should these be listed if localizations are not yet completed???)_*
+Here you can select which language FM11SX will use. 
 
 === 2.3 Loading a game===
 _*Note: Although FM11SX can save a backup of your game prior to saving it within FM11SX, it is HIGHLY RECOMMENDED that you make a backup copy of any game file PRIOR to using FM11SX.*_ 
