@@ -1,0 +1,10 @@
+#A How To to compile FMSX between releases
+
+In order to compile your version of FMSX from the code base you need to have the application called Xcode. It's free from Apple. You can register on their site to get your free copy of Xcode 3. 
+
+Once you have Xcode installed you will "check-out" the latest source code of FMSX and then compile it into a working FMSX program.
+
+The following steps you have successfully installed Xcode.
+
+1. Launch Xcode and select SCM from the top menu, then select Configure SCM Repositories.  You'll need to add the FMSX repository url which is...
+
