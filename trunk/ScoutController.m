@@ -63,6 +63,10 @@
 	[self setShowPlayerScoutProfessionalismColumn:FALSE];
 	[self setShowPlayerScoutSportsmanshipColumn:FALSE];
 	[self setShowPlayerScoutTemperamentColumn:FALSE];
+	[self setShowPlayerScoutFullCapsColumn:FALSE];
+	[self setShowPlayerScoutFullGoalsColumn:FALSE];
+	[self setShowPlayerScoutU21CapsColumn:FALSE];
+	[self setShowPlayerScoutU21GoalsColumn:FALSE];
 	[self updatePlayerScoutColumns:self];
 }
 
@@ -695,6 +699,10 @@
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"professionalism"] setHidden:!showPlayerScoutProfessionalismColumn];	
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"sportsmanship"] setHidden:!showPlayerScoutSportsmanshipColumn];	
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"temperament"] setHidden:!showPlayerScoutTemperamentColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"fullCaps"] setHidden:!showPlayerScoutFullCapsColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"fullGoals"] setHidden:!showPlayerScoutFullGoalsColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"u21Caps"] setHidden:!showPlayerScoutU21CapsColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"u21Goals"] setHidden:!showPlayerScoutU21GoalsColumn];	
 	
 }
 

@@ -156,7 +156,8 @@
 		showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNationColumn, showPlayerScoutHeightColumn,
 		showPlayerScoutWeightColumn, showPlayerScoutAdaptabilityColumn, showPlayerScoutAmbitionColumn, showPlayerScoutControversyColumn, 
 		showPlayerScoutLoyaltyColumn, showPlayerScoutPressureColumn, showPlayerScoutProfessionalismColumn, showPlayerScoutSportsmanshipColumn, 
-		showPlayerScoutTemperamentColumn;
+		showPlayerScoutTemperamentColumn, showPlayerScoutFullCapsColumn, showPlayerScoutFullGoalsColumn, showPlayerScoutU21CapsColumn, 
+		showPlayerScoutU21GoalsColumn;
 	
 	// Pickers
 	IBOutlet NSArrayController *nationPickerController;
@@ -256,7 +257,8 @@ showPlayerScoutPositionColumn, showPlayerScoutCAColumn, showPlayerScoutPAColumn,
 showPlayerScoutWorldRepColumn, showPlayerScoutCurrentRepColumn, showPlayerScoutConditionColumn, showPlayerScoutGPColumn, 
 showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNationColumn, showPlayerScoutHeightColumn, showPlayerScoutWeightColumn,
 showPlayerScoutAdaptabilityColumn, showPlayerScoutAmbitionColumn, showPlayerScoutControversyColumn, showPlayerScoutLoyaltyColumn, 
-showPlayerScoutPressureColumn, showPlayerScoutProfessionalismColumn, showPlayerScoutSportsmanshipColumn, showPlayerScoutTemperamentColumn;
+showPlayerScoutPressureColumn, showPlayerScoutProfessionalismColumn, showPlayerScoutSportsmanshipColumn, showPlayerScoutTemperamentColumn,
+showPlayerScoutFullCapsColumn, showPlayerScoutFullGoalsColumn, showPlayerScoutU21CapsColumn, showPlayerScoutU21GoalsColumn;
 
 @property(readwrite,copy) NSString *locationString, *currentPlayerExpression, *currentStaffExpression, *currentClubExpression;
 @property(readwrite,copy) NSMutableArray *scoutResults, *clubScoutResults, *staffScoutResults, 
