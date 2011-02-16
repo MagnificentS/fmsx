@@ -153,7 +153,8 @@
 	BOOL showPlayerScoutNameColumn, showPlayerScoutStatusColumn, showPlayerScoutTeamColumn, showPlayerScoutAgeColumn, 
 		showPlayerScoutPositionColumn, showPlayerScoutCAColumn, showPlayerScoutPAColumn, showPlayerScoutHomeRepColumn, 
 		showPlayerScoutWorldRepColumn, showPlayerScoutCurrentRepColumn, showPlayerScoutConditionColumn, showPlayerScoutGPColumn, 
-		showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNationColumn;
+		showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNationColumn, showPlayerScoutHeightColumn,
+		showPlayerScoutWeightColumn;
 	
 	// Pickers
 	IBOutlet NSArrayController *nationPickerController;
@@ -249,7 +250,7 @@
 @property(readwrite,assign) BOOL showPlayerScoutNameColumn, showPlayerScoutStatusColumn, showPlayerScoutTeamColumn, showPlayerScoutAgeColumn, 
 showPlayerScoutPositionColumn, showPlayerScoutCAColumn, showPlayerScoutPAColumn, showPlayerScoutHomeRepColumn, 
 showPlayerScoutWorldRepColumn, showPlayerScoutCurrentRepColumn, showPlayerScoutConditionColumn, showPlayerScoutGPColumn, 
-showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNationColumn;
+showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNationColumn, showPlayerScoutHeightColumn, showPlayerScoutWeightColumn;
 
 @property(readwrite,copy) NSString *locationString, *currentPlayerExpression, *currentStaffExpression, *currentClubExpression;
 @property(readwrite,copy) NSMutableArray *scoutResults, *clubScoutResults, *staffScoutResults, 

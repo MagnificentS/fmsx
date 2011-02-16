@@ -45,7 +45,8 @@ clubLBCView, clubFacilitiesView, currentPlayerExpression, currentStaffExpression
 showPlayerScoutNameColumn, showPlayerScoutStatusColumn, showPlayerScoutTeamColumn, showPlayerScoutAgeColumn, 
 showPlayerScoutPositionColumn, showPlayerScoutCAColumn, showPlayerScoutPAColumn, showPlayerScoutHomeRepColumn, 
 showPlayerScoutWorldRepColumn, showPlayerScoutCurrentRepColumn, showPlayerScoutConditionColumn, showPlayerScoutGPColumn, 
-showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNationColumn;
+showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNationColumn,
+showPlayerScoutHeightColumn, showPlayerScoutWeightColumn;
 
 - (id)init
 {
@@ -225,23 +226,6 @@ showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNat
 	[section setObject:@"Shortlists" forKey:@"title"];
 	[sections addObject:section];
 	[section release];
-
-	[self setShowPlayerScoutNameColumn:TRUE];
-	[self setShowPlayerScoutStatusColumn:TRUE];
-	[self setShowPlayerScoutTeamColumn:TRUE];
-	[self setShowPlayerScoutAgeColumn:TRUE];
-	[self setShowPlayerScoutPositionColumn:TRUE];
-	[self setShowPlayerScoutCAColumn:TRUE];
-	[self setShowPlayerScoutPAColumn:TRUE];
-	[self setShowPlayerScoutHomeRepColumn:TRUE];
-	[self setShowPlayerScoutWorldRepColumn:TRUE];
-	[self setShowPlayerScoutCurrentRepColumn:TRUE];
-	[self setShowPlayerScoutConditionColumn:TRUE];
-	[self setShowPlayerScoutGPColumn:TRUE];
-	[self setShowPlayerScoutValueColumn:TRUE];
-	[self setShowPlayerScoutAskingPriceColumn:TRUE];
-	[self setShowPlayerScoutNationColumn:TRUE];
-	[self updatePlayerScoutColumns:self];
 	
 	return self;
 }
@@ -289,6 +273,24 @@ showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNat
 		[mainOutlineView expandItem:[mainOutlineView itemAtRow:0]];
 	}
 	
+	[self setShowPlayerScoutNameColumn:TRUE];
+	[self setShowPlayerScoutStatusColumn:TRUE];
+	[self setShowPlayerScoutTeamColumn:TRUE];
+	[self setShowPlayerScoutAgeColumn:TRUE];
+	[self setShowPlayerScoutPositionColumn:TRUE];
+	[self setShowPlayerScoutCAColumn:TRUE];
+	[self setShowPlayerScoutPAColumn:TRUE];
+	[self setShowPlayerScoutHomeRepColumn:TRUE];
+	[self setShowPlayerScoutWorldRepColumn:TRUE];
+	[self setShowPlayerScoutCurrentRepColumn:TRUE];
+	[self setShowPlayerScoutConditionColumn:TRUE];
+	[self setShowPlayerScoutGPColumn:TRUE];
+	[self setShowPlayerScoutValueColumn:TRUE];
+	[self setShowPlayerScoutAskingPriceColumn:TRUE];
+	[self setShowPlayerScoutNationColumn:TRUE];
+	[self setShowPlayerScoutHeightColumn:FALSE];
+	[self setShowPlayerScoutWeightColumn:FALSE];
+	[self updatePlayerScoutColumns:self];
 }
 
 - (void)setFavourites
@@ -2021,7 +2023,8 @@ showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNat
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"gp"] setHidden:!showPlayerScoutGPColumn];
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"value"] setHidden:!showPlayerScoutValueColumn];
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"askingPrice"] setHidden:!showPlayerScoutAskingPriceColumn];
-	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"height"] setHidden:!showPlayerScoutHeightColumn];
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"weight"] setHidden:!showPlayerScoutWeightColumn];	
 }
 
 @end
