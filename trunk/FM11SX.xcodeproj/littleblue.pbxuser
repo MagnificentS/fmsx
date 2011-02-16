@@ -817,17 +817,17 @@
 	};
 	FB1D74EB1098840B00EC8BBB /* ContentController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1048, 3120}}";
-			sepNavSelRange = "{11108, 0}";
-			sepNavVisRange = "{9365, 2074}";
+			sepNavIntBoundsRect = "{{0, 0}, {1048, 3497}}";
+			sepNavSelRange = "{6709, 0}";
+			sepNavVisRange = "{5171, 1976}";
 			sepNavWindowFrame = "{{15, 189}, {717, 584}}";
 		};
 	};
 	FB1D74EC1098840B00EC8BBB /* ContentController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {978, 26338}}";
-			sepNavSelRange = "{2574, 56}";
-			sepNavVisRange = "{2139, 865}";
+			sepNavIntBoundsRect = "{{0, 0}, {796, 27209}}";
+			sepNavSelRange = "{13631, 0}";
+			sepNavVisRange = "{12328, 1344}";
 			sepNavWindowFrame = "{{15, 189}, {717, 584}}";
 		};
 	};
@@ -856,7 +856,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 253";
 		rLen = 0;
-		rLoc = 11108;
+		rLoc = 11653;
 		rType = 0;
 		vrLen = 2074;
 		vrLoc = 9365;
@@ -866,7 +866,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 293";
 		rLen = 0;
-		rLoc = 12993;
+		rLoc = 13668;
 		rType = 0;
 		vrLen = 843;
 		vrLoc = 12493;

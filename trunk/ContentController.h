@@ -194,12 +194,7 @@
 - (void)reloadOutlineView;
 - (void)selectItem:(id)object;
 - (void)addToFavourites:(id)sender;
-- (void)saveShortlist:(NSArray *)players atPath:(NSString *)path;
 - (IBAction)showGameInfo:(id)sender;
-- (IBAction)importShortlist:(id)sender;
-- (IBAction)exportShortlist:(id)sender;
-- (IBAction)saveAllScoutResultsToShortlist:(id)sender;
-- (IBAction)saveSelectedScoutResultsToShortlist:(id)sender;
 
 - (IBAction)deleteHistory:(id)sender;
 
@@ -216,19 +211,26 @@
 - (IBAction)setCityPickerObject:(id)object;
 - (IBAction)pickCity:(id)sender;
 
+// Scout Functions
+- (void)awakeScout;
 - (IBAction)scoutClubs:(id)sender;
 - (IBAction)scoutStaff:(id)sender;
 - (IBAction)scoutPlayers:(id)sender;
 - (void)exportPlayersToCSV:(NSMutableArray *)array;
-
 - (IBAction)loadSearch:(id)sender;
 - (IBAction)saveSearch:(id)sender;
+- (IBAction)updatePlayerScoutColumns:(id)sender;
+- (IBAction)importShortlist:(id)sender;
+- (IBAction)exportShortlist:(id)sender;
+- (IBAction)saveAllScoutResultsToShortlist:(id)sender;
+- (IBAction)saveSelectedScoutResultsToShortlist:(id)sender;
+- (void)saveShortlist:(NSArray *)players atPath:(NSString *)path;
+
 
 - (void)addRelationship:(id)sender;
 
 - (void)performSpaceKeyPress:(id)sender;
 
-- (IBAction)updatePlayerScoutColumns:(id)sender;
 
 @property(readonly,assign) NSArrayController *awardController, *cityController, *clubController, *nationController, 
 *competitionController, *continentController, *injuryController, *currencyController, 

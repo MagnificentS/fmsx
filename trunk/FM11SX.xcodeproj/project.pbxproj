@@ -205,6 +205,7 @@
 		FB280E4110CB03430061B5ED /* status_wnt.png in Resources */ = {isa = PBXBuildFile; fileRef = FB280E3D10CB03430061B5ED /* status_wnt.png */; };
 		FB2B944C10A3149D003203AB /* FootballStadiumLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA40AB710A0D3A200CAD88E /* FootballStadiumLoader.m */; };
 		FB2D7D1E120B05A000808951 /* FMFArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2D7D1D120B05A000808951 /* FMFArchiver.m */; };
+		FB2E7350130C73B3009537D2 /* ScoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2E734F130C73B3009537D2 /* ScoutController.m */; };
 		FB2F65EC1301FC4E0002EC97 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = FB2F65EB1301FC4E0002EC97 /* dsa_pub.pem */; };
 		FB303F01109C8417000C9B58 /* ContinentLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB303F00109C8417000C9B58 /* ContinentLoader.m */; };
 		FB303F04109C8450000C9B58 /* Continent.m in Sources */ = {isa = PBXBuildFile; fileRef = FB303F03109C8450000C9B58 /* Continent.m */; };
@@ -926,6 +927,8 @@
 		FB280E3D10CB03430061B5ED /* status_wnt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_wnt.png; sourceTree = "<group>"; };
 		FB2D7D1C120B05A000808951 /* FMFArchiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMFArchiver.h; sourceTree = "<group>"; };
 		FB2D7D1D120B05A000808951 /* FMFArchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMFArchiver.m; sourceTree = "<group>"; };
+		FB2E734E130C73B3009537D2 /* ScoutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoutController.h; sourceTree = "<group>"; };
+		FB2E734F130C73B3009537D2 /* ScoutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoutController.m; sourceTree = "<group>"; };
 		FB2F65EB1301FC4E0002EC97 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		FB303EFF109C8417000C9B58 /* ContinentLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContinentLoader.h; sourceTree = "<group>"; };
 		FB303F00109C8417000C9B58 /* ContinentLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContinentLoader.m; sourceTree = "<group>"; };
@@ -2870,6 +2873,8 @@
 				FBF90D2710923E5100929934 /* DebugController.m */,
 				FB59D8F81097222100E2AE40 /* LangDB.h */,
 				FB59D8F91097222100E2AE40 /* LangDB.m */,
+				FB2E734E130C73B3009537D2 /* ScoutController.h */,
+				FB2E734F130C73B3009537D2 /* ScoutController.m */,
 			);
 			name = "Main Classes";
 			sourceTree = "<group>";
@@ -3679,6 +3684,7 @@
 				FBC3F49D12A1C3350077BC24 /* ClubLinkSaver.m in Sources */,
 				FBC3F4C612A1CA570077BC24 /* LocationDaysSaver.m in Sources */,
 				FBC3F4CB12A1CC320077BC24 /* ContractBonusSaver.m in Sources */,
+				FB2E7350130C73B3009537D2 /* ScoutController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
