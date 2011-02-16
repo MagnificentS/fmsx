@@ -46,7 +46,9 @@ showPlayerScoutNameColumn, showPlayerScoutStatusColumn, showPlayerScoutTeamColum
 showPlayerScoutPositionColumn, showPlayerScoutCAColumn, showPlayerScoutPAColumn, showPlayerScoutHomeRepColumn, 
 showPlayerScoutWorldRepColumn, showPlayerScoutCurrentRepColumn, showPlayerScoutConditionColumn, showPlayerScoutGPColumn, 
 showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNationColumn,
-showPlayerScoutHeightColumn, showPlayerScoutWeightColumn;
+showPlayerScoutHeightColumn, showPlayerScoutWeightColumn,
+showPlayerScoutAdaptabilityColumn, showPlayerScoutAmbitionColumn, showPlayerScoutControversyColumn, showPlayerScoutLoyaltyColumn, 
+showPlayerScoutPressureColumn, showPlayerScoutProfessionalismColumn, showPlayerScoutSportsmanshipColumn, showPlayerScoutTemperamentColumn;
 
 - (id)init
 {
@@ -290,6 +292,14 @@ showPlayerScoutHeightColumn, showPlayerScoutWeightColumn;
 	[self setShowPlayerScoutNationColumn:TRUE];
 	[self setShowPlayerScoutHeightColumn:FALSE];
 	[self setShowPlayerScoutWeightColumn:FALSE];
+	[self setShowPlayerScoutAdaptabilityColumn:FALSE];
+	[self setShowPlayerScoutAmbitionColumn:FALSE];
+	[self setShowPlayerScoutControversyColumn:FALSE];
+	[self setShowPlayerScoutLoyaltyColumn:FALSE];
+	[self setShowPlayerScoutPressureColumn:FALSE];
+	[self setShowPlayerScoutProfessionalismColumn:FALSE];
+	[self setShowPlayerScoutSportsmanshipColumn:FALSE];
+	[self setShowPlayerScoutTemperamentColumn:FALSE];
 	[self updatePlayerScoutColumns:self];
 }
 
@@ -2025,6 +2035,15 @@ showPlayerScoutHeightColumn, showPlayerScoutWeightColumn;
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"askingPrice"] setHidden:!showPlayerScoutAskingPriceColumn];
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"height"] setHidden:!showPlayerScoutHeightColumn];
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"weight"] setHidden:!showPlayerScoutWeightColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"adaptability"] setHidden:!showPlayerScoutAdaptabilityColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"ambition"] setHidden:!showPlayerScoutAmbitionColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"controversy"] setHidden:!showPlayerScoutControversyColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"loyalty"] setHidden:!showPlayerScoutLoyaltyColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"pressure"] setHidden:!showPlayerScoutPressureColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"professionalism"] setHidden:!showPlayerScoutProfessionalismColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"sportsmanship"] setHidden:!showPlayerScoutSportsmanshipColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"temperament"] setHidden:!showPlayerScoutTemperamentColumn];	
+
 }
 
 @end
