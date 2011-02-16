@@ -41,7 +41,11 @@ competitionController, continentController, injuryController, currencyController
 languageController, localAreaController, mediaController, peopleController, clubKitView,
 sponsorController, stadiumController, stadiumChangeController, weatherController, awardRulesView, 
 awardMainView, derbyGeneralView, derbySearchView, derbyController, agentView, locationString,
-clubLBCView, clubFacilitiesView, currentPlayerExpression, currentStaffExpression, currentClubExpression;
+clubLBCView, clubFacilitiesView, currentPlayerExpression, currentStaffExpression, currentClubExpression,
+showPlayerScoutNameColumn, showPlayerScoutStatusColumn, showPlayerScoutTeamColumn, showPlayerScoutAgeColumn, 
+showPlayerScoutPositionColumn, showPlayerScoutCAColumn, showPlayerScoutPAColumn, showPlayerScoutHomeRepColumn, 
+showPlayerScoutWorldRepColumn, showPlayerScoutCurrentRepColumn, showPlayerScoutConditionColumn, showPlayerScoutGPColumn, 
+showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNationColumn;
 
 - (id)init
 {
@@ -222,6 +226,23 @@ clubLBCView, clubFacilitiesView, currentPlayerExpression, currentStaffExpression
 	[sections addObject:section];
 	[section release];
 
+	[self setShowPlayerScoutNameColumn:TRUE];
+	[self setShowPlayerScoutStatusColumn:TRUE];
+	[self setShowPlayerScoutTeamColumn:TRUE];
+	[self setShowPlayerScoutAgeColumn:TRUE];
+	[self setShowPlayerScoutPositionColumn:TRUE];
+	[self setShowPlayerScoutCAColumn:TRUE];
+	[self setShowPlayerScoutPAColumn:TRUE];
+	[self setShowPlayerScoutHomeRepColumn:TRUE];
+	[self setShowPlayerScoutWorldRepColumn:TRUE];
+	[self setShowPlayerScoutCurrentRepColumn:TRUE];
+	[self setShowPlayerScoutConditionColumn:TRUE];
+	[self setShowPlayerScoutGPColumn:TRUE];
+	[self setShowPlayerScoutValueColumn:TRUE];
+	[self setShowPlayerScoutAskingPriceColumn:TRUE];
+	[self setShowPlayerScoutNationColumn:TRUE];
+	[self updatePlayerScoutColumns:self];
+	
 	return self;
 }
 
@@ -1980,5 +2001,27 @@ clubLBCView, clubFacilitiesView, currentPlayerExpression, currentStaffExpression
 }
 
 - (IBAction)deleteHistory:(id)sender { [[self mutableArrayValueForKey:@"recentlyViewed"] removeAllObjects]; }
+
+- (IBAction)updatePlayerScoutColumns:(id)sender
+{
+	NSLog(@"Updating Columns...");
+	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"playerscoutstatuscolumn"] setHidden:!showPlayerScoutStatusColumn];
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"name"] setHidden:!showPlayerScoutNameColumn];
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"nation"] setHidden:!showPlayerScoutNationColumn];
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"team"] setHidden:!showPlayerScoutTeamColumn];
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"age"] setHidden:!showPlayerScoutAgeColumn];
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"position"] setHidden:!showPlayerScoutPositionColumn];
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"ca"] setHidden:!showPlayerScoutCAColumn];
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"pa"] setHidden:!showPlayerScoutPAColumn];
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"homeRep"] setHidden:!showPlayerScoutHomeRepColumn];
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"currentRep"] setHidden:!showPlayerScoutCurrentRepColumn];
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"worldRep"] setHidden:!showPlayerScoutWorldRepColumn];
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"condition"] setHidden:!showPlayerScoutConditionColumn];
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"gp"] setHidden:!showPlayerScoutGPColumn];
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"value"] setHidden:!showPlayerScoutValueColumn];
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"askingPrice"] setHidden:!showPlayerScoutAskingPriceColumn];
+	
+}
 
 @end

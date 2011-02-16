@@ -149,6 +149,12 @@
 	IBOutlet NSButton *playerScoutRegenButton, *playerScoutNonRegenButton, *playerScoutFemaleButton, 
 	*playerScoutMaleButton, *playerScoutShowECPlayersOnlyBox, *playerScoutShowInjuredBox, *playerScoutShowBannedBox;
 	
+	// scout column states
+	BOOL showPlayerScoutNameColumn, showPlayerScoutStatusColumn, showPlayerScoutTeamColumn, showPlayerScoutAgeColumn, 
+		showPlayerScoutPositionColumn, showPlayerScoutCAColumn, showPlayerScoutPAColumn, showPlayerScoutHomeRepColumn, 
+		showPlayerScoutWorldRepColumn, showPlayerScoutCurrentRepColumn, showPlayerScoutConditionColumn, showPlayerScoutGPColumn, 
+		showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNationColumn;
+	
 	// Pickers
 	IBOutlet NSArrayController *nationPickerController;
 	IBOutlet BWSheetController *nationPicker;
@@ -219,6 +225,8 @@
 
 - (void)performSpaceKeyPress:(id)sender;
 
+- (IBAction)updatePlayerScoutColumns:(id)sender;
+
 @property(readonly,assign) NSArrayController *awardController, *cityController, *clubController, *nationController, 
 *competitionController, *continentController, *injuryController, *currencyController, 
 *languageController, *localAreaController, *mediaController, *peopleController, *derbyController,
@@ -237,6 +245,11 @@
 *nationGeneralView, *nationMainView, *nationSearchView, *personRelationshipsView,
 *clubRelationshipsView, *nationRelationshipsView, *derbyGeneralView, *derbySearchView,
 *clubKitView, *clubLBCView, *clubFacilitiesView;
+
+@property(readwrite,assign) BOOL showPlayerScoutNameColumn, showPlayerScoutStatusColumn, showPlayerScoutTeamColumn, showPlayerScoutAgeColumn, 
+showPlayerScoutPositionColumn, showPlayerScoutCAColumn, showPlayerScoutPAColumn, showPlayerScoutHomeRepColumn, 
+showPlayerScoutWorldRepColumn, showPlayerScoutCurrentRepColumn, showPlayerScoutConditionColumn, showPlayerScoutGPColumn, 
+showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNationColumn;
 
 @property(readwrite,copy) NSString *locationString, *currentPlayerExpression, *currentStaffExpression, *currentClubExpression;
 @property(readwrite,copy) NSMutableArray *scoutResults, *clubScoutResults, *staffScoutResults, 
