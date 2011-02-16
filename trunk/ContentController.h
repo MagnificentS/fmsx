@@ -157,7 +157,9 @@
 		showPlayerScoutWeightColumn, showPlayerScoutAdaptabilityColumn, showPlayerScoutAmbitionColumn, showPlayerScoutControversyColumn, 
 		showPlayerScoutLoyaltyColumn, showPlayerScoutPressureColumn, showPlayerScoutProfessionalismColumn, showPlayerScoutSportsmanshipColumn, 
 		showPlayerScoutTemperamentColumn, showPlayerScoutFullCapsColumn, showPlayerScoutFullGoalsColumn, showPlayerScoutU21CapsColumn, 
-		showPlayerScoutU21GoalsColumn;
+		showPlayerScoutU21GoalsColumn, showPlayerScoutManagerRoleColumn, showPlayerScoutAssistantManagerRoleColumn,
+		showPlayerScoutCoachRoleColumn, showPlayerScoutGoalkeepingCoachRoleColumn, showPlayerScoutFitnessCoachRoleColumn, 
+		showPlayerScoutPhysioRoleColumn, showPlayerScoutScoutRoleColumn;
 	
 	// Pickers
 	IBOutlet NSArrayController *nationPickerController;
@@ -258,7 +260,10 @@ showPlayerScoutWorldRepColumn, showPlayerScoutCurrentRepColumn, showPlayerScoutC
 showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNationColumn, showPlayerScoutHeightColumn, showPlayerScoutWeightColumn,
 showPlayerScoutAdaptabilityColumn, showPlayerScoutAmbitionColumn, showPlayerScoutControversyColumn, showPlayerScoutLoyaltyColumn, 
 showPlayerScoutPressureColumn, showPlayerScoutProfessionalismColumn, showPlayerScoutSportsmanshipColumn, showPlayerScoutTemperamentColumn,
-showPlayerScoutFullCapsColumn, showPlayerScoutFullGoalsColumn, showPlayerScoutU21CapsColumn, showPlayerScoutU21GoalsColumn;
+showPlayerScoutFullCapsColumn, showPlayerScoutFullGoalsColumn, showPlayerScoutU21CapsColumn, showPlayerScoutU21GoalsColumn,
+showPlayerScoutManagerRoleColumn, showPlayerScoutAssistantManagerRoleColumn,
+showPlayerScoutCoachRoleColumn, showPlayerScoutGoalkeepingCoachRoleColumn, showPlayerScoutFitnessCoachRoleColumn, 
+showPlayerScoutPhysioRoleColumn, showPlayerScoutScoutRoleColumn;
 
 @property(readwrite,copy) NSString *locationString, *currentPlayerExpression, *currentStaffExpression, *currentClubExpression;
 @property(readwrite,copy) NSMutableArray *scoutResults, *clubScoutResults, *staffScoutResults, 

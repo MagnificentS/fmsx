@@ -67,6 +67,13 @@
 	[self setShowPlayerScoutFullGoalsColumn:FALSE];
 	[self setShowPlayerScoutU21CapsColumn:FALSE];
 	[self setShowPlayerScoutU21GoalsColumn:FALSE];
+	[self setShowPlayerScoutManagerRoleColumn:FALSE];
+	[self setShowPlayerScoutAssistantManagerRoleColumn:FALSE];
+	[self setShowPlayerScoutCoachRoleColumn:FALSE];
+	[self setShowPlayerScoutFitnessCoachRoleColumn:FALSE];
+	[self setShowPlayerScoutGoalkeepingCoachRoleColumn:FALSE];
+	[self setShowPlayerScoutPhysioRoleColumn:FALSE];
+	[self setShowPlayerScoutScoutRoleColumn:FALSE];
 	[self updatePlayerScoutColumns:self];
 }
 
@@ -703,6 +710,13 @@
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"fullGoals"] setHidden:!showPlayerScoutFullGoalsColumn];	
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"u21Caps"] setHidden:!showPlayerScoutU21CapsColumn];	
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"u21Goals"] setHidden:!showPlayerScoutU21GoalsColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"managerRole"] setHidden:!showPlayerScoutManagerRoleColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"assistantManagerRole"] setHidden:!showPlayerScoutAssistantManagerRoleColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"coachRole"] setHidden:!showPlayerScoutCoachRoleColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"goalkeepingCoachRole"] setHidden:!showPlayerScoutGoalkeepingCoachRoleColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"fitnessCoachRole"] setHidden:!showPlayerScoutFitnessCoachRoleColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"physioRole"] setHidden:!showPlayerScoutPhysioRoleColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"scoutRole"] setHidden:!showPlayerScoutScoutRoleColumn];	
 	
 }
 
