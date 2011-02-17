@@ -74,6 +74,62 @@
 	[self setShowPlayerScoutGoalkeepingCoachRoleColumn:FALSE];
 	[self setShowPlayerScoutPhysioRoleColumn:FALSE];
 	[self setShowPlayerScoutScoutRoleColumn:FALSE];
+	
+	[self setShowPlayerScoutAccelerationColumn:FALSE];
+	[self setShowPlayerScoutAgilityColumn:FALSE];
+	[self setShowPlayerScoutBalanceColumn:FALSE];
+	[self setShowPlayerScoutInjuryPronenessColumn:FALSE];
+	[self setShowPlayerScoutJumpingColumn:FALSE];
+	[self setShowPlayerScoutNaturalFitnessColumn:FALSE];
+	[self setShowPlayerScoutPaceColumn:FALSE];
+	[self setShowPlayerScoutStaminaColumn:FALSE];
+	[self setShowPlayerScoutStrengthColumn:FALSE];
+	[self setShowPlayerScoutAggressionColumn:FALSE];
+	[self setShowPlayerScoutAnticipationColumn:FALSE];
+	[self setShowPlayerScoutBraveryColumn:FALSE];
+	[self setShowPlayerScoutComposureColumn:FALSE];
+	[self setShowPlayerScoutConcentrationColumn:FALSE];
+	[self setShowPlayerScoutConsistencyColumn:FALSE];
+	[self setShowPlayerScoutCreativityColumn:FALSE];
+	[self setShowPlayerScoutDecisionsColumn:FALSE];
+	[self setShowPlayerScoutDeterminationColumn:FALSE];
+	[self setShowPlayerScoutDirtinessColumn:FALSE];
+	[self setShowPlayerScoutFlairColumn:FALSE];
+	[self setShowPlayerScoutImportantMatchesColumn:FALSE];
+	[self setShowPlayerScoutInfluenceColumn:FALSE];
+	[self setShowPlayerScoutOffTheBallColumn:FALSE];
+	[self setShowPlayerScoutPositioningColumn:FALSE];
+	[self setShowPlayerScoutTeamworkColumn:FALSE];
+	[self setShowPlayerScoutWorkRateColumn:FALSE];
+	[self setShowPlayerScoutAerialAbilityColumn:FALSE];
+	[self setShowPlayerScoutCommandOfAreaColumn:FALSE];
+	[self setShowPlayerScoutCommunicationColumn:FALSE];
+	[self setShowPlayerScoutEccentricityColumn:FALSE];
+	[self setShowPlayerScoutHandlingColumn:FALSE];
+	[self setShowPlayerScoutKickingColumn:FALSE];
+	[self setShowPlayerScoutOneOnOnesColumn:FALSE];
+	[self setShowPlayerScoutReflexesColumn:FALSE];
+	[self setShowPlayerScoutRushingOutColumn:FALSE];
+	[self setShowPlayerScoutTendencyToPunchColumn:FALSE];
+	[self setShowPlayerScoutThrowingColumn:FALSE];
+	[self setShowPlayerScoutCornersColumn:FALSE];
+	[self setShowPlayerScoutCrossingColumn:FALSE];
+	[self setShowPlayerScoutDribblingColumn:FALSE];
+	[self setShowPlayerScoutFinishingColumn:FALSE];
+	[self setShowPlayerScoutFirstTouchColumn:FALSE];
+	[self setShowPlayerScoutFreeKicksColumn:FALSE];
+	[self setShowPlayerScoutHeadingColumn:FALSE];
+	[self setShowPlayerScoutLongShotsColumn:FALSE];
+	[self setShowPlayerScoutLongThrowsColumn:FALSE];
+	[self setShowPlayerScoutMarkingColumn:FALSE];
+	[self setShowPlayerScoutPassingColumn:FALSE];
+	[self setShowPlayerScoutPenaltyTakingColumn:FALSE];
+	[self setShowPlayerScoutTacklingColumn:FALSE];
+	[self setShowPlayerScoutTechniqueColumn:FALSE];
+	[self setShowPlayerScoutVersatilityColumn:FALSE];
+	[self setShowPlayerScoutLeftFootColumn:FALSE];
+	[self setShowPlayerScoutRightFootColumn:FALSE];
+	
 	[self updatePlayerScoutColumns:self];
 }
 
@@ -679,7 +735,7 @@
 
 - (IBAction)updatePlayerScoutColumns:(id)sender
 {
-	NSLog(@"Updating Columns...");
+	NSLog(@"Updating Player Scout Columns...");
 	
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"playerscoutstatuscolumn"] setHidden:!showPlayerScoutStatusColumn];
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"name"] setHidden:!showPlayerScoutNameColumn];
@@ -717,6 +773,66 @@
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"fitnessCoachRole"] setHidden:!showPlayerScoutFitnessCoachRoleColumn];	
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"physioRole"] setHidden:!showPlayerScoutPhysioRoleColumn];	
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"scoutRole"] setHidden:!showPlayerScoutScoutRoleColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"corners"] setHidden:!showPlayerScoutCornersColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"crossing"] setHidden:!showPlayerScoutCrossingColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"dribbling"] setHidden:!showPlayerScoutDribblingColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"finishing"] setHidden:!showPlayerScoutFinishingColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"firstTouch"] setHidden:!showPlayerScoutFirstTouchColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"freeKicks"] setHidden:!showPlayerScoutFreeKicksColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"heading"] setHidden:!showPlayerScoutHeadingColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"longShots"] setHidden:!showPlayerScoutLongShotsColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"longThrows"] setHidden:!showPlayerScoutLongThrowsColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"marking"] setHidden:!showPlayerScoutMarkingColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"passing"] setHidden:!showPlayerScoutPassingColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"penaltyTaking"] setHidden:!showPlayerScoutPenaltyTakingColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"tackling"] setHidden:!showPlayerScoutTacklingColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"technique"] setHidden:!showPlayerScoutTechniqueColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"versatility"] setHidden:!showPlayerScoutVersatilityColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"leftFoot"] setHidden:!showPlayerScoutLeftFootColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"rightFoot"] setHidden:!showPlayerScoutRightFootColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"aerialAbility"] setHidden:!showPlayerScoutAerialAbilityColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"commandOfArea"] setHidden:!showPlayerScoutCommandOfAreaColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"communication"] setHidden:!showPlayerScoutCommunicationColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"eccentricity"] setHidden:!showPlayerScoutEccentricityColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"handling"] setHidden:!showPlayerScoutHandlingColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"kicking"] setHidden:!showPlayerScoutKickingColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"oneOnOnes"] setHidden:!showPlayerScoutOneOnOnesColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"reflexes"] setHidden:!showPlayerScoutReflexesColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"rushingOut"] setHidden:!showPlayerScoutRushingOutColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"tendencyToPunch"] setHidden:!showPlayerScoutTendencyToPunchColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"throwing"] setHidden:!showPlayerScoutThrowingColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"aggression"] setHidden:!showPlayerScoutAggressionColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"anticipation"] setHidden:!showPlayerScoutAnticipationColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"bravery"] setHidden:!showPlayerScoutBraveryColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"composure"] setHidden:!showPlayerScoutComposureColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"concentration"] setHidden:!showPlayerScoutConcentrationColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"consistency"] setHidden:!showPlayerScoutConsistencyColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"creativity"] setHidden:!showPlayerScoutCreativityColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"decisions"] setHidden:!showPlayerScoutDecisionsColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"determination"] setHidden:!showPlayerScoutDeterminationColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"dirtiness"] setHidden:!showPlayerScoutDirtinessColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"flair"] setHidden:!showPlayerScoutFlairColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"importantMatches"] setHidden:!showPlayerScoutImportantMatchesColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"influence"] setHidden:!showPlayerScoutInfluenceColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"offTheBall"] setHidden:!showPlayerScoutOffTheBallColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"positioning"] setHidden:!showPlayerScoutPositioningColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"teamwork"] setHidden:!showPlayerScoutTeamworkColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"workRate"] setHidden:!showPlayerScoutWorkRateColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"acceleration"] setHidden:!showPlayerScoutAccelerationColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"agility"] setHidden:!showPlayerScoutAgilityColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"balance"] setHidden:!showPlayerScoutBalanceColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"injuryProneness"] setHidden:!showPlayerScoutInjuryPronenessColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"jumping"] setHidden:!showPlayerScoutJumpingColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"naturalFitness"] setHidden:!showPlayerScoutNaturalFitnessColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"pace"] setHidden:!showPlayerScoutPaceColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"stamina"] setHidden:!showPlayerScoutStaminaColumn];	
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"strength"] setHidden:!showPlayerScoutStrengthColumn];	
+}
+
+- (IBAction)updateStaffScoutColumns:(id)sender
+{
+	NSLog(@"Updating Staff Scout Columns...");
+	
 	
 }
 
