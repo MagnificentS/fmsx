@@ -1292,12 +1292,13 @@ showPlayerScoutLeftFootColumn, showPlayerScoutRightFootColumn;
 
 - (IBAction)pickNation:(id)sender
 {
+	NSLog(@"before: %d",[nationPickerObject nationID]);
 	SEL thisSelector = NSSelectorFromString([NSString stringWithFormat:@"set%@%@:",
 											 [[nationPickerSelector substringToIndex:1] capitalizedString],
 											 [nationPickerSelector substringFromIndex:1]]);
 	
 	[nationPickerObject performSelector:thisSelector withObject:[[[nationPickerController arrangedObjects] objectAtIndex:[nationPickerController selectionIndex]] rowID]];
-	
+	NSLog(@"after: %d",[nationPickerObject nationID]);
 	[nationPicker closeSheet:self];
 }
 
