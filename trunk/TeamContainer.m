@@ -15,7 +15,7 @@
 alternateKits, teamContainerType, nameGender, shortNameGender, attacking, depth, directness, 
 flamboyancy, flexibility, freeRoles, marking, offside, pressing, sittingBack, tempo, 
 useOfPlaymaker, width, preferredFormation, preferredFormation2, defensiveFormation, 
-attackingFormation, controller, unknowns1, unknowns2, transferInfos, unknowns3, unknowns4;
+attackingFormation, controller, bTeams, unknowns2, transferInfos, physios, coaches;
 
 - (NSArray *)teamObjects
 {
@@ -24,6 +24,32 @@ attackingFormation, controller, unknowns1, unknowns2, transferInfos, unknowns3, 
 	for (id item in teams) {
 		if ([item intValue] < [[[controller database] teams] count]) {
 			[array addObject:[[[controller database] teams] objectAtIndex:[item intValue]]];
+		}
+	}
+	
+	return array;
+}
+
+- (NSArray *)coachObjects
+{
+	NSMutableArray *array = [[NSMutableArray alloc] init];
+	
+	for (id item in coaches) {
+		if ([item intValue] < [[[controller database] people] count]) {
+			[array addObject:[[[controller database] people] objectAtIndex:[item intValue]]];
+		}
+	}
+	
+	return array;
+}
+
+- (NSArray *)physioObjects
+{
+	NSMutableArray *array = [[NSMutableArray alloc] init];
+	
+	for (id item in physios) {
+		if ([item intValue] < [[[controller database] people] count]) {
+			[array addObject:[[[controller database] people] objectAtIndex:[item intValue]]];
 		}
 	}
 	

@@ -89,32 +89,6 @@ unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 	return array;
 }
 
-- (NSArray *)coachObjects
-{
-	NSMutableArray *array = [[NSMutableArray alloc] init];
-	
-	for (id item in coaches) {
-		if ([item intValue] < [[[controller database] people] count]) {
-			[array addObject:[[[controller database] people] objectAtIndex:[item intValue]]];
-		}
-	}
-	
-	return array;
-}
-
-- (NSArray *)physioObjects
-{
-	NSMutableArray *array = [[NSMutableArray alloc] init];
-	
-	for (id item in physios) {
-		if ([item intValue] < [[[controller database] people] count]) {
-			[array addObject:[[[controller database] people] objectAtIndex:[item intValue]]];
-		}
-	}
-	
-	return array;
-}
-
 - (NSArray *)matchdayStrings
 {
 	NSArray *strings = [NSArray arrayWithObjects:

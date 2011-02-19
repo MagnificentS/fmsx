@@ -23,6 +23,7 @@
 	[object setUnknownChar1:cbuffer];
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	[object setUnknownInt:ibuffer];
+	NSLog(@"UK1L: %d",ibuffer);
 	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 	[object setUnknownChar2:cbuffer];
 	

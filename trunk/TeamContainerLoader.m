@@ -60,36 +60,31 @@
 	[tempArray release];
 	
 	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-	if (cbuffer>0 && debug) { NSLog(@"mystery count 1 > 0 at %d",offset); }
-	
 	tempArray = [[NSMutableArray alloc] init];
 	for (int i=0;i<cbuffer;i++) {
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		[tempArray addObject:[NSNumber numberWithInt:ibuffer]];
 	}
-	[object setUnknowns1:tempArray];
+	[object setBTeams:tempArray];
 	[tempArray release];
 	
 	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-	if (cbuffer>0 && debug) { NSLog(@"mystery count 3 > 0 at %d",offset); }
-	
 	tempArray = [[NSMutableArray alloc] init];
 	for (int i=0;i<cbuffer;i++) {
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		[tempArray addObject:[NSNumber numberWithInt:ibuffer]];
 	}
-	[object setUnknowns3:tempArray];
+	[object setPhysios:tempArray];
 	[tempArray release];
 	
 	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-	if (cbuffer>0 && debug) { NSLog(@"mystery count 4 > 0 at %d",offset); }
 	
 	tempArray = [[NSMutableArray alloc] init];
 	for (int i=0;i<cbuffer;i++) {
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		[tempArray addObject:[NSNumber numberWithInt:ibuffer]];
 	}
-	[object setUnknowns4:tempArray];
+	[object setCoaches:tempArray];
 	[tempArray release];
 	
 	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
@@ -167,8 +162,6 @@
 	[tempArray release];
 	
 	if (debug) { NSLog(@"after TIs at %d",offset); }
-	
-	[tempArray release];
 	
 	*byteOffset = offset;
 	
