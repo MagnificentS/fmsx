@@ -6,7 +6,9 @@
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
+#import "Database.h"
 #import "TeamContainer.h"
+#import "Team.h"
 #import "Colour.h"
 
 @implementation TeamContainer
@@ -28,6 +30,40 @@ attackingFormation, controller, bTeams, unknowns2, transferInfos, physios, coach
 	}
 	
 	return array;
+}
+
+- (NSArray *)bTeamObjects
+{
+	NSMutableArray *array = [[NSMutableArray alloc] init];
+	
+	for (id item in bTeams) {
+		if ([item intValue] < [[[controller database] teams] count]) {
+			[array addObject:[[[controller database] teams] objectAtIndex:[item intValue]]];
+		}
+	}
+	
+	return array;
+} 
+- (void)setBTeamObjects:(NSArray *)val
+{
+	NSMutableArray *array = [[NSMutableArray alloc] init];
+	
+	for (Team *item in val) {
+		[array addObject:[NSNumber numberWithInt:[item rowID]]];
+	}
+	
+	[self setBTeams:array];
+	
+	[array release];
+}
+
+- (void)removeBTeam:(int)val
+{
+	NSLog(@"B Teams before:%d",[bTeams count]);
+	if ([bTeams containsObject:[NSNumber numberWithInt:val]]) {
+		[[self mutableArrayValueForKey:@"bTeams"] removeObject:[NSNumber numberWithInt:val]];
+	}
+	NSLog(@"B Teams after:%d",[bTeams count]);
 }
 
 - (NSArray *)coachObjects

@@ -43,22 +43,22 @@
 		ibuffer = [[[object teams] objectAtIndex:i] intValue];
 		[data appendBytes:&ibuffer length:4];
 	}
-	cbuffer = [[object unknowns1] count];
+	cbuffer = [[object bTeams] count];
 	[data appendBytes:&cbuffer length:1];
-	for (int i = 0; i<[[object unknowns1] count]; i++) {
-		ibuffer = [[[object unknowns1] objectAtIndex:i] intValue];
+	for (int i = 0; i<[[object bTeams] count]; i++) {
+		ibuffer = [[[object bTeams] objectAtIndex:i] intValue];
 		[data appendBytes:&ibuffer length:4];
 	}
-	cbuffer = [[object unknowns3] count];
+	cbuffer = [[object physios] count];
 	[data appendBytes:&cbuffer length:1];
-	for (int i = 0; i<[[object unknowns3] count]; i++) {
-		ibuffer = [[[object unknowns3] objectAtIndex:i] intValue];
+	for (int i = 0; i<[[object physios] count]; i++) {
+		ibuffer = [[[object physios] objectAtIndex:i] intValue];
 		[data appendBytes:&ibuffer length:4];
 	}
-	cbuffer = [[object unknowns4] count];
+	cbuffer = [[object coaches] count];
 	[data appendBytes:&cbuffer length:1];
-	for (int i = 0; i<[[object unknowns4] count]; i++) {
-		ibuffer = [[[object unknowns4] objectAtIndex:i] intValue];
+	for (int i = 0; i<[[object coaches] count]; i++) {
+		ibuffer = [[[object coaches] objectAtIndex:i] intValue];
 		[data appendBytes:&ibuffer length:4];
 	}
 	cbuffer = [[object relationships] count];

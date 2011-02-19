@@ -32,11 +32,16 @@ preferredFormation2, defensiveFormation, attackingFormation;
 *transferInfos;
 
 - (NSArray *)teamObjects;
+- (NSArray *)bTeamObjects;
+- (void)setBTeamObjects:(NSArray *)val;
+
 - (NSArray *)coachObjects;
 - (NSArray *)physioObjects;
 - (NSImage *)defaultTitleBG;
 - (NSColor *)bgColour;
 - (NSColor *)textColour;
 - (NSColor *)trimColour;
+
+- (void)removeBTeam:(int)val;
 
 @end
