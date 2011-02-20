@@ -99,6 +99,10 @@
 		[object setUnknownData1:[data subdataWithRange:NSMakeRange(offset, 21)]]; 
 		offset += 21;
 	}
+	else if ([[object type] isEqualToString:@"gnlp"]) {
+		[object setUnknownData1:[data subdataWithRange:NSMakeRange(offset, 21)]]; 
+		offset += 21;
+	}
 	else if ([[object type] isEqualToString:@"lrtp"]) {
 		[object setUnknownData1:[data subdataWithRange:NSMakeRange(offset, 21)]]; 
 		offset += 21;
@@ -236,11 +240,6 @@
 	else {
 		[SupportFunctions showErrorWindow:@"Error Loading News Filter Infos" withInfo:[NSString stringWithFormat:@"Unknown News Info Type - %@",[object type]]]; 
 	}
-	
-	/*
-	 else if ([type isEqualToString:@"plng"] || [type isEqualToString:@"gnlp"]) {
-	 unknownData1 = [SupportFunctions readUnknownData:fp length:18]; }
-	*/
 	
 	*byteOffset = offset;
 	

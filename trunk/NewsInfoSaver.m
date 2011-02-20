@@ -115,6 +115,9 @@
 	else if ([[object type] isEqualToString:@"ksap"]) {
 		[data appendData:[object unknownData1]];
 	}
+	else if ([[object type] isEqualToString:@"gnlp"]) {
+		[data appendData:[object unknownData1]];
+	}
 	else if ([[object type] isEqualToString:@"rfhp"]) {
 		[data appendData:[object unknownData1]];
 	}
