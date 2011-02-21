@@ -202,6 +202,7 @@
 	[self setShowStaffScoutPhysiotherapyColumn:FALSE];
 	[self setShowStaffScoutResourcesColumn:FALSE];
 	[self setShowStaffScoutTacticalKnowledgeColumn:FALSE];
+	[self setShowStaffScoutJobColumn:FALSE];
 	
 	[self updateStaffScoutColumns:self];
 	
@@ -991,6 +992,7 @@
 	[[staffScoutResultsTable tableColumnWithIdentifier:@"tactical"] setHidden:!showStaffScoutTacticalColumn];	
 	[[staffScoutResultsTable tableColumnWithIdentifier:@"technical"] setHidden:!showStaffScoutTechnicalColumn];	
 	[[staffScoutResultsTable tableColumnWithIdentifier:@"workingWithYoungsters"] setHidden:!showStaffScoutWorkingWithYoungstersColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"job"] setHidden:!showStaffScoutJobColumn];	
 }
 
 - (IBAction)updateClubScoutColumns:(id)sender
