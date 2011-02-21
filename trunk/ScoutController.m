@@ -205,6 +205,20 @@
 	
 	[self updateStaffScoutColumns:self];
 	
+	[self setShowClubScoutNameColumn:TRUE];
+	[self setShowClubScoutCompetitionColumn:TRUE];
+	[self setShowClubScoutPlayerCountColumn:TRUE];
+	[self setShowClubScoutAverageCAColumn:TRUE];
+	[self setShowClubScoutAveragePAColumn:TRUE];
+	[self setShowClubScoutAverageAgeColumn:TRUE];
+	[self setShowClubScoutReputationColumn:TRUE];
+	[self setShowClubScoutYouthSetupColumn:TRUE];
+	[self setShowClubScoutTrainingFacilitiesColumn:TRUE];
+	[self setShowClubScoutBalanceColumn:TRUE];
+	[self setShowClubScoutSeasonTransferBudgetColumn:TRUE];
+	[self setShowClubScoutRemainingTransferBudgetColumn:TRUE];
+	
+	[self updateClubScoutColumns:self];
 	
 }
 
@@ -983,7 +997,18 @@
 {
 	NSLog(@"Updating Club Scout Columns...");
 	
-	
+	[[clubScoutResultsTable tableColumnWithIdentifier:@"name"] setHidden:!showClubScoutNameColumn];	
+	[[clubScoutResultsTable tableColumnWithIdentifier:@"comprowIDtxt"] setHidden:!showClubScoutCompetitionColumn];	
+	[[clubScoutResultsTable tableColumnWithIdentifier:@"players"] setHidden:!showClubScoutPlayerCountColumn];	
+	[[clubScoutResultsTable tableColumnWithIdentifier:@"averageCA"] setHidden:!showClubScoutAverageCAColumn];	
+	[[clubScoutResultsTable tableColumnWithIdentifier:@"averagePA"] setHidden:!showClubScoutAveragePAColumn];	
+	[[clubScoutResultsTable tableColumnWithIdentifier:@"averageAge"] setHidden:!showClubScoutAverageAgeColumn];	
+	[[clubScoutResultsTable tableColumnWithIdentifier:@"reputation"] setHidden:!showClubScoutReputationColumn];	
+	[[clubScoutResultsTable tableColumnWithIdentifier:@"youthSetup"] setHidden:!showClubScoutYouthSetupColumn];	
+	[[clubScoutResultsTable tableColumnWithIdentifier:@"trainingFacilities"] setHidden:!showClubScoutTrainingFacilitiesColumn];	
+	[[clubScoutResultsTable tableColumnWithIdentifier:@"balance"] setHidden:!showClubScoutBalanceColumn];	
+	[[clubScoutResultsTable tableColumnWithIdentifier:@"seasonBudget"] setHidden:!showClubScoutSeasonTransferBudgetColumn];	
+	[[clubScoutResultsTable tableColumnWithIdentifier:@"remainingBudget"] setHidden:!showClubScoutRemainingTransferBudgetColumn];	
 }	
 
 @end
