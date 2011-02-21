@@ -14,7 +14,7 @@
 #define FIXTURE_NAME_SUB_STAGE_NAME		0x02
 #define FIXTURE_NAME_EXTRA_STAGE_NAME	0x04
 #define FIXTURE_NAME_OTHER_NAME			0x08
-#define FIXTURE_NAME_ANOTHER_NAME		0x10
+#define FIXTURE_NAME_UNKNOWN_1			0x10
 
 @interface Fixture : NSObject {
 	char unknownChar1, unknownChar2, unknownChar3, unknownChar4, unknownChar5, unknownChar6, unknownChar7, 
@@ -29,9 +29,14 @@
 	unsigned char nameFlags;
 	int unknownInt1, unknownInt2, unknownInt3, unknownInt4, unknownInt5, unknownInt6, unknownInt7, unknownInt8, 
 	unknownInt9, unknownInt10;
-	FMDate *unknownDate1;
+	short mainStageShortID, subStageShortID, extraStageShortID, otherStageShortID;
+	int mainStageUID, subStageUID, extraStageUID, otherStageUID;
+	
+	FMDate *date;
 }
 
+@property(assign,readwrite) short mainStageShortID, subStageShortID, extraStageShortID, otherStageShortID;
+@property(assign,readwrite) int mainStageUID, subStageUID, extraStageUID, otherStageUID;
 @property(assign,readwrite) char unknownChar1, unknownChar2, unknownChar3, unknownChar4, unknownChar5, unknownChar6, unknownChar7, 
 unknownChar8, unknownChar9, unknownChar10, unknownChar11, unknownChar12, unknownChar13, unknownChar14, 
 unknownChar15, unknownChar16, unknownChar17, unknownChar18, unknownChar19, unknownChar20, unknownChar21, 
@@ -44,6 +49,6 @@ unknownChar57, unknownChar58, unknownChar59, unknownChar60, teamType1, teamType2
 @property(assign,readwrite) unsigned char nameFlags;
 @property(assign,readwrite) int unknownInt1, unknownInt2, unknownInt3, unknownInt4, unknownInt5, unknownInt6, unknownInt7, unknownInt8, 
 unknownInt9, unknownInt10;
-@property(assign,readwrite) FMDate *unknownDate1;
+@property(assign,readwrite) FMDate *date;
 
 @end

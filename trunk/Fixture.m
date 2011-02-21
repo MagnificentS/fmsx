@@ -18,8 +18,10 @@ unknownChar29, unknownChar30, unknownChar31, unknownChar32, unknownChar33, unkno
 unknownChar36, unknownChar37, unknownChar38, unknownChar39, unknownChar40, unknownChar41, unknownChar42, 
 unknownChar43, unknownChar44, unknownChar45, unknownChar46, unknownChar47, unknownChar48, unknownChar49, 
 unknownChar50, unknownChar51, unknownChar52, unknownChar53, unknownChar54, unknownChar55, unknownChar56, 
-unknownChar57, unknownChar58, teamType1, teamType2, teamType3, unknownDate1, nameFlags, unknownInt1, 
+unknownChar57, unknownChar58, teamType1, teamType2, teamType3, date, nameFlags, unknownInt1, 
 unknownInt2, unknownInt3, unknownInt4, unknownInt5, unknownInt6, unknownInt7, unknownInt8, unknownInt9, 
-unknownInt10, unknownChar59, unknownChar60;
+unknownInt10, unknownChar59, unknownChar60,
+mainStageShortID, subStageShortID, extraStageShortID, otherStageShortID,
+mainStageUID, subStageUID, extraStageUID, otherStageUID;
 
 @end

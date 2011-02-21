@@ -132,7 +132,6 @@
 	
 	[self updatePlayerScoutColumns:self];
 	
-	
 	[self setShowStaffScoutNameColumn:TRUE];
 	[self setShowStaffScoutTeamColumn:TRUE];
 	[self setShowStaffScoutAgeColumn:TRUE];
@@ -204,8 +203,9 @@
 	[self setShowStaffScoutResourcesColumn:FALSE];
 	[self setShowStaffScoutTacticalKnowledgeColumn:FALSE];
 	
-	
 	[self updateStaffScoutColumns:self];
+	
+	
 }
 
 - (IBAction)importShortlist:(id)sender
@@ -978,5 +978,12 @@
 	[[staffScoutResultsTable tableColumnWithIdentifier:@"technical"] setHidden:!showStaffScoutTechnicalColumn];	
 	[[staffScoutResultsTable tableColumnWithIdentifier:@"workingWithYoungsters"] setHidden:!showStaffScoutWorkingWithYoungstersColumn];	
 }
+
+- (IBAction)updateClubScoutColumns:(id)sender
+{
+	NSLog(@"Updating Club Scout Columns...");
+	
+	
+}	
 
 @end

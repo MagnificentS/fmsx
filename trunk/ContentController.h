@@ -253,6 +253,7 @@
 - (IBAction)saveSearch:(id)sender;
 - (IBAction)updatePlayerScoutColumns:(id)sender;
 - (IBAction)updateStaffScoutColumns:(id)sender;
+- (IBAction)updateClubScoutColumns:(id)sender;
 - (IBAction)importShortlist:(id)sender;
 - (IBAction)exportShortlist:(id)sender;
 - (IBAction)saveAllScoutResultsToShortlist:(id)sender;

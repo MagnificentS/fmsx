@@ -16,6 +16,7 @@
 {
 	char cbuffer;
 	unsigned char ucbuffer;
+	short sbuffer;
 	int ibuffer;
 	
 	unsigned int offset = *byteOffset;
@@ -45,7 +46,7 @@
 		[object setUnknownInt6:ibuffer];
 	}
 	
-	[object setUnknownDate1:[FMDateLoader readFromData:data atOffset:&offset]];
+	[object setDate:[FMDateLoader readFromData:data atOffset:&offset]];
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	[object setUnknownInt1:ibuffer];
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
@@ -127,75 +128,39 @@
 	[object setNameFlags:ucbuffer];
 	
 	if ([object nameFlags] & FIXTURE_NAME_MAIN_STAGE_NAME) { 
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar51:cbuffer];
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar52:cbuffer];
+		[data getBytes:&sbuffer range:NSMakeRange(offset, 2)]; offset += 2;
+		[object setMainStageShortID:sbuffer];
+		
 		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 		[object setUnknownChar53:cbuffer];
 		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 		[object setUnknownChar54:cbuffer];
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar55:cbuffer];
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar56:cbuffer];
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar57:cbuffer];
+		
+		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
+		[object setMainStageUID:ibuffer];
+		
 		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 		[object setUnknownChar58:cbuffer];
 	}
 	if ([object nameFlags] & FIXTURE_NAME_SUB_STAGE_NAME) { 
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar45:cbuffer];
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar46:cbuffer];
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar47:cbuffer];
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar48:cbuffer];
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar49:cbuffer];
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar50:cbuffer];
-		
-		//if (version>=FM2011_11_2) {
-	//		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-	//		[object setUnknownChar60:cbuffer];
-		//}
+		[data getBytes:&sbuffer range:NSMakeRange(offset, 2)]; offset += 2;
+		[object setSubStageShortID:sbuffer];
+		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
+		[object setSubStageUID:ibuffer];
 	}
 	if ([object nameFlags] & FIXTURE_NAME_EXTRA_STAGE_NAME) {
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar39:cbuffer];
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar40:cbuffer];
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar41:cbuffer];
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar42:cbuffer];
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar43:cbuffer];
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar44:cbuffer];
+		[data getBytes:&sbuffer range:NSMakeRange(offset, 2)]; offset += 2;
+		[object setExtraStageShortID:sbuffer];
+		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
+		[object setExtraStageUID:ibuffer];
 	}
 	if ([object nameFlags] & FIXTURE_NAME_OTHER_NAME) {
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar33:cbuffer];
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar34:cbuffer];
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar35:cbuffer];
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar36:cbuffer];
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar37:cbuffer];
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar38:cbuffer];
+		[data getBytes:&sbuffer range:NSMakeRange(offset, 2)]; offset += 2;
+		[object setOtherStageShortID:sbuffer];
+		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
+		[object setOtherStageUID:ibuffer];
 	}
-	if ([object nameFlags] & FIXTURE_NAME_ANOTHER_NAME) {
-		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-		[object setUnknownChar59:cbuffer];
-	}
-	
+
 	// 4 chars - first is usually 0x0A
 	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 	[object setUnknownChar29:cbuffer];

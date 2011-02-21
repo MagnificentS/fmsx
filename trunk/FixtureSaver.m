@@ -15,6 +15,7 @@
 + (void)saveFixture:(Fixture *)object toData:(NSMutableData *)data version:(short)version
 {
 	char cbuffer;
+	short sbuffer;
 	unsigned char ucbuffer;
 	int ibuffer;
 
@@ -42,7 +43,7 @@
 		[data appendBytes:&ibuffer length:4];
 	}
 	
-	[FMDateSaver saveDate:[object unknownDate1] toData:data];
+	[FMDateSaver saveDate:[object date] toData:data];
 	
 	ibuffer = [object unknownInt1];
 	[data appendBytes:&ibuffer length:4];
@@ -127,73 +128,34 @@
 	[data appendBytes:&ucbuffer length:1];
 	
 	if ([object nameFlags] & FIXTURE_NAME_MAIN_STAGE_NAME) { 
-		cbuffer = [object unknownChar51];
-		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar52];
-		[data appendBytes:&cbuffer length:1];
+		sbuffer = [object mainStageShortID];
+		[data appendBytes:&sbuffer length:2];
 		cbuffer = [object unknownChar53];
 		[data appendBytes:&cbuffer length:1];
 		cbuffer = [object unknownChar54];
 		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar55];
-		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar56];
-		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar57];
-		[data appendBytes:&cbuffer length:1];
+		ibuffer = [object mainStageUID];
+		[data appendBytes:&ibuffer length:4];
 		cbuffer = [object unknownChar58];
 		[data appendBytes:&cbuffer length:1];
 	}
 	if ([object nameFlags] & FIXTURE_NAME_SUB_STAGE_NAME) { 
-		cbuffer = [object unknownChar45];
-		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar46];
-		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar47];
-		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar48];
-		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar49];
-		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar50];
-		[data appendBytes:&cbuffer length:1];
-		
-//		if (version>=FM2011_11_2) {
-//			cbuffer = [object unknownChar60];
-//			[data appendBytes:&cbuffer length:1];
-//		}
+		sbuffer = [object subStageShortID];
+		[data appendBytes:&sbuffer length:2];
+		ibuffer = [object subStageUID];
+		[data appendBytes:&ibuffer length:4];
 	}
 	if ([object nameFlags] & FIXTURE_NAME_EXTRA_STAGE_NAME) {
-		cbuffer = [object unknownChar39];
-		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar40];
-		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar41];
-		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar42];
-		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar43];
-		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar44];
-		[data appendBytes:&cbuffer length:1];
+		sbuffer = [object extraStageShortID];
+		[data appendBytes:&sbuffer length:2];
+		ibuffer = [object extraStageUID];
+		[data appendBytes:&ibuffer length:4];
 	}
 	if ([object nameFlags] & FIXTURE_NAME_OTHER_NAME) {
-		cbuffer = [object unknownChar33];
-		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar34];
-		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar35];
-		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar36];
-		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar37];
-		[data appendBytes:&cbuffer length:1];
-		cbuffer = [object unknownChar38];
-		[data appendBytes:&cbuffer length:1];
-	}
-	if ([object nameFlags] & FIXTURE_NAME_ANOTHER_NAME) {
-		cbuffer = [object unknownChar59];
-		[data appendBytes:&cbuffer length:1];
+		sbuffer = [object otherStageShortID];
+		[data appendBytes:&sbuffer length:2];
+		ibuffer = [object otherStageUID];
+		[data appendBytes:&ibuffer length:4];
 	}
 	
 	cbuffer = [object unknownChar29];
