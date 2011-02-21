@@ -131,6 +131,81 @@
 	[self setShowPlayerScoutRightFootColumn:FALSE];
 	
 	[self updatePlayerScoutColumns:self];
+	
+	
+	[self setShowStaffScoutNameColumn:TRUE];
+	[self setShowStaffScoutTeamColumn:TRUE];
+	[self setShowStaffScoutAgeColumn:TRUE];
+	[self setShowStaffScoutCAColumn:TRUE];
+	[self setShowStaffScoutPAColumn:TRUE];
+	[self setShowStaffScoutHomeRepColumn:TRUE];
+	[self setShowStaffScoutWorldRepColumn:TRUE];
+	[self setShowStaffScoutCurrentRepColumn:TRUE];
+	[self setShowStaffScoutNationColumn:TRUE];
+	[self setShowStaffScoutAdaptabilityColumn:FALSE];
+	[self setShowStaffScoutAmbitionColumn:FALSE];
+	[self setShowStaffScoutControversyColumn:FALSE];
+	[self setShowStaffScoutLoyaltyColumn:FALSE];
+	[self setShowStaffScoutPressureColumn:FALSE];
+	[self setShowStaffScoutProfessionalismColumn:FALSE];
+	[self setShowStaffScoutSportsmanshipColumn:FALSE];
+	[self setShowStaffScoutTemperamentColumn:FALSE];
+	[self setShowStaffScoutFullCapsColumn:FALSE];
+	[self setShowStaffScoutFullGoalsColumn:FALSE];
+	[self setShowStaffScoutU21CapsColumn:FALSE];
+	[self setShowStaffScoutU21GoalsColumn:FALSE];
+	[self setShowStaffScoutManagerRoleColumn:FALSE];
+	[self setShowStaffScoutAssistantManagerRoleColumn:FALSE];
+	[self setShowStaffScoutCoachRoleColumn:FALSE];
+	[self setShowStaffScoutFitnessCoachRoleColumn:FALSE];
+	[self setShowStaffScoutGoalkeepingCoachRoleColumn:FALSE];
+	[self setShowStaffScoutPhysioRoleColumn:FALSE];
+	[self setShowStaffScoutScoutRoleColumn:FALSE];
+	
+	[self setShowStaffScoutAttackingCoachingColumn:TRUE];
+	[self setShowStaffScoutCoachingTechniqueColumn:FALSE];
+	[self setShowStaffScoutDefendingColumn:TRUE];
+	[self setShowStaffScoutFitnessColumn:TRUE];
+	[self setShowStaffScoutGoalkeepersColumn:TRUE];
+	[self setShowStaffScoutManManagementColumn:FALSE];
+	[self setShowStaffScoutMentalColumn:FALSE];
+	[self setShowStaffScoutOutfieldPlayersColumn:FALSE];
+	[self setShowStaffScoutTacticalColumn:TRUE];
+	[self setShowStaffScoutTechnicalColumn:TRUE];
+	[self setShowStaffScoutWorkingWithYoungstersColumn:TRUE];
+	[self setShowStaffScoutAttackingColumn:FALSE];
+	[self setShowStaffScoutDepthColumn:FALSE];
+	[self setShowStaffScoutDirectnessColumn:FALSE];
+	[self setShowStaffScoutDirtinessAllowanceColumn:FALSE];
+	[self setShowStaffScoutFlamboyancyColumn:FALSE];
+	[self setShowStaffScoutFlexibilityColumn:FALSE];
+	[self setShowStaffScoutFreeRolesColumn:FALSE];
+	[self setShowStaffScoutMarkingColumn:FALSE];
+	[self setShowStaffScoutOffsideColumn:FALSE];
+	[self setShowStaffScoutPressingColumn:FALSE];
+	[self setShowStaffScoutSittingBackColumn:FALSE];
+	[self setShowStaffScoutSquadRotationColumn:FALSE];
+	[self setShowStaffScoutTempoColumn:FALSE];
+	[self setShowStaffScoutUseOfPlaymakerColumn:FALSE];
+	[self setShowStaffScoutUseOfSubsColumn:FALSE];
+	[self setShowStaffScoutWidthColumn:FALSE];
+	[self setShowStaffScoutBusinessColumn:FALSE];
+	[self setShowStaffScoutBuyingPlayersColumn:FALSE];
+	[self setShowStaffScoutDeterminationColumn:FALSE];
+	[self setShowStaffScoutHardnessOfTrainingColumn:FALSE];
+	[self setShowStaffScoutInterferenceColumn:FALSE];
+	[self setShowStaffScoutJudgingPlayerAbilityColumn:TRUE];
+	[self setShowStaffScoutJudgingPlayerPotentialColumn:TRUE];
+	[self setShowStaffScoutLevelOfDisciplineColumn:FALSE];
+	[self setShowStaffScoutMindGamesColumn:FALSE];
+	[self setShowStaffScoutMotivatingColumn:FALSE];
+	[self setShowStaffScoutPatienceColumn:FALSE];
+	[self setShowStaffScoutPhysiotherapyColumn:FALSE];
+	[self setShowStaffScoutResourcesColumn:FALSE];
+	[self setShowStaffScoutTacticalKnowledgeColumn:FALSE];
+	
+	
+	[self updateStaffScoutColumns:self];
 }
 
 - (IBAction)importShortlist:(id)sender
@@ -833,7 +908,75 @@
 {
 	NSLog(@"Updating Staff Scout Columns...");
 	
-	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"name"] setHidden:!showStaffScoutNameColumn];
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"nation"] setHidden:!showStaffScoutNationColumn];
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"team"] setHidden:!showStaffScoutTeamColumn];
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"age"] setHidden:!showStaffScoutAgeColumn];
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"ca"] setHidden:!showStaffScoutCAColumn];
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"pa"] setHidden:!showStaffScoutPAColumn];
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"homeRep"] setHidden:!showStaffScoutHomeRepColumn];
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"currentRep"] setHidden:!showStaffScoutCurrentRepColumn];
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"worldRep"] setHidden:!showStaffScoutWorldRepColumn];
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"adaptability"] setHidden:!showStaffScoutAdaptabilityColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"ambition"] setHidden:!showStaffScoutAmbitionColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"controversy"] setHidden:!showStaffScoutControversyColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"loyalty"] setHidden:!showStaffScoutLoyaltyColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"pressure"] setHidden:!showStaffScoutPressureColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"professionalism"] setHidden:!showStaffScoutProfessionalismColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"sportsmanship"] setHidden:!showStaffScoutSportsmanshipColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"temperament"] setHidden:!showStaffScoutTemperamentColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"fullCaps"] setHidden:!showStaffScoutFullCapsColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"fullGoals"] setHidden:!showStaffScoutFullGoalsColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"u21Caps"] setHidden:!showStaffScoutU21CapsColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"u21Goals"] setHidden:!showStaffScoutU21GoalsColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"managerRole"] setHidden:!showStaffScoutManagerRoleColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"assistantManagerRole"] setHidden:!showStaffScoutAssistantManagerRoleColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"coachRole"] setHidden:!showStaffScoutCoachRoleColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"goalkeepingCoachRole"] setHidden:!showStaffScoutGoalkeepingCoachRoleColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"fitnessCoachRole"] setHidden:!showStaffScoutFitnessCoachRoleColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"physioRole"] setHidden:!showStaffScoutPhysioRoleColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"scoutRole"] setHidden:!showStaffScoutScoutRoleColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"business"] setHidden:!showStaffScoutBusinessColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"buyingPlayers"] setHidden:!showStaffScoutBuyingPlayersColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"determination"] setHidden:!showStaffScoutDeterminationColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"hardnessOfTraining"] setHidden:!showStaffScoutHardnessOfTrainingColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"interference"] setHidden:!showStaffScoutInterferenceColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"judgingPlayerAbility"] setHidden:!showStaffScoutJudgingPlayerAbilityColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"judgingPlayerPotential"] setHidden:!showStaffScoutJudgingPlayerPotentialColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"levelOfDiscipline"] setHidden:!showStaffScoutLevelOfDisciplineColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"mindGames"] setHidden:!showStaffScoutMindGamesColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"motivating"] setHidden:!showStaffScoutMotivatingColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"patience"] setHidden:!showStaffScoutPatienceColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"physiotherapy"] setHidden:!showStaffScoutPhysiotherapyColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"resources"] setHidden:!showStaffScoutResourcesColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"tacticalKnowledge"] setHidden:!showStaffScoutTacticalKnowledgeColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"attacking"] setHidden:!showStaffScoutAttackingColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"depth"] setHidden:!showStaffScoutDepthColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"directness"] setHidden:!showStaffScoutDirectnessColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"dirtinessAllowance"] setHidden:!showStaffScoutDirtinessAllowanceColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"flamboyancy"] setHidden:!showStaffScoutFlamboyancyColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"flexibility"] setHidden:!showStaffScoutFlexibilityColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"freeRoles"] setHidden:!showStaffScoutFreeRolesColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"marking"] setHidden:!showStaffScoutMarkingColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"offside"] setHidden:!showStaffScoutOffsideColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"pressing"] setHidden:!showStaffScoutPressingColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"sittingBack"] setHidden:!showStaffScoutSittingBackColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"squadRotation"] setHidden:!showStaffScoutSquadRotationColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"tempo"] setHidden:!showStaffScoutTempoColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"useOfPlaymaker"] setHidden:!showStaffScoutUseOfPlaymakerColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"useOfSubs"] setHidden:!showStaffScoutUseOfSubsColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"width"] setHidden:!showStaffScoutWidthColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"attackingCoaching"] setHidden:!showStaffScoutAttackingCoachingColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"coachingTechnique"] setHidden:!showStaffScoutCoachingTechniqueColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"defending"] setHidden:!showStaffScoutDefendingColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"fitness"] setHidden:!showStaffScoutFitnessColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"goalkeepers"] setHidden:!showStaffScoutGoalkeepersColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"manManagement"] setHidden:!showStaffScoutManManagementColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"mental"] setHidden:!showStaffScoutMentalColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"outfieldPlayers"] setHidden:!showStaffScoutOutfieldPlayersColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"tactical"] setHidden:!showStaffScoutTacticalColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"technical"] setHidden:!showStaffScoutTechnicalColumn];	
+	[[staffScoutResultsTable tableColumnWithIdentifier:@"workingWithYoungsters"] setHidden:!showStaffScoutWorkingWithYoungstersColumn];	
 }
 
 @end
