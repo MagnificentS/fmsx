@@ -1449,6 +1449,29 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	[cityPicker closeSheet:self];
 }
 
+- (IBAction)showPersonPicker:(id)sender
+{
+	personPickerSelector = @"";
+	[personPicker openSheet:self];
+	if ([sender tag]==1)		{ personPickerSelector = @"newJournalistID"; }
+}	
+
+- (IBAction)setPersonPickerObject:(id)object
+{
+	personPickerObject = object;
+}
+
+- (IBAction)pickPerson:(id)sender
+{
+	SEL thisSelector = NSSelectorFromString([NSString stringWithFormat:@"set%@%@:",
+											 [[personPickerSelector substringToIndex:1] capitalizedString],
+											 [personPickerSelector substringFromIndex:1]]);
+	
+	[personPickerObject performSelector:thisSelector withObject:[[[personPickerController arrangedObjects] objectAtIndex:[personPickerController selectionIndex]] rowID]];
+	
+	[personPicker closeSheet:self];
+}
+
 - (IBAction)deleteHistory:(id)sender { [[self mutableArrayValueForKey:@"recentlyViewed"] removeAllObjects]; }
 
 @end

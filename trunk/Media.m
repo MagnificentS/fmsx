@@ -15,6 +15,20 @@ cityID, localAreaID, continentID, rowID, UID, lastPublishedDate,
 competitions, nations, clubs, linkedMedia, name, URL, types,
 journalists;
 
+- (void)setNewCompetitionID:(int)val
+{
+	if (val<0) { return; }
+	
+	[[self mutableArrayValueForKey:@"competitions"] addObject:[NSNumber numberWithInt:val]];
+}
+
+- (void)setNewJournalistID:(int)val
+{
+	if (val<0) { return; }
+	
+	[[self mutableArrayValueForKey:@"journalists"] addObject:[NSNumber numberWithInt:val]];
+}
+
 - (void)setNewNationID:(int)val
 {
 	if (val<0) { return; }

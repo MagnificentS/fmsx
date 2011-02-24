@@ -215,6 +215,11 @@
 	id stadiumPickerObject;
 	NSString *stadiumPickerSelector;
 	
+	IBOutlet NSArrayController *personPickerController;
+	IBOutlet BWSheetController *personPicker;
+	id personPickerObject;
+	NSString *personPickerSelector;
+	
 	
 	IBOutlet NSArrayController *shortlistController;
 	IBOutlet NSView *shortlistView;
@@ -247,6 +252,9 @@
 - (IBAction)showCityPicker:(id)sender;
 - (IBAction)setCityPickerObject:(id)object;
 - (IBAction)pickCity:(id)sender;
+- (IBAction)showPersonPicker:(id)sender;
+- (IBAction)setPersonPickerObject:(id)object;
+- (IBAction)pickPerson:(id)sender;
 
 // Scout Functions
 - (void)awakeScout;
