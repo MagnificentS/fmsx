@@ -89,6 +89,7 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	
 	sections = [[NSMutableArray alloc] init];
 	awardSections = [[NSMutableArray alloc] init];
+	mediaSections = [[NSMutableArray alloc] init];
 	clubSections = [[NSMutableArray alloc] init];
 	nationSections = [[NSMutableArray alloc] init];
 	personSections = [[NSMutableArray alloc] init];
@@ -268,6 +269,7 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	[selectedRows release];
 	[sections release];
 	[awardSections release];
+	[mediaSections release];
 	[clubSections release];
 	[personSections release];
 	
@@ -921,6 +923,27 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 		[awardHeaderBackground setHasBottomBorder:YES];
 		[awardHeaderBackground setBottomBorderColor:[[object colour] trimColour]];
 	}
+	else if ([[object className] isEqualToString:@"Media"]) {
+		// setup scope bars
+		NSMutableArray *mediaBarItems = [[NSMutableArray alloc] init];
+		
+		[mediaBarItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+								  @"GeneralItem", MGSB_ITEM_IDENTIFIER, 
+								  @"General", MGSB_ITEM_NAME, 
+								  nil]];
+		[mediaBarItems addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+								  @"AssociationsItem", MGSB_ITEM_IDENTIFIER, 
+								  @"Associations", MGSB_ITEM_NAME, 
+								  nil]];
+		
+		[mediaScopeBar setDelegate:self];
+		[mediaSections removeAllObjects];
+		[mediaSections addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+								  [NSNumber numberWithInt:MGRadioSelectionMode], MGSB_GROUP_SELECTION_MODE, // single selection group.
+								  mediaBarItems, MGSB_GROUP_ITEMS, 
+								  nil]];
+		[mediaScopeBar reloadData];
+	}
 	else if ([[object className] isEqualToString:@"Competition"]) {
 		// set header bg
 		[competitionHeaderBackground setFillColor:[[object colour] backgroundColour]];
@@ -1087,6 +1110,7 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 {
 	if (theScopeBar==clubScopeBar) { return [clubSections count]; }
 	else if (theScopeBar==awardScopeBar) { return [awardSections count]; }
+	else if (theScopeBar==mediaScopeBar) { return [mediaSections count]; }
 	else if (theScopeBar==nationScopeBar) { return [nationSections count]; }
 	else if (theScopeBar==personScopeBar) { return [personSections count]; }
 	return 0;
@@ -1100,6 +1124,9 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	}
 	else if (theScopeBar==awardScopeBar) { 
 		return [[awardSections objectAtIndex:groupNumber] valueForKeyPath:[NSString stringWithFormat:@"%@.%@", MGSB_GROUP_ITEMS, MGSB_ITEM_IDENTIFIER]];
+	}
+	else if (theScopeBar==mediaScopeBar) { 
+		return [[mediaSections objectAtIndex:groupNumber] valueForKeyPath:[NSString stringWithFormat:@"%@.%@", MGSB_GROUP_ITEMS, MGSB_ITEM_IDENTIFIER]];
 	}
 	else if (theScopeBar==nationScopeBar) { 
 		return [[nationSections objectAtIndex:groupNumber] valueForKeyPath:[NSString stringWithFormat:@"%@.%@", MGSB_GROUP_ITEMS, MGSB_ITEM_IDENTIFIER]];
@@ -1118,6 +1145,9 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	}
 	else if (theScopeBar==awardScopeBar) { 
 		return [[awardSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_LABEL]; // might be nil, which is fine (nil means no label).
+	}
+	else if (theScopeBar==mediaScopeBar) { 
+		return [[mediaSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_LABEL]; // might be nil, which is fine (nil means no label).
 	}
 	else if (theScopeBar==nationScopeBar) { 
 		return [[nationSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_LABEL]; // might be nil, which is fine (nil means no label).
@@ -1144,6 +1174,17 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	}
 	else if (theScopeBar==awardScopeBar) { 
 		NSArray *items = [[awardSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_ITEMS];
+		if (items) {
+			for (NSDictionary *item in items) {
+				if ([[item objectForKey:MGSB_ITEM_IDENTIFIER] isEqualToString:identifier]) {
+					return [item objectForKey:MGSB_ITEM_NAME];
+					break;
+				}
+			}
+		}
+	}
+	else if (theScopeBar==mediaScopeBar) { 
+		NSArray *items = [[mediaSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_ITEMS];
 		if (items) {
 			for (NSDictionary *item in items) {
 				if ([[item objectForKey:MGSB_ITEM_IDENTIFIER] isEqualToString:identifier]) {
@@ -1190,6 +1231,9 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	else if (theScopeBar==awardScopeBar) { 
 		return [[[awardSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_SELECTION_MODE] intValue];
 	}
+	else if (theScopeBar==mediaScopeBar) { 
+		return [[[mediaSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_SELECTION_MODE] intValue];
+	}
 	else if (theScopeBar==nationScopeBar) { 
 		return [[[nationSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_SELECTION_MODE] intValue];
 	}
@@ -1208,6 +1252,9 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	}
 	else if (theScopeBar==awardScopeBar) {
 		return [[[awardSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_SEPARATOR] boolValue];
+	}
+	else if (theScopeBar==mediaScopeBar) {
+		return [[[mediaSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_SEPARATOR] boolValue];
 	}
 	else if (theScopeBar==nationScopeBar) {
 		return [[[nationSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_SEPARATOR] boolValue];
@@ -1259,6 +1306,10 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 		if ([section isEqualToString:@"General"]) { [awardContainer setContentView:awardMainView]; }
 		else if ([section isEqualToString:@"Rules"]) { [awardContainer setContentView:awardRulesView]; }
 	}
+	else if (theScopeBar==mediaScopeBar) {
+		if ([section isEqualToString:@"General"]) { [mediaContainer setContentView:mediaMainView]; }
+		else if ([section isEqualToString:@"Associations"]) { [mediaContainer setContentView:mediaAssociationsView]; }
+	}
 	else if (theScopeBar==nationScopeBar) {
 		if ([section isEqualToString:@"General"]) { [nationContainer setContentView:nationMainView]; }
 		else if ([section isEqualToString:@"Relationships"]) { [nationContainer setContentView:nationRelationshipsView]; }
@@ -1297,7 +1348,6 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	if ([sender tag]==1) { nationPickerSelector = @"nationID"; }
 	else if ([sender tag]==2) { nationPickerSelector = @"basedNationID"; }
 	
-	// media
 	else if ([sender tag]==3) { nationPickerSelector = @"newNationID"; }
 }
 

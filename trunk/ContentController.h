@@ -29,7 +29,7 @@
 
 @interface ContentController : NSObject <MGScopeBarDelegate> {
 	IBOutlet Controller *controller;
-	IBOutlet MGScopeBar *clubScopeBar, *personScopeBar, *nationScopeBar, *awardScopeBar;
+	IBOutlet MGScopeBar *clubScopeBar, *personScopeBar, *nationScopeBar, *awardScopeBar, *mediaScopeBar;
 	IBOutlet NSOutlineView *mainOutlineView;
 	IBOutlet NSView *gameInfoView;
 	IBOutlet NSBox *mainContainer;
@@ -88,8 +88,9 @@
 	IBOutlet NSView *localAreaSearchView, *localAreaGeneralView;
 	IBOutlet NSArrayController *localAreaController;
 	
+	IBOutlet NSBox *mediaContainer;
 	IBOutlet NSTableView *mediaTable;
-	IBOutlet NSView *mediaSearchView, *mediaGeneralView;
+	IBOutlet NSView *mediaSearchView, *mediaGeneralView, *mediaAssociationsView, *mediaMainView;
 	IBOutlet NSArrayController *mediaController;
 	
 	IBOutlet NSBox *personContainer;
@@ -219,7 +220,8 @@
 	IBOutlet NSView *shortlistView;
 	
 	NSMutableArray *sections, *awardSections, *clubSections, *nationSections, *personSections, *scoutResults, 
-	*activeShortlist, *clubScoutResults, *staffScoutResults, *playerScoutResults, *recentlyViewed;
+	*activeShortlist, *clubScoutResults, *staffScoutResults, *playerScoutResults, *recentlyViewed,
+	*mediaSections;
 	NSMutableDictionary *selectedRows;
 	
 	NSString *locationString;
