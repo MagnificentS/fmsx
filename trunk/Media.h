@@ -75,4 +75,6 @@
 - (NSArray *)styleStrings;
 - (NSArray *)typeStrings;
 
+- (void)setNewNationID:(int)val;
+
 @end

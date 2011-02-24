@@ -1296,6 +1296,9 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	[nationPicker openSheet:self];
 	if ([sender tag]==1) { nationPickerSelector = @"nationID"; }
 	else if ([sender tag]==2) { nationPickerSelector = @"basedNationID"; }
+	
+	// media
+	else if ([sender tag]==3) { nationPickerSelector = @"newNationID"; }
 }
 
 - (IBAction)setNationPickerObject:(id)object
@@ -1305,13 +1308,12 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 
 - (IBAction)pickNation:(id)sender
 {
-	NSLog(@"before: %d",[nationPickerObject nationID]);
 	SEL thisSelector = NSSelectorFromString([NSString stringWithFormat:@"set%@%@:",
 											 [[nationPickerSelector substringToIndex:1] capitalizedString],
 											 [nationPickerSelector substringFromIndex:1]]);
 	
 	[nationPickerObject performSelector:thisSelector withObject:[[[nationPickerController arrangedObjects] objectAtIndex:[nationPickerController selectionIndex]] rowID]];
-	NSLog(@"after: %d",[nationPickerObject nationID]);
+	
 	[nationPicker closeSheet:self];
 }
 

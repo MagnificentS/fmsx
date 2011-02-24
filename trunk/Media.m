@@ -15,6 +15,13 @@ cityID, localAreaID, continentID, rowID, UID, lastPublishedDate,
 competitions, nations, clubs, linkedMedia, name, URL, types,
 journalists;
 
+- (void)setNewNationID:(int)val
+{
+	if (val<0) { return; }
+	
+	[[self mutableArrayValueForKey:@"nations"] addObject:[NSNumber numberWithInt:val]];
+}
+
 - (NSArray *)styleStrings
 {
 	NSArray *strings = [NSArray arrayWithObjects:
