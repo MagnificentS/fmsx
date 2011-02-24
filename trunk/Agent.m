@@ -13,6 +13,13 @@
 @synthesize scope, patience, agentFeeDemands, willingnessToToutPlayers, clients, basedNationID,
 unknownChar1, unknownDate1;
 
+- (void)setNewClientID:(int)val
+{
+	if (val<0) { return; }
+	
+	[[self mutableArrayValueForKey:@"clients"] addObject:[NSNumber numberWithInt:val]];
+}
+
 - (NSArray *)scopeStrings
 {
 	NSArray *strings = [NSArray arrayWithObjects:

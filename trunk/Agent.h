@@ -28,6 +28,7 @@ unknownChar1;
 @property(readwrite,assign) FMDate *unknownDate1;
 @property(copy,readwrite) NSMutableArray *clients;
 
+- (void)setNewClientID:(int)val;
 - (NSArray *)scopeStrings;
 
 @end

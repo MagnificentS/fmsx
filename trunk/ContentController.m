@@ -1454,6 +1454,7 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	personPickerSelector = @"";
 	[personPicker openSheet:self];
 	if ([sender tag]==1)		{ personPickerSelector = @"newJournalistID"; }
+	else if ([sender tag]==2)	{ personPickerSelector = @"newClientID"; }
 }	
 
 - (IBAction)setPersonPickerObject:(id)object
