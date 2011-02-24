@@ -220,6 +220,11 @@
 	id personPickerObject;
 	NSString *personPickerSelector;
 	
+	IBOutlet NSArrayController *mediaPickerController;
+	IBOutlet BWSheetController *mediaPicker;
+	id mediaPickerObject;
+	NSString *mediaPickerSelector;
+	
 	
 	IBOutlet NSArrayController *shortlistController;
 	IBOutlet NSView *shortlistView;
@@ -255,6 +260,9 @@
 - (IBAction)showPersonPicker:(id)sender;
 - (IBAction)setPersonPickerObject:(id)object;
 - (IBAction)pickPerson:(id)sender;
+- (IBAction)showMediaPicker:(id)sender;
+- (IBAction)setMediaPickerObject:(id)object;
+- (IBAction)pickMedia:(id)sender;
 
 // Scout Functions
 - (void)awakeScout;

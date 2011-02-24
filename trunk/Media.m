@@ -29,6 +29,13 @@ journalists;
 	[[self mutableArrayValueForKey:@"journalists"] addObject:[NSNumber numberWithInt:val]];
 }
 
+- (void)setNewLinkedMediaID:(int)val
+{
+	if (val<0) { return; }
+	
+	[[self mutableArrayValueForKey:@"linkedMedia"] addObject:[NSNumber numberWithInt:val]];
+}
+
 - (void)setNewNationID:(int)val
 {
 	if (val<0) { return; }

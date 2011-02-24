@@ -1473,6 +1473,30 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	[personPicker closeSheet:self];
 }
 
+- (IBAction)showMediaPicker:(id)sender
+{
+	mediaPickerSelector = @"";
+	[mediaPicker openSheet:self];
+	if ([sender tag]==1)		{ mediaPickerSelector = @"newLinkedMediaID"; }
+	else if ([sender tag]==2)	{ mediaPickerSelector = @"media"; }
+}	
+
+- (IBAction)setMediaPickerObject:(id)object
+{
+	mediaPickerObject = object;
+}
+
+- (IBAction)pickMedia:(id)sender
+{
+	SEL thisSelector = NSSelectorFromString([NSString stringWithFormat:@"set%@%@:",
+											 [[mediaPickerSelector substringToIndex:1] capitalizedString],
+											 [mediaPickerSelector substringFromIndex:1]]);
+	
+	[mediaPickerObject performSelector:thisSelector withObject:[[[mediaPickerController arrangedObjects] objectAtIndex:[mediaPickerController selectionIndex]] rowID]];
+	
+	[mediaPicker closeSheet:self];
+}
+
 - (IBAction)deleteHistory:(id)sender { [[self mutableArrayValueForKey:@"recentlyViewed"] removeAllObjects]; }
 
 @end
