@@ -1405,6 +1405,7 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	else if ([sender tag]==6)	{ competitionPickerSelector = @"continentalCupID"; }
 	else if ([sender tag]==7)	{ competitionPickerSelector = @"futureContinentalCupID"; }
 	else if ([sender tag]==8)	{ competitionPickerSelector = @"firstMatchCompetitionID"; }
+	else if ([sender tag]==9)	{ competitionPickerSelector = @"newCompetitionID"; }
 }	
 
 - (IBAction)setCompetitionPickerObject:(id)object

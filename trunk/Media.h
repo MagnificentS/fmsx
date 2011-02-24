@@ -75,6 +75,7 @@
 - (NSArray *)styleStrings;
 - (NSArray *)typeStrings;
 
+- (void)setNewCompetitionID:(int)val;
 - (void)setNewNationID:(int)val;
 
 @end
