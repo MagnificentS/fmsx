@@ -53,43 +53,68 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 - (int)previewStat13;
 - (int)previewStat14;
 
-// positional ratings
+// Position/Role ratings
+- (NSString *)bestRoleString; 
+
+
 // ST
-- (float)deepLyingForward;
-- (float)advancedForward;
-- (float)targetMan;
-- (float)poacher;
-- (float)stTrequartista;
+- (float)strikerAbilityLevel;
+- (int)deepLyingForward; 
+- (int)advancedForward;
+- (int)targetMan;
+- (int)poacher;
+- (int)stikerTrequartista;
+
 
 // AMC
-- (float)amcInsideForward;
-- (float)attackingMidfielder;
-- (float)amcAdvancedPlaymaker;
-- (float)amcTrequartista;
+- (float)amcAbilityLevel;
+- (int)amcInsideForward;
+- (int)amcAttackingMidfielder;
+- (int)amcAdvancedPlaymaker;
+- (int)amcTrequartista;
+
 
 // AML/AMR
-- (float)amlrWinger;
-- (float)amlrInsideForward;
-- (float)amlrAdvancedPlaymaker;
+- (float)amlrAbilityLevel;
+- (int)amlrWinger;
+- (int)amlrInsideForward;
+- (int)amlrAdvancedPlaymaker;
+
+
 
 // MC
-- (float)centralMidfielder;
-- (float)mcDeepLyingPlaymaker;
-- (float)mcAdvancedPlaymaker;
-- (float)ballWinningMidfielder;
+- (float)cmAbilityLevel;
+- (int)centMidfielder;
+- (int)mcDeepLyingPlaymaker;
+- (int)mcAdvancedPlaymaker;
+- (int)ballWinningMidfielder;
+
 
 // ML/MR
-- (float)winger;
-- (float)wideMidfielder;
+- (float)mlrAbilityLevel;
+- (int)mlrWinger;
+- (int)wideMidfielder;
+
 
 // DMC
-- (float)defensiveMidfielder;
-- (float)dmcDeepLyingPlaymaker;
-- (float)anchorMan;
+- (float)dmcAbilityLevel;
+- (int)dmcDefensiveMidfielder;
+- (int)dmcDeepLyingPlaymaker;
+- (int)dmcAnchorMan;
+
 
 // DR/DL
-- (float)wingBack;
-- (float)fullBack;
+- (float)dlrAbilityLevel;
+- (int)dlrWingBack;
+- (int)dlrFullBack;
+
+
+// CB
+- (float)cbAbilityLevel;
+- (int)coverCentreBack;
+- (int)stopperCentreBack;
+- (int)centreBack;
+
 
 // position ability (Natural, Accomplished, etc.)
 - (NSImage *)strikerPositionAbility;
