@@ -48,7 +48,8 @@
 	[self setShowPlayerScoutHomeRepColumn:TRUE];
 	[self setShowPlayerScoutWorldRepColumn:TRUE];
 	[self setShowPlayerScoutCurrentRepColumn:TRUE];
-	[self setShowPlayerScoutConditionColumn:TRUE];
+	[self setShowPlayerScoutConditionColumn:FALSE];
+	[self setShowPlayerScoutBestRoleColumn:TRUE];
 	[self setShowPlayerScoutGPColumn:TRUE];
 	[self setShowPlayerScoutValueColumn:TRUE];
 	[self setShowPlayerScoutAskingPriceColumn:TRUE];
@@ -839,6 +840,7 @@
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"currentRep"] setHidden:!showPlayerScoutCurrentRepColumn];
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"worldRep"] setHidden:!showPlayerScoutWorldRepColumn];
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"condition"] setHidden:!showPlayerScoutConditionColumn];
+	[[playerScoutResultsTable tableColumnWithIdentifier:@"bestRole"] setHidden:!showPlayerScoutBestRoleColumn];
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"gp"] setHidden:!showPlayerScoutGPColumn];
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"value"] setHidden:!showPlayerScoutValueColumn];
 	[[playerScoutResultsTable tableColumnWithIdentifier:@"askingPrice"] setHidden:!showPlayerScoutAskingPriceColumn];
