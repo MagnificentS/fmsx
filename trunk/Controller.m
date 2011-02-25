@@ -116,6 +116,16 @@ teamsController, weatherController, currentDate, gameDBVersion, databaseChanges,
 	{
 		[donatePanel makeKeyAndOrderFront:self];
 	}
+	
+	if ([[[[NSDate date] description] substringWithRange:NSMakeRange(5, 5)] isEqualToString:@"02-27"]) {
+		NSAlert *alert = [NSAlert alertWithMessageText:@"Did You Know?" defaultButton:@"OK" alternateButton:@"Donate" 
+										   otherButton:nil informativeTextWithFormat:@"Today is littleblue's birthday!\n\nlittleblue is the founder and main developer of FM11SX and is not feeling very young anymore so why not cheer her up by heading over to the FM11SX thread at http://community.sigames.com and wishing her a happy birthday?\n\nShe will also never say no to a box of chocolates! :o)"];
+		NSLog(@"Happy Birthday littleblue!");
+		int result = [alert runModal];
+		if (result == 0) {
+			[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=aoumi83%40gmail%2ecom&lc=GB&item_name=FM11SX&currency_code=GBP"]];
+		}
+	}
 }
 
 - (void)resetDB
@@ -750,7 +760,7 @@ teamsController, weatherController, currentDate, gameDBVersion, databaseChanges,
 	
 	if ([sender tag]==0) { URL = [NSURL URLWithString:@"http://www.fmscout.com"]; }
 	else if ([sender tag]==1) { URL = [NSURL URLWithString:@"http://www.sigames.com"]; }
-	else if ([sender tag]==2) { URL = [NSURL URLWithString:@"http://code.google.com/p/fm10sx/wiki/UserManual"]; }
+	else if ([sender tag]==2) { URL = [NSURL URLWithString:@"http://code.google.com/p/fmsx/wiki/UserManual"]; }
 	else if ([sender tag]==3) { URL = [NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=aoumi83%40gmail%2ecom&lc=GB&item_name=FM11SX&currency_code=GBP"]; }
 	else if ([sender tag]==4) { URL = [NSURL URLWithString:@"http://www.fmcenter.co.uk"]; }
 	
