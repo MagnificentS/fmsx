@@ -643,8 +643,14 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 //	NSSortDescriptor *rowIDDescriptor = [[NSSortDescriptor alloc] initWithKey:@"rowID" ascending:YES];
 	
 	NSLog(@"resetting predicate");
-	[[self performSelector:controllerSelector] setFilterPredicate:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@"rowID==%d",[object rowID]]]];
-	[[self performSelector:controllerSelector] setSelectionIndex:0];
+	[[self performSelector:controllerSelector] setFilterPredicate:nil];
+	
+	if ([object respondsToSelector:NSSelectorFromString(@"rowID")] && [object rowID]>=0) {
+		[[self performSelector:controllerSelector] setSelectionIndex:[object rowID]];
+	}
+	else {
+		[[self performSelector:controllerSelector] setSelectionIndex:0];
+	}
 	
 	NSLog(@"before setview");
 	// set the view
