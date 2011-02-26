@@ -176,7 +176,7 @@ unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 			[[[[[controller database] people] objectAtIndex:[item intValue]] playerData] setCondition:10000];
 			[[[[[controller database] people] objectAtIndex:[item intValue]] playerData] setFitness:10000];
 			[[[[[controller database] people] objectAtIndex:[item intValue]] playerData] setJadedness:0];
-			[[[[[controller database] people] objectAtIndex:[item intValue]] playerData] setMorale:10];
+			[[[[[controller database] people] objectAtIndex:[item intValue]] playerData] setMorale:20];
 		}
 	}
 }
