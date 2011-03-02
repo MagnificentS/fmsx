@@ -59,61 +59,60 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 
 // ST
 - (float)strikerAbilityLevel;
-- (int)deepLyingForward; 
-- (int)advancedForward;
-- (int)targetMan;
-- (int)poacher;
-- (int)stikerTrequartista;
+- (float)deepLyingForward; 
+- (float)advancedForward;
+- (float)targetMan;
+- (float)poacher;
+- (float)stikerTrequartista;
 
 
 // AMC
 - (float)amcAbilityLevel;
-- (int)amcInsideForward;
-- (int)amcAttackingMidfielder;
-- (int)amcAdvancedPlaymaker;
-- (int)amcTrequartista;
+- (float)amcInsideForward;
+- (float)amcAttackingMidfielder;
+- (float)amcAdvancedPlaymaker;
+- (float)amcTrequartista;
 
 
 // AML/AMR
 - (float)amlrAbilityLevel;
-- (int)amlrWinger;
-- (int)amlrInsideForward;
-- (int)amlrAdvancedPlaymaker;
+- (float)amlrWinger;
+- (float)amlrInsideForward;
+- (float)amlrAdvancedPlaymaker;
 
 
 
 // MC
 - (float)cmAbilityLevel;
-- (int)centMidfielder;
-- (int)mcDeepLyingPlaymaker;
-- (int)mcAdvancedPlaymaker;
-- (int)ballWinningMidfielder;
+- (float)centMidfielder;
+- (float)mcDeepLyingPlaymaker;
+- (float)mcAdvancedPlaymaker;
+- (float)ballWinningMidfielder;
 
 
 // ML/MR
 - (float)mlrAbilityLevel;
-- (int)mlrWinger;
-- (int)wideMidfielder;
+- (float)mlrWinger;
+- (float)wideMidfielder;
 
 
 // DMC
 - (float)dmcAbilityLevel;
-- (int)dmcDefensiveMidfielder;
-- (int)dmcDeepLyingPlaymaker;
-- (int)dmcAnchorMan;
+- (float)dmcDefensiveMidfielder;
+- (float)dmcDeepLyingPlaymaker;
+- (float)dmcAnchorMan;
 
 
 // DR/DL
 - (float)dlrAbilityLevel;
-- (int)dlrWingBack;
-- (int)dlrFullBack;
+- (float)dlrWingBack;
+- (float)dlrFullBack;
 
 
 // CB
 - (float)cbAbilityLevel;
-- (int)coverCentreBack;
-- (int)stopperCentreBack;
-- (int)centreBack;
+- (float)coverCentreBack;
+- (float)stopperCentreBack;
 
 
 // position ability (Natural, Accomplished, etc.)

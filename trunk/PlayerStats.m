@@ -271,160 +271,157 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 
 - (NSString *)bestRoleString
 {
-	int currentBest = [self deepLyingForward];
-	NSString *pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
+	float currentBest = [self deepLyingForward];
+	NSString *pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
 	NSString *currentBestRole = [@"DpLy Fwd " stringByAppendingString:pctValue];
 	
 	if (currentBest < [self advancedForward]) 
 	{	
 		currentBest = [self advancedForward];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
 		currentBestRole = [@"Adv Fwd " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self targetMan]) 
 	{
 		currentBest = [self targetMan];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
 		currentBestRole = [@"Target " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self poacher]) 
 	{
 		currentBest = [self poacher];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
 		currentBestRole = [@"Poacher " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self stikerTrequartista]) 
 	{
 		currentBest = [self stikerTrequartista];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
 		currentBestRole = [@"Treq Fwd " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self amcInsideForward]) 
 	{
 		currentBest = [self amcInsideForward];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
 		currentBestRole = [@"AMC InFwd " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self amcAttackingMidfielder]) 
 	{
 		currentBest = [self amcAttackingMidfielder];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
 		currentBestRole = [@"AMC AttMid " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self amcAdvancedPlaymaker]) 
 	{
 		currentBest = [self amcAdvancedPlaymaker];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
-		currentBestRole = [@"AMC AdvPlymkr " stringByAppendingString:pctValue];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
+		currentBestRole = [@"AMC AdvPly " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self amcTrequartista]) 
 	{
 		currentBest = [self amcTrequartista];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
 		currentBestRole = [@"AMC Treq " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self amlrWinger]) 
 	{
 		currentBest = [self amlrWinger];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
-		currentBestRole = [@"AML/R Winger " stringByAppendingString:pctValue];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
+		currentBestRole = [@"AMLR Winger " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self amlrInsideForward]) 
 	{
 		currentBest = [self amlrInsideForward];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
-		currentBestRole = [@"AML/R InFwd " stringByAppendingString:pctValue];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
+		currentBestRole = [@"AMLR InFwd " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self amlrAdvancedPlaymaker]) 
 	{
 		currentBest = [self amlrAdvancedPlaymaker];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
-		currentBestRole = [@"AML/R AdvPlymkr " stringByAppendingString:pctValue];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
+		currentBestRole = [@"AMLR AdvPly " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self centMidfielder]) 
 	{
 		currentBest = [self centMidfielder];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
 		currentBestRole = [@"MC " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self mcDeepLyingPlaymaker]) 
 	{
 		currentBest = [self mcDeepLyingPlaymaker];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
-		currentBestRole = [@"MC DpLyPlymkr " stringByAppendingString:pctValue];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
+		currentBestRole = [@"MC DpLyPly " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self mcAdvancedPlaymaker]) 
 	{
 		currentBest = [self mcAdvancedPlaymaker];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
-		currentBestRole = [@"MC AdvPlymkr " stringByAppendingString:pctValue];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
+		currentBestRole = [@"MC AdvPly " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self ballWinningMidfielder]) 
 	{
 		currentBest = [self ballWinningMidfielder];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
-		currentBestRole = [@"Ball Winning MC " stringByAppendingString:pctValue];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
+		currentBestRole = [@"Ball Win MC " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self dmcDefensiveMidfielder]) 
 	{
 		currentBest = [self dmcDefensiveMidfielder];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
 		currentBestRole = [@"DMC " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self dmcDeepLyingPlaymaker]) 
 	{
 		currentBest = [self dmcDeepLyingPlaymaker];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
-		currentBestRole = [@"DMC DLyPlymkr " stringByAppendingString:pctValue];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
+		currentBestRole = [@"DMC DLyPly " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self dmcAnchorMan]) 
 	{
 		currentBest = [self dmcAnchorMan];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
 		currentBestRole = [@"DMC Anchor " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self dlrWingBack]) 
 	{
 		currentBest = [self dlrWingBack];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
 		currentBestRole = [@"Wing Back " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self dlrFullBack]) 
 	{
 		currentBest = [self dlrFullBack];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
 		currentBestRole = [@"Full Back " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self coverCentreBack]) 
 	{
 		currentBest = [self coverCentreBack];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
 		currentBestRole = [@"Cover CB " stringByAppendingString:pctValue];
 	}
 	if (currentBest < [self stopperCentreBack]) 
 	{
 		currentBest = [self stopperCentreBack];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
+		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
 		currentBestRole = [@"Stopper CB " stringByAppendingString:pctValue];
 	}
-	if (currentBest < [self centreBack]) 
-	{
-		currentBest = [self centreBack];
-		pctValue = [NSString stringWithFormat:@"(%d%%)", currentBest];
-		currentBestRole = [@"CB " stringByAppendingString:pctValue];
-	}
+	
 	//Just a workaround for GK
 	int gkCheck = goalkeeper;
 	if (gkCheck>14) 
 	{ 
 		currentBestRole = @"GK (100%)";
 	}
+	
+	
 	return currentBestRole;
 }
 
 
 
-// ST
+//Strikers
 
 - (float)strikerAbilityLevel
 {
@@ -441,67 +438,67 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 }
 
 
-- (int)deepLyingForward
+- (float)deepLyingForward
 {
 	float strikerPositionAdjustmentMultiplier = [self strikerAbilityLevel];
-	float tempDeepLyingForward = ((agility * 0.0) + (balance * 0.9) + (strength * 1.1) + (acceleration * 0.5) + (pace * 0.5) + 
+	float tempDeepLyingForward = ((agility * 0.0) + (balance * 0.7) + (strength * 0.9) + (acceleration * 0.5) + (pace * 0.5) + 
 								  (jumping * 0.3) + (stamina * 0.0) + (technique * 0.5) + (firstTouch * 0.9) + (dribbling * 0.5) + 
 								  (crossing * 0.0) + (finishing * 0.8) + (longShots * 0.3) + (passing * 0.5) + (heading * 0.3) + (marking * 0.0) + 
 								  (tackling * 0.0) + (creativity * 0.1) + (anticipation * 0.9) + (decisions * 0.5) + (offTheBall * 0.5) + 
-								  (flair * 0.1) + (composure * 0.7) + (positioning * 0.0) + (bravery * 0.5) + (workRate * 0.0) + 
-								  (concentration * 0.0) + (determination * 0.9) + (teamwork * 0.2));
+								  (flair * 0.1) + (composure * 0.7) + (positioning * 0.0) + (bravery * 0.5) + (workRate * 0.2) + 
+								  (concentration * 0.0) + (determination * 0.9) + (teamwork * 0.3));
 	tempDeepLyingForward = (tempDeepLyingForward * strikerPositionAdjustmentMultiplier) * 0.1;
 	return tempDeepLyingForward;
 }
 
-- (int)advancedForward
+- (float)advancedForward
 {
 	float strikerPositionAdjustmentMultiplier = [self strikerAbilityLevel];
-	float tempAdvancedForward = ((agility * 0.5) + (balance * 0.0) + (strength * 0.0) + (acceleration * 1.0) + (pace * 1.0) + 
+	float tempAdvancedForward = ((agility * 0.5) + (balance * 0.2) + (strength * 0.0) + (acceleration * 1.0) + (pace * 1.0) + 
 								 (jumping * 0.0) + (stamina * 0.0) + (technique * 0.8) + (firstTouch * 0.8) + (dribbling * 0.8) + 
 								 (crossing * 0.0) + (finishing * 1.0) + (longShots * 0.0) + (passing * 0.0) + (heading * 0.1) + (marking * 0.0) + 
 								 (tackling * 0.0) + (creativity * 0.0) + (anticipation * 0.9) + (decisions * 0.2) + (offTheBall * 0.9) + 
-								 (flair * 0.7) + (composure * 0.9) + (positioning * 0.0) + (bravery * 0.3) + (workRate * 0.9) + 
+								 (flair * 0.7) + (composure * 0.9) + (positioning * 0.0) + (bravery * 0.3) + (workRate * 0.6) + 
 								 (concentration * 0.0) + (determination * 0.7) + (teamwork * 0.0)); 
 	tempAdvancedForward = (tempAdvancedForward * strikerPositionAdjustmentMultiplier) * 0.1;
 	return tempAdvancedForward;
 }
 
-- (int)targetMan
+- (float)targetMan
 {
 	float strikerPositionAdjustmentMultiplier = [self strikerAbilityLevel];
-	float tempTargetMan = ((agility * 0.0) + (balance * 0.4) + (strength * 1.3) + (acceleration * 0.0) + (pace * 0.0) + 
+	float tempTargetMan = ((agility * 0.0) + (balance * 0.7) + (strength * 1.3) + (acceleration * 0.0) + (pace * 0.0) + 
 						   (jumping * 1.1) + (stamina * 0.0) + (technique * 0.3) + (firstTouch * 0.9) + (dribbling * 0.0) + 
 						   (crossing * 0.0) + (finishing * 0.5) + (longShots * 0.0) + (passing * 0.2) + (heading * 1.2) + (marking * 0.0) + 
 						   (tackling * 0.0) + (creativity * 0.1) + (anticipation * 0.6) + (decisions * 0.1) + (offTheBall * 0.4) + 
-						   (flair * 0.0) + (composure * 0.5) + (positioning * 0.3) + (bravery * 0.9) + (workRate * 0.9) + 
-						   (concentration * 0.0) + (determination * 0.9) + (teamwork * 0.9)); 
+						   (flair * 0.0) + (composure * 0.5) + (positioning * 0.3) + (bravery * 0.9) + (workRate * 0.8) + 
+						   (concentration * 0.0) + (determination * 0.9) + (teamwork * 0.6)); 
 	tempTargetMan = (tempTargetMan * strikerPositionAdjustmentMultiplier) * 0.1;
 	return tempTargetMan;
 }
 
-- (int)poacher
+- (float)poacher
 {
 	float strikerPositionAdjustmentMultiplier = [self strikerAbilityLevel];
-	float tempPoacher = ((agility * 0.6) + (balance * 0.6) + (strength * 0.0) + (acceleration * 0.3) + (pace * 0.2) + 
+	float tempPoacher = ((agility * 0.3) + (balance * 0.3) + (strength * 0.0) + (acceleration * 0.3) + (pace * 0.0) + 
 						 (jumping * 0.0) + (stamina * 0.0) + (technique * 0.8) + (firstTouch * 1.1) + (dribbling * 0.4) + 
-						 (crossing * 0.0) + (finishing * 1.5) + (longShots * 0.0) + (passing * 0.0) + (heading * 0.3) + (marking * 0.0) + 
-						 (tackling * 0.0) + (creativity * 0.1) + (anticipation * 1.3) + (decisions * 0.9) + (offTheBall * 1.4) + 
-						 (flair * 0.0) + (composure * 1.4) + (positioning * 0.0) + (bravery * 0.0) + (workRate * 0.0) + 
-						 (concentration * 0.0) + (determination * 0.0) + (teamwork * 0.1)); 
+						 (crossing * 0.0) + (finishing * 1.3) + (longShots * 0.0) + (passing * 0.0) + (heading * 0.1) + (marking * 0.0) + 
+						 (tackling * 0.0) + (creativity * 0.4) + (anticipation * 1.3) + (decisions * 0.9) + (offTheBall * 1.2) + 
+						 (flair * 0.2) + (composure * 1.3) + (positioning * 0.0) + (bravery * 0.0) + (workRate * 0.0) + 
+						 (concentration * 0.4) + (determination * 0.6) + (teamwork * 0.0)); 
 	tempPoacher = (tempPoacher * strikerPositionAdjustmentMultiplier) * 0.1;
 	return tempPoacher;
 }
 
-- (int)stikerTrequartista
+- (float)stikerTrequartista
 {
 	float strikerPositionAdjustmentMultiplier = [self strikerAbilityLevel];
 	float tempStikerTrequartista = ((agility * 0.4) + (balance * 0.4) + (strength * 0.0) + (acceleration * 0.3) + (pace * 0.3) + 
 									(jumping * 0.0) + (stamina * 0.0) + (technique * 0.8) + (firstTouch * 0.8) + (dribbling * 0.5) + 
-									(crossing * 0.1) + (finishing * 0.5) + (longShots * 0.3) + (passing * 1.0) + (heading * 0.0) + (marking * 0.0) + 
+									(crossing * 0.2) + (finishing * 0.3) + (longShots * 0.2) + (passing * 1.0) + (heading * 0.0) + (marking * 0.0) + 
 									(tackling * 0.0) + (creativity * 1.0) + (anticipation * 0.9) + (decisions * 0.8) + (offTheBall * 0.7) + 
-									(flair * 0.9) + (composure * 0.8) + (positioning * 0.0) + (bravery * 0.0) + (workRate * 0.3) + 
-									(concentration * 0.0) + (determination * 0.0) + (teamwork * 0.7)); 
+									(flair * 0.9) + (composure * 0.7) + (positioning * 0.0) + (bravery * 0.0) + (workRate * 0.3) + 
+									(concentration * 0.0) + (determination * 0.2) + (teamwork * 0.7)); 
 	tempStikerTrequartista = (tempStikerTrequartista * strikerPositionAdjustmentMultiplier) * 0.1;
 	return tempStikerTrequartista;
 }
@@ -513,8 +510,8 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 {
 	int skillLevel = centralAttackingMidfielder;
 	float amcAbilityLevel;
-	if (skillLevel>15) { amcAbilityLevel = 1.0; }
-	else if (skillLevel>14) { amcAbilityLevel = 0.95; }
+	if (skillLevel>17) { amcAbilityLevel = 1.0; }
+	else if (skillLevel>14) { amcAbilityLevel = 0.97; }
 	else if (skillLevel>11) { amcAbilityLevel = 0.85; }
 	else if (skillLevel>8) { amcAbilityLevel = 0.70; }
 	else if (skillLevel>4) { amcAbilityLevel = 0.50; }
@@ -523,20 +520,20 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 	return amcAbilityLevel;
 }
 
-- (int)amcInsideForward
+- (float)amcInsideForward
 {
 	float amcPositionAdjustmentMultiplier = [self amcAbilityLevel];
-	float tempAmcInsideForward = ((agility * 0.4) + (balance * 0.4) + (strength * 0.0) + (acceleration * 0.5) + (pace * 0.5) + 
-								  (jumping * 0.0) + (stamina * 0.0) + (technique * 1.0) + (firstTouch * 0.8) + (dribbling * 0.7) + 
-								  (crossing * 0.0) + (finishing * 1.1) + (longShots * 0.3) + (passing * 0.8) + (heading * 0.0) + (marking * 0.0) + 
-								  (tackling * 0.0) + (creativity * 0.8) + (anticipation * 0.6) + (decisions * 0.5) + (offTheBall * 1.0) + 
-								  (flair * 0.9) + (composure * 0.9) + (positioning * 0.0) + (bravery * 0.0) + (workRate * 0.0) + 
-								  (concentration * 0.0) + (determination * 0.0) + (teamwork * 0.3)); 
+	float tempAmcInsideForward = ((agility * 0.4) + (balance * 0.4) + (strength * 0.0) + (acceleration * 0.4) + (pace * 0.4) + 
+								  (jumping * 0.0) + (stamina * 0.1) + (technique * 1.0) + (firstTouch * 0.8) + (dribbling * 0.6) + 
+								  (crossing * 0.0) + (finishing * 1.0) + (longShots * 0.2) + (passing * 0.6) + (heading * 0.0) + (marking * 0.0) + 
+								  (tackling * 0.0) + (creativity * 0.6) + (anticipation * 0.6) + (decisions * 0.5) + (offTheBall * 1.0) + 
+								  (flair * 0.9) + (composure * 0.9) + (positioning * 0.0) + (bravery * 0.0) + (workRate * 0.2) + 
+								  (concentration * 0.0) + (determination * 0.4) + (teamwork * 0.3)); 
 	tempAmcInsideForward = (tempAmcInsideForward * amcPositionAdjustmentMultiplier) * 0.1;
 	return tempAmcInsideForward;
 }
 
-- (int)amcAttackingMidfielder
+- (float)amcAttackingMidfielder
 {
 	float amcPositionAdjustmentMultiplier = [self amcAbilityLevel];
 	float tempAmcAttackingMidfielder = ((agility * 0.3) + (balance * 0.3) + (strength * 0.3) + (acceleration * 0.1) + (pace * 0.1) + 
@@ -544,33 +541,34 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 										(crossing * 0.3) + (finishing * 0.8) + (longShots * 0.5) + (passing * 0.8) + (heading * 0.0) + (marking * 0.0) + 
 										(tackling * 0.2) + (creativity * 0.7) + (anticipation * 0.7) + (decisions * 0.9) + (offTheBall * 0.7) + 
 										(flair * 0.0) + (composure * 0.5) + (positioning * 0.0) + (bravery * 0.0) + (workRate * 0.3) + 
-										(concentration * 0.4) + (determination * 0.6) + (teamwork * 0.5)); 
+										(concentration * 0.4) + (determination * 0.5) + (teamwork * 0.5)); 
 	tempAmcAttackingMidfielder = (tempAmcAttackingMidfielder * amcPositionAdjustmentMultiplier) * 0.1;
 	return tempAmcAttackingMidfielder;
 }
 
-- (int)amcAdvancedPlaymaker
+- (float)amcAdvancedPlaymaker
 {
 	float amcPositionAdjustmentMultiplier = [self amcAbilityLevel];
-	float tempAmcAdvancedPlaymaker = ((agility * 0.3) + (balance * 0.3) + (strength * 0.0) + (acceleration * 0.2) + (pace * 0.2) + 
-									  (jumping * 0.0) + (stamina * 0.7) + (technique * 0.9) + (firstTouch * 0.9) + (dribbling * 0.7) + 
-									  (crossing * 0.1) + (finishing * 0.0) + (longShots * 0.0) + (passing * 1.0) + (heading * 0.0) + (marking * 0.0) + 
-									  (tackling * 0.0) + (creativity * 1.0) + (anticipation * 0.8) + (decisions * 0.9) + (offTheBall * 0.8) + 
-									  (flair * 0.8) + (composure * 0.7) + (positioning * 0.0) + (bravery * 0.0) + (workRate * 0.2) + 
-									  (concentration * 0.0) + (determination * 0.4) + (teamwork * 0.4)); 
+	float tempAmcAdvancedPlaymaker = ((agility * 0.2) + (balance * 0.3) + (strength * 0.1) + (acceleration * 0.1) + (pace * 0.2) + 
+									  (jumping * 0.0) + (stamina * 0.5) + (technique * 0.8) + (firstTouch * 0.9) + (dribbling * 0.6) + 
+									  (crossing * 0.1) + (finishing * 0.1) + (longShots * 0.1) + (passing * 1.0) + (heading * 0.0) + (marking * 0.0) + 
+									  (tackling * 0.1) + (creativity * 1.0) + (anticipation * 0.9) + (decisions * 1.0) + (offTheBall * 0.6) + 
+									  (flair * 0.7) + (composure * 0.8) + (positioning * 0.0) + (bravery * 0.0) + (workRate * 0.2) + 
+									  (concentration * 0.2) + (determination * 0.4) + (teamwork * 0.4)); 
 	tempAmcAdvancedPlaymaker = (tempAmcAdvancedPlaymaker * amcPositionAdjustmentMultiplier) * 0.1;
 	return tempAmcAdvancedPlaymaker;
 }
 
-- (int)amcTrequartista
+
+- (float)amcTrequartista
 {
 	float amcPositionAdjustmentMultiplier = [self amcAbilityLevel];
 	float tempAmcTrequartista = ((agility * 0.4) + (balance * 0.4) + (strength * 0.0) + (acceleration * 0.3) + (pace * 0.3) + 
 								 (jumping * 0.0) + (stamina * 0.0) + (technique * 0.8) + (firstTouch * 0.8) + (dribbling * 0.5) + 
-								 (crossing * 0.1) + (finishing * 0.5) + (longShots * 0.3) + (passing * 1.0) + (heading * 0.0) + (marking * 0.0) + 
-								 (tackling * 0.0) + (creativity * 1.0) + (anticipation * 0.9) + (decisions * 0.8) + (offTheBall * 0.7) + 
+								 (crossing * 0.0) + (finishing * 0.4) + (longShots * 0.3) + (passing * 1.0) + (heading * 0.0) + (marking * 0.0) + 
+								 (tackling * 0.0) + (creativity * 1.0) + (anticipation * 0.9) + (decisions * 0.8) + (offTheBall * 0.9) + 
 								 (flair * 0.9) + (composure * 0.8) + (positioning * 0.0) + (bravery * 0.0) + (workRate * 0.3) + 
-								 (concentration * 0.0) + (determination * 0.0) + (teamwork * 0.7)); 
+								 (concentration * 0.0) + (determination * 0.0) + (teamwork * 0.5)); 
 	tempAmcTrequartista = (tempAmcTrequartista * amcPositionAdjustmentMultiplier) * 0.1;
 	return tempAmcTrequartista;
 }
@@ -586,7 +584,7 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 	
 	float amlrAbilityLevel;
 	if (skillLevel>18) { amlrAbilityLevel = 1.0; }
-	else if (skillLevel>14) { amlrAbilityLevel = 0.95; }
+	else if (skillLevel>14) { amlrAbilityLevel = 0.97; }
 	else if (skillLevel>11) { amlrAbilityLevel = 0.85; }
 	else if (skillLevel>8) { amlrAbilityLevel = 0.70; }
 	else if (skillLevel>4) { amlrAbilityLevel = 0.50; }
@@ -595,33 +593,33 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 	return amlrAbilityLevel;
 }
 
-- (int)amlrWinger
+- (float)amlrWinger
 {
 	float amlrPositionAdjustmentMultiplier = [self amlrAbilityLevel];
-	float tempAmlrWinger = ((agility * 0.6) + (balance * 0.6) + (strength * 0.0) + (acceleration * 1.1) + (pace * 1.0) + 
+	float tempAmlrWinger = ((agility * 0.6) + (balance * 0.6) + (strength * 0.0) + (acceleration * 1.0) + (pace * 1.0) + 
 							(jumping * 0.0) + (stamina * 0.5) + (technique * 0.7) + (firstTouch * 0.6) + (dribbling * 0.9) + 
 							(crossing * 1.0) + (finishing * 0.0) + (longShots * 0.0) + (passing * 0.6) + (heading * 0.0) + (marking * 0.0) + 
-							(tackling * 0.0) + (creativity * 0.6) + (anticipation * 0.4) + (decisions * 0.2) + (offTheBall * 0.6) + 
+							(tackling * 0.0) + (creativity * 0.6) + (anticipation * 0.4) + (decisions * 0.3) + (offTheBall * 0.6) + 
 							(flair * 0.6) + (composure * 0.0) + (positioning * 0.0) + (bravery * 0.0) + (workRate * 0.5) + 
-							(concentration * 0.0) + (determination * 0.5) + (teamwork * 0.5)); 
+							(concentration * 0.0) + (determination * 0.4) + (teamwork * 0.5)); 
 	tempAmlrWinger = (tempAmlrWinger * amlrPositionAdjustmentMultiplier) * 0.1;
 	return tempAmlrWinger;	
 }
 
-- (int)amlrInsideForward
+- (float)amlrInsideForward
 {
 	float amlrPositionAdjustmentMultiplier = [self amlrAbilityLevel];
 	float tempAmlrInsideForward = ((agility * 0.4) + (balance * 0.4) + (strength * 0.0) + (acceleration * 0.5) + (pace * 0.5) + 
 								   (jumping * 0.0) + (stamina * 0.0) + (technique * 1.0) + (firstTouch * 0.8) + (dribbling * 0.7) + 
-								   (crossing * 0.0) + (finishing * 1.1) + (longShots * 0.3) + (passing * 0.8) + (heading * 0.0) + (marking * 0.0) + 
+								   (crossing * 0.0) + (finishing * 1.0) + (longShots * 0.3) + (passing * 0.8) + (heading * 0.0) + (marking * 0.0) + 
 								   (tackling * 0.0) + (creativity * 0.8) + (anticipation * 0.6) + (decisions * 0.5) + (offTheBall * 0.9) + 
-								   (flair * 0.9) + (composure * 0.9) + (positioning * 0.0) + (bravery * 0.0) + (workRate * 0.0) + 
-								   (concentration * 0.0) + (determination * 0.0) + (teamwork * 0.4)); 
+								   (flair * 0.9) + (composure * 0.9) + (positioning * 0.0) + (bravery * 0.0) + (workRate * 0.1) + 
+								   (concentration * 0.0) + (determination * 0.0) + (teamwork * 0.3)); 
 	tempAmlrInsideForward = (tempAmlrInsideForward * amlrPositionAdjustmentMultiplier) * 0.1;
 	return tempAmlrInsideForward;
 }
 
-- (int)amlrAdvancedPlaymaker
+- (float)amlrAdvancedPlaymaker
 {
 	float amlrPositionAdjustmentMultiplier = [self amlrAbilityLevel];
 	float tempAmlrAdvancedPlaymaker = ((agility * 0.2) + (balance * 0.2) + (strength * 0.0) + (acceleration * 0.2) + (pace * 0.5) + 
@@ -641,7 +639,7 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 	int skillLevel = centralMidfielder;
 	float cmAbilityLevel;
 	if (skillLevel>18) { cmAbilityLevel = 1.0; }
-	else if (skillLevel>14) { cmAbilityLevel = 0.95; }
+	else if (skillLevel>14) { cmAbilityLevel = 0.94; }
 	else if (skillLevel>11) { cmAbilityLevel = 0.85; }
 	else if (skillLevel>8) { cmAbilityLevel = 0.70; }
 	else if (skillLevel>4) { cmAbilityLevel = 0.50; }
@@ -650,54 +648,54 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 	return cmAbilityLevel;
 }
 
-- (int)centMidfielder
+- (float)centMidfielder
 {
 	float mcPositionAdjustmentMultiplier = [self cmAbilityLevel];
-	float tempCentMidfielder = ((agility * 0.3) + (balance * 0.3) + (strength * 0.5) + (acceleration * 0.0) + (pace * 0.0) + 
-								(jumping * 0.0) + (stamina * 0.9) + (technique * 0.4) + (firstTouch * 0.5) + (dribbling * 0.2) + 
+	float tempCentMidfielder = ((agility * 0.3) + (balance * 0.4) + (strength * 0.5) + (acceleration * 0.0) + (pace * 0.0) + 
+								(jumping * 0.0) + (stamina * 0.8) + (technique * 0.4) + (firstTouch * 0.5) + (dribbling * 0.2) + 
 								(crossing * 0.4) + (finishing * 0.2) + (longShots * 0.0) + (passing * 0.6) + (heading * 0.4) + (marking * 0.5) + 
-								(tackling * 0.5) + (creativity * 0.5) + (anticipation * 0.5) + (decisions * 0.7) + (offTheBall * 0.4) + 
-								(flair * 0.0) + (composure * 0.1) + (positioning * 0.6) + (bravery * 0.5) + (workRate * 0.8) + 
+								(tackling * 0.5) + (creativity * 0.4) + (anticipation * 0.5) + (decisions * 0.7) + (offTheBall * 0.3) + 
+								(flair * 0.0) + (composure * 0.1) + (positioning * 0.6) + (bravery * 0.5) + (workRate * 0.9) + 
 								(concentration * 0.4) + (determination * 0.7) + (teamwork * 0.6)); 
 	tempCentMidfielder = (tempCentMidfielder * mcPositionAdjustmentMultiplier) * 0.1;
 	return tempCentMidfielder;
 }
 
-- (int)mcDeepLyingPlaymaker
+- (float)mcDeepLyingPlaymaker
 {
 	float mcPositionAdjustmentMultiplier = [self cmAbilityLevel];
 	float tempMcDeepLyingPlaymaker = ((agility * 0.0) + (balance * 0.2) + (strength * 0.4) + (acceleration * 0.0) + (pace * 0.0) + 
 									  (jumping * 0.0) + (stamina * 0.5) + (technique * 0.8) + (firstTouch * 0.9) + (dribbling * 0.1) + 
-									  (crossing * 0.3) + (finishing * 0.0) + (longShots * 0.3) + (passing * 1.0) + (heading * 0.0) + (marking * 0.1) + 
-									  (tackling * 0.0) + (creativity * 1.0) + (anticipation * 0.9) + (decisions * 0.9) + (offTheBall * 0.2) + 
+									  (crossing * 0.3) + (finishing * 0.0) + (longShots * 0.0) + (passing * 1.0) + (heading * 0.0) + (marking * 0.2) + 
+									  (tackling * 0.2) + (creativity * 1.0) + (anticipation * 0.9) + (decisions * 0.9) + (offTheBall * 0.2) + 
 									  (flair * 0.4) + (composure * 0.6) + (positioning * 0.6) + (bravery * 0.0) + (workRate * 0.2) + 
 									  (concentration * 0.5) + (determination * 0.7) + (teamwork * 0.7)); 
 	tempMcDeepLyingPlaymaker = (tempMcDeepLyingPlaymaker * mcPositionAdjustmentMultiplier) * 0.1;
 	return tempMcDeepLyingPlaymaker;
 }
 
-- (int)mcAdvancedPlaymaker
+- (float)mcAdvancedPlaymaker
 {
 	float mcPositionAdjustmentMultiplier = [self cmAbilityLevel];
-	float tempMcAdvancedPlaymaker = ((agility * 0.2) + (balance * 0.3) + (strength * 0.0) + (acceleration * 0.2) + (pace * 0.2) + 
-									 (jumping * 0.0) + (stamina * 0.7) + (technique * 0.9) + (firstTouch * 0.9) + (dribbling * 0.6) + 
-									 (crossing * 0.1) + (finishing * 0.0) + (longShots * 0.0) + (passing * 1.0) + (heading * 0.0) + (marking * 0.1) + 
-									 (tackling * 0.1) + (creativity * 1.0) + (anticipation * 0.8) + (decisions * 1.0) + (offTheBall * 0.8) + 
+	float tempMcAdvancedPlaymaker = ((agility * 0.2) + (balance * 0.3) + (strength * 0.2) + (acceleration * 0.1) + (pace * 0.2) + 
+									 (jumping * 0.0) + (stamina * 0.5) + (technique * 0.8) + (firstTouch * 0.9) + (dribbling * 0.6) + 
+									 (crossing * 0.1) + (finishing * 0.0) + (longShots * 0.0) + (passing * 1.0) + (heading * 0.0) + (marking * 0.2) + 
+									 (tackling * 0.2) + (creativity * 1.0) + (anticipation * 0.8) + (decisions * 1.0) + (offTheBall * 0.6) + 
 									 (flair * 0.7) + (composure * 0.7) + (positioning * 0.0) + (bravery * 0.0) + (workRate * 0.2) + 
-									 (concentration * 0.1) + (determination * 0.4) + (teamwork * 0.4)); 
+									 (concentration * 0.2) + (determination * 0.4) + (teamwork * 0.4)); 
 	tempMcAdvancedPlaymaker = (tempMcAdvancedPlaymaker * mcPositionAdjustmentMultiplier) * 0.1;
 	return tempMcAdvancedPlaymaker;
 }
 
-- (int)ballWinningMidfielder
+- (float)ballWinningMidfielder
 {
 	float mcPositionAdjustmentMultiplier = [self cmAbilityLevel];
-	float tempBallWinningMidfielder = ((agility * 0.0) + (balance * 0.1) + (strength * 1.0) + (acceleration * 0.1) + (pace * 0.0) + 
-									   (jumping * 0.0) + (stamina * 0.7) + (technique * 0.0) + (firstTouch * 0.0) + (dribbling * 0.0) + 
-									   (crossing * 0.0) + (finishing * 0.0) + (longShots * 0.0) + (passing * 0.7) + (heading * 0.3) + (marking * 0.6) + 
-									   (tackling * 1.2) + (creativity * 0.0) + (anticipation * 0.7) + (decisions * 0.7) + (offTheBall * 0.0) + 
-									   (flair * 0.0) + (composure * 0.3) + (positioning * 1.0) + (bravery * 0.9) + (workRate * 0.8) + 
-									   (concentration * 0.7) + (determination * 0.8) + (teamwork * 0.5)); 
+	float tempBallWinningMidfielder = ((agility * 0.3) + (balance * 0.5) + (strength * 1.0) + (acceleration * 0.1) + (pace * 0.0) + 
+									   (jumping * 0.0) + (stamina * 0.7) + (technique * 0.0) + (firstTouch * 0.1) + (dribbling * 0.1) + 
+									   (crossing * 0.0) + (finishing * 0.0) + (longShots * 0.0) + (passing * 0.5) + (heading * 0.3) + (marking * 0.6) + 
+									   (tackling * 1.1) + (creativity * 0.0) + (anticipation * 0.7) + (decisions * 0.7) + (offTheBall * 0.0) + 
+									   (flair * 0.0) + (composure * 0.4) + (positioning * 0.9) + (bravery * 0.9) + (workRate * 0.5) + 
+									   (concentration * 0.7) + (determination * 0.8) + (teamwork * 0.4)); 
 	tempBallWinningMidfielder = (tempBallWinningMidfielder * mcPositionAdjustmentMultiplier) * 0.1;
 	return tempBallWinningMidfielder;
 }
@@ -712,7 +710,7 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 	
 	float mlrAbilityLevel;
 	if (skillLevel>18) { mlrAbilityLevel = 1.0; }
-	else if (skillLevel>14) { mlrAbilityLevel = 0.95; }
+	else if (skillLevel>14) { mlrAbilityLevel = 0.97; }
 	else if (skillLevel>11) { mlrAbilityLevel = 0.85; }
 	else if (skillLevel>8) { mlrAbilityLevel = 0.70; }
 	else if (skillLevel>4) { mlrAbilityLevel = 0.50; }
@@ -721,7 +719,7 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 	return mlrAbilityLevel;
 }
 
-- (int)mlrWinger
+- (float)mlrWinger
 {
 	float mlrPositionAdjustmentMultiplier = [self mlrAbilityLevel];
 	float tempMlrWinger = ((agility * 0.5) + (balance * 0.5) + (strength * 0.0) + (acceleration * 1.1) + (pace * 1.0) + 
@@ -734,7 +732,7 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 	return tempMlrWinger;
 }
 
-- (int)wideMidfielder
+- (float)wideMidfielder
 {
 	float mlrPositionAdjustmentMultiplier = [self mlrAbilityLevel];
 	float tempWideMidfielder = ((agility * 0.3) + (balance * 0.3) + (strength * 0.0) + (acceleration * 0.5) + (pace * 0.5) + 
@@ -754,7 +752,7 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 	int skillLevel = defensiveMidfielder;
 	float dmcAbilityLevel;
 	if (skillLevel>18) { dmcAbilityLevel = 1.0; }
-	else if (skillLevel>14) { dmcAbilityLevel = 0.95; }
+	else if (skillLevel>14) { dmcAbilityLevel = 0.97; }
 	else if (skillLevel>11) { dmcAbilityLevel = 0.85; }
 	else if (skillLevel>8) { dmcAbilityLevel = 0.70; }
 	else if (skillLevel>4) { dmcAbilityLevel = 0.50; }
@@ -763,12 +761,12 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 	return dmcAbilityLevel;
 }
 
-- (int)dmcDefensiveMidfielder
+- (float)dmcDefensiveMidfielder
 {
 	float dmcPositionAdjustmentMultiplier = [self dmcAbilityLevel];
-	float tempDmcDefensiveMidfielder = ((agility * 0.0) + (balance * 0.3) + (strength * 0.7) + (acceleration * 0.2) + (pace * 0.0) + 
+	float tempDmcDefensiveMidfielder = ((agility * 0.1) + (balance * 0.3) + (strength * 0.7) + (acceleration * 0.2) + (pace * 0.0) + 
 										(jumping * 0.1) + (stamina * 0.8) + (technique * 0.3) + (firstTouch * 0.4) + (dribbling * 0.0) + 
-										(crossing * 0.2) + (finishing * 0.0) + (longShots * 0.0) + (passing * 0.6) + (heading * 0.3) + (marking * 0.7) + 
+										(crossing * 0.0) + (finishing * 0.0) + (longShots * 0.0) + (passing * 0.6) + (heading * 0.4) + (marking * 0.7) + 
 										(tackling * 0.7) + (creativity * 0.0) + (anticipation * 0.8) + (decisions * 0.7) + (offTheBall * 0.0) + 
 										(flair * 0.0) + (composure * 0.6) + (positioning * 0.9) + (bravery * 0.5) + (workRate * 0.5) + 
 										(concentration * 0.7) + (determination * 0.7) + (teamwork * 0.7)); 
@@ -776,27 +774,27 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 	return tempDmcDefensiveMidfielder;	
 }
 
-- (int)dmcDeepLyingPlaymaker
+- (float)dmcDeepLyingPlaymaker
 {
 	float dmcPositionAdjustmentMultiplier = [self dmcAbilityLevel];
 	float tempDmcDeepLyingPlaymaker = ((agility * 0.0) + (balance * 0.2) + (strength * 0.1) + (acceleration * 0.0) + (pace * 0.0) + 
-									   (jumping * 0.0) + (stamina * 0.7) + (technique * 0.8) + (firstTouch * 0.8) + (dribbling * 0.0) + 
-									   (crossing * 0.4) + (finishing * 0.0) + (longShots * 0.3) + (passing * 1.0) + (heading * 0.0) + (marking * 0.1) + 
-									   (tackling * 0.1) + (creativity * 1.0) + (anticipation * 0.9) + (decisions * 0.9) + (offTheBall * 0.0) + 
+									   (jumping * 0.0) + (stamina * 0.7) + (technique * 0.8) + (firstTouch * 0.9) + (dribbling * 0.0) + 
+									   (crossing * 0.4) + (finishing * 0.0) + (longShots * 0.0) + (passing * 1.0) + (heading * 0.0) + (marking * 0.2) + 
+									   (tackling * 0.2) + (creativity * 1.0) + (anticipation * 0.9) + (decisions * 0.9) + (offTheBall * 0.0) + 
 									   (flair * 0.3) + (composure * 0.6) + (positioning * 0.8) + (bravery * 0.1) + (workRate * 0.2) + 
 									   (concentration * 0.7) + (determination * 0.7) + (teamwork * 0.7));  
 	tempDmcDeepLyingPlaymaker = (tempDmcDeepLyingPlaymaker * dmcPositionAdjustmentMultiplier) * 0.1;
 	return tempDmcDeepLyingPlaymaker;
 }
 
-- (int)dmcAnchorMan
+- (float)dmcAnchorMan
 {
 	float dmcPositionAdjustmentMultiplier = [self dmcAbilityLevel];
-	float tempDmcAnchorMan = ((agility * 0.1) + (balance * 0.3) + (strength * 0.9) + (acceleration * 0.3) + (pace * 0.0) + 
-							  (jumping * 0.1) + (stamina * 0.8) + (technique * 0.0) + (firstTouch * 0.0) + (dribbling * 0.0) + 
-							  (crossing * 0.0) + (finishing * 0.0) + (longShots * 0.0) + (passing * 0.0) + (heading * 0.3) + (marking * 0.9) + 
+	float tempDmcAnchorMan = ((agility * 0.2) + (balance * 0.3) + (strength * 0.9) + (acceleration * 0.3) + (pace * 0.0) + 
+							  (jumping * 0.1) + (stamina * 0.6) + (technique * 0.0) + (firstTouch * 0.1) + (dribbling * 0.0) + 
+							  (crossing * 0.0) + (finishing * 0.0) + (longShots * 0.0) + (passing * 0.1) + (heading * 0.3) + (marking * 0.8) + 
 							  (tackling * 0.9) + (creativity * 0.0) + (anticipation * 0.8) + (decisions * 0.6) + (offTheBall * 0.0) + 
-							  (flair * 0.0) + (composure * 0.6) + (positioning * 1.0) + (bravery * 0.9) + (workRate * 0.6) + 
+							  (flair * 0.0) + (composure * 0.7) + (positioning * 1.0) + (bravery * 0.9) + (workRate * 0.6) + 
 							  (concentration * 0.7) + (determination * 0.7) + (teamwork * 0.7)); 
 	tempDmcAnchorMan = (tempDmcAnchorMan * dmcPositionAdjustmentMultiplier) * 0.1;
 	return tempDmcAnchorMan;	
@@ -821,7 +819,7 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 	return dlrAbilityLevel;
 }
 
-- (int)dlrWingBack
+- (float)dlrWingBack
 {
 	float dlrPositionAdjustmentMultiplier = [self dlrAbilityLevel];
 	float tempDlrWingBack = ((agility * 0.1) + (balance * 0.1) + (strength * 0.5) + (acceleration * 0.8) + (pace * 0.7) + 
@@ -834,7 +832,7 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 	return tempDlrWingBack;
 }
 
-- (int)dlrFullBack
+- (float)dlrFullBack
 {
 	float dlrPositionAdjustmentMultiplier = [self dlrAbilityLevel];
 	float tempDlrFullBack = ((agility * 0.1) + (balance * 0.1) + (strength * 0.8) + (acceleration * 0.7) + (pace * 0.6) + 
@@ -863,7 +861,7 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 	return cbAbilityLevel;
 }
 
-- (int)coverCentreBack
+- (float)coverCentreBack
 {
 	float cbPositionAdjustmentMultiplier = [self cbAbilityLevel];
 	float tempCoverCentreBack = ((agility * 0.0) + (balance * 0.1) + (strength * 0.7) + (acceleration * 0.5) + (pace * 0.0) + 
@@ -876,7 +874,7 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 	return tempCoverCentreBack;
 }
 
-- (int)stopperCentreBack
+- (float)stopperCentreBack
 {
 	float cbPositionAdjustmentMultiplier = [self cbAbilityLevel];
 	float tempStopperCentreBack = ((agility * 0.0) + (balance * 0.3) + (strength * 1.0) + (acceleration * 0.0) + (pace * 0.0) + 
@@ -887,19 +885,6 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 								   (concentration * 0.8) + (determination * 0.8) + (teamwork * 0.5)); 
 	tempStopperCentreBack = (tempStopperCentreBack * cbPositionAdjustmentMultiplier) * 0.1;
 	return tempStopperCentreBack;
-}
-
-- (int)centreBack
-{
-	float cbPositionAdjustmentMultiplier = [self cbAbilityLevel];
-	float tempCentreBack = ((agility * 0.0) + (balance * 0.3) + (strength * .8) + (acceleration * 0.2) + (pace * 0.0) + 
-							(jumping * 0.9) + (stamina * 0.5) + (technique * 0.0) + (firstTouch * 0.0) + (dribbling * 0.0) + 
-							(crossing * 0.0) + (finishing * 0.0) + (longShots * 0.0) + (passing * 0.0) + (heading * 0.9) + (marking * 0.9) + 
-							(tackling * 1.0) + (creativity * 0.0) + (anticipation * 0.2) + (decisions * 0.9) + (offTheBall * 0.0) + 
-							(flair * 0.0) + (composure * 0.8) + (positioning * 0.8) + (bravery * 0.5) + (workRate * 0.5) + 
-							(concentration * 0.9) + (determination * 0.8) + (teamwork * 0.5)); 
-	tempCentreBack = (tempCentreBack * cbPositionAdjustmentMultiplier) * 0.1;
-	return tempCentreBack;
 }
 
 
