@@ -158,9 +158,11 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 
 - (NSString *)footString
 {
-	if (leftFoot>=15 && rightFoot >=15) { return @"Both"; }
-	else if (leftFoot>=15 && rightFoot < 15) { return @"Left Only"; }
-	else if (leftFoot<15 && rightFoot >= 15) { return @"Right Only"; }
+	if (leftFoot >= 75 && rightFoot >= 75) { return @"Either"; }
+	else if (leftFoot >= 75 && rightFoot < 25) { return @"Left Only"; }
+	else if (leftFoot < 25 && rightFoot >= 75) { return @"Right Only"; }	
+	else if (leftFoot >= 75 && rightFoot < 75) { return @"Left Preferred"; }
+	else if (leftFoot < 75 && rightFoot >= 75) { return @"Right Preferred"; }
 	
 	return @"Unknown";
 }
