@@ -645,12 +645,7 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	NSLog(@"resetting predicate");
 	[[self performSelector:controllerSelector] setFilterPredicate:nil];
 	
-	if ([object respondsToSelector:NSSelectorFromString(@"rowID")] && [object rowID]>=0) {
-		[[self performSelector:controllerSelector] setSelectionIndex:[object rowID]];
-	}
-	else {
-		[[self performSelector:controllerSelector] setSelectionIndex:0];
-	}
+	[[self performSelector:controllerSelector] setSelectedObjects:[NSArray arrayWithObject:object]];
 	
 	NSLog(@"before setview");
 	// set the view
