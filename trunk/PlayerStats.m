@@ -273,152 +273,129 @@ injuryProneness, versatility, naturalFitness, determination, composure, concentr
 
 - (NSString *)bestRoleString
 {
-	float currentBest = [self deepLyingForward];
-	NSString *pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-	NSString *currentBestRole = [@"DpLy Fwd " stringByAppendingString:pctValue];
-	
-	if (currentBest < [self advancedForward]) 
+	float currentBestRating = [self deepLyingForward];
+	NSString *currentBestRole = @"DpLy Fwd";
+
+	if (currentBestRating < [self advancedForward]) 
 	{	
-		currentBest = [self advancedForward];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"Adv Fwd " stringByAppendingString:pctValue];
+		currentBestRating = [self advancedForward];
+		currentBestRole = @"Adv Fwd";
 	}
-	if (currentBest < [self targetMan]) 
+	if (currentBestRating < [self targetMan]) 
 	{
-		currentBest = [self targetMan];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"Target " stringByAppendingString:pctValue];
+		currentBestRating = [self targetMan];
+		currentBestRole = @"Target";
 	}
-	if (currentBest < [self poacher]) 
+	if (currentBestRating < [self poacher]) 
 	{
-		currentBest = [self poacher];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"Poacher " stringByAppendingString:pctValue];
+		currentBestRating = [self poacher];
+		currentBestRole = @"Poacher";
 	}
-	if (currentBest < [self stikerTrequartista]) 
+	if (currentBestRating < [self stikerTrequartista]) 
 	{
-		currentBest = [self stikerTrequartista];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"Treq Fwd " stringByAppendingString:pctValue];
+		currentBestRating = [self stikerTrequartista];
+		currentBestRole = @"Treq Fwd";
 	}
-	if (currentBest < [self amcInsideForward]) 
+	if (currentBestRating < [self amcInsideForward]) 
 	{
-		currentBest = [self amcInsideForward];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"AMC InFwd " stringByAppendingString:pctValue];
+		currentBestRating = [self amcInsideForward];
+		currentBestRole = @"AMC InFwd";
 	}
-	if (currentBest < [self amcAttackingMidfielder]) 
+	if (currentBestRating < [self amcAttackingMidfielder]) 
 	{
-		currentBest = [self amcAttackingMidfielder];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"AMC AttMid " stringByAppendingString:pctValue];
+		currentBestRating = [self amcAttackingMidfielder];
+		currentBestRole = @"AMC AttMid";
 	}
-	if (currentBest < [self amcAdvancedPlaymaker]) 
+	if (currentBestRating < [self amcAdvancedPlaymaker]) 
 	{
-		currentBest = [self amcAdvancedPlaymaker];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"AMC AdvPly " stringByAppendingString:pctValue];
+		currentBestRating = [self amcAdvancedPlaymaker];
+		currentBestRole = @"AMC AdvPly";
 	}
-	if (currentBest < [self amcTrequartista]) 
+	if (currentBestRating < [self amcTrequartista]) 
 	{
-		currentBest = [self amcTrequartista];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"AMC Treq " stringByAppendingString:pctValue];
+		currentBestRating = [self amcTrequartista];
+		currentBestRole = @"AMC Treq";
 	}
-	if (currentBest < [self amlrWinger]) 
+	if (currentBestRating < [self amlrWinger]) 
 	{
-		currentBest = [self amlrWinger];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"AMLR Winger " stringByAppendingString:pctValue];
+		currentBestRating = [self amlrWinger];
+		currentBestRole = @"AMLR Winger";
 	}
-	if (currentBest < [self amlrInsideForward]) 
+	if (currentBestRating < [self amlrInsideForward]) 
 	{
-		currentBest = [self amlrInsideForward];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"AMLR InFwd " stringByAppendingString:pctValue];
+		currentBestRating = [self amlrInsideForward];
+		currentBestRole = @"AMLR InFwd";
 	}
-	if (currentBest < [self amlrAdvancedPlaymaker]) 
+	if (currentBestRating < [self amlrAdvancedPlaymaker]) 
 	{
-		currentBest = [self amlrAdvancedPlaymaker];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"AMLR AdvPly " stringByAppendingString:pctValue];
+		currentBestRating = [self amlrAdvancedPlaymaker];
+		currentBestRole = @"AMLR AdvPly";
 	}
-	if (currentBest < [self centMidfielder]) 
+	if (currentBestRating < [self centMidfielder]) 
 	{
-		currentBest = [self centMidfielder];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"MC " stringByAppendingString:pctValue];
+		currentBestRating = [self centMidfielder];
+		currentBestRole = @"MC";
 	}
-	if (currentBest < [self mcDeepLyingPlaymaker]) 
+	if (currentBestRating < [self mcDeepLyingPlaymaker]) 
 	{
-		currentBest = [self mcDeepLyingPlaymaker];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"MC DpLyPly " stringByAppendingString:pctValue];
+		currentBestRating = [self mcDeepLyingPlaymaker];
+		currentBestRole = @"MC DpLyPly";
 	}
-	if (currentBest < [self mcAdvancedPlaymaker]) 
+	if (currentBestRating < [self mcAdvancedPlaymaker]) 
 	{
-		currentBest = [self mcAdvancedPlaymaker];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"MC AdvPly " stringByAppendingString:pctValue];
+		currentBestRating = [self mcAdvancedPlaymaker];
+		currentBestRole = @"MC AdvPly";
 	}
-	if (currentBest < [self ballWinningMidfielder]) 
+	if (currentBestRating < [self ballWinningMidfielder]) 
 	{
-		currentBest = [self ballWinningMidfielder];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"Ball Win MC " stringByAppendingString:pctValue];
+		currentBestRating = [self ballWinningMidfielder];
+		currentBestRole = @"Ball Win MC";
 	}
-	if (currentBest < [self dmcDefensiveMidfielder]) 
+	if (currentBestRating < [self dmcDefensiveMidfielder]) 
 	{
-		currentBest = [self dmcDefensiveMidfielder];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"DMC " stringByAppendingString:pctValue];
+		currentBestRating = [self dmcDefensiveMidfielder];
+		currentBestRole = @"DMC";
 	}
-	if (currentBest < [self dmcDeepLyingPlaymaker]) 
+	if (currentBestRating < [self dmcDeepLyingPlaymaker]) 
 	{
-		currentBest = [self dmcDeepLyingPlaymaker];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"DMC DLyPly " stringByAppendingString:pctValue];
+		currentBestRating = [self dmcDeepLyingPlaymaker];
+		currentBestRole = @"DMC DLyPly";
 	}
-	if (currentBest < [self dmcAnchorMan]) 
+	if (currentBestRating < [self dmcAnchorMan]) 
 	{
-		currentBest = [self dmcAnchorMan];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"DMC Anchor " stringByAppendingString:pctValue];
+		currentBestRating = [self dmcAnchorMan];
+		currentBestRole = @"DMC Anchor";
 	}
-	if (currentBest < [self dlrWingBack]) 
+	if (currentBestRating < [self dlrWingBack]) 
 	{
-		currentBest = [self dlrWingBack];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"Wing Back " stringByAppendingString:pctValue];
+		currentBestRating = [self dlrWingBack];
+		currentBestRole = @"Wing Back";
 	}
-	if (currentBest < [self dlrFullBack]) 
+	if (currentBestRating < [self dlrFullBack]) 
 	{
-		currentBest = [self dlrFullBack];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"Full Back " stringByAppendingString:pctValue];
+		currentBestRating = [self dlrFullBack];
+		currentBestRole = @"Full Back";
 	}
-	if (currentBest < [self coverCentreBack]) 
+	if (currentBestRating < [self coverCentreBack]) 
 	{
-		currentBest = [self coverCentreBack];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"Cover CB " stringByAppendingString:pctValue];
+		currentBestRating = [self coverCentreBack];
+		currentBestRole = @"Cover CB";
 	}
-	if (currentBest < [self stopperCentreBack]) 
+	if (currentBestRating < [self stopperCentreBack]) 
 	{
-		currentBest = [self stopperCentreBack];
-		pctValue = [NSString stringWithFormat:@"(%.1f%%)", currentBest];
-		currentBestRole = [@"Stopper CB " stringByAppendingString:pctValue];
+		currentBestRating = [self stopperCentreBack];
+		currentBestRole = @"Stopper CB";
 	}
 	
-	//Just a workaround for GK
+	// Just a workaround for GK
 	int gkCheck = goalkeeper;
 	if (gkCheck>14) 
 	{ 
-		currentBestRole = @"GK (100%)";
+		currentBestRating = 100.0;
+		currentBestRole = @"GK";
 	}
 	
-	
-	return currentBestRole;
+	return [NSString stringWithFormat:@"%@ (%.1f%%)",currentBestRole,currentBestRating];
 }
 
 
