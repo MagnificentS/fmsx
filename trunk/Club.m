@@ -124,7 +124,7 @@ newRegionalDivisionLevel;
 {
 	if ([object respondsToSelector:NSSelectorFromString(@"UID")]) {
 		RegionalDivision *newDivision = [[RegionalDivision alloc] init];
-		[newDivision setDivisionID:[object rowID]];
+		[newDivision setDivisionID:[object UID]];
 		[newDivision setLevel:newRegionalDivisionLevel];
 		if (![regionalDivisions containsObject:newDivision]) {
 			[[self mutableArrayValueForKey:@"regionalDivisions"] addObject:newDivision];

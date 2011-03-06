@@ -562,6 +562,14 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
+	else if ([[aTableColumn identifier] isEqualToString:@"compUIDtxt"]) {
+		int UID = [[aCell stringValue] intValue];
+		
+		if ([[[[controller database] langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]]!=nil) {
+			[aCell setStringValue:[[[[[controller database] langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]] objectForKey:@"name"]];
+		}
+		else { [aCell setStringValue:@"---"]; }
+	}
 	else if ([[aTableColumn identifier] isEqualToString:@"compIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
