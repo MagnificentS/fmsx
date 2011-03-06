@@ -11,6 +11,7 @@
 #import "TeamContainer.h"
 #import "FMDate.h"
 #import "Controller.h"
+#import "Competition.h"
 
 // professional status
 #define CPS_NOT_SET				0
@@ -73,6 +74,7 @@
 	int nationID, futureTransferManagerID, chairmanID, cityID;
 	int averageAttendance, minimumAttendance, maximumAttendance, seasonTicketHolders;
 	int rowID, UID, maximumWeeklyWage, competitionID, UEFA5YearTotal;
+	int newRegionalDivisionLevel;
 	BOOL hasYouthAcademy, hasUEFACoefficient, hasScoutingKnowledges, allowSponsorshipForTopPlayers,
 	isPLC, paysHighWages, needsShortlistUpdate, isLeagueBodyClub;
 	ClubFinance *finance;
@@ -121,6 +123,8 @@ maximumWeeklyWage, competitionID, UEFA5YearTotal, cityID;
 *unknownDate2;
 @property(readwrite,copy) NSData *unknownData1, *unknownData2, *unknownData3, *unknownData4, *unknownData5, *unknownData6;
 
+@property(assign,readwrite) int newRegionalDivisionLevel;
+
 - (NSArray *)professionalStatusStrings;
 - (NSArray *)directorObjects;
 - (NSArray *)scoutObjects;
@@ -129,5 +133,6 @@ maximumWeeklyWage, competitionID, UEFA5YearTotal, cityID;
 - (NSString *)competitionString;
 - (short)reputation;
 
+- (void)addRegionalDivision:(Competition *)object;
 
 @end

@@ -9,6 +9,7 @@
 #import "Club.h"
 #import "Team.h"
 #import "Database.h"
+#import "RegionalDivision.h"
 
 @implementation Club
 
@@ -36,7 +37,8 @@ teamContainer, isLeagueBodyClub, controller, unknownChar1, roughFinancialState,
 unknownChar2, unknownChar3, unknownChar4, unknownChar5, unknownChar6, unknownChar7, 
 unknownChar8, unknownChar9, unknownChar10, unknownChar11, unknownDate1, unknownDate2, logoPath, 
 youthAcademy, youthRecruitment, unknownChar12, unknownShort1, unknownShort2,
-unknownData1, unknownData2, unknownData3, unknownData4, unknownData5, unknownData6;
+unknownData1, unknownData2, unknownData3, unknownData4, unknownData5, unknownData6,
+newRegionalDivisionLevel;
 
 - (NSArray *)professionalStatusStrings
 {
@@ -116,6 +118,19 @@ unknownData1, unknownData2, unknownData3, unknownData4, unknownData5, unknownDat
 		return [[[[controller database] teams] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] reputation];
 	}
 	return 0;
+}
+
+- (void)addRegionalDivision:(Competition *)object
+{
+	if ([object respondsToSelector:NSSelectorFromString(@"UID")]) {
+		RegionalDivision *newDivision = [[RegionalDivision alloc] init];
+		[newDivision setDivisionID:[object rowID]];
+		[newDivision setLevel:newRegionalDivisionLevel];
+		if (![regionalDivisions containsObject:newDivision]) {
+			[[self mutableArrayValueForKey:@"regionalDivisions"] addObject:newDivision];
+		}
+		[newDivision release];
+	}
 }
 
 @end
