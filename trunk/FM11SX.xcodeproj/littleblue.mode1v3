@@ -230,6 +230,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -286,13 +288,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>337</integer>
+									<integer>339</integer>
 									<integer>323</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 5383}, {231, 546}}</string>
+							<string>{{0, 5346}, {231, 546}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -313,7 +315,7 @@
 							<real>209</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>139 273 1049 605 0 0 1440 878 </string>
+						<string>108 272 1049 605 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -329,7 +331,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>FM11SX-Info.plist</string>
+								<string>GameVersions.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -337,15 +339,13 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>FM11SX-Info.plist</string>
+										<string>GameVersions.h</string>
 										<key>_historyCapacity</key>
 										<integer>20</integer>
 										<key>bookmark</key>
-										<string>FBA22A0D1323BE6F00748F2C</string>
+										<string>FBA22A161323C24200748F2C</string>
 										<key>history</key>
 										<array>
-											<string>FBF84BB41316FB4100BA3807</string>
-											<string>FBF84BB51316FB4100BA3807</string>
 											<string>FBF84BB61316FB4100BA3807</string>
 											<string>FBF84BB71316FB4100BA3807</string>
 											<string>FBF84BB81316FB4100BA3807</string>
@@ -363,7 +363,9 @@
 											<string>FB05975E131EFB6100E5087A</string>
 											<string>FBA22A0B1323BE6F00748F2C</string>
 											<string>FBA22A0C1323BE6F00748F2C</string>
-											<string>FBFAC57113203AB200399A04</string>
+											<string>FBA22A131323C24200748F2C</string>
+											<string>FBA22A141323C24200748F2C</string>
+											<string>FBA22A151323C24200748F2C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -377,7 +379,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {796, 388}}</string>
 								<key>RubberWindowFrame</key>
-								<string>139 273 1049 605 0 0 1440 878 </string>
+								<string>108 272 1049 605 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -397,7 +399,7 @@
 								<key>Frame</key>
 								<string>{{0, 393}, {796, 171}}</string>
 								<key>RubberWindowFrame</key>
-								<string>139 273 1049 605 0 0 1440 878 </string>
+								<string>108 272 1049 605 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -561,11 +563,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>/Users/littleblue/ソフト/FM11SX/FM11SX.xcodeproj</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>FB9D33D310923BAA000883FF</string>
+		<string>/Users/littleblue/ソフト/FM11SX/FM11SX.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>139 273 1049 605 0 0 1440 878 </string>
+	<string>108 272 1049 605 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -766,13 +769,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>FB101786132043A300B0EF2F</string>
+				<string>FBA22A171323C24200748F2C</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>FB101787132043A300B0EF2F</string>
-				<string>FB101788132043A300B0EF2F</string>
-				<string>FB101789132043A300B0EF2F</string>
-				<string>FB10178A132043A300B0EF2F</string>
-				<string>FB10178B132043A300B0EF2F</string>
+				<string>FBA22A181323C24200748F2C</string>
+				<string>FBA22A191323C24200748F2C</string>
+				<string>FBA22A1A1323C24200748F2C</string>
+				<string>FBA22A1B1323C24200748F2C</string>
+				<string>FBA22A1C1323C24200748F2C</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>

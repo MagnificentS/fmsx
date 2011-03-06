@@ -7,13 +7,14 @@
 //
 
 #import "Media.h"
+#import "MediaClub.h"
 
 @implementation Media
 
 @synthesize databaseClass, nameGender, period, scope, style, fake,
 cityID, localAreaID, continentID, rowID, UID, lastPublishedDate,
 competitions, nations, clubs, linkedMedia, name, URL, types,
-journalists;
+journalists, newClubURL, newClubUID;
 
 - (void)setNewCompetitionID:(int)val
 {
@@ -106,6 +107,19 @@ journalists;
 						NSLocalizedString(@"Kit Sponsor", @"media type"),
 						nil];
 	return strings;
+}
+
+- (void)addClub:(Club *)object
+{
+	if ([object respondsToSelector:NSSelectorFromString(@"UID")]) {
+		MediaClub *newClub = [[MediaClub alloc] init];
+		[newClub setURL:newClubURL];
+		[newClub setClubID:[object UID]];
+		if (![clubs containsObject:newClub]) {
+			[[self mutableArrayValueForKey:@"clubs"] addObject:newClub];
+		}
+		[newClub release];
+	}
 }
 
 @end
