@@ -198,10 +198,11 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	NSLog(@"End of %d awards at %d",[awards count],*byteOffset);
 
 	NSThread *awardThread = [[NSThread alloc] initWithTarget:self selector:@selector(assignAwardNames:) object:nil];
+	[awardThread start];
+	[awardThread release];
 	
 	[tempArray removeAllObjects];
 	[pool drain];
-	[awardThread start];
 	
 #pragma mark Cities
 	pool = [[NSAutoreleasePool alloc] init];
@@ -365,10 +366,11 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	NSLog(@"End of %d continents at %d",[continents count],*byteOffset);
 	
 	NSThread *continentThread = [[NSThread alloc] initWithTarget:self selector:@selector(assignContinentNames:) object:nil];
+	[continentThread start];
+	[continentThread release];
 	
 	[tempArray removeAllObjects];
 	[pool drain];
-	[continentThread start];
 	
 #pragma mark Currencies
 	pool = [[NSAutoreleasePool alloc] init];
@@ -438,10 +440,11 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	NSLog(@"End of %d injuries at %d",[injuries count],*byteOffset);
 	
 	NSThread *injuryThread = [[NSThread alloc] initWithTarget:self selector:@selector(assignInjuryNames:) object:nil];
+	[injuryThread start];
+	[injuryThread release];
 	
 	[tempArray removeAllObjects];
 	[pool drain];
-	[injuryThread start];
 	
 #pragma mark Media
 	pool = [[NSAutoreleasePool alloc] init];
@@ -868,10 +871,11 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	NSLog(@"End of %d stage names at %d",[stageNames count],*byteOffset);	
 	
 	NSThread *stageNameThread = [[NSThread alloc] initWithTarget:self selector:@selector(assignStageNames:) object:nil];
+	[stageNameThread start];
+	[stageNameThread release];
 	
 	[tempArray removeAllObjects];
 	[pool drain];
-	[stageNameThread start];
 	
 #pragma mark Teams
 	pool = [[NSAutoreleasePool alloc] init];
@@ -974,10 +978,11 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	NSLog(@"End of %d descriptions at %d",[descriptions count],*byteOffset);	
 	
 	NSThread *descriptionThread = [[NSThread alloc] initWithTarget:self selector:@selector(assignDescriptionNames:) object:nil];
+	[descriptionThread start];
+	[descriptionThread release];
 	
 	[tempArray removeAllObjects];
 	[pool drain];
-	[descriptionThread start];
 	
 #pragma mark Derbies
 	pool = [[NSAutoreleasePool alloc] init];
