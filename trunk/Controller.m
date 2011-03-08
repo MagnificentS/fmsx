@@ -160,10 +160,14 @@ teamsController, weatherController, currentDate, gameDBVersion, databaseChanges,
 		// setup gameDB thread
 		gameDBThread = [[NSThread alloc] initWithTarget:self selector:@selector(loadGame:) object:gamePath];
 		// start  graphics threads if required
-		if ([[NSUserDefaults standardUserDefaults] boolForKey:@"parseGraphics"]==TRUE) { [parseGraphicsThread start]; }
+		if ([[NSUserDefaults standardUserDefaults] boolForKey:@"parseGraphics"]==TRUE) { 
+			[parseGraphicsThread start]; 
+			[parseGraphicsThread release];
+		}
 		
 		// Start game database load thread
 		[gameDBThread start];
+		[gameDBThread release];
 	}
 }
 
@@ -511,6 +515,7 @@ teamsController, weatherController, currentDate, gameDBVersion, databaseChanges,
 		NSThread *saveDBThread = [[NSThread alloc] initWithTarget:self selector:@selector(writeGame:) object:[op filename]];
 		// Spawn saveDBThread
 		[saveDBThread start];
+		[saveDBThread release];
 	}
 }
 
@@ -746,10 +751,15 @@ teamsController, weatherController, currentDate, gameDBVersion, databaseChanges,
 	
 	if (dataLoaded) { [self resetDB]; }
 	
-	parseGraphicsThread = [[NSThread alloc] initWithTarget:database selector:@selector(parseGraphics:) object:[[NSUserDefaults standardUserDefaults] stringForKey:@"graphicsLocation"]];
 	gameDBThread = [[NSThread alloc] initWithTarget:self selector:@selector(loadGame:) object:filename];
-	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"parseGraphics"]==TRUE) { [parseGraphicsThread start]; }
 	[gameDBThread start];
+	[gameDBThread release];
+	
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"parseGraphics"]==TRUE) { 
+		parseGraphicsThread = [[NSThread alloc] initWithTarget:database selector:@selector(parseGraphics:) object:[[NSUserDefaults standardUserDefaults] stringForKey:@"graphicsLocation"]];
+		[parseGraphicsThread start]; 
+		[parseGraphicsThread release];
+	}
 	
 	return fileExists;
 }
