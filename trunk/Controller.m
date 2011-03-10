@@ -292,7 +292,7 @@ langDBLoaded;
 		[self setGameDB:[SXFGameDBLoader readFileFromData:[[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"compressedFileLength"] intValue])] zlibInflate] withController:self]];
 	}
 	else {
-		[self setGameDB:[SXFGameDBLoader readFileFromData:[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"fileLength"] intValue])] withController:self]];
+		[SXFGameDBLoader readFileFromData:[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"fileLength"] intValue])] withController:self intoObject:gameDB];
 		[gameDB setSaveStartOffset:([gameDB saveStartOffset]+18)];
 		[[gameDB database] setSaveEndOffset:([gameDB saveEndOffset]+18)];
 	}

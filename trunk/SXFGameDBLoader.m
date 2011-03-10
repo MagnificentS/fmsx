@@ -14,13 +14,11 @@
 
 @implementation SXFGameDBLoader
 
-+ (SXFGameDB *)readFileFromData:(NSData *)data withController:(Controller *)controller
++ (id)readFileFromData:(NSData *)data withController:(Controller *)controller intoObject:(SXFGameDB *)object
 {
 	unsigned int offset = 0;
 	short sbuffer;
 	int ibuffer;
-	
-	SXFGameDB *object = [[SXFGameDB alloc] init];
 	
 	[[object database] setController:controller];
 	
@@ -84,8 +82,6 @@
 	}
 	
 	NSLog(@"game_db.dat: %d of %d read",offset,[data length]);
-	
-	return object;
 }
 
 @end
