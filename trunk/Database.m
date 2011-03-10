@@ -234,7 +234,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		}
 		else { 
 			if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loadLangDB"]==TRUE) {
-				id item = [[langDB cityLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
+				id item = [[[controller langDB] cityLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
 				if (item!=nil) {
 					[(City *)object setName:[item objectForKey:@"name"]];
 				}
@@ -318,7 +318,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		}
 		else { 
 			if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loadLangDB"]==TRUE) {
-				id item = [[langDB compLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
+				id item = [[[controller langDB] compLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
 				if (item!=nil) {
 					[object setController:controller];
 					[(Competition *)object setName:[item objectForKey:@"name"]];
@@ -714,7 +714,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		}
 		else { 
 			if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loadLangDB"]==TRUE) {
-				id item = [[langDB localAreaLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
+				id item = [[[controller langDB] localAreaLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
 				if (item!=nil) {
 					[(LocalArea *)object setName:[item objectForKey:@"name"]];
 					[object setShortName:[item objectForKey:@"shortName"]];
@@ -791,7 +791,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		}
 		else { 
 			if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loadLangDB"]==TRUE) {
-				id item = [[langDB stadiumLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
+				id item = [[[controller langDB] stadiumLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
 				if (item!=nil) {
 					[(Stadium *)object setName:[item objectForKey:@"name"]];
 				}
@@ -1045,7 +1045,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		}
 		else { 
 			if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loadLangDB"]==TRUE) {
-				id item = [[langDB agreementLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
+				id item = [[[controller langDB] agreementLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
 				if (item!=nil) {
 					[(Agreement *)object setName:[item objectForKey:@"name"]];
 					[object setShortName:[item objectForKey:@"shortName"]];
@@ -1982,7 +1982,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	unsigned int i = 0;
 	for (id item in awards)
 	{
-		id object = [[langDB awardLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
+		id object = [[[controller langDB] awardLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
 		if (object!=nil) {
 			Award *aAward = [[self awards] objectAtIndex:i];
 			[aAward setName:[object objectForKey:@"name"]];
@@ -2001,7 +2001,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 	unsigned int i = 0;
 	for (id item in continents) {
-		id item2 = [[langDB continentLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
+		id item2 = [[[controller langDB] continentLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
 		if (item2!=nil) {
 			Continent *object = [[self continents] objectAtIndex:i];
 			[object setName:[item2 objectForKey:@"name"]];
@@ -2023,7 +2023,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 	unsigned int i = 0;
 	for (id item in injuries) {
-		id item2 = [[langDB injuryLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
+		id item2 = [[[controller langDB] injuryLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
 		if (item2!=nil) {
 			Injury *object = [[self injuries] objectAtIndex:i];
 			[object setName:[item2 objectForKey:@"name"]];
@@ -2042,7 +2042,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 	unsigned int i = 0;
 	for (id item in descriptions) {
-		id item2 = [[langDB descriptionLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
+		id item2 = [[[controller langDB] descriptionLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
 		if (item2!=nil) {
 			Description *object = [[self descriptions] objectAtIndex:i];
 			[object setNames:[item2 objectForKey:@"names"]];
@@ -2060,7 +2060,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 	unsigned int i = 0;
 	for (id item in stageNames) {
-		id item2 = [[langDB stageNameLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
+		id item2 = [[[controller langDB] stageNameLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
 		if (item2!=nil) {
 			StageName *object = [[self stageNames] objectAtIndex:i];
 			[object setName:[item2 objectForKey:@"name"]];

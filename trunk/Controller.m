@@ -35,7 +35,8 @@
 @synthesize database, gamePath, idle, dataLoaded, infoStrings, awardsController, citiesController, clubsController, saveGameSummary,
 continentsController, currenciesController, injuriesController, languagesController, localAreasController, gameID, gameInfo, gameDB,
 mediaController, nationsController, peopleController, stadiumsController, stadiumChangesController, competitionsController, langDB,
-teamsController, weatherController, currentDate, gameDBVersion, databaseChanges, timesSaved, startBuildVersion, currentBuildVersion;
+teamsController, weatherController, currentDate, gameDBVersion, databaseChanges, timesSaved, startBuildVersion, currentBuildVersion, 
+langDBLoaded;
 
 - (id)init
 {
@@ -192,8 +193,8 @@ teamsController, weatherController, currentDate, gameDBVersion, databaseChanges,
 	
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loadLangDB"]==TRUE) { 
 	//	[database setStatus:NSLocalizedString(@"loading lang_db.dat", @"editor status")];
-		[database readLangDB:[[NSUserDefaults standardUserDefaults] stringForKey:@"lang_db_location"]]; 
-	//	langDB = [LangDBLoader readFromFile:[[NSUserDefaults standardUserDefaults] stringForKey:@"lang_db_location"]];
+	//	[database readLangDB:[[NSUserDefaults standardUserDefaults] stringForKey:@"lang_db_location"]]; 
+		langDB = [LangDBLoader readFromFile:[[NSUserDefaults standardUserDefaults] stringForKey:@"lang_db_location"]];
 	}
 		
 	unsigned int fileLength, gameLength;

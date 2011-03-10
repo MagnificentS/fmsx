@@ -47,7 +47,7 @@
 	unsigned short gameDBVersion;
 	int databaseChanges, timesSaved, startBuildVersion, currentBuildVersion, saveStartOffset, gameID, mainFileLength;
 	
-	BOOL idle, dataLoaded, compressed;
+	BOOL idle, dataLoaded, compressed, langDBLoaded;
 }
 
 - (IBAction)openGame:(id)sender;
@@ -77,7 +77,7 @@
 @property(copy,readwrite) NSMutableDictionary *infoStrings;
 @property(assign,readwrite) unsigned short gameDBVersion;
 @property(assign,readwrite) int databaseChanges, timesSaved, startBuildVersion, currentBuildVersion, gameID;
-@property(assign,readwrite) BOOL idle, dataLoaded;
+@property(assign,readwrite) BOOL idle, dataLoaded, langDBLoaded;
 @property(assign,readwrite) NSArrayController *awardsController, *citiesController, *clubsController, *competitionsController,
 *continentsController, *currenciesController, *injuriesController, *languagesController, *localAreasController,
 *mediaController, *nationsController, *peopleController, *stadiumsController, *stadiumChangesController,
