@@ -37,8 +37,8 @@
 	NSString *status;
 }
 
-- (id)readGameDB:(NSData *)data atOffset:(unsigned int *)byteOffset;
-- (void)saveGameDB:(NSMutableData *)data;
+- (id)readGameDB:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version;
+- (void)saveGameDB:(NSMutableData *)data version:(short)version;
 - (void)readLangDB:(NSString *)path;
 - (void)parseGraphics:(NSString *)path;
 

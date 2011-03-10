@@ -15,7 +15,11 @@
 
 @class ContentController;
 @class Database;
+@class SXFGameInfo;
+@class SXFGameDB;
+@class SXFSaveGameSummary;
 @class FMDate;
+@class LangDB;
 
 @interface Controller : NSObject {
 	IBOutlet NSPanel *donatePanel;
@@ -26,17 +30,22 @@
 			 *teamsController, *weatherController;
 	
 	Database *database;
+	LangDB *langDB;
+	SXFGameDB *gameDB;
+	SXFGameInfo *gameInfo;
+	SXFSaveGameSummary *saveGameSummary;
 	
 	NSWindowController *preferencesWindowController;
 	NSThread *gameDBThread;
 	NSThread *parseGraphicsThread;
 	NSString *gamePath;
 	
+	NSMutableDictionary *fileInfos;
 	NSMutableDictionary *infoStrings;
 	
 	FMDate *currentDate, *startDate;
 	unsigned short gameDBVersion;
-	int databaseChanges, timesSaved, startBuildVersion, currentBuildVersion, saveStartOffset, gameID;
+	int databaseChanges, timesSaved, startBuildVersion, currentBuildVersion, saveStartOffset, gameID, mainFileLength;
 	
 	BOOL idle, dataLoaded, compressed;
 }
@@ -59,6 +68,10 @@
 - (void)setDonateStopAsking:(id)sender;
 
 @property(assign,readwrite) Database *database;
+@property(assign,readwrite) LangDB *langDB;
+@property(assign,readwrite) SXFGameDB *gameDB;
+@property(assign,readwrite) SXFGameInfo *gameInfo;
+@property(assign,readwrite) SXFSaveGameSummary *saveGameSummary;
 @property(copy,readwrite) NSString *gamePath;
 @property(copy,readwrite) FMDate *currentDate;
 @property(copy,readwrite) NSMutableDictionary *infoStrings;

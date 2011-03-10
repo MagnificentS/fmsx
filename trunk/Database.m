@@ -107,8 +107,11 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	[super dealloc];
 }
 
-- (id)readGameDB:(NSData *)data atOffset:(unsigned int *)byteOffset
+- (id)readGameDB:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version
 {
+	
+	NSLog(@"%d",version);
+	
 	NSAutoreleasePool *pool;
 	NSMutableArray *tempArray = [[NSMutableArray alloc] init];
 	
@@ -255,7 +258,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	[self setTotalRecords:count];
 	for (i=0; i<count; i++) {
 		[self setCurrentRecord:(i+1)];
-		id object = [Loader readClubFromData:data atOffset:byteOffset version:[controller gameDBVersion]];
+		id object = [Loader readClubFromData:data atOffset:byteOffset version:version];
 		if (![[object className] isEqualToString:@"Club"]) {
 			return [NSArray arrayWithObjects:
 					@"Club",
@@ -296,7 +299,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	for (i=0; i<count; i++) {
 		[self setCurrentRecord:(i+1)];
 		
-		id object = [Loader readCompetitionFromData:data atOffset:byteOffset version:[controller gameDBVersion]];
+		id object = [Loader readCompetitionFromData:data atOffset:byteOffset version:version];
 		if (![[object className] isEqualToString:@"Competition"]) {
 			return [NSArray arrayWithObjects:
 					@"Competition",
@@ -343,7 +346,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	for (i=0; i<count; i++) {
 		[self setCurrentRecord:(i+1)];
 		
-		id object = [Loader readContinentFromData:data atOffset:byteOffset version:[controller gameDBVersion]];
+		id object = [Loader readContinentFromData:data atOffset:byteOffset version:version];
 		if (![[object className] isEqualToString:@"Continent"]) {
 			return [NSArray arrayWithObjects:
 					@"Continent",
@@ -523,7 +526,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	[self setTotalRecords:count];
 	for (i=0; i<count; i++) {
 		[self setCurrentRecord:(i+1)];
-		id object = [Loader readNationFromData:data atOffset:byteOffset version:[controller gameDBVersion]];
+		id object = [Loader readNationFromData:data atOffset:byteOffset version:version];
 		if (![[object className] isEqualToString:@"Nation"]) {
 			return [NSArray arrayWithObjects:
 					@"Nation",
@@ -886,7 +889,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	for (i=0; i<count; i++) {
 		[self setCurrentRecord:(i+1)];
 		
-		id object = [Loader readTeamFromData:data atOffset:byteOffset version:[controller gameDBVersion]];
+		id object = [Loader readTeamFromData:data atOffset:byteOffset version:version];
 		if (![[object className] isEqualToString:@"Team"]) {
 			return [NSArray arrayWithObjects:
 					@"Team",
@@ -1072,7 +1075,8 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	for (i=0; i<count; i++) {
 		[self setCurrentRecord:(i+1)];
 		
-		id object = [Loader readPersonFromData:data atOffset:byteOffset version:[controller gameDBVersion]];
+		id object = [Loader readPersonFromData:data atOffset:byteOffset version:version];
+		
 		if (![[object className] isEqualToString:@"Person"]) {
 			return [NSArray arrayWithObjects:
 					@"Person",
@@ -1091,8 +1095,9 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		}
 		else { 
 			[object setController:controller];
-			[tempArray addObject:object]; 
+	//		[tempArray addObject:object]; 
 		}
+		
 	//	NSLog(@"person %d - %d at %d ( %@ )",i,[object UID],*byteOffset,[object name]);
 	}
 	[self setStatus:NSLocalizedString(@"assigning people...", @"editor status")];
@@ -1237,6 +1242,8 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 	[tempArray removeAllObjects];
 	
+	
+	
 	// ???
 	[self setUnknownData1:[data subdataWithRange:NSMakeRange(*byteOffset, 76)]]; 
 	*byteOffset += 76;
@@ -1319,7 +1326,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
 	[self setDatabaseChanges:count];
 	for (int i=0;i<count;i++) {
-		[GeneralInfoLoader readFromData:data atOffset:byteOffset readInfo:NO version:[controller gameDBVersion]];
+		[GeneralInfoLoader readFromData:data atOffset:byteOffset readInfo:NO version:version];
 	}
 	NSLog(@"End of %d db changes at %d",count,*byteOffset);
 
@@ -1516,6 +1523,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 	*/
 	
+	
 	[self setStatus:NSLocalizedString(@"assigning Person Stats...", @"editor status")];
 	for (id item in people) {
 		if ([item personData] && [[item personData] personStatsID] > -1) {
@@ -1548,7 +1556,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	return NULL;
 }
 
-- (void)saveGameDB:(NSMutableData *)data
+- (void)saveGameDB:(NSMutableData *)data version:(short)version
 {
 	int ibuffer;
 	
@@ -1609,7 +1617,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	[self setTotalRecords:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
 		[self setCurrentRecord:(i+1)];
-		[ClubSaver saveClub:[clubs objectAtIndex:i] toData:data version:[controller gameDBVersion]];
+		[ClubSaver saveClub:[clubs objectAtIndex:i] toData:data version:version];
 	}
 	[pool drain];
 
@@ -1621,7 +1629,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	[self setTotalRecords:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
 		[self setCurrentRecord:(i+1)];
-		[CompetitionSaver saveCompetition:[competitions objectAtIndex:i] toData:data version:[controller gameDBVersion]];
+		[CompetitionSaver saveCompetition:[competitions objectAtIndex:i] toData:data version:version];
 	}
 	[pool drain];
 
@@ -1633,7 +1641,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	[self setTotalRecords:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
 		[self setCurrentRecord:(i+1)];
-		[ContinentSaver saveContinent:[continents objectAtIndex:i] toData:data version:[controller gameDBVersion]];
+		[ContinentSaver saveContinent:[continents objectAtIndex:i] toData:data version:version];
 	}
 	[pool drain];
 
@@ -1693,7 +1701,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	[self setTotalRecords:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
 		[self setCurrentRecord:(i+1)];
-		[NationSaver saveNation:[nations objectAtIndex:i] toData:data version:[controller gameDBVersion]];
+		[NationSaver saveNation:[nations objectAtIndex:i] toData:data version:version];
 	}
 	[pool drain];
 
@@ -1813,7 +1821,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	[self setTotalRecords:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
 		[self setCurrentRecord:(i+1)];
-		[TeamSaver saveTeam:[teams objectAtIndex:i] toData:data version:[controller gameDBVersion]];
+		[TeamSaver saveTeam:[teams objectAtIndex:i] toData:data version:version];
 	}
 	[pool drain];
 
@@ -1873,7 +1881,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	[self setTotalRecords:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
 		[self setCurrentRecord:(i+1)];
-		[PersonSaver savePerson:[people objectAtIndex:i] toData:data version:[controller gameDBVersion]];
+		[PersonSaver savePerson:[people objectAtIndex:i] toData:data version:version];
 	}
 	[pool drain];
 

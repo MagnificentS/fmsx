@@ -8,12 +8,21 @@
 
 #import "Controller.h"
 #import "ContentController.h"
+#import "LangDBLoader.h"
 #import "LanguageIDs.h"
 #import "GameVersions.h"
 #import "FMDateLoader.h"
 #import "FMString.h"
 #import "Database.h"
 #import "SupportFunctions.h"
+
+#import "SXFGameDB.h"
+#import "SXFGameDBLoader.h"
+#import "SXFGameInfo.h"
+#import "SXFGameInfoLoader.h"
+#import "SXFSaveGameSummary.h"
+#import "SXFSaveGameSummaryLoader.h"
+
 #import "SXzlib.h"
 #import "SXGeneralViewController.h"
 #import "SXLanguagesViewController.h"
@@ -23,9 +32,9 @@
 
 @implementation Controller
 
-@synthesize database, gamePath, idle, dataLoaded, infoStrings, awardsController, citiesController, clubsController,
-continentsController, currenciesController, injuriesController, languagesController, localAreasController, gameID,
-mediaController, nationsController, peopleController, stadiumsController, stadiumChangesController, competitionsController,
+@synthesize database, gamePath, idle, dataLoaded, infoStrings, awardsController, citiesController, clubsController, saveGameSummary,
+continentsController, currenciesController, injuriesController, languagesController, localAreasController, gameID, gameInfo, gameDB,
+mediaController, nationsController, peopleController, stadiumsController, stadiumChangesController, competitionsController, langDB,
 teamsController, weatherController, currentDate, gameDBVersion, databaseChanges, timesSaved, startBuildVersion, currentBuildVersion;
 
 - (id)init
@@ -81,10 +90,11 @@ teamsController, weatherController, currentDate, gameDBVersion, databaseChanges,
 		[[NSUserDefaults standardUserDefaults] setObject:@"No" forKey:@"donateNeverAsk"];
 	}
 	
-	
-	infoStrings = [[NSMutableDictionary alloc] init];
-	database = [[Database alloc] init];
-	[database setController:self];
+	fileInfos = [[NSMutableDictionary alloc] init];
+
+	gameDB = [[SXFGameDB alloc] init];
+	gameInfo = [[SXFGameInfo alloc] init];
+	saveGameSummary = [[SXFSaveGameSummary alloc] init];
 	
 	idle = TRUE;
 	
@@ -93,8 +103,11 @@ teamsController, weatherController, currentDate, gameDBVersion, databaseChanges,
 
 - (void)dealloc
 {
-	[infoStrings release];
-	[database release];
+	[fileInfos release];
+	
+	[gameInfo release];
+	[gameDB release];
+	[saveGameSummary release];
 	
 	[super dealloc];
 }
@@ -178,8 +191,9 @@ teamsController, weatherController, currentDate, gameDBVersion, databaseChanges,
 	BOOL isNewFormat = TRUE;
 	
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loadLangDB"]==TRUE) { 
-		[database setStatus:NSLocalizedString(@"loading lang_db.dat", @"editor status")];
+	//	[database setStatus:NSLocalizedString(@"loading lang_db.dat", @"editor status")];
 		[database readLangDB:[[NSUserDefaults standardUserDefaults] stringForKey:@"lang_db_location"]]; 
+	//	langDB = [LangDBLoader readFromFile:[[NSUserDefaults standardUserDefaults] stringForKey:@"lang_db_location"]];
 	}
 		
 	unsigned int fileLength, gameLength;
@@ -223,7 +237,12 @@ teamsController, weatherController, currentDate, gameDBVersion, databaseChanges,
 	//	0x04 unknown
 	
 	// Increment byte offset (as comment above)
-	byteOffset += 11;
+	byteOffset += 3;
+	
+	[gameData getBytes:&mainFileLength range:NSMakeRange(byteOffset, 4)]; byteOffset += 4;
+	
+	// Increment byte offset (as comment above)
+	byteOffset += 4;
 	
 	// Now check if game is compressed by reading bytes
 	[gameData getBytes:&compressed range:NSMakeRange(byteOffset, 1)]; byteOffset += 1;
@@ -231,247 +250,58 @@ teamsController, weatherController, currentDate, gameDBVersion, databaseChanges,
 	if (compressed) { NSLog(@"File Compressed"); }
 	else { NSLog(@"File Not Compressed"); } 
 
-	[database setStatus:NSLocalizedString(@"Reading game_info.dat...", @"editor status")];
+	[SupportFunctions getFileInfosFromData:gameData atOffset:(mainFileLength+18) intoInfos:fileInfos];
+	
+	NSLog(@"%d sub-files found",[fileInfos count]);
+	
 #pragma mark game_info.dat
+	[database setStatus:NSLocalizedString(@"Reading game_info.dat...", @"editor status")];
+	
 	if (compressed) {
-		// If file is compressed, inflate it.
-		fileData = [[NSData alloc] initWithData:[[gameData subdataWithRange:NSMakeRange(byteOffset, ([gameData length] - byteOffset))] zlibInflate]];
-		byteOffset += [[fileData zlibDeflate] length];
-		NSLog(@"File inflated");
+		[self setGameInfo:[SXFGameInfoLoader readFileFromData:[[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"game_info.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"game_info.dat"] objectForKey:@"compressedFileLength"] intValue])] zlibInflate]]];
 	}
 	else {
-		// Otherwise set file length (minus already decided offset)
-		fileData = [[NSData alloc] initWithData:[gameData subdataWithRange:NSMakeRange(byteOffset, ([gameData length] - byteOffset))]];
-		fileLength = [fileData length];
-		[gameData release];
+		[self setGameInfo:[SXFGameInfoLoader readFileFromData:[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"game_info.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"game_info.dat"] objectForKey:@"fileLength"] intValue])]]];
 	}
 	
-	// If file length is wrong (i.e. something bad has happened, exit).
-	if ([fileData length] == 0) { 
+	if (!gameInfo) { 
 		[SupportFunctions showErrorWindow:@"Error Loading Game" withInfo:@"Your game could not be loaded"];
 		[self setIdle:TRUE]; return;
 	}
-
-	//	0x02 unknown
-	//	0x04 file type (CString)
-	//	0x02 file version
-	//	0x09 unknown
 	
-	// Skip 17 bytes in the new file length (as comment above)
-	fileOffset += 17;
-	
-	char marker;
-	[fileData getBytes:&marker range:NSMakeRange(fileOffset,1)];	fileOffset += 1;
-	
-	// Marker indicates subdirectory. Once reached, read.
-	while (marker==6)
-	{
-		// Read subdirectory
-		[FMString readFromData:fileData atOffset:&fileOffset];	
-		[fileData getBytes:&marker range:NSMakeRange(fileOffset,1)];	
-		fileOffset += 1;
-	}
-	
-	//	0x03 unknown
-	//	another 0x01 in fm11
-	//	0x04 unknown (-1)
-	//	0x01 unknown
-	
-	// Skip 9 bytes (as comment above)
-	fileOffset += 9;
-	
-	// Start Date
-	[FMDateLoader readFromData:fileData atOffset:&fileOffset];
-	
-	[fileData getBytes:&gameID range:NSMakeRange(fileOffset, 4)]; fileOffset += 4;
-	
-	//	unknown (Not sure what this is for?)
-	fileOffset += 2515;
-	
-	[fileData getBytes:&timesSaved range:NSMakeRange(fileOffset, 4)]; fileOffset += 4;
-	
-	// 0x04	???
-	// 0x04 date
-	fileOffset += 8;
-	
-	[fileData getBytes:&startBuildVersion range:NSMakeRange(fileOffset, 4)]; fileOffset += 4;
-	[fileData getBytes:&currentBuildVersion range:NSMakeRange(fileOffset, 4)]; fileOffset += 4;
-	
-	fileOffset += 10;
-	
-	// Log current progress
-	NSLog(@"game_info.dat: %d of %d [%d of %d] read",fileOffset,[fileData length],byteOffset,[gameData length]);
-	
-	// Output current status to user
-	[database setStatus:NSLocalizedString(@"Reading save_game_summary.dat...", @"editor status")];
 #pragma mark save_game_summary.dat
+	[database setStatus:NSLocalizedString(@"Reading save_game_summary.dat...", @"editor status")];
 	
-	// Again if compressed, expand file
 	if (compressed) {
-		[fileData release];
-		fileData = [[NSData alloc] initWithData:[[gameData subdataWithRange:NSMakeRange(byteOffset, ([gameData length] - byteOffset))] zlibInflate]];
-		byteOffset += [[fileData zlibDeflate] length];
-		fileOffset = 0;
+		[self setSaveGameSummary:[SXFSaveGameSummaryLoader readFileFromData:[[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"save_game_summary.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"save_game_summary.dat"] objectForKey:@"compressedFileLength"] intValue])] zlibInflate]]];
 	}
-	// Check that worked...
-	if ([fileData length] == 0) {
-		[SupportFunctions showErrorWindow:@"Error Loading Game" withInfo:@"Your game could not be loaded"];
-		[self setIdle:TRUE]; return;
-	}
-	
-	//	0x02 unknown
-	//	0x04 file type
-	//	0x02 file version
-	//	0x01 unknown
-	
-	// Skip 9 bytes (as comment above)
-	fileOffset += 9;
-	
-	// Store number of leagues active for later
-	[infoStrings setObject:[FMString readFromData:fileData atOffset:&fileOffset] forKey:@"leaguesActive"];
-	// Likewise with current game version
-	[infoStrings setObject:[FMString readFromData:fileData atOffset:&fileOffset] forKey:@"FMVersion"];
-	
-	// Store human manager's and current employment status
-	for (i=1;i<=16;i++) {
-		[infoStrings setObject:[FMString readFromData:fileData atOffset:&fileOffset] forKey:[NSString stringWithFormat:@"manager%dname",i]];
-		[infoStrings setObject:[FMString readFromData:fileData atOffset:&fileOffset] forKey:[NSString stringWithFormat:@"manager%dclub",i]];
-	}
-	
-	// Read last saved date (TBC)
-	[FMDateLoader readFromData:fileData atOffset:&fileOffset];
-	
-	//	0x04 unknown
-	//	0x04 no. of managers
-	
-	// Skip 8 bytes (as comment above)
-	fileOffset += 8;
-	
-	NSLog(@"save_game_summary.dat: %d of %d [%d of %d] read",fileOffset,[fileData length],byteOffset,[gameData length]);
-	
-	[database setStatus:NSLocalizedString(@"Reading game_db.dat header...", @"editor status")];
-#pragma mark game_db.dat
-	
-	// Again, if compressed, expand
-	if (compressed) {
-		[fileData release];
-		fileData = [[NSData alloc] initWithData:[[gameData subdataWithRange:NSMakeRange(byteOffset, ([gameData length] - byteOffset))] zlibInflate]];
-		fileLength = [fileData length];
-		[gameData release];
-	//	byteOffset += [[fileData zlibDeflate] length];
-		fileOffset = 0;
-	}
-	
-	// Check that worked...
-	if ([fileData length] == 0) { 
-		[SupportFunctions showErrorWindow:@"Error Loading Game" withInfo:@"Your game could not be loaded"];
-		[self setIdle:TRUE]; return;
-	}
-	
-	//	0x02 unknown
-	//	0x04 file type
-	
-	// Skip 6 bytes (as comment above)
-	fileOffset += 6;
-	
-	//Red current game database version
-	[fileData getBytes:&gameDBVersion range:NSMakeRange(fileOffset, 2)]; fileOffset += 2;
-	NSLog(@"Game Version: %d at %d",gameDBVersion, fileOffset);
-	
-	//Check version is compatiable with supported versions
-	if (gameDBVersion != FM2011_11_1 && gameDBVersion != FM2011_11_2) { 
-		NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"Incompatible Database Version - %hu",@"error"),gameDBVersion] defaultButton:@"OK" alternateButton:nil 
-										   otherButton:nil informativeTextWithFormat:NSLocalizedString(@"The version of FM this game was saved under is not compatible with this editor",@"error message")];
-		NSLog(@"Incompatible Database Version.");
-		[alert runModal];
-		
-		[SupportFunctions showErrorWindow:@"Error Loading Game" withInfo:@"Your game could not be loaded"];
-		[self setIdle:TRUE]; return;
-	}
-	
-	//	0x06 unknown
-	
-	// Skip 6 bytes (as comment above)
-	fileOffset += 6;
-	
-	// Read in current saved date
-	currentDate = [FMDateLoader readFromData:fileData atOffset:&fileOffset];
-	[infoStrings setObject:[[currentDate date] descriptionWithCalendarFormat:@"%d/%m/%Y" timeZone:nil locale:nil] forKey:@"currentGameDate"];
-	NSLog(@"Current Date: %@",[currentDate date]);
-	
-	// 0x01 unknown
-	
-	// Skip a byte (as comment above)
-	fileOffset += 1;
-	
-	// Read the game start date
-	startDate = [FMDateLoader readFromData:fileData atOffset:&fileOffset];
-	[infoStrings setObject:[[startDate date] descriptionWithCalendarFormat:@"%d/%m/%Y" timeZone:nil locale:nil] forKey:@"gameStartDate"];
-	NSLog(@"Start Date: %@",[startDate date]);
-	
-	// 0x02 unknown
-	
-	// Skip two bytes (as comment above)
-	fileOffset += 2;
-	
-	// Read unknown date
-	FMDate *unknownDate4 = [FMDateLoader readFromData:fileData atOffset:&fileOffset];
-	NSLog(@"Unknown Date 4: %@",[unknownDate4 date]);
-	
-	// 0x01 unknown
-	// Skip a byte (as comment above)
-	fileOffset += 1;
-	
-	// Read uknown date
-	FMDate *unknownDate5 = [FMDateLoader readFromData:fileData atOffset:&fileOffset];
-	NSLog(@"Unknown Date 5: %@",[unknownDate5 date]);
-	
-	[fileData getBytes:&databaseChanges range:NSMakeRange(fileOffset, 4)]; fileOffset += 4;
-	
-	if (isNewFormat) { fileOffset += 1526; }
 	else {
-	
-		// 0x1537 unknown
-	
-		// Skip bytes (as comment above)
-		fileOffset += 1537;
-	
-		if (gameDBVersion>FM2010_10_0_1) {
-			fileOffset += 4;
-		}
+		[self setSaveGameSummary:[SXFSaveGameSummaryLoader readFileFromData:[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"save_game_summary.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"save_game_summary.dat"] objectForKey:@"fileLength"] intValue])]]];
 	}
 	
-	//////////////////////////////////
-	// Tidy up
-	[pool drain];
-	
-	pool = [[NSAutoreleasePool alloc] init];
-	
-	saveStartOffset = fileOffset;
-	
-	if (!compressed) { saveStartOffset += 18; }
-	
-	// read game DB
-	id dbResult = [database readGameDB:fileData atOffset:&fileOffset];
-	
-	NSLog(@"%@",[dbResult objectAtIndex:2]);
-	if ([[dbResult className] isEqualToString:@"NSArray"] ||
-		[[dbResult className] isEqualToString:@"NSCFArray"]) {
-		[SupportFunctions showErrorWindow:@"Error Loading Game" 
-								 withInfo:[NSString stringWithFormat:@"Your game could not be loaded\n\nType: %@\nEntity: %d\nOffset: %d\nInfo: %@",
-												[dbResult objectAtIndex:0],
-												[[dbResult objectAtIndex:1] intValue],
-												[[dbResult objectAtIndex:2] intValue],
-												[dbResult objectAtIndex:3]
-										   ]];
+	if (!saveGameSummary) { 
+		[SupportFunctions showErrorWindow:@"Error Loading Game" withInfo:@"Your game could not be loaded"];
 		[self setIdle:TRUE]; return;
 	}
 	
-	if (!compressed) { [database setSaveEndOffset:([database saveEndOffset] + 18)]; }
+#pragma mark game_db.dat
+	[database setStatus:NSLocalizedString(@"Reading game_db.dat...", @"editor status")];
 	
-	NSLog(@"game_db.dat: %d of %d [%d of %d] read",fileOffset,fileLength,byteOffset,gameLength);
+	if (compressed) {
+		[self setGameDB:[SXFGameDBLoader readFileFromData:[[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"compressedFileLength"] intValue])] zlibInflate] withController:self]];
+	}
+	else {
+		[self setGameDB:[SXFGameDBLoader readFileFromData:[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"fileLength"] intValue])] withController:self]];
+		[gameDB setSaveStartOffset:([gameDB saveStartOffset]+18)];
+		[[gameDB database] setSaveEndOffset:([gameDB saveEndOffset]+18)];
+	}
 	
-	[fileData release];
+	if (!gameDB) { 
+		[SupportFunctions showErrorWindow:@"Error Loading Game" withInfo:@"Your game could not be loaded"];
+		[self setIdle:TRUE]; return;
+	}
+	
+	[gameData release];
 	
 	[self setIdle:TRUE];
 	[self setDataLoaded:TRUE];
@@ -480,6 +310,7 @@ teamsController, weatherController, currentDate, gameDBVersion, databaseChanges,
 	[contentController reloadOutlineView];
 	
 	[pool drain];
+	
 	
 	/////////////////////////////////
 }

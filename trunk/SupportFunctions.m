@@ -58,86 +58,46 @@
 	return reversedStr;
 }
 
-+ (NSData *)loadSubFile:(NSString *)filename fromPath:(NSString *)path
++ (void)parseFMFDirectory:(NSData *)decompressedData atOffset:(unsigned int *)offset withData:(NSData *)data intoInfos:(NSMutableDictionary *)fileInfos
 {
-	NSLog(@"in sfs for %@",filename);
+	unsigned int fmf2Offset = *offset;
+	int ibuffer;
+	short filecount, dircount;
 	
-	unsigned int byteOffset = 0;
-	unsigned int fmf1Length, fmf2Offset;
-	BOOL compressed;
-	NSData *foundData;
-	
-	NSData *fileData = [[NSData alloc] initWithContentsOfFile:path];
-	
-	if ([fileData length]==0) {
-		NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Invalid File", @"error - invalid file") defaultButton:@"OK" alternateButton:nil 
-										   otherButton:nil informativeTextWithFormat:NSLocalizedString(@"This does not appear to be a valid FM savegame",@"error - not an FM game")];
-		[alert runModal];
+	// parse root files
+	[decompressedData getBytes:&filecount range:NSMakeRange(fmf2Offset, 2)]; fmf2Offset += 2;
+	for (int i=0; i<filecount; i++) {
+		NSMutableDictionary *fileInfo = [[NSMutableDictionary alloc] init];
+		
+		NSString *filename = [FMString readFromData:decompressedData atOffset:&fmf2Offset];
+		NSString *extension = [FMString readFromData:decompressedData atOffset:&fmf2Offset];
+		[decompressedData getBytes:&ibuffer range:NSMakeRange(fmf2Offset, 4)]; fmf2Offset += 4;
+		[fileInfo setObject:[NSNumber numberWithUnsignedInt:ibuffer] forKey:@"startOffset"];
+		[decompressedData getBytes:&ibuffer range:NSMakeRange(fmf2Offset, 4)]; fmf2Offset += 4;
+		[fileInfo setObject:[NSNumber numberWithUnsignedInt:ibuffer] forKey:@"compressedFileLength"];
+		[decompressedData getBytes:&ibuffer range:NSMakeRange(fmf2Offset, 4)]; fmf2Offset += 4;
+		[fileInfo setObject:[NSNumber numberWithUnsignedInt:ibuffer] forKey:@"fileLength"];
+		
+		[fileInfos setObject:fileInfo forKey:[NSString stringWithFormat:@"%@%@",filename,extension]];
+		[fileInfo release];
 	}
+	// parse sub-directories
+	[decompressedData getBytes:&dircount range:NSMakeRange(fmf2Offset, 2)]; fmf2Offset += 2;
 	
-	byteOffset += 9;
-	[fileData getBytes:&fmf1Length range:NSMakeRange(byteOffset, 4)]; byteOffset += 4;
-	byteOffset += 4;
-	[fileData getBytes:&compressed range:NSMakeRange(byteOffset, 1)]; byteOffset += 1;
-	fmf2Offset = fmf1Length + 18;
-	
-	NSData *filenameData = [[NSData alloc] initWithData:[[fileData subdataWithRange:NSMakeRange(fmf2Offset, ([fileData length] - fmf2Offset))] zlibInflate]];
+	for (int j=0; j<dircount; j++) {
+		[FMString readFromData:decompressedData atOffset:&fmf2Offset];
+		
+		[self parseFMFDirectory:decompressedData atOffset:&fmf2Offset withData:data intoInfos:fileInfos];
+	}
+}
 
-	fmf2Offset = 4;
++ (void)getFileInfosFromData:(NSData *)data atOffset:(unsigned int)offset intoInfos:(NSMutableDictionary *)fileInfos
+{
+	unsigned int fmf2Offset = 4;
 	
-	NSString *extension, *thisFilename;
-	unsigned int startOffset, compressedFileLength, fileLength;
-	short fileCount, dirCount;
+	NSData *decompressedData = [[data subdataWithRange:NSMakeRange(offset, ([data length] - offset))] zlibInflate];
 	
-	[filenameData getBytes:&fileCount range:NSMakeRange(fmf2Offset, 2)]; fmf2Offset += 2;
-	
-	for (int i=0; i<fileCount; i++) {
-		
-		thisFilename = [FMString readFromData:filenameData atOffset:&fmf2Offset];
-		extension = [FMString readFromData:filenameData atOffset:&fmf2Offset];
-		[filenameData getBytes:&startOffset range:NSMakeRange(fmf2Offset, 4)]; fmf2Offset += 4;
-		[filenameData getBytes:&compressedFileLength range:NSMakeRange(fmf2Offset, 4)]; fmf2Offset += 4;
-		[filenameData getBytes:&fileLength range:NSMakeRange(fmf2Offset, 4)]; fmf2Offset += 4;
-		
-		if ([[NSString stringWithFormat:@"%@%@",thisFilename,extension] isEqualToString:filename]) {
-			if (compressed) {
-				foundData = [[fileData subdataWithRange:NSMakeRange((startOffset +18),compressedFileLength)] zlibInflate];
-			}
-			else {
-		
-				foundData = [fileData subdataWithRange:NSMakeRange((startOffset +18),fileLength)];
-			}
-		}
-	}
-	[filenameData getBytes:&dirCount range:NSMakeRange(fmf2Offset, 2)]; fmf2Offset += 2;
-	
-	for (int j=0; j<dirCount; j++) {
-		[FMString readFromData:filenameData atOffset:&fmf2Offset];
-		
-		[filenameData getBytes:&fileCount range:NSMakeRange(fmf2Offset, 2)]; fmf2Offset += 2;
-		
-		for (int i=0; i<fileCount; i++) {
-			
-			filename = [FMString readFromData:filenameData atOffset:&fmf2Offset];
-			extension = [FMString readFromData:filenameData atOffset:&fmf2Offset];
-			[filenameData getBytes:&startOffset range:NSMakeRange(fmf2Offset, 4)]; fmf2Offset += 4;
-			[filenameData getBytes:&compressedFileLength range:NSMakeRange(fmf2Offset, 4)]; fmf2Offset += 4;
-			[filenameData getBytes:&fileLength range:NSMakeRange(fmf2Offset, 4)]; fmf2Offset += 4;
-			
-			
-			if ([[NSString stringWithFormat:@"%@%@",filename,extension] isEqualToString:filename]) {
-				if (compressed) {
-					foundData = [[fileData subdataWithRange:NSMakeRange((startOffset +18),compressedFileLength)] zlibInflate];
-				}
-				else {
-					foundData = [fileData subdataWithRange:NSMakeRange((startOffset +18),fileLength)];
-				}
-			}
-		}
-	}
-	
-	NSLog(@"fd: %d",[foundData length]);
-	return foundData;
+	[self parseFMFDirectory:decompressedData atOffset:&fmf2Offset withData:data intoInfos:fileInfos];
 }
 
 @end

@@ -336,6 +336,12 @@
 		FB85D98C1094A64F00C4639A /* RegionalDivisionLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB85D98B1094A64F00C4639A /* RegionalDivisionLoader.m */; };
 		FB85D98F1094AA2700C4639A /* ScoutingKnowledgeLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB85D98E1094AA2700C4639A /* ScoutingKnowledgeLoader.m */; };
 		FB85D9921094AE8700C4639A /* TeamContainerLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB85D9911094AE8700C4639A /* TeamContainerLoader.m */; };
+		FB866763132820CD009C01E2 /* SXFGameInfoLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB866762132820CD009C01E2 /* SXFGameInfoLoader.m */; };
+		FB86677713282112009C01E2 /* SXFGameInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FB86677613282112009C01E2 /* SXFGameInfo.m */; };
+		FB8667BF13282D16009C01E2 /* SXFSaveGameSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8667BE13282D16009C01E2 /* SXFSaveGameSummary.m */; };
+		FB8667C213282D23009C01E2 /* SXFSaveGameSummaryLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8667C113282D23009C01E2 /* SXFSaveGameSummaryLoader.m */; };
+		FB8667CD13283004009C01E2 /* SXFGameDB.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8667CC13283004009C01E2 /* SXFGameDB.m */; };
+		FB8667D01328300D009C01E2 /* SXFGameDBLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8667CF1328300D009C01E2 /* SXFGameDBLoader.m */; };
 		FB8714D311FF2CFF0087941E /* football.png in Resources */ = {isa = PBXBuildFile; fileRef = FB8714D211FF2CFF0087941E /* football.png */; };
 		FB8714D511FF2D410087941E /* cards.png in Resources */ = {isa = PBXBuildFile; fileRef = FB8714D411FF2D410087941E /* cards.png */; };
 		FB8714D811FF2D970087941E /* clipboard.png in Resources */ = {isa = PBXBuildFile; fileRef = FB8714D711FF2D970087941E /* clipboard.png */; };
@@ -1124,6 +1130,18 @@
 		FB85D98E1094AA2700C4639A /* ScoutingKnowledgeLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoutingKnowledgeLoader.m; sourceTree = "<group>"; };
 		FB85D9901094AE8700C4639A /* TeamContainerLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamContainerLoader.h; sourceTree = "<group>"; };
 		FB85D9911094AE8700C4639A /* TeamContainerLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamContainerLoader.m; sourceTree = "<group>"; };
+		FB866761132820CD009C01E2 /* SXFGameInfoLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXFGameInfoLoader.h; sourceTree = "<group>"; };
+		FB866762132820CD009C01E2 /* SXFGameInfoLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXFGameInfoLoader.m; sourceTree = "<group>"; };
+		FB86677513282112009C01E2 /* SXFGameInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXFGameInfo.h; sourceTree = "<group>"; };
+		FB86677613282112009C01E2 /* SXFGameInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXFGameInfo.m; sourceTree = "<group>"; };
+		FB8667BD13282D16009C01E2 /* SXFSaveGameSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXFSaveGameSummary.h; sourceTree = "<group>"; };
+		FB8667BE13282D16009C01E2 /* SXFSaveGameSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXFSaveGameSummary.m; sourceTree = "<group>"; };
+		FB8667C013282D23009C01E2 /* SXFSaveGameSummaryLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXFSaveGameSummaryLoader.h; sourceTree = "<group>"; };
+		FB8667C113282D23009C01E2 /* SXFSaveGameSummaryLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXFSaveGameSummaryLoader.m; sourceTree = "<group>"; };
+		FB8667CB13283004009C01E2 /* SXFGameDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXFGameDB.h; sourceTree = "<group>"; };
+		FB8667CC13283004009C01E2 /* SXFGameDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXFGameDB.m; sourceTree = "<group>"; };
+		FB8667CE1328300D009C01E2 /* SXFGameDBLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXFGameDBLoader.h; sourceTree = "<group>"; };
+		FB8667CF1328300D009C01E2 /* SXFGameDBLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXFGameDBLoader.m; sourceTree = "<group>"; };
 		FB8714D211FF2CFF0087941E /* football.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = football.png; sourceTree = "<group>"; };
 		FB8714D411FF2D410087941E /* cards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cards.png; sourceTree = "<group>"; };
 		FB8714D711FF2D970087941E /* clipboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clipboard.png; sourceTree = "<group>"; };
@@ -1964,6 +1982,15 @@
 			name = "Tool Controllers";
 			sourceTree = "<group>";
 		};
+		FB36AC9B13284FE6001F8FFB /* game_db.dat entities */ = {
+			isa = PBXGroup;
+			children = (
+				FBFD90781092AFE40023F307 /* Database.h */,
+				FBFD90791092AFE40023F307 /* Database.m */,
+			);
+			name = "game_db.dat entities";
+			sourceTree = "<group>";
+		};
 		FB4B6ACC129948BC007C50C1 /* kits_front */ = {
 			isa = PBXGroup;
 			children = (
@@ -2482,6 +2509,25 @@
 			name = "Sub-Entities";
 			sourceTree = "<group>";
 		};
+		FB86676013282045009C01E2 /* game file Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FB866761132820CD009C01E2 /* SXFGameInfoLoader.h */,
+				FB866762132820CD009C01E2 /* SXFGameInfoLoader.m */,
+				FB86677513282112009C01E2 /* SXFGameInfo.h */,
+				FB86677613282112009C01E2 /* SXFGameInfo.m */,
+				FB8667BD13282D16009C01E2 /* SXFSaveGameSummary.h */,
+				FB8667BE13282D16009C01E2 /* SXFSaveGameSummary.m */,
+				FB8667C013282D23009C01E2 /* SXFSaveGameSummaryLoader.h */,
+				FB8667C113282D23009C01E2 /* SXFSaveGameSummaryLoader.m */,
+				FB8667CB13283004009C01E2 /* SXFGameDB.h */,
+				FB8667CC13283004009C01E2 /* SXFGameDB.m */,
+				FB8667CE1328300D009C01E2 /* SXFGameDBLoader.h */,
+				FB8667CF1328300D009C01E2 /* SXFGameDBLoader.m */,
+			);
+			name = "game file Entities";
+			sourceTree = "<group>";
+		};
 		FB9630DE109869F1007F25F6 /* Person Sub-Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -2867,8 +2913,6 @@
 				FB1D74EC1098840B00EC8BBB /* ContentController.m */,
 				FBF90D2310923E2B00929934 /* Controller.h */,
 				FBF90D2410923E2B00929934 /* Controller.m */,
-				FBFD90781092AFE40023F307 /* Database.h */,
-				FBFD90791092AFE40023F307 /* Database.m */,
 				FBF90D2610923E5100929934 /* DebugController.h */,
 				FBF90D2710923E5100929934 /* DebugController.m */,
 				FB59D8F81097222100E2AE40 /* LangDB.h */,
@@ -2882,6 +2926,8 @@
 		FBFD90961092B2E60023F307 /* Loading Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FB36AC9B13284FE6001F8FFB /* game_db.dat entities */,
+				FB86676013282045009C01E2 /* game file Entities */,
 				FBE75994126B73EC00A01209 /* finance_manager.dat Entities */,
 				FB9630DE109869F1007F25F6 /* Person Sub-Entities */,
 				FB85D9711094832E00C4639A /* Sub-Entities */,
@@ -3685,6 +3731,12 @@
 				FBC3F4C612A1CA570077BC24 /* LocationDaysSaver.m in Sources */,
 				FBC3F4CB12A1CC320077BC24 /* ContractBonusSaver.m in Sources */,
 				FB2E7350130C73B3009537D2 /* ScoutController.m in Sources */,
+				FB866763132820CD009C01E2 /* SXFGameInfoLoader.m in Sources */,
+				FB86677713282112009C01E2 /* SXFGameInfo.m in Sources */,
+				FB8667BF13282D16009C01E2 /* SXFSaveGameSummary.m in Sources */,
+				FB8667C213282D23009C01E2 /* SXFSaveGameSummaryLoader.m in Sources */,
+				FB8667CD13283004009C01E2 /* SXFGameDB.m in Sources */,
+				FB8667D01328300D009C01E2 /* SXFGameDBLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

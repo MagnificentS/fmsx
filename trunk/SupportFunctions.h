@@ -19,6 +19,6 @@
 + (void)showErrorWindow:(NSString *)title withInfo:(NSString *)info;
 + (NSString *)reverseString:(NSString *)str;
 
-+ (NSData *)loadSubFile:(NSString *)filename fromPath:(NSString *)path;
++ (void)getFileInfosFromData:(NSData *)data atOffset:(unsigned int)offset intoInfos:(NSMutableDictionary *)fileInfos;
 
 @end

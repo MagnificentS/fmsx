@@ -147,6 +147,8 @@
 	[object setUnknownData13:[data subdataWithRange:NSMakeRange(offset, (sbuffer*8))]]; 
 	offset += (sbuffer*8);
 	
+	NSLog(@"after 2 arrays at %d",offset);
+	
 	// date
 	[object setUnknownData12:[data subdataWithRange:NSMakeRange(offset, 4)]]; 
 	offset += 4;
@@ -166,6 +168,8 @@
 	[object setUnknownData18:[data subdataWithRange:NSMakeRange(offset, (ibuffer*18))]]; 
 	offset += (ibuffer*18);
 	
+	NSLog(@"after 3 arrays at %d",offset);
+	
 	// ???
 	if (version<FM2011_11_2) {
 		[object setUnknownData16:[data subdataWithRange:NSMakeRange(offset, 21)]]; 
@@ -176,6 +180,8 @@
 		[object setUnknownData16:[data subdataWithRange:NSMakeRange(offset, 29)]]; 
 		offset += 29;
 	}
+	
+	NSLog(@"before twitter with version %d at %d",version,offset);
 	
 	// encrypted strings
 	[object setTwitterLogin:[FMString readFromData:data atOffset:&offset]];

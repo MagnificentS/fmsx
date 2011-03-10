@@ -347,7 +347,7 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	
 	if ([item objectForKey:@"array"]!=nil &&
 		[item objectForKey:@"favourite"]==nil) {
-		int count = [[controller valueForKeyPath:[NSString stringWithFormat:@"database.%@",[item objectForKey:@"array"]]] count];
+		int count = [[controller valueForKeyPath:[NSString stringWithFormat:@"gameDB.database.%@",[item objectForKey:@"array"]]] count];
 		[cell setBadgeCount:count];
 	}
 	else { [cell setBadgeCount:0]; }
