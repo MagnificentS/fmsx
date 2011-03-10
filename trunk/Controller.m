@@ -318,7 +318,7 @@ langDBLoaded;
 
 - (IBAction)saveGame:(id)sender
 {
-	BOOL canSave = YES;
+	BOOL canSave = NO;
 	
 	if (!canSave) {
 		// If not loaded, inform user
