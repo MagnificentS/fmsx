@@ -588,6 +588,9 @@ clubScoutResults, staffScoutResults,  playerScoutResults, currentPlayerExpressio
 
 - (IBAction)scoutClubs:(id)sender
 {
+	[[NSApp delegate] setStatus:@"scouting clubs..."];
+	[[NSApp delegate] setIdle:NO];
+	
 	NSMutableArray *teamResults = [[NSMutableArray alloc] init];
 	NSMutableString *expression = [[NSMutableString alloc] init];
 	NSMutableString *bexpression;
@@ -681,10 +684,15 @@ clubScoutResults, staffScoutResults,  playerScoutResults, currentPlayerExpressio
 		[teamResults addObjectsFromArray:[[[NSApp delegate] valueForKeyPath:@"gameDB.database.teams"] filteredArrayUsingPredicate:predicate]];
 		[self setClubScoutResults:teamResults];
 	}
+
+	[[NSApp delegate] setIdle:YES];
 }
 
 - (IBAction)scoutStaff:(id)sender
 {
+	[[NSApp delegate] setStatus:@"scouting staff..."];
+	[[NSApp delegate] setIdle:NO];
+	
 	NSMutableArray *staffResults = [[NSMutableArray alloc] init];
 	NSMutableString *expression = [[NSMutableString alloc] init];
 	
@@ -754,10 +762,15 @@ clubScoutResults, staffScoutResults,  playerScoutResults, currentPlayerExpressio
 	}
 	
 	[expression release];
+	
+	[[NSApp delegate] setIdle:YES];
 }
 
 - (IBAction)scoutPlayers:(id)sender
 {
+	[[NSApp delegate] setStatus:@"scouting players..."];
+	[[NSApp delegate] setIdle:NO];
+	
 	NSMutableArray *playerResults = [[NSMutableArray alloc] init];
 	NSMutableString *expression = [[NSMutableString alloc] init];
 	
@@ -906,6 +919,8 @@ clubScoutResults, staffScoutResults,  playerScoutResults, currentPlayerExpressio
 	}
 	
 	[expression release];
+	
+	[[NSApp delegate] setIdle:YES];
 }
 
 - (void)exportPlayersToCSV:(NSMutableArray *)array

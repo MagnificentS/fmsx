@@ -291,8 +291,6 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 			[cities addObject:object];
 		}
 	}
-	[controller setStatus:NSLocalizedString(@"assigning cities...", @"editor status")];
-	
 	NSLog(@"End of %d cities at %d",[cities count],*byteOffset);
 	
 	[pool drain];
@@ -329,8 +327,6 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 			[clubs addObject:object];
 		}
 	}
-	[controller setStatus:NSLocalizedString(@"assigning clubs...", @"editor status")];
-	
 	NSLog(@"End of %d clubs at %d",[clubs count],*byteOffset);
 	
 	[pool drain];
@@ -373,9 +369,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 			}
 			[competitions addObject:object];
 		}
-		
 	}
-	[controller setStatus:NSLocalizedString(@"assigning competitions...", @"editor status")];
 	NSLog(@"End of %d competitions at %d",[competitions count],*byteOffset);
 	
 	[pool drain];
@@ -516,7 +510,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	}
 	NSLog(@"End of %d media at %d",[media count],*byteOffset);
 	
-	[pool release];
+	[pool drain];
 	
 #pragma mark Languages
 	pool = [[NSAutoreleasePool alloc] init];
@@ -549,7 +543,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	}
 	NSLog(@"End of %d languages at %d",[languages count],*byteOffset);
 	
-	[pool release];
+	[pool drain];
 	
 #pragma mark Nations
 	pool = [[NSAutoreleasePool alloc] init];
@@ -584,7 +578,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	}
 	NSLog(@"End of %d nations at %d",[nations count],*byteOffset);
 	
-	[pool release];
+	[pool drain];
 	
 #pragma mark First Names
 	
@@ -824,7 +818,6 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 			[stadiums addObject:object];
 		}
 	}
-	[controller setStatus:NSLocalizedString(@"assigning stadiums...", @"editor status")];
 	NSLog(@"End of %d stadiums at %d",[stadiums count],*byteOffset);
 	
 	[pool drain];
@@ -858,7 +851,6 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 //		}
 		else { [stadiumChanges addObject:object]; }
 	}
-	[controller setStatus:NSLocalizedString(@"assigning stadium changes...", @"editor status")];
 	NSLog(@"End of %d stadium changes at %d",[stadiumChanges count],*byteOffset);	
 	
 	[pool drain];
@@ -1111,7 +1103,6 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		
 	//	NSLog(@"person %d - %d at %d ( %@ )",i,[object UID],*byteOffset,[object name]);
 	}
-	[controller setStatus:NSLocalizedString(@"assigning people...", @"editor status")];
 	NSLog(@"End of %d people at %d",[people count],*byteOffset);
 	
 	[pool drain];

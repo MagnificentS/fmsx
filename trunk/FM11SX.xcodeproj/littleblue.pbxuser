@@ -164,6 +164,11 @@
 			FB7EA439132EC9990092EBD1 /* PBXTextBookmark */ = FB7EA439132EC9990092EBD1 /* PBXTextBookmark */;
 			FB7EA43D132EC9AC0092EBD1 /* PBXTextBookmark */ = FB7EA43D132EC9AC0092EBD1 /* PBXTextBookmark */;
 			FB7EA441132EC9C50092EBD1 /* PBXTextBookmark */ = FB7EA441132EC9C50092EBD1 /* PBXTextBookmark */;
+			FB7EA445132ECA3E0092EBD1 /* XCBuildMessageTextBookmark */ = FB7EA445132ECA3E0092EBD1 /* XCBuildMessageTextBookmark */;
+			FB7EA446132ECA3E0092EBD1 /* PBXTextBookmark */ = FB7EA446132ECA3E0092EBD1 /* PBXTextBookmark */;
+			FB7EA447132ECA410092EBD1 /* PBXTextBookmark */ = FB7EA447132ECA410092EBD1 /* PBXTextBookmark */;
+			FB7EA448132ECA410092EBD1 /* XCBuildMessageTextBookmark */ = FB7EA448132ECA410092EBD1 /* XCBuildMessageTextBookmark */;
+			FB7EA449132ECA410092EBD1 /* PBXTextBookmark */ = FB7EA449132ECA410092EBD1 /* PBXTextBookmark */;
 			FBA7A9F2132EC6E900CF7843 = FBA7A9F2132EC6E900CF7843 /* PBXTextBookmark */;
 			FBA7A9F3132EC6E900CF7843 = FBA7A9F3132EC6E900CF7843 /* PBXTextBookmark */;
 			FBA7A9F4132EC6E900CF7843 = FBA7A9F4132EC6E900CF7843 /* PBXTextBookmark */;
@@ -854,9 +859,9 @@
 	};
 	FB1D74EC1098840B00EC8BBB /* ContentController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1307, 20189}}";
-			sepNavSelRange = "{65211, 0}";
-			sepNavVisRange = "{64530, 877}";
+			sepNavIntBoundsRect = "{{0, 0}, {1223, 19981}}";
+			sepNavSelRange = "{59357, 0}";
+			sepNavVisRange = "{58815, 1218}";
 			sepNavWindowFrame = "{{15, 189}, {717, 584}}";
 		};
 	};
@@ -1789,6 +1794,54 @@
 		rType = 0;
 		vrLen = 877;
 		vrLoc = 64530;
+	};
+	FB7EA445132ECA3E0092EBD1 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Passing argument 2 of 'performSelector:withObject:' makes pointer from integer without a cast";
+		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 1341;
+		rType = 1;
+	};
+	FB7EA446132ECA3E0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
+		name = "ContentController.m: 1342";
+		rLen = 0;
+		rLoc = 59357;
+		rType = 0;
+		vrLen = 612;
+		vrLoc = 59024;
+	};
+	FB7EA447132ECA410092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBFD90791092AFE40023F307 /* Database.m */;
+		name = "Database.m: 581";
+		rLen = 0;
+		rLoc = 20114;
+		rType = 0;
+		vrLen = 1151;
+		vrLoc = 22305;
+	};
+	FB7EA448132ECA410092EBD1 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Passing argument 2 of 'performSelector:withObject:' makes pointer from integer without a cast";
+		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 1341;
+		rType = 1;
+	};
+	FB7EA449132ECA410092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
+		name = "ContentController.m: 1342";
+		rLen = 0;
+		rLoc = 59357;
+		rType = 0;
+		vrLen = 1218;
+		vrLoc = 58815;
 	};
 	FB8220DC1092AA34008B13CD /* GameVersions.h */ = {
 		uiCtxt = {
@@ -5214,9 +5267,9 @@
 	};
 	FBFD90791092AFE40023F307 /* Database.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {908, 24947}}";
-			sepNavSelRange = "{36711, 5}";
-			sepNavVisRange = "{36243, 1181}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 25090}}";
+			sepNavSelRange = "{20114, 0}";
+			sepNavVisRange = "{22305, 1151}";
 			sepNavWindowFrame = "{{15, 189}, {717, 584}}";
 		};
 	};
