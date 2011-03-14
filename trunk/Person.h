@@ -19,7 +19,6 @@
 #import "Spokesperson.h"
 #import "Human.h"
 #import "VirtualPlayer.h"
-#import "Controller.h"
 #import "PersonStats.h"
 #import "PlayerStats.h"
 #import "NonPlayerStats.h"
@@ -69,7 +68,6 @@
 @property(assign,readwrite) Spokesperson *spokespersonData;
 @property(assign,readwrite) Journalist *journalistData;
 @property(assign,readwrite) Human *humanData;
-@property(assign,readwrite) Controller *controller;
 @property(assign,readwrite) PersonStats *personStats;
 @property(assign,readwrite) PlayerStats *playerStats;
 @property(assign,readwrite) NonPlayerStats *nonPlayerStats;

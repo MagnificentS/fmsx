@@ -18,10 +18,7 @@
 #define MGSB_ITEM_IDENTIFIER		@"Identifier"		// string
 #define MGSB_ITEM_NAME				@"Name"				// string
 
-@class Controller;
-
 @interface ContentController : NSObject <MGScopeBarDelegate> {
-	IBOutlet Controller *controller;
 	IBOutlet MGScopeBar *clubScopeBar, *personScopeBar, *nationScopeBar, *awardScopeBar, *mediaScopeBar;
 	IBOutlet NSOutlineView *mainOutlineView;
 	IBOutlet NSView *gameInfoView;

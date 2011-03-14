@@ -14,13 +14,11 @@
 
 @implementation SXFGameDBLoader
 
-+ (void)readFileFromData:(NSData *)data withController:(Controller *)controller intoObject:(SXFGameDB *)object
++ (void)readFileFromData:(NSData *)data intoObject:(SXFGameDB *)object
 {
 	unsigned int offset = 0;
 	short sbuffer;
 	int ibuffer;
-	
-	[[object database] setController:controller];
 	
 	//	0x02 unknown
 	//	0x04 file type (CString)

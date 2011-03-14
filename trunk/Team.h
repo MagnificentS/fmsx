@@ -44,7 +44,6 @@
 	int divisionID, lastDivisionID, nextDivisionID, otherDivisionID, stadiumID, managerID,
 	continentalCupID, futureContinentalCupID, teamContainerID, rowID, UID;
 	
-	Controller *controller;
 	FMDate *lastSelectionDate, *unlockDate, *lastMatchDate;
 	NSData *unknownData1, *unknownData2, *unknownData3, *unknownData4;
 	NSString *name, *shortName;
@@ -61,7 +60,6 @@ maximumAge, unknownChar1, unknownChar2, unknownChar3, unknownChar4;
 @property(assign,readwrite) BOOL locked, clubsHaveSetFriendlyInstructions, newTeam;
 @property(assign,readwrite) int divisionID, lastDivisionID, nextDivisionID, otherDivisionID, stadiumID, managerID,
 continentalCupID, futureContinentalCupID, teamContainerID, rowID, UID;
-@property(assign,readwrite) Controller *controller;
 @property(assign,readwrite) FMDate *lastSelectionDate, *unlockDate, *lastMatchDate;
 @property(copy,readwrite) NSString *name, *shortName;
 @property(readwrite,copy) NSData *unknownData1, *unknownData2, *unknownData3, *unknownData4;

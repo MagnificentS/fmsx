@@ -119,7 +119,6 @@ langDBLoaded, status, statusMaxValue, statusValue;
 - (void)awakeFromNib
 {
 	SXGeneralViewController *general = [[SXGeneralViewController alloc] initWithNibName:@"PreferencesGeneral" bundle:nil];
-	[general setController:self];
 	SXLanguagesViewController *languages = [[SXLanguagesViewController alloc] initWithNibName:@"PreferencesLanguages" bundle:nil];
 	SXUpdatesViewController *updates = [[SXUpdatesViewController alloc] initWithNibName:@"PreferencesUpdates" bundle:nil];
 	[[MBPreferencesController sharedController] setModules:[NSArray arrayWithObjects:general, updates, languages, nil]];
@@ -292,10 +291,10 @@ langDBLoaded, status, statusMaxValue, statusValue;
 	[self setStatus:NSLocalizedString(@"Reading game_db.dat...", @"editor status")];
 	
 	if (compressed) {
-		[SXFGameDBLoader readFileFromData:[[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"compressedFileLength"] intValue])] zlibInflate] withController:self intoObject:gameDB];
+		[SXFGameDBLoader readFileFromData:[[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"compressedFileLength"] intValue])] zlibInflate] intoObject:gameDB];
 	}
 	else {
-		[SXFGameDBLoader readFileFromData:[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"fileLength"] intValue])] withController:self intoObject:gameDB];
+		[SXFGameDBLoader readFileFromData:[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"fileLength"] intValue])] intoObject:gameDB];
 		[gameDB setSaveStartOffset:([gameDB saveStartOffset]+18)];
 		[[gameDB database] setSaveEndOffset:([gameDB saveEndOffset]+18)];
 	}

@@ -15,13 +15,11 @@
 		 offside, pressing, sittingBack, tempo, useOfPlaymaker, width, preferredFormation,
 		 preferredFormation2, defensiveFormation, attackingFormation;
 	
-	Controller *controller;
 	NSString *name, *shortName;
 	NSMutableArray	*colours, *teams, *relationships, *alternativeStadiums, *alternateKits, *bTeams, 
 	*unknowns2, *coaches, *physios, *transferInfos;
 }
 
-@property(assign,readwrite) Controller *controller;
 @property(assign,readwrite) char teamContainerType, nameGender, shortNameGender,
 attacking, depth, directness, flamboyancy, flexibility, freeRoles, marking, 
 offside, pressing, sittingBack, tempo, useOfPlaymaker, width, preferredFormation, 

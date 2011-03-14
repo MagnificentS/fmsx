@@ -83,7 +83,6 @@
 	float wageFactor, unknownFloat1;
 	BOOL leagueSelected, ruleGroupLoaded, FIFAFullMember;
 	TeamContainer *teamContainer;
-	Controller *controller;
 	NSData *unknownData1, *unknownData2, *unknownData3, *unknownData4, *unknownData5, *unknownData6;
 	NSMutableArray *rankingPoints, *rankingMatches, *coefficients, *humanPlayerPool, *mainSquadGkShortlist,
 		*mainSquadDefShortlist, *mainSquadMidShortlist, *mainSquadFwShortlist, *u21GkShortlist,
@@ -108,7 +107,6 @@ continentID, regionID, capitalID, rowID, UID, length, width, area, population;
 @property(readwrite,assign) float wageFactor, unknownFloat1;
 @property(readwrite,assign) BOOL leagueSelected, ruleGroupLoaded, FIFAFullMember;
 @property(readwrite,assign) TeamContainer *teamContainer;
-@property(assign,readwrite) Controller *controller;
 @property(readwrite,copy) NSData *unknownData1, *unknownData2, *unknownData3, *unknownData4, *unknownData5, *unknownData6;
 @property(readwrite,copy) NSMutableArray *rankingPoints, *rankingMatches, *coefficients, *humanPlayerPool, *mainSquadGkShortlist,
 *mainSquadDefShortlist, *mainSquadMidShortlist, *mainSquadFwShortlist, *u21GkShortlist, *agreements, *agents, *EUTreatedNations,

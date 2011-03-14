@@ -8,15 +8,11 @@
 
 #import "MBPreferencesController.h"
 
-@class Controller;
-
 @interface SXGeneralViewController : NSViewController <MBPreferencesModule> {
-	Controller *controller;
+
 }
 
 - (NSString *)identifier;
 - (NSImage *)image;
-
-@property(readwrite,assign) Controller *controller;
 
 @end

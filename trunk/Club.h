@@ -79,7 +79,6 @@
 	isPLC, paysHighWages, needsShortlistUpdate, isLeagueBodyClub;
 	ClubFinance *finance;
 	TeamContainer *teamContainer;
-	Controller *controller;
 	
 	NSData *unknownData1, *unknownData2, *unknownData3, *unknownData4, *unknownData5, *unknownData6;
 	FMDate *seasonStartDate, *seasonEndDate, *preSeasonStartDate, *unknownDate1, *unknownDate2;
@@ -115,7 +114,6 @@ maximumAttendance, futureTransferManagerID, chairmanID, seasonTicketHolders, UID
 maximumWeeklyWage, competitionID, UEFA5YearTotal, cityID;
 @property(assign,readwrite) ClubFinance *finance;
 @property(assign,readwrite) TeamContainer *teamContainer;
-@property(assign,readwrite) Controller *controller;
 @property(copy,readwrite) NSString *nickname1, *nickname2, *logoPath;
 @property(copy,readwrite) NSMutableArray *directors, *scouts, *shortlist, *IDPCs,
 *sponsors, *regionalDivisions, *coefficients, *scoutingKnowledges, *transferOffers;

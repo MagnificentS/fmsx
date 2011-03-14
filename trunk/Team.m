@@ -21,7 +21,7 @@ reputation, nationalReputation, firstFixtureYear, lastFixtureYear, flags, locked
 newTeam, divisionID, lastDivisionID, nextDivisionID, otherDivisionID, stadiumID, managerID, continentalCupID, 
 futureContinentalCupID, teamContainerID, rowID, UID, lastSelectionDate, unlockDate, lastMatchDate, name,
 playerReplacements, physios, players, coaches, selectedTeam, fixtureBlocks, shortName, databaseClass,
-maximumAge, controller, unknownData1, unknownData2, unknownData3, unknownChar1, unknownChar2, unknownChar3, 
+maximumAge, unknownData1, unknownData2, unknownData3, unknownChar1, unknownChar2, unknownChar3, 
 unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 
 - (id)init
@@ -38,10 +38,10 @@ unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 {
 	NSString *str;
 	if (databaseClass==DBC_NATIONAL_TEAM) {
-		str = [[[[controller.gameDB.database nations] objectAtIndex:teamContainerID] teamContainer] name];
+		str = [[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] objectAtIndex:teamContainerID] teamContainer] name];
 	}
 	else {
-		str = [[[[controller.gameDB.database clubs] objectAtIndex:teamContainerID] teamContainer] name];
+		str = [[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.clubs"] objectAtIndex:teamContainerID] teamContainer] name];
 	}
 	return str;
 }
@@ -82,8 +82,8 @@ unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 	NSMutableArray *array = [[NSMutableArray alloc] init];
 	
 	for (id item in players) {
-		if ([item intValue] < [[controller.gameDB.database people] count]) {
-			[array addObject:[[controller.gameDB.database people] objectAtIndex:[item intValue]]];
+		if ([item intValue] < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] count]) {
+			[array addObject:[[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] objectAtIndex:[item intValue]]];
 		}
 	}
 	
@@ -107,9 +107,9 @@ unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 - (Club *)club
 {
 	if (databaseClass==DBC_NATIONAL_TEAM) {
-		return [[controller.gameDB.database nations] objectAtIndex:teamContainerID];
+		return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] objectAtIndex:teamContainerID];
 	}
-	else { return [[controller.gameDB.database clubs] objectAtIndex:teamContainerID]; }
+	else { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.clubs"] objectAtIndex:teamContainerID]; }
 }
 
 - (int)averageCA
@@ -118,8 +118,8 @@ unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 	
 	if ([players count]>0) {
 		for (id item in players) {
-			if ([item intValue] < [[controller.gameDB.database people] count]) {
-				total += [[[[controller.gameDB.database people] objectAtIndex:[item intValue]] playerData] currentAbility];
+			if ([item intValue] < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] count]) {
+				total += [[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] objectAtIndex:[item intValue]] playerData] currentAbility];
 			}	
 		}
 		total = total / [players count];
@@ -134,8 +134,8 @@ unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 	
 	if ([players count]>0) {
 		for (id item in players) {
-			if ([item intValue] < [[controller.gameDB.database people] count]) {
-				total += [[[[controller.gameDB.database people] objectAtIndex:[item intValue]] playerData] potentialAbility];
+			if ([item intValue] < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] count]) {
+				total += [[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] objectAtIndex:[item intValue]] playerData] potentialAbility];
 			}	
 		}
 		total = total / [players count];
@@ -150,8 +150,8 @@ unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 	
 	if ([players count]>0) {
 		for (id item in players) {
-			if ([item intValue] < [[controller.gameDB.database people] count]) {
-				total += [[[controller.gameDB.database people] objectAtIndex:[item intValue]] age];
+			if ([item intValue] < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] count]) {
+				total += [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] objectAtIndex:[item intValue]] age];
 			}
 		}
 		total = total / [players count];
@@ -164,20 +164,18 @@ unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 {
 	if ([players count]>0) {
 		for (id item in players) {
-			NSLog(@"removing injuries for %@",[[[controller.gameDB.database people] objectAtIndex:[item intValue]] name]);
+			NSLog(@"removing injuries for %@",[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] objectAtIndex:[item intValue]] name]);
 			
 			// remove injuries
-			if ([[[[[controller.gameDB.database people] objectAtIndex:[item intValue]] playerData] injuries] count]>0) {
-				[[[[[controller.gameDB.database people] objectAtIndex:[item intValue]] playerData] mutableArrayValueForKey:@"injuries"] removeAllObjects];
+			if ([[[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] objectAtIndex:[item intValue]] playerData] injuries] count]>0) {
+				[[[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] objectAtIndex:[item intValue]] playerData] mutableArrayValueForKey:@"injuries"] removeAllObjects];
 			}
 			
-			NSLog(@"fixing stats for %@",[[[controller.gameDB.database people] objectAtIndex:[item intValue]] name]);
-			
 			// fix condition,jadedness,fitness, morale
-			[[[[controller.gameDB.database people] objectAtIndex:[item intValue]] playerData] setCondition:10000];
-			[[[[controller.gameDB.database people] objectAtIndex:[item intValue]] playerData] setFitness:10000];
-			[[[[controller.gameDB.database people] objectAtIndex:[item intValue]] playerData] setJadedness:0];
-			[[[[controller.gameDB.database people] objectAtIndex:[item intValue]] playerData] setMorale:20];
+			[[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] objectAtIndex:[item intValue]] playerData] setCondition:10000];
+			[[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] objectAtIndex:[item intValue]] playerData] setFitness:10000];
+			[[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] objectAtIndex:[item intValue]] playerData] setJadedness:0];
+			[[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] objectAtIndex:[item intValue]] playerData] setMorale:20];
 		}
 	}
 }

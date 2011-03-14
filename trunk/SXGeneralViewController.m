@@ -8,10 +8,7 @@
 
 #import "SXGeneralViewController.h"
 
-
 @implementation SXGeneralViewController
-
-@synthesize controller;
 
 - (NSString *)title
 {

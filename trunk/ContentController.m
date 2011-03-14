@@ -308,13 +308,13 @@ clubLBCView, clubFacilitiesView;
 	id oView = [notification object];
 	if ([oView selectedRow]==-1) { return; }
 	if ([[oView itemAtRow:[oView selectedRow]] objectForKey:@"favourite"]!=nil) {
-		if (![controller dataLoaded]) { return; }
+		if (![[NSApp delegate] dataLoaded]) { return; }
 		
 		SEL arraySelector = NSSelectorFromString([[oView itemAtRow:[oView selectedRow]] objectForKey:@"array"]);
 		
 		int row = [[[oView itemAtRow:[oView selectedRow]] objectForKey:@"row"] intValue];
-		if (row<[[controller.gameDB.database performSelector:arraySelector] count]) {
-			[self selectItem:[[controller.gameDB.database performSelector:arraySelector] objectAtIndex:row]];
+		if (row<[[[[NSApp delegate] valueForKeyPath:@"gameDB.database"] performSelector:arraySelector] count]) {
+			[self selectItem:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database"] performSelector:arraySelector] objectAtIndex:row]];
 		}
 	}
 	else if ([[oView itemAtRow:[oView selectedRow]] objectForKey:@"view"]!=nil) {
@@ -353,7 +353,7 @@ clubLBCView, clubFacilitiesView;
 	
 	if ([item objectForKey:@"array"]!=nil &&
 		[item objectForKey:@"favourite"]==nil) {
-		int count = [[controller valueForKeyPath:[NSString stringWithFormat:@"gameDB.database.%@",[item objectForKey:@"array"]]] count];
+		int count = [[[NSApp delegate] valueForKeyPath:[NSString stringWithFormat:@"gameDB.database.%@",[item objectForKey:@"array"]]] count];
 		[cell setBadgeCount:count];
 	}
 	else { [cell setBadgeCount:0]; }
@@ -422,11 +422,11 @@ clubLBCView, clubFacilitiesView;
 		if ([[aTableColumn identifier] isEqualToString:@"compcol"]) {
 			int UID = [[aCell stringValue] intValue];
 		
-			if ([[[controller langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]]==nil) {
+			if ([[[[NSApp delegate] langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]]==nil) {
 				[aCell setStringValue:@"---"];
 			}
 			else {
-				[aCell setStringValue:[[[[controller langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]] objectForKey:@"name"]];
+				[aCell setStringValue:[[[[[NSApp delegate] langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]] objectForKey:@"name"]];
 			}
 		}
 	}
@@ -500,40 +500,40 @@ clubLBCView, clubFacilitiesView;
 	if ([[aTableColumn identifier] isEqualToString:@"nationIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
-		if (UID < [[controller.gameDB.database nations] count] && UID > -1) {
-			[aCell setStringValue:[[[[controller.gameDB.database nations] objectAtIndex:UID] teamContainer] name]];
+		if (UID < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] count] && UID > -1) {
+			[aCell setStringValue:[[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] objectAtIndex:UID] teamContainer] name]];
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
 	else if ([[aTableColumn identifier] isEqualToString:@"personIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
-		if (UID < [[controller.gameDB.database people] count] && UID > -1) {
-			[aCell setStringValue:[[[controller.gameDB.database people] objectAtIndex:UID] name]];
+		if (UID < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] count] && UID > -1) {
+			[aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] objectAtIndex:UID] name]];
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
 	else if ([[aTableColumn identifier] isEqualToString:@"mediaIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
-		if (UID < [[controller.gameDB.database media] count] && UID > -1) {
-			[aCell setStringValue:[[[controller.gameDB.database media] objectAtIndex:UID] name]];
+		if (UID < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.media"] count] && UID > -1) {
+			[aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.media"] objectAtIndex:UID] name]];
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
 	else if ([[aTableColumn identifier] isEqualToString:@"clubIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
-		if (UID < [[controller.gameDB.database clubs] count] && UID > -1) {
-			[aCell setStringValue:[[[controller.gameDB.database clubs] objectAtIndex:UID] name]];
+		if (UID < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.clubs"] count] && UID > -1) {
+			[aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.clubs"] objectAtIndex:UID] name]];
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
 	else if ([[aTableColumn identifier] isEqualToString:@"comprowIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
-		if (UID < [[controller.gameDB.database competitions] count] && UID >= 0) {
-			NSString *compString = [[[controller.gameDB.database competitions] objectAtIndex:UID] name];
+		if (UID < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.competitions"] count] && UID >= 0) {
+			NSString *compString = [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.competitions"] objectAtIndex:UID] name];
 			if (!compString) { [aCell setStringValue:@"---"]; }
 			else { [aCell setStringValue:compString]; }
 		}
@@ -542,35 +542,35 @@ clubLBCView, clubFacilitiesView;
 	else if ([[aTableColumn identifier] isEqualToString:@"compUIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
-		if ([[[controller langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]]!=nil) {
-			[aCell setStringValue:[[[[controller langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]] objectForKey:@"name"]];
+		if ([[[[NSApp delegate] langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]]!=nil) {
+			[aCell setStringValue:[[[[[NSApp delegate] langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]] objectForKey:@"name"]];
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
 	else if ([[aTableColumn identifier] isEqualToString:@"compIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
-		if (UID < [[controller.gameDB.database competitions] count] && UID > -1) {
-			[aCell setStringValue:[[[controller.gameDB.database competitions] objectAtIndex:UID] name]];
+		if (UID < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.competitions"] count] && UID > -1) {
+			[aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.competitions"] objectAtIndex:UID] name]];
 		}
-		else if ([[[controller langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]]!=nil) {
-			[aCell setStringValue:[[[[controller langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]] objectForKey:@"name"]];
+		else if ([[[[NSApp delegate] langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]]!=nil) {
+			[aCell setStringValue:[[[[[NSApp delegate] langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]] objectForKey:@"name"]];
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
 	else if ([[aTableColumn identifier] isEqualToString:@"clubUIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
-		if ([[[controller langDB] clubLang] objectForKey:[NSNumber numberWithInt:UID]]!=nil) {
-			[aCell setStringValue:[[[[controller langDB] clubLang] objectForKey:[NSNumber numberWithInt:UID]] objectForKey:@"name"]];
+		if ([[[[NSApp delegate] langDB] clubLang] objectForKey:[NSNumber numberWithInt:UID]]!=nil) {
+			[aCell setStringValue:[[[[[NSApp delegate] langDB] clubLang] objectForKey:[NSNumber numberWithInt:UID]] objectForKey:@"name"]];
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
 	else if ([[aTableColumn identifier] isEqualToString:@"teamIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
-		if (UID < [[controller.gameDB.database teams] count] && UID > -1) {
-			[aCell setStringValue:[[[controller.gameDB.database teams] objectAtIndex:UID] fullTeamString]];
+		if (UID < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.teams"] count] && UID > -1) {
+			[aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.teams"] objectAtIndex:UID] fullTeamString]];
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
@@ -581,21 +581,21 @@ clubLBCView, clubFacilitiesView;
 		int UID = [[[aCell stringValue] substringFromIndex:2] intValue];
 		
 		if ([type isEqualToString:@"na"]) {
-			[aCell setStringValue:[[[[controller.gameDB.database nations] objectAtIndex:UID] teamContainer] name]];
+			[aCell setStringValue:[[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] objectAtIndex:UID] teamContainer] name]];
 		}
 		else if ([type isEqualToString:@"pe"]) {
-			[aCell setStringValue:[[[controller.gameDB.database people] objectAtIndex:UID] name]];
+			[aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] objectAtIndex:UID] name]];
 		}
 		else if ([type isEqualToString:@"cl"]) {
-			[aCell setStringValue:[[[[controller.gameDB.database clubs] objectAtIndex:UID] teamContainer] name]];
+			[aCell setStringValue:[[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.clubs"] objectAtIndex:UID] teamContainer] name]];
 		}
 		else if ([type isEqualToString:@"te"]) {
-			[aCell setStringValue:[[[controller.gameDB.database teams] objectAtIndex:UID] fullTeamString]];
+			[aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.teams"] objectAtIndex:UID] fullTeamString]];
 		}
 		else if ([type isEqualToString:@"st"]) {
-			NSString *stadString = [[[controller.gameDB.database stadiums] objectAtIndex:UID] name];
+			NSString *stadString = [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiums"] objectAtIndex:UID] name];
 			if (!stadString) { [aCell setStringValue:@"---"]; }
-			else { [aCell setStringValue:[[[controller.gameDB.database stadiums] objectAtIndex:UID] name]]; }
+			else { [aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiums"] objectAtIndex:UID] name]]; }
 		}
 	}
 }
@@ -1044,7 +1044,7 @@ clubLBCView, clubFacilitiesView;
 		[newFavourite setObject:[NSNumber numberWithInt:[sender rowID]] forKey:@"row"];
 		[newFavourite setObject:[sender name] forKey:@"title"];
 	}
-	[newFavourite setObject:[controller gamePath] forKey:@"game"];
+	[newFavourite setObject:[[NSApp delegate] gamePath] forKey:@"game"];
 	[newFavourite setObject:@"1" forKey:@"subsection"];
 	[newFavourite setObject:@"1" forKey:@"favourite"];
 	
@@ -1056,7 +1056,7 @@ clubLBCView, clubFacilitiesView;
 		while (item = [oEnum nextObject]) {
 			if ([[item objectForKey:@"array"] isEqualToString:[newFavourite objectForKey:@"array"]] &&
 				[[item objectForKey:@"row"] intValue] == [sender rowID] &&
-				[[item objectForKey:@"game"] isEqualToString:[controller gamePath]]) {
+				[[item objectForKey:@"game"] isEqualToString:[[NSApp delegate] gamePath]]) {
 				containsObject = TRUE;
 			}
 		}

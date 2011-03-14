@@ -34,7 +34,7 @@ UEFAMatches, hasUEFACoefficient, scouts, UEFATempCoefficient, UEFA5YearTotal,
 coefficients, hasScoutingKnowledges, scoutingKnowledges, seasonTicketHolders,
 seasonStartDate, seasonEndDate, preSeasonStartDate, rowID, UID, finance, cityID, 
 maximumWeeklyWage, competitionID, allowSponsorshipForTopPlayers, transferOffers, 
-teamContainer, isLeagueBodyClub, controller, unknownChar1, roughFinancialState, 
+teamContainer, isLeagueBodyClub, unknownChar1, roughFinancialState, 
 unknownChar2, unknownChar3, unknownChar4, unknownChar5, unknownChar6, unknownChar7, 
 unknownChar8, unknownChar9, unknownChar10, unknownChar11, unknownDate1, unknownDate2, logoPath, 
 youthAcademy, youthRecruitment, unknownChar12, unknownShort1, unknownShort2,
@@ -71,8 +71,8 @@ newRegionalDivisionLevel;
 	NSMutableArray *array = [[NSMutableArray alloc] init];
 	
 	for (id item in directors) {
-		if ([item intValue] < [[controller.gameDB.database people] count]) {
-			[array addObject:[[controller.gameDB.database people] objectAtIndex:[item intValue]]];
+		if ([item intValue] < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] count]) {
+			[array addObject:[[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] objectAtIndex:[item intValue]]];
 		}
 	}
 	
@@ -84,8 +84,8 @@ newRegionalDivisionLevel;
 	NSMutableArray *array = [[NSMutableArray alloc] init];
 	
 	for (id item in scouts) {
-		if ([item intValue] < [[controller.gameDB.database people] count]) {
-			[array addObject:[[controller.gameDB.database people] objectAtIndex:[item intValue]]];
+		if ([item intValue] < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] count]) {
+			[array addObject:[[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] objectAtIndex:[item intValue]]];
 		}
 	}
 	
@@ -99,15 +99,15 @@ newRegionalDivisionLevel;
 
 - (NSString *)nationString
 {
-	if (nationID>-1) { return [[[[controller.gameDB.database nations] objectAtIndex:nationID] teamContainer] name]; }
+	if (nationID>-1) { return [[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] objectAtIndex:nationID] teamContainer] name]; }
 	return @"---";
 }
 
 - (NSString *)competitionString
 {
 	if ([[teamContainer teams] count]>0) {
-		if ([[[controller.gameDB.database teams] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] divisionID]>-1) {
-			return [[[controller.gameDB.database competitions] objectAtIndex:[[[controller.gameDB.database teams] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] divisionID]] name];
+		if ([[[[NSApp delegate] valueForKeyPath:@"gameDB.database.teams"] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] divisionID]>-1) {
+			return [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.competitions"] objectAtIndex:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.teams"] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] divisionID]] name];
 		}
 	}
 	return @"---";
@@ -116,7 +116,7 @@ newRegionalDivisionLevel;
 - (short)reputation
 {
 	if ([[teamContainer teams] count]>0) {
-		return [[[controller.gameDB.database teams] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] reputation];
+		return [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.teams"] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] reputation];
 	}
 	return 0;
 }

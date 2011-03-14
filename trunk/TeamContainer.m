@@ -17,15 +17,15 @@
 alternateKits, teamContainerType, nameGender, shortNameGender, attacking, depth, directness, 
 flamboyancy, flexibility, freeRoles, marking, offside, pressing, sittingBack, tempo, 
 useOfPlaymaker, width, preferredFormation, preferredFormation2, defensiveFormation, 
-attackingFormation, controller, bTeams, unknowns2, transferInfos, physios, coaches;
+attackingFormation, bTeams, unknowns2, transferInfos, physios, coaches;
 
 - (NSArray *)teamObjects
 {
 	NSMutableArray *array = [[NSMutableArray alloc] init];
 	
 	for (id item in teams) {
-		if ([item intValue] < [[[controller database] teams] count]) {
-			[array addObject:[[[controller database] teams] objectAtIndex:[item intValue]]];
+		if ([item intValue] < [[[[NSApp delegate] database] teams] count]) {
+			[array addObject:[[[[NSApp delegate] database] teams] objectAtIndex:[item intValue]]];
 		}
 	}
 	
@@ -37,8 +37,8 @@ attackingFormation, controller, bTeams, unknowns2, transferInfos, physios, coach
 	NSMutableArray *array = [[NSMutableArray alloc] init];
 	
 	for (id item in bTeams) {
-		if ([item intValue] < [[[controller database] teams] count]) {
-			[array addObject:[[[controller database] teams] objectAtIndex:[item intValue]]];
+		if ([item intValue] < [[[[NSApp delegate] database] teams] count]) {
+			[array addObject:[[[[NSApp delegate] database] teams] objectAtIndex:[item intValue]]];
 		}
 	}
 	
@@ -71,8 +71,8 @@ attackingFormation, controller, bTeams, unknowns2, transferInfos, physios, coach
 	NSMutableArray *array = [[NSMutableArray alloc] init];
 	
 	for (id item in coaches) {
-		if ([item intValue] < [[[controller database] people] count]) {
-			[array addObject:[[[controller database] people] objectAtIndex:[item intValue]]];
+		if ([item intValue] < [[[[NSApp delegate] database] people] count]) {
+			[array addObject:[[[[NSApp delegate] database] people] objectAtIndex:[item intValue]]];
 		}
 	}
 	
@@ -84,8 +84,8 @@ attackingFormation, controller, bTeams, unknowns2, transferInfos, physios, coach
 	NSMutableArray *array = [[NSMutableArray alloc] init];
 	
 	for (id item in physios) {
-		if ([item intValue] < [[[controller database] people] count]) {
-			[array addObject:[[[controller database] people] objectAtIndex:[item intValue]]];
+		if ([item intValue] < [[[[NSApp delegate] database] people] count]) {
+			[array addObject:[[[[NSApp delegate] database] people] objectAtIndex:[item intValue]]];
 		}
 	}
 	

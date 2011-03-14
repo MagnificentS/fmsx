@@ -175,6 +175,27 @@
 			FB7EA455132ECC370092EBD1 /* PBXTextBookmark */ = FB7EA455132ECC370092EBD1 /* PBXTextBookmark */;
 			FB7EA456132ECC370092EBD1 /* PBXTextBookmark */ = FB7EA456132ECC370092EBD1 /* PBXTextBookmark */;
 			FB7EA457132ECC370092EBD1 /* PBXTextBookmark */ = FB7EA457132ECC370092EBD1 /* PBXTextBookmark */;
+			FB7EA45A132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA45A132EDE9B0092EBD1 /* PBXTextBookmark */;
+			FB7EA45B132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA45B132EDE9B0092EBD1 /* PBXTextBookmark */;
+			FB7EA45C132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA45C132EDE9B0092EBD1 /* PBXTextBookmark */;
+			FB7EA45D132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA45D132EDE9B0092EBD1 /* PBXTextBookmark */;
+			FB7EA45E132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA45E132EDE9B0092EBD1 /* PBXTextBookmark */;
+			FB7EA45F132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA45F132EDE9B0092EBD1 /* PBXTextBookmark */;
+			FB7EA460132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA460132EDE9B0092EBD1 /* PBXTextBookmark */;
+			FB7EA461132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA461132EDE9B0092EBD1 /* PBXTextBookmark */;
+			FB7EA462132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA462132EDE9B0092EBD1 /* PBXTextBookmark */;
+			FB7EA463132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA463132EDE9B0092EBD1 /* PBXTextBookmark */;
+			FB7EA464132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA464132EDE9B0092EBD1 /* PBXTextBookmark */;
+			FB7EA465132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA465132EDE9B0092EBD1 /* PBXTextBookmark */;
+			FB7EA466132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA466132EDE9B0092EBD1 /* PBXTextBookmark */;
+			FB7EA467132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA467132EDE9B0092EBD1 /* PBXTextBookmark */;
+			FB7EA468132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA468132EDE9B0092EBD1 /* PBXTextBookmark */;
+			FB7EA469132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA469132EDE9B0092EBD1 /* PBXTextBookmark */;
+			FB7EA46A132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA46A132EDE9B0092EBD1 /* PBXTextBookmark */;
+			FB7EA46B132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA46B132EDE9B0092EBD1 /* PBXTextBookmark */;
+			FB7EA46C132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA46C132EDE9B0092EBD1 /* PBXTextBookmark */;
+			FB7EA46D132EDE9B0092EBD1 /* PBXBookmark */ = FB7EA46D132EDE9B0092EBD1 /* PBXBookmark */;
+			FB7EA46E132EDE9B0092EBD1 /* PBXTextBookmark */ = FB7EA46E132EDE9B0092EBD1 /* PBXTextBookmark */;
 			FBA7A9F2132EC6E900CF7843 = FBA7A9F2132EC6E900CF7843 /* PBXTextBookmark */;
 			FBA7A9F3132EC6E900CF7843 = FBA7A9F3132EC6E900CF7843 /* PBXTextBookmark */;
 			FBA7A9F4132EC6E900CF7843 = FBA7A9F4132EC6E900CF7843 /* PBXTextBookmark */;
@@ -365,7 +386,7 @@
 	};
 	FB025C951100F7FA00E20E59 /* Unknown7.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {754, 399}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 370}}";
 			sepNavSelRange = "{237, 0}";
 			sepNavVisRange = "{0, 244}";
 		};
@@ -429,17 +450,17 @@
 	};
 	FB0794C4109BF54000C58A27 /* GeneralInfo.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {684, 676}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 676}}";
 			sepNavSelRange = "{909, 0}";
-			sepNavVisRange = "{255, 1150}";
+			sepNavVisRange = "{433, 972}";
 			sepNavWindowFrame = "{{61, 176}, {628, 555}}";
 		};
 	};
 	FB0794C5109BF54000C58A27 /* GeneralInfo.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {758, 897}}";
+			sepNavIntBoundsRect = "{{0, 0}, {740, 923}}";
 			sepNavSelRange = "{414, 0}";
-			sepNavVisRange = "{3, 823}";
+			sepNavVisRange = "{3, 592}";
 			sepNavWindowFrame = "{{84, 155}, {628, 555}}";
 		};
 	};
@@ -468,7 +489,7 @@
 	};
 	FB0C07DD10DAD42D00DD8390 /* CompetitionHistory.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {683, 333}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 370}}";
 			sepNavSelRange = "{438, 0}";
 			sepNavVisRange = "{0, 446}";
 		};
@@ -579,9 +600,9 @@
 	};
 	FB17EDCE10B6B676006B17CE /* Staff.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {768, 975}}";
+			sepNavIntBoundsRect = "{{0, 0}, {768, 962}}";
 			sepNavSelRange = "{564, 0}";
-			sepNavVisRange = "{15, 1020}";
+			sepNavVisRange = "{15, 912}";
 			sepNavWindowFrame = "{{-7, 194}, {717, 584}}";
 		};
 	};
@@ -604,13 +625,13 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {775, 1196}}";
 			sepNavSelRange = "{2176, 36}";
-			sepNavVisRange = "{1447, 1066}";
+			sepNavVisRange = "{1485, 1028}";
 			sepNavWindowFrame = "{{12, 294}, {717, 584}}";
 		};
 	};
 	FB17EDD410B6B83C006B17CE /* ActualPerson.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {683, 1326}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 1378}}";
 			sepNavSelRange = "{379, 0}";
 			sepNavVisRange = "{198, 905}";
 		};
@@ -759,7 +780,7 @@
 	};
 	FB17EE3B10B6EBCB006B17CE /* NonPlayer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {761, 415}}";
+			sepNavIntBoundsRect = "{{0, 0}, {761, 370}}";
 			sepNavSelRange = "{567, 0}";
 			sepNavVisRange = "{0, 575}";
 			sepNavWindowFrame = "{{15, 189}, {717, 584}}";
@@ -790,7 +811,7 @@
 	};
 	FB1C908210A21D3E00F3259A /* PersonStats.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {755, 404}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 390}}";
 			sepNavSelRange = "{336, 0}";
 			sepNavVisRange = "{0, 581}";
 		};
@@ -805,7 +826,7 @@
 	};
 	FB1C908A10A220B200F3259A /* PlayerStats.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 11856}}";
+			sepNavIntBoundsRect = "{{0, 0}, {901, 11817}}";
 			sepNavSelRange = "{10435, 0}";
 			sepNavVisRange = "{9891, 586}";
 		};
@@ -820,9 +841,9 @@
 	};
 	FB1C908D10A220BA00F3259A /* NonPlayerStats.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {782, 2080}}";
+			sepNavIntBoundsRect = "{{0, 0}, {782, 2067}}";
 			sepNavSelRange = "{5826, 0}";
-			sepNavVisRange = "{3644, 951}";
+			sepNavVisRange = "{3763, 832}";
 		};
 	};
 	FB1C908F10A220C500F3259A /* PlayerStatsLoader.h */ = {
@@ -857,17 +878,17 @@
 	};
 	FB1D74EB1098840B00EC8BBB /* ContentController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {831, 3055}}";
-			sepNavSelRange = "{7365, 0}";
-			sepNavVisRange = "{6772, 1915}";
+			sepNavIntBoundsRect = "{{0, 0}, {831, 2977}}";
+			sepNavSelRange = "{773, 0}";
+			sepNavVisRange = "{772, 1030}";
 			sepNavWindowFrame = "{{63, 294}, {717, 584}}";
 		};
 	};
 	FB1D74EC1098840B00EC8BBB /* ContentController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1202, 20098}}";
-			sepNavSelRange = "{59357, 0}";
-			sepNavVisRange = "{58815, 1218}";
+			sepNavIntBoundsRect = "{{0, 0}, {978, 19786}}";
+			sepNavSelRange = "{59983, 0}";
+			sepNavVisRange = "{59333, 431}";
 			sepNavWindowFrame = "{{15, 189}, {717, 584}}";
 		};
 	};
@@ -900,9 +921,9 @@
 	};
 	FB2E734F130C73B3009537D2 /* ScoutController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1188, 15288}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1741, 15691}}";
 			sepNavSelRange = "{35572, 0}";
-			sepNavVisRange = "{34982, 1282}";
+			sepNavVisRange = "{35074, 1190}";
 		};
 	};
 	FB2F65EB1301FC4E0002EC97 /* dsa_pub.pem */ = {
@@ -1198,9 +1219,9 @@
 	};
 	FB444C4E10AEE9DB007932AD /* TransferInfo.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {690, 325}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 370}}";
 			sepNavSelRange = "{905, 0}";
-			sepNavVisRange = "{138, 788}";
+			sepNavVisRange = "{0, 926}";
 		};
 	};
 	FB46A77610BF13A50068D6FE /* StaffTendency.h */ = {
@@ -1238,7 +1259,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 202";
 		rLen = 0;
-		rLoc = 7365;
+		rLoc = 7311;
 		rType = 0;
 		vrLen = 1915;
 		vrLoc = 6772;
@@ -1493,17 +1514,17 @@
 	};
 	FB6B359F10B313840098125F /* Team.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {880, 1079}}";
-			sepNavSelRange = "{2997, 0}";
-			sepNavVisRange = "{1737, 1413}";
+			sepNavIntBoundsRect = "{{0, 0}, {880, 1053}}";
+			sepNavSelRange = "{158, 23}";
+			sepNavVisRange = "{0, 636}";
 			sepNavWindowFrame = "{{37, 33}, {717, 584}}";
 		};
 	};
 	FB6B35A010B313840098125F /* Team.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {824, 2366}}";
-			sepNavSelRange = "{155, 0}";
-			sepNavVisRange = "{0, 820}";
+			sepNavIntBoundsRect = "{{0, 0}, {1265, 2392}}";
+			sepNavSelRange = "{933, 0}";
+			sepNavVisRange = "{156, 1042}";
 			sepNavWindowFrame = "{{202, 47}, {717, 584}}";
 		};
 	};
@@ -1555,9 +1576,9 @@
 	};
 	FB6B8E2710A1C1FD00993212 /* StadiumChange.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {614, 494}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 494}}";
 			sepNavSelRange = "{349, 0}";
-			sepNavVisRange = "{170, 302}";
+			sepNavVisRange = "{169, 618}";
 		};
 	};
 	FB6B8E3710A1C71700993212 /* LocalArea.h */ = {
@@ -1570,7 +1591,7 @@
 	};
 	FB6B8E3810A1C71700993212 /* LocalArea.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {682, 453}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 377}}";
 			sepNavSelRange = "{435, 0}";
 			sepNavVisRange = "{0, 529}";
 		};
@@ -1614,9 +1635,9 @@
 	};
 	FB6B8E8C10A1CEE200993212 /* StageName.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {683, 364}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 370}}";
 			sepNavSelRange = "{359, 0}";
-			sepNavVisRange = "{3, 381}";
+			sepNavVisRange = "{0, 384}";
 		};
 	};
 	FB6B8EB310A1D1B000993212 /* Weather.h */ = {
@@ -1628,9 +1649,9 @@
 	};
 	FB6B8EB410A1D1B000993212 /* Weather.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {703, 494}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 494}}";
 			sepNavSelRange = "{1793, 0}";
-			sepNavVisRange = "{28, 1856}";
+			sepNavVisRange = "{133, 1750}";
 		};
 	};
 	FB6B8EB610A1D36F00993212 /* WeatherLoader.h */ = {
@@ -1716,7 +1737,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1488";
 		rLen = 0;
-		rLoc = 64929;
+		rLoc = 65555;
 		rType = 0;
 		vrLen = 1057;
 		vrLoc = 64194;
@@ -1726,7 +1747,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1500";
 		rLen = 0;
-		rLoc = 65251;
+		rLoc = 65877;
 		rType = 0;
 		vrLen = 953;
 		vrLoc = 64667;
@@ -1736,7 +1757,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1511";
 		rLen = 0;
-		rLoc = 65399;
+		rLoc = 66025;
 		rType = 0;
 		vrLen = 1012;
 		vrLoc = 64667;
@@ -1746,7 +1767,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1511";
 		rLen = 0;
-		rLoc = 65399;
+		rLoc = 66025;
 		rType = 0;
 		vrLen = 974;
 		vrLoc = 64707;
@@ -1756,7 +1777,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1511";
 		rLen = 0;
-		rLoc = 65399;
+		rLoc = 66025;
 		rType = 0;
 		vrLen = 1019;
 		vrLoc = 64707;
@@ -1766,7 +1787,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1511";
 		rLen = 0;
-		rLoc = 65399;
+		rLoc = 66025;
 		rType = 0;
 		vrLen = 941;
 		vrLoc = 64707;
@@ -1776,7 +1797,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1513";
 		rLen = 0;
-		rLoc = 65364;
+		rLoc = 65990;
 		rType = 0;
 		vrLen = 851;
 		vrLoc = 64880;
@@ -1786,7 +1807,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1511";
 		rLen = 0;
-		rLoc = 65299;
+		rLoc = 65925;
 		rType = 0;
 		vrLen = 855;
 		vrLoc = 64880;
@@ -1796,7 +1817,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1499";
 		rLen = 0;
-		rLoc = 65211;
+		rLoc = 65837;
 		rType = 0;
 		vrLen = 877;
 		vrLoc = 64530;
@@ -1815,7 +1836,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1342";
 		rLen = 0;
-		rLoc = 59357;
+		rLoc = 59983;
 		rType = 0;
 		vrLen = 612;
 		vrLoc = 59024;
@@ -1844,7 +1865,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1342";
 		rLen = 0;
-		rLoc = 59357;
+		rLoc = 59983;
 		rType = 0;
 		vrLen = 1218;
 		vrLoc = 58815;
@@ -1854,7 +1875,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1342";
 		rLen = 0;
-		rLoc = 59357;
+		rLoc = 59983;
 		rType = 0;
 		vrLen = 1218;
 		vrLoc = 58815;
@@ -1908,6 +1929,210 @@
 		rType = 0;
 		vrLen = 1086;
 		vrLoc = 1676;
+	};
+	FB7EA45A132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB8667CF1328300D009C01E2 /* SXFGameDBLoader.m */;
+		name = "SXFGameDBLoader.m: 23";
+		rLen = 0;
+		rLoc = 432;
+		rType = 0;
+		vrLen = 924;
+		vrLoc = 3;
+	};
+	FB7EA45B132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB8667CE1328300D009C01E2 /* SXFGameDBLoader.h */;
+		name = "SXFGameDBLoader.h: 16";
+		rLen = 0;
+		rLoc = 268;
+		rType = 0;
+		vrLen = 307;
+		vrLoc = 0;
+	};
+	FB7EA45C132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBF90D2410923E2B00929934 /* Controller.m */;
+		name = "Controller.m: 349";
+		rLen = 5;
+		rLoc = 14774;
+		rType = 0;
+		vrLen = 1324;
+		vrLoc = 13978;
+	};
+	FB7EA45D132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBA2B8BD1092880300C1A669 /* SXGeneralViewController.m */;
+		name = "SXGeneralViewController.m: 10";
+		rLen = 0;
+		rLoc = 206;
+		rType = 0;
+		vrLen = 515;
+		vrLoc = 0;
+	};
+	FB7EA45E132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBA2B8BC1092880300C1A669 /* SXGeneralViewController.h */;
+		name = "SXGeneralViewController.h: 17";
+		rLen = 0;
+		rLoc = 335;
+		rType = 0;
+		vrLen = 341;
+		vrLoc = 0;
+	};
+	FB7EA45F132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
+		name = "ContentController.h: 22";
+		rLen = 0;
+		rLoc = 773;
+		rType = 0;
+		vrLen = 1030;
+		vrLoc = 772;
+	};
+	FB7EA460132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
+		name = "ContentController.m: 627";
+		rLen = 0;
+		rLoc = 28372;
+		rType = 0;
+		vrLen = 1194;
+		vrLoc = 27970;
+	};
+	FB7EA461132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBFD90EA1092B78E0023F307 /* Award.m */;
+		name = "Award.m: 173";
+		rLen = 17;
+		rLoc = 6566;
+		rType = 0;
+		vrLen = 945;
+		vrLoc = 5726;
+	};
+	FB7EA462132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBE681E5109341EF00CE4DB8 /* Club.h */;
+		name = "Club.h: 82";
+		rLen = 0;
+		rLoc = 3112;
+		rType = 0;
+		vrLen = 686;
+		vrLoc = 3;
+	};
+	FB7EA463132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBE681E6109341EF00CE4DB8 /* Club.m */;
+		name = "Club.m: 119";
+		rLen = 0;
+		rLoc = 4637;
+		rType = 0;
+		vrLen = 952;
+		vrLoc = 4240;
+	};
+	FB7EA464132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBFFFE921095E90100579F13 /* TeamContainer.h */;
+		name = "TeamContainer.h: 18";
+		rLen = 0;
+		rLoc = 517;
+		rType = 0;
+		vrLen = 1231;
+		vrLoc = 142;
+	};
+	FB7EA465132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBFFFE931095E90100579F13 /* TeamContainer.m */;
+		name = "TeamContainer.m: 88";
+		rLen = 17;
+		rLoc = 2304;
+		rType = 0;
+		vrLen = 743;
+		vrLoc = 1905;
+	};
+	FB7EA466132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB6B35A010B313840098125F /* Team.m */;
+		name = "Team.m: 24";
+		rLen = 0;
+		rLoc = 933;
+		rType = 0;
+		vrLen = 1042;
+		vrLoc = 156;
+	};
+	FB7EA467132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB6B359F10B313840098125F /* Team.h */;
+		name = "Team.h: 10";
+		rLen = 23;
+		rLoc = 158;
+		rType = 0;
+		vrLen = 636;
+		vrLoc = 0;
+	};
+	FB7EA468132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBBC79471099C2BC00CADF06 /* Person.h */;
+		name = "Person.h: 22";
+		rLen = 0;
+		rLoc = 432;
+		rType = 0;
+		vrLen = 728;
+		vrLoc = 388;
+	};
+	FB7EA469132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBBC79481099C2BC00CADF06 /* Person.m */;
+		name = "Person.m: 546";
+		rLen = 59;
+		rLoc = 22123;
+		rType = 0;
+		vrLen = 1250;
+		vrLoc = 21478;
+	};
+	FB7EA46A132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBBC79611099C62500CADF06 /* Nation.m */;
+		name = "Nation.m: 124";
+		rLen = 0;
+		rLoc = 5896;
+		rType = 0;
+		vrLen = 928;
+		vrLoc = 5071;
+	};
+	FB7EA46B132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBBC79601099C62500CADF06 /* Nation.h */;
+		name = "Nation.h: 86";
+		rLen = 0;
+		rLoc = 2874;
+		rType = 0;
+		vrLen = 2325;
+		vrLoc = 2582;
+	};
+	FB7EA46C132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB0C07DD10DAD42D00DD8390 /* CompetitionHistory.m */;
+		name = "CompetitionHistory.m: 16";
+		rLen = 0;
+		rLoc = 438;
+		rType = 0;
+		vrLen = 446;
+		vrLoc = 0;
+	};
+	FB7EA46D132EDE9B0092EBD1 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = FBC4B969109B4A4E00AA7331 /* Competition.m */;
+	};
+	FB7EA46E132EDE9B0092EBD1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBC4B969109B4A4E00AA7331 /* Competition.m */;
+		name = "Competition.m: 89";
+		rLen = 0;
+		rLoc = 3878;
+		rType = 0;
+		vrLen = 1095;
+		vrLoc = 3;
 	};
 	FB8220DC1092AA34008B13CD /* GameVersions.h */ = {
 		uiCtxt = {
@@ -2060,9 +2285,9 @@
 	};
 	FB866762132820CD009C01E2 /* SXFGameInfoLoader.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {735, 1027}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 1027}}";
 			sepNavSelRange = "{170, 1680}";
-			sepNavVisRange = "{1187, 670}";
+			sepNavVisRange = "{1116, 741}";
 		};
 	};
 	FB86677513282112009C01E2 /* SXFGameInfo.h */ = {
@@ -2088,7 +2313,7 @@
 	};
 	FB8667BE13282D16009C01E2 /* SXFSaveGameSummary.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {735, 343}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 393}}";
 			sepNavSelRange = "{50, 0}";
 			sepNavVisRange = "{0, 251}";
 		};
@@ -2104,7 +2329,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {887, 728}}";
 			sepNavSelRange = "{1457, 0}";
-			sepNavVisRange = "{754, 717}";
+			sepNavVisRange = "{527, 944}";
 		};
 	};
 	FB8667CB13283004009C01E2 /* SXFGameDB.h */ = {
@@ -2116,23 +2341,23 @@
 	};
 	FB8667CC13283004009C01E2 /* SXFGameDB.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {735, 416}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 416}}";
 			sepNavSelRange = "{318, 38}";
-			sepNavVisRange = "{33, 380}";
+			sepNavVisRange = "{30, 409}";
 		};
 	};
 	FB8667CE1328300D009C01E2 /* SXFGameDBLoader.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {978, 247}}";
-			sepNavSelRange = "{234, 0}";
-			sepNavVisRange = "{0, 342}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 393}}";
+			sepNavSelRange = "{268, 0}";
+			sepNavVisRange = "{0, 307}";
 		};
 	};
 	FB8667CF1328300D009C01E2 /* SXFGameDBLoader.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1048, 1157}}";
-			sepNavSelRange = "{2480, 0}";
-			sepNavVisRange = "{2086, 469}";
+			sepNavIntBoundsRect = "{{0, 0}, {1461, 1118}}";
+			sepNavSelRange = "{432, 0}";
+			sepNavVisRange = "{3, 924}";
 		};
 	};
 	FB91B97810989E9000EBAA12 /* SXOutlineViewCell.h */ = {
@@ -2519,9 +2744,9 @@
 	};
 	FB9DC9DA10AF219700305D69 /* Relationship.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {756, 702}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 702}}";
 			sepNavSelRange = "{2142, 0}";
-			sepNavVisRange = "{403, 1990}";
+			sepNavVisRange = "{33, 1133}";
 		};
 	};
 	FB9DC9DC10AF246000305D69 /* AlternativeStadiumLoader.h */ = {
@@ -3193,9 +3418,9 @@
 	};
 	FBA2B75110924F5600C1A669 /* SupportFunctions.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1069, 1248}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1069, 1352}}";
 			sepNavSelRange = "{3095, 0}";
-			sepNavVisRange = "{1374, 1409}";
+			sepNavVisRange = "{1372, 1445}";
 			sepNavWindowFrame = "{{15, 189}, {717, 584}}";
 		};
 	};
@@ -3224,16 +3449,16 @@
 	};
 	FBA2B8BC1092880300C1A669 /* SXGeneralViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {554, 469}}";
-			sepNavSelRange = "{431, 0}";
-			sepNavVisRange = "{0, 438}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 393}}";
+			sepNavSelRange = "{335, 0}";
+			sepNavVisRange = "{0, 341}";
 		};
 	};
 	FBA2B8BD1092880300C1A669 /* SXGeneralViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {737, 424}}";
-			sepNavSelRange = "{272, 0}";
-			sepNavVisRange = "{0, 516}";
+			sepNavIntBoundsRect = "{{0, 0}, {978, 377}}";
+			sepNavSelRange = "{247, 0}";
+			sepNavVisRange = "{0, 378}";
 		};
 	};
 	FBA2B8BE1092880D00C1A669 /* SXUpdatesViewController.h */ = {
@@ -3259,9 +3484,9 @@
 	};
 	FBA2B8C6109289E300C1A669 /* MBPreferencesController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1363, 3562}}";
-			sepNavSelRange = "{1585, 19}";
-			sepNavVisRange = "{1542, 774}";
+			sepNavIntBoundsRect = "{{0, 0}, {1363, 3523}}";
+			sepNavSelRange = "{1899, 0}";
+			sepNavVisRange = "{498, 1028}";
 		};
 	};
 	FBA2B97C1092975100C1A669 /* SXLanguagesViewController.h */ = {
@@ -3289,7 +3514,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {796, 832}}";
 			sepNavSelRange = "{662, 0}";
-			sepNavVisRange = "{768, 531}";
+			sepNavVisRange = "{768, 526}";
 		};
 	};
 	FBA2B9B51092A25600C1A669 /* FMDate.h */ = {
@@ -3335,9 +3560,9 @@
 	};
 	FBA6103A128F7E0B00B0B23E /* Derby.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {775, 260}}";
+			sepNavIntBoundsRect = "{{0, 0}, {775, 370}}";
 			sepNavSelRange = "{491, 0}";
-			sepNavVisRange = "{0, 570}";
+			sepNavVisRange = "{0, 575}";
 		};
 	};
 	FBA6103C128F7E2100B0B23E /* DerbyLoader.h */ = {
@@ -3364,7 +3589,7 @@
 	};
 	FBA6105112904F6C00B0B23E /* Agreement.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {682, 469}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 370}}";
 			sepNavSelRange = "{255, 0}";
 			sepNavVisRange = "{0, 283}";
 		};
@@ -3552,7 +3777,7 @@
 		fRef = FBF90D2410923E2B00929934 /* Controller.m */;
 		name = "Controller.m: 212";
 		rLen = 0;
-		rLoc = 8692;
+		rLoc = 8661;
 		rType = 0;
 		vrLen = 1402;
 		vrLoc = 8175;
@@ -3562,7 +3787,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1482";
 		rLen = 0;
-		rLoc = 64767;
+		rLoc = 65393;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 64268;
@@ -3678,9 +3903,9 @@
 	};
 	FBBC79421099C0A400CADF06 /* Media.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {735, 1534}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 1612}}";
 			sepNavSelRange = "{3444, 348}";
-			sepNavVisRange = "{2822, 972}";
+			sepNavVisRange = "{2820, 974}";
 		};
 	};
 	FBBC79441099C1EC00CADF06 /* Stadium.h */ = {
@@ -3693,24 +3918,24 @@
 	};
 	FBBC79451099C1EC00CADF06 /* Stadium.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 1053}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 1105}}";
 			sepNavSelRange = "{2948, 0}";
-			sepNavVisRange = "{2273, 734}";
+			sepNavVisRange = "{2216, 791}";
 		};
 	};
 	FBBC79471099C2BC00CADF06 /* Person.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {735, 1274}}";
-			sepNavSelRange = "{2552, 30}";
-			sepNavVisRange = "{2162, 686}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 1248}}";
+			sepNavSelRange = "{432, 0}";
+			sepNavVisRange = "{388, 728}";
 			sepNavWindowFrame = "{{183, 194}, {717, 584}}";
 		};
 	};
 	FBBC79481099C2BC00CADF06 /* Person.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {978, 7514}}";
-			sepNavSelRange = "{157, 0}";
-			sepNavVisRange = "{515, 391}";
+			sepNavIntBoundsRect = "{{0, 0}, {1202, 7553}}";
+			sepNavSelRange = "{22123, 59}";
+			sepNavVisRange = "{21478, 1250}";
 			sepNavWindowFrame = "{{183, 194}, {717, 584}}";
 		};
 	};
@@ -3732,17 +3957,17 @@
 	};
 	FBBC79601099C62500CADF06 /* Nation.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {915, 1677}}";
-			sepNavSelRange = "{4984, 0}";
-			sepNavVisRange = "{2996, 2786}";
+			sepNavIntBoundsRect = "{{0, 0}, {915, 1651}}";
+			sepNavSelRange = "{2874, 0}";
+			sepNavVisRange = "{2582, 2325}";
 			sepNavWindowFrame = "{{177, 194}, {717, 584}}";
 		};
 	};
 	FBBC79611099C62500CADF06 /* Nation.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {838, 1690}}";
-			sepNavSelRange = "{136, 21}";
-			sepNavVisRange = "{0, 979}";
+			sepNavIntBoundsRect = "{{0, 0}, {1804, 1794}}";
+			sepNavSelRange = "{5897, 0}";
+			sepNavVisRange = "{5071, 928}";
 			sepNavWindowFrame = "{{177, 194}, {717, 584}}";
 		};
 	};
@@ -3801,7 +4026,7 @@
 	};
 	FBC3BA7310934DC900EFA019 /* Name.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {756, 340}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 370}}";
 			sepNavSelRange = "{202, 0}";
 			sepNavVisRange = "{0, 256}";
 		};
@@ -4001,7 +4226,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {796, 1248}}";
 			sepNavSelRange = "{3878, 0}";
-			sepNavVisRange = "{2060, 1948}";
+			sepNavVisRange = "{3, 1095}";
 			sepNavWindowFrame = "{{532, 193}, {717, 584}}";
 		};
 	};
@@ -4401,9 +4626,9 @@
 	};
 	FBDFCDDD109DFF5D007C5866 /* Player.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {852, 4342}}";
+			sepNavIntBoundsRect = "{{0, 0}, {845, 4277}}";
 			sepNavSelRange = "{1433, 15}";
-			sepNavVisRange = "{132, 2162}";
+			sepNavVisRange = "{132, 2064}";
 			sepNavWindowFrame = "{{457, 294}, {717, 584}}";
 		};
 	};
@@ -4432,9 +4657,9 @@
 	};
 	FBE6819D1093363200CE4DB8 /* City.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {683, 520}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 520}}";
 			sepNavSelRange = "{1583, 0}";
-			sepNavVisRange = "{14, 1573}";
+			sepNavVisRange = "{173, 1414}";
 			sepNavWindowFrame = "{{15, 215}, {750, 558}}";
 		};
 	};
@@ -4455,17 +4680,17 @@
 	};
 	FBE681E5109341EF00CE4DB8 /* Club.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {866, 1898}}";
-			sepNavSelRange = "{6190, 0}";
-			sepNavVisRange = "{5172, 1277}";
+			sepNavIntBoundsRect = "{{0, 0}, {866, 1781}}";
+			sepNavSelRange = "{3112, 0}";
+			sepNavVisRange = "{3, 686}";
 			sepNavWindowFrame = "{{21, 4}, {750, 558}}";
 		};
 	};
 	FBE681E6109341EF00CE4DB8 /* Club.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {735, 1742}}";
-			sepNavSelRange = "{172, 0}";
-			sepNavVisRange = "{0, 1022}";
+			sepNavIntBoundsRect = "{{0, 0}, {1755, 1794}}";
+			sepNavSelRange = "{4637, 0}";
+			sepNavVisRange = "{4240, 952}";
 			sepNavWindowFrame = "{{138, 20}, {750, 558}}";
 		};
 	};
@@ -4517,7 +4742,7 @@
 	};
 	FBE75999126B759700A01209 /* ClubDebt.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {814, 441}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 370}}";
 			sepNavSelRange = "{248, 0}";
 			sepNavVisRange = "{0, 255}";
 		};
@@ -4812,7 +5037,7 @@
 	};
 	FBE9708E10B8853F001F3139 /* Official.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {733, 392}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 370}}";
 			sepNavSelRange = "{397, 0}";
 			sepNavVisRange = "{0, 480}";
 			sepNavWindowFrame = "{{199, 21}, {717, 584}}";
@@ -4975,7 +5200,7 @@
 	};
 	FBE971B110B9503D001F3139 /* Journalist.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {814, 469}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 370}}";
 			sepNavSelRange = "{254, 0}";
 			sepNavVisRange = "{0, 262}";
 		};
@@ -5005,7 +5230,7 @@
 	};
 	FBE971CC10B952FA001F3139 /* Human.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {712, 433}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 370}}";
 			sepNavSelRange = "{560, 0}";
 			sepNavVisRange = "{0, 861}";
 			sepNavWindowFrame = "{{61, 147}, {717, 584}}";
@@ -5288,9 +5513,9 @@
 	};
 	FBF90D2410923E2B00929934 /* Controller.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2826, 8411}}";
-			sepNavSelRange = "{8692, 0}";
-			sepNavVisRange = "{8276, 616}";
+			sepNavIntBoundsRect = "{{0, 0}, {2826, 8086}}";
+			sepNavSelRange = "{14774, 5}";
+			sepNavVisRange = "{13978, 1324}";
 			sepNavWindowFrame = "{{38, 169}, {717, 584}}";
 		};
 	};
@@ -5378,9 +5603,9 @@
 	};
 	FBFD90EA1092B78E0023F307 /* Award.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {684, 2301}}";
-			sepNavSelRange = "{863, 675}";
-			sepNavVisRange = "{509, 1746}";
+			sepNavIntBoundsRect = "{{0, 0}, {838, 2327}}";
+			sepNavSelRange = "{6566, 17}";
+			sepNavVisRange = "{5726, 945}";
 		};
 	};
 	FBFD90EC1092B79B0023F307 /* AwardLoader.h */ = {
@@ -5429,17 +5654,17 @@
 	};
 	FBFFFE921095E90100579F13 /* TeamContainer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {978, 624}}";
-			sepNavSelRange = "{1395, 0}";
-			sepNavVisRange = "{772, 781}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 598}}";
+			sepNavSelRange = "{517, 0}";
+			sepNavVisRange = "{142, 1231}";
 			sepNavWindowFrame = "{{153, 90}, {816, 557}}";
 		};
 	};
 	FBFFFE931095E90100579F13 /* TeamContainer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {978, 2496}}";
-			sepNavSelRange = "{1392, 0}";
-			sepNavVisRange = "{1155, 349}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 2522}}";
+			sepNavSelRange = "{2304, 17}";
+			sepNavVisRange = "{1905, 743}";
 			sepNavWindowFrame = "{{176, 69}, {816, 557}}";
 		};
 	};
