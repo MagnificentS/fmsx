@@ -285,6 +285,7 @@
 		[lang setObject:[FMString readFromData:data atOffset:&fileOffset] forKey:@"threeLetterName"];
 		[langs setObject:lang forKey:[NSNumber numberWithInt:ibuffer]];
 		[lang release];
+		
 	}
 	[object setCompLang:langs];
 	[langs release];

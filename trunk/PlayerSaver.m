@@ -86,7 +86,7 @@
 	[data appendBytes:&ibuffer length:4];
 	llbuffer = [object preferredMoves];
 	[data appendBytes:&llbuffer length:8];
-	ibuffer = [object unknownInt1];
+	ibuffer = [object lastTransferFee];
 	[data appendBytes:&ibuffer length:4];
 	[FMDateSaver saveDate:[object unknownDate7] toData:data];
 	bbuffer = [object hasCareerStats];
@@ -109,7 +109,7 @@
 		[data appendBytes:&sbuffer length:2];
 		sbuffer = [object leagueAppearances];
 		[data appendBytes:&sbuffer length:2];
-		sbuffer = [object unknownShort1];
+		sbuffer = [object careerLeagueAppearances];
 		[data appendBytes:&sbuffer length:2];
 	}
 	

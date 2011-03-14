@@ -6,6 +6,7 @@
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
+#import "SXFGameDB.h"
 #import "Team.h"
 #import "TeamContainer.h"
 #import "Club.h"
@@ -37,10 +38,10 @@ unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 {
 	NSString *str;
 	if (databaseClass==DBC_NATIONAL_TEAM) {
-		str = [[[[[controller database] nations] objectAtIndex:teamContainerID] teamContainer] name];
+		str = [[[[controller.gameDB.database nations] objectAtIndex:teamContainerID] teamContainer] name];
 	}
 	else {
-		str = [[[[[controller database] clubs] objectAtIndex:teamContainerID] teamContainer] name];
+		str = [[[[controller.gameDB.database clubs] objectAtIndex:teamContainerID] teamContainer] name];
 	}
 	return str;
 }
@@ -81,8 +82,8 @@ unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 	NSMutableArray *array = [[NSMutableArray alloc] init];
 	
 	for (id item in players) {
-		if ([item intValue] < [[[controller database] people] count]) {
-			[array addObject:[[[controller database] people] objectAtIndex:[item intValue]]];
+		if ([item intValue] < [[controller.gameDB.database people] count]) {
+			[array addObject:[[controller.gameDB.database people] objectAtIndex:[item intValue]]];
 		}
 	}
 	
@@ -106,9 +107,9 @@ unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 - (Club *)club
 {
 	if (databaseClass==DBC_NATIONAL_TEAM) {
-		return [[[controller database] nations] objectAtIndex:teamContainerID];
+		return [[controller.gameDB.database nations] objectAtIndex:teamContainerID];
 	}
-	else { return [[[controller database] clubs] objectAtIndex:teamContainerID]; }
+	else { return [[controller.gameDB.database clubs] objectAtIndex:teamContainerID]; }
 }
 
 - (int)averageCA
@@ -117,8 +118,8 @@ unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 	
 	if ([players count]>0) {
 		for (id item in players) {
-			if ([item intValue] < [[[controller database] people] count]) {
-				total += [[[[[controller database] people] objectAtIndex:[item intValue]] playerData] currentAbility];
+			if ([item intValue] < [[controller.gameDB.database people] count]) {
+				total += [[[[controller.gameDB.database people] objectAtIndex:[item intValue]] playerData] currentAbility];
 			}	
 		}
 		total = total / [players count];
@@ -133,8 +134,8 @@ unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 	
 	if ([players count]>0) {
 		for (id item in players) {
-			if ([item intValue] < [[[controller database] people] count]) {
-				total += [[[[[controller database] people] objectAtIndex:[item intValue]] playerData] potentialAbility];
+			if ([item intValue] < [[controller.gameDB.database people] count]) {
+				total += [[[[controller.gameDB.database people] objectAtIndex:[item intValue]] playerData] potentialAbility];
 			}	
 		}
 		total = total / [players count];
@@ -149,8 +150,8 @@ unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 	
 	if ([players count]>0) {
 		for (id item in players) {
-			if ([item intValue] < [[[controller database] people] count]) {
-				total += [[[[controller database] people] objectAtIndex:[item intValue]] age];
+			if ([item intValue] < [[controller.gameDB.database people] count]) {
+				total += [[[controller.gameDB.database people] objectAtIndex:[item intValue]] age];
 			}
 		}
 		total = total / [players count];
@@ -163,20 +164,20 @@ unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 {
 	if ([players count]>0) {
 		for (id item in players) {
-			NSLog(@"removing injuries for %@",[[[[controller database] people] objectAtIndex:[item intValue]] name]);
+			NSLog(@"removing injuries for %@",[[[controller.gameDB.database people] objectAtIndex:[item intValue]] name]);
 			
 			// remove injuries
-			if ([[[[[[controller database] people] objectAtIndex:[item intValue]] playerData] injuries] count]>0) {
-				[[[[[[controller database] people] objectAtIndex:[item intValue]] playerData] mutableArrayValueForKey:@"injuries"] removeAllObjects];
+			if ([[[[[controller.gameDB.database people] objectAtIndex:[item intValue]] playerData] injuries] count]>0) {
+				[[[[[controller.gameDB.database people] objectAtIndex:[item intValue]] playerData] mutableArrayValueForKey:@"injuries"] removeAllObjects];
 			}
 			
-			NSLog(@"fixing stats for %@",[[[[controller database] people] objectAtIndex:[item intValue]] name]);
+			NSLog(@"fixing stats for %@",[[[controller.gameDB.database people] objectAtIndex:[item intValue]] name]);
 			
 			// fix condition,jadedness,fitness, morale
-			[[[[[controller database] people] objectAtIndex:[item intValue]] playerData] setCondition:10000];
-			[[[[[controller database] people] objectAtIndex:[item intValue]] playerData] setFitness:10000];
-			[[[[[controller database] people] objectAtIndex:[item intValue]] playerData] setJadedness:0];
-			[[[[[controller database] people] objectAtIndex:[item intValue]] playerData] setMorale:20];
+			[[[[controller.gameDB.database people] objectAtIndex:[item intValue]] playerData] setCondition:10000];
+			[[[[controller.gameDB.database people] objectAtIndex:[item intValue]] playerData] setFitness:10000];
+			[[[[controller.gameDB.database people] objectAtIndex:[item intValue]] playerData] setJadedness:0];
+			[[[[controller.gameDB.database people] objectAtIndex:[item intValue]] playerData] setMorale:20];
 		}
 	}
 }

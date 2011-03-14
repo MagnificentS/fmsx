@@ -7,6 +7,7 @@
 //
 
 #import "Club.h"
+#import "SXFGameDB.h"
 #import "Team.h"
 #import "Database.h"
 #import "RegionalDivision.h"
@@ -70,8 +71,8 @@ newRegionalDivisionLevel;
 	NSMutableArray *array = [[NSMutableArray alloc] init];
 	
 	for (id item in directors) {
-		if ([item intValue] < [[[controller database] people] count]) {
-			[array addObject:[[[controller database] people] objectAtIndex:[item intValue]]];
+		if ([item intValue] < [[controller.gameDB.database people] count]) {
+			[array addObject:[[controller.gameDB.database people] objectAtIndex:[item intValue]]];
 		}
 	}
 	
@@ -83,8 +84,8 @@ newRegionalDivisionLevel;
 	NSMutableArray *array = [[NSMutableArray alloc] init];
 	
 	for (id item in scouts) {
-		if ([item intValue] < [[[controller database] people] count]) {
-			[array addObject:[[[controller database] people] objectAtIndex:[item intValue]]];
+		if ([item intValue] < [[controller.gameDB.database people] count]) {
+			[array addObject:[[controller.gameDB.database people] objectAtIndex:[item intValue]]];
 		}
 	}
 	
@@ -98,15 +99,15 @@ newRegionalDivisionLevel;
 
 - (NSString *)nationString
 {
-	if (nationID>-1) { return [[[[[controller database] nations] objectAtIndex:nationID] teamContainer] name]; }
+	if (nationID>-1) { return [[[[controller.gameDB.database nations] objectAtIndex:nationID] teamContainer] name]; }
 	return @"---";
 }
 
 - (NSString *)competitionString
 {
 	if ([[teamContainer teams] count]>0) {
-		if ([[[[controller database] teams] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] divisionID]>-1) {
-			return [[[[controller database] competitions] objectAtIndex:[[[[controller database] teams] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] divisionID]] name];
+		if ([[[controller.gameDB.database teams] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] divisionID]>-1) {
+			return [[[controller.gameDB.database competitions] objectAtIndex:[[[controller.gameDB.database teams] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] divisionID]] name];
 		}
 	}
 	return @"---";
@@ -115,7 +116,7 @@ newRegionalDivisionLevel;
 - (short)reputation
 {
 	if ([[teamContainer teams] count]>0) {
-		return [[[[controller database] teams] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] reputation];
+		return [[[controller.gameDB.database teams] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] reputation];
 	}
 	return 0;
 }

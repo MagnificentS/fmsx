@@ -5,6 +5,7 @@
 //  Created by Amy Kettlewell on 09/10/28.
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
+#import "SXFGameDB.h"
 #import "Award.h"
 #import "Club.h"
 #import "Colour.h"
@@ -25,60 +26,23 @@
 
 @implementation ContentController
 
-@synthesize awardSearchView, awardGeneralView, citySearchView, cityGeneralView,
+@synthesize awardSearchView, awardGeneralView, citySearchView, cityGeneralView, entityIndexArray,
 selectedRows, gameInfoView, continentSearchView, continentGeneralView, currencySearchView, 
-currencyGeneralView, injuryGeneralView, injurySearchView, languageGeneralView, 
+currencyGeneralView, injuryGeneralView, injurySearchView, languageGeneralView, placeholderView,
 languageSearchView, localAreaGeneralView, localAreaSearchView, stadiumGeneralView, 
 stadiumSearchView, weatherGeneralView, weatherSearchView, mediaGeneralView, mediaSearchView,
 stadiumChangeGeneralView, stadiumChangeSearchView, clubSearchView, clubGeneralView, clubContainer, 
 clubTacticsView, clubMainView, clubTrainingView, clubCoefficientView, peopleSearchView, 
 peopleGeneralView, personContainer, competitionSearchView, competitionGeneralView,
-actualPersonView, actualPlayerView, scoutResults, sponsorGeneralView, sponsorSearchView,
+actualPersonView, actualPlayerView, sponsorGeneralView, sponsorSearchView,
 nationGeneralView, nationMainView, nationSearchView, personRelationshipsView,
-clubRelationshipsView, nationRelationshipsView, clubScoutResults, staffScoutResults, playerScoutResults,
+clubRelationshipsView, nationRelationshipsView,
 recentlyViewed, mainContainer, awardController, cityController, clubController, nationController, 
 competitionController, continentController, injuryController, currencyController, 
 languageController, localAreaController, mediaController, peopleController, clubKitView,
 sponsorController, stadiumController, stadiumChangeController, weatherController, awardRulesView, 
 awardMainView, derbyGeneralView, derbySearchView, derbyController, agentView, locationString,
-clubLBCView, clubFacilitiesView, currentPlayerExpression, currentStaffExpression, currentClubExpression,
-showPlayerScoutNameColumn, showPlayerScoutStatusColumn, showPlayerScoutTeamColumn, showPlayerScoutAgeColumn, 
-showPlayerScoutPositionColumn, showPlayerScoutCAColumn, showPlayerScoutPAColumn, showPlayerScoutHomeRepColumn, 
-showPlayerScoutWorldRepColumn, showPlayerScoutCurrentRepColumn, showPlayerScoutConditionColumn, showPlayerScoutGPColumn, 
-showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNationColumn,
-showPlayerScoutHeightColumn, showPlayerScoutWeightColumn, showPlayerScoutManagerRoleColumn, showPlayerScoutAssistantManagerRoleColumn,
-showPlayerScoutCoachRoleColumn, showPlayerScoutGoalkeepingCoachRoleColumn, showPlayerScoutFitnessCoachRoleColumn, 
-showPlayerScoutPhysioRoleColumn, showPlayerScoutScoutRoleColumn,
-showPlayerScoutAdaptabilityColumn, showPlayerScoutAmbitionColumn, showPlayerScoutControversyColumn, showPlayerScoutLoyaltyColumn, 
-showPlayerScoutPressureColumn, showPlayerScoutProfessionalismColumn, showPlayerScoutSportsmanshipColumn, showPlayerScoutTemperamentColumn,
-showPlayerScoutFullCapsColumn, showPlayerScoutFullGoalsColumn, showPlayerScoutU21CapsColumn, showPlayerScoutU21GoalsColumn,
-showPlayerScoutAccelerationColumn, showPlayerScoutAgilityColumn, showPlayerScoutBalanceColumn, showPlayerScoutInjuryPronenessColumn, 
-showPlayerScoutJumpingColumn, showPlayerScoutNaturalFitnessColumn, showPlayerScoutPaceColumn, showPlayerScoutStaminaColumn, 
-showPlayerScoutStrengthColumn, showPlayerScoutAggressionColumn, showPlayerScoutAnticipationColumn, showPlayerScoutBraveryColumn, 
-showPlayerScoutComposureColumn, showPlayerScoutConcentrationColumn, showPlayerScoutConsistencyColumn, showPlayerScoutCreativityColumn, 
-showPlayerScoutDecisionsColumn, showPlayerScoutDeterminationColumn, showPlayerScoutDirtinessColumn, showPlayerScoutFlairColumn, 
-showPlayerScoutImportantMatchesColumn, showPlayerScoutInfluenceColumn, showPlayerScoutOffTheBallColumn, showPlayerScoutPositioningColumn, 
-showPlayerScoutTeamworkColumn, showPlayerScoutWorkRateColumn, showPlayerScoutThrowingColumn, showPlayerScoutTendencyToPunchColumn, 
-showPlayerScoutAerialAbilityColumn, showPlayerScoutCommandOfAreaColumn, showPlayerScoutCommunicationColumn, showPlayerScoutEccentricityColumn, 
-showPlayerScoutHandlingColumn, showPlayerScoutKickingColumn, showPlayerScoutOneOnOnesColumn, showPlayerScoutReflexesColumn, 
-showPlayerScoutRushingOutColumn, showPlayerScoutCornersColumn, showPlayerScoutCrossingColumn, showPlayerScoutDribblingColumn, 
-showPlayerScoutFinishingColumn, showPlayerScoutFirstTouchColumn, showPlayerScoutFreeKicksColumn, showPlayerScoutHeadingColumn, 
-showPlayerScoutLongShotsColumn, showPlayerScoutLongThrowsColumn, showPlayerScoutMarkingColumn, showPlayerScoutPassingColumn, 
-showPlayerScoutPenaltyTakingColumn, showPlayerScoutTacklingColumn, showPlayerScoutTechniqueColumn, showPlayerScoutVersatilityColumn, 
-showPlayerScoutLeftFootColumn, showPlayerScoutRightFootColumn, showPlayerScoutBestRoleColumn, showStaffScoutNameColumn, showStaffScoutTeamColumn, showStaffScoutAgeColumn, showStaffScoutCAColumn, showStaffScoutPAColumn, showStaffScoutControversyColumn, 
-showStaffScoutHomeRepColumn, showStaffScoutWorldRepColumn, showStaffScoutCurrentRepColumn, showStaffScoutNationColumn, showStaffScoutAdaptabilityColumn, showStaffScoutAmbitionColumn, 
-showStaffScoutLoyaltyColumn, showStaffScoutPressureColumn, showStaffScoutProfessionalismColumn, showStaffScoutSportsmanshipColumn, showStaffScoutTemperamentColumn, showStaffScoutFullCapsColumn, 
-showStaffScoutFullGoalsColumn, showStaffScoutU21CapsColumn, showStaffScoutU21GoalsColumn, showStaffScoutManagerRoleColumn, showStaffScoutAssistantManagerRoleColumn, showStaffScoutCoachRoleColumn, 
-showStaffScoutFitnessCoachRoleColumn, showStaffScoutGoalkeepingCoachRoleColumn, showStaffScoutPhysioRoleColumn, showStaffScoutScoutRoleColumn, showStaffScoutAttackingCoachingColumn, showStaffScoutCoachingTechniqueColumn, 
-showStaffScoutDefendingColumn, showStaffScoutFitnessColumn, showStaffScoutGoalkeepersColumn, showStaffScoutManManagementColumn, showStaffScoutMentalColumn, showStaffScoutOutfieldPlayersColumn, 
-showStaffScoutTacticalColumn, showStaffScoutTechnicalColumn, showStaffScoutWorkingWithYoungstersColumn, showStaffScoutAttackingColumn, showStaffScoutDepthColumn, showStaffScoutDirectnessColumn, 
-showStaffScoutDirtinessAllowanceColumn, showStaffScoutFlamboyancyColumn, showStaffScoutFlexibilityColumn, showStaffScoutFreeRolesColumn, showStaffScoutMarkingColumn, showStaffScoutOffsideColumn, 
-showStaffScoutPressingColumn, showStaffScoutSittingBackColumn, showStaffScoutSquadRotationColumn, showStaffScoutTempoColumn, showStaffScoutUseOfPlaymakerColumn, showStaffScoutUseOfSubsColumn, showStaffScoutJobColumn,
-showStaffScoutWidthColumn, showStaffScoutBusinessColumn, showStaffScoutBuyingPlayersColumn, showStaffScoutDeterminationColumn, showStaffScoutHardnessOfTrainingColumn, showStaffScoutInterferenceColumn, 
-showStaffScoutJudgingPlayerAbilityColumn, showStaffScoutJudgingPlayerPotentialColumn, showStaffScoutLevelOfDisciplineColumn, showStaffScoutMindGamesColumn, showStaffScoutMotivatingColumn, showStaffScoutPatienceColumn, 
-showStaffScoutPhysiotherapyColumn, showStaffScoutResourcesColumn, showStaffScoutTacticalKnowledgeColumn,
-showClubScoutNameColumn, showClubScoutCompetitionColumn, showClubScoutPlayerCountColumn, showClubScoutAverageCAColumn, showClubScoutAveragePAColumn, showClubScoutAverageAgeColumn, 
-showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrainingFacilitiesColumn, showClubScoutBalanceColumn, showClubScoutSeasonTransferBudgetColumn, showClubScoutRemainingTransferBudgetColumn;
+clubLBCView, clubFacilitiesView;
 
 - (id)init
 {
@@ -93,6 +57,8 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	clubSections = [[NSMutableArray alloc] init];
 	nationSections = [[NSMutableArray alloc] init];
 	personSections = [[NSMutableArray alloc] init];
+	
+	entityIndexArray = [[NSMutableArray alloc] init];
 	
 	id playerStatsTransformer = [[[PlayerStatsTransformer alloc] init] autorelease];
 	[NSValueTransformer setValueTransformer:playerStatsTransformer forName:@"PlayerStatsTransformer"];
@@ -273,11 +239,51 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	[clubSections release];
 	[personSections release];
 	
+	[entityIndexArray release];
+	[playerScoutResults release];
+	[clubScoutResults release];
+	[staffScoutResults release];
+	
 	[super dealloc];
 }
 
 - (void)awakeFromNib
 {	
+	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
+	 [NSDictionary dictionaryWithObjectsAndKeys:@"Awards",@"title",@"1234",@"count",[NSImage imageNamed:@"award.png"],@"image",nil]];
+	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
+	 [NSDictionary dictionaryWithObjectsAndKeys:@"Cities",@"title",@"5678",@"count",[NSImage imageNamed:@"city.png"],@"image",nil]];
+	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
+	 [NSDictionary dictionaryWithObjectsAndKeys:@"Clubs",@"title",@"1234",@"count",[NSImage imageNamed:@"club.png"],@"image",nil]];
+	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
+	 [NSDictionary dictionaryWithObjectsAndKeys:@"Competitions",@"title",@"5678",@"count",[NSImage imageNamed:@"competition.png"],@"image",nil]];
+	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
+	 [NSDictionary dictionaryWithObjectsAndKeys:@"Continents",@"title",@"1234",@"count",[NSImage imageNamed:@"continent.png"],@"image",nil]];
+	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
+	 [NSDictionary dictionaryWithObjectsAndKeys:@"Currencies",@"title",@"5678",@"count",[NSImage imageNamed:@"currency.png"],@"image",nil]];
+	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
+	 [NSDictionary dictionaryWithObjectsAndKeys:@"Derbies",@"title",@"1234",@"count",[NSImage imageNamed:@"derby.png"],@"image",nil]];
+	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
+	 [NSDictionary dictionaryWithObjectsAndKeys:@"Injuries",@"title",@"5678",@"count",[NSImage imageNamed:@"injury.png"],@"image",nil]];
+	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
+	 [NSDictionary dictionaryWithObjectsAndKeys:@"Language",@"title",@"1234",@"count",[NSImage imageNamed:@"language.png"],@"image",nil]];
+	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
+	 [NSDictionary dictionaryWithObjectsAndKeys:@"Local Areas",@"title",@"5678",@"count",[NSImage imageNamed:@"localarea.png"],@"image",nil]];
+	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
+	 [NSDictionary dictionaryWithObjectsAndKeys:@"Media",@"title",@"1234",@"count",[NSImage imageNamed:@"media.png"],@"image",nil]];
+	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
+	 [NSDictionary dictionaryWithObjectsAndKeys:@"Nations",@"title",@"5678",@"count",[NSImage imageNamed:@"nation.png"],@"image",nil]];
+	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
+	 [NSDictionary dictionaryWithObjectsAndKeys:@"People",@"title",@"1234",@"count",[NSImage imageNamed:@"person.png"],@"image",nil]];
+	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
+	 [NSDictionary dictionaryWithObjectsAndKeys:@"Sponsors",@"title",@"5678",@"count",[NSImage imageNamed:@"sponsor.png"],@"image",nil]];
+	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
+	 [NSDictionary dictionaryWithObjectsAndKeys:@"Stadiums",@"title",@"1234",@"count",[NSImage imageNamed:@"stadium.png"],@"image",nil]];
+	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
+	 [NSDictionary dictionaryWithObjectsAndKeys:@"Stadium Changes",@"title",@"5678",@"count",[NSImage imageNamed:@"stadiumchange.png"],@"image",nil]];
+	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
+	 [NSDictionary dictionaryWithObjectsAndKeys:@"Weather",@"title",@"1234",@"count",[NSImage imageNamed:@"weather.png"],@"image",nil]];
+	
 	SXOutlineViewCell *oCell = [[SXOutlineViewCell alloc] init];
 	
 	[[mainOutlineView tableColumnWithIdentifier:@"mainCol"] setDataCell:oCell];
@@ -286,8 +292,6 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 		[mainOutlineView isExpandable:[mainOutlineView itemAtRow:0]]) {
 		[mainOutlineView expandItem:[mainOutlineView itemAtRow:0]];
 	}
-	
-	[self awakeScout];
 }
 
 - (void)setFavourites
@@ -307,8 +311,8 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 		SEL arraySelector = NSSelectorFromString([[oView itemAtRow:[oView selectedRow]] objectForKey:@"array"]);
 		
 		int row = [[[oView itemAtRow:[oView selectedRow]] objectForKey:@"row"] intValue];
-		if (row<[[[controller database] performSelector:arraySelector] count]) {
-			[self selectItem:[[[controller database] performSelector:arraySelector] objectAtIndex:row]];
+		if (row<[[controller.gameDB.database performSelector:arraySelector] count]) {
+			[self selectItem:[[controller.gameDB.database performSelector:arraySelector] objectAtIndex:row]];
 		}
 	}
 	else if ([[oView itemAtRow:[oView selectedRow]] objectForKey:@"view"]!=nil) {
@@ -416,11 +420,11 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 		if ([[aTableColumn identifier] isEqualToString:@"compcol"]) {
 			int UID = [[aCell stringValue] intValue];
 		
-			if ([[[[controller database] langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]]==nil) {
+			if ([[[controller langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]]==nil) {
 				[aCell setStringValue:@"---"];
 			}
 			else {
-				[aCell setStringValue:[[[[[controller database] langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]] objectForKey:@"name"]];
+				[aCell setStringValue:[[[[controller langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]] objectForKey:@"name"]];
 			}
 		}
 	}
@@ -475,35 +479,6 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 		
 //		[viewItem release];
 	}
-	else if ([[aTableColumn identifier] isEqualToString:@"playerscoutstatuscolumn"]) {
-		if ([[[[playerScoutResults objectAtIndex:rowIndex] playerData] injuries] count] > 0) {
-			[aCell setImage:[NSImage imageNamed:@"status_inj"]];
-		}
-		else if ([[[[playerScoutResults objectAtIndex:rowIndex] playerData] bans] count] > 0) {
-			[aCell setImage:[NSImage imageNamed:@"status_sus"]];
-		}
-		else if ([[playerScoutResults objectAtIndex:rowIndex] acceptedContractOffer]) {
-			[aCell setImage:[NSImage imageNamed:@"status_fut"]];
-		}
-		else if ([[[[playerScoutResults objectAtIndex:rowIndex] staffData] transferOffers] count] > 0) {
-			[aCell setImage:[NSImage imageNamed:@"status_bid"]];
-		}
-		else if ([[[[playerScoutResults objectAtIndex:rowIndex] staffData] interestedClubs] count] > 0) {
-			[aCell setImage:[NSImage imageNamed:@"status_wnt"]];
-		}
-		else if ([[[playerScoutResults objectAtIndex:rowIndex] staffData] hasYouthContract]) {
-			[aCell setImage:[NSImage imageNamed:@"status_yth"]];
-		}
-		else if ([[playerScoutResults objectAtIndex:rowIndex] contractIsExpiring]) {
-			[aCell setImage:[NSImage imageNamed:@"status_ctr"]];
-		}
-		else if ([[playerScoutResults objectAtIndex:rowIndex] isTransferListed]) {
-			[aCell setImage:[NSImage imageNamed:@"status_lst"]];
-		}
-		else if ([[playerScoutResults objectAtIndex:rowIndex] isListedForLoan]) {
-			[aCell setImage:[NSImage imageNamed:@"status_loa"]];
-		}
-	}
 	else if ([[aTableColumn identifier] isEqualToString:@"statuscolumn"]) {
 			if ([[[[[peopleController arrangedObjects] objectAtIndex:rowIndex] playerData] injuries] count] > 0) {
 				[aCell setImage:[NSImage imageNamed:@"status_inj"]];
@@ -523,40 +498,40 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	if ([[aTableColumn identifier] isEqualToString:@"nationIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
-		if (UID < [[[controller database] nations] count] && UID > -1) {
-			[aCell setStringValue:[[[[[controller database] nations] objectAtIndex:UID] teamContainer] name]];
+		if (UID < [[controller.gameDB.database nations] count] && UID > -1) {
+			[aCell setStringValue:[[[[controller.gameDB.database nations] objectAtIndex:UID] teamContainer] name]];
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
 	else if ([[aTableColumn identifier] isEqualToString:@"personIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
-		if (UID < [[[controller database] people] count] && UID > -1) {
-			[aCell setStringValue:[[[[controller database] people] objectAtIndex:UID] name]];
+		if (UID < [[controller.gameDB.database people] count] && UID > -1) {
+			[aCell setStringValue:[[[controller.gameDB.database people] objectAtIndex:UID] name]];
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
 	else if ([[aTableColumn identifier] isEqualToString:@"mediaIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
-		if (UID < [[[controller database] media] count] && UID > -1) {
-			[aCell setStringValue:[[[[controller database] media] objectAtIndex:UID] name]];
+		if (UID < [[controller.gameDB.database media] count] && UID > -1) {
+			[aCell setStringValue:[[[controller.gameDB.database media] objectAtIndex:UID] name]];
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
 	else if ([[aTableColumn identifier] isEqualToString:@"clubIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
-		if (UID < [[[controller database] clubs] count] && UID > -1) {
-			[aCell setStringValue:[[[[controller database] clubs] objectAtIndex:UID] name]];
+		if (UID < [[controller.gameDB.database clubs] count] && UID > -1) {
+			[aCell setStringValue:[[[controller.gameDB.database clubs] objectAtIndex:UID] name]];
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
 	else if ([[aTableColumn identifier] isEqualToString:@"comprowIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
-		if (UID < [[[controller database] competitions] count] && UID >= 0) {
-			NSString *compString = [[[[controller database] competitions] objectAtIndex:UID] name];
+		if (UID < [[controller.gameDB.database competitions] count] && UID >= 0) {
+			NSString *compString = [[[controller.gameDB.database competitions] objectAtIndex:UID] name];
 			if (!compString) { [aCell setStringValue:@"---"]; }
 			else { [aCell setStringValue:compString]; }
 		}
@@ -565,35 +540,35 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	else if ([[aTableColumn identifier] isEqualToString:@"compUIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
-		if ([[[[controller database] langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]]!=nil) {
-			[aCell setStringValue:[[[[[controller database] langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]] objectForKey:@"name"]];
+		if ([[[controller langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]]!=nil) {
+			[aCell setStringValue:[[[[controller langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]] objectForKey:@"name"]];
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
 	else if ([[aTableColumn identifier] isEqualToString:@"compIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
-		if (UID < [[[controller database] competitions] count] && UID > -1) {
-			[aCell setStringValue:[[[[controller database] competitions] objectAtIndex:UID] name]];
+		if (UID < [[controller.gameDB.database competitions] count] && UID > -1) {
+			[aCell setStringValue:[[[controller.gameDB.database competitions] objectAtIndex:UID] name]];
 		}
-		else if ([[[[controller database] langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]]!=nil) {
-			[aCell setStringValue:[[[[[controller database] langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]] objectForKey:@"name"]];
+		else if ([[[controller langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]]!=nil) {
+			[aCell setStringValue:[[[[controller langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]] objectForKey:@"name"]];
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
 	else if ([[aTableColumn identifier] isEqualToString:@"clubUIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
-		if ([[[[controller database] langDB] clubLang] objectForKey:[NSNumber numberWithInt:UID]]!=nil) {
-			[aCell setStringValue:[[[[[controller database] langDB] clubLang] objectForKey:[NSNumber numberWithInt:UID]] objectForKey:@"name"]];
+		if ([[[controller langDB] clubLang] objectForKey:[NSNumber numberWithInt:UID]]!=nil) {
+			[aCell setStringValue:[[[[controller langDB] clubLang] objectForKey:[NSNumber numberWithInt:UID]] objectForKey:@"name"]];
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
 	else if ([[aTableColumn identifier] isEqualToString:@"teamIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
-		if (UID < [[[controller database] teams] count] && UID > -1) {
-			[aCell setStringValue:[[[[controller database] teams] objectAtIndex:UID] fullTeamString]];
+		if (UID < [[controller.gameDB.database teams] count] && UID > -1) {
+			[aCell setStringValue:[[[controller.gameDB.database teams] objectAtIndex:UID] fullTeamString]];
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
@@ -604,21 +579,21 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 		int UID = [[[aCell stringValue] substringFromIndex:2] intValue];
 		
 		if ([type isEqualToString:@"na"]) {
-			[aCell setStringValue:[[[[[controller database] nations] objectAtIndex:UID] teamContainer] name]];
+			[aCell setStringValue:[[[[controller.gameDB.database nations] objectAtIndex:UID] teamContainer] name]];
 		}
 		else if ([type isEqualToString:@"pe"]) {
-			[aCell setStringValue:[[[[controller database] people] objectAtIndex:UID] name]];
+			[aCell setStringValue:[[[controller.gameDB.database people] objectAtIndex:UID] name]];
 		}
 		else if ([type isEqualToString:@"cl"]) {
-			[aCell setStringValue:[[[[[controller database] clubs] objectAtIndex:UID] teamContainer] name]];
+			[aCell setStringValue:[[[[controller.gameDB.database clubs] objectAtIndex:UID] teamContainer] name]];
 		}
 		else if ([type isEqualToString:@"te"]) {
-			[aCell setStringValue:[[[[controller database] teams] objectAtIndex:UID] fullTeamString]];
+			[aCell setStringValue:[[[controller.gameDB.database teams] objectAtIndex:UID] fullTeamString]];
 		}
 		else if ([type isEqualToString:@"st"]) {
-			NSString *stadString = [[[[controller database] stadiums] objectAtIndex:UID] name];
+			NSString *stadString = [[[controller.gameDB.database stadiums] objectAtIndex:UID] name];
 			if (!stadString) { [aCell setStringValue:@"---"]; }
-			else { [aCell setStringValue:[[[[controller database] stadiums] objectAtIndex:UID] name]]; }
+			else { [aCell setStringValue:[[[controller.gameDB.database stadiums] objectAtIndex:UID] name]]; }
 		}
 	}
 }
@@ -1104,15 +1079,6 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 	[mainContainer setContentView:gameInfoView];
 }
 
-- (void)performSpaceKeyPress:(id)sender
-{
-	if ([sender selectedRow]==-1) { return; }
-	
-	if (sender==playerScoutResultsTable) {
-		[playerScoutPreviewPanel makeKeyAndOrderFront:self];
-	}
-}
-
 #pragma mark MGScopeBarDelegate methods
 
 - (int)numberOfGroupsInScopeBar:(MGScopeBar *)theScopeBar
@@ -1508,4 +1474,34 @@ showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrain
 
 - (IBAction)deleteHistory:(id)sender { [[self mutableArrayValueForKey:@"recentlyViewed"] removeAllObjects]; }
 
+/******* NEW ONES ******/
+- (IBAction)selectEditorView:(id)sender
+{
+	[mainViewContainer setContentView:editorView];
+}
+
+- (IBAction)selectScoutView:(id)sender
+{
+	[mainViewContainer setContentView:scoutView];
+}
+
+- (IBAction)selectIDLookupView:(id)sender
+{
+	[mainViewContainer setContentView:IDLookupView];
+}
+
+- (void)replacePlaceholder:(NSView *)placeholder withView:(NSView *)view
+{
+	NSParameterAssert(placeholder != nil);
+	NSParameterAssert(view != nil);
+	
+	// Copy the relevant settings from placeholder to the view.
+	[view setFrame:[placeholder frame]];
+	[view setAutoresizingMask:[placeholder autoresizingMask]];
+	
+	// Replace the placeholder with the actual view.
+	NSView* superview = [placeholder superview];
+	[placeholder removeFromSuperview];
+	[superview addSubview:view];
+}
 @end

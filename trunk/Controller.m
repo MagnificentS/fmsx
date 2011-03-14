@@ -28,6 +28,8 @@
 #import "SXLanguagesViewController.h"
 #import "SXUpdatesViewController.h"
 #import "MBPreferencesController.h"
+#import "SXScoutViewController.h"
+
 #import <Sparkle/SUUpdater.h>
 
 @implementation Controller
@@ -36,7 +38,7 @@
 continentsController, currenciesController, injuriesController, languagesController, localAreasController, gameID, gameInfo, gameDB,
 mediaController, nationsController, peopleController, stadiumsController, stadiumChangesController, competitionsController, langDB,
 teamsController, weatherController, currentDate, gameDBVersion, databaseChanges, timesSaved, startBuildVersion, currentBuildVersion, 
-langDBLoaded;
+langDBLoaded, status, statusMaxValue, statusValue;
 
 - (id)init
 {
@@ -97,7 +99,8 @@ langDBLoaded;
 	gameInfo = [[SXFGameInfo alloc] init];
 	saveGameSummary = [[SXFSaveGameSummary alloc] init];
 	
-	idle = TRUE;
+	[self setIdle:TRUE];
+	[self setDataLoaded:FALSE];
 	
 	return self;
 }
@@ -124,6 +127,12 @@ langDBLoaded;
 	[general release];
 	[languages release];
 	[updates release];
+	
+	SXScoutViewController *scoutViewController = [[SXScoutViewController alloc] init];
+	[contentController replacePlaceholder:[contentController placeholderView] withView:[scoutViewController view]];
+	
+	
+	
 	
 	if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"donateLastAsked"] timeIntervalSinceNow] < -604800 &&
 		![[NSUserDefaults standardUserDefaults] boolForKey:@"donateNeverAsk"])
@@ -192,7 +201,7 @@ langDBLoaded;
 	BOOL isNewFormat = TRUE;
 	
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loadLangDB"]==TRUE) { 
-	//	[database setStatus:NSLocalizedString(@"loading lang_db.dat", @"editor status")];
+	//	[self setStatus:NSLocalizedString(@"loading lang_db.dat", @"editor status")];
 	//	[database readLangDB:[[NSUserDefaults standardUserDefaults] stringForKey:@"lang_db_location"]]; 
 		langDB = [LangDBLoader readFromFile:[[NSUserDefaults standardUserDefaults] stringForKey:@"lang_db_location"]];
 	}
@@ -200,7 +209,7 @@ langDBLoaded;
 	unsigned int fileLength, gameLength;
 	
 	[self setIdle:FALSE];
-	[database setStatus:NSLocalizedString(@"Reading file header...", @"editor status")];
+	[self setStatus:NSLocalizedString(@"Reading file header...", @"editor status")];
 	
 	// Create file data object
 	NSData *fileData;
@@ -256,7 +265,7 @@ langDBLoaded;
 	NSLog(@"%d sub-files found",[fileInfos count]);
 	
 #pragma mark game_info.dat
-	[database setStatus:NSLocalizedString(@"Reading game_info.dat...", @"editor status")];
+	[self setStatus:NSLocalizedString(@"Reading game_info.dat...", @"editor status")];
 	
 	if (compressed) {
 		[self setGameInfo:[SXFGameInfoLoader readFileFromData:[[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"game_info.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"game_info.dat"] objectForKey:@"compressedFileLength"] intValue])] zlibInflate]]];
@@ -271,7 +280,7 @@ langDBLoaded;
 	}
 	
 #pragma mark save_game_summary.dat
-	[database setStatus:NSLocalizedString(@"Reading save_game_summary.dat...", @"editor status")];
+	[self setStatus:NSLocalizedString(@"Reading save_game_summary.dat...", @"editor status")];
 	
 	if (compressed) {
 		[self setSaveGameSummary:[SXFSaveGameSummaryLoader readFileFromData:[[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"save_game_summary.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"save_game_summary.dat"] objectForKey:@"compressedFileLength"] intValue])] zlibInflate]]];
@@ -286,10 +295,10 @@ langDBLoaded;
 	}
 	
 #pragma mark game_db.dat
-	[database setStatus:NSLocalizedString(@"Reading game_db.dat...", @"editor status")];
+	[self setStatus:NSLocalizedString(@"Reading game_db.dat...", @"editor status")];
 	
 	if (compressed) {
-		[self setGameDB:[SXFGameDBLoader readFileFromData:[[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"compressedFileLength"] intValue])] zlibInflate] withController:self]];
+		[SXFGameDBLoader readFileFromData:[[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"compressedFileLength"] intValue])] zlibInflate] withController:self intoObject:gameDB];
 	}
 	else {
 		[SXFGameDBLoader readFileFromData:[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"fileLength"] intValue])] withController:self intoObject:gameDB];
@@ -371,12 +380,12 @@ langDBLoaded;
 	NSLog(@"file opened");
 	
 	// Inform user of status
-	[database setStatus:NSLocalizedString(@"Preparing To Save...", @"editor status")];
+	[self setStatus:NSLocalizedString(@"Preparing To Save...", @"editor status")];
 	[self setIdle:FALSE];
 	
 	// Begin backup operation
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"backupBeforeSave"]) {
-		[database setStatus:NSLocalizedString(@"Backing up original...", @"editor status")];
+		[self setStatus:NSLocalizedString(@"Backing up original...", @"editor status")];
 		NSString *backupPath = [NSString stringWithFormat:@"%@ Original.%@",[savePath stringByDeletingPathExtension],[savePath pathExtension]];
 		int i = 1;
 		while ([[NSFileManager defaultManager] fileExistsAtPath:backupPath]) {
@@ -395,7 +404,7 @@ langDBLoaded;
 		}
 	}
 	
-	[database setStatus:NSLocalizedString(@"saving header...", @"editor status")];
+	[self setStatus:NSLocalizedString(@"saving header...", @"editor status")];
 	
 	NSMutableData *saveData = [[NSMutableData alloc] init];
 	
@@ -403,7 +412,7 @@ langDBLoaded;
 	
 	[database saveGameDB:saveData];
 	
-	[database setStatus:NSLocalizedString(@"saving excess...", @"editor status")];
+	[self setStatus:NSLocalizedString(@"saving excess...", @"editor status")];
 	
 	unsigned int originalFmf1length;
 	
@@ -421,7 +430,7 @@ langDBLoaded;
 	// write back the new length
 	[saveData replaceBytesInRange:NSMakeRange(9, 4) withBytes:&newFmf1length];
 	
-	[database setStatus:NSLocalizedString(@"sorting offsets...", @"editor status")];
+	[self setStatus:NSLocalizedString(@"sorting offsets...", @"editor status")];
 	
 	// now jump to fmf 2
 	unsigned int offset = originalFmf1length + 9;
@@ -498,7 +507,7 @@ langDBLoaded;
 		[fmf2 getBytes:&ibuffer range:NSMakeRange(fmf2Offset, 4)]; fmf2Offset += 4;
 	}
 	
-	[database setStatus:NSLocalizedString(@"saving offsets...", @"editor status")];
+	[self setStatus:NSLocalizedString(@"saving offsets...", @"editor status")];
 	// write fmf 2
 	[saveData appendData:[fmf2 zlibDeflate]];
 	

@@ -13,6 +13,6 @@
 
 }
 
-+ (id)readFileFromData:(NSData *)data withController:(Controller *)controller intoObject:(SXFGameDB *)object;
++ (void)readFileFromData:(NSData *)data withController:(Controller *)controller intoObject:(SXFGameDB *)object;
 
 @end

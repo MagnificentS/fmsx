@@ -48,6 +48,7 @@
 		FB0C0B7610DF8E87009BD9DE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7446980DB6B7EA00F9684A /* MainMenu.xib */; };
 		FB0C400012954F560086D410 /* TreatedNationsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0C3FFF12954F560086D410 /* TreatedNationsLoader.m */; };
 		FB0C4003129550290086D410 /* TreatedNations.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0C4002129550290086D410 /* TreatedNations.m */; };
+		FB0C936A132C2FC300CF3BFC /* ToolController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0C9369132C2FC300CF3BFC /* ToolController.m */; };
 		FB17EDC910B6B5F4006B17CE /* StaffLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB17EDC810B6B5F4006B17CE /* StaffLoader.m */; };
 		FB17EDCF10B6B676006B17CE /* Staff.m in Sources */ = {isa = PBXBuildFile; fileRef = FB17EDCE10B6B676006B17CE /* Staff.m */; };
 		FB17EDD210B6B7F1006B17CE /* ActualPersonLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB17EDD110B6B7F1006B17CE /* ActualPersonLoader.m */; };
@@ -494,6 +495,8 @@
 		FBD0440611FC728900B49EE5 /* FootballStadiumSaver.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD0440511FC728900B49EE5 /* FootballStadiumSaver.m */; };
 		FBD189F410BC097700E66ADC /* Fixture.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD189F310BC097600E66ADC /* Fixture.m */; };
 		FBD189F710BC098800E66ADC /* FixtureLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD189F610BC098800E66ADC /* FixtureLoader.m */; };
+		FBD284FB132E25E300AFCD9A /* SXScoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD284FA132E25E300AFCD9A /* SXScoutViewController.m */; };
+		FBD284FD132E26C900AFCD9A /* Scout.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD284FC132E26C900AFCD9A /* Scout.xib */; };
 		FBD2D93710B1E76F00C68794 /* NationLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD2D93610B1E76F00C68794 /* NationLoader.m */; };
 		FBD2D93D10B1EB7000C68794 /* FifaRankingMatchLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD2D93C10B1EB7000C68794 /* FifaRankingMatchLoader.m */; };
 		FBD2D94010B1EC2D00C68794 /* FifaRankingMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD2D93F10B1EC2D00C68794 /* FifaRankingMatch.m */; };
@@ -755,6 +758,8 @@
 		FB0C3FFF12954F560086D410 /* TreatedNationsLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreatedNationsLoader.m; sourceTree = "<group>"; };
 		FB0C4001129550290086D410 /* TreatedNations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreatedNations.h; sourceTree = "<group>"; };
 		FB0C4002129550290086D410 /* TreatedNations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreatedNations.m; sourceTree = "<group>"; };
+		FB0C9368132C2FC300CF3BFC /* ToolController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolController.h; sourceTree = "<group>"; };
+		FB0C9369132C2FC300CF3BFC /* ToolController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolController.m; sourceTree = "<group>"; };
 		FB17EDC710B6B5F4006B17CE /* StaffLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaffLoader.h; sourceTree = "<group>"; };
 		FB17EDC810B6B5F4006B17CE /* StaffLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaffLoader.m; sourceTree = "<group>"; };
 		FB17EDCD10B6B676006B17CE /* Staff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Staff.h; sourceTree = "<group>"; };
@@ -1421,6 +1426,9 @@
 		FBD189F310BC097600E66ADC /* Fixture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fixture.m; sourceTree = "<group>"; };
 		FBD189F510BC098800E66ADC /* FixtureLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixtureLoader.h; sourceTree = "<group>"; };
 		FBD189F610BC098800E66ADC /* FixtureLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FixtureLoader.m; sourceTree = "<group>"; };
+		FBD284F9132E25E300AFCD9A /* SXScoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXScoutViewController.h; sourceTree = "<group>"; };
+		FBD284FA132E25E300AFCD9A /* SXScoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXScoutViewController.m; sourceTree = "<group>"; };
+		FBD284FC132E26C900AFCD9A /* Scout.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Scout.xib; sourceTree = "<group>"; };
 		FBD2D93510B1E76F00C68794 /* NationLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NationLoader.h; sourceTree = "<group>"; };
 		FBD2D93610B1E76F00C68794 /* NationLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NationLoader.m; sourceTree = "<group>"; };
 		FBD2D93B10B1EB7000C68794 /* FifaRankingMatchLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FifaRankingMatchLoader.h; sourceTree = "<group>"; };
@@ -1801,6 +1809,7 @@
 				FBA2B8B8109287BC00C1A669 /* PreferencesUpdates.xib */,
 				FBA2B97A1092973400C1A669 /* PreferencesLanguages.xib */,
 				FB0C0A9410DE812B009BD9DE /* Localizable.strings */,
+				FBD284FC132E26C900AFCD9A /* Scout.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -2753,6 +2762,8 @@
 				FB91B97910989E9000EBAA12 /* SXOutlineViewCell.m */,
 				FBA0F74C1099D4B100982364 /* SXMainMediaController.h */,
 				FBA0F74D1099D4B100982364 /* SXMainMediaController.m */,
+				FBD284F9132E25E300AFCD9A /* SXScoutViewController.h */,
+				FBD284FA132E25E300AFCD9A /* SXScoutViewController.m */,
 			);
 			name = "Other Controllers";
 			sourceTree = "<group>";
@@ -2919,6 +2930,8 @@
 				FB59D8F91097222100E2AE40 /* LangDB.m */,
 				FB2E734E130C73B3009537D2 /* ScoutController.h */,
 				FB2E734F130C73B3009537D2 /* ScoutController.m */,
+				FB0C9368132C2FC300CF3BFC /* ToolController.h */,
+				FB0C9369132C2FC300CF3BFC /* ToolController.m */,
 			);
 			name = "Main Classes";
 			sourceTree = "<group>";
@@ -3393,6 +3406,7 @@
 				FB5A30741305E91E006D0B6D /* competent.png in Resources */,
 				FB5A30751305E91E006D0B6D /* awkward.png in Resources */,
 				FB5A30761305E91E006D0B6D /* accomplished.png in Resources */,
+				FBD284FD132E26C900AFCD9A /* Scout.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3737,6 +3751,8 @@
 				FB8667C213282D23009C01E2 /* SXFSaveGameSummaryLoader.m in Sources */,
 				FB8667CD13283004009C01E2 /* SXFGameDB.m in Sources */,
 				FB8667D01328300D009C01E2 /* SXFGameDBLoader.m in Sources */,
+				FB0C936A132C2FC300CF3BFC /* ToolController.m in Sources */,
+				FBD284FB132E25E300AFCD9A /* SXScoutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

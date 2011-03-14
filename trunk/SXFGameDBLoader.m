@@ -14,7 +14,7 @@
 
 @implementation SXFGameDBLoader
 
-+ (id)readFileFromData:(NSData *)data withController:(Controller *)controller intoObject:(SXFGameDB *)object
++ (void)readFileFromData:(NSData *)data withController:(Controller *)controller intoObject:(SXFGameDB *)object
 {
 	unsigned int offset = 0;
 	short sbuffer;
@@ -36,7 +36,7 @@
 		NSLog(@"Incompatible Database Version.");
 		[alert runModal];
 		
-		return nil;
+		return;
 	}
 	
 	//	0x06 unknown
@@ -78,7 +78,7 @@
 										   [[dbResult objectAtIndex:2] intValue],
 										   [dbResult objectAtIndex:3]
 										   ]];
-		return nil;
+		return;
 	}
 	
 	NSLog(@"game_db.dat: %d of %d read",offset,[data length]);

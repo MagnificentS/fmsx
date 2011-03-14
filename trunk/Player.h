@@ -96,11 +96,11 @@
 	arrivesLateInOppositionArea, triesToPlayWayOutOfTrouble, staysBackAtAllTimes, avoidsUsingWeakerFoot, triesLongRangeFreeKicks,
 	divesIntoTackles, doesNotDiveIntoTackles, cutsInside, hugsLine, triesFirstTimeShots, hitsFreeKicksWithPower, possessesLongFlatThrow,
 	runsWithBallOften, runsWithBallRarely, MLSGuaranteedDealPlayer, MLSGuaranteedDealClub;
-	short homeReputation, currentReputation, worldReputation, currentAbility, potentialAbility, unknownShort1,
+	short homeReputation, currentReputation, worldReputation, currentAbility, potentialAbility, careerLeagueAppearances,
 	fitness, jadedness, condition, weight, height, clubLeagueGoals, clubGoals, clubAppearances, MLSLastDraftYear,
 	leagueGoals, goals, appearances, clubLeagueAppearances, leagueAppearances, daysSinceLastMatch;
 	int playerStatsID, value, askingPrice, firstClubID, recurringInjuryID, lastInjuryTypeID, fileListID, unknownInt2,
-	unknownInt1, teamLastPlayedForID, internationalDebutOpposition, MLSRightsClubID, MLSLastDraftClubID;
+	lastTransferFee, teamLastPlayedForID, internationalDebutOpposition, MLSRightsClubID, MLSLastDraftClubID;
 	float unknownFloat1;
 	unsigned long long preferredMoves;
 	NSData *unknownData1, *unknownData2, *unknownData3, *unknownData4, *unknownData5, *unknownData6, *unknownData7, *unknownData8, 
@@ -128,10 +128,10 @@ divesIntoTackles, doesNotDiveIntoTackles, cutsInside, hugsLine, triesFirstTimeSh
 runsWithBallOften, runsWithBallRarely;
 @property(assign,readwrite) float unknownFloat1;
 @property(assign,readwrite) short homeReputation, currentReputation, worldReputation, currentAbility, potentialAbility,
-fitness, jadedness, condition, weight, height, clubLeagueGoals, clubGoals, clubAppearances, unknownShort1,
+fitness, jadedness, condition, weight, height, clubLeagueGoals, clubGoals, clubAppearances, careerLeagueAppearances,
 leagueGoals, goals, appearances, clubLeagueAppearances, leagueAppearances, daysSinceLastMatch, MLSLastDraftYear;
 @property(assign,readwrite) int playerStatsID, value, askingPrice, firstClubID, recurringInjuryID, lastInjuryTypeID,
-fileListID, unknownInt1, teamLastPlayedForID, internationalDebutOpposition, MLSRightsClubID, MLSLastDraftClubID,
+fileListID, lastTransferFee, teamLastPlayedForID, internationalDebutOpposition, MLSRightsClubID, MLSLastDraftClubID,
 unknownInt2;
 @property(assign,readwrite) unsigned long long preferredMoves;
 @property(readwrite,copy) NSData *unknownData1, *unknownData2, *unknownData3, *unknownData4, *unknownData5, *unknownData6, *unknownData7, *unknownData8, 

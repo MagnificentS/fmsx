@@ -7,8 +7,148 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "ContentController.h"
 
-@interface ContentController (ScoutController)
+// scout search file types
+#define SCTY_PLAYER		0
+#define SCTY_STAFF		1
+#define SCTY_CLUB		2
+
+#define SXS_VERSION		1
+
+@interface ScoutController : NSObject {
+	NSMutableArray *playerScoutResults, *staffScoutResults, *clubScoutResults;
+
+	// Scout
+	IBOutlet NSSegmentedControl *scoutSectionControl;
+	IBOutlet NSTabView	*scoutSectionTabView;
+	NSString *currentPlayerExpression;
+	NSString *currentStaffExpression;
+	NSString *currentClubExpression;
+	
+	// Club Scout
+	IBOutlet NSSearchField *clubScoutCompSearchField, *clubScoutNationSearchField, *clubScoutClubSearchField;
+	IBOutlet NSTableView *clubScoutResultsTable;
+	
+	// Staff Scout
+	IBOutlet NSSearchField *staffTextSearchField;
+	IBOutlet NSTableView *staffScoutResultsTable;
+	IBOutlet NSPredicateEditor *staffScoutPersonalAttributeEditor, *staffScoutStatEditor;
+	IBOutlet NSComboBox *staffScoutContractExpiryBox;
+	IBOutlet NSButton *staffScoutRegenButton, *staffScoutNonRegenButton, *staffScoutFemaleButton, 
+	*staffScoutMaleButton, *staffScoutShowECStaffOnlyBox;
+	
+	// Player Scout
+	IBOutlet NSSearchField *playerTextSearchField;
+	IBOutlet NSPredicateEditor *playerScoutPersonalAttributeEditor, *playerScoutTechnicalAttributeEditor,
+	*playerScoutPhysicalAttributeEditor, *playerScoutMentalAttributeEditor;
+	IBOutlet NSComboBox *playerScoutContractExpiryBox, *playerScoutTransferStatusBox;
+	IBOutlet NSPopUpButton *playerScoutPositionBox;
+	IBOutlet NSTableView *playerScoutResultsTable;
+	IBOutlet NSPanel *playerScoutPreviewPanel;
+	IBOutlet NSButton *playerScoutRegenButton, *playerScoutNonRegenButton, *playerScoutFemaleButton, 
+	*playerScoutMaleButton, *playerScoutShowECPlayersOnlyBox, *playerScoutShowInjuredBox, *playerScoutShowBannedBox;
+	
+	// scout column states
+	BOOL showPlayerScoutNameColumn, showPlayerScoutStatusColumn, showPlayerScoutTeamColumn, showPlayerScoutAgeColumn, 
+	showPlayerScoutPositionColumn, showPlayerScoutCAColumn, showPlayerScoutPAColumn, showPlayerScoutHomeRepColumn, 
+	showPlayerScoutWorldRepColumn, showPlayerScoutCurrentRepColumn, showPlayerScoutConditionColumn, showPlayerScoutGPColumn, 
+	showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNationColumn, showPlayerScoutHeightColumn,
+	showPlayerScoutWeightColumn, showPlayerScoutAdaptabilityColumn, showPlayerScoutAmbitionColumn, showPlayerScoutControversyColumn, 
+	showPlayerScoutLoyaltyColumn, showPlayerScoutPressureColumn, showPlayerScoutProfessionalismColumn, showPlayerScoutSportsmanshipColumn, 
+	showPlayerScoutTemperamentColumn, showPlayerScoutFullCapsColumn, showPlayerScoutFullGoalsColumn, showPlayerScoutU21CapsColumn, 
+	showPlayerScoutU21GoalsColumn, showPlayerScoutManagerRoleColumn, showPlayerScoutAssistantManagerRoleColumn,
+	showPlayerScoutCoachRoleColumn, showPlayerScoutGoalkeepingCoachRoleColumn, showPlayerScoutFitnessCoachRoleColumn, 
+	showPlayerScoutPhysioRoleColumn, showPlayerScoutScoutRoleColumn,
+	showPlayerScoutAccelerationColumn, showPlayerScoutAgilityColumn, showPlayerScoutBalanceColumn, showPlayerScoutInjuryPronenessColumn, 
+	showPlayerScoutJumpingColumn, showPlayerScoutNaturalFitnessColumn, showPlayerScoutPaceColumn, showPlayerScoutStaminaColumn, 
+	showPlayerScoutStrengthColumn, showPlayerScoutAggressionColumn, showPlayerScoutAnticipationColumn, showPlayerScoutBraveryColumn, 
+	showPlayerScoutComposureColumn, showPlayerScoutConcentrationColumn, showPlayerScoutConsistencyColumn, showPlayerScoutCreativityColumn, 
+	showPlayerScoutDecisionsColumn, showPlayerScoutDeterminationColumn, showPlayerScoutDirtinessColumn, showPlayerScoutFlairColumn, 
+	showPlayerScoutImportantMatchesColumn, showPlayerScoutInfluenceColumn, showPlayerScoutOffTheBallColumn, showPlayerScoutPositioningColumn, 
+	showPlayerScoutTeamworkColumn, showPlayerScoutWorkRateColumn, showPlayerScoutThrowingColumn, showPlayerScoutTendencyToPunchColumn, 
+	showPlayerScoutAerialAbilityColumn, showPlayerScoutCommandOfAreaColumn, showPlayerScoutCommunicationColumn, showPlayerScoutEccentricityColumn, 
+	showPlayerScoutHandlingColumn, showPlayerScoutKickingColumn, showPlayerScoutOneOnOnesColumn, showPlayerScoutReflexesColumn, 
+	showPlayerScoutRushingOutColumn, showPlayerScoutCornersColumn, showPlayerScoutCrossingColumn, showPlayerScoutDribblingColumn, 
+	showPlayerScoutFinishingColumn, showPlayerScoutFirstTouchColumn, showPlayerScoutFreeKicksColumn, showPlayerScoutHeadingColumn, 
+	showPlayerScoutLongShotsColumn, showPlayerScoutLongThrowsColumn, showPlayerScoutMarkingColumn, showPlayerScoutPassingColumn, 
+	showPlayerScoutPenaltyTakingColumn, showPlayerScoutTacklingColumn, showPlayerScoutTechniqueColumn, showPlayerScoutVersatilityColumn, 
+	showPlayerScoutLeftFootColumn, showPlayerScoutRightFootColumn, showPlayerScoutBestRoleColumn;
+	
+	BOOL showStaffScoutNameColumn, showStaffScoutTeamColumn, showStaffScoutAgeColumn, showStaffScoutCAColumn, showStaffScoutPAColumn, showStaffScoutControversyColumn, 
+	showStaffScoutHomeRepColumn, showStaffScoutWorldRepColumn, showStaffScoutCurrentRepColumn, showStaffScoutNationColumn, showStaffScoutAdaptabilityColumn, showStaffScoutAmbitionColumn, 
+	showStaffScoutLoyaltyColumn, showStaffScoutPressureColumn, showStaffScoutProfessionalismColumn, showStaffScoutSportsmanshipColumn, showStaffScoutTemperamentColumn, showStaffScoutFullCapsColumn, 
+	showStaffScoutFullGoalsColumn, showStaffScoutU21CapsColumn, showStaffScoutU21GoalsColumn, showStaffScoutManagerRoleColumn, showStaffScoutAssistantManagerRoleColumn, showStaffScoutCoachRoleColumn, 
+	showStaffScoutFitnessCoachRoleColumn, showStaffScoutGoalkeepingCoachRoleColumn, showStaffScoutPhysioRoleColumn, showStaffScoutScoutRoleColumn, showStaffScoutAttackingCoachingColumn, showStaffScoutCoachingTechniqueColumn, 
+	showStaffScoutDefendingColumn, showStaffScoutFitnessColumn, showStaffScoutGoalkeepersColumn, showStaffScoutManManagementColumn, showStaffScoutMentalColumn, showStaffScoutOutfieldPlayersColumn, 
+	showStaffScoutTacticalColumn, showStaffScoutTechnicalColumn, showStaffScoutWorkingWithYoungstersColumn, showStaffScoutAttackingColumn, showStaffScoutDepthColumn, showStaffScoutDirectnessColumn, 
+	showStaffScoutDirtinessAllowanceColumn, showStaffScoutFlamboyancyColumn, showStaffScoutFlexibilityColumn, showStaffScoutFreeRolesColumn, showStaffScoutMarkingColumn, showStaffScoutOffsideColumn, 
+	showStaffScoutPressingColumn, showStaffScoutSittingBackColumn, showStaffScoutSquadRotationColumn, showStaffScoutTempoColumn, showStaffScoutUseOfPlaymakerColumn, showStaffScoutUseOfSubsColumn, 
+	showStaffScoutWidthColumn, showStaffScoutBusinessColumn, showStaffScoutBuyingPlayersColumn, showStaffScoutDeterminationColumn, showStaffScoutHardnessOfTrainingColumn, showStaffScoutInterferenceColumn, 
+	showStaffScoutJudgingPlayerAbilityColumn, showStaffScoutJudgingPlayerPotentialColumn, showStaffScoutLevelOfDisciplineColumn, showStaffScoutMindGamesColumn, showStaffScoutMotivatingColumn, showStaffScoutPatienceColumn, 
+	showStaffScoutPhysiotherapyColumn, showStaffScoutResourcesColumn, showStaffScoutTacticalKnowledgeColumn, showStaffScoutJobColumn; 
+	
+	BOOL showClubScoutNameColumn, showClubScoutCompetitionColumn, showClubScoutPlayerCountColumn, showClubScoutAverageCAColumn, showClubScoutAveragePAColumn, showClubScoutAverageAgeColumn, 
+	showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrainingFacilitiesColumn, showClubScoutBalanceColumn, showClubScoutSeasonTransferBudgetColumn, showClubScoutRemainingTransferBudgetColumn;	
+}
+
+// Scout Functions
+- (IBAction)scoutClubs:(id)sender;
+- (IBAction)scoutStaff:(id)sender;
+- (IBAction)scoutPlayers:(id)sender;
+- (void)exportPlayersToCSV:(NSMutableArray *)array;
+- (IBAction)loadSearch:(id)sender;
+- (IBAction)saveSearch:(id)sender;
+- (IBAction)updatePlayerScoutColumns:(id)sender;
+- (IBAction)updateStaffScoutColumns:(id)sender;
+- (IBAction)updateClubScoutColumns:(id)sender;
+- (IBAction)importShortlist:(id)sender;
+- (IBAction)exportShortlist:(id)sender;
+- (IBAction)saveAllScoutResultsToShortlist:(id)sender;
+- (IBAction)saveSelectedScoutResultsToShortlist:(id)sender;
+- (void)saveShortlist:(NSArray *)players atPath:(NSString *)path;
+- (void)performSpaceKeyPress:(id)sender;
+
+
+@property(readwrite,assign) BOOL showPlayerScoutNameColumn, showPlayerScoutStatusColumn, showPlayerScoutTeamColumn, showPlayerScoutAgeColumn, 
+showPlayerScoutPositionColumn, showPlayerScoutCAColumn, showPlayerScoutPAColumn, showPlayerScoutHomeRepColumn, 
+showPlayerScoutWorldRepColumn, showPlayerScoutCurrentRepColumn, showPlayerScoutConditionColumn, showPlayerScoutGPColumn, 
+showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNationColumn, showPlayerScoutHeightColumn, showPlayerScoutWeightColumn,
+showPlayerScoutAdaptabilityColumn, showPlayerScoutAmbitionColumn, showPlayerScoutControversyColumn, showPlayerScoutLoyaltyColumn, 
+showPlayerScoutPressureColumn, showPlayerScoutProfessionalismColumn, showPlayerScoutSportsmanshipColumn, showPlayerScoutTemperamentColumn,
+showPlayerScoutFullCapsColumn, showPlayerScoutFullGoalsColumn, showPlayerScoutU21CapsColumn, showPlayerScoutU21GoalsColumn,
+showPlayerScoutManagerRoleColumn, showPlayerScoutAssistantManagerRoleColumn,
+showPlayerScoutCoachRoleColumn, showPlayerScoutGoalkeepingCoachRoleColumn, showPlayerScoutFitnessCoachRoleColumn, 
+showPlayerScoutPhysioRoleColumn, showPlayerScoutScoutRoleColumn,
+showPlayerScoutAccelerationColumn, showPlayerScoutAgilityColumn, showPlayerScoutBalanceColumn, showPlayerScoutInjuryPronenessColumn, 
+showPlayerScoutJumpingColumn, showPlayerScoutNaturalFitnessColumn, showPlayerScoutPaceColumn, showPlayerScoutStaminaColumn, 
+showPlayerScoutStrengthColumn, showPlayerScoutAggressionColumn, showPlayerScoutAnticipationColumn, showPlayerScoutBraveryColumn, 
+showPlayerScoutComposureColumn, showPlayerScoutConcentrationColumn, showPlayerScoutConsistencyColumn, showPlayerScoutCreativityColumn, 
+showPlayerScoutDecisionsColumn, showPlayerScoutDeterminationColumn, showPlayerScoutDirtinessColumn, showPlayerScoutFlairColumn, 
+showPlayerScoutImportantMatchesColumn, showPlayerScoutInfluenceColumn, showPlayerScoutOffTheBallColumn, showPlayerScoutPositioningColumn, 
+showPlayerScoutTeamworkColumn, showPlayerScoutWorkRateColumn, showPlayerScoutThrowingColumn, showPlayerScoutTendencyToPunchColumn, 
+showPlayerScoutAerialAbilityColumn, showPlayerScoutCommandOfAreaColumn, showPlayerScoutCommunicationColumn, showPlayerScoutEccentricityColumn, 
+showPlayerScoutHandlingColumn, showPlayerScoutKickingColumn, showPlayerScoutOneOnOnesColumn, showPlayerScoutReflexesColumn, 
+showPlayerScoutRushingOutColumn, showPlayerScoutCornersColumn, showPlayerScoutCrossingColumn, showPlayerScoutDribblingColumn, 
+showPlayerScoutFinishingColumn, showPlayerScoutFirstTouchColumn, showPlayerScoutFreeKicksColumn, showPlayerScoutHeadingColumn, 
+showPlayerScoutLongShotsColumn, showPlayerScoutLongThrowsColumn, showPlayerScoutMarkingColumn, showPlayerScoutPassingColumn, 
+showPlayerScoutPenaltyTakingColumn, showPlayerScoutTacklingColumn, showPlayerScoutTechniqueColumn, showPlayerScoutVersatilityColumn, 
+showPlayerScoutLeftFootColumn, showPlayerScoutRightFootColumn, showPlayerScoutBestRoleColumn,
+showStaffScoutNameColumn, showStaffScoutTeamColumn, showStaffScoutAgeColumn, showStaffScoutCAColumn, showStaffScoutPAColumn, showStaffScoutControversyColumn, 
+showStaffScoutHomeRepColumn, showStaffScoutWorldRepColumn, showStaffScoutCurrentRepColumn, showStaffScoutNationColumn, showStaffScoutAdaptabilityColumn, showStaffScoutAmbitionColumn, 
+showStaffScoutLoyaltyColumn, showStaffScoutPressureColumn, showStaffScoutProfessionalismColumn, showStaffScoutSportsmanshipColumn, showStaffScoutTemperamentColumn, showStaffScoutFullCapsColumn, 
+showStaffScoutFullGoalsColumn, showStaffScoutU21CapsColumn, showStaffScoutU21GoalsColumn, showStaffScoutManagerRoleColumn, showStaffScoutAssistantManagerRoleColumn, showStaffScoutCoachRoleColumn, 
+showStaffScoutFitnessCoachRoleColumn, showStaffScoutGoalkeepingCoachRoleColumn, showStaffScoutPhysioRoleColumn, showStaffScoutScoutRoleColumn, showStaffScoutAttackingCoachingColumn, showStaffScoutCoachingTechniqueColumn, 
+showStaffScoutDefendingColumn, showStaffScoutFitnessColumn, showStaffScoutGoalkeepersColumn, showStaffScoutManManagementColumn, showStaffScoutMentalColumn, showStaffScoutOutfieldPlayersColumn, 
+showStaffScoutTacticalColumn, showStaffScoutTechnicalColumn, showStaffScoutWorkingWithYoungstersColumn, showStaffScoutAttackingColumn, showStaffScoutDepthColumn, showStaffScoutDirectnessColumn, 
+showStaffScoutDirtinessAllowanceColumn, showStaffScoutFlamboyancyColumn, showStaffScoutFlexibilityColumn, showStaffScoutFreeRolesColumn, showStaffScoutMarkingColumn, showStaffScoutOffsideColumn, 
+showStaffScoutPressingColumn, showStaffScoutSittingBackColumn, showStaffScoutSquadRotationColumn, showStaffScoutTempoColumn, showStaffScoutUseOfPlaymakerColumn, showStaffScoutUseOfSubsColumn, 
+showStaffScoutWidthColumn, showStaffScoutBusinessColumn, showStaffScoutBuyingPlayersColumn, showStaffScoutDeterminationColumn, showStaffScoutHardnessOfTrainingColumn, showStaffScoutInterferenceColumn, 
+showStaffScoutJudgingPlayerAbilityColumn, showStaffScoutJudgingPlayerPotentialColumn, showStaffScoutLevelOfDisciplineColumn, showStaffScoutMindGamesColumn, showStaffScoutMotivatingColumn, showStaffScoutPatienceColumn, 
+showStaffScoutPhysiotherapyColumn, showStaffScoutResourcesColumn, showStaffScoutTacticalKnowledgeColumn, showStaffScoutJobColumn,
+showClubScoutNameColumn, showClubScoutCompetitionColumn, showClubScoutPlayerCountColumn, showClubScoutAverageCAColumn, showClubScoutAveragePAColumn, showClubScoutAverageAgeColumn, 
+showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrainingFacilitiesColumn, showClubScoutBalanceColumn, showClubScoutSeasonTransferBudgetColumn, showClubScoutRemainingTransferBudgetColumn;
+
+@property(readwrite,copy) NSMutableArray *clubScoutResults, *staffScoutResults,  *playerScoutResults;
+@property(readwrite,copy) NSString *currentPlayerExpression, *currentStaffExpression, *currentClubExpression;
 
 @end

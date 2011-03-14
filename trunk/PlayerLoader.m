@@ -118,10 +118,8 @@
 	[object setFirstClubID:ibuffer];
 	[data getBytes:&llbuffer range:NSMakeRange(offset, 8)]; offset += 8;
 	[object setPreferredMoves:llbuffer];
-	
-	// ???
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
-	[object setUnknownInt1:ibuffer];
+	[object setLastTransferFee:ibuffer];
 	
 	[object setUnknownDate7:[FMDateLoader readFromData:data atOffset:&offset]];
 	
@@ -146,7 +144,7 @@
 		[data getBytes:&sbuffer range:NSMakeRange(offset, 2)]; offset += 2;
 		[object setLeagueAppearances:sbuffer];
 		[data getBytes:&sbuffer range:NSMakeRange(offset, 2)]; offset += 2;
-		[object setUnknownShort1:sbuffer];
+		[object setCareerLeagueAppearances:sbuffer];
 	}
 	
 	if (debug) { NSLog(@"at EPD at %d",offset); }

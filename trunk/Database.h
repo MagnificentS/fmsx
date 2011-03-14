@@ -13,10 +13,7 @@
 
 @interface Database : NSObject {
 	Controller *controller;
-	LangDB *langDB;
 	SXImageXMLParser *graphics;
-	
-	BOOL langDBLoaded;
 	
 	unsigned int currentRecord;
 	unsigned int totalRecords;
@@ -39,7 +36,6 @@
 
 - (id)readGameDB:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version;
 - (void)saveGameDB:(NSMutableData *)data version:(short)version;
-- (void)readLangDB:(NSString *)path;
 - (void)parseGraphics:(NSString *)path;
 
 @property(copy,readwrite) NSMutableArray *goodAlliterations, *badAlliterations, *awards,
@@ -52,7 +48,6 @@
 @property(assign,readwrite) unsigned int currentRecord, totalRecords, saveEndOffset, databaseChanges;
 @property(assign,readwrite) int unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 @property(assign,readwrite) BOOL langDBLoaded;
-@property(assign,readwrite) LangDB *langDB;
 @property(assign,readwrite) SXImageXMLParser *graphics;
 @property(readwrite,copy) NSData *unknownData1, *unknownData2, *unknownData3, *unknownData4, *unknownData5, 
 *unknownData6, *unknownData7;

@@ -23,7 +23,7 @@ unknownData9, unknownData10, unknownData11, unknownData13, unknownData14, unknow
 unknownData17, unknownData18, unknownData19, unknownData21, unknownData22, unknownChar9,
 unknownDate1, unknownDate2, unknownDate3, unknownDate4, unknownDate5, unknownDate6, unknownDate7, 
 internationalRetirementDate, unknownDate10, unknownDate11, unknownDate14, unknownInt2,
-unknownFloat1, unknownInt1, unknownShort1, unknownBool1, unknownBool2, unknownDate8,
+unknownFloat1, lastTransferFee, careerLeagueAppearances, unknownBool1, unknownBool2, unknownDate8,
 unknownChar1, unknownChar2, unknownChar3, unknownChar4, unknownChar5, unknownChar6, unknownChar7, 
 unknownChar8, lastInternationalMatch, hasMLSData, unknownChar11, unknownChar12, unknownChar13, unknownChar14, 
 unknownChar15, unknownChar16, unknownChar17, teamLastPlayedForID, internationalDebutDate, internationalDebutOpposition,

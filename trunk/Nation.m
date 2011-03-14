@@ -6,6 +6,7 @@
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
+#import "SXFGameDB.h"
 #import "Nation.h"
 #import "Team.h"
 #import "Database.h"
@@ -102,7 +103,7 @@ nonEUTreatedNations, unknownShort1, unknownShort2, gainNationalityType, unknownD
 
 - (NSString *)continentString
 {
-	if (continentID>-1) { return [[[[controller database] continents] objectAtIndex:continentID] name]; }
+	if (continentID>-1) { return [[[controller.gameDB.database continents] objectAtIndex:continentID] name]; }
 	return @"---";
 }
 
@@ -110,8 +111,8 @@ nonEUTreatedNations, unknownShort1, unknownShort2, gainNationalityType, unknownD
 - (NSString *)competitionString
 {
 	if ([[teamContainer teams] count]>0) {
-		if ([[[[controller database] teams] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] continentalCupID]>-1) {
-			return [[[[controller database] competitions] objectAtIndex:[[[[controller database] teams] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] continentalCupID]] name];
+		if ([[[controller.gameDB.database teams] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] continentalCupID]>-1) {
+			return [[[controller.gameDB.database competitions] objectAtIndex:[[[controller.gameDB.database teams] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] continentalCupID]] name];
 		}
 	}
 	return @"---";
@@ -120,7 +121,7 @@ nonEUTreatedNations, unknownShort1, unknownShort2, gainNationalityType, unknownD
 - (short)reputation
 {
 	if ([[teamContainer teams] count]>0) {
-		return [[[[controller database] teams] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] reputation];
+		return [[[controller.gameDB.database teams] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] reputation];
 	}
 	return 0;
 }

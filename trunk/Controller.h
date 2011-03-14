@@ -38,7 +38,8 @@
 	NSWindowController *preferencesWindowController;
 	NSThread *gameDBThread;
 	NSThread *parseGraphicsThread;
-	NSString *gamePath;
+	NSString *gamePath, *status;
+	int statusMaxValue, statusValue;
 	
 	NSMutableDictionary *fileInfos;
 	NSMutableDictionary *infoStrings;
@@ -72,11 +73,11 @@
 @property(assign,readwrite) SXFGameDB *gameDB;
 @property(assign,readwrite) SXFGameInfo *gameInfo;
 @property(assign,readwrite) SXFSaveGameSummary *saveGameSummary;
-@property(copy,readwrite) NSString *gamePath;
+@property(copy,readwrite) NSString *gamePath, *status;
 @property(copy,readwrite) FMDate *currentDate;
 @property(copy,readwrite) NSMutableDictionary *infoStrings;
 @property(assign,readwrite) unsigned short gameDBVersion;
-@property(assign,readwrite) int databaseChanges, timesSaved, startBuildVersion, currentBuildVersion, gameID;
+@property(assign,readwrite) int databaseChanges, timesSaved, startBuildVersion, currentBuildVersion, gameID, statusMaxValue, statusValue;
 @property(assign,readwrite) BOOL idle, dataLoaded, langDBLoaded;
 @property(assign,readwrite) NSArrayController *awardsController, *citiesController, *clubsController, *competitionsController,
 *continentsController, *currenciesController, *injuriesController, *languagesController, *localAreasController,

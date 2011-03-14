@@ -6,6 +6,7 @@
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
+#import "SXFGameDB.h"
 #import "DatabaseTypes.h"
 #import "Person.h"
 #import "Agreement.h"
@@ -52,17 +53,17 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 
 - (NSString *)name {
 	if (personData) {
-		if ([personData commonNameID]>-1 && [personData commonNameID]<[[controller valueForKeyPath:@"database.commonNames"] count]) {
-			return [[[controller valueForKeyPath:@"database.commonNames"] objectAtIndex:[personData commonNameID]] name];
+		if ([personData commonNameID]>-1 && [personData commonNameID]<[[controller valueForKeyPath:@"gameDB.database.commonNames"] count]) {
+			return [[[controller valueForKeyPath:@"gameDB.database.commonNames"] objectAtIndex:[personData commonNameID]] name];
 		}
 		else if ([personData firstNameID]>-1 || [personData surnameID]>-1) {
 			NSString *firstName, *surname;
 			
-			if ([personData firstNameID]>-1 && [personData firstNameID]<[[controller valueForKeyPath:@"database.firstNames"] count]) {
-				firstName = [[[controller valueForKeyPath:@"database.firstNames"] objectAtIndex:[personData firstNameID]] name];
+			if ([personData firstNameID]>-1 && [personData firstNameID]<[[controller valueForKeyPath:@"gameDB.database.firstNames"] count]) {
+				firstName = [[[controller valueForKeyPath:@"gameDB.database.firstNames"] objectAtIndex:[personData firstNameID]] name];
 			}
-			if ([personData surnameID]>-1 && [personData surnameID]<[[controller valueForKeyPath:@"database.surnames"] count]) {
-				surname = [[[controller valueForKeyPath:@"database.surnames"] objectAtIndex:[personData surnameID]] name];
+			if ([personData surnameID]>-1 && [personData surnameID]<[[controller valueForKeyPath:@"gameDB.database.surnames"] count]) {
+				surname = [[[controller valueForKeyPath:@"gameDB.database.surnames"] objectAtIndex:[personData surnameID]] name];
 			}
 			
 			return [NSString stringWithFormat:@"%@ %@",firstName, surname];
@@ -81,12 +82,12 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 - (NSString *)nationString {
 	NSMutableString *string = [[NSMutableString alloc] init];
 	if (personData && [personData nationID] > -1) {
-		[string appendFormat:@"%@",[[[[[controller database] nations] objectAtIndex:[personData nationID]] teamContainer] name]];
+		[string appendFormat:@"%@",[[[[controller.gameDB.database nations] objectAtIndex:[personData nationID]] teamContainer] name]];
 		
 		for (Relationship *item in [personData relationships]) {
 			if ([item relationshipType]==RT_HAS_NATIONALITY && [item associatedID] > -1)
 			{
-				[string appendFormat:@" / %@",[[[[[controller database] nations] objectAtIndex:[item associatedID]] teamContainer] name]];
+				[string appendFormat:@" / %@",[[[[controller.gameDB.database nations] objectAtIndex:[item associatedID]] teamContainer] name]];
 			}
 		}
 	}
@@ -99,9 +100,9 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 {
 	if (staffData) {
 		if ([staffData nationalTeamID]>-1) {
-			[[[[[controller database] nations] objectAtIndex:[[[[controller database] teams] objectAtIndex:[staffData nationalTeamID]] teamContainerID]] teamContainer] name];
+			[[[[controller.gameDB.database nations] objectAtIndex:[[[controller.gameDB.database teams] objectAtIndex:[staffData nationalTeamID]] teamContainerID]] teamContainer] name];
 		}
-		else if (personData && [personData nationID]>-1) { return [[[[[controller database] nations] objectAtIndex:[personData nationID]] teamContainer] name]; }
+		else if (personData && [personData nationID]>-1) { return [[[[controller.gameDB.database nations] objectAtIndex:[personData nationID]] teamContainer] name]; }
 	}
 	return @"No Nation";
 }
@@ -109,23 +110,23 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 - (NSString *)teamString {
 	if (staffData) {
 		if ([staffData clubTeamID] > -1) {
-			if (![[[[[controller database] teams] objectAtIndex:[staffData clubTeamID]] name] isEqualToString:@"---"])
+			if (![[[[controller.gameDB.database teams] objectAtIndex:[staffData clubTeamID]] name] isEqualToString:@"---"])
 			{
-				return [[[[controller database] teams] objectAtIndex:[staffData clubTeamID]] name];
+				return [[[controller.gameDB.database teams] objectAtIndex:[staffData clubTeamID]] name];
 			}
 			else
 			{
-				return [[[[controller database] teams] objectAtIndex:[staffData clubTeamID]] fullTeamString];
+				return [[[controller.gameDB.database teams] objectAtIndex:[staffData clubTeamID]] fullTeamString];
 			}
 		}
 		else if ([staffData nationalTeamID] > -1) {
-			if (![[[[[controller database] teams] objectAtIndex:[staffData nationalTeamID]] name] isEqualToString:@"---"])
+			if (![[[[controller.gameDB.database teams] objectAtIndex:[staffData nationalTeamID]] name] isEqualToString:@"---"])
 			{
-				return [[[[controller database] teams] objectAtIndex:[staffData nationalTeamID]] name];
+				return [[[controller.gameDB.database teams] objectAtIndex:[staffData nationalTeamID]] name];
 			}
 			else
 			{
-				return [[[[controller database] teams] objectAtIndex:[staffData nationalTeamID]] fullTeamString];
+				return [[[controller.gameDB.database teams] objectAtIndex:[staffData nationalTeamID]] fullTeamString];
 			}
 		}
 		
@@ -265,10 +266,10 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 {
 	if (personData) {
 		short dobYear = [[personData dateOfBirth] year];
-		short currentYear = [[controller currentDate] year];
-		short dobMonth = [[[[controller currentDate] date] descriptionWithCalendarFormat:@"%m" timeZone:nil locale:nil] intValue]; 
+		short currentYear = [controller.gameDB.currentDate year];
+		short dobMonth = [[[controller.gameDB.currentDate date] descriptionWithCalendarFormat:@"%m" timeZone:nil locale:nil] intValue]; 
 		short currentMonth = [[[[personData dateOfBirth] date] descriptionWithCalendarFormat:@"%m" timeZone:nil locale:nil] intValue]; 
-		short dobDay = [[[[controller currentDate] date] descriptionWithCalendarFormat:@"%d" timeZone:nil locale:nil] intValue]; 
+		short dobDay = [[[controller.gameDB.currentDate date] descriptionWithCalendarFormat:@"%d" timeZone:nil locale:nil] intValue]; 
 		short currentDay = [[[[personData dateOfBirth] date] descriptionWithCalendarFormat:@"%d" timeZone:nil locale:nil] intValue]; 
 		
 		short monthDiff = currentMonth - dobMonth;
@@ -287,7 +288,7 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 - (BOOL)contractIsExpiring
 {
 	if ([[staffData contracts] count]>0) {
-		if ([[[[[staffData contracts] objectAtIndex:0] endDate] date] timeIntervalSinceDate:[[controller currentDate] date]] < (60*60*24*30*6)) {
+		if ([[[[[staffData contracts] objectAtIndex:0] endDate] date] timeIntervalSinceDate:[controller.gameDB.currentDate date]] < (60*60*24*30*6)) {
 			return TRUE;
 		}
 	}
@@ -296,7 +297,7 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 - (BOOL)contractIsExpired
 {
 	if ([[staffData contracts] count]>0) {
-		if ([[[controller currentDate] date] laterDate:[[[[staffData contracts] objectAtIndex:0] endDate] date]]==[[controller currentDate] date])
+		if ([[controller.gameDB.currentDate date] laterDate:[[[[staffData contracts] objectAtIndex:0] endDate] date]]==[controller.gameDB.currentDate date])
 		{
 			return TRUE;
 		}
@@ -308,8 +309,8 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 - (BOOL)isECNational
 {
 	if (personData) {
-		if ([[[[[controller database] nations] objectAtIndex:[personData nationID]] agreements] containsObject:[NSNumber numberWithInt:EU]] ||
-			[[[[[controller database] nations] objectAtIndex:[personData nationID]] agreements] containsObject:[NSNumber numberWithInt:EEA]])
+		if ([[[[controller.gameDB.database nations] objectAtIndex:[personData nationID]] agreements] containsObject:[NSNumber numberWithInt:EU]] ||
+			[[[[controller.gameDB.database nations] objectAtIndex:[personData nationID]] agreements] containsObject:[NSNumber numberWithInt:EEA]])
 		{
 			return TRUE;
 		}
@@ -317,8 +318,8 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 		for (Relationship *item in [personData relationships]) {
 			if ([item relationshipType]==RT_HAS_NATIONALITY)
 			{
-				if ([[[[[controller database] nations] objectAtIndex:[item associatedID]] agreements] containsObject:[NSNumber numberWithInt:EU]] ||
-					[[[[[controller database] nations] objectAtIndex:[item associatedID]] agreements] containsObject:[NSNumber numberWithInt:EEA]])
+				if ([[[[controller.gameDB.database nations] objectAtIndex:[item associatedID]] agreements] containsObject:[NSNumber numberWithInt:EU]] ||
+					[[[[controller.gameDB.database nations] objectAtIndex:[item associatedID]] agreements] containsObject:[NSNumber numberWithInt:EEA]])
 				{
 					return TRUE;
 				}
@@ -433,23 +434,23 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 		[expression appendFormat:@" AND (nationID == %d)",[personData nationID]];
 		predicate = [NSPredicate predicateWithFormat:expression];
 		tempArray = [[NSMutableArray alloc] init];
-		[tempArray addObjectsFromArray:[[[controller database] firstNames] filteredArrayUsingPredicate:predicate]];
+		[tempArray addObjectsFromArray:[[controller.gameDB.database firstNames] filteredArrayUsingPredicate:predicate]];
 		
 		if ([tempArray count]==0) {
 			Name *name1 = [[Name alloc] init];
 			[name1 setNationID:[personData nationID]];
 			[name1 setName:newFirstName];
-			[name1 setRowID:[[[controller database] firstNames] count]];
+			[name1 setRowID:[[controller.gameDB.database firstNames] count]];
 			[name1 setUID:UID];
 			[name1 setCount:1];
-			[[[controller database] firstNames] addObject:name1];
+			[[controller.gameDB.database firstNames] addObject:name1];
 			[personData setFirstNameID:[name1 rowID]];
 			[name1 release];
 		}
 		else {
 			[personData setFirstNameID:[[tempArray objectAtIndex:0] rowID]];
 			short newCount = [[tempArray objectAtIndex:0] count] + 1;
-			[[[[controller database] firstNames] objectAtIndex:[[tempArray objectAtIndex:0] rowID]] setCount:newCount];
+			[[[controller.gameDB.database firstNames] objectAtIndex:[[tempArray objectAtIndex:0] rowID]] setCount:newCount];
 		}
 		
 		[tempArray release];
@@ -462,23 +463,23 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 		[expression appendFormat:@" AND (nationID == %d)",[personData nationID]];
 		predicate = [NSPredicate predicateWithFormat:expression];
 		tempArray = [[NSMutableArray alloc] init];
-		[tempArray addObjectsFromArray:[[[controller database] surnames] filteredArrayUsingPredicate:predicate]];
+		[tempArray addObjectsFromArray:[[controller.gameDB.database surnames] filteredArrayUsingPredicate:predicate]];
 		
 		if ([tempArray count]==0) {
 			Name *name1 = [[Name alloc] init];
 			[name1 setNationID:[personData nationID]];
 			[name1 setName:newSurname];
-			[name1 setRowID:[[[controller database] surnames] count]];
+			[name1 setRowID:[[controller.gameDB.database surnames] count]];
 			[name1 setUID:UID];
 			[name1 setCount:1];
-			[[[controller database] surnames] addObject:name1];
+			[[controller.gameDB.database surnames] addObject:name1];
 			[personData setSurnameID:[name1 rowID]];
 			[name1 release];
 		}
 		else {
 			[personData setSurnameID:[[tempArray objectAtIndex:0] rowID]];
 			short newCount = [[tempArray objectAtIndex:0] count] + 1;
-			[[[[controller database] surnames] objectAtIndex:[[tempArray objectAtIndex:0] rowID]] setCount:newCount];
+			[[[controller.gameDB.database surnames] objectAtIndex:[[tempArray objectAtIndex:0] rowID]] setCount:newCount];
 		}
 		
 		[tempArray release];
@@ -491,23 +492,23 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 		[expression appendFormat:@" AND (nationID == %d)",[personData nationID]];
 		predicate = [NSPredicate predicateWithFormat:expression];
 		tempArray = [[NSMutableArray alloc] init];
-		[tempArray addObjectsFromArray:[[[controller database] commonNames] filteredArrayUsingPredicate:predicate]];
+		[tempArray addObjectsFromArray:[[controller.gameDB.database commonNames] filteredArrayUsingPredicate:predicate]];
 		
 		if ([tempArray count]==0) {
 			Name *name1 = [[Name alloc] init];
 			[name1 setNationID:[personData nationID]];
 			[name1 setName:newCommonName];
-			[name1 setRowID:[[[controller database] commonNames] count]];
+			[name1 setRowID:[[controller.gameDB.database commonNames] count]];
 			[name1 setUID:UID];
 			[name1 setCount:1];
-			[[[controller database] commonNames] addObject:name1];
+			[[controller.gameDB.database commonNames] addObject:name1];
 			[personData setCommonNameID:[name1 rowID]];
 			[name1 release];
 		}
 		else {
 			[personData setCommonNameID:[[tempArray objectAtIndex:0] rowID]];
 			short newCount = [[tempArray objectAtIndex:0] count] + 1;
-			[[[[controller database] commonNames] objectAtIndex:[[tempArray objectAtIndex:0] rowID]] setCount:newCount];
+			[[[controller.gameDB.database commonNames] objectAtIndex:[[tempArray objectAtIndex:0] rowID]] setCount:newCount];
 		}
 		
 		[tempArray release];
@@ -530,8 +531,8 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 	Club *currentClub;
 	
 	if ([staffData clubTeamID]>-1) {
-		currentTeam = [[[controller database] teams] objectAtIndex:[staffData clubTeamID]];
-		currentClub = [[[controller database] clubs] objectAtIndex:[currentTeam teamContainerID]];
+		currentTeam = [[controller.gameDB.database teams] objectAtIndex:[staffData clubTeamID]];
+		currentClub = [[controller.gameDB.database clubs] objectAtIndex:[currentTeam teamContainerID]];
 	}
 	
 	// remove from old teams list
@@ -542,17 +543,17 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 	// add to new teams list
 	int newTeamID = [[[[newClub teamContainer] teams] objectAtIndex:0] intValue];
 	
-	[[[[[controller database] teams] objectAtIndex:newTeamID] mutableArrayValueForKey:@"players"] addObject:[NSNumber numberWithInt:rowID]];
+	[[[[controller.gameDB.database teams] objectAtIndex:newTeamID] mutableArrayValueForKey:@"players"] addObject:[NSNumber numberWithInt:rowID]];
 	
 	// change club in players contract
 	if ([[staffData contracts] count]>0) {
-		[[[staffData contracts] objectAtIndex:0] setStartDate:[controller currentDate]];
+		[[[staffData contracts] objectAtIndex:0] setStartDate:controller.gameDB.currentDate];
 		[[[staffData contracts] objectAtIndex:0] setClubID:[newClub rowID]];
 	}
 	
 	// set join details
 	[staffData setClubTeamID:newTeamID];
-	[staffData setClubTeamJoinDate:[controller currentDate]];
+	[staffData setClubTeamJoinDate:controller.gameDB.currentDate];
 	[staffData setLastClubID:[currentClub rowID]];
 }
 

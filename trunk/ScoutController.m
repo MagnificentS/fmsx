@@ -8,15 +8,75 @@
 
 #import "ScoutController.h"
 #import "Controller.h"
+#import "SXFGameDB.h"
 #import "Person.h"
 #import "Database.h"
 #import "SupportFunctions.h"
 #import "FMString.h"
 #import "DatabaseTypes.h"
 
-@implementation ContentController (ScoutController)
+@implementation ScoutController
 
-- (void)awakeScout
+@synthesize showPlayerScoutNameColumn, showPlayerScoutStatusColumn, showPlayerScoutTeamColumn, showPlayerScoutAgeColumn, 
+showPlayerScoutPositionColumn, showPlayerScoutCAColumn, showPlayerScoutPAColumn, showPlayerScoutHomeRepColumn, 
+showPlayerScoutWorldRepColumn, showPlayerScoutCurrentRepColumn, showPlayerScoutConditionColumn, showPlayerScoutGPColumn, 
+showPlayerScoutValueColumn, showPlayerScoutAskingPriceColumn, showPlayerScoutNationColumn,
+showPlayerScoutHeightColumn, showPlayerScoutWeightColumn, showPlayerScoutManagerRoleColumn, showPlayerScoutAssistantManagerRoleColumn,
+showPlayerScoutCoachRoleColumn, showPlayerScoutGoalkeepingCoachRoleColumn, showPlayerScoutFitnessCoachRoleColumn, 
+showPlayerScoutPhysioRoleColumn, showPlayerScoutScoutRoleColumn,
+showPlayerScoutAdaptabilityColumn, showPlayerScoutAmbitionColumn, showPlayerScoutControversyColumn, showPlayerScoutLoyaltyColumn, 
+showPlayerScoutPressureColumn, showPlayerScoutProfessionalismColumn, showPlayerScoutSportsmanshipColumn, showPlayerScoutTemperamentColumn,
+showPlayerScoutFullCapsColumn, showPlayerScoutFullGoalsColumn, showPlayerScoutU21CapsColumn, showPlayerScoutU21GoalsColumn,
+showPlayerScoutAccelerationColumn, showPlayerScoutAgilityColumn, showPlayerScoutBalanceColumn, showPlayerScoutInjuryPronenessColumn, 
+showPlayerScoutJumpingColumn, showPlayerScoutNaturalFitnessColumn, showPlayerScoutPaceColumn, showPlayerScoutStaminaColumn, 
+showPlayerScoutStrengthColumn, showPlayerScoutAggressionColumn, showPlayerScoutAnticipationColumn, showPlayerScoutBraveryColumn, 
+showPlayerScoutComposureColumn, showPlayerScoutConcentrationColumn, showPlayerScoutConsistencyColumn, showPlayerScoutCreativityColumn, 
+showPlayerScoutDecisionsColumn, showPlayerScoutDeterminationColumn, showPlayerScoutDirtinessColumn, showPlayerScoutFlairColumn, 
+showPlayerScoutImportantMatchesColumn, showPlayerScoutInfluenceColumn, showPlayerScoutOffTheBallColumn, showPlayerScoutPositioningColumn, 
+showPlayerScoutTeamworkColumn, showPlayerScoutWorkRateColumn, showPlayerScoutThrowingColumn, showPlayerScoutTendencyToPunchColumn, 
+showPlayerScoutAerialAbilityColumn, showPlayerScoutCommandOfAreaColumn, showPlayerScoutCommunicationColumn, showPlayerScoutEccentricityColumn, 
+showPlayerScoutHandlingColumn, showPlayerScoutKickingColumn, showPlayerScoutOneOnOnesColumn, showPlayerScoutReflexesColumn, 
+showPlayerScoutRushingOutColumn, showPlayerScoutCornersColumn, showPlayerScoutCrossingColumn, showPlayerScoutDribblingColumn, 
+showPlayerScoutFinishingColumn, showPlayerScoutFirstTouchColumn, showPlayerScoutFreeKicksColumn, showPlayerScoutHeadingColumn, 
+showPlayerScoutLongShotsColumn, showPlayerScoutLongThrowsColumn, showPlayerScoutMarkingColumn, showPlayerScoutPassingColumn, 
+showPlayerScoutPenaltyTakingColumn, showPlayerScoutTacklingColumn, showPlayerScoutTechniqueColumn, showPlayerScoutVersatilityColumn, 
+showPlayerScoutLeftFootColumn, showPlayerScoutRightFootColumn, showPlayerScoutBestRoleColumn, showStaffScoutNameColumn, showStaffScoutTeamColumn, showStaffScoutAgeColumn, showStaffScoutCAColumn, showStaffScoutPAColumn, showStaffScoutControversyColumn, 
+showStaffScoutHomeRepColumn, showStaffScoutWorldRepColumn, showStaffScoutCurrentRepColumn, showStaffScoutNationColumn, showStaffScoutAdaptabilityColumn, showStaffScoutAmbitionColumn, 
+showStaffScoutLoyaltyColumn, showStaffScoutPressureColumn, showStaffScoutProfessionalismColumn, showStaffScoutSportsmanshipColumn, showStaffScoutTemperamentColumn, showStaffScoutFullCapsColumn, 
+showStaffScoutFullGoalsColumn, showStaffScoutU21CapsColumn, showStaffScoutU21GoalsColumn, showStaffScoutManagerRoleColumn, showStaffScoutAssistantManagerRoleColumn, showStaffScoutCoachRoleColumn, 
+showStaffScoutFitnessCoachRoleColumn, showStaffScoutGoalkeepingCoachRoleColumn, showStaffScoutPhysioRoleColumn, showStaffScoutScoutRoleColumn, showStaffScoutAttackingCoachingColumn, showStaffScoutCoachingTechniqueColumn, 
+showStaffScoutDefendingColumn, showStaffScoutFitnessColumn, showStaffScoutGoalkeepersColumn, showStaffScoutManManagementColumn, showStaffScoutMentalColumn, showStaffScoutOutfieldPlayersColumn, 
+showStaffScoutTacticalColumn, showStaffScoutTechnicalColumn, showStaffScoutWorkingWithYoungstersColumn, showStaffScoutAttackingColumn, showStaffScoutDepthColumn, showStaffScoutDirectnessColumn, 
+showStaffScoutDirtinessAllowanceColumn, showStaffScoutFlamboyancyColumn, showStaffScoutFlexibilityColumn, showStaffScoutFreeRolesColumn, showStaffScoutMarkingColumn, showStaffScoutOffsideColumn, 
+showStaffScoutPressingColumn, showStaffScoutSittingBackColumn, showStaffScoutSquadRotationColumn, showStaffScoutTempoColumn, showStaffScoutUseOfPlaymakerColumn, showStaffScoutUseOfSubsColumn, showStaffScoutJobColumn,
+showStaffScoutWidthColumn, showStaffScoutBusinessColumn, showStaffScoutBuyingPlayersColumn, showStaffScoutDeterminationColumn, showStaffScoutHardnessOfTrainingColumn, showStaffScoutInterferenceColumn, 
+showStaffScoutJudgingPlayerAbilityColumn, showStaffScoutJudgingPlayerPotentialColumn, showStaffScoutLevelOfDisciplineColumn, showStaffScoutMindGamesColumn, showStaffScoutMotivatingColumn, showStaffScoutPatienceColumn, 
+showStaffScoutPhysiotherapyColumn, showStaffScoutResourcesColumn, showStaffScoutTacticalKnowledgeColumn,
+showClubScoutNameColumn, showClubScoutCompetitionColumn, showClubScoutPlayerCountColumn, showClubScoutAverageCAColumn, showClubScoutAveragePAColumn, showClubScoutAverageAgeColumn, 
+showClubScoutReputationColumn, showClubScoutYouthSetupColumn, showClubScoutTrainingFacilitiesColumn, showClubScoutBalanceColumn, showClubScoutSeasonTransferBudgetColumn, showClubScoutRemainingTransferBudgetColumn,
+clubScoutResults, staffScoutResults,  playerScoutResults, currentPlayerExpression, currentStaffExpression, currentClubExpression;
+
+- (id)init
+{
+	[super init];
+	
+	playerScoutResults = [[NSMutableArray alloc] init];
+	staffScoutResults = [[NSMutableArray alloc] init];
+	clubScoutResults = [[NSMutableArray alloc] init];
+	
+	return self;
+}
+
+- (void)dealloc
+{
+	[playerScoutResults release];
+	[staffScoutResults release];
+	[clubScoutResults release];
+	
+	[super dealloc];
+}
+
+- (void)awakeFromNib
 {
 	[staffScoutPersonalAttributeEditor addRow:self];
 	[staffScoutPersonalAttributeEditor removeRowAtIndex:1];
@@ -221,7 +281,51 @@
 	[self setShowClubScoutRemainingTransferBudgetColumn:TRUE];
 	
 	[self updateClubScoutColumns:self];
-	
+}
+
+#pragma mark Table Delegate
+
+- (void)tableView:(NSTableView *)aTableView willDisplayCell:(id)aCell forTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
+{
+	if ([[aTableColumn identifier] isEqualToString:@"playerscoutstatuscolumn"]) {
+		if ([[[[playerScoutResults objectAtIndex:rowIndex] playerData] injuries] count] > 0) {
+			[aCell setImage:[NSImage imageNamed:@"status_inj"]];
+		}
+		else if ([[[[playerScoutResults objectAtIndex:rowIndex] playerData] bans] count] > 0) {
+			[aCell setImage:[NSImage imageNamed:@"status_sus"]];
+		}
+		else if ([[playerScoutResults objectAtIndex:rowIndex] acceptedContractOffer]) {
+			[aCell setImage:[NSImage imageNamed:@"status_fut"]];
+		}
+		else if ([[[[playerScoutResults objectAtIndex:rowIndex] staffData] transferOffers] count] > 0) {
+			[aCell setImage:[NSImage imageNamed:@"status_bid"]];
+		}
+		else if ([[[[playerScoutResults objectAtIndex:rowIndex] staffData] interestedClubs] count] > 0) {
+			[aCell setImage:[NSImage imageNamed:@"status_wnt"]];
+		}
+		else if ([[[playerScoutResults objectAtIndex:rowIndex] staffData] hasYouthContract]) {
+			[aCell setImage:[NSImage imageNamed:@"status_yth"]];
+		}
+		else if ([[playerScoutResults objectAtIndex:rowIndex] contractIsExpiring]) {
+			[aCell setImage:[NSImage imageNamed:@"status_ctr"]];
+		}
+		else if ([[playerScoutResults objectAtIndex:rowIndex] isTransferListed]) {
+			[aCell setImage:[NSImage imageNamed:@"status_lst"]];
+		}
+		else if ([[playerScoutResults objectAtIndex:rowIndex] isListedForLoan]) {
+			[aCell setImage:[NSImage imageNamed:@"status_loa"]];
+		}
+	}
+	else if ([[aTableColumn identifier] isEqualToString:@"comprowIDtxt"]) {
+		int UID = [[aCell stringValue] intValue];
+		
+		if (UID < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.competitions"] count] && UID >= 0) {
+			NSString *compString = [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.competitions"] objectAtIndex:UID] name];
+			if (!compString) { [aCell setStringValue:@"---"]; }
+			else { [aCell setStringValue:compString]; }
+		}
+		else { [aCell setStringValue:@"---"]; }
+	}
 }
 
 - (IBAction)importShortlist:(id)sender
@@ -261,7 +365,7 @@
 		}
 		
 		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"UID IN %@",shortlistIDs];
-		NSMutableArray *playerResults = [[NSMutableArray alloc] initWithArray:[[[controller database] people] filteredArrayUsingPredicate:predicate]];
+		NSMutableArray *playerResults = [[NSMutableArray alloc] initWithArray:[[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] filteredArrayUsingPredicate:predicate]];
 		[self setPlayerScoutResults:playerResults];
 		[playerResults release];
 		[shortlistIDs release];
@@ -270,7 +374,7 @@
 
 - (IBAction)exportShortlist:(id)sender
 {
-	// return an error if the shortlist is empty
+	/* return an error if the shortlist is empty
 	if ([activeShortlist count]==0) {
 		NSAlert *alert = [NSAlert alertWithMessageText:@"Shortlist Empty" defaultButton:@"OK" alternateButton:nil 
 										   otherButton:nil informativeTextWithFormat:@"You can't save an empty shortlist"];
@@ -286,6 +390,7 @@
 	if (result==NSFileHandlingPanelOKButton) {
 		
 	}
+	 */
 }
 
 - (void)saveShortlist:(NSArray *)players atPath:(NSString *)path
@@ -312,7 +417,7 @@
 	[shortlist appendBytes:&cbuffer length:1];
 	
 	// unique game ID
-	ibuffer = [controller gameID];
+	ibuffer = [[NSApp delegate] gameID];
 	[shortlist appendBytes:&ibuffer length:4];
 	
 	// shortlist name
@@ -436,7 +541,7 @@
 		NSLog(@"saved predicate: %@",savedExpression);
 		
 		NSMutableArray *results = [[NSMutableArray alloc] init];
-		[results addObjectsFromArray:[[[controller database] people] filteredArrayUsingPredicate:predicate]];
+		[results addObjectsFromArray:[[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] filteredArrayUsingPredicate:predicate]];
 		NSLog(@"%d results",[results count]);
 		
 		if (type==SCTY_STAFF) { 
@@ -496,7 +601,7 @@
 		// find comps with that name
 		[bexpression appendFormat:@"(name contains[cd] '%@')",[clubScoutCompSearchField stringValue]];
 		NSPredicate *predicate = [NSPredicate predicateWithFormat:bexpression];
-		[compResults addObjectsFromArray:[[[controller database] competitions] filteredArrayUsingPredicate:predicate]]; 
+		[compResults addObjectsFromArray:[[[NSApp delegate] valueForKeyPath:@"gameDB.database.competitions"] filteredArrayUsingPredicate:predicate]]; 
 		[bexpression release];
 		
 		// find teams in that competition
@@ -521,7 +626,7 @@
 		// find nations with that name
 		[bexpression appendFormat:@"(teamContainer.name contains[cd] '%@')",[clubScoutNationSearchField stringValue]];
 		NSPredicate *predicate = [NSPredicate predicateWithFormat:bexpression];
-		[nationResults addObjectsFromArray:[[[controller database] nations] filteredArrayUsingPredicate:predicate]]; 
+		[nationResults addObjectsFromArray:[[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] filteredArrayUsingPredicate:predicate]]; 
 		[bexpression release];
 		NSLog(@"%d nations",[nationResults count]);
 		
@@ -549,20 +654,23 @@
 		// find clubs with that name
 		[bexpression appendFormat:@"(teamContainer.name contains[cd] '%@')",[clubScoutClubSearchField stringValue]];
 		NSPredicate *predicate = [NSPredicate predicateWithFormat:bexpression];
-		[clubResults addObjectsFromArray:[[[controller database] clubs] filteredArrayUsingPredicate:predicate]]; 
+		[clubResults addObjectsFromArray:[[[NSApp delegate] valueForKeyPath:@"gameDB.database.clubs"] filteredArrayUsingPredicate:predicate]]; 
+		NSLog(@"%@",bexpression);
 		[bexpression release];
 		NSLog(@"%d clubs",[clubResults count]);
 		
-		// enclose the club expression
-		[expression appendString:@"("];
+		if ([clubResults count]>0) {
+			// enclose the club expression
+			[expression appendString:@"("];
 		
-		// find teams in that club
-		for (int i = 0; i<[clubResults count]; i++) {
-			[expression appendFormat:@"(teamContainerID = %d)", [[clubResults objectAtIndex:i] rowID]];
-			if (i<([clubResults count]-1)) { [expression appendString:@" OR "]; }
+			// find teams in that club
+			for (int i = 0; i<[clubResults count]; i++) {
+				[expression appendFormat:@"(teamContainerID = %d)", [[clubResults objectAtIndex:i] rowID]];
+				if (i<([clubResults count]-1)) { [expression appendString:@" OR "]; }
+			}
+			// close the club expression
+			[expression appendString:@")"];
 		}
-		// close the club expression
-		[expression appendString:@")"];
 		[clubResults release];
 	}
 	
@@ -570,7 +678,7 @@
 		[expression appendString:@" AND (databaseClass = 10)"];
 		NSPredicate *predicate = [NSPredicate predicateWithFormat:expression];
 		NSLog(@"final predicate: %@",expression);
-		[teamResults addObjectsFromArray:[[[controller database] teams] filteredArrayUsingPredicate:predicate]];
+		[teamResults addObjectsFromArray:[[[NSApp delegate] valueForKeyPath:@"gameDB.database.teams"] filteredArrayUsingPredicate:predicate]];
 		[self setClubScoutResults:teamResults];
 	}
 }
@@ -641,7 +749,7 @@
 		[self setCurrentStaffExpression:expression];
 		NSPredicate *predicate = [NSPredicate predicateWithFormat:expression];
 		NSLog(@"final predicate: %@",expression);
-		[staffResults addObjectsFromArray:[[[controller database] people] filteredArrayUsingPredicate:predicate]];
+		[staffResults addObjectsFromArray:[[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] filteredArrayUsingPredicate:predicate]];
 		[self setStaffScoutResults:staffResults];
 	}
 	
@@ -792,7 +900,7 @@
 		[self setCurrentPlayerExpression:expression];
 		NSPredicate *predicate = [NSPredicate predicateWithFormat:expression];
 		NSLog(@"final predicate: %@",expression);
-		[playerResults addObjectsFromArray:[[[controller database] people] filteredArrayUsingPredicate:predicate]];
+		[playerResults addObjectsFromArray:[[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] filteredArrayUsingPredicate:predicate]];
 		NSLog(@"%d results",[playerResults count]);
 		[self setPlayerScoutResults:playerResults];
 	}
@@ -1014,5 +1122,14 @@
 	[[clubScoutResultsTable tableColumnWithIdentifier:@"seasonBudget"] setHidden:!showClubScoutSeasonTransferBudgetColumn];	
 	[[clubScoutResultsTable tableColumnWithIdentifier:@"remainingBudget"] setHidden:!showClubScoutRemainingTransferBudgetColumn];	
 }	
+
+- (void)performSpaceKeyPress:(id)sender
+{
+	if ([sender selectedRow]==-1) { return; }
+	
+	if (sender==playerScoutResultsTable) {
+		[playerScoutPreviewPanel makeKeyAndOrderFront:self];
+	}
+}
 
 @end
