@@ -191,24 +191,19 @@ langDBLoaded, status, statusMaxValue, statusValue;
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 
-	BOOL isNewFormat = TRUE;
-	
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loadLangDB"]==TRUE) { 
 	//	[self setStatus:NSLocalizedString(@"loading lang_db.dat", @"editor status")];
 	//	[database readLangDB:[[NSUserDefaults standardUserDefaults] stringForKey:@"lang_db_location"]]; 
 		langDB = [LangDBLoader readFromFile:[[NSUserDefaults standardUserDefaults] stringForKey:@"lang_db_location"]];
 	}
 		
-	unsigned int fileLength, gameLength;
+	unsigned int gameLength;
 	
 	[self setIdle:FALSE];
 	[self setStatus:NSLocalizedString(@"Reading file header...", @"editor status")];
 	
 	// Create file data object
-	NSData *fileData;
-	unsigned int i;
 	unsigned int byteOffset = 0; // Offset which dictates where data should be read from
-	unsigned int fileOffset = 0;
 	
 	// Load the file into memory
 	NSData *gameData = [[NSData alloc] initWithContentsOfFile:path];
