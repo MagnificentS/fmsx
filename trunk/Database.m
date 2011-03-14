@@ -77,7 +77,7 @@
 totalRecords, status, clubs, graphics, media, languages, currencies, continents,
 injuries, firstNames, surnames, commonNames, sponsors, stadiums, stadiumChanges,
 teams, localAreas, stageNames, weather, descriptions, people, personStats, playerStats,
-nonPlayerStats, competitions, nations, controller, langDBLoaded, competitionHistories,
+nonPlayerStats, competitions, nations, langDBLoaded, competitionHistories,
 clubLinks, saveEndOffset, unknowns1, derbies, agreements, databaseChanges, unknownData1,
 unknownData2, unknownData3, unknownData4, unknownData5, unknownData6, unknownData7,
 unknownInt1, unknownInt2, unknownInt3, unknownInt4;
@@ -86,8 +86,8 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 {
 	[super init];
 	
-	[controller setStatusValue:0];
-	[controller setStatusMaxValue:1];
+	[[NSApp delegate] setStatusValue:0];
+	[[NSApp delegate] setStatusMaxValue:1];
 	
 	graphics = [[SXImageXMLParser alloc] init];
 	goodAlliterations = [[NSMutableArray alloc] init];
@@ -174,12 +174,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Alliterations
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading good alliterations...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading good alliterations...", @"editor status")];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (int i=0; i<count; i++) {
 		startingOffset = *byteOffset;
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		id object = [Loader readAlliterationFromData:data atOffset:byteOffset];
 		if ([[object className] isEqualToString:@"Alliteration"]) {
 			[goodAlliterations addObject:object];
@@ -194,12 +194,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	}
 	NSLog(@"End of %d good alliterations at %d",[goodAlliterations count],*byteOffset);
 
-	[controller setStatus:NSLocalizedString(@"loading bad alliterations...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading bad alliterations...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		id object = [Loader readAlliterationFromData:data atOffset:byteOffset];
 		if ([[object className] isEqualToString:@"Alliteration"]) {
 			[badAlliterations addObject:object];
@@ -219,12 +219,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Awards
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading awards...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading awards...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		id object = [Loader readAwardFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Award"]) {
 			return [NSArray arrayWithObjects:
@@ -243,7 +243,6 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 					nil]; 
 		}
 		else { 
-			[object setController:controller];
 			[awards addObject:object]; 
 		}
 //		NSLog(@"Award %d (%d) done at %d",i,[object UID],*byteOffset);
@@ -258,12 +257,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Cities
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading cities...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading cities...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		id object = [Loader readCityFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"City"]) {
 			return [NSArray arrayWithObjects:
@@ -283,7 +282,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		}
 		else { 
 			if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loadLangDB"]==TRUE) {
-				id item = [[[controller langDB] cityLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
+				id item = [[[[NSApp delegate] langDB] cityLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
 				if (item!=nil) {
 					[(City *)object setName:[item objectForKey:@"name"]];
 				}
@@ -297,12 +296,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Clubs
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading clubs...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading clubs...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		id object = [Loader readClubFromData:data atOffset:byteOffset version:version];
 		if (![[object className] isEqualToString:@"Club"]) {
 			return [NSArray arrayWithObjects:
@@ -321,9 +320,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 					nil]; 
 		}
 		else { 
-			[object setController:controller];
 			[object setLogoPath:[[graphics clubLogos] objectForKey:[NSNumber numberWithInt:[object UID]]]];
-			[[object teamContainer] setController:controller];
 			[clubs addObject:object];
 		}
 	}
@@ -333,12 +330,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Competitions
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading competitions...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading competitions...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readCompetitionFromData:data atOffset:byteOffset version:version];
 		if (![[object className] isEqualToString:@"Competition"]) {
@@ -359,9 +356,8 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		}
 		else { 
 			if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loadLangDB"]==TRUE) {
-				id item = [[[controller langDB] compLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
+				id item = [[[[NSApp delegate] langDB] compLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
 				if (item!=nil) {
-					[object setController:controller];
 					[(Competition *)object setName:[item objectForKey:@"name"]];
 					[object setShortName:[item objectForKey:@"shortName"]];
 					[object setThreeLetterName:[item objectForKey:@"threeLetterName"]];
@@ -376,12 +372,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Continents
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading continents...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading continents...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readContinentFromData:data atOffset:byteOffset version:version];
 		if (![[object className] isEqualToString:@"Continent"]) {
@@ -412,12 +408,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Currencies
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading currencies...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading currencies...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readCurrencyFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Currency"]) {
@@ -445,12 +441,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Injuries
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading injuries...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading injuries...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readInjuryFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Injury"]) {
@@ -482,12 +478,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Media
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading media...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading media...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readMediaFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Media"]) {
@@ -514,12 +510,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Languages
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading languages...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading languages...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readLanguageFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Language"]) {
@@ -547,12 +543,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Nations
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading nations...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading nations...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		id object = [Loader readNationFromData:data atOffset:byteOffset version:version];
 		if (![[object className] isEqualToString:@"Nation"]) {
 			return [NSArray arrayWithObjects:
@@ -571,8 +567,6 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 					nil]; 
 		}
 		else { 
-			[object setController:controller];
-			[[object teamContainer] setController:controller];
 			[nations addObject:object];
 		}
 	}
@@ -583,12 +577,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 #pragma mark First Names
 	
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading first names...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading first names...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readNameFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Name"]) {
@@ -615,12 +609,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		
 #pragma mark Surnames
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading surnames...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading surnames...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readNameFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Name"]) {
@@ -647,12 +641,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Common Names
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading common names...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading common names...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readNameFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Name"]) {
@@ -679,12 +673,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Unknowns 1
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading unknowns 1...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading unknowns 1...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readUnknown7FromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Unknown7"]) {
@@ -711,12 +705,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Local Areas
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading local areas...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading local areas...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readLocalAreaFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"LocalArea"]) {
@@ -737,7 +731,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		}
 		else { 
 			if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loadLangDB"]==TRUE) {
-				id item = [[[controller langDB] localAreaLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
+				id item = [[[[NSApp delegate] langDB] localAreaLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
 				if (item!=nil) {
 					[(LocalArea *)object setName:[item objectForKey:@"name"]];
 					[object setShortName:[item objectForKey:@"shortName"]];
@@ -752,12 +746,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Sponsors
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading sponsors...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading sponsors...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readSponsorFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Sponsor"]) {
@@ -784,12 +778,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Stadiums
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading stadiums...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading stadiums...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readStadiumFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Stadium"]) {
@@ -810,7 +804,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		}
 		else { 
 			if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loadLangDB"]==TRUE) {
-				id item = [[[controller langDB] stadiumLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
+				id item = [[[[NSApp delegate] langDB] stadiumLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
 				if (item!=nil) {
 					[(Stadium *)object setName:[item objectForKey:@"name"]];
 				}
@@ -824,12 +818,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Stadium Changes
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading stadium changes...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading stadium changes...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readStadiumChangeFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"StadiumChange"]) {
@@ -857,12 +851,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Stage Names
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading stage names...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading stage names...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readStageNameFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"StageName"]) {
@@ -894,12 +888,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Teams
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading teams...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading teams...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readTeamFromData:data atOffset:byteOffset version:version];
 		if (![[object className] isEqualToString:@"Team"]) {
@@ -919,7 +913,6 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 					nil]; 
 		}
 		else { 
-			[object setController:controller];
 			[teams addObject:object];
 		}
 	}
@@ -929,12 +922,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Weather
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading weather...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading weather...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readWeatherFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Weather"]) {
@@ -961,11 +954,11 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Descriptions
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading descriptions...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading descriptions...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		id object = [Loader readDescriptionFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Description"]) {
 			return [NSArray arrayWithObjects:
@@ -996,11 +989,11 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Derbies
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading derbies...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading derbies...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		id object = [Loader readDerbyFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Derby"]) {
 			return [NSArray arrayWithObjects:
@@ -1026,11 +1019,11 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 
 #pragma mark Agreements
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading agreements...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading agreements...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		id object = [Loader readAgreementFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Agreement"]) {
 			return [NSArray arrayWithObjects:
@@ -1050,7 +1043,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		}
 		else { 
 			if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loadLangDB"]==TRUE) {
-				id item = [[[controller langDB] agreementLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
+				id item = [[[[NSApp delegate] langDB] agreementLang] objectForKey:[NSNumber numberWithInt:[object UID]]];
 				if (item!=nil) {
 					[(Agreement *)object setName:[item objectForKey:@"name"]];
 					[object setShortName:[item objectForKey:@"shortName"]];
@@ -1069,14 +1062,14 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark People
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading people...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading people...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
 	NSLog(@"%d people",count);
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readPersonFromData:data atOffset:byteOffset version:version];
 		
@@ -1097,7 +1090,6 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 					nil]; 
 		}
 		else { 
-			[object setController:controller];
 			[people addObject:object]; 
 		}
 		
@@ -1109,12 +1101,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Person Stats
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading person stats...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading person stats...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readPersonStatsFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"PersonStats"]) {
@@ -1141,12 +1133,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Player Stats
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading player stats...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading player stats...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readPlayerStatsFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"PlayerStats"]) {
@@ -1173,12 +1165,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Non-Player Stats
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"loading non-player stats...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading non-player stats...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readNonPlayerStatsFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"NonPlayerStats"]) {
@@ -1205,12 +1197,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 
 #pragma mark Latest Competition Histories
 	
-	[controller setStatus:NSLocalizedString(@"loading competition histories...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading competition histories...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		
 		id object = [Loader readCompetitionHistoryFromData:data atOffset:byteOffset archived:NO];
 		if (![[object className] isEqualToString:@"CompetitionHistory"]) {
@@ -1294,12 +1286,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Club Links
 	
-	[controller setStatus:NSLocalizedString(@"loading club links...", @"editor status")];
-	[controller setStatusValue:0];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"loading club links...", @"editor status")];
+	[[NSApp delegate] setStatusValue:0];
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
-	[controller setStatusMaxValue:count];
+	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[clubLinks addObject:[Loader readClubLinkFromData:data atOffset:byteOffset]];
 	}
 	NSLog(@"End of %d club links at %d",[clubLinks count],*byteOffset);
@@ -1322,7 +1314,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 /******** END OF GAME_DB.DAT **********/
 /**************************************/
 	
-	[controller setStatus:NSLocalizedString(@"assigning Person Stats...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"assigning Person Stats...", @"editor status")];
 	for (id item in people) {
 		if ([item personData] && [[item personData] personStatsID] > -1) {
 			[item setPersonStats:[personStats objectAtIndex:[[item personData] personStatsID]]];
@@ -1335,7 +1327,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 		}
 	}
 	
-	[controller setStatus:NSLocalizedString(@"sorting Stadium Changes...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"sorting Stadium Changes...", @"editor status")];
 	NSEnumerator *oEnum = [[self stadiumChanges] objectEnumerator];
 	StadiumChange *item;
 	while (item = [oEnum nextObject]) {
@@ -1360,21 +1352,21 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Alliterations
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving good alliterations...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving good alliterations...", @"editor status")];
 	ibuffer = [goodAlliterations count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[AlliterationSaver saveAlliteration:[goodAlliterations objectAtIndex:i] toData:data];
 	}
 	
-	[controller setStatus:NSLocalizedString(@"saving bad alliterations...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving bad alliterations...", @"editor status")];
 	ibuffer = [badAlliterations count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[AlliterationSaver saveAlliteration:[badAlliterations objectAtIndex:i] toData:data];
 	}
 	
@@ -1385,348 +1377,348 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 #pragma mark Awards
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving awards...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving awards...", @"editor status")];
 	ibuffer = [awards count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[AwardSaver saveAward:[awards objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 
 #pragma mark Cities
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving cities...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving cities...", @"editor status")];
 	ibuffer = [cities count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[CitySaver saveCity:[cities objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 
 #pragma mark Clubs
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving clubs...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving clubs...", @"editor status")];
 	ibuffer = [clubs count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[ClubSaver saveClub:[clubs objectAtIndex:i] toData:data version:version];
 	}
 	[pool drain];
 
 #pragma mark Competitions
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving competitions...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving competitions...", @"editor status")];
 	ibuffer = [competitions count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[CompetitionSaver saveCompetition:[competitions objectAtIndex:i] toData:data version:version];
 	}
 	[pool drain];
 
 #pragma mark Continents
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving continents...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving continents...", @"editor status")];
 	ibuffer = [continents count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[ContinentSaver saveContinent:[continents objectAtIndex:i] toData:data version:version];
 	}
 	[pool drain];
 
 #pragma mark Currencies
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving currencies...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving currencies...", @"editor status")];
 	ibuffer = [currencies count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[CurrencySaver saveCurrency:[currencies objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 
 #pragma mark Injuries
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving injuries...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving injuries...", @"editor status")];
 	ibuffer = [injuries count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[InjurySaver saveInjury:[injuries objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 	
 #pragma mark Media
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving media...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving media...", @"editor status")];
 	ibuffer = [media count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[MediaSaver saveMedia:[media objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 	
 #pragma mark Languages
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving languages...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving languages...", @"editor status")];
 	ibuffer = [languages count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[LanguageSaver saveLanguage:[languages objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 
 #pragma mark Nations
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving nations...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving nations...", @"editor status")];
 	ibuffer = [nations count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[NationSaver saveNation:[nations objectAtIndex:i] toData:data version:version];
 	}
 	[pool drain];
 
 #pragma mark First Names
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving first names...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving first names...", @"editor status")];
 	ibuffer = [firstNames count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[NameSaver saveName:[firstNames objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 
 #pragma mark Surnames
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving surnames...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving surnames...", @"editor status")];
 	ibuffer = [surnames count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[NameSaver saveName:[surnames objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 
 #pragma mark Common Names
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving common names...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving common names...", @"editor status")];
 	ibuffer = [commonNames count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[NameSaver saveName:[commonNames objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 
 #pragma mark Unknowns 1
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving unknowns 1...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving unknowns 1...", @"editor status")];
 	ibuffer = [unknowns1 count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[Unknown7Saver saveUnknown:[unknowns1 objectAtIndex:i] toData:data];
 	}
 	[pool drain];	
 
 #pragma mark Local Areas
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving local areas...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving local areas...", @"editor status")];
 	ibuffer = [localAreas count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[LocalAreaSaver saveArea:[localAreas objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 
 #pragma mark Sponsors
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving sponsors...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving sponsors...", @"editor status")];
 	ibuffer = [sponsors count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[SponsorSaver saveSponsor:[sponsors objectAtIndex:i] toData:data];
 	}
 	[pool drain];	
 
 #pragma mark Stadiums
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving stadiums...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving stadiums...", @"editor status")];
 	ibuffer = [stadiums count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[FootballStadiumSaver saveStadium:[stadiums objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 
 #pragma mark Stadium Changes
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving stadium changes...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving stadium changes...", @"editor status")];
 	ibuffer = [stadiumChanges count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[StadiumChangeSaver saveStadiumChange:[stadiumChanges objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 
 #pragma mark Stage Names
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving stage names...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving stage names...", @"editor status")];
 	ibuffer = [stageNames count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[StageNameSaver saveStageName:[stageNames objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 
 #pragma mark Teams
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving teams...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving teams...", @"editor status")];
 	ibuffer = [teams count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[TeamSaver saveTeam:[teams objectAtIndex:i] toData:data version:version];
 	}
 	[pool drain];
 
 #pragma mark Weather
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving weather...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving weather...", @"editor status")];
 	ibuffer = [weather count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[WeatherSaver saveWeather:[weather objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 	
 #pragma mark Descriptions
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving descriptions...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving descriptions...", @"editor status")];
 	ibuffer = [descriptions count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[DescriptionSaver saveDescription:[descriptions objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 
 #pragma mark Derbies
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving derbies...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving derbies...", @"editor status")];
 	ibuffer = [derbies count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[DerbySaver saveDerby:[derbies objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 	
 #pragma mark Agreements
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving agreements...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving agreements...", @"editor status")];
 	ibuffer = [agreements count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[AgreementSaver saveAgreement:[agreements objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 	
 #pragma mark People
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving people...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving people...", @"editor status")];
 	ibuffer = [people count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[PersonSaver savePerson:[people objectAtIndex:i] toData:data version:version];
 	}
 	[pool drain];
 
 #pragma mark Person Stats
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving person stats...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving person stats...", @"editor status")];
 	ibuffer = [personStats count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[PersonStatsSaver saveStats:[personStats objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 
 #pragma mark Player Stats
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving playing stats...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving playing stats...", @"editor status")];
 	ibuffer = [playerStats count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[PlayerStatsSaver saveStats:[playerStats objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 	
 #pragma mark Non-Player Stats
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving non-player stats...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving non-player stats...", @"editor status")];
 	ibuffer = [nonPlayerStats count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[NonPlayerStatsSaver saveStats:[nonPlayerStats objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 
 #pragma mark Competition Histories
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving competition histories...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving competition histories...", @"editor status")];
 	ibuffer = [competitionHistories count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[CompetitionHistorySaver saveCompetitionHistory:[competitionHistories objectAtIndex:i] toData:data archived:NO];
 	}
 	[pool drain];
@@ -1745,12 +1737,12 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 
 #pragma mark Club Links
 	pool = [[NSAutoreleasePool alloc] init];
-	[controller setStatus:NSLocalizedString(@"saving club links...", @"editor status")];
+	[[NSApp delegate] setStatus:NSLocalizedString(@"saving club links...", @"editor status")];
 	ibuffer = [clubLinks count];
 	[data appendBytes:&ibuffer length:4];
-	[controller setStatusMaxValue:ibuffer];
+	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
-		[controller setStatusValue:(i+1)];
+		[[NSApp delegate] setStatusValue:(i+1)];
 		[ClubLinkSaver saveClubLink:[clubLinks objectAtIndex:i] toData:data];
 	}
 	[pool drain];
@@ -1772,7 +1764,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	unsigned int i = 0;
 	for (id item in awards)
 	{
-		id object = [[[controller langDB] awardLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
+		id object = [[[[NSApp delegate] langDB] awardLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
 		if (object!=nil) {
 			Award *aAward = [[self awards] objectAtIndex:i];
 			[aAward setName:[object objectForKey:@"name"]];
@@ -1791,7 +1783,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 	unsigned int i = 0;
 	for (id item in continents) {
-		id item2 = [[[controller langDB] continentLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
+		id item2 = [[[[NSApp delegate] langDB] continentLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
 		if (item2!=nil) {
 			Continent *object = [[self continents] objectAtIndex:i];
 			[object setName:[item2 objectForKey:@"name"]];
@@ -1813,7 +1805,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 	unsigned int i = 0;
 	for (id item in injuries) {
-		id item2 = [[[controller langDB] injuryLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
+		id item2 = [[[[NSApp delegate] langDB] injuryLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
 		if (item2!=nil) {
 			Injury *object = [[self injuries] objectAtIndex:i];
 			[object setName:[item2 objectForKey:@"name"]];
@@ -1832,7 +1824,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 	unsigned int i = 0;
 	for (id item in descriptions) {
-		id item2 = [[[controller langDB] descriptionLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
+		id item2 = [[[[NSApp delegate] langDB] descriptionLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
 		if (item2!=nil) {
 			Description *object = [[self descriptions] objectAtIndex:i];
 			[object setNames:[item2 objectForKey:@"names"]];
@@ -1850,7 +1842,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	
 	unsigned int i = 0;
 	for (id item in stageNames) {
-		id item2 = [[[controller langDB] stageNameLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
+		id item2 = [[[[NSApp delegate] langDB] stageNameLang] objectForKey:[NSNumber numberWithInt:[item UID]]];
 		if (item2!=nil) {
 			StageName *object = [[self stageNames] objectAtIndex:i];
 			[object setName:[item2 objectForKey:@"name"]];

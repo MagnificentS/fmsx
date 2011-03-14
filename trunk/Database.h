@@ -12,7 +12,6 @@
 #import "Controller.h"
 
 @interface Database : NSObject {
-	Controller *controller;
 	SXImageXMLParser *graphics;
 	
 	unsigned int currentRecord;
@@ -44,7 +43,6 @@
 *stageNames, *weather, *descriptions, *people, *personStats, *playerStats, *nonPlayerStats, 
 *competitions, *nations, *competitionHistories, *clubLinks, *unknowns1, *derbies, *agreements;
 @property(copy,readwrite) NSString *status;
-@property(assign,readwrite) Controller *controller;
 @property(assign,readwrite) unsigned int currentRecord, totalRecords, saveEndOffset, databaseChanges;
 @property(assign,readwrite) int unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 @property(assign,readwrite) BOOL langDBLoaded;
