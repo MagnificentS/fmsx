@@ -10,7 +10,9 @@
 			<string key="com.apple.InterfaceBuilder.CocoaPlugin">788</string>
 			<string key="com.brandonwalkin.BWToolkit">1.2.5</string>
 		</dictionary>
-		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs"/>
+		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
+			<integer value="26838"/>
+		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 			<string>com.brandonwalkin.BWToolkit</string>
@@ -1312,7 +1314,7 @@
 				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
 				<string key="NSWindowContentMinSize">{800, 600}</string>
 				<object class="NSView" key="NSWindowView" id="363112275">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSBox" id="223599795">
@@ -1424,6 +1426,7 @@
 						</object>
 					</array>
 					<string key="NSFrameSize">{1152, 768}</string>
+					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{800, 678}</string>
@@ -3669,14 +3672,6 @@
 					<int key="connectionID">26947</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">selectEditorView:</string>
-						<reference key="source" ref="716969148"/>
-						<reference key="destination" ref="940160176"/>
-					</object>
-					<int key="connectionID">26948</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">transparent: selected</string>
 						<reference key="source" ref="793474782"/>
@@ -4192,6 +4187,14 @@
 						<reference key="destination" ref="1073404721"/>
 					</object>
 					<int key="connectionID">28009</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">selectEditorView:</string>
+						<reference key="source" ref="716969148"/>
+						<reference key="destination" ref="940160176"/>
+					</object>
+					<int key="connectionID">28010</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -6402,15 +6405,15 @@
 				<integer value="1" key="245.ImportedFromIB2"/>
 				<string key="246.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="246.ImportedFromIB2"/>
-				<string key="26837.IBEditorWindowLastContentRect">{{73, 32}, {1152, 768}}</string>
+				<string key="26837.IBEditorWindowLastContentRect">{{273, 32}, {1152, 768}}</string>
 				<string key="26837.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="26837.IBWindowTemplateEditedContentRect">{{73, 32}, {1152, 768}}</string>
+				<string key="26837.IBWindowTemplateEditedContentRect">{{273, 32}, {1152, 768}}</string>
 				<integer value="1" key="26837.ImportedFromIB2"/>
 				<boolean value="YES" key="26837.NSWindowTemplate.visibleAtLaunch"/>
 				<integer value="1" key="26837.windowTemplate.hasMinSize"/>
 				<string key="26837.windowTemplate.maxSize">{1.79769e+308, 1.79769e+308}</string>
 				<string key="26837.windowTemplate.minSize">{800, 600}</string>
-				<string key="26838.IBEditorWindowLastContentRect">{{461, 775}, {616, 0}}</string>
+				<string key="26838.IBEditorWindowLastContentRect">{{541, 573}, {616, 227}}</string>
 				<string key="26838.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="26839.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="26839.ImportedFromIB2"/>
@@ -6689,7 +6692,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">28009</int>
+			<int key="maxID">28010</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

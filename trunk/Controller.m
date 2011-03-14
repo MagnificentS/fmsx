@@ -128,12 +128,6 @@ langDBLoaded, status, statusMaxValue, statusValue;
 	[languages release];
 	[updates release];
 	
-	SXScoutViewController *scoutViewController = [[SXScoutViewController alloc] init];
-	[contentController replacePlaceholder:[contentController placeholderView] withView:[scoutViewController view]];
-	
-	
-	
-	
 	if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"donateLastAsked"] timeIntervalSinceNow] < -604800 &&
 		![[NSUserDefaults standardUserDefaults] boolForKey:@"donateNeverAsk"])
 	{

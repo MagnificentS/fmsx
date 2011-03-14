@@ -450,6 +450,8 @@
 		FBA6103E128F7E2100B0B23E /* DerbyLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA6103D128F7E2100B0B23E /* DerbyLoader.m */; };
 		FBA6105212904F6C00B0B23E /* Agreement.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA6105112904F6C00B0B23E /* Agreement.m */; };
 		FBA6105512904FAF00B0B23E /* AgreementLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA6105412904FAF00B0B23E /* AgreementLoader.m */; };
+		FBA7A9F1132EC6C600CF7843 /* SXEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA7A9F0132EC6C600CF7843 /* SXEditorViewController.m */; };
+		FBA7AA0F132EC6FA00CF7843 /* Editor.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA7AA0E132EC6FA00CF7843 /* Editor.xib */; };
 		FBAE662510DC252C00181B07 /* AlliterationSaver.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAE662410DC252C00181B07 /* AlliterationSaver.m */; };
 		FBAE662810DC25A700181B07 /* ContinentSaver.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAE662710DC25A700181B07 /* ContinentSaver.m */; };
 		FBAE662B10DC25AD00181B07 /* CurrencySaver.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAE662A10DC25AD00181B07 /* CurrencySaver.m */; };
@@ -1340,6 +1342,9 @@
 		FBA6105112904F6C00B0B23E /* Agreement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Agreement.m; sourceTree = "<group>"; };
 		FBA6105312904FAF00B0B23E /* AgreementLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgreementLoader.h; sourceTree = "<group>"; };
 		FBA6105412904FAF00B0B23E /* AgreementLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgreementLoader.m; sourceTree = "<group>"; };
+		FBA7A9EF132EC6C600CF7843 /* SXEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXEditorViewController.h; sourceTree = "<group>"; };
+		FBA7A9F0132EC6C600CF7843 /* SXEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXEditorViewController.m; sourceTree = "<group>"; };
+		FBA7AA0E132EC6FA00CF7843 /* Editor.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor.xib; sourceTree = "<group>"; };
 		FBAE662310DC252C00181B07 /* AlliterationSaver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlliterationSaver.h; sourceTree = "<group>"; };
 		FBAE662410DC252C00181B07 /* AlliterationSaver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlliterationSaver.m; sourceTree = "<group>"; };
 		FBAE662610DC25A700181B07 /* ContinentSaver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContinentSaver.h; sourceTree = "<group>"; };
@@ -1810,6 +1815,7 @@
 				FBA2B97A1092973400C1A669 /* PreferencesLanguages.xib */,
 				FB0C0A9410DE812B009BD9DE /* Localizable.strings */,
 				FBD284FC132E26C900AFCD9A /* Scout.xib */,
+				FBA7AA0E132EC6FA00CF7843 /* Editor.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -2764,6 +2770,8 @@
 				FBA0F74D1099D4B100982364 /* SXMainMediaController.m */,
 				FBD284F9132E25E300AFCD9A /* SXScoutViewController.h */,
 				FBD284FA132E25E300AFCD9A /* SXScoutViewController.m */,
+				FBA7A9EF132EC6C600CF7843 /* SXEditorViewController.h */,
+				FBA7A9F0132EC6C600CF7843 /* SXEditorViewController.m */,
 			);
 			name = "Other Controllers";
 			sourceTree = "<group>";
@@ -3407,6 +3415,7 @@
 				FB5A30751305E91E006D0B6D /* awkward.png in Resources */,
 				FB5A30761305E91E006D0B6D /* accomplished.png in Resources */,
 				FBD284FD132E26C900AFCD9A /* Scout.xib in Resources */,
+				FBA7AA0F132EC6FA00CF7843 /* Editor.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3753,6 +3762,7 @@
 				FB8667D01328300D009C01E2 /* SXFGameDBLoader.m in Sources */,
 				FB0C936A132C2FC300CF3BFC /* ToolController.m in Sources */,
 				FBD284FB132E25E300AFCD9A /* SXScoutViewController.m in Sources */,
+				FBA7A9F1132EC6C600CF7843 /* SXEditorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

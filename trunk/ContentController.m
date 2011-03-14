@@ -23,6 +23,8 @@
 #import "SupportFunctions.h"
 #import "SXOutlineViewCell.h"
 #import "SXMainMediaController.h"
+#import "SXEditorViewController.h"
+#import "SXScoutViewController.h"
 
 @implementation ContentController
 
@@ -1477,17 +1479,19 @@ clubLBCView, clubFacilitiesView;
 /******* NEW ONES ******/
 - (IBAction)selectEditorView:(id)sender
 {
-	[mainViewContainer setContentView:editorView];
+	SXEditorViewController *editorViewController = [[SXEditorViewController alloc] init];
+	[self replacePlaceholder:placeholderView withView:[editorViewController view]];
 }
 
 - (IBAction)selectScoutView:(id)sender
 {
-	[mainViewContainer setContentView:scoutView];
+	SXScoutViewController *scoutViewController = [[SXScoutViewController alloc] init];
+	[self replacePlaceholder:placeholderView withView:[scoutViewController view]];
 }
 
 - (IBAction)selectIDLookupView:(id)sender
 {
-	[mainViewContainer setContentView:IDLookupView];
+
 }
 
 - (void)replacePlaceholder:(NSView *)placeholder withView:(NSView *)view
@@ -1495,13 +1499,10 @@ clubLBCView, clubFacilitiesView;
 	NSParameterAssert(placeholder != nil);
 	NSParameterAssert(view != nil);
 	
-	// Copy the relevant settings from placeholder to the view.
-	[view setFrame:[placeholder frame]];
-	[view setAutoresizingMask:[placeholder autoresizingMask]];
-	
-	// Replace the placeholder with the actual view.
-	NSView* superview = [placeholder superview];
-	[placeholder removeFromSuperview];
-	[superview addSubview:view];
+	for (NSView *item in [placeholder subviews])
+	{
+		[item removeFromSuperview];
+	}
+	[placeholder addSubview:view];
 }
 @end
