@@ -198,15 +198,14 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loadLangDB"]==TRUE) { 
-	//	[self setStatus:NSLocalizedString(@"loading lang_db.dat", @"editor status")];
-	//	[database readLangDB:[[NSUserDefaults standardUserDefaults] stringForKey:@"lang_db_location"]]; 
+		[self setStatus:NSLocalizedString(@"loading lang_db.dat", @"editor status")];
 		langDB = [LangDBLoader readFromFile:[[NSUserDefaults standardUserDefaults] stringForKey:@"lang_db_location"]];
 	}
 		
 	unsigned int gameLength;
 	
 	[self setIdle:FALSE];
-	[self setStatus:NSLocalizedString(@"Reading file header...", @"editor status")];
+	[self setStatus:NSLocalizedString(@"Reading file into memory...", @"editor status")];
 	
 	// Create file data object
 	unsigned int byteOffset = 0; // Offset which dictates where data should be read from
@@ -214,6 +213,8 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	// Load the file into memory
 	NSData *gameData = [[NSData alloc] initWithContentsOfFile:path];
 	gameLength = [gameData length];
+	[self setStatus:NSLocalizedString(@"Reading file header...", @"editor status")];
+	
 	NSLog(@"File loaded into memory.");
 	
 	// Skip first two bytes (2nd is endianness)
@@ -254,6 +255,8 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	if (compressed) { NSLog(@"File Compressed"); }
 	else { NSLog(@"File Not Compressed"); } 
 
+	[self setStatus:NSLocalizedString(@"Reading file contents...", @"editor status")];
+	
 	[SupportFunctions getFileInfosFromData:gameData atOffset:(mainFileLength+18) intoInfos:fileInfos];
 	
 	NSLog(@"%d sub-files found",[fileInfos count]);

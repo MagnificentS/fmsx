@@ -198,9 +198,6 @@
 	
 }
 
-- (IBAction)deleteHistory:(id)sender { [[self mutableArrayValueForKey:@"recentlyViewed"] removeAllObjects]; }
-
-/******* NEW ONES ******/
 - (IBAction)selectEditorView:(id)sender
 {
 	if (![[NSApp delegate] dataLoaded]) {
