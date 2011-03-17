@@ -37,6 +37,9 @@
 	IBOutlet NSTableView	*localAreasTable;
 	IBOutlet NSView			*localAreaMainViewContainer, *localAreaEntityView;
 	
+	IBOutlet NSTableView	*sponsorsTable;
+	IBOutlet NSView			*sponsorMainViewContainer, *sponsorEntityView;
+	
 	IBOutlet NSTableView	*stadiumChangesTable;
 	IBOutlet NSView			*stadiumChangeMainViewContainer, *stadiumChangeEntityView;
 	
@@ -56,6 +59,7 @@
 *cityMainViewContainer, *cityEntityView, *continentMainViewContainer, *continentEntityView,
 *currencyMainViewContainer, *currencyEntityView, *localAreaMainViewContainer, *localAreaEntityView,
 *stadiumChangeMainViewContainer, *stadiumChangeEntityView, *derbyMainViewContainer, *derbyEntityView,
-*injuryMainViewContainer, *injuryEntityView, *languageMainViewContainer, *languageEntityView;
+*injuryMainViewContainer, *injuryEntityView, *languageMainViewContainer, *languageEntityView,
+*sponsorMainViewContainer, *sponsorEntityView;
 
 @end

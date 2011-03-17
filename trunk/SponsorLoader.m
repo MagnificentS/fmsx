@@ -28,8 +28,11 @@
 	[object setBusinessName:[FMString readFromData:data atOffset:&offset]];
 	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 	[object setBusinessNameGender:cbuffer];
+	
+	// not scope like it used to be - this is now unknown
 	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 	[object setBusinessType:cbuffer];
+	
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	[object setRowID:ibuffer];
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
