@@ -18,14 +18,31 @@
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
-	if (aTableView==awardsTable) { 
-		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { return [[[[NSApp delegate] editorController] searchResults] count]; }
-		return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.awards"] count]; 
-	}
-	
 	// section tables
-	else if (aTableView==awardSectionsTable) { return 2; }
+	if (aTableView==awardSectionsTable) { return 2; }
 	
+	// entity tables
+	if ([[[[NSApp delegate] editorController] searchResults] count]>0) { return [[[[NSApp delegate] editorController] searchResults] count]; }
+	
+	if (aTableView==awardsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.awards"] count]; }
+/*	
+	else if (aTableView==citiesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.cities"] count]; }
+	else if (aTableView==clubsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.clubs"] count]; }
+	else if (aTableView==competitionsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.competitions"] count]; }
+	else if (aTableView==continentsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.continents"] count]; }
+	else if (aTableView==currenciesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.currencies"] count]; }
+	else if (aTableView==derbiesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.derbies"] count]; }
+	else if (aTableView==injuriesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.injuries"] count]; }
+	else if (aTableView==languagesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.languages"] count]; }
+	else if (aTableView==localAreasTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.localAreas"] count]; }
+	else if (aTableView==mediaTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.media"] count]; }
+	else if (aTableView==nationsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] count]; }
+	else if (aTableView==peopleTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] count]; }
+	else if (aTableView==sponsorsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.sponsors"] count]; }
+	else if (aTableView==stadiumsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiums"] count]; }
+	else if (aTableView==stadiumChangesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiumChanges"] count]; }
+	else if (aTableView==weatherTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.weather"] count]; }
+*/
 	return 0;
 }
 
