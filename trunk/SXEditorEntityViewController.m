@@ -90,13 +90,78 @@
 	
 	if (currentSection==EDS_AWARDS) { 
 		selectionIndex = [awardsTable selectedRow]; 
-		arrayString = @"gameDB.database.awards";
-		classString = @"award";
+		arrayString = @"awards";	classString = @"award";
 	}
+/*
+	else if (currentSection==EDS_CITIES) { 
+		selectionIndex = [citiesTable selectedRow]; 
+		arrayString = @"cities";	classString = @"city";
+	}
+	else if (currentSection==EDS_CLUBS) { 
+		selectionIndex = [clubsTable selectedRow]; 
+		arrayString = @"clubs";	classString = @"club";
+	}
+	else if (currentSection==EDS_COMPETITIONS) { 
+		selectionIndex = [competitionsTable selectedRow]; 
+		arrayString = @"competitions";	classString = @"competition";
+	}
+	else if (currentSection==EDS_CONTINENTS) { 
+		selectionIndex = [continentsTable selectedRow]; 
+		arrayString = @"continents";	classString = @"continent";
+	}
+	else if (currentSection==EDS_CURRENCIES) { 
+		selectionIndex = [currenciesTable selectedRow]; 
+		arrayString = @"currencies";	classString = @"currency";
+	}
+	else if (currentSection==EDS_DERBIES) { 
+		selectionIndex = [derbiesTable selectedRow]; 
+		arrayString = @"derbies";	classString = @"derby";
+	}
+	else if (currentSection==EDS_INJURIES) { 
+		selectionIndex = [injuriesTable selectedRow]; 
+		arrayString = @"injuries";	classString = @"injury";
+	}
+	else if (currentSection==EDS_LANGUAGES) { 
+		selectionIndex = [languagesTable selectedRow]; 
+		arrayString = @"languages";	classString = @"language";
+	}
+	else if (currentSection==EDS_LOCAL_AREAS) { 
+		selectionIndex = [localAreasTable selectedRow]; 
+		arrayString = @"localAreas";	classString = @"localArea";
+	}
+	else if (currentSection==EDS_MEDIA) { 
+		selectionIndex = [mediaTable selectedRow]; 
+		arrayString = @"media";	classString = @"media";
+	}
+	else if (currentSection==EDS_NATIONS) { 
+		selectionIndex = [nationsTable selectedRow]; 
+		arrayString = @"nations";	classString = @"nation";
+	}
+	else if (currentSection==EDS_PEOPLE) { 
+		selectionIndex = [peopleTable selectedRow]; 
+		arrayString = @"people";	classString = @"person";
+	}
+	else if (currentSection==EDS_SPONSORS) { 
+		selectionIndex = [sponsorsTable selectedRow]; 
+		arrayString = @"sponsors";	classString = @"sponsor";
+	}
+	else if (currentSection==EDS_STADIUMS) { 
+		selectionIndex = [stadiumsTable selectedRow]; 
+		arrayString = @"stadiums";	classString = @"stadium";
+	}
+	else if (currentSection==EDS_STADIUM_CHANGES) { 
+		selectionIndex = [stadiumsChangesTable selectedRow]; 
+		arrayString = @"stadiumChanges";	classString = @"stadiumChange";
+	}
+	else if (currentSection==EDS_WEATHER) { 
+		selectionIndex = [weatherTable selectedRow]; 
+		arrayString = @"weather";	classString = @"weather";
+	}
+*/
 	
 	// override selection index if there is a search
 	if ([[[[NSApp delegate] editorController] searchResults] count]>0) { 
-		selectionIndex = [[[NSApp delegate] valueForKeyPath:arrayString] indexOfObjectIdenticalTo:[[[[NSApp delegate] editorController] searchResults] objectAtIndex:selectionIndex]];
+		selectionIndex = [[[NSApp delegate] valueForKeyPath:[NSString stringWithFormat:@"gameDB.database.%@",arrayString]] indexOfObjectIdenticalTo:[[[[NSApp delegate] editorController] searchResults] objectAtIndex:selectionIndex]];
 	}
 	
 	if (selectionIndex==-1) { return; }
@@ -128,20 +193,35 @@
 - (void)controlTextDidEndEditing:(NSNotification *)aNotification
 {
 	int currentSection = [[[NSApp delegate] editorController] currentSection];
-	NSString *searchVariable;
+	NSString *searchVariable = @"";
 	NSString *searchArray;
 	
-	if (currentSection==EDS_AWARDS) { 
-		searchVariable = @"name";
-		searchArray = @"gameDB.database.awards";
-	}
+	if (currentSection==EDS_AWARDS)						{ searchArray = @"awards"; }
+	//	else if (currentSection==EDS_CITIES)			{ searchArray = @"cities"; }
+	//	else if (currentSection==EDS_CLUBS)				{ searchArray = @"clubs"; }
+	//	else if (currentSection==EDS_COMPETITIONS)		{ searchArray = @"competitions"; }
+	//	else if (currentSection==EDS_CONTINENTS)		{ searchArray = @"continents"; }
+	//	else if (currentSection==EDS_CURRENCIES)		{ searchArray = @"currencies"; }
+	//	else if (currentSection==EDS_DERBIES)			{ searchArray = @"derbies"; }
+	//	else if (currentSection==EDS_INJURIES)			{ searchArray = @"injuries"; }
+	//	else if (currentSection==EDS_LANGUAGES)			{ searchArray = @"languages"; }
+	//	else if (currentSection==EDS_LOCAL_AREAS)		{ searchArray = @"localAreas"; }
+	//	else if (currentSection==EDS_MEDIA)				{ searchArray = @"media"; }
+	//	else if (currentSection==EDS_NATIONS)			{ searchArray = @"nations"; }
+	//	else if (currentSection==EDS_PEOPLE)			{ searchArray = @"people"; }
+	//	else if (currentSection==EDS_SPONSORS)			{ searchArray = @"sponsors"; }
+	//	else if (currentSection==EDS_STADIUMS)			{ searchArray = @"stadiums"; }
+	//	else if (currentSection==EDS_STADIUM_CHANGES)	{ searchArray = @"stadiumChanges"; }
+	//	else if (currentSection==EDS_WEATHER)			{ searchArray = @"weather"; }	
 	
+	if (!searchVariable || [searchVariable length] < 1) { searchVariable = @"name"; }
+		
 	[[[[NSApp delegate] editorController] searchResults] removeAllObjects];
 	
 	if ([[[aNotification object] stringValue] length] < 1) { return; }
 	
 	NSString *searchString = [NSString stringWithFormat:@"%@ contains[cd] '%@'",searchVariable,[[aNotification object] stringValue]];
-	[[[[NSApp delegate] editorController] searchResults] addObjectsFromArray:[[[NSApp delegate] valueForKeyPath:searchArray] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:searchString]]];
+	[[[[NSApp delegate] editorController] searchResults] addObjectsFromArray:[[[NSApp delegate] valueForKeyPath:[NSString stringWithFormat:@"gameDB.database.%@",searchArray]] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:searchString]]];
 	
 	[self reloadEntityTable:currentSection];
 }
