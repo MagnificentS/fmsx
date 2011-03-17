@@ -310,9 +310,6 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	[self setIdle:TRUE];
 	[self setDataLoaded:TRUE];
 	
-	[contentController setFavourites];
-	[contentController reloadOutlineView];
-	
 	[pool drain];
 	
 	

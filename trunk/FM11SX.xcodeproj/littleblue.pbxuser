@@ -297,6 +297,18 @@
 			FBAB2A06133248A8003FA548 /* PBXTextBookmark */ = FBAB2A06133248A8003FA548 /* PBXTextBookmark */;
 			FBAB2A0A13324902003FA548 /* PBXTextBookmark */ = FBAB2A0A13324902003FA548 /* PBXTextBookmark */;
 			FBAB2A0B13324902003FA548 /* PBXTextBookmark */ = FBAB2A0B13324902003FA548 /* PBXTextBookmark */;
+			FBAB2A2213324CDD003FA548 /* PBXTextBookmark */ = FBAB2A2213324CDD003FA548 /* PBXTextBookmark */;
+			FBAB2A2313324CDD003FA548 /* PBXTextBookmark */ = FBAB2A2313324CDD003FA548 /* PBXTextBookmark */;
+			FBAB2A2413324CDD003FA548 /* PBXTextBookmark */ = FBAB2A2413324CDD003FA548 /* PBXTextBookmark */;
+			FBAB2A2513324CDD003FA548 /* XCBuildMessageTextBookmark */ = FBAB2A2513324CDD003FA548 /* XCBuildMessageTextBookmark */;
+			FBAB2A2613324CDD003FA548 /* PBXTextBookmark */ = FBAB2A2613324CDD003FA548 /* PBXTextBookmark */;
+			FBAB2A2913324CE3003FA548 /* PBXTextBookmark */ = FBAB2A2913324CE3003FA548 /* PBXTextBookmark */;
+			FBAB2A2A13324CE3003FA548 /* PBXTextBookmark */ = FBAB2A2A13324CE3003FA548 /* PBXTextBookmark */;
+			FBAB2A2B13324CE3003FA548 /* PBXTextBookmark */ = FBAB2A2B13324CE3003FA548 /* PBXTextBookmark */;
+			FBAB2A2C13324CE3003FA548 /* PBXTextBookmark */ = FBAB2A2C13324CE3003FA548 /* PBXTextBookmark */;
+			FBAB2A2D13324CE3003FA548 /* PBXTextBookmark */ = FBAB2A2D13324CE3003FA548 /* PBXTextBookmark */;
+			FBAB2A2E13324CE3003FA548 /* PBXTextBookmark */ = FBAB2A2E13324CE3003FA548 /* PBXTextBookmark */;
+			FBAB2A2F13324CE3003FA548 /* PBXTextBookmark */ = FBAB2A2F13324CE3003FA548 /* PBXTextBookmark */;
 			FBDBAB06132FBB9A00FF22B8 = FBDBAB06132FBB9A00FF22B8 /* PBXTextBookmark */;
 			FBDBAB07132FBB9A00FF22B8 = FBDBAB07132FBB9A00FF22B8 /* PBXTextBookmark */;
 			FBDBABDA132FF0D400FF22B8 = FBDBABDA132FF0D400FF22B8 /* PBXTextBookmark */;
@@ -961,18 +973,18 @@
 	};
 	FB1D74EB1098840B00EC8BBB /* ContentController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {824, 2951}}";
-			sepNavSelRange = "{8522, 0}";
-			sepNavVisRange = "{7731, 1682}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 1261}}";
+			sepNavSelRange = "{480, 0}";
+			sepNavVisRange = "{335, 763}";
 			sepNavWindowFrame = "{{63, 294}, {717, 584}}";
 		};
 	};
 	FB1D74EC1098840B00EC8BBB /* ContentController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1160, 16471}}";
-			sepNavSelRange = "{49821, 0}";
-			sepNavVisRange = "{49345, 786}";
-			sepNavWindowFrame = "{{15, 189}, {717, 584}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1013, 9516}}";
+			sepNavSelRange = "{744, 0}";
+			sepNavVisRange = "{146, 683}";
+			sepNavWindowFrame = "{{533, 105}, {717, 584}}";
 		};
 	};
 	FB280E3A10CB03430061B5ED /* status_bid.png */ = {
@@ -1004,9 +1016,9 @@
 	};
 	FB2E734F130C73B3009537D2 /* ScoutController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1181, 15418}}";
-			sepNavSelRange = "{35240, 139}";
-			sepNavVisRange = "{34980, 1156}";
+			sepNavIntBoundsRect = "{{0, 0}, {1174, 15730}}";
+			sepNavSelRange = "{16132, 138}";
+			sepNavVisRange = "{17052, 1162}";
 		};
 	};
 	FB2F65EB1301FC4E0002EC97 /* dsa_pub.pem */ = {
@@ -1185,7 +1197,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {887, 390}}";
 			sepNavSelRange = "{845, 0}";
-			sepNavVisRange = "{0, 851}";
+			sepNavVisRange = "{0, 846}";
 		};
 	};
 	FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */ = {
@@ -1365,8 +1377,8 @@
 		isa = PBXTextBookmark;
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 162";
-		rLen = 89;
-		rLoc = 6012;
+		rLen = 0;
+		rLoc = 430;
 		rType = 0;
 		vrLen = 985;
 		vrLoc = 5974;
@@ -2097,7 +2109,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1239";
 		rLen = 0;
-		rLoc = 50787;
+		rLoc = 27642;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 50240;
@@ -2107,7 +2119,7 @@
 		fRef = FBF90D2410923E2B00929934 /* Controller.m */;
 		name = "Controller.m: 316";
 		rLen = 0;
-		rLoc = 13464;
+		rLoc = 13386;
 		rType = 0;
 		vrLen = 737;
 		vrLoc = 13308;
@@ -2116,8 +2128,8 @@
 		isa = PBXTextBookmark;
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 22";
-		rLen = 33;
-		rLoc = 834;
+		rLen = 0;
+		rLoc = 832;
 		rType = 0;
 		vrLen = 1491;
 		vrLoc = 756;
@@ -3535,7 +3547,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 50";
 		rLen = 0;
-		rLoc = 1158;
+		rLoc = 1123;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 766;
@@ -3545,7 +3557,7 @@
 		fRef = FBDBAB01132FB6C900FF22B8 /* EditorController.h */;
 		name = "EditorController.h: 90";
 		rLen = 0;
-		rLoc = 2750;
+		rLoc = 2643;
 		rType = 0;
 		vrLen = 1209;
 		vrLoc = 1586;
@@ -3595,7 +3607,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 50";
 		rLen = 0;
-		rLoc = 1158;
+		rLoc = 1123;
 		rType = 0;
 		vrLen = 656;
 		vrLoc = 210;
@@ -3745,7 +3757,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 51";
 		rLen = 0;
-		rLoc = 1181;
+		rLoc = 1146;
 		rType = 0;
 		vrLen = 1281;
 		vrLoc = 864;
@@ -3849,7 +3861,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 51";
 		rLen = 0;
-		rLoc = 1181;
+		rLoc = 1146;
 		rType = 0;
 		vrLen = 1538;
 		vrLoc = 1212;
@@ -3859,7 +3871,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 50";
 		rLen = 0;
-		rLoc = 1109;
+		rLoc = 1074;
 		rType = 0;
 		vrLen = 766;
 		vrLoc = 813;
@@ -3869,7 +3881,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 51";
 		rLen = 0;
-		rLoc = 1109;
+		rLoc = 1074;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 831;
@@ -3879,7 +3891,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 40";
 		rLen = 0;
-		rLoc = 866;
+		rLoc = 832;
 		rType = 0;
 		vrLen = 678;
 		vrLoc = 767;
@@ -3889,7 +3901,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 44";
 		rLen = 0;
-		rLoc = 910;
+		rLoc = 875;
 		rType = 0;
 		vrLen = 833;
 		vrLoc = 813;
@@ -3899,7 +3911,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 74";
 		rLen = 0;
-		rLoc = 2738;
+		rLoc = 2703;
 		rType = 0;
 		vrLen = 1557;
 		vrLoc = 1178;
@@ -4039,7 +4051,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 170";
 		rLen = 0;
-		rLoc = 6377;
+		rLoc = 1207;
 		rType = 0;
 		vrLen = 876;
 		vrLoc = 5926;
@@ -4049,7 +4061,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1214";
 		rLen = 0;
-		rLoc = 50037;
+		rLoc = 26892;
 		rType = 0;
 		vrLen = 1045;
 		vrLoc = 49713;
@@ -4079,7 +4091,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 74";
 		rLen = 0;
-		rLoc = 2635;
+		rLoc = 2600;
 		rType = 0;
 		vrLen = 1555;
 		vrLoc = 1180;
@@ -4089,7 +4101,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 74";
 		rLen = 0;
-		rLoc = 2715;
+		rLoc = 2680;
 		rType = 0;
 		vrLen = 1600;
 		vrLoc = 1180;
@@ -4099,7 +4111,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 74";
 		rLen = 0;
-		rLoc = 2715;
+		rLoc = 2680;
 		rType = 0;
 		vrLen = 1600;
 		vrLoc = 1180;
@@ -4109,7 +4121,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 47";
 		rLen = 0;
-		rLoc = 2118;
+		rLoc = 744;
 		rType = 0;
 		vrLen = 1625;
 		vrLoc = 617;
@@ -4119,7 +4131,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 222";
 		rLen = 0;
-		rLoc = 8965;
+		rLoc = 2147;
 		rType = 0;
 		vrLen = 1831;
 		vrLoc = 7360;
@@ -4129,7 +4141,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 223";
 		rLen = 0;
-		rLoc = 9090;
+		rLoc = 2272;
 		rType = 0;
 		vrLen = 1841;
 		vrLoc = 7359;
@@ -4139,7 +4151,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 223";
 		rLen = 0;
-		rLoc = 9090;
+		rLoc = 2272;
 		rType = 0;
 		vrLen = 1883;
 		vrLoc = 7359;
@@ -4299,7 +4311,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 224";
 		rLen = 0;
-		rLoc = 9017;
+		rLoc = 2199;
 		rType = 0;
 		vrLen = 1682;
 		vrLoc = 7731;
@@ -4309,7 +4321,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 42";
 		rLen = 0;
-		rLoc = 1707;
+		rLoc = 677;
 		rType = 0;
 		vrLen = 1636;
 		vrLoc = 618;
@@ -4319,7 +4331,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 42";
 		rLen = 0;
-		rLoc = 1707;
+		rLoc = 677;
 		rType = 0;
 		vrLen = 1636;
 		vrLoc = 618;
@@ -4329,7 +4341,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 217";
 		rLen = 0;
-		rLoc = 8522;
+		rLoc = 2147;
 		rType = 0;
 		vrLen = 1682;
 		vrLoc = 7731;
@@ -4339,7 +4351,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 217";
 		rLen = 0;
-		rLoc = 8522;
+		rLoc = 2147;
 		rType = 0;
 		vrLen = 1682;
 		vrLoc = 7731;
@@ -4399,7 +4411,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 61";
 		rLen = 0;
-		rLoc = 2537;
+		rLoc = 830;
 		rType = 0;
 		vrLen = 1253;
 		vrLoc = 1771;
@@ -4599,7 +4611,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1075";
 		rLen = 0;
-		rLoc = 45015;
+		rLoc = 22158;
 		rType = 0;
 		vrLen = 882;
 		vrLoc = 47759;
@@ -4640,7 +4652,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 1074;
+		rLoc = 559;
 		rType = 1;
 	};
 	FBAB29EC1332443C003FA548 /* PBXTextBookmark */ = {
@@ -4648,7 +4660,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1075";
 		rLen = 0;
-		rLoc = 45014;
+		rLoc = 22157;
 		rType = 0;
 		vrLen = 968;
 		vrLoc = 44681;
@@ -4658,7 +4670,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1075";
 		rLen = 0;
-		rLoc = 45014;
+		rLoc = 22157;
 		rType = 0;
 		vrLen = 1124;
 		vrLoc = 44681;
@@ -4748,10 +4760,129 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1206";
 		rLen = 0;
-		rLoc = 49821;
+		rLoc = 26708;
 		rType = 0;
 		vrLen = 786;
 		vrLoc = 49345;
+	};
+	FBAB2A2213324CDD003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
+		name = "ContentController.h: 13";
+		rLen = 0;
+		rLoc = 296;
+		rType = 0;
+		vrLen = 534;
+		vrLoc = 41;
+	};
+	FBAB2A2313324CDD003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
+		name = "ContentController.m: 644";
+		rLen = 0;
+		rLoc = 25451;
+		rType = 0;
+		vrLen = 563;
+		vrLoc = 25476;
+	};
+	FBAB2A2413324CDD003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBF90D2410923E2B00929934 /* Controller.m */;
+		name = "Controller.m: 313";
+		rLen = 0;
+		rLoc = 13386;
+		rType = 0;
+		vrLen = 323;
+		vrLoc = 13153;
+	};
+	FBAB2A2513324CDD003FA548 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Method definition for '-awardSectionStrings' not found";
+		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 72;
+		rType = 1;
+	};
+	FBAB2A2613324CDD003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
+		name = "EditorController.m: 73";
+		rLen = 0;
+		rLoc = 2740;
+		rType = 0;
+		vrLen = 1089;
+		vrLoc = 1656;
+	};
+	FBAB2A2913324CE3003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
+		name = "ContentController.h: 21";
+		rLen = 0;
+		rLoc = 480;
+		rType = 0;
+		vrLen = 763;
+		vrLoc = 335;
+	};
+	FBAB2A2A13324CE3003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBD284FA132E25E300AFCD9A /* SXScoutViewController.m */;
+		name = "SXScoutViewController.m: 13";
+		rLen = 108;
+		rLoc = 218;
+		rType = 0;
+		vrLen = 333;
+		vrLoc = 0;
+	};
+	FBAB2A2B13324CE3003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB2E734F130C73B3009537D2 /* ScoutController.m */;
+		name = "ScoutController.m: 288";
+		rLen = 138;
+		rLoc = 16132;
+		rType = 0;
+		vrLen = 1162;
+		vrLoc = 17052;
+	};
+	FBAB2A2C13324CE3003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBAB2941133231B9003FA548 /* SXEditorViewController.h */;
+		name = "SXEditorViewController.h: 19";
+		rLen = 0;
+		rLoc = 557;
+		rType = 0;
+		vrLen = 819;
+		vrLoc = 3;
+	};
+	FBAB2A2D13324CE3003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
+		name = "SXEditorEntityViewController.h: 28";
+		rLen = 0;
+		rLoc = 845;
+		rType = 0;
+		vrLen = 846;
+		vrLoc = 0;
+	};
+	FBAB2A2E13324CE3003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
+		name = "ContentController.m: 30";
+		rLen = 0;
+		rLoc = 744;
+		rType = 0;
+		vrLen = 732;
+		vrLoc = 519;
+	};
+	FBAB2A2F13324CE3003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
+		name = "ContentController.m: 30";
+		rLen = 0;
+		rLoc = 744;
+		rType = 0;
+		vrLen = 683;
+		vrLoc = 146;
 	};
 	FBAE662310DC252C00181B07 /* AlliterationSaver.h */ = {
 		uiCtxt = {
@@ -5391,7 +5522,7 @@
 	};
 	FBD284FA132E25E300AFCD9A /* SXScoutViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {737, 436}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 364}}";
 			sepNavSelRange = "{218, 108}";
 			sepNavVisRange = "{0, 333}";
 		};
@@ -5544,17 +5675,18 @@
 	};
 	FBDBAB01132FB6C900FF22B8 /* EditorController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {737, 1183}}";
-			sepNavSelRange = "{867, 0}";
-			sepNavVisRange = "{825, 753}";
+			sepNavIntBoundsRect = "{{0, 0}, {726, 1118}}";
+			sepNavSelRange = "{1577, 0}";
+			sepNavVisRange = "{1355, 1296}";
 			sepNavWindowFrame = "{{689, 319}, {750, 558}}";
 		};
 	};
 	FBDBAB02132FB6C900FF22B8 /* EditorController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1251, 1014}}";
-			sepNavSelRange = "{2715, 0}";
-			sepNavVisRange = "{1180, 1600}";
+			sepNavIntBoundsRect = "{{0, 0}, {1251, 936}}";
+			sepNavSelRange = "{2740, 0}";
+			sepNavVisRange = "{1656, 1089}";
+			sepNavWindowFrame = "{{15, 315}, {750, 558}}";
 		};
 	};
 	FBDBAB06132FBB9A00FF22B8 /* PBXTextBookmark */ = {
@@ -6579,9 +6711,9 @@
 	};
 	FBF90D2410923E2B00929934 /* Controller.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2322, 8073}}";
-			sepNavSelRange = "{13464, 0}";
-			sepNavVisRange = "{13308, 737}";
+			sepNavIntBoundsRect = "{{0, 0}, {2322, 8138}}";
+			sepNavSelRange = "{13386, 0}";
+			sepNavVisRange = "{13153, 323}";
 			sepNavWindowFrame = "{{38, 169}, {717, 584}}";
 		};
 	};

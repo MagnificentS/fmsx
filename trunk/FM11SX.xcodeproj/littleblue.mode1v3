@@ -290,13 +290,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>466</integer>
-									<integer>443</integer>
+									<integer>427</integer>
+									<integer>425</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 7686}, {229, 546}}</string>
+							<string>{{0, 7149}, {229, 546}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -347,10 +347,9 @@
 										<key>_historyCapacity</key>
 										<integer>20</integer>
 										<key>bookmark</key>
-										<string>FBAB2A0B13324902003FA548</string>
+										<string>FBAB2A2F13324CE3003FA548</string>
 										<key>history</key>
 										<array>
-											<string>FBDBABE0132FF0D400FF22B8</string>
 											<string>FBDBABE1132FF0D400FF22B8</string>
 											<string>FBDBABFD132FF21900FF22B8</string>
 											<string>FB4E641613301CF9000CE49D</string>
@@ -359,17 +358,18 @@
 											<string>FB887D9E1331519C00577E47</string>
 											<string>FBAB28E1133220A3003FA548</string>
 											<string>FBAB28E3133220A3003FA548</string>
-											<string>FBAB290313322852003FA548</string>
 											<string>FBAB298313323617003FA548</string>
-											<string>FBAB299D133238E8003FA548</string>
-											<string>FBAB29A513323D9D003FA548</string>
 											<string>FBAB29CD13323FAF003FA548</string>
-											<string>FBAB29CE13323FAF003FA548</string>
 											<string>FBAB29DF13324390003FA548</string>
 											<string>FBAB29E013324390003FA548</string>
 											<string>FBAB2A04133248A8003FA548</string>
 											<string>FBAB2A0A13324902003FA548</string>
-											<string>FBAB29F01332447B003FA548</string>
+											<string>FBAB2A2913324CE3003FA548</string>
+											<string>FBAB2A2A13324CE3003FA548</string>
+											<string>FBAB2A2B13324CE3003FA548</string>
+											<string>FBAB2A2C13324CE3003FA548</string>
+											<string>FBAB2A2D13324CE3003FA548</string>
+											<string>FBAB2A2E13324CE3003FA548</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -567,12 +567,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>FBAB2A0C13324902003FA548</string>
 		<string>FBAB28EF133220A3003FA548</string>
 		<string>FBAB28F0133220A3003FA548</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>FB9D33D310923BAA000883FF</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/littleblue/ソフト/FM11SX/FM11SX.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -592,14 +591,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ContentController.m</string>
+								<string>EditorController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -608,7 +605,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1039, 272}}</string>
 								<key>RubberWindowFrame</key>
-								<string>351 208 1039 625 0 0 1440 878 </string>
+								<string>673 152 1039 625 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -616,6 +613,8 @@
 							<string>272pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -632,7 +631,7 @@
 								<key>Frame</key>
 								<string>{{0, 277}, {1039, 307}}</string>
 								<key>RubberWindowFrame</key>
-								<string>351 208 1039 625 0 0 1440 878 </string>
+								<string>673 152 1039 625 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -664,11 +663,11 @@
 			<key>WindowContentMinSize</key>
 			<string>486 300</string>
 			<key>WindowString</key>
-			<string>351 208 1039 625 0 0 1440 878 </string>
+			<string>673 152 1039 625 0 0 1440 878 </string>
 			<key>WindowToolGUID</key>
 			<string>FB9D33D310923BAA000883FF</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

@@ -27,363 +27,35 @@
 
 @implementation ContentController
 
-@synthesize awardSearchView, awardGeneralView, citySearchView, cityGeneralView, entityIndexArray,
-selectedRows, gameInfoView, continentSearchView, continentGeneralView, currencySearchView, 
-currencyGeneralView, injuryGeneralView, injurySearchView, languageGeneralView, placeholderView,
-languageSearchView, localAreaGeneralView, localAreaSearchView, stadiumGeneralView, 
-stadiumSearchView, weatherGeneralView, weatherSearchView, mediaGeneralView, mediaSearchView,
-stadiumChangeGeneralView, stadiumChangeSearchView, clubSearchView, clubGeneralView, clubContainer, 
-clubTacticsView, clubMainView, clubTrainingView, clubCoefficientView, peopleSearchView, 
-peopleGeneralView, personContainer, competitionSearchView, competitionGeneralView,
-actualPersonView, actualPlayerView, sponsorGeneralView, sponsorSearchView,
-nationGeneralView, nationMainView, nationSearchView, personRelationshipsView,
-clubRelationshipsView, nationRelationshipsView,
-recentlyViewed, mainContainer, awardController, cityController, clubController, nationController, 
-competitionController, continentController, injuryController, currencyController, 
-languageController, localAreaController, mediaController, peopleController, clubKitView,
-sponsorController, stadiumController, stadiumChangeController, weatherController, awardRulesView, 
-awardMainView, derbyGeneralView, derbySearchView, derbyController, agentView, locationString,
-clubLBCView, clubFacilitiesView,
-editorViewController, mainWindow;
+@synthesize selectedRows, editorViewController, mainWindow, placeholderView, locationString;
 
 - (id)init
 {
 	[super init];
 	
 	selectedRows = [[NSMutableDictionary alloc] init];
-	recentlyViewed = [[NSMutableArray alloc] init];
-	
-	sections = [[NSMutableArray alloc] init];
-	awardSections = [[NSMutableArray alloc] init];
-	mediaSections = [[NSMutableArray alloc] init];
-	clubSections = [[NSMutableArray alloc] init];
-	nationSections = [[NSMutableArray alloc] init];
-	personSections = [[NSMutableArray alloc] init];
-	
-	entityIndexArray = [[NSMutableArray alloc] init];
 	
 	id playerStatsTransformer = [[[PlayerStatsTransformer alloc] init] autorelease];
 	[NSValueTransformer setValueTransformer:playerStatsTransformer forName:@"PlayerStatsTransformer"];
 	id playerRatingTransformer = [[[PlayerRatingTransformer alloc] init] autorelease];
 	[NSValueTransformer setValueTransformer:playerRatingTransformer forName:@"PlayerRatingTransformer"];
 	
-	NSMutableDictionary *section;
-	NSMutableArray *subsections;
-	NSMutableDictionary *subsection;
-	
-	subsections = [[NSMutableArray alloc] init];
-	subsection = [[NSMutableDictionary alloc] init];
-	[subsection setObject:@"Awards" forKey:@"title"];
-	[subsection setObject:@"award" forKey:@"image"];
-	[subsection setObject:@"awards" forKey:@"array"];
-	[subsection setObject:@"1" forKey:@"subsection"];
-	[subsection setObject:@"awardSearchView" forKey:@"view"];
-	[subsections addObject:subsection];
-	[subsection release];
-	subsection = [[NSMutableDictionary alloc] init];
-	[subsection setObject:@"Cities" forKey:@"title"];
-	[subsection setObject:@"city" forKey:@"image"];
-	[subsection setObject:@"cities" forKey:@"array"];
-	[subsection setObject:@"1" forKey:@"subsection"];
-	[subsection setObject:@"citySearchView" forKey:@"view"];
-	[subsections addObject:subsection];
-	[subsection release];
-	subsection = [[NSMutableDictionary alloc] init];
-	[subsection setObject:@"Clubs" forKey:@"title"];
-	[subsection setObject:@"club" forKey:@"image"];
-	[subsection setObject:@"clubs" forKey:@"array"];
-	[subsection setObject:@"clubSearchView" forKey:@"view"];
-	[subsection setObject:@"1" forKey:@"subsection"];
-	[subsections addObject:subsection];
-	[subsection release];
-	subsection = [[NSMutableDictionary alloc] init];
-	[subsection setObject:@"Competitions" forKey:@"title"];
-	[subsection setObject:@"competition" forKey:@"image"];
-	[subsection setObject:@"competitions" forKey:@"array"];
-	[subsection setObject:@"competitionSearchView" forKey:@"view"];
-	[subsection setObject:@"1" forKey:@"subsection"];
-	[subsections addObject:subsection];
-	[subsection release];
-	subsection = [[NSMutableDictionary alloc] init];
-	[subsection setObject:@"Continents" forKey:@"title"];
-	[subsection setObject:@"continent" forKey:@"image"];
-	[subsection setObject:@"continents" forKey:@"array"];
-	[subsection setObject:@"continentSearchView" forKey:@"view"];
-	[subsection setObject:@"1" forKey:@"subsection"];
-	[subsections addObject:subsection];
-	[subsection release];
-	subsection = [[NSMutableDictionary alloc] init];
-	[subsection setObject:@"Currencies" forKey:@"title"];
-	[subsection setObject:@"currency" forKey:@"image"];
-	[subsection setObject:@"currencies" forKey:@"array"];
-	[subsection setObject:@"currencySearchView" forKey:@"view"];
-	[subsection setObject:@"1" forKey:@"subsection"];
-	[subsections addObject:subsection];
-	[subsection release];
-	subsection = [[NSMutableDictionary alloc] init];
-	[subsection setObject:@"Derbies" forKey:@"title"];
-	[subsection setObject:@"derby" forKey:@"image"];
-	[subsection setObject:@"derbies" forKey:@"array"];
-	[subsection setObject:@"derbySearchView" forKey:@"view"];
-	[subsection setObject:@"1" forKey:@"subsection"];
-	[subsections addObject:subsection];
-	[subsection release];
-	subsection = [[NSMutableDictionary alloc] init];
-	[subsection setObject:@"Injuries" forKey:@"title"];
-	[subsection setObject:@"injury" forKey:@"image"];
-	[subsection setObject:@"injuries" forKey:@"array"];
-	[subsection setObject:@"injurySearchView" forKey:@"view"];
-	[subsection setObject:@"1" forKey:@"subsection"];
-	[subsections addObject:subsection];
-	[subsection release];
-	subsection = [[NSMutableDictionary alloc] init];
-	[subsection setObject:@"Languages" forKey:@"title"];
-	[subsection setObject:@"language" forKey:@"image"];
-	[subsection setObject:@"languages" forKey:@"array"];
-	[subsection setObject:@"languageSearchView" forKey:@"view"];
-	[subsection setObject:@"1" forKey:@"subsection"];
-	[subsections addObject:subsection];
-	[subsection release];
-	subsection = [[NSMutableDictionary alloc] init];
-	[subsection setObject:@"Local Areas" forKey:@"title"];
-	[subsection setObject:@"localarea" forKey:@"image"];
-	[subsection setObject:@"localAreas" forKey:@"array"];
-	[subsection setObject:@"localAreaSearchView" forKey:@"view"];
-	[subsection setObject:@"1" forKey:@"subsection"];
-	[subsections addObject:subsection];
-	[subsection release];
-	subsection = [[NSMutableDictionary alloc] init];
-	[subsection setObject:@"Media" forKey:@"title"];
-	[subsection setObject:@"media" forKey:@"image"];
-	[subsection setObject:@"media" forKey:@"array"];
-	[subsection setObject:@"mediaSearchView" forKey:@"view"];
-	[subsection setObject:@"1" forKey:@"subsection"];
-	[subsections addObject:subsection];
-	[subsection release];
-	subsection = [[NSMutableDictionary alloc] init];
-	[subsection setObject:@"Nations" forKey:@"title"];
-	[subsection setObject:@"nation" forKey:@"image"];
-	[subsection setObject:@"nations" forKey:@"array"];
-	[subsection setObject:@"nationSearchView" forKey:@"view"];
-	[subsection setObject:@"1" forKey:@"subsection"];
-	[subsections addObject:subsection];
-	[subsection release];
-	subsection = [[NSMutableDictionary alloc] init];
-	[subsection setObject:@"People" forKey:@"title"];
-	[subsection setObject:@"person" forKey:@"image"];
-	[subsection setObject:@"people" forKey:@"array"];
-	[subsection setObject:@"peopleSearchView" forKey:@"view"];
-	[subsection setObject:@"1" forKey:@"subsection"];
-	[subsections addObject:subsection];
-	[subsection release];
-	subsection = [[NSMutableDictionary alloc] init];
-	[subsection setObject:@"Sponsors" forKey:@"title"];
-	[subsection setObject:@"sponsor" forKey:@"image"];
-	[subsection setObject:@"sponsors" forKey:@"array"];
-	[subsection setObject:@"sponsorSearchView" forKey:@"view"];
-	[subsection setObject:@"1" forKey:@"subsection"];
-	[subsections addObject:subsection];
-	[subsection release];
-	subsection = [[NSMutableDictionary alloc] init];
-	[subsection setObject:@"Stadiums" forKey:@"title"];
-	[subsection setObject:@"stadium" forKey:@"image"];
-	[subsection setObject:@"stadiums" forKey:@"array"];
-	[subsection setObject:@"stadiumSearchView" forKey:@"view"];
-	[subsection setObject:@"1" forKey:@"subsection"];
-	[subsections addObject:subsection];
-	[subsection release];
-	subsection = [[NSMutableDictionary alloc] init];
-	[subsection setObject:@"Stadium Changes" forKey:@"title"];
-	[subsection setObject:@"stadiumchange" forKey:@"image"];
-	[subsection setObject:@"stadiumChanges" forKey:@"array"];
-	[subsection setObject:@"stadiumChangeSearchView" forKey:@"view"];
-	[subsection setObject:@"1" forKey:@"subsection"];
-	[subsections addObject:subsection];
-	[subsection release];
-	subsection = [[NSMutableDictionary alloc] init];
-	[subsection setObject:@"Weather" forKey:@"title"];
-	[subsection setObject:@"weather" forKey:@"image"];
-	[subsection setObject:@"weather" forKey:@"array"];
-	[subsection setObject:@"weatherSearchView" forKey:@"view"];
-	[subsection setObject:@"1" forKey:@"subsection"];
-	[subsections addObject:subsection];
-	[subsection release];
-	
-	section = [[NSMutableDictionary alloc] init];
-	[section setObject:@"Entities" forKey:@"title"];
-	[section setObject:subsections forKey:@"subsections"];
-	[sections addObject:section];
-	[subsections release];
-	[section release];
-	
-	subsections = [[NSMutableArray alloc] init];
-	section = [[NSMutableDictionary alloc] init];
-	[section setObject:@"Favourites" forKey:@"title"];
-	[sections addObject:section];
-	[section setObject:subsections forKey:@"subsections"];
-	[section release];
-	
-	section = [[NSMutableDictionary alloc] init];
-	[section setObject:@"Shortlists" forKey:@"title"];
-	[sections addObject:section];
-	[section release];
-	
 	return self;
 }
 
 - (void)dealloc
 {
-	[recentlyViewed release];
 	[selectedRows release];
-	[sections release];
-	[awardSections release];
-	[mediaSections release];
-	[clubSections release];
-	[personSections release];
-	
-	[entityIndexArray release];
-	[playerScoutResults release];
-	[clubScoutResults release];
-	[staffScoutResults release];
 	
 	[super dealloc];
 }
-
-- (void)awakeFromNib
-{	
-	SXOutlineViewCell *oCell = [[SXOutlineViewCell alloc] init];
-	
-	[[mainOutlineView tableColumnWithIdentifier:@"mainCol"] setDataCell:oCell];
-	
-	if (![mainOutlineView isItemExpanded:[mainOutlineView itemAtRow:0]] &&
-		[mainOutlineView isExpandable:[mainOutlineView itemAtRow:0]]) {
-		[mainOutlineView expandItem:[mainOutlineView itemAtRow:0]];
-	}
-}
-
-- (void)setFavourites
-{
-	
-}
-
-#pragma mark Outline View Delegate
-
-- (void)outlineViewSelectionDidChange:(NSNotification *)notification
-{
-	id oView = [notification object];
-	if ([oView selectedRow]==-1) { return; }
-	if ([[oView itemAtRow:[oView selectedRow]] objectForKey:@"favourite"]!=nil) {
-		if (![[NSApp delegate] dataLoaded]) { return; }
-		
-		SEL arraySelector = NSSelectorFromString([[oView itemAtRow:[oView selectedRow]] objectForKey:@"array"]);
-		
-		int row = [[[oView itemAtRow:[oView selectedRow]] objectForKey:@"row"] intValue];
-		if (row<[[[[NSApp delegate] valueForKeyPath:@"gameDB.database"] performSelector:arraySelector] count]) {
-			[self selectItem:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database"] performSelector:arraySelector] objectAtIndex:row]];
-		}
-	}
-	else if ([[oView itemAtRow:[oView selectedRow]] objectForKey:@"view"]!=nil) {
-		SEL viewSelector = NSSelectorFromString([[oView itemAtRow:[oView selectedRow]] objectForKey:@"view"]);
-		[mainContainer setContentView:[self performSelector:viewSelector]];
-	}
-}
-
-- (BOOL)outlineView:(NSOutlineView *)outlineView shouldEditTableColumn:(NSTableColumn *)tableColumn item:(id)item
-{
-	return FALSE;	 
-}
-
-- (BOOL)outlineView:(NSOutlineView *)outlineView isGroupItem:(id)item
-{
-	if ([[item objectForKey:@"groupItem"] boolValue]) { return TRUE; }
-	
-	return FALSE;
-}
-
-- (void)outlineView:(NSOutlineView *)outlineView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn item:(id)item
-{
-	[cell setColor:nil];
-	[cell setBackgroundColor:nil];
-	[cell setMenu:nil];
-	
-	if ([item objectForKey:@"image"]!=nil) {
-		[cell setImage:[NSImage imageNamed:[item objectForKey:@"image"]]];
-	}
-	else { [cell setImage:nil]; }
-	
-	if ([item objectForKey:@"subsection"]!=nil) {
-		[cell setIsChild:TRUE];
-	}
-	else { [cell setIsChild:FALSE]; }
-	
-	if ([item objectForKey:@"array"]!=nil &&
-		[item objectForKey:@"favourite"]==nil) {
-		int count = [[[NSApp delegate] valueForKeyPath:[NSString stringWithFormat:@"gameDB.database.%@",[item objectForKey:@"array"]]] count];
-		[cell setBadgeCount:count];
-	}
-	else { [cell setBadgeCount:0]; }
-	
-	[cell setText:[item objectForKey:@"title"]];
-}
-
-#pragma mark Outline View Data Source
-
-- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item
-{
-	if (item==nil) { return [sections objectAtIndex:index]; }
-	else if ([item objectForKey:@"subsections"]) {
-		return [[item objectForKey:@"subsections"] objectAtIndex:index];
-	}
-	return nil;
-}
-
-- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item
-{
-	if ([[item objectForKey:@"subsections"] count]>0) { return TRUE; }
-	
-	return FALSE;
-}
-
-- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item
-{
-	if (item==nil) { return [sections count]; }
-	else if ([item objectForKey:@"subsections"]) {
-		return [[item objectForKey:@"subsections"] count];
-	}
-	
-	return 0;
-}
-
-- (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item
-{
-	
-	return [item objectForKey:@"title"];
-}
-
-- (void)reloadOutlineView { [mainOutlineView reloadData]; }
 
 #pragma mark Table Delegate
 
 - (void)tableView:(NSTableView *)aTableView willDisplayCell:(id)aCell forTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
 {
-//	NSMenu *rightClick = [[NSMenu alloc] initWithTitle:@"Right Click Menu"];
-//	NSMenuItem *viewItem
-	
-	if ([[aCell className] isEqualToString:@"SXOutlineViewCell"]) { 
-		[aCell setBadgeCount:0];
-		[aCell setText:[[aCell stringValue] copy]];
-		[aCell setBackgroundColor:nil];
-		[aCell setColor:nil];
-		[aCell setIsChild:TRUE];
-	}
-	if ([aCell respondsToSelector: @selector(setImage:)]) { [aCell setImage:nil]; }
-	
-	if (aTableView==awardTable) {
-		[aCell setDrawsBackground:YES];
-		[aCell setBackgroundColor:[[[[awardController arrangedObjects] objectAtIndex:rowIndex] colour] backgroundColour]];
-		[aCell setTextColor:[[[[awardController arrangedObjects] objectAtIndex:rowIndex] colour] foregroundColour]];
-	}
-	else if (aTableView==clubKitTable) {
+	/*
+	if (aTableView==clubKitTable) {
 		if ([[aTableColumn identifier] isEqualToString:@"compcol"]) {
 			int UID = [[aCell stringValue] intValue];
 		
@@ -394,57 +66,6 @@ editorViewController, mainWindow;
 				[aCell setStringValue:[[[[[NSApp delegate] langDB] compLang] objectForKey:[NSNumber numberWithInt:UID]] objectForKey:@"name"]];
 			}
 		}
-	}
-	else if (aTableView==cityTable) {
-//		viewItem = [[NSMenuItem alloc] initWithTitle:@"View" action:@selector(performCityMenuAction:) keyEquivalent:@""];
-//		[viewItem setTarget:self];
-//		[viewItem setImage:[NSImage imageNamed:@"View"]];
-//		[rightClick addItem:viewItem];
-//		[viewItem release];
-	}
-	else if (aTableView==clubTable) {
-	/*	[aCell setDrawsBackground:YES];
-		if ([[[[[clubController arrangedObjects] objectAtIndex:rowIndex] teamContainer] colours] count] > 0) {
-			[aCell setBackgroundColor:[[[[[[clubController arrangedObjects] objectAtIndex:rowIndex] teamContainer] colours] objectAtIndex:0] backgroundColour]];
-			if ([[[[[[clubController arrangedObjects] objectAtIndex:rowIndex] teamContainer] colours] objectAtIndex:0] numberColour]==
-				[[[[[[clubController arrangedObjects] objectAtIndex:rowIndex] teamContainer] colours] objectAtIndex:0] backgroundColour]) {
-				[aCell setTextColor:[[[[[[clubController arrangedObjects] objectAtIndex:rowIndex] teamContainer] colours] objectAtIndex:0] foregroundColour]];
-			}
-			else {
-				[aCell setTextColor:[[[[[[clubController arrangedObjects] objectAtIndex:rowIndex] teamContainer] colours] objectAtIndex:0] numberColour]];
-			}
-		}
-		else {
-			[aCell setBackgroundColor:[NSColor whiteColor]];
-			[aCell setTextColor:[NSColor blackColor]];
-		}
-//		viewItem = [[NSMenuItem alloc] initWithTitle:@"View" action:@selector(performClubMenuAction:) keyEquivalent:@""];
-//		[viewItem setTarget:self];
-//		[viewItem setImage:[NSImage imageNamed:@"View"]];
-//		[rightClick addItem:viewItem];
-//		[viewItem release];
-		
-/*		if ([[[[[clubController arrangedObjects] objectAtIndex:rowIndex] teamContainer] colours] count] > 0) {
-			[aCell setBackgroundColor:[[[[[[clubController arrangedObjects] objectAtIndex:rowIndex] teamContainer] colours] objectAtIndex:0] backgroundColour]];
-			if ([[[[[[clubController arrangedObjects] objectAtIndex:rowIndex] teamContainer] colours] objectAtIndex:0] numberColour]==
-				[[[[[[clubController arrangedObjects] objectAtIndex:rowIndex] teamContainer] colours] objectAtIndex:0] backgroundColour]) {
-				[aCell setColor:[[[[[[clubController arrangedObjects] objectAtIndex:rowIndex] teamContainer] colours] objectAtIndex:0] foregroundColour]];
-			}
-			else {
-				[aCell setColor:[[[[[[clubController arrangedObjects] objectAtIndex:rowIndex] teamContainer] colours] objectAtIndex:0] numberColour]];
-			}
-		}
-*/	}
-	else if (aTableView==competitionTable) {
-//		viewItem = [[NSMenuItem alloc] initWithTitle:@"View" action:@selector(performCompetitionMenuAction:) keyEquivalent:@""];
-//		[viewItem setTarget:self];
-//		[viewItem setImage:[NSImage imageNamed:@"View"]];
-//		[rightClick addItem:viewItem];
-		[aCell setDrawsBackground:YES];
-		[aCell setBackgroundColor:[[[[competitionController arrangedObjects] objectAtIndex:rowIndex] colour] backgroundColour]];
-		[aCell setTextColor:[[[[competitionController arrangedObjects] objectAtIndex:rowIndex] colour] foregroundColour]];
-		
-//		[viewItem release];
 	}
 	else if ([[aTableColumn identifier] isEqualToString:@"statuscolumn"]) {
 			if ([[[[[peopleController arrangedObjects] objectAtIndex:rowIndex] playerData] injuries] count] > 0) {
@@ -563,10 +184,12 @@ editorViewController, mainWindow;
 			else { [aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiums"] objectAtIndex:UID] name]]; }
 		}
 	}
+	 */
 }
 
 - (void)selectItem:(id)object
 {
+	/*
 	NSLog(@"selecting item...");
 	
 	NSString *lowerClass;
@@ -905,145 +528,7 @@ editorViewController, mainWindow;
 	// deselect outline view rows
 	[mainOutlineView deselectAll:self];
 	NSLog(@"done select");
-}
-
-- (void)addToFavourites:(id)sender
-{
-	if (!sender) { return; }
-	
-	NSMutableDictionary *newFavourite = [[NSMutableDictionary alloc] init];
-	
-	if ([[sender className] isEqualToString:@"Award"]) {
-		[newFavourite setObject:@"Award-s" forKey:@"image"];
-		[newFavourite setObject:@"awards" forKey:@"array"];
-		[newFavourite setObject:[NSNumber numberWithInt:[sender rowID]] forKey:@"row"];
-		[newFavourite setObject:[sender name] forKey:@"title"];
-	}
-	else if ([[sender className] isEqualToString:@"City"]) {
-		[newFavourite setObject:@"City-s" forKey:@"image"];
-		[newFavourite setObject:@"cities" forKey:@"array"];
-		[newFavourite setObject:[NSNumber numberWithInt:[sender rowID]] forKey:@"row"];
-		[newFavourite setObject:[sender name] forKey:@"title"];
-	}
-	else if ([[sender className] isEqualToString:@"Club"]) {
-		[newFavourite setObject:@"Club-s" forKey:@"image"];
-		[newFavourite setObject:@"clubs" forKey:@"array"];
-		[newFavourite setObject:[NSNumber numberWithInt:[sender rowID]] forKey:@"row"];
-		[newFavourite setObject:[sender name] forKey:@"title"];
-	}
-	else if ([[sender className] isEqualToString:@"Competition"]) {
-		[newFavourite setObject:@"Competition-s" forKey:@"image"];
-		[newFavourite setObject:@"competitions" forKey:@"array"];
-		[newFavourite setObject:[NSNumber numberWithInt:[sender rowID]] forKey:@"row"];
-		[newFavourite setObject:[sender name] forKey:@"title"];
-	}
-	else if ([[sender className] isEqualToString:@"Continent"]) {
-		[newFavourite setObject:@"Continent-s" forKey:@"image"];
-		[newFavourite setObject:@"continents" forKey:@"array"];
-		[newFavourite setObject:[NSNumber numberWithInt:[sender rowID]] forKey:@"row"];
-		[newFavourite setObject:[sender name] forKey:@"title"];
-	}
-	else if ([[sender className] isEqualToString:@"Currency"]) {
-		[newFavourite setObject:@"Currency-s" forKey:@"image"];
-		[newFavourite setObject:@"currencies" forKey:@"array"];
-		[newFavourite setObject:[NSNumber numberWithInt:[sender rowID]] forKey:@"row"];
-		[newFavourite setObject:[sender name] forKey:@"title"];
-	}
-	else if ([[sender className] isEqualToString:@"Injury"]) {
-		[newFavourite setObject:@"Injury-s" forKey:@"image"];
-		[newFavourite setObject:@"injuries" forKey:@"array"];
-		[newFavourite setObject:[NSNumber numberWithInt:[sender rowID]] forKey:@"row"];
-		[newFavourite setObject:[sender name] forKey:@"title"];
-	}
-	else if ([[sender className] isEqualToString:@"Language"]) {
-		[newFavourite setObject:@"Language-s" forKey:@"image"];
-		[newFavourite setObject:@"languages" forKey:@"array"];
-		[newFavourite setObject:[NSNumber numberWithInt:[sender rowID]] forKey:@"row"];
-		[newFavourite setObject:[sender name] forKey:@"title"];
-	}
-	else if ([[sender className] isEqualToString:@"LocalArea"]) {
-		[newFavourite setObject:@"LocalArea-s" forKey:@"image"];
-		[newFavourite setObject:@"localAreas" forKey:@"array"];
-		[newFavourite setObject:[NSNumber numberWithInt:[sender rowID]] forKey:@"row"];
-		[newFavourite setObject:[sender name] forKey:@"title"];
-	}
-	else if ([[sender className] isEqualToString:@"LocalArea"]) {
-		[newFavourite setObject:@"Media-s" forKey:@"image"];
-		[newFavourite setObject:@"media" forKey:@"array"];
-		[newFavourite setObject:[NSNumber numberWithInt:[sender rowID]] forKey:@"row"];
-		[newFavourite setObject:[sender name] forKey:@"title"];
-	}
-	else if ([[sender className] isEqualToString:@"LocalArea"]) {
-		[newFavourite setObject:@"Nation-s" forKey:@"image"];
-		[newFavourite setObject:@"nations" forKey:@"array"];
-		[newFavourite setObject:[NSNumber numberWithInt:[sender rowID]] forKey:@"row"];
-		[newFavourite setObject:[sender name] forKey:@"title"];
-	}
-	else if ([[sender className] isEqualToString:@"Person"]) {
-		[newFavourite setObject:@"Person-s" forKey:@"image"];
-		[newFavourite setObject:@"people" forKey:@"array"];
-		[newFavourite setObject:[NSNumber numberWithInt:[sender rowID]] forKey:@"row"];
-		[newFavourite setObject:[sender name] forKey:@"title"];
-	}
-	else if ([[sender className] isEqualToString:@"Sponsor"]) {
-		[newFavourite setObject:@"Sponsor-s" forKey:@"image"];
-		[newFavourite setObject:@"sponsors" forKey:@"array"];
-		[newFavourite setObject:[NSNumber numberWithInt:[sender rowID]] forKey:@"row"];
-		[newFavourite setObject:[sender name] forKey:@"title"];
-	}
-	else if ([[sender className] isEqualToString:@"Stadium"]) {
-		[newFavourite setObject:@"Stadium-s" forKey:@"image"];
-		[newFavourite setObject:@"stadiums" forKey:@"array"];
-		[newFavourite setObject:[NSNumber numberWithInt:[sender rowID]] forKey:@"row"];
-		[newFavourite setObject:[sender name] forKey:@"title"];
-	}
-	else if ([[sender className] isEqualToString:@"Stadium"]) {
-		[newFavourite setObject:@"Stadium-s" forKey:@"image"];
-		[newFavourite setObject:@"stadiumChanges" forKey:@"array"];
-		[newFavourite setObject:[NSNumber numberWithInt:[sender rowID]] forKey:@"row"];
-		[newFavourite setObject:[sender name] forKey:@"title"];
-	}
-	else if ([[sender className] isEqualToString:@"Weather"]) {
-		[newFavourite setObject:@"Weather-s" forKey:@"image"];
-		[newFavourite setObject:@"weather" forKey:@"array"];
-		[newFavourite setObject:[NSNumber numberWithInt:[sender rowID]] forKey:@"row"];
-		[newFavourite setObject:[sender name] forKey:@"title"];
-	}
-	[newFavourite setObject:[[NSApp delegate] gamePath] forKey:@"game"];
-	[newFavourite setObject:@"1" forKey:@"subsection"];
-	[newFavourite setObject:@"1" forKey:@"favourite"];
-	
-	// add to view
-	if ([[sections objectAtIndex:1] objectForKey:@"subsections"]!=nil) {
-		id item;
-		BOOL containsObject = FALSE;
-		NSEnumerator *oEnum = [[[sections objectAtIndex:1] objectForKey:@"subsections"] objectEnumerator];
-		while (item = [oEnum nextObject]) {
-			if ([[item objectForKey:@"array"] isEqualToString:[newFavourite objectForKey:@"array"]] &&
-				[[item objectForKey:@"row"] intValue] == [sender rowID] &&
-				[[item objectForKey:@"game"] isEqualToString:[[NSApp delegate] gamePath]]) {
-				containsObject = TRUE;
-			}
-		}
-		if (!containsObject) {
-			[[[sections objectAtIndex:1] objectForKey:@"subsections"] addObject:newFavourite];
-		}
-	}
-	else {
-		NSMutableArray *subsections = [[NSMutableArray alloc] init];
-		[subsections addObject:newFavourite];
-		[[sections objectAtIndex:1] setObject:subsections forKey:@"subsections"];
-		[subsections release];
-	}
-	
-	[newFavourite release];
-	
-	[self reloadOutlineView];
-}
-
--(IBAction)showGameInfo:(id)sender
-{
-	[mainContainer setContentView:gameInfoView];
+	*/
 }
 
 - (void)addRelationship:(id)sender
@@ -1074,7 +559,6 @@ editorViewController, mainWindow;
 	
 	[nationPickerObject performSelector:thisSelector withObject:[sender intValue]];
 	
-	[nationPicker closeSheet:self];
 }
 
 - (IBAction)showStadiumPicker:(id)sender
@@ -1100,7 +584,6 @@ editorViewController, mainWindow;
 	
 	[stadiumPickerObject performSelector:thisSelector withObject:[sender intValue]];
 	
-	[stadiumPicker closeSheet:self];
 }
 
 - (IBAction)showCompetitionPicker:(id)sender
@@ -1130,8 +613,6 @@ editorViewController, mainWindow;
 											 [competitionPickerSelector substringFromIndex:1]]);
 	
 	[competitionPickerObject performSelector:thisSelector withObject:[sender intValue]];
-	
-	[competitionPicker closeSheet:self];
 }
 
 - (IBAction)showCityPicker:(id)sender
@@ -1154,15 +635,13 @@ editorViewController, mainWindow;
 											 [[cityPickerSelector substringToIndex:1] capitalizedString],
 											 [cityPickerSelector substringFromIndex:1]]);
 	
-	[cityPickerObject performSelector:thisSelector withObject:[[[cityPickerController arrangedObjects] objectAtIndex:[cityPickerController selectionIndex]] rowID]];
-	
-	[cityPicker closeSheet:self];
+	[cityPickerObject performSelector:thisSelector withObject:[sender intValue]];
 }
 
 - (IBAction)showPersonPicker:(id)sender
 {
 	personPickerSelector = @"";
-	[[editorViewController personPicker] openSheet:self];
+	[[editorViewController peoplePicker] openSheet:self];
 	if ([sender tag]==1)		{ personPickerSelector = @"newJournalistID"; }
 	else if ([sender tag]==2)	{ personPickerSelector = @"newClientID"; }
 }	
@@ -1180,7 +659,6 @@ editorViewController, mainWindow;
 	
 	[personPickerObject performSelector:thisSelector withObject:[sender intValue]];
 	
-	[personPicker closeSheet:self];
 }
 
 - (IBAction)showMediaPicker:(id)sender
@@ -1204,7 +682,6 @@ editorViewController, mainWindow;
 	
 	[mediaPickerObject performSelector:thisSelector withObject:[sender intValue]];
 	
-	[mediaPicker closeSheet:self];
 }
 
 - (IBAction)deleteHistory:(id)sender { [[self mutableArrayValueForKey:@"recentlyViewed"] removeAllObjects]; }

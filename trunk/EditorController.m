@@ -35,10 +35,6 @@ selectedPerson, selectedSponsor, selectedStadium, selectedStadiumChange, selecte
 	[super dealloc];
 }
 
-- (void)showAwards:(id)sender
-{
-}
-
 - (void)selectSection:(int)newSection
 {
 	// leave without doing anything if it's an invalid section

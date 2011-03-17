@@ -59,12 +59,7 @@ Nation, Person, Sponsor, Stadium, StadiumChange, Weather;
 	NSMutableArray *searchResults;
 }
 
-- (void)showAwards:(id)sender;
-
 - (void)selectSection:(int)newSection;
-- (void)selectEntitySection:(id)sender;
-
-- (NSArray *)awardSectionStrings;
 
 @property(readwrite,assign) int currentSection;
 @property(readwrite,assign) Award *selectedAward;
