@@ -190,44 +190,7 @@
 - (void)selectItem:(id)object
 {
 	/*
-	NSLog(@"selecting item...");
-	
-	NSString *lowerClass;
-	
-	if ([[object className] isEqualToString:@"StadiumChange"]) {
-		lowerClass = @"stadiumChange";
-	}
-	else if ([[object className] isEqualToString:@"LocalArea"]) {
-		lowerClass = @"localArea";
-	}
-	else if ([[object className] isEqualToString:@"Person"]) {
-		lowerClass = @"people";
-	}
-	else { lowerClass = [[object className] lowercaseString]; }
-	
-	// add object to recently viewed and remove previous entry if it exists
-	[[self mutableArrayValueForKey:@"recentlyViewed"] removeObject:object];
-	[[self mutableArrayValueForKey:@"recentlyViewed"] insertObject:object atIndex:0];
-	
-	NSLog(@"before controller content reset");
-	
-	// reset the controllers contents
-	SEL controllerSelector = NSSelectorFromString([NSString stringWithFormat:@"%@Controller",lowerClass]);
-//	NSSortDescriptor *rowIDDescriptor = [[NSSortDescriptor alloc] initWithKey:@"rowID" ascending:YES];
-	
-	NSLog(@"resetting predicate");
-	[[self performSelector:controllerSelector] setFilterPredicate:nil];
-	
-	[[self performSelector:controllerSelector] setSelectedObjects:[NSArray arrayWithObject:object]];
-	
-	NSLog(@"before setview");
-	// set the view
-	SEL viewSelector = NSSelectorFromString([NSString stringWithFormat:@"%@GeneralView",lowerClass]);
-	[mainContainer setContentView:[self performSelector:viewSelector]];
-	
-	NSLog(@"after setview");
-	
-	// set up scope bars
+		// set up scope bars
 	if ([[object className] isEqualToString:@"Person"]) {
 		// setup scope bar
 		NSMutableArray *scopeBarItems = [[NSMutableArray alloc] init];

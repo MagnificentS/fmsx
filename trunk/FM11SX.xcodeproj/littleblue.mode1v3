@@ -230,8 +230,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -292,13 +290,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>497</integer>
-									<integer>475</integer>
+									<integer>427</integer>
+									<integer>425</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 8175}, {229, 546}}</string>
+							<string>{{0, 7106}, {229, 546}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -330,6 +328,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -347,7 +347,7 @@
 										<key>_historyCapacity</key>
 										<integer>20</integer>
 										<key>bookmark</key>
-										<string>FBAB2A3A13324DB2003FA548</string>
+										<string>FBAB2A40133262BE003FA548</string>
 										<key>history</key>
 										<array>
 											<string>FBDBABE1132FF0D400FF22B8</string>
@@ -358,7 +358,6 @@
 											<string>FB887D9E1331519C00577E47</string>
 											<string>FBAB28E1133220A3003FA548</string>
 											<string>FBAB28E3133220A3003FA548</string>
-											<string>FBAB298313323617003FA548</string>
 											<string>FBAB29CD13323FAF003FA548</string>
 											<string>FBAB29DF13324390003FA548</string>
 											<string>FBAB29E013324390003FA548</string>
@@ -366,10 +365,11 @@
 											<string>FBAB2A0A13324902003FA548</string>
 											<string>FBAB2A2913324CE3003FA548</string>
 											<string>FBAB2A2A13324CE3003FA548</string>
-											<string>FBAB2A2B13324CE3003FA548</string>
 											<string>FBAB2A2C13324CE3003FA548</string>
 											<string>FBAB2A2D13324CE3003FA548</string>
-											<string>FBAB2A3913324DB2003FA548</string>
+											<string>FBAB2A3D133262BE003FA548</string>
+											<string>FBAB2A3E133262BE003FA548</string>
+											<string>FBAB2A3F133262BE003FA548</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -567,6 +567,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>FBAB2A41133262BE003FA548</string>
 		<string>FBAB28EF133220A3003FA548</string>
 		<string>FBAB28F0133220A3003FA548</string>
 		<string>1CD10A99069EF8BA00B06720</string>

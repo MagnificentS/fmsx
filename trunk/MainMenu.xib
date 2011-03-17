@@ -11,8 +11,7 @@
 			<string key="com.brandonwalkin.BWToolkit">1.2.5</string>
 		</dictionary>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-			<integer value="26913"/>
-			<integer value="28007"/>
+			<integer value="26837"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -888,190 +887,6 @@
 				</array>
 				<string key="NSName">_NSMainMenu</string>
 			</object>
-			<object class="NSArrayController" id="1066798257">
-				<bool key="NSEditable">YES</bool>
-				<object class="_NSManagedProxy" key="_NSManagedProxy"/>
-				<bool key="NSAvoidsEmptySelection">YES</bool>
-				<bool key="NSPreservesSelection">YES</bool>
-				<bool key="NSSelectsInsertedObjects">YES</bool>
-				<bool key="NSFilterRestrictsInsertion">YES</bool>
-				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
-			</object>
-			<object class="NSView" id="753689265">
-				<reference key="NSNextResponder"/>
-				<int key="NSvFlags">256</int>
-				<array class="NSMutableArray" key="NSSubviews">
-					<object class="NSBox" id="57527316">
-						<reference key="NSNextResponder" ref="753689265"/>
-						<int key="NSvFlags">12</int>
-						<array class="NSMutableArray" key="NSSubviews">
-							<object class="NSView" id="156574143">
-								<reference key="NSNextResponder" ref="57527316"/>
-								<int key="NSvFlags">256</int>
-								<array class="NSMutableArray" key="NSSubviews">
-									<object class="BWGradientBox" id="404439052">
-										<reference key="NSNextResponder" ref="156574143"/>
-										<int key="NSvFlags">268</int>
-										<array class="NSMutableArray" key="NSSubviews">
-											<object class="NSImageView" id="581802578">
-												<reference key="NSNextResponder" ref="404439052"/>
-												<int key="NSvFlags">268</int>
-												<set class="NSMutableSet" key="NSDragTypes">
-													<string>Apple PDF pasteboard type</string>
-													<string>Apple PICT pasteboard type</string>
-													<string>Apple PNG pasteboard type</string>
-													<string>NSFilenamesPboardType</string>
-													<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
-													<string>NeXT TIFF v4.0 pasteboard type</string>
-												</set>
-												<string key="NSFrame">{{58, 0}, {64, 64}}</string>
-												<reference key="NSSuperview" ref="404439052"/>
-												<bool key="NSEnabled">YES</bool>
-												<object class="NSImageCell" key="NSCell" id="330980658">
-													<int key="NSCellFlags">130560</int>
-													<int key="NSCellFlags2">33554432</int>
-													<object class="NSCustomResource" key="NSContents">
-														<string key="NSClassName">NSImage</string>
-														<string key="NSResourceName">award</string>
-													</object>
-													<int key="NSAlign">0</int>
-													<int key="NSScale">2</int>
-													<int key="NSStyle">0</int>
-													<bool key="NSAnimates">NO</bool>
-												</object>
-												<bool key="NSEditable">YES</bool>
-											</object>
-											<object class="NSTextField" id="342120609">
-												<reference key="NSNextResponder" ref="404439052"/>
-												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{17, 64}, {146, 17}}</string>
-												<reference key="NSSuperview" ref="404439052"/>
-												<bool key="NSEnabled">YES</bool>
-												<object class="NSTextFieldCell" key="NSCell" id="711742164">
-													<int key="NSCellFlags">68288064</int>
-													<int key="NSCellFlags2">138413056</int>
-													<string key="NSContents">Competition Histories</string>
-													<object class="NSFont" key="NSSupport" id="849492307">
-														<string key="NSName">LucidaGrande</string>
-														<double key="NSSize">13</double>
-														<int key="NSfFlags">1044</int>
-													</object>
-													<reference key="NSControlView" ref="342120609"/>
-													<object class="NSColor" key="NSBackgroundColor" id="81019784">
-														<int key="NSColorSpace">6</int>
-														<string key="NSCatalogName">System</string>
-														<string key="NSColorName">controlColor</string>
-														<object class="NSColor" key="NSColor">
-															<int key="NSColorSpace">3</int>
-															<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
-														</object>
-													</object>
-													<object class="NSColor" key="NSTextColor" id="25918122">
-														<int key="NSColorSpace">6</int>
-														<string key="NSCatalogName">System</string>
-														<string key="NSColorName">controlTextColor</string>
-														<object class="NSColor" key="NSColor">
-															<int key="NSColorSpace">3</int>
-															<bytes key="NSWhite">MAA</bytes>
-														</object>
-													</object>
-												</object>
-											</object>
-											<object class="NSTextField" id="828288561">
-												<reference key="NSNextResponder" ref="404439052"/>
-												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{55, 89}, {70, 22}}</string>
-												<reference key="NSSuperview" ref="404439052"/>
-												<bool key="NSEnabled">YES</bool>
-												<object class="NSTextFieldCell" key="NSCell" id="392758295">
-													<int key="NSCellFlags">-2070806976</int>
-													<int key="NSCellFlags2">138413056</int>
-													<string key="NSContents">1234567</string>
-													<reference key="NSSupport" ref="849492307"/>
-													<reference key="NSControlView" ref="828288561"/>
-													<bool key="NSDrawsBackground">YES</bool>
-													<object class="NSColor" key="NSBackgroundColor">
-														<int key="NSColorSpace">2</int>
-														<bytes key="NSRGB">MSAwLjk0OTAxOTY3MDUgMC42NzA1ODgyNTQ5AA</bytes>
-													</object>
-													<object class="NSColor" key="NSTextColor">
-														<int key="NSColorSpace">1</int>
-														<bytes key="NSRGB">MC41ODY5NTY1MjE3IDAuNTg2OTU2NTIxNyAwLjU4Njk1NjUyMTcAA</bytes>
-													</object>
-												</object>
-											</object>
-										</array>
-										<string key="NSFrameSize">{176, 116}</string>
-										<reference key="NSSuperview" ref="156574143"/>
-										<object class="NSColor" key="BWGBFillStartingColor">
-											<int key="NSColorSpace">1</int>
-											<bytes key="NSRGB">MSAwLjkyMzE5NDQ5NDkgMC42NTk0MjkyNzg0AA</bytes>
-										</object>
-										<object class="NSColor" key="BWGBFillEndingColor">
-											<int key="NSColorSpace">2</int>
-											<bytes key="NSRGB">MSAwLjg1NDkwMjAyOSAwAA</bytes>
-										</object>
-										<object class="NSColor" key="BWGBFillColor">
-											<int key="NSColorSpace">1</int>
-											<bytes key="NSRGB">MC42MTk2MDA4NjE0IDAuNjYxMTkyMDA1MSAwLjcxOTM4Nzc1NTEAA</bytes>
-										</object>
-										<object class="NSColor" key="BWGBTopBorderColor">
-											<int key="NSColorSpace">1</int>
-											<bytes key="NSRGB">MC41NTc2NjQ2NjM5IDAuNTk4ODkyNDg5OSAwLjY0Mjg1NzE0MjkAA</bytes>
-										</object>
-										<object class="NSColor" key="BWGBBottomBorderColor">
-											<int key="NSColorSpace">1</int>
-											<bytes key="NSRGB">MC40Mjc4NDM2NjA5IDAuNDc5NDI1MTUwOSAwLjUyMDQwODE2MzMAA</bytes>
-										</object>
-										<bool key="BWGBHasTopBorder">NO</bool>
-										<bool key="BWGBHasBottomBorder">NO</bool>
-										<bool key="BWGBHasGradient">YES</bool>
-										<bool key="BWGBHasFillColor">NO</bool>
-										<float key="BWGBTopInsetAlpha">0.0</float>
-										<float key="BWGBBottomInsetAlpha">0.0</float>
-									</object>
-								</array>
-								<string key="NSFrame">{{1, 1}, {176, 116}}</string>
-								<reference key="NSSuperview" ref="57527316"/>
-							</object>
-						</array>
-						<string key="NSFrame">{{10, 10}, {178, 118}}</string>
-						<reference key="NSSuperview" ref="753689265"/>
-						<string key="NSOffsets">{0, 0}</string>
-						<object class="NSTextFieldCell" key="NSTitleCell">
-							<int key="NSCellFlags">67239424</int>
-							<int key="NSCellFlags2">0</int>
-							<string key="NSContents">Box</string>
-							<object class="NSFont" key="NSSupport" id="26">
-								<string key="NSName">LucidaGrande</string>
-								<double key="NSSize">11</double>
-								<int key="NSfFlags">3100</int>
-							</object>
-							<object class="NSColor" key="NSBackgroundColor" id="611949771">
-								<int key="NSColorSpace">6</int>
-								<string key="NSCatalogName">System</string>
-								<string key="NSColorName">textBackgroundColor</string>
-								<object class="NSColor" key="NSColor">
-									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MQA</bytes>
-								</object>
-							</object>
-							<object class="NSColor" key="NSTextColor">
-								<int key="NSColorSpace">3</int>
-								<bytes key="NSWhite">MCAwLjgwMDAwMDAxMTkAA</bytes>
-							</object>
-						</object>
-						<reference key="NSContentView" ref="156574143"/>
-						<int key="NSBorderType">1</int>
-						<int key="NSBoxType">4</int>
-						<int key="NSTitlePosition">0</int>
-						<bool key="NSTransparent">NO</bool>
-					</object>
-				</array>
-				<string key="NSFrameSize">{198, 138}</string>
-				<reference key="NSSuperview"/>
-			</object>
-			<object class="NSCollectionViewItem" id="44487548"/>
 			<object class="NSWindowTemplate" id="134351275">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
@@ -1385,13 +1200,25 @@
 																<int key="NSCellFlags">68288064</int>
 																<int key="NSCellFlags2">71435264</int>
 																<string key="NSContents">Status</string>
-																<reference key="NSSupport" ref="26"/>
+																<object class="NSFont" key="NSSupport" id="26">
+																	<string key="NSName">LucidaGrande</string>
+																	<double key="NSSize">11</double>
+																	<int key="NSfFlags">3100</int>
+																</object>
 																<reference key="NSControlView" ref="207776740"/>
 																<object class="NSColor" key="NSBackgroundColor">
 																	<int key="NSColorSpace">3</int>
 																	<bytes key="NSWhite">MCAwLjc0MDAwMDAwOTUAA</bytes>
 																</object>
-																<reference key="NSTextColor" ref="25918122"/>
+																<object class="NSColor" key="NSTextColor" id="25918122">
+																	<int key="NSColorSpace">6</int>
+																	<string key="NSCatalogName">System</string>
+																	<string key="NSColorName">controlTextColor</string>
+																	<object class="NSColor" key="NSColor">
+																		<int key="NSColorSpace">3</int>
+																		<bytes key="NSWhite">MAA</bytes>
+																	</object>
+																</object>
 															</object>
 														</object>
 													</array>
@@ -1407,7 +1234,15 @@
 												<int key="NSCellFlags2">0</int>
 												<string key="NSContents">Box</string>
 												<reference key="NSSupport" ref="26"/>
-												<reference key="NSBackgroundColor" ref="611949771"/>
+												<object class="NSColor" key="NSBackgroundColor" id="611949771">
+													<int key="NSColorSpace">6</int>
+													<string key="NSCatalogName">System</string>
+													<string key="NSColorName">textBackgroundColor</string>
+													<object class="NSColor" key="NSColor">
+														<int key="NSColorSpace">3</int>
+														<bytes key="NSWhite">MQA</bytes>
+													</object>
+												</object>
 												<object class="NSColor" key="NSTextColor">
 													<int key="NSColorSpace">3</int>
 													<bytes key="NSWhite">MCAwLjgwMDAwMDAxMTkAA</bytes>
@@ -1479,7 +1314,11 @@
 							<int key="NSCellFlags">343014976</int>
 							<int key="NSCellFlags2">268436480</int>
 							<string key="NSContents"/>
-							<reference key="NSSupport" ref="849492307"/>
+							<object class="NSFont" key="NSSupport" id="849492307">
+								<string key="NSName">LucidaGrande</string>
+								<double key="NSSize">13</double>
+								<int key="NSfFlags">1044</int>
+							</object>
 							<reference key="NSControlView" ref="377817220"/>
 							<bool key="NSDrawsBackground">YES</bool>
 							<int key="NSTextBezelStyle">1</int>
@@ -1540,7 +1379,15 @@
 											<string key="NSContents">Award</string>
 											<reference key="NSSupport" ref="849492307"/>
 											<reference key="NSControlView" ref="109438941"/>
-											<reference key="NSBackgroundColor" ref="81019784"/>
+											<object class="NSColor" key="NSBackgroundColor" id="81019784">
+												<int key="NSColorSpace">6</int>
+												<string key="NSCatalogName">System</string>
+												<string key="NSColorName">controlColor</string>
+												<object class="NSColor" key="NSColor">
+													<int key="NSColorSpace">3</int>
+													<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
+												</object>
+											</object>
 											<object class="NSColor" key="NSTextColor" id="434296707">
 												<int key="NSColorSpace">1</int>
 												<bytes key="NSRGB">MCAwIDAAA</bytes>
@@ -3510,30 +3357,6 @@
 					<int key="connectionID">26896</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">view</string>
-						<reference key="source" ref="44487548"/>
-						<reference key="destination" ref="753689265"/>
-					</object>
-					<int key="connectionID">26915</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">contentArray: entityIndexArray</string>
-						<reference key="source" ref="1066798257"/>
-						<reference key="destination" ref="716969148"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="1066798257"/>
-							<reference key="NSDestination" ref="716969148"/>
-							<string key="NSLabel">contentArray: entityIndexArray</string>
-							<string key="NSBinding">contentArray</string>
-							<string key="NSKeyPath">entityIndexArray</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">26919</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">selectScoutView:</string>
 						<reference key="source" ref="716969148"/>
@@ -4053,54 +3876,6 @@
 						<reference key="destination" ref="940160176"/>
 					</object>
 					<int key="connectionID">28010</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: representedObject.title</string>
-						<reference key="source" ref="342120609"/>
-						<reference key="destination" ref="44487548"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="342120609"/>
-							<reference key="NSDestination" ref="44487548"/>
-							<string key="NSLabel">value: representedObject.title</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">representedObject.title</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">28024</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: representedObject.image</string>
-						<reference key="source" ref="581802578"/>
-						<reference key="destination" ref="44487548"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="581802578"/>
-							<reference key="NSDestination" ref="44487548"/>
-							<string key="NSLabel">value: representedObject.image</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">representedObject.image</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">28025</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: representedObject.count</string>
-						<reference key="source" ref="828288561"/>
-						<reference key="destination" ref="44487548"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="828288561"/>
-							<reference key="NSDestination" ref="44487548"/>
-							<string key="NSLabel">value: representedObject.count</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">representedObject.count</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">28026</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -4988,25 +4763,6 @@
 						<int key="objectID">26880</int>
 						<reference key="object" ref="834028811"/>
 						<reference key="parent" ref="756461202"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">26912</int>
-						<reference key="object" ref="44487548"/>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">26913</int>
-						<reference key="object" ref="753689265"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="57527316"/>
-						</array>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">26916</int>
-						<reference key="object" ref="1066798257"/>
-						<reference key="parent" ref="0"/>
-						<string key="objectName">Entity Collection View</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">26946</int>
@@ -6164,63 +5920,6 @@
 						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="363112275"/>
 					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">28016</int>
-						<reference key="object" ref="57527316"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="404439052"/>
-						</array>
-						<reference key="parent" ref="753689265"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">28017</int>
-						<reference key="object" ref="404439052"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="828288561"/>
-							<reference ref="581802578"/>
-							<reference ref="342120609"/>
-						</array>
-						<reference key="parent" ref="57527316"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">28018</int>
-						<reference key="object" ref="828288561"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="392758295"/>
-						</array>
-						<reference key="parent" ref="404439052"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">28019</int>
-						<reference key="object" ref="581802578"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="330980658"/>
-						</array>
-						<reference key="parent" ref="404439052"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">28020</int>
-						<reference key="object" ref="342120609"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="711742164"/>
-						</array>
-						<reference key="parent" ref="404439052"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">28021</int>
-						<reference key="object" ref="711742164"/>
-						<reference key="parent" ref="342120609"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">28022</int>
-						<reference key="object" ref="330980658"/>
-						<reference key="parent" ref="581802578"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">28023</int>
-						<reference key="object" ref="392758295"/>
-						<reference key="parent" ref="828288561"/>
-					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -6294,9 +5993,9 @@
 				<integer value="1" key="245.ImportedFromIB2"/>
 				<string key="246.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="246.ImportedFromIB2"/>
-				<string key="26837.IBEditorWindowLastContentRect">{{337, 5}, {1152, 768}}</string>
+				<string key="26837.IBEditorWindowLastContentRect">{{592, -10}, {1152, 768}}</string>
 				<string key="26837.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="26837.IBWindowTemplateEditedContentRect">{{337, 5}, {1152, 768}}</string>
+				<string key="26837.IBWindowTemplateEditedContentRect">{{592, -10}, {1152, 768}}</string>
 				<integer value="1" key="26837.ImportedFromIB2"/>
 				<boolean value="YES" key="26837.NSWindowTemplate.visibleAtLaunch"/>
 				<integer value="1" key="26837.windowTemplate.hasMinSize"/>
@@ -6312,8 +6011,6 @@
 				<string key="26875.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="26876.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="26877.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="26913.IBEditorWindowLastContentRect">{{400, 465}, {198, 138}}</string>
-				<string key="26916.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="26946.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="27742.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="27743.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -6481,14 +6178,6 @@
 				<string key="27996.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="28004.IBPluginDependency">com.brandonwalkin.BWToolkit</string>
 				<string key="28007.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="28016.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="28017.IBPluginDependency">com.brandonwalkin.BWToolkit</string>
-				<string key="28018.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="28019.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="28020.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="28021.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="28022.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="28023.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2878.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="29.IBEditorWindowLastContentRect">{{351, 816}, {415, 20}}</string>
 				<string key="29.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -6584,8 +6273,6 @@
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="addRelationship:">id</string>
-						<string key="addToFavourites:">id</string>
-						<string key="deleteHistory:">id</string>
 						<string key="pickCity:">id</string>
 						<string key="pickCompetition:">id</string>
 						<string key="pickMedia:">id</string>
@@ -6603,7 +6290,6 @@
 						<string key="setStadiumPickerObject:">id</string>
 						<string key="showCityPicker:">id</string>
 						<string key="showCompetitionPicker:">id</string>
-						<string key="showGameInfo:">id</string>
 						<string key="showMediaPicker:">id</string>
 						<string key="showNationPicker:">id</string>
 						<string key="showPersonPicker:">id</string>
@@ -6612,14 +6298,6 @@
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="addRelationship:">
 							<string key="name">addRelationship:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="addToFavourites:">
-							<string key="name">addToFavourites:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="deleteHistory:">
-							<string key="name">deleteHistory:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="pickCity:">
@@ -6690,10 +6368,6 @@
 							<string key="name">showCompetitionPicker:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="showGameInfo:">
-							<string key="name">showGameInfo:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="showMediaPicker:">
 							<string key="name">showMediaPicker:</string>
 							<string key="candidateClassName">id</string>
@@ -6713,515 +6387,48 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="IDLookupView">NSView</string>
-						<string key="actualNonPlayerView">NSView</string>
-						<string key="actualPersonView">NSView</string>
-						<string key="actualPlayerView">NSView</string>
-						<string key="actualStaffView">NSView</string>
-						<string key="agentView">NSView</string>
-						<string key="awardContainer">NSBox</string>
-						<string key="awardController">NSArrayController</string>
-						<string key="awardGeneralView">NSView</string>
-						<string key="awardHeaderBackground">BWGradientBox</string>
-						<string key="awardMainView">NSView</string>
-						<string key="awardRulesView">NSView</string>
-						<string key="awardScopeBar">MGScopeBar</string>
-						<string key="awardSearchView">NSView</string>
-						<string key="awardTable">NSTableView</string>
-						<string key="cityController">NSArrayController</string>
-						<string key="cityGeneralView">NSView</string>
 						<string key="cityPicker">BWSheetController</string>
-						<string key="cityPickerController">NSArrayController</string>
 						<string key="cityPickerObject">id</string>
-						<string key="citySearchView">NSView</string>
-						<string key="cityTable">NSTableView</string>
-						<string key="clubAlternateKitView">NSView</string>
-						<string key="clubAlternateKitsTable">NSTableView</string>
-						<string key="clubCoefficientView">NSView</string>
-						<string key="clubContainer">NSBox</string>
-						<string key="clubController">NSArrayController</string>
-						<string key="clubFacilitiesView">NSView</string>
-						<string key="clubFinanceView">NSView</string>
-						<string key="clubGeneralView">NSView</string>
-						<string key="clubHeaderBackground">BWGradientBox</string>
-						<string key="clubIDPCView">NSView</string>
-						<string key="clubKitTable">NSTableView</string>
-						<string key="clubKitView">NSView</string>
-						<string key="clubLBCView">NSView</string>
-						<string key="clubMainView">NSView</string>
-						<string key="clubRegionalDivisionsView">NSView</string>
-						<string key="clubRelationshipsView">NSView</string>
-						<string key="clubScopeBar">MGScopeBar</string>
-						<string key="clubScoutingKnowledgeView">NSView</string>
-						<string key="clubSearchView">NSView</string>
-						<string key="clubShortlistedPeopleView">NSView</string>
-						<string key="clubSponsorView">NSView</string>
-						<string key="clubStaffView">NSView</string>
-						<string key="clubTable">NSTableView</string>
-						<string key="clubTacticsView">NSView</string>
-						<string key="clubTeamsView">NSView</string>
-						<string key="clubTrainingView">NSView</string>
-						<string key="competitionController">NSArrayController</string>
-						<string key="competitionGeneralView">NSView</string>
-						<string key="competitionHeaderBackground">BWGradientBox</string>
 						<string key="competitionPicker">BWSheetController</string>
-						<string key="competitionPickerController">NSArrayController</string>
 						<string key="competitionPickerObject">id</string>
-						<string key="competitionSearchView">NSView</string>
-						<string key="competitionTable">NSTableView</string>
-						<string key="continentController">NSArrayController</string>
-						<string key="continentGeneralView">NSView</string>
-						<string key="continentSearchView">NSView</string>
-						<string key="continentTable">NSTableView</string>
-						<string key="contractView">NSView</string>
-						<string key="currencyController">NSArrayController</string>
-						<string key="currencyGeneralView">NSView</string>
-						<string key="currencySearchView">NSView</string>
-						<string key="currencyTable">NSTableView</string>
-						<string key="derbyController">NSArrayController</string>
-						<string key="derbyGeneralView">NSView</string>
-						<string key="derbySearchView">NSView</string>
-						<string key="derbyTable">NSTableView</string>
 						<string key="editorView">NSView</string>
-						<string key="gameInfoView">NSView</string>
-						<string key="humanView">NSView</string>
-						<string key="injuryController">NSArrayController</string>
-						<string key="injuryGeneralView">NSView</string>
-						<string key="injurySearchView">NSView</string>
-						<string key="injuryTable">NSTableView</string>
-						<string key="journalistView">NSView</string>
-						<string key="languageController">NSArrayController</string>
-						<string key="languageGeneralView">NSView</string>
-						<string key="languageSearchView">NSView</string>
-						<string key="languageTable">NSTableView</string>
-						<string key="levelField">NSTextField</string>
-						<string key="localAreaController">NSArrayController</string>
-						<string key="localAreaGeneralView">NSView</string>
-						<string key="localAreaSearchView">NSView</string>
-						<string key="localAreaTable">NSTableView</string>
-						<string key="mainContainer">NSBox</string>
-						<string key="mainOutlineView">NSOutlineView</string>
 						<string key="mainViewContainer">NSBox</string>
 						<string key="mainWindow">NSWindow</string>
-						<string key="mediaAssociationsView">NSView</string>
-						<string key="mediaContainer">NSBox</string>
-						<string key="mediaController">NSArrayController</string>
-						<string key="mediaGeneralView">NSView</string>
-						<string key="mediaMainView">NSView</string>
 						<string key="mediaPicker">BWSheetController</string>
-						<string key="mediaPickerController">NSArrayController</string>
 						<string key="mediaPickerObject">id</string>
-						<string key="mediaScopeBar">MGScopeBar</string>
-						<string key="mediaSearchView">NSView</string>
-						<string key="mediaTable">NSTableView</string>
-						<string key="nationAlternateKitsTable">NSTableView</string>
-						<string key="nationContainer">NSBox</string>
-						<string key="nationController">NSArrayController</string>
-						<string key="nationGeneralView">NSView</string>
-						<string key="nationHeaderBackground">BWGradientBox</string>
-						<string key="nationMainView">NSView</string>
 						<string key="nationPicker">BWSheetController</string>
-						<string key="nationPickerController">NSArrayController</string>
 						<string key="nationPickerObject">id</string>
-						<string key="nationRelationshipsView">NSView</string>
-						<string key="nationScopeBar">MGScopeBar</string>
-						<string key="nationSearchView">NSView</string>
-						<string key="nationTable">NSTableView</string>
-						<string key="nonPlayerStatsView">NSView</string>
-						<string key="officialView">NSView</string>
-						<string key="peopleController">NSArrayController</string>
-						<string key="peopleGeneralView">NSView</string>
-						<string key="peopleSearchView">NSView</string>
-						<string key="peopleTable">NSTableView</string>
-						<string key="personContainer">NSBox</string>
 						<string key="personPicker">BWSheetController</string>
-						<string key="personPickerController">NSArrayController</string>
 						<string key="personPickerObject">id</string>
-						<string key="personRelationshipsView">NSView</string>
-						<string key="personScopeBar">MGScopeBar</string>
-						<string key="personStatsView">NSView</string>
 						<string key="placeholderView">NSView</string>
-						<string key="playerBanView">NSView</string>
-						<string key="playerFormView">NSView</string>
-						<string key="playerInjuryView">NSView</string>
-						<string key="playerStatsView">NSView</string>
-						<string key="ppmView">NSView</string>
-						<string key="relationshipType">NSComboBox</string>
-						<string key="retiredPersonView">NSView</string>
 						<string key="scoutView">NSView</string>
-						<string key="shortlistController">NSArrayController</string>
-						<string key="shortlistView">NSView</string>
-						<string key="sponsorController">NSArrayController</string>
-						<string key="sponsorGeneralView">NSView</string>
-						<string key="sponsorSearchView">NSView</string>
-						<string key="sponsorTable">NSTableView</string>
-						<string key="stadiumChangeController">NSArrayController</string>
-						<string key="stadiumChangeGeneralView">NSView</string>
-						<string key="stadiumChangeSearchView">NSView</string>
-						<string key="stadiumChangeTable">NSTableView</string>
-						<string key="stadiumController">NSArrayController</string>
-						<string key="stadiumGeneralView">NSView</string>
 						<string key="stadiumPicker">BWSheetController</string>
-						<string key="stadiumPickerController">NSArrayController</string>
 						<string key="stadiumPickerObject">id</string>
-						<string key="stadiumSearchView">NSView</string>
-						<string key="stadiumTable">NSTableView</string>
-						<string key="weatherController">NSArrayController</string>
-						<string key="weatherGeneralView">NSView</string>
-						<string key="weatherSearchView">NSView</string>
-						<string key="weatherTable">NSTableView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="IDLookupView">
 							<string key="name">IDLookupView</string>
 							<string key="candidateClassName">NSView</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="actualNonPlayerView">
-							<string key="name">actualNonPlayerView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="actualPersonView">
-							<string key="name">actualPersonView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="actualPlayerView">
-							<string key="name">actualPlayerView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="actualStaffView">
-							<string key="name">actualStaffView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="agentView">
-							<string key="name">agentView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="awardContainer">
-							<string key="name">awardContainer</string>
-							<string key="candidateClassName">NSBox</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="awardController">
-							<string key="name">awardController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="awardGeneralView">
-							<string key="name">awardGeneralView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="awardHeaderBackground">
-							<string key="name">awardHeaderBackground</string>
-							<string key="candidateClassName">BWGradientBox</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="awardMainView">
-							<string key="name">awardMainView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="awardRulesView">
-							<string key="name">awardRulesView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="awardScopeBar">
-							<string key="name">awardScopeBar</string>
-							<string key="candidateClassName">MGScopeBar</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="awardSearchView">
-							<string key="name">awardSearchView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="awardTable">
-							<string key="name">awardTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="cityController">
-							<string key="name">cityController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="cityGeneralView">
-							<string key="name">cityGeneralView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="cityPicker">
 							<string key="name">cityPicker</string>
 							<string key="candidateClassName">BWSheetController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="cityPickerController">
-							<string key="name">cityPickerController</string>
-							<string key="candidateClassName">NSArrayController</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="cityPickerObject">
 							<string key="name">cityPickerObject</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="citySearchView">
-							<string key="name">citySearchView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="cityTable">
-							<string key="name">cityTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubAlternateKitView">
-							<string key="name">clubAlternateKitView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubAlternateKitsTable">
-							<string key="name">clubAlternateKitsTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubCoefficientView">
-							<string key="name">clubCoefficientView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubContainer">
-							<string key="name">clubContainer</string>
-							<string key="candidateClassName">NSBox</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubController">
-							<string key="name">clubController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubFacilitiesView">
-							<string key="name">clubFacilitiesView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubFinanceView">
-							<string key="name">clubFinanceView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubGeneralView">
-							<string key="name">clubGeneralView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubHeaderBackground">
-							<string key="name">clubHeaderBackground</string>
-							<string key="candidateClassName">BWGradientBox</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubIDPCView">
-							<string key="name">clubIDPCView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubKitTable">
-							<string key="name">clubKitTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubKitView">
-							<string key="name">clubKitView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubLBCView">
-							<string key="name">clubLBCView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubMainView">
-							<string key="name">clubMainView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubRegionalDivisionsView">
-							<string key="name">clubRegionalDivisionsView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubRelationshipsView">
-							<string key="name">clubRelationshipsView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubScopeBar">
-							<string key="name">clubScopeBar</string>
-							<string key="candidateClassName">MGScopeBar</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubScoutingKnowledgeView">
-							<string key="name">clubScoutingKnowledgeView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubSearchView">
-							<string key="name">clubSearchView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubShortlistedPeopleView">
-							<string key="name">clubShortlistedPeopleView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubSponsorView">
-							<string key="name">clubSponsorView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubStaffView">
-							<string key="name">clubStaffView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubTable">
-							<string key="name">clubTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubTacticsView">
-							<string key="name">clubTacticsView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubTeamsView">
-							<string key="name">clubTeamsView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="clubTrainingView">
-							<string key="name">clubTrainingView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="competitionController">
-							<string key="name">competitionController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="competitionGeneralView">
-							<string key="name">competitionGeneralView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="competitionHeaderBackground">
-							<string key="name">competitionHeaderBackground</string>
-							<string key="candidateClassName">BWGradientBox</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="competitionPicker">
 							<string key="name">competitionPicker</string>
 							<string key="candidateClassName">BWSheetController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="competitionPickerController">
-							<string key="name">competitionPickerController</string>
-							<string key="candidateClassName">NSArrayController</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="competitionPickerObject">
 							<string key="name">competitionPickerObject</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="competitionSearchView">
-							<string key="name">competitionSearchView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="competitionTable">
-							<string key="name">competitionTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="continentController">
-							<string key="name">continentController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="continentGeneralView">
-							<string key="name">continentGeneralView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="continentSearchView">
-							<string key="name">continentSearchView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="continentTable">
-							<string key="name">continentTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="contractView">
-							<string key="name">contractView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="currencyController">
-							<string key="name">currencyController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="currencyGeneralView">
-							<string key="name">currencyGeneralView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="currencySearchView">
-							<string key="name">currencySearchView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="currencyTable">
-							<string key="name">currencyTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="derbyController">
-							<string key="name">derbyController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="derbyGeneralView">
-							<string key="name">derbyGeneralView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="derbySearchView">
-							<string key="name">derbySearchView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="derbyTable">
-							<string key="name">derbyTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="editorView">
 							<string key="name">editorView</string>
 							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="gameInfoView">
-							<string key="name">gameInfoView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="humanView">
-							<string key="name">humanView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="injuryController">
-							<string key="name">injuryController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="injuryGeneralView">
-							<string key="name">injuryGeneralView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="injurySearchView">
-							<string key="name">injurySearchView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="injuryTable">
-							<string key="name">injuryTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="journalistView">
-							<string key="name">journalistView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="languageController">
-							<string key="name">languageController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="languageGeneralView">
-							<string key="name">languageGeneralView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="languageSearchView">
-							<string key="name">languageSearchView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="languageTable">
-							<string key="name">languageTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="levelField">
-							<string key="name">levelField</string>
-							<string key="candidateClassName">NSTextField</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="localAreaController">
-							<string key="name">localAreaController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="localAreaGeneralView">
-							<string key="name">localAreaGeneralView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="localAreaSearchView">
-							<string key="name">localAreaSearchView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="localAreaTable">
-							<string key="name">localAreaTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="mainContainer">
-							<string key="name">mainContainer</string>
-							<string key="candidateClassName">NSBox</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="mainOutlineView">
-							<string key="name">mainOutlineView</string>
-							<string key="candidateClassName">NSOutlineView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="mainViewContainer">
 							<string key="name">mainViewContainer</string>
@@ -7231,273 +6438,45 @@
 							<string key="name">mainWindow</string>
 							<string key="candidateClassName">NSWindow</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="mediaAssociationsView">
-							<string key="name">mediaAssociationsView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="mediaContainer">
-							<string key="name">mediaContainer</string>
-							<string key="candidateClassName">NSBox</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="mediaController">
-							<string key="name">mediaController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="mediaGeneralView">
-							<string key="name">mediaGeneralView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="mediaMainView">
-							<string key="name">mediaMainView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="mediaPicker">
 							<string key="name">mediaPicker</string>
 							<string key="candidateClassName">BWSheetController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="mediaPickerController">
-							<string key="name">mediaPickerController</string>
-							<string key="candidateClassName">NSArrayController</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="mediaPickerObject">
 							<string key="name">mediaPickerObject</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="mediaScopeBar">
-							<string key="name">mediaScopeBar</string>
-							<string key="candidateClassName">MGScopeBar</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="mediaSearchView">
-							<string key="name">mediaSearchView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="mediaTable">
-							<string key="name">mediaTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="nationAlternateKitsTable">
-							<string key="name">nationAlternateKitsTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="nationContainer">
-							<string key="name">nationContainer</string>
-							<string key="candidateClassName">NSBox</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="nationController">
-							<string key="name">nationController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="nationGeneralView">
-							<string key="name">nationGeneralView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="nationHeaderBackground">
-							<string key="name">nationHeaderBackground</string>
-							<string key="candidateClassName">BWGradientBox</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="nationMainView">
-							<string key="name">nationMainView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="nationPicker">
 							<string key="name">nationPicker</string>
 							<string key="candidateClassName">BWSheetController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="nationPickerController">
-							<string key="name">nationPickerController</string>
-							<string key="candidateClassName">NSArrayController</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="nationPickerObject">
 							<string key="name">nationPickerObject</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="nationRelationshipsView">
-							<string key="name">nationRelationshipsView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="nationScopeBar">
-							<string key="name">nationScopeBar</string>
-							<string key="candidateClassName">MGScopeBar</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="nationSearchView">
-							<string key="name">nationSearchView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="nationTable">
-							<string key="name">nationTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="nonPlayerStatsView">
-							<string key="name">nonPlayerStatsView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="officialView">
-							<string key="name">officialView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="peopleController">
-							<string key="name">peopleController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="peopleGeneralView">
-							<string key="name">peopleGeneralView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="peopleSearchView">
-							<string key="name">peopleSearchView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="peopleTable">
-							<string key="name">peopleTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="personContainer">
-							<string key="name">personContainer</string>
-							<string key="candidateClassName">NSBox</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="personPicker">
 							<string key="name">personPicker</string>
 							<string key="candidateClassName">BWSheetController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="personPickerController">
-							<string key="name">personPickerController</string>
-							<string key="candidateClassName">NSArrayController</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="personPickerObject">
 							<string key="name">personPickerObject</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="personRelationshipsView">
-							<string key="name">personRelationshipsView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="personScopeBar">
-							<string key="name">personScopeBar</string>
-							<string key="candidateClassName">MGScopeBar</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="personStatsView">
-							<string key="name">personStatsView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="placeholderView">
 							<string key="name">placeholderView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="playerBanView">
-							<string key="name">playerBanView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="playerFormView">
-							<string key="name">playerFormView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="playerInjuryView">
-							<string key="name">playerInjuryView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="playerStatsView">
-							<string key="name">playerStatsView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="ppmView">
-							<string key="name">ppmView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="relationshipType">
-							<string key="name">relationshipType</string>
-							<string key="candidateClassName">NSComboBox</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="retiredPersonView">
-							<string key="name">retiredPersonView</string>
 							<string key="candidateClassName">NSView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="scoutView">
 							<string key="name">scoutView</string>
 							<string key="candidateClassName">NSView</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="shortlistController">
-							<string key="name">shortlistController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="shortlistView">
-							<string key="name">shortlistView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="sponsorController">
-							<string key="name">sponsorController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="sponsorGeneralView">
-							<string key="name">sponsorGeneralView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="sponsorSearchView">
-							<string key="name">sponsorSearchView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="sponsorTable">
-							<string key="name">sponsorTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="stadiumChangeController">
-							<string key="name">stadiumChangeController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="stadiumChangeGeneralView">
-							<string key="name">stadiumChangeGeneralView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="stadiumChangeSearchView">
-							<string key="name">stadiumChangeSearchView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="stadiumChangeTable">
-							<string key="name">stadiumChangeTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="stadiumController">
-							<string key="name">stadiumController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="stadiumGeneralView">
-							<string key="name">stadiumGeneralView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="stadiumPicker">
 							<string key="name">stadiumPicker</string>
 							<string key="candidateClassName">BWSheetController</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="stadiumPickerController">
-							<string key="name">stadiumPickerController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="stadiumPickerObject">
 							<string key="name">stadiumPickerObject</string>
 							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="stadiumSearchView">
-							<string key="name">stadiumSearchView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="stadiumTable">
-							<string key="name">stadiumTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="weatherController">
-							<string key="name">weatherController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="weatherGeneralView">
-							<string key="name">weatherGeneralView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="weatherSearchView">
-							<string key="name">weatherSearchView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="weatherTable">
-							<string key="name">weatherTable</string>
-							<string key="candidateClassName">NSTableView</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -7878,25 +6857,6 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">MGScopeBar</string>
-					<string key="superclassName">NSView</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">delegate</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">delegate</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">delegate</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">MGScopeBar.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
 					<string key="className">ToolController</string>
 					<string key="superclassName">NSObject</string>
 					<object class="NSMutableDictionary" key="actions">
@@ -8122,14 +7082,6 @@
 			</array>
 			<array class="NSMutableArray" key="referencedPartialClassDescriptionsV3.2+">
 				<object class="IBPartialClassDescription">
-					<string key="className">BWGradientBox</string>
-					<string key="superclassName">NSView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBFrameworkSource</string>
-						<string key="minorKey">BWToolkitFramework.framework/Headers/BWGradientBox.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
 					<string key="className">BWSheetController</string>
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="actions">
@@ -8279,22 +7231,6 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">AppKit.framework/Headers/NSCell.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSCollectionViewItem</string>
-					<string key="superclassName">NSViewController</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBFrameworkSource</string>
-						<string key="minorKey">AppKit.framework/Headers/NSCollectionView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSComboBox</string>
-					<string key="superclassName">NSTextField</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBFrameworkSource</string>
-						<string key="minorKey">AppKit.framework/Headers/NSComboBox.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -8537,7 +7473,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier" id="488258725">
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">AppKit.framework/Headers/NSOutlineView.h</string>
 					</object>
@@ -8761,11 +7697,6 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">NSOutlineView</string>
-					<string key="superclassName">NSTableView</string>
-					<reference key="sourceIdentifier" ref="488258725"/>
-				</object>
-				<object class="IBPartialClassDescription">
 					<string key="className">NSPanel</string>
 					<string key="superclassName">NSWindow</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -8893,25 +7824,6 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">NSViewController</string>
-					<string key="superclassName">NSResponder</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">view</string>
-						<string key="NS.object.0">NSView</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">view</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">view</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBFrameworkSource</string>
-						<string key="minorKey">AppKit.framework/Headers/NSViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
 					<string key="className">NSWindow</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBFrameworkSource</string>
@@ -8987,7 +7899,6 @@
 			<string key="NSMenuCheckmark">{9, 8}</string>
 			<string key="NSMenuMixedState">{7, 2}</string>
 			<string key="NSToolbarCustomizeToolbarItemImage">{32, 32}</string>
-			<string key="award">{64, 64}</string>
 			<string key="info">{57, 57}</string>
 			<string key="open">{57, 57}</string>
 			<string key="save">{57, 57}</string>
