@@ -25,4 +25,11 @@ unknownChar7, unknownChar8, unknownChar9, unknownChar10, unknownChar11;
 	return self;
 }
 
+- (NSString *)nationString
+{
+	if (nationID>-1) { return [[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] objectAtIndex:nationID] teamContainer] name]; }
+	return @"---";
+}
+
+
 @end

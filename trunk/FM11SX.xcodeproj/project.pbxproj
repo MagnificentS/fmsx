@@ -455,6 +455,9 @@
 		FBA7AA0F132EC6FA00CF7843 /* Editor.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA7AA0E132EC6FA00CF7843 /* Editor.xib */; };
 		FBAB2943133231BA003FA548 /* SXEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAB2942133231BA003FA548 /* SXEditorViewController.m */; };
 		FBAB2AD2133282FE003FA548 /* Editor_City.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBAB2AD1133282FE003FA548 /* Editor_City.xib */; };
+		FBAB2B26133298F1003FA548 /* Editor_Continent.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBAB2B25133298F1003FA548 /* Editor_Continent.xib */; };
+		FBAB2B3913329C9C003FA548 /* Editor_Currency.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBAB2B3813329C9C003FA548 /* Editor_Currency.xib */; };
+		FBAB2B3B13329CA5003FA548 /* Editor_LocalArea.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBAB2B3A13329CA5003FA548 /* Editor_LocalArea.xib */; };
 		FBAE662510DC252C00181B07 /* AlliterationSaver.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAE662410DC252C00181B07 /* AlliterationSaver.m */; };
 		FBAE662810DC25A700181B07 /* ContinentSaver.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAE662710DC25A700181B07 /* ContinentSaver.m */; };
 		FBAE662B10DC25AD00181B07 /* CurrencySaver.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAE662A10DC25AD00181B07 /* CurrencySaver.m */; };
@@ -1353,6 +1356,9 @@
 		FBAB2941133231B9003FA548 /* SXEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXEditorViewController.h; sourceTree = "<group>"; };
 		FBAB2942133231BA003FA548 /* SXEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXEditorViewController.m; sourceTree = "<group>"; };
 		FBAB2AD1133282FE003FA548 /* Editor_City.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_City.xib; sourceTree = "<group>"; };
+		FBAB2B25133298F1003FA548 /* Editor_Continent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_Continent.xib; sourceTree = "<group>"; };
+		FBAB2B3813329C9C003FA548 /* Editor_Currency.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_Currency.xib; sourceTree = "<group>"; };
+		FBAB2B3A13329CA5003FA548 /* Editor_LocalArea.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_LocalArea.xib; sourceTree = "<group>"; };
 		FBAE662310DC252C00181B07 /* AlliterationSaver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlliterationSaver.h; sourceTree = "<group>"; };
 		FBAE662410DC252C00181B07 /* AlliterationSaver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlliterationSaver.m; sourceTree = "<group>"; };
 		FBAE662610DC25A700181B07 /* ContinentSaver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContinentSaver.h; sourceTree = "<group>"; };
@@ -1828,6 +1834,9 @@
 				FBA7AA0E132EC6FA00CF7843 /* Editor.xib */,
 				FB4E637F132FFB52000CE49D /* Editor_Award.xib */,
 				FBAB2AD1133282FE003FA548 /* Editor_City.xib */,
+				FBAB2B25133298F1003FA548 /* Editor_Continent.xib */,
+				FBAB2B3813329C9C003FA548 /* Editor_Currency.xib */,
+				FBAB2B3A13329CA5003FA548 /* Editor_LocalArea.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -3434,6 +3443,9 @@
 				FBA7AA0F132EC6FA00CF7843 /* Editor.xib in Resources */,
 				FB4E6380132FFB52000CE49D /* Editor_Award.xib in Resources */,
 				FBAB2AD2133282FE003FA548 /* Editor_City.xib in Resources */,
+				FBAB2B26133298F1003FA548 /* Editor_Continent.xib in Resources */,
+				FBAB2B3913329C9C003FA548 /* Editor_Currency.xib in Resources */,
+				FBAB2B3B13329CA5003FA548 /* Editor_LocalArea.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

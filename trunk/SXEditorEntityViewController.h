@@ -19,6 +19,15 @@
 	IBOutlet NSTableView	*citiesTable;
 	IBOutlet NSView			*cityMainViewContainer, *cityEntityView;
 	
+	IBOutlet NSTableView	*continentsTable;
+	IBOutlet NSView			*continentMainViewContainer, *continentEntityView;
+	
+	IBOutlet NSTableView	*currenciesTable;
+	IBOutlet NSView			*currencyMainViewContainer, *currencyEntityView;
+	
+	IBOutlet NSTableView	*localAreasTable;
+	IBOutlet NSView			*localAreaMainViewContainer, *localAreaEntityView;
+	
 }
 
 - (IBAction)showCityPicker:(id)sender;
@@ -31,6 +40,7 @@
 - (void)reloadEntityTable:(int)section;
 
 @property(readwrite,assign) IBOutlet NSView	*awardMainViewContainer, *awardEntityView, *awardGeneralView, *awardRulesView, *awardSectionView,
-*cityMainViewContainer, *cityEntityView;
+*cityMainViewContainer, *cityEntityView, *continentMainViewContainer, *continentEntityView,
+*currencyMainViewContainer, *currencyEntityView, *localAreaMainViewContainer, *localAreaEntityView;
 
 @end
