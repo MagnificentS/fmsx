@@ -64,9 +64,7 @@ selectedPerson, selectedSponsor, selectedStadium, selectedStadiumChange, selecte
 	else if (newSection==EDS_STADIUM_CHANGES) { nibToLoad = @"Editor_StadiumChange"; }
 	else if (newSection==EDS_WEATHER) { nibToLoad = @"Editor_Weather"; }
 	
-	[NSBundle loadNibNamed:@"Editor_Award" owner:self];
-	
-	SXEditorEntityViewController *viewController = [[SXEditorEntityViewController alloc] initWithNibName:@"Editor_Award" bundle:nil];
+	SXEditorEntityViewController *viewController = [[SXEditorEntityViewController alloc] initWithNibName:nibToLoad bundle:nil];
 	[[[NSApp delegate] contentController] replacePlaceholder:[[[[NSApp delegate] contentController] editorViewController] editorPlaceholderView] withView:[viewController view]];
 }
 

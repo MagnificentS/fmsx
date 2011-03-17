@@ -351,6 +351,29 @@
 			FBAB2A9A13327296003FA548 /* PBXTextBookmark */ = FBAB2A9A13327296003FA548 /* PBXTextBookmark */;
 			FBAB2A9B13327407003FA548 /* PBXTextBookmark */ = FBAB2A9B13327407003FA548 /* PBXTextBookmark */;
 			FBAB2AA21332761E003FA548 /* PBXTextBookmark */ = FBAB2AA21332761E003FA548 /* PBXTextBookmark */;
+			FBAB2AD713328D4A003FA548 /* PBXTextBookmark */ = FBAB2AD713328D4A003FA548 /* PBXTextBookmark */;
+			FBAB2AD813328D4A003FA548 /* PBXTextBookmark */ = FBAB2AD813328D4A003FA548 /* PBXTextBookmark */;
+			FBAB2AD913328D4A003FA548 /* PBXTextBookmark */ = FBAB2AD913328D4A003FA548 /* PBXTextBookmark */;
+			FBAB2AF8133291F7003FA548 /* PBXTextBookmark */ = FBAB2AF8133291F7003FA548 /* PBXTextBookmark */;
+			FBAB2AF9133291F7003FA548 /* PBXTextBookmark */ = FBAB2AF9133291F7003FA548 /* PBXTextBookmark */;
+			FBAB2AFA133291F7003FA548 /* PBXTextBookmark */ = FBAB2AFA133291F7003FA548 /* PBXTextBookmark */;
+			FBAB2AFB133291F7003FA548 /* PBXTextBookmark */ = FBAB2AFB133291F7003FA548 /* PBXTextBookmark */;
+			FBAB2AFC133291F7003FA548 /* PBXTextBookmark */ = FBAB2AFC133291F7003FA548 /* PBXTextBookmark */;
+			FBAB2AFD133291F7003FA548 /* XCBuildMessageTextBookmark */ = FBAB2AFD133291F7003FA548 /* XCBuildMessageTextBookmark */;
+			FBAB2AFE133291F7003FA548 /* PBXTextBookmark */ = FBAB2AFE133291F7003FA548 /* PBXTextBookmark */;
+			FBAB2B0213329252003FA548 /* PBXTextBookmark */ = FBAB2B0213329252003FA548 /* PBXTextBookmark */;
+			FBAB2B0313329252003FA548 /* PBXTextBookmark */ = FBAB2B0313329252003FA548 /* PBXTextBookmark */;
+			FBAB2B09133293F0003FA548 /* PBXTextBookmark */ = FBAB2B09133293F0003FA548 /* PBXTextBookmark */;
+			FBAB2B0A133293F0003FA548 /* PBXTextBookmark */ = FBAB2B0A133293F0003FA548 /* PBXTextBookmark */;
+			FBAB2B0B133293F0003FA548 /* PBXTextBookmark */ = FBAB2B0B133293F0003FA548 /* PBXTextBookmark */;
+			FBAB2B0E13329401003FA548 /* PBXTextBookmark */ = FBAB2B0E13329401003FA548 /* PBXTextBookmark */;
+			FBAB2B1213329512003FA548 /* PBXTextBookmark */ = FBAB2B1213329512003FA548 /* PBXTextBookmark */;
+			FBAB2B1313329512003FA548 /* PBXTextBookmark */ = FBAB2B1313329512003FA548 /* PBXTextBookmark */;
+			FBAB2B19133295A1003FA548 /* PBXTextBookmark */ = FBAB2B19133295A1003FA548 /* PBXTextBookmark */;
+			FBAB2B1A133295A1003FA548 /* PBXTextBookmark */ = FBAB2B1A133295A1003FA548 /* PBXTextBookmark */;
+			FBAB2B1B133295A1003FA548 /* PBXTextBookmark */ = FBAB2B1B133295A1003FA548 /* PBXTextBookmark */;
+			FBAB2B21133296EB003FA548 /* PBXTextBookmark */ = FBAB2B21133296EB003FA548 /* PBXTextBookmark */;
+			FBAB2B22133296EB003FA548 /* PBXTextBookmark */ = FBAB2B22133296EB003FA548 /* PBXTextBookmark */;
 			FBDBAB06132FBB9A00FF22B8 = FBDBAB06132FBB9A00FF22B8 /* PBXTextBookmark */;
 			FBDBAB07132FBB9A00FF22B8 = FBDBAB07132FBB9A00FF22B8 /* PBXTextBookmark */;
 			FBDBABDA132FF0D400FF22B8 = FBDBABDA132FF0D400FF22B8 /* PBXTextBookmark */;
@@ -1237,16 +1260,16 @@
 	};
 	FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {999, 442}}";
-			sepNavSelRange = "{886, 0}";
-			sepNavVisRange = "{52, 983}";
+			sepNavIntBoundsRect = "{{0, 0}, {999, 481}}";
+			sepNavSelRange = "{1132, 0}";
+			sepNavVisRange = "{151, 989}";
 		};
 	};
 	FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1167, 3770}}";
-			sepNavSelRange = "{2759, 0}";
-			sepNavVisRange = "{1435, 2185}";
+			sepNavIntBoundsRect = "{{0, 0}, {1006, 3744}}";
+			sepNavSelRange = "{443, 0}";
+			sepNavVisRange = "{245, 1944}";
 		};
 	};
 	FB35641D10B4AE5C004E3FB7 /* MGRecessedPopUpButtonCell.h */ = {
@@ -2191,7 +2214,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 71";
 		rLen = 0;
-		rLoc = 483;
+		rLoc = 522;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 2566;
@@ -2201,7 +2224,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 97";
 		rLen = 0;
-		rLoc = 483;
+		rLoc = 522;
 		rType = 0;
 		vrLen = 1080;
 		vrLoc = 2571;
@@ -3459,7 +3482,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 97";
 		rLen = 0;
-		rLoc = 483;
+		rLoc = 522;
 		rType = 0;
 		vrLen = 1082;
 		vrLoc = 2569;
@@ -3499,7 +3522,7 @@
 		fRef = FBFD90791092AFE40023F307 /* Database.m */;
 		name = "Database.m: 1901";
 		rLen = 0;
-		rLoc = 68773;
+		rLoc = 69368;
 		rType = 0;
 		vrLen = 625;
 		vrLoc = 68576;
@@ -3509,7 +3532,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 97";
 		rLen = 0;
-		rLoc = 483;
+		rLoc = 522;
 		rType = 0;
 		vrLen = 1106;
 		vrLoc = 1465;
@@ -3519,7 +3542,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 94";
 		rLen = 0;
-		rLoc = 483;
+		rLoc = 522;
 		rType = 0;
 		vrLen = 1181;
 		vrLoc = 2569;
@@ -3529,7 +3552,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 102";
 		rLen = 0;
-		rLoc = 483;
+		rLoc = 522;
 		rType = 0;
 		vrLen = 1154;
 		vrLoc = 2674;
@@ -3539,7 +3562,7 @@
 		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
 		name = "SXEditorEntityViewController.h: 23";
 		rLen = 0;
-		rLoc = 1029;
+		rLoc = 1134;
 		rType = 0;
 		vrLen = 637;
 		vrLoc = 0;
@@ -3549,7 +3572,7 @@
 		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
 		name = "SXEditorEntityViewController.h: 21";
 		rLen = 0;
-		rLoc = 1029;
+		rLoc = 1134;
 		rType = 0;
 		vrLen = 601;
 		vrLoc = 0;
@@ -3559,7 +3582,7 @@
 		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
 		name = "SXEditorEntityViewController.h: 21";
 		rLen = 0;
-		rLoc = 1029;
+		rLoc = 1134;
 		rType = 0;
 		vrLen = 601;
 		vrLoc = 0;
@@ -3569,7 +3592,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 104";
 		rLen = 0;
-		rLoc = 483;
+		rLoc = 522;
 		rType = 0;
 		vrLen = 1198;
 		vrLoc = 2674;
@@ -3609,7 +3632,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 114";
 		rLen = 0;
-		rLoc = 483;
+		rLoc = 522;
 		rType = 0;
 		vrLen = 1209;
 		vrLoc = 265;
@@ -3619,7 +3642,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 60";
 		rLen = 0;
-		rLoc = 483;
+		rLoc = 522;
 		rType = 0;
 		vrLen = 1055;
 		vrLoc = 1631;
@@ -3629,7 +3652,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 123";
 		rLen = 0;
-		rLoc = 11615;
+		rLoc = 12528;
 		rType = 0;
 		vrLen = 864;
 		vrLoc = 1569;
@@ -3639,7 +3662,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 95";
 		rLen = 0;
-		rLoc = 7962;
+		rLoc = 8827;
 		rType = 0;
 		vrLen = 1041;
 		vrLoc = 2825;
@@ -3659,7 +3682,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 95";
 		rLen = 0;
-		rLoc = 7962;
+		rLoc = 8827;
 		rType = 0;
 		vrLen = 1148;
 		vrLoc = 2825;
@@ -3669,7 +3692,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 20";
 		rLen = 0;
-		rLoc = 483;
+		rLoc = 522;
 		rType = 0;
 		vrLen = 737;
 		vrLoc = 215;
@@ -3679,7 +3702,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 117";
 		rLen = 0;
-		rLoc = 9463;
+		rLoc = 10378;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 4002;
@@ -3689,7 +3712,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 115";
 		rLen = 0;
-		rLoc = 9463;
+		rLoc = 10378;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 4002;
@@ -3699,7 +3722,7 @@
 		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
 		name = "SXEditorEntityViewController.h: 22";
 		rLen = 0;
-		rLoc = 1029;
+		rLoc = 1134;
 		rType = 0;
 		vrLen = 641;
 		vrLoc = 0;
@@ -3709,7 +3732,7 @@
 		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
 		name = "SXEditorEntityViewController.h: 22";
 		rLen = 0;
-		rLoc = 1029;
+		rLoc = 1134;
 		rType = 0;
 		vrLen = 630;
 		vrLoc = 0;
@@ -3719,7 +3742,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 115";
 		rLen = 0;
-		rLoc = 9463;
+		rLoc = 10378;
 		rType = 0;
 		vrLen = 842;
 		vrLoc = 4002;
@@ -3729,7 +3752,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 115";
 		rLen = 0;
-		rLoc = 9463;
+		rLoc = 10378;
 		rType = 0;
 		vrLen = 973;
 		vrLoc = 4002;
@@ -3739,7 +3762,7 @@
 		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
 		name = "SXEditorEntityViewController.h: 22";
 		rLen = 0;
-		rLoc = 1029;
+		rLoc = 1134;
 		rType = 0;
 		vrLen = 626;
 		vrLoc = 0;
@@ -3749,7 +3772,7 @@
 		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
 		name = "SXEditorEntityViewController.h: 21";
 		rLen = 0;
-		rLoc = 1029;
+		rLoc = 1134;
 		rType = 0;
 		vrLen = 601;
 		vrLoc = 0;
@@ -3759,7 +3782,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 117";
 		rLen = 0;
-		rLoc = 9463;
+		rLoc = 10378;
 		rType = 0;
 		vrLen = 908;
 		vrLoc = 3979;
@@ -3769,7 +3792,7 @@
 		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
 		name = "SXEditorEntityViewController.h: 22";
 		rLen = 0;
-		rLoc = 1029;
+		rLoc = 1134;
 		rType = 0;
 		vrLen = 641;
 		vrLoc = 0;
@@ -3789,7 +3812,7 @@
 		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
 		name = "SXEditorEntityViewController.h: 21";
 		rLen = 0;
-		rLoc = 1029;
+		rLoc = 1134;
 		rType = 0;
 		vrLen = 601;
 		vrLoc = 0;
@@ -3809,7 +3832,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 113";
 		rLen = 0;
-		rLoc = 9463;
+		rLoc = 10378;
 		rType = 0;
 		vrLen = 1178;
 		vrLoc = 3487;
@@ -3819,7 +3842,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 74";
 		rLen = 0;
-		rLoc = 4690;
+		rLoc = 5554;
 		rType = 0;
 		vrLen = 1002;
 		vrLoc = 1935;
@@ -3829,7 +3852,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 115";
 		rLen = 0;
-		rLoc = 9376;
+		rLoc = 10291;
 		rType = 0;
 		vrLen = 1326;
 		vrLoc = 3307;
@@ -3839,7 +3862,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 137";
 		rLen = 0;
-		rLoc = 11615;
+		rLoc = 12528;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 4429;
@@ -3863,7 +3886,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 137";
 		rLen = 0;
-		rLoc = 11615;
+		rLoc = 12528;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 4429;
@@ -3953,7 +3976,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 74";
 		rLen = 0;
-		rLoc = 2703;
+		rLoc = 2642;
 		rType = 0;
 		vrLen = 1557;
 		vrLoc = 1178;
@@ -4043,7 +4066,7 @@
 		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
 		name = "SXEditorEntityViewController.h: 21";
 		rLen = 0;
-		rLoc = 1029;
+		rLoc = 1134;
 		rType = 0;
 		vrLen = 601;
 		vrLoc = 0;
@@ -4123,7 +4146,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 137";
 		rLen = 0;
-		rLoc = 11615;
+		rLoc = 12528;
 		rType = 0;
 		vrLen = 1336;
 		vrLoc = 903;
@@ -4133,7 +4156,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 74";
 		rLen = 0;
-		rLoc = 2600;
+		rLoc = 2539;
 		rType = 0;
 		vrLen = 1555;
 		vrLoc = 1180;
@@ -4143,7 +4166,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 74";
 		rLen = 0;
-		rLoc = 2680;
+		rLoc = 2619;
 		rType = 0;
 		vrLen = 1600;
 		vrLoc = 1180;
@@ -4153,7 +4176,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 74";
 		rLen = 0;
-		rLoc = 2680;
+		rLoc = 2619;
 		rType = 0;
 		vrLen = 1600;
 		vrLoc = 1180;
@@ -4243,7 +4266,7 @@
 		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
 		name = "SXEditorEntityViewController.h: 21";
 		rLen = 0;
-		rLoc = 1029;
+		rLoc = 1134;
 		rType = 0;
 		vrLen = 601;
 		vrLoc = 0;
@@ -4253,7 +4276,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 137";
 		rLen = 0;
-		rLoc = 11615;
+		rLoc = 12528;
 		rType = 0;
 		vrLen = 1304;
 		vrLoc = 935;
@@ -4433,7 +4456,7 @@
 		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
 		name = "SXEditorEntityViewController.h: 28";
 		rLen = 0;
-		rLoc = 1029;
+		rLoc = 1134;
 		rType = 0;
 		vrLen = 851;
 		vrLoc = 0;
@@ -4443,7 +4466,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 145";
 		rLen = 0;
-		rLoc = 11713;
+		rLoc = 12626;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 0;
@@ -4543,7 +4566,7 @@
 		fRef = FBFD90791092AFE40023F307 /* Database.m */;
 		name = "Database.m: 1928";
 		rLen = 0;
-		rLoc = 69546;
+		rLoc = 70141;
 		rType = 0;
 		vrLen = 558;
 		vrLoc = 68864;
@@ -4553,7 +4576,7 @@
 		fRef = FBFD90791092AFE40023F307 /* Database.m */;
 		name = "Database.m: 1928";
 		rLen = 0;
-		rLoc = 69546;
+		rLoc = 70141;
 		rType = 0;
 		vrLen = 616;
 		vrLoc = 68806;
@@ -4573,7 +4596,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 145";
 		rLen = 0;
-		rLoc = 11713;
+		rLoc = 12626;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 0;
@@ -4583,7 +4606,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 143";
 		rLen = 0;
-		rLoc = 11713;
+		rLoc = 12626;
 		rType = 0;
 		vrLen = 1390;
 		vrLoc = 4606;
@@ -4593,7 +4616,7 @@
 		fRef = FBFD90791092AFE40023F307 /* Database.m */;
 		name = "Database.m: 1928";
 		rLen = 0;
-		rLoc = 69546;
+		rLoc = 70141;
 		rType = 0;
 		vrLen = 594;
 		vrLoc = 68804;
@@ -4603,7 +4626,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 145";
 		rLen = 0;
-		rLoc = 12267;
+		rLoc = 13180;
 		rType = 0;
 		vrLen = 1445;
 		vrLoc = 4530;
@@ -4673,7 +4696,7 @@
 		fRef = FBFD90791092AFE40023F307 /* Database.m */;
 		name = "Database.m: 1941";
 		rLen = 0;
-		rLoc = 70007;
+		rLoc = 70602;
 		rType = 0;
 		vrLen = 716;
 		vrLoc = 69008;
@@ -4683,7 +4706,7 @@
 		fRef = FBFD90791092AFE40023F307 /* Database.m */;
 		name = "Database.m: 1941";
 		rLen = 0;
-		rLoc = 69865;
+		rLoc = 70460;
 		rType = 0;
 		vrLen = 720;
 		vrLoc = 69008;
@@ -4732,7 +4755,7 @@
 		fRef = FBFD90791092AFE40023F307 /* Database.m */;
 		name = "Database.m: 1941";
 		rLen = 0;
-		rLoc = 69865;
+		rLoc = 70460;
 		rType = 0;
 		vrLen = 658;
 		vrLoc = 69070;
@@ -4742,7 +4765,7 @@
 		fRef = FBFD90791092AFE40023F307 /* Database.m */;
 		name = "Database.m: 1941";
 		rLen = 0;
-		rLoc = 69865;
+		rLoc = 70460;
 		rType = 0;
 		vrLen = 553;
 		vrLoc = 69181;
@@ -4752,7 +4775,7 @@
 		fRef = FBFD90791092AFE40023F307 /* Database.m */;
 		name = "Database.m: 1941";
 		rLen = 0;
-		rLoc = 69865;
+		rLoc = 70460;
 		rType = 0;
 		vrLen = 553;
 		vrLoc = 69181;
@@ -4772,7 +4795,7 @@
 		fRef = FBFD90791092AFE40023F307 /* Database.m */;
 		name = "Database.m: 1941";
 		rLen = 0;
-		rLoc = 69865;
+		rLoc = 70460;
 		rType = 0;
 		vrLen = 586;
 		vrLoc = 69148;
@@ -4782,7 +4805,7 @@
 		fRef = FBFD90791092AFE40023F307 /* Database.m */;
 		name = "Database.m: 2006";
 		rLen = 0;
-		rLoc = 71669;
+		rLoc = 72264;
 		rType = 0;
 		vrLen = 724;
 		vrLoc = 71338;
@@ -4792,7 +4815,7 @@
 		fRef = FBFD90791092AFE40023F307 /* Database.m */;
 		name = "Database.m: 2006";
 		rLen = 0;
-		rLoc = 71669;
+		rLoc = 72264;
 		rType = 0;
 		vrLen = 788;
 		vrLoc = 71274;
@@ -4843,7 +4866,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 72;
+		rLoc = 70;
 		rType = 1;
 	};
 	FBAB2A2613324CDD003FA548 /* PBXTextBookmark */ = {
@@ -4851,7 +4874,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 73";
 		rLen = 0;
-		rLoc = 2740;
+		rLoc = 2679;
 		rType = 0;
 		vrLen = 1089;
 		vrLoc = 1656;
@@ -4901,7 +4924,7 @@
 		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
 		name = "SXEditorEntityViewController.h: 28";
 		rLen = 0;
-		rLoc = 1029;
+		rLoc = 1134;
 		rType = 0;
 		vrLen = 846;
 		vrLoc = 0;
@@ -4931,7 +4954,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 73";
 		rLen = 0;
-		rLoc = 2740;
+		rLoc = 2679;
 		rType = 0;
 		vrLen = 1089;
 		vrLoc = 1656;
@@ -4961,7 +4984,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 70";
 		rLen = 0;
-		rLoc = 2680;
+		rLoc = 2619;
 		rType = 0;
 		vrLen = 1555;
 		vrLoc = 874;
@@ -5061,7 +5084,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 73";
 		rLen = 0;
-		rLoc = 2740;
+		rLoc = 2679;
 		rType = 0;
 		vrLen = 1089;
 		vrLoc = 1656;
@@ -5131,7 +5154,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 71";
 		rLen = 0;
-		rLoc = 2738;
+		rLoc = 2677;
 		rType = 0;
 		vrLen = 1602;
 		vrLoc = 1143;
@@ -5171,7 +5194,7 @@
 		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
 		name = "SXEditorEntityViewController.h: 29";
 		rLen = 95;
-		rLoc = 932;
+		rLoc = 996;
 		rType = 0;
 		vrLen = 942;
 		vrLoc = 52;
@@ -5181,7 +5204,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 107";
 		rLen = 0;
-		rLoc = 8392;
+		rLoc = 9307;
 		rType = 0;
 		vrLen = 1563;
 		vrLoc = 3003;
@@ -5191,7 +5214,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 107";
 		rLen = 0;
-		rLoc = 8369;
+		rLoc = 9284;
 		rType = 0;
 		vrLen = 1617;
 		vrLoc = 3147;
@@ -5201,7 +5224,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 154";
 		rLen = 38;
-		rLoc = 12273;
+		rLoc = 13186;
 		rType = 0;
 		vrLen = 1362;
 		vrLoc = 5221;
@@ -5211,7 +5234,7 @@
 		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
 		name = "SXEditorEntityViewController.h: 30";
 		rLen = 0;
-		rLoc = 886;
+		rLoc = 950;
 		rType = 0;
 		vrLen = 888;
 		vrLoc = 147;
@@ -5221,7 +5244,7 @@
 		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
 		name = "SXEditorEntityViewController.h: 30";
 		rLen = 0;
-		rLoc = 886;
+		rLoc = 950;
 		rType = 0;
 		vrLen = 983;
 		vrLoc = 52;
@@ -5231,7 +5254,7 @@
 		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
 		name = "EditorController.m: 71";
 		rLen = 0;
-		rLoc = 2738;
+		rLoc = 2677;
 		rType = 0;
 		vrLen = 1602;
 		vrLoc = 1143;
@@ -5241,7 +5264,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 174";
 		rLen = 0;
-		rLoc = 13479;
+		rLoc = 14390;
 		rType = 0;
 		vrLen = 1543;
 		vrLoc = 6226;
@@ -5281,7 +5304,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 138";
 		rLen = 0;
-		rLoc = 11007;
+		rLoc = 11920;
 		rType = 0;
 		vrLen = 1340;
 		vrLoc = 5067;
@@ -5291,7 +5314,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 138";
 		rLen = 0;
-		rLoc = 10983;
+		rLoc = 11896;
 		rType = 0;
 		vrLen = 1251;
 		vrLoc = 5067;
@@ -5301,7 +5324,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 131";
 		rLen = 0;
-		rLoc = 9639;
+		rLoc = 10554;
 		rType = 0;
 		vrLen = 1406;
 		vrLoc = 5134;
@@ -5311,7 +5334,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 152";
 		rLen = 5;
-		rLoc = 11014;
+		rLoc = 11927;
 		rType = 0;
 		vrLen = 1577;
 		vrLoc = 4982;
@@ -5321,7 +5344,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 101";
 		rLen = 0;
-		rLoc = 7615;
+		rLoc = 8480;
 		rType = 0;
 		vrLen = 842;
 		vrLoc = 2903;
@@ -5331,7 +5354,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 93";
 		rLen = 0;
-		rLoc = 5152;
+		rLoc = 6016;
 		rType = 0;
 		vrLen = 1597;
 		vrLoc = 6267;
@@ -5341,10 +5364,239 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 45";
 		rLen = 0;
-		rLoc = 2759;
+		rLoc = 2797;
 		rType = 0;
 		vrLen = 2185;
 		vrLoc = 1435;
+	};
+	FBAB2AD713328D4A003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
+		name = "SXEditorEntityViewController.m: 51";
+		rLen = 0;
+		rLoc = 2940;
+		rType = 0;
+		vrLen = 1054;
+		vrLoc = 3931;
+	};
+	FBAB2AD813328D4A003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
+		name = "SXEditorEntityViewController.h: 14";
+		rLen = 0;
+		rLoc = 312;
+		rType = 0;
+		vrLen = 940;
+		vrLoc = 95;
+	};
+	FBAB2AD913328D4A003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
+		name = "SXEditorEntityViewController.h: 21";
+		rLen = 0;
+		rLoc = 655;
+		rType = 0;
+		vrLen = 998;
+		vrLoc = 95;
+	};
+	FBAB2AF8133291F7003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
+		name = "SXEditorEntityViewController.h: 21";
+		rLen = 0;
+		rLoc = 655;
+		rType = 0;
+		vrLen = 998;
+		vrLoc = 95;
+	};
+	FBAB2AF9133291F7003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBC4B969109B4A4E00AA7331 /* Competition.m */;
+		name = "Competition.m: 26";
+		rLen = 64;
+		rLoc = 920;
+		rType = 0;
+		vrLen = 995;
+		vrLoc = 281;
+	};
+	FBAB2AFA133291F7003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBE6819C1093363200CE4DB8 /* City.h */;
+		name = "City.h: 51";
+		rLen = 59;
+		rLoc = 1352;
+		rType = 0;
+		vrLen = 781;
+		vrLoc = 636;
+	};
+	FBAB2AFB133291F7003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBFD90EA1092B78E0023F307 /* Award.m */;
+		name = "Award.m: 162";
+		rLen = 154;
+		rLoc = 6118;
+		rType = 0;
+		vrLen = 1154;
+		vrLoc = 5390;
+	};
+	FBAB2AFC133291F7003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBE6819D1093363200CE4DB8 /* City.m */;
+		name = "City.m: 53";
+		rLen = 0;
+		rLoc = 1753;
+		rType = 0;
+		vrLen = 992;
+		vrLoc = 170;
+	};
+	FBAB2AFD133291F7003FA548 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'object' undeclared (first use in this function)";
+		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 73;
+		rType = 1;
+	};
+	FBAB2AFE133291F7003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
+		name = "SXEditorEntityViewController.m: 73";
+		rLen = 0;
+		rLoc = 4162;
+		rType = 0;
+		vrLen = 1572;
+		vrLoc = 2266;
+	};
+	FBAB2B0213329252003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
+		name = "SXEditorEntityViewController.m: 73";
+		rLen = 0;
+		rLoc = 4162;
+		rType = 0;
+		vrLen = 1682;
+		vrLoc = 2266;
+	};
+	FBAB2B0313329252003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
+		name = "EditorController.m: 67";
+		rLen = 0;
+		rLoc = 2487;
+		rType = 0;
+		vrLen = 1576;
+		vrLoc = 1108;
+	};
+	FBAB2B09133293F0003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
+		name = "EditorController.m: 67";
+		rLen = 0;
+		rLoc = 2487;
+		rType = 0;
+		vrLen = 1611;
+		vrLoc = 1073;
+	};
+	FBAB2B0A133293F0003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBFD90791092AFE40023F307 /* Database.m */;
+		name = "Database.m: 1916";
+		rLen = 27;
+		rLoc = 68975;
+		rType = 0;
+		vrLen = 729;
+		vrLoc = 68636;
+	};
+	FBAB2B0B133293F0003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBFD90781092AFE40023F307 /* Database.h */;
+		name = "Database.h: 78";
+		rLen = 0;
+		rLoc = 3012;
+		rType = 0;
+		vrLen = 946;
+		vrLoc = 2104;
+	};
+	FBAB2B0E13329401003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBFD90781092AFE40023F307 /* Database.h */;
+		name = "Database.h: 78";
+		rLen = 0;
+		rLoc = 3012;
+		rType = 0;
+		vrLen = 899;
+		vrLoc = 2151;
+	};
+	FBAB2B1213329512003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBFD90781092AFE40023F307 /* Database.h */;
+		name = "Database.h: 78";
+		rLen = 0;
+		rLoc = 3012;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 2151;
+	};
+	FBAB2B1313329512003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
+		name = "SXEditorEntityViewController.m: 204";
+		rLen = 0;
+		rLoc = 9253;
+		rType = 0;
+		vrLen = 1588;
+		vrLoc = 8290;
+	};
+	FBAB2B19133295A1003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */;
+		name = "SXEditorEntityViewController.h: 34";
+		rLen = 0;
+		rLoc = 1132;
+		rType = 0;
+		vrLen = 989;
+		vrLoc = 151;
+	};
+	FBAB2B1A133295A1003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
+		name = "SXEditorEntityViewController.m: 204";
+		rLen = 0;
+		rLoc = 9253;
+		rType = 0;
+		vrLen = 1622;
+		vrLoc = 8007;
+	};
+	FBAB2B1B133295A1003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
+		name = "SXEditorEntityViewController.m: 18";
+		rLen = 0;
+		rLoc = 443;
+		rType = 0;
+		vrLen = 861;
+		vrLoc = 3;
+	};
+	FBAB2B21133296EB003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
+		name = "SXEditorEntityViewController.m: 18";
+		rLen = 0;
+		rLoc = 443;
+		rType = 0;
+		vrLen = 1944;
+		vrLoc = 245;
+	};
+	FBAB2B22133296EB003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBE6819D1093363200CE4DB8 /* City.m */;
+		name = "City.m: 53";
+		rLen = 0;
+		rLoc = 1842;
+		rType = 0;
+		vrLen = 1295;
+		vrLoc = 766;
 	};
 	FBAE662310DC252C00181B07 /* AlliterationSaver.h */ = {
 		uiCtxt = {
@@ -5778,9 +6030,9 @@
 	};
 	FBC4B969109B4A4E00AA7331 /* Competition.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {737, 1534}}";
-			sepNavSelRange = "{981, 0}";
-			sepNavVisRange = "{280, 996}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 1586}}";
+			sepNavSelRange = "{920, 64}";
+			sepNavVisRange = "{281, 995}";
 			sepNavWindowFrame = "{{532, 193}, {717, 584}}";
 		};
 	};
@@ -6145,9 +6397,9 @@
 	};
 	FBDBAB02132FB6C900FF22B8 /* EditorController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1251, 962}}";
-			sepNavSelRange = "{2738, 0}";
-			sepNavVisRange = "{1143, 1602}";
+			sepNavIntBoundsRect = "{{0, 0}, {1251, 936}}";
+			sepNavSelRange = "{2487, 0}";
+			sepNavVisRange = "{1073, 1611}";
 			sepNavWindowFrame = "{{15, 315}, {750, 558}}";
 		};
 	};
@@ -6310,16 +6562,16 @@
 	};
 	FBE6819C1093363200CE4DB8 /* City.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {703, 676}}";
-			sepNavSelRange = "{1315, 0}";
-			sepNavVisRange = "{358, 999}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 715}}";
+			sepNavSelRange = "{1352, 59}";
+			sepNavVisRange = "{636, 781}";
 		};
 	};
 	FBE6819D1093363200CE4DB8 /* City.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {737, 520}}";
-			sepNavSelRange = "{1583, 0}";
-			sepNavVisRange = "{173, 1414}";
+			sepNavIntBoundsRect = "{{0, 0}, {1006, 806}}";
+			sepNavSelRange = "{1842, 0}";
+			sepNavVisRange = "{766, 1295}";
 			sepNavWindowFrame = "{{15, 215}, {750, 558}}";
 		};
 	};
@@ -7210,17 +7462,17 @@
 	};
 	FBFD90781092AFE40023F307 /* Database.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {768, 1027}}";
-			sepNavSelRange = "{2724, 234}";
-			sepNavVisRange = "{2151, 815}";
+			sepNavIntBoundsRect = "{{0, 0}, {768, 1040}}";
+			sepNavSelRange = "{3012, 0}";
+			sepNavVisRange = "{2151, 905}";
 			sepNavWindowFrame = "{{15, 189}, {717, 584}}";
 		};
 	};
 	FBFD90791092AFE40023F307 /* Database.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1160, 26208}}";
-			sepNavSelRange = "{71669, 0}";
-			sepNavVisRange = "{71274, 788}";
+			sepNavIntBoundsRect = "{{0, 0}, {1160, 26676}}";
+			sepNavSelRange = "{68975, 27}";
+			sepNavVisRange = "{68636, 729}";
 			sepNavWindowFrame = "{{15, 189}, {717, 584}}";
 		};
 	};
@@ -7264,8 +7516,8 @@
 	FBFD90EA1092B78E0023F307 /* Award.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1006, 2353}}";
-			sepNavSelRange = "{5391, 695}";
-			sepNavVisRange = "{5390, 1328}";
+			sepNavSelRange = "{6118, 154}";
+			sepNavVisRange = "{5390, 1154}";
 		};
 	};
 	FBFD90EC1092B79B0023F307 /* AwardLoader.h */ = {

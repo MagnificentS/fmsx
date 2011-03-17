@@ -16,7 +16,9 @@
 	IBOutlet NSView			*awardMainViewContainer, *awardEntityView, *awardGeneralView, *awardRulesView, *awardSectionView;
 	IBOutlet BWGradientBox	*awardHeaderBox;
 	
-	NSMutableArray			*awardSections;
+	IBOutlet NSTableView	*citiesTable;
+	IBOutlet NSView			*cityMainViewContainer, *cityEntityView;
+	
 }
 
 - (IBAction)showCityPicker:(id)sender;
@@ -28,6 +30,7 @@
 
 - (void)reloadEntityTable:(int)section;
 
-@property(readwrite,assign) IBOutlet NSView	*awardMainViewContainer, *awardEntityView, *awardGeneralView, *awardRulesView, *awardSectionView;
+@property(readwrite,assign) IBOutlet NSView	*awardMainViewContainer, *awardEntityView, *awardGeneralView, *awardRulesView, *awardSectionView,
+*cityMainViewContainer, *cityEntityView;
 
 @end

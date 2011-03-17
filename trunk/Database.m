@@ -1905,6 +1905,32 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 	return strings;
 }
 
+- (NSArray *)localAreaStrings
+{
+	NSMutableArray *strings = [[NSMutableArray alloc] init];
+	
+	for (LocalArea *item in localAreas) { [strings addObject:[item name]]; }
+	
+	return [strings autorelease];
+}
+- (NSArray *)weatherStrings
+{
+	NSMutableArray *strings = [[NSMutableArray alloc] init];
+	
+	for (Weather *item in weather) { [strings addObject:[item name]]; }
+	
+	return [strings autorelease];
+}
+- (NSArray *)languageStrings
+{
+	NSMutableArray *strings = [[NSMutableArray alloc] init];
+	
+	for (Language *item in languages) { [strings addObject:[item name]]; }
+	
+	return [strings autorelease];
+}
+
+
 - (NSArray *)continentStrings
 {
 	NSMutableArray *strings = [[NSMutableArray alloc] init];

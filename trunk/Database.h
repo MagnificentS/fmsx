@@ -74,5 +74,8 @@
 - (NSArray *)cityStringInfos;
 - (NSArray *)peopleStrings;
 - (NSArray *)peopleStringInfos;
+- (NSArray *)localAreaStrings;
+- (NSArray *)languageStrings;
+- (NSArray *)weatherStrings;
 
 @end

@@ -7,12 +7,23 @@
 //
 
 #import "City.h"
+#import "Nation.h"
+#import "LocalArea.h"
 
 @implementation City
 
 @synthesize databaseClass, nameGender, attraction, citizensNameGender, inhabitants, 
 unknownChar1, nationID, weatherID, spokenLanguageID, localAreaID, altitude, latitude,
 longitude, citizensName, rowID, UID, name;
+
+- (id)init
+{
+	[super init];
+	
+	name = @"---";
+	
+	return self;
+}
 
 - (NSArray *)inhabitantsStrings
 {
@@ -35,6 +46,17 @@ longitude, citizensName, rowID, UID, name;
 						NSLocalizedString(@"Over 20,000,000", @"city inhabitants"),
 						nil];
 	return strings;
+}
+
+- (NSString *)localAreaString
+{
+	if (localAreaID>-1) { return [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.localAreas"] objectAtIndex:localAreaID] name]; }
+	return @"---";	
+}
+- (NSString *)nationString
+{
+	if (nationID>-1) { return [[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] objectAtIndex:nationID] teamContainer] name]; }
+	return @"---";
 }
 
 @end

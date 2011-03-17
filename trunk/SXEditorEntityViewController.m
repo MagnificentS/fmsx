@@ -14,7 +14,8 @@
 
 @implementation SXEditorEntityViewController
 
-@synthesize awardMainViewContainer, awardEntityView, awardGeneralView, awardRulesView, awardSectionView;
+@synthesize awardMainViewContainer, awardEntityView, awardGeneralView, awardRulesView, awardSectionView,
+cityMainViewContainer, cityEntityView;
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
@@ -25,8 +26,8 @@
 	if ([[[[NSApp delegate] editorController] searchResults] count]>0) { return [[[[NSApp delegate] editorController] searchResults] count]; }
 	
 	if (aTableView==awardsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.awards"] count]; }
-/*	
 	else if (aTableView==citiesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.cities"] count]; }
+/*
 	else if (aTableView==clubsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.clubs"] count]; }
 	else if (aTableView==competitionsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.competitions"] count]; }
 	else if (aTableView==continentsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.continents"] count]; }
@@ -61,6 +62,15 @@
 		else if ([columnName isEqualToString:@"nation"])	{ return [object nationString]; }
 		else if ([columnName isEqualToString:@"continent"]) { return [object continentString]; }
 	}
+	else if (aTableView==citiesTable) {
+		City *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.cities"] objectAtIndex:rowIndex]; }
+		
+		if ([columnName isEqualToString:@"uid"])			{ return [NSNumber numberWithInt:[object UID]]; }
+		else if ([columnName isEqualToString:@"name"])		{ return [object name]; }
+	}
 	
 	else if (aTableView==awardSectionsTable) { 
 		if (rowIndex==0)		{ return @"General"; }
@@ -81,6 +91,12 @@
 		[aCell setDrawsBackground:YES];
 		[aCell setBackgroundColor:[[object colour] backgroundColour]];
 		[aCell setTextColor:[[object colour] foregroundColour]];
+	}
+	else if (aTableView==citiesTable) {
+		City *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.cities"] objectAtIndex:rowIndex]; }
 	}
 }
 
@@ -109,11 +125,11 @@
 		selectionIndex = [awardsTable selectedRow]; 
 		arrayString = @"awards";	classString = @"award";
 	}
-/*
 	else if (currentSection==EDS_CITIES) { 
 		selectionIndex = [citiesTable selectedRow]; 
 		arrayString = @"cities";	classString = @"city";
 	}
+	/*
 	else if (currentSection==EDS_CLUBS) { 
 		selectionIndex = [clubsTable selectedRow]; 
 		arrayString = @"clubs";	classString = @"club";
@@ -186,7 +202,7 @@
 	[[[[NSApp delegate] editorController] searchResults] removeAllObjects];
 	
 	SEL selectionSelector = NSSelectorFromString([NSString stringWithFormat:@"setSelected%@:",[classString capitalizedString]]);
-	[[[NSApp delegate] editorController] performSelector:selectionSelector withObject:[[[NSApp delegate] valueForKeyPath:arrayString] objectAtIndex:selectionIndex]];
+	[[[NSApp delegate] editorController] performSelector:selectionSelector withObject:[[[NSApp delegate] valueForKeyPath:[NSString stringWithFormat:@"gameDB.database.%@",arrayString]] objectAtIndex:selectionIndex]];
 	
 	SEL containerViewSelector = NSSelectorFromString([NSString stringWithFormat:@"%@MainViewContainer",classString]);
 	SEL entityViewSelector = NSSelectorFromString([NSString stringWithFormat:@"%@EntityView",classString]);
@@ -214,7 +230,7 @@
 	NSString *searchArray;
 	
 	if (currentSection==EDS_AWARDS)						{ searchArray = @"awards"; }
-	//	else if (currentSection==EDS_CITIES)			{ searchArray = @"cities"; }
+	else if (currentSection==EDS_CITIES)				{ searchArray = @"cities"; }
 	//	else if (currentSection==EDS_CLUBS)				{ searchArray = @"clubs"; }
 	//	else if (currentSection==EDS_COMPETITIONS)		{ searchArray = @"competitions"; }
 	//	else if (currentSection==EDS_CONTINENTS)		{ searchArray = @"continents"; }
@@ -253,7 +269,7 @@
 - (void)reloadEntityTable:(int)section
 {
 	if (section==EDS_AWARDS)				{ [awardsTable reloadData]; }
-//	else if (section==EDS_CITIES)			{ [citiesTable reloadData]; }
+	else if (section==EDS_CITIES)			{ [citiesTable reloadData]; }
 //	else if (section==EDS_CLUBS)			{ [clubsTable reloadData]; }
 //	else if (section==EDS_COMPETITIONS)		{ [competitionsTable reloadData]; }
 //	else if (section==EDS_CONTINENTS)		{ [continentsTable reloadData]; }

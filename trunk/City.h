@@ -48,4 +48,7 @@ inhabitants, unknownChar1;
 
 - (NSArray *)inhabitantsStrings;
 
+- (NSString *)localAreaString;
+- (NSString *)nationString;
+
 @end
