@@ -290,13 +290,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>427</integer>
-									<integer>425</integer>
+									<integer>491</integer>
+									<integer>475</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 7106}, {229, 546}}</string>
+							<string>{{0, 7344}, {229, 546}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -317,7 +317,7 @@
 							<real>207</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>291 273 1049 605 0 0 1440 878 </string>
+						<string>303 273 1049 605 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -347,7 +347,7 @@
 										<key>_historyCapacity</key>
 										<integer>20</integer>
 										<key>bookmark</key>
-										<string>FBAB2A40133262BE003FA548</string>
+										<string>FBAB2A4E13326416003FA548</string>
 										<key>history</key>
 										<array>
 											<string>FBDBABE1132FF0D400FF22B8</string>
@@ -363,13 +363,13 @@
 											<string>FBAB29E013324390003FA548</string>
 											<string>FBAB2A04133248A8003FA548</string>
 											<string>FBAB2A0A13324902003FA548</string>
-											<string>FBAB2A2913324CE3003FA548</string>
 											<string>FBAB2A2A13324CE3003FA548</string>
 											<string>FBAB2A2C13324CE3003FA548</string>
 											<string>FBAB2A2D13324CE3003FA548</string>
 											<string>FBAB2A3D133262BE003FA548</string>
 											<string>FBAB2A3E133262BE003FA548</string>
-											<string>FBAB2A3F133262BE003FA548</string>
+											<string>FBAB2A4C13326416003FA548</string>
+											<string>FBAB2A4D13326416003FA548</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -383,7 +383,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {798, 421}}</string>
 								<key>RubberWindowFrame</key>
-								<string>291 273 1049 605 0 0 1440 878 </string>
+								<string>303 273 1049 605 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -403,7 +403,7 @@
 								<key>Frame</key>
 								<string>{{0, 426}, {798, 138}}</string>
 								<key>RubberWindowFrame</key>
-								<string>291 273 1049 605 0 0 1440 878 </string>
+								<string>303 273 1049 605 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -567,7 +567,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>FBAB2A41133262BE003FA548</string>
 		<string>FBAB28EF133220A3003FA548</string>
 		<string>FBAB28F0133220A3003FA548</string>
 		<string>1CD10A99069EF8BA00B06720</string>
@@ -576,7 +575,7 @@
 		<string>/Users/littleblue/ソフト/FM11SX/FM11SX.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>291 273 1049 605 0 0 1440 878 </string>
+	<string>303 273 1049 605 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -668,7 +667,7 @@
 			<key>WindowToolGUID</key>
 			<string>FB9D33D310923BAA000883FF</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

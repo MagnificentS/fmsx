@@ -12,7 +12,7 @@
 
 @interface ContentController : NSObject {
 	IBOutlet NSBox *mainViewContainer;
-	IBOutlet NSView *editorView, *scoutView, *IDLookupView;
+	IBOutlet NSView *editorView, *IDLookupView;
 	IBOutlet NSView *placeholderView;
 	
 	NSMutableDictionary *selectedRows;

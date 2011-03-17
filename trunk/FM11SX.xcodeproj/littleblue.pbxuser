@@ -316,6 +316,9 @@
 			FBAB2A3E133262BE003FA548 /* PBXTextBookmark */ = FBAB2A3E133262BE003FA548 /* PBXTextBookmark */;
 			FBAB2A3F133262BE003FA548 /* PBXTextBookmark */ = FBAB2A3F133262BE003FA548 /* PBXTextBookmark */;
 			FBAB2A40133262BE003FA548 /* PBXTextBookmark */ = FBAB2A40133262BE003FA548 /* PBXTextBookmark */;
+			FBAB2A4C13326416003FA548 /* PBXTextBookmark */ = FBAB2A4C13326416003FA548 /* PBXTextBookmark */;
+			FBAB2A4D13326416003FA548 /* PBXTextBookmark */ = FBAB2A4D13326416003FA548 /* PBXTextBookmark */;
+			FBAB2A4E13326416003FA548 /* PBXTextBookmark */ = FBAB2A4E13326416003FA548 /* PBXTextBookmark */;
 			FBDBAB06132FBB9A00FF22B8 = FBDBAB06132FBB9A00FF22B8 /* PBXTextBookmark */;
 			FBDBAB07132FBB9A00FF22B8 = FBDBAB07132FBB9A00FF22B8 /* PBXTextBookmark */;
 			FBDBABDA132FF0D400FF22B8 = FBDBABDA132FF0D400FF22B8 /* PBXTextBookmark */;
@@ -980,17 +983,17 @@
 	};
 	FB1D74EB1098840B00EC8BBB /* ContentController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {737, 1261}}";
-			sepNavSelRange = "{480, 0}";
-			sepNavVisRange = "{335, 763}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 1118}}";
+			sepNavSelRange = "{2048, 0}";
+			sepNavVisRange = "{1532, 937}";
 			sepNavWindowFrame = "{{63, 294}, {717, 584}}";
 		};
 	};
 	FB1D74EC1098840B00EC8BBB /* ContentController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {957, 9009}}";
-			sepNavSelRange = "{7788, 6076}";
-			sepNavVisRange = "{13861, 1137}";
+			sepNavIntBoundsRect = "{{0, 0}, {740, 2808}}";
+			sepNavSelRange = "{1283, 0}";
+			sepNavVisRange = "{222, 791}";
 			sepNavWindowFrame = "{{533, 105}, {717, 584}}";
 		};
 	};
@@ -1385,7 +1388,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 162";
 		rLen = 0;
-		rLoc = 430;
+		rLoc = 418;
 		rType = 0;
 		vrLen = 985;
 		vrLoc = 5974;
@@ -2116,7 +2119,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1239";
 		rLen = 0;
-		rLoc = 26276;
+		rLoc = 7437;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 50240;
@@ -4058,7 +4061,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 170";
 		rLen = 0;
-		rLoc = 1207;
+		rLoc = 1195;
 		rType = 0;
 		vrLen = 876;
 		vrLoc = 5926;
@@ -4068,7 +4071,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1214";
 		rLen = 0;
-		rLoc = 25526;
+		rLoc = 6687;
 		rType = 0;
 		vrLen = 1045;
 		vrLoc = 49713;
@@ -4138,7 +4141,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 222";
 		rLen = 0;
-		rLoc = 2147;
+		rLoc = 2135;
 		rType = 0;
 		vrLen = 1831;
 		vrLoc = 7360;
@@ -4148,7 +4151,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 223";
 		rLen = 0;
-		rLoc = 2272;
+		rLoc = 2260;
 		rType = 0;
 		vrLen = 1841;
 		vrLoc = 7359;
@@ -4158,7 +4161,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 223";
 		rLen = 0;
-		rLoc = 2272;
+		rLoc = 2260;
 		rType = 0;
 		vrLen = 1883;
 		vrLoc = 7359;
@@ -4318,7 +4321,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 224";
 		rLen = 0;
-		rLoc = 2199;
+		rLoc = 2187;
 		rType = 0;
 		vrLen = 1682;
 		vrLoc = 7731;
@@ -4348,7 +4351,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 217";
 		rLen = 0;
-		rLoc = 2147;
+		rLoc = 2135;
 		rType = 0;
 		vrLen = 1682;
 		vrLoc = 7731;
@@ -4358,7 +4361,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 217";
 		rLen = 0;
-		rLoc = 2147;
+		rLoc = 2135;
 		rType = 0;
 		vrLen = 1682;
 		vrLoc = 7731;
@@ -4618,7 +4621,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1075";
 		rLen = 0;
-		rLoc = 20792;
+		rLoc = 1953;
 		rType = 0;
 		vrLen = 882;
 		vrLoc = 47759;
@@ -4659,7 +4662,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 522;
+		rLoc = 73;
 		rType = 1;
 	};
 	FBAB29EC1332443C003FA548 /* PBXTextBookmark */ = {
@@ -4667,7 +4670,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1075";
 		rLen = 0;
-		rLoc = 20791;
+		rLoc = 1952;
 		rType = 0;
 		vrLen = 968;
 		vrLoc = 44681;
@@ -4677,7 +4680,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1075";
 		rLen = 0;
-		rLoc = 20791;
+		rLoc = 1952;
 		rType = 0;
 		vrLen = 1124;
 		vrLoc = 44681;
@@ -4767,7 +4770,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1206";
 		rLen = 0;
-		rLoc = 25342;
+		rLoc = 6503;
 		rType = 0;
 		vrLen = 786;
 		vrLoc = 49345;
@@ -4787,7 +4790,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 644";
 		rLen = 0;
-		rLoc = 24085;
+		rLoc = 5246;
 		rType = 0;
 		vrLen = 563;
 		vrLoc = 25476;
@@ -4826,7 +4829,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 21";
 		rLen = 0;
-		rLoc = 480;
+		rLoc = 468;
 		rType = 0;
 		vrLen = 763;
 		vrLoc = 335;
@@ -4955,11 +4958,41 @@
 		isa = PBXTextBookmark;
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 193";
-		rLen = 6076;
-		rLoc = 7788;
+		rLen = 0;
+		rLoc = 1283;
 		rType = 0;
 		vrLen = 1137;
 		vrLoc = 13861;
+	};
+	FBAB2A4C13326416003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
+		name = "ContentController.h: 74";
+		rLen = 0;
+		rLoc = 2048;
+		rType = 0;
+		vrLen = 937;
+		vrLoc = 1532;
+	};
+	FBAB2A4D13326416003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
+		name = "ContentController.m: 24";
+		rLen = 0;
+		rLoc = 540;
+		rType = 0;
+		vrLen = 875;
+		vrLoc = 222;
+	};
+	FBAB2A4E13326416003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
+		name = "ContentController.m: 52";
+		rLen = 0;
+		rLoc = 1283;
+		rType = 0;
+		vrLen = 791;
+		vrLoc = 222;
 	};
 	FBAE662310DC252C00181B07 /* AlliterationSaver.h */ = {
 		uiCtxt = {
