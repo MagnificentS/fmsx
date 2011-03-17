@@ -80,7 +80,7 @@ teams, localAreas, stageNames, weather, descriptions, people, personStats, playe
 nonPlayerStats, competitions, nations, langDBLoaded, competitionHistories,
 clubLinks, saveEndOffset, unknowns1, derbies, agreements, databaseChanges, unknownData1,
 unknownData2, unknownData3, unknownData4, unknownData5, unknownData6, unknownData7,
-unknownInt1, unknownInt2, unknownInt3, unknownInt4;
+unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionStrings;
 
 - (id)init
 {
@@ -123,6 +123,9 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	unknowns1 = [[NSMutableArray alloc] init];
 	weather = [[NSMutableArray alloc] init];
 	
+	nationStrings = [[NSMutableArray alloc] init];
+	competitionStrings = [[NSMutableArray alloc] init];
+	
 	return self;
 }
 
@@ -162,6 +165,9 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 	[teams release];
 	[unknowns1 release];
 	[weather release];
+	
+	[nationStrings release];
+	[competitionStrings release];
 	
 	[super dealloc];
 }
@@ -1897,6 +1903,118 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4;
 						NSLocalizedString(@"Unknown 3", @"formation"),
 						nil];
 	return strings;
+}
+
+- (NSArray *)continentStrings
+{
+	NSMutableArray *strings = [[NSMutableArray alloc] init];
+	
+	for (Continent *item in continents) { [strings addObject:[item name]]; }
+	
+	return [strings autorelease];
+}
+
+- (NSArray *)competitionStrings
+{
+	NSMutableArray *strings = [[NSMutableArray alloc] init];
+	
+	for (Competition *item in competitions) { [strings addObject:[item name]]; }
+	
+	return [strings autorelease];
+}
+
+- (NSArray *)competitionStringInfos
+{
+	NSMutableArray *stringInfos = [[NSMutableArray alloc] init];
+	
+	for (Competition *item in competitions) { 
+		[stringInfos addObject:[NSDictionary dictionaryWithObjectsAndKeys:[item name],@"name",[NSNumber numberWithInt:[item rowID]],@"rowID",nil]]; 
+	}
+	
+	return [stringInfos autorelease];
+}
+
+- (NSArray *)nationStrings
+{
+	NSMutableArray *strings = [[NSMutableArray alloc] init];
+	for (Nation *item in nations) { [strings addObject:[[item teamContainer] name]]; }
+	return [strings autorelease];
+}
+
+- (NSArray *)nationStringInfos
+{
+	NSMutableArray *stringInfos = [[NSMutableArray alloc] init];
+	
+	for (Nation *item in nations) { 
+		[stringInfos addObject:[NSDictionary dictionaryWithObjectsAndKeys:[[item teamContainer] name],@"name",[NSNumber numberWithInt:[item rowID]],@"rowID",nil]]; 
+	}
+	
+	return [stringInfos autorelease];
+}
+
+- (NSArray *)mediaStrings
+{
+	NSMutableArray *strings = [[NSMutableArray alloc] init];
+	for (Media *item in media) { [strings addObject:[item name]]; }
+	return [strings autorelease];
+}
+- (NSArray *)mediaStringInfos
+{
+	NSMutableArray *stringInfos = [[NSMutableArray alloc] init];
+	
+	for (Media *item in media) { 
+		[stringInfos addObject:[NSDictionary dictionaryWithObjectsAndKeys:[item name],@"name",[NSNumber numberWithInt:[item rowID]],@"rowID",nil]]; 
+	}
+	
+	return [stringInfos autorelease];
+}
+- (NSArray *)stadiumStrings
+{
+	NSMutableArray *strings = [[NSMutableArray alloc] init];
+	for (Stadium *item in stadiums) { [strings addObject:[item name]]; }
+	return [strings autorelease];
+}
+- (NSArray *)stadiumStringInfos
+{
+	NSMutableArray *stringInfos = [[NSMutableArray alloc] init];
+	
+	for (Stadium *item in stadiums) { 
+		[stringInfos addObject:[NSDictionary dictionaryWithObjectsAndKeys:[item name],@"name",[NSNumber numberWithInt:[item rowID]],@"rowID",nil]]; 
+	}
+	
+	return [stringInfos autorelease];
+}
+- (NSArray *)cityStrings
+{
+	NSMutableArray *strings = [[NSMutableArray alloc] init];
+	for (City *item in cities) { [strings addObject:[item name]]; }
+	return [strings autorelease];
+}
+- (NSArray *)cityStringInfos
+{
+	NSMutableArray *stringInfos = [[NSMutableArray alloc] init];
+	
+	for (City *item in cities) { 
+		[stringInfos addObject:[NSDictionary dictionaryWithObjectsAndKeys:[item name],@"name",[NSNumber numberWithInt:[item rowID]],@"rowID",nil]]; 
+	}
+	
+	return [stringInfos autorelease];
+}
+- (NSArray *)peopleStrings
+{
+	NSMutableArray *strings = [[NSMutableArray alloc] init];
+	for (Person *item in people) { [strings addObject:[item name]]; }
+	return [strings autorelease];
+}
+- (NSArray *)peopleStringInfos
+{
+	NSMutableArray *stringInfos = [[NSMutableArray alloc] init];
+	
+	for (Person *item in people) { 
+		[stringInfos addObject:[NSDictionary dictionaryWithObjectsAndKeys:[item name],@"name",[NSNumber numberWithInt:[item rowID]],@"rowID",nil]]; 
+	}
+	
+	return [stringInfos autorelease];
 }
 
 @end

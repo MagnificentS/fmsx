@@ -23,6 +23,15 @@ nameGender, shortNameGender, nameType, hasInfos, unknownChar1, unknownChar2, unk
 unknownChar4, unknowns, type, flags, unknownChar5, unknownChar6, unknownChar7,
 unknownChar8, unknownChar9, unknownChar10, unknownShort1, controller;
 
+- (id)init
+{
+	[super init];
+	
+	name = @"---";
+	
+	return self;
+}
+
 - (BOOL)usesSquadNumbers { 
 	if (flags & CF_USES_SQUAD_NUMBERS) { return TRUE; } 
 	return FALSE; 

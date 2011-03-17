@@ -159,18 +159,18 @@ unknownChar7, controller;
 
 - (NSString *)nationString
 {
-	if (nationID>-1) { return [[[[[[NSApp delegate] database] nations] objectAtIndex:nationID] teamContainer] name]; }
+	if (nationID>-1) { return [[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] objectAtIndex:nationID] teamContainer] name]; }
 	return @"---";
 }
 - (NSString *)continentString;
 {
-	if (continentID>-1) { return [[[[[NSApp delegate] database] continents] objectAtIndex:continentID] name]; }
+	if (continentID>-1) { return [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.continents"] objectAtIndex:continentID] name]; }
 	else if (continentID==-1 && nationID==-1 && competitionID==-1) { return @"World"; }
 	return @"---";
 }
 - (NSString *)competitionString;
 {
-	if (competitionID>-1) { return [[[[[NSApp delegate] database] competitions] objectAtIndex:competitionID] name]; }
+	if (competitionID>-1) { return [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.competitions"] objectAtIndex:competitionID] name]; }
 	return @"---";
 }
 

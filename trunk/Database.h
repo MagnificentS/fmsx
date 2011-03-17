@@ -28,6 +28,9 @@
 	NSMutableArray *clubs, *firstNames, *surnames, *commonNames, *sponsors;
 	NSMutableArray *media, *languages, *currencies, *continents, *injuries;
 	NSMutableArray *clubLinks, *unknowns1, *derbies, *agreements;
+	
+	NSMutableArray *nationStrings, *competitionStrings;
+	
 	NSData *unknownData1, *unknownData2, *unknownData3, *unknownData4, *unknownData5, 
 	*unknownData6, *unknownData7;
 	NSString *status;
@@ -41,7 +44,8 @@
 *cities, *clubs, *media, *languages, *currencies, *continents, *injuries, *firstNames, 
 *surnames, *commonNames, *sponsors, *stadiums, *stadiumChanges, *teams, *localAreas,
 *stageNames, *weather, *descriptions, *people, *personStats, *playerStats, *nonPlayerStats, 
-*competitions, *nations, *competitionHistories, *clubLinks, *unknowns1, *derbies, *agreements;
+*competitions, *nations, *competitionHistories, *clubLinks, *unknowns1, *derbies, *agreements,
+*nationStrings, *competitionStrings;
 @property(copy,readwrite) NSString *status;
 @property(assign,readwrite) unsigned int currentRecord, totalRecords, saveEndOffset, databaseChanges;
 @property(assign,readwrite) int unknownInt1, unknownInt2, unknownInt3, unknownInt4;
@@ -55,5 +59,20 @@
 - (void)assignInjuryNames:(NSString *)path;
 - (void)assignContinentNames:(NSString *)path;
 - (void)assignAwardNames:(NSString *)path;
+
+- (NSArray *)continentStrings;
+
+- (NSArray *)competitionStrings;
+- (NSArray *)competitionStringInfos;
+- (NSArray *)nationStrings;
+- (NSArray *)nationStringInfos;
+- (NSArray *)mediaStrings;
+- (NSArray *)mediaStringInfos;
+- (NSArray *)stadiumStrings;
+- (NSArray *)stadiumStringInfos;
+- (NSArray *)cityStrings;
+- (NSArray *)cityStringInfos;
+- (NSArray *)peopleStrings;
+- (NSArray *)peopleStringInfos;
 
 @end

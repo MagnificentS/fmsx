@@ -20,6 +20,7 @@
 @class SXFSaveGameSummary;
 @class FMDate;
 @class LangDB;
+@class EditorController;
 
 @interface Controller : NSObject {
 	IBOutlet NSPanel *donatePanel;
@@ -34,6 +35,7 @@
 	SXFGameDB *gameDB;
 	SXFGameInfo *gameInfo;
 	SXFSaveGameSummary *saveGameSummary;
+	EditorController *editorController;
 	
 	NSWindowController *preferencesWindowController;
 	NSThread *gameDBThread;
@@ -68,7 +70,9 @@
 - (void)setDonateLater:(id)sender;
 - (void)setDonateStopAsking:(id)sender;
 
+@property(assign,readwrite) ContentController *contentController;
 @property(assign,readwrite) Database *database;
+@property(assign,readwrite) EditorController *editorController;
 @property(assign,readwrite) LangDB *langDB;
 @property(assign,readwrite) SXFGameDB *gameDB;
 @property(assign,readwrite) SXFGameInfo *gameInfo;

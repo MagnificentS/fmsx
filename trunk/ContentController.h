@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "MGScopeBarDelegateProtocol.h"
 #import <BWToolkitFramework/BWToolkitFramework.h>
+#import "SXEditorViewController.h"
 
 // Keys for our sample data.
 #define MGSB_GROUP_LABEL			@"Label"			// string
@@ -165,6 +166,9 @@
 	NSMutableDictionary *selectedRows;
 	
 	NSString *locationString;
+	
+	IBOutlet NSWindow *mainWindow;
+	SXEditorViewController *editorViewController;
 }
 
 - (void)setFavourites;
@@ -216,6 +220,9 @@
 *nationGeneralView, *nationMainView, *nationSearchView, *personRelationshipsView,
 *clubRelationshipsView, *nationRelationshipsView, *derbyGeneralView, *derbySearchView,
 *clubKitView, *clubLBCView, *clubFacilitiesView;
+
+@property(readwrite,assign) NSWindow *mainWindow;
+@property(readonly,assign) SXEditorViewController *editorViewController;
 
 @property(readwrite,copy) NSString *locationString;
 @property(readwrite,copy) NSMutableArray *recentlyViewed, *entityIndexArray;

@@ -23,7 +23,6 @@
 #import "SupportFunctions.h"
 #import "SXOutlineViewCell.h"
 #import "SXMainMediaController.h"
-#import "SXEditorViewController.h"
 #import "SXScoutViewController.h"
 
 @implementation ContentController
@@ -44,7 +43,8 @@ competitionController, continentController, injuryController, currencyController
 languageController, localAreaController, mediaController, peopleController, clubKitView,
 sponsorController, stadiumController, stadiumChangeController, weatherController, awardRulesView, 
 awardMainView, derbyGeneralView, derbySearchView, derbyController, agentView, locationString,
-clubLBCView, clubFacilitiesView;
+clubLBCView, clubFacilitiesView,
+editorViewController, mainWindow;
 
 - (id)init
 {
@@ -251,41 +251,6 @@ clubLBCView, clubFacilitiesView;
 
 - (void)awakeFromNib
 {	
-	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
-	 [NSDictionary dictionaryWithObjectsAndKeys:@"Awards",@"title",@"1234",@"count",[NSImage imageNamed:@"award.png"],@"image",nil]];
-	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
-	 [NSDictionary dictionaryWithObjectsAndKeys:@"Cities",@"title",@"5678",@"count",[NSImage imageNamed:@"city.png"],@"image",nil]];
-	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
-	 [NSDictionary dictionaryWithObjectsAndKeys:@"Clubs",@"title",@"1234",@"count",[NSImage imageNamed:@"club.png"],@"image",nil]];
-	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
-	 [NSDictionary dictionaryWithObjectsAndKeys:@"Competitions",@"title",@"5678",@"count",[NSImage imageNamed:@"competition.png"],@"image",nil]];
-	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
-	 [NSDictionary dictionaryWithObjectsAndKeys:@"Continents",@"title",@"1234",@"count",[NSImage imageNamed:@"continent.png"],@"image",nil]];
-	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
-	 [NSDictionary dictionaryWithObjectsAndKeys:@"Currencies",@"title",@"5678",@"count",[NSImage imageNamed:@"currency.png"],@"image",nil]];
-	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
-	 [NSDictionary dictionaryWithObjectsAndKeys:@"Derbies",@"title",@"1234",@"count",[NSImage imageNamed:@"derby.png"],@"image",nil]];
-	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
-	 [NSDictionary dictionaryWithObjectsAndKeys:@"Injuries",@"title",@"5678",@"count",[NSImage imageNamed:@"injury.png"],@"image",nil]];
-	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
-	 [NSDictionary dictionaryWithObjectsAndKeys:@"Language",@"title",@"1234",@"count",[NSImage imageNamed:@"language.png"],@"image",nil]];
-	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
-	 [NSDictionary dictionaryWithObjectsAndKeys:@"Local Areas",@"title",@"5678",@"count",[NSImage imageNamed:@"localarea.png"],@"image",nil]];
-	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
-	 [NSDictionary dictionaryWithObjectsAndKeys:@"Media",@"title",@"1234",@"count",[NSImage imageNamed:@"media.png"],@"image",nil]];
-	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
-	 [NSDictionary dictionaryWithObjectsAndKeys:@"Nations",@"title",@"5678",@"count",[NSImage imageNamed:@"nation.png"],@"image",nil]];
-	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
-	 [NSDictionary dictionaryWithObjectsAndKeys:@"People",@"title",@"1234",@"count",[NSImage imageNamed:@"person.png"],@"image",nil]];
-	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
-	 [NSDictionary dictionaryWithObjectsAndKeys:@"Sponsors",@"title",@"5678",@"count",[NSImage imageNamed:@"sponsor.png"],@"image",nil]];
-	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
-	 [NSDictionary dictionaryWithObjectsAndKeys:@"Stadiums",@"title",@"1234",@"count",[NSImage imageNamed:@"stadium.png"],@"image",nil]];
-	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
-	 [NSDictionary dictionaryWithObjectsAndKeys:@"Stadium Changes",@"title",@"5678",@"count",[NSImage imageNamed:@"stadiumchange.png"],@"image",nil]];
-	[[self mutableArrayValueForKey:@"entityIndexArray"] addObject:
-	 [NSDictionary dictionaryWithObjectsAndKeys:@"Weather",@"title",@"1234",@"count",[NSImage imageNamed:@"weather.png"],@"image",nil]];
-	
 	SXOutlineViewCell *oCell = [[SXOutlineViewCell alloc] init];
 	
 	[[mainOutlineView tableColumnWithIdentifier:@"mainCol"] setDataCell:oCell];
@@ -1081,238 +1046,6 @@ clubLBCView, clubFacilitiesView;
 	[mainContainer setContentView:gameInfoView];
 }
 
-#pragma mark MGScopeBarDelegate methods
-
-- (int)numberOfGroupsInScopeBar:(MGScopeBar *)theScopeBar
-{
-	if (theScopeBar==clubScopeBar) { return [clubSections count]; }
-	else if (theScopeBar==awardScopeBar) { return [awardSections count]; }
-	else if (theScopeBar==mediaScopeBar) { return [mediaSections count]; }
-	else if (theScopeBar==nationScopeBar) { return [nationSections count]; }
-	else if (theScopeBar==personScopeBar) { return [personSections count]; }
-	return 0;
-}
-
-
-- (NSArray *)scopeBar:(MGScopeBar *)theScopeBar itemIdentifiersForGroup:(int)groupNumber
-{
-	if (theScopeBar==clubScopeBar) { 
-		return [[clubSections objectAtIndex:groupNumber] valueForKeyPath:[NSString stringWithFormat:@"%@.%@", MGSB_GROUP_ITEMS, MGSB_ITEM_IDENTIFIER]];
-	}
-	else if (theScopeBar==awardScopeBar) { 
-		return [[awardSections objectAtIndex:groupNumber] valueForKeyPath:[NSString stringWithFormat:@"%@.%@", MGSB_GROUP_ITEMS, MGSB_ITEM_IDENTIFIER]];
-	}
-	else if (theScopeBar==mediaScopeBar) { 
-		return [[mediaSections objectAtIndex:groupNumber] valueForKeyPath:[NSString stringWithFormat:@"%@.%@", MGSB_GROUP_ITEMS, MGSB_ITEM_IDENTIFIER]];
-	}
-	else if (theScopeBar==nationScopeBar) { 
-		return [[nationSections objectAtIndex:groupNumber] valueForKeyPath:[NSString stringWithFormat:@"%@.%@", MGSB_GROUP_ITEMS, MGSB_ITEM_IDENTIFIER]];
-	}
-	else if (theScopeBar==personScopeBar) { 
-		return [[personSections objectAtIndex:groupNumber] valueForKeyPath:[NSString stringWithFormat:@"%@.%@", MGSB_GROUP_ITEMS, MGSB_ITEM_IDENTIFIER]];
-	}
-	return nil;
-}
-
-
-- (NSString *)scopeBar:(MGScopeBar *)theScopeBar labelForGroup:(int)groupNumber
-{
-	if (theScopeBar==clubScopeBar) { 
-		return [[clubSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_LABEL]; // might be nil, which is fine (nil means no label).
-	}
-	else if (theScopeBar==awardScopeBar) { 
-		return [[awardSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_LABEL]; // might be nil, which is fine (nil means no label).
-	}
-	else if (theScopeBar==mediaScopeBar) { 
-		return [[mediaSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_LABEL]; // might be nil, which is fine (nil means no label).
-	}
-	else if (theScopeBar==nationScopeBar) { 
-		return [[nationSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_LABEL]; // might be nil, which is fine (nil means no label).
-	}
-	else if (theScopeBar==personScopeBar) { 
-		return [[personSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_LABEL]; // might be nil, which is fine (nil means no label).
-	}
-	return @"---";
-}
-
-
-- (NSString *)scopeBar:(MGScopeBar *)theScopeBar titleOfItem:(NSString *)identifier inGroup:(int)groupNumber
-{
-	if (theScopeBar==clubScopeBar) { 
-		NSArray *items = [[clubSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_ITEMS];
-		if (items) {
-			for (NSDictionary *item in items) {
-				if ([[item objectForKey:MGSB_ITEM_IDENTIFIER] isEqualToString:identifier]) {
-					return [item objectForKey:MGSB_ITEM_NAME];
-					break;
-				}
-			}
-		}
-	}
-	else if (theScopeBar==awardScopeBar) { 
-		NSArray *items = [[awardSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_ITEMS];
-		if (items) {
-			for (NSDictionary *item in items) {
-				if ([[item objectForKey:MGSB_ITEM_IDENTIFIER] isEqualToString:identifier]) {
-					return [item objectForKey:MGSB_ITEM_NAME];
-					break;
-				}
-			}
-		}
-	}
-	else if (theScopeBar==mediaScopeBar) { 
-		NSArray *items = [[mediaSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_ITEMS];
-		if (items) {
-			for (NSDictionary *item in items) {
-				if ([[item objectForKey:MGSB_ITEM_IDENTIFIER] isEqualToString:identifier]) {
-					return [item objectForKey:MGSB_ITEM_NAME];
-					break;
-				}
-			}
-		}
-	}
-	else if (theScopeBar==nationScopeBar) { 
-		NSArray *items = [[nationSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_ITEMS];
-		if (items) {
-			for (NSDictionary *item in items) {
-				if ([[item objectForKey:MGSB_ITEM_IDENTIFIER] isEqualToString:identifier]) {
-					return [item objectForKey:MGSB_ITEM_NAME];
-					break;
-				}
-			}
-		}
-	}
-	else if (theScopeBar==personScopeBar) { 
-		NSArray *items = [[personSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_ITEMS];
-		if (items) {
-			// We'll iterate here, since this is just a demo. This avoids having to keep an NSDictionary of identifiers 
-			// for each group as well as an array for ordering. In a more realistic scenario, you'd probably want to be 
-			// able to look-up an item by its identifier in constant time.
-			for (NSDictionary *item in items) {
-				if ([[item objectForKey:MGSB_ITEM_IDENTIFIER] isEqualToString:identifier]) {
-					return [item objectForKey:MGSB_ITEM_NAME];
-					break;
-				}
-			}
-		}
-	}
-	return nil;
-}
-
-
-- (MGScopeBarGroupSelectionMode)scopeBar:(MGScopeBar *)theScopeBar selectionModeForGroup:(int)groupNumber
-{
-	if (theScopeBar==clubScopeBar) { 
-		return [[[clubSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_SELECTION_MODE] intValue];
-	}
-	else if (theScopeBar==awardScopeBar) { 
-		return [[[awardSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_SELECTION_MODE] intValue];
-	}
-	else if (theScopeBar==mediaScopeBar) { 
-		return [[[mediaSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_SELECTION_MODE] intValue];
-	}
-	else if (theScopeBar==nationScopeBar) { 
-		return [[[nationSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_SELECTION_MODE] intValue];
-	}
-	else if (theScopeBar==personScopeBar) { 
-		return [[[personSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_SELECTION_MODE] intValue];
-	}
-	return MGRadioSelectionMode;
-}
-
-
-- (BOOL)scopeBar:(MGScopeBar *)theScopeBar showSeparatorBeforeGroup:(int)groupNumber
-{
-	// Optional method. If not implemented, all groups except the first will have a separator before them.
-	if (theScopeBar==clubScopeBar) {
-		return [[[clubSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_SEPARATOR] boolValue];
-	}
-	else if (theScopeBar==awardScopeBar) {
-		return [[[awardSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_SEPARATOR] boolValue];
-	}
-	else if (theScopeBar==mediaScopeBar) {
-		return [[[mediaSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_SEPARATOR] boolValue];
-	}
-	else if (theScopeBar==nationScopeBar) {
-		return [[[nationSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_SEPARATOR] boolValue];
-	}
-	else if (theScopeBar==personScopeBar) {
-		return [[[personSections objectAtIndex:groupNumber] objectForKey:MGSB_GROUP_SEPARATOR] boolValue];
-	}
-	return TRUE;
-}
-
-
-- (NSImage *)scopeBar:(MGScopeBar *)scopeBar imageForItem:(NSString *)identifier inGroup:(int)groupNumber
-{
-	// Optional method. If not implemented (or if you return nil), items will not have an image.
-	
-	return nil;
-}
-
-
-- (NSView *)accessoryViewForScopeBar:(MGScopeBar *)scopeBar
-{
-	// Optional method. If not implemented (or if you return nil), the scope-bar will not have an accessory view.
-	return FALSE;
-}
-
-- (void)scopeBar:(MGScopeBar *)theScopeBar selectedStateChanged:(BOOL)selected 
-		 forItem:(NSString *)identifier inGroup:(int)groupNumber
-{
-	NSString *section = [self scopeBar:theScopeBar titleOfItem:identifier inGroup:groupNumber];
-	if (theScopeBar==clubScopeBar) {
-		if ([section isEqualToString:@"General"]) { [clubContainer setContentView:clubMainView]; }
-		else if ([section isEqualToString:@"IDPCs"]) { [clubContainer setContentView:clubIDPCView]; }
-		else if ([section isEqualToString:@"Staff"]) { [clubContainer setContentView:clubStaffView]; }
-		else if ([section isEqualToString:@"Kits & Colours"]) { [clubContainer setContentView:clubKitView]; }
-		else if ([section isEqualToString:@"Finances"]) { [clubContainer setContentView:clubFinanceView]; }
-		else if ([section isEqualToString:@"League Body Club Details"]) { [clubContainer setContentView:clubLBCView]; }
-		else if ([section isEqualToString:@"Facilities"]) { [clubContainer setContentView:clubFacilitiesView]; }
-		else if ([section isEqualToString:@"Shortlisted People"]) { [clubContainer setContentView:clubShortlistedPeopleView]; }
-		else if ([section isEqualToString:@"Scouting Knowledges"]) { [clubContainer setContentView:clubScoutingKnowledgeView]; }
-		else if ([section isEqualToString:@"Regional Divisions"]) { [clubContainer setContentView:clubRegionalDivisionsView]; }
-		else if ([section isEqualToString:@"Sponsors"]) { [clubContainer setContentView:clubSponsorView]; }
-		else if ([section isEqualToString:@"Tactics"]) { [clubContainer setContentView:clubTacticsView]; }
-		else if ([section isEqualToString:@"Teams"]) { [clubContainer setContentView:clubTeamsView]; }
-		else if ([section isEqualToString:@"Training"]) { [clubContainer setContentView:clubTrainingView]; }
-		else if ([section isEqualToString:@"Coefficients"]) { [clubContainer setContentView:clubCoefficientView]; }
-		else if ([section isEqualToString:@"Relationships"]) { [clubContainer setContentView:clubRelationshipsView]; }
-	}
-	else if (theScopeBar==awardScopeBar) {
-		if ([section isEqualToString:@"General"]) { [awardContainer setContentView:awardMainView]; }
-		else if ([section isEqualToString:@"Rules"]) { [awardContainer setContentView:awardRulesView]; }
-	}
-	else if (theScopeBar==mediaScopeBar) {
-		if ([section isEqualToString:@"General"]) { [mediaContainer setContentView:mediaMainView]; }
-		else if ([section isEqualToString:@"Associations"]) { [mediaContainer setContentView:mediaAssociationsView]; }
-	}
-	else if (theScopeBar==nationScopeBar) {
-		if ([section isEqualToString:@"General"]) { [nationContainer setContentView:nationMainView]; }
-		else if ([section isEqualToString:@"Relationships"]) { [nationContainer setContentView:nationRelationshipsView]; }
-	}
-	else if (theScopeBar==personScopeBar) {
-		if ([section isEqualToString:@"Person Data"]) { [personContainer setContentView:actualPersonView]; }
-		else if ([section isEqualToString:@"Person Stats"]) { [personContainer setContentView:personStatsView]; }
-		else if ([section isEqualToString:@"Player Data"]) { [personContainer setContentView:actualPlayerView]; }
-		else if ([section isEqualToString:@"Player Stats"]) { [personContainer setContentView:playerStatsView]; }
-		else if ([section isEqualToString:@"Preferred Moves"]) { [personContainer setContentView:ppmView]; }
-		else if ([section isEqualToString:@"Player Forms"]) { [personContainer setContentView:playerFormView]; }
-		else if ([section isEqualToString:@"Bans"]) { [personContainer setContentView:playerBanView]; }
-		else if ([section isEqualToString:@"Injuries"]) { [personContainer setContentView:playerInjuryView]; }
-		else if ([section isEqualToString:@"Contracts"]) { [personContainer setContentView:contractView]; }
-		else if ([section isEqualToString:@"Non-Player Data"]) { [personContainer setContentView:actualNonPlayerView]; }
-		else if ([section isEqualToString:@"Non-Player Stats"]) { [personContainer setContentView:nonPlayerStatsView]; }
-		else if ([section isEqualToString:@"Staff Data"]) { [personContainer setContentView:actualStaffView]; }
-		else if ([section isEqualToString:@"Official Data"]) { [personContainer setContentView:officialView]; }
-		else if ([section isEqualToString:@"Journalist Data"]) { [personContainer setContentView:journalistView]; }
-		else if ([section isEqualToString:@"Retired Person Data"]) { [personContainer setContentView:retiredPersonView]; }
-		else if ([section isEqualToString:@"Human Data"]) { [personContainer setContentView:humanView]; }
-		else if ([section isEqualToString:@"Relationships"]) { [personContainer setContentView:personRelationshipsView]; }
-		else if ([section isEqualToString:@"Agent Data"]) { [personContainer setContentView:agentView]; }
-	}
-}
-
 - (void)addRelationship:(id)sender
 {
 	
@@ -1321,7 +1054,7 @@ clubLBCView, clubFacilitiesView;
 - (IBAction)showNationPicker:(id)sender
 {
 	nationPickerSelector = @"";
-	[nationPicker openSheet:self];
+	[[editorViewController nationPicker] openSheet:self];
 	if ([sender tag]==1) { nationPickerSelector = @"nationID"; }
 	else if ([sender tag]==2) { nationPickerSelector = @"basedNationID"; }
 	
@@ -1339,7 +1072,7 @@ clubLBCView, clubFacilitiesView;
 											 [[nationPickerSelector substringToIndex:1] capitalizedString],
 											 [nationPickerSelector substringFromIndex:1]]);
 	
-	[nationPickerObject performSelector:thisSelector withObject:[[[nationPickerController arrangedObjects] objectAtIndex:[nationPickerController selectionIndex]] rowID]];
+	[nationPickerObject performSelector:thisSelector withObject:[sender intValue]];
 	
 	[nationPicker closeSheet:self];
 }
@@ -1347,7 +1080,7 @@ clubLBCView, clubFacilitiesView;
 - (IBAction)showStadiumPicker:(id)sender
 {
 	stadiumPickerSelector = @"";
-	[stadiumPicker openSheet:self];
+	[[editorViewController stadiumPicker] openSheet:self];
 	if ([sender tag]==1)		{ stadiumPickerSelector = @"stadiumID"; }
 	else if ([sender tag]==2)	{ stadiumPickerSelector = @"oldStadiumID"; }
 	else if ([sender tag]==3)	{ stadiumPickerSelector = @"newStadiumID"; }
@@ -1365,7 +1098,7 @@ clubLBCView, clubFacilitiesView;
 											 [[stadiumPickerSelector substringToIndex:1] capitalizedString],
 											 [stadiumPickerSelector substringFromIndex:1]]);
 	
-	[stadiumPickerObject performSelector:thisSelector withObject:[[[stadiumPickerController arrangedObjects] objectAtIndex:[stadiumPickerController selectionIndex]] rowID]];
+	[stadiumPickerObject performSelector:thisSelector withObject:[sender intValue]];
 	
 	[stadiumPicker closeSheet:self];
 }
@@ -1373,7 +1106,7 @@ clubLBCView, clubFacilitiesView;
 - (IBAction)showCompetitionPicker:(id)sender
 {
 	competitionPickerSelector = @"";
-	[competitionPicker openSheet:self];
+	[[editorViewController competitionPicker] openSheet:self];
 	if ([sender tag]==1)		{ competitionPickerSelector = @"competitionID"; }
 	else if ([sender tag]==2)	{ competitionPickerSelector = @"divisionID"; }
 	else if ([sender tag]==3)	{ competitionPickerSelector = @"lastDivisionID"; }
@@ -1396,7 +1129,7 @@ clubLBCView, clubFacilitiesView;
 											 [[competitionPickerSelector substringToIndex:1] capitalizedString],
 											 [competitionPickerSelector substringFromIndex:1]]);
 	
-	[competitionPickerObject performSelector:thisSelector withObject:[[[competitionPickerController arrangedObjects] objectAtIndex:[competitionPickerController selectionIndex]] rowID]];
+	[competitionPickerObject performSelector:thisSelector withObject:[sender intValue]];
 	
 	[competitionPicker closeSheet:self];
 }
@@ -1404,7 +1137,7 @@ clubLBCView, clubFacilitiesView;
 - (IBAction)showCityPicker:(id)sender
 {
 	cityPickerSelector = @"";
-	[cityPicker openSheet:self];
+	[[editorViewController cityPicker] openSheet:self];
 	if ([sender tag]==1)		{ cityPickerSelector = @"cityID"; }
 	else if ([sender tag]==2)	{ cityPickerSelector = @"capitalID"; }
 	else if ([sender tag]==3)	{ cityPickerSelector = @"cityOfBirthID"; }
@@ -1429,7 +1162,7 @@ clubLBCView, clubFacilitiesView;
 - (IBAction)showPersonPicker:(id)sender
 {
 	personPickerSelector = @"";
-	[personPicker openSheet:self];
+	[[editorViewController personPicker] openSheet:self];
 	if ([sender tag]==1)		{ personPickerSelector = @"newJournalistID"; }
 	else if ([sender tag]==2)	{ personPickerSelector = @"newClientID"; }
 }	
@@ -1445,7 +1178,7 @@ clubLBCView, clubFacilitiesView;
 											 [[personPickerSelector substringToIndex:1] capitalizedString],
 											 [personPickerSelector substringFromIndex:1]]);
 	
-	[personPickerObject performSelector:thisSelector withObject:[[[personPickerController arrangedObjects] objectAtIndex:[personPickerController selectionIndex]] rowID]];
+	[personPickerObject performSelector:thisSelector withObject:[sender intValue]];
 	
 	[personPicker closeSheet:self];
 }
@@ -1453,7 +1186,7 @@ clubLBCView, clubFacilitiesView;
 - (IBAction)showMediaPicker:(id)sender
 {
 	mediaPickerSelector = @"";
-	[mediaPicker openSheet:self];
+	[[editorViewController mediaPicker] openSheet:self];
 	if ([sender tag]==1)		{ mediaPickerSelector = @"newLinkedMediaID"; }
 	else if ([sender tag]==2)	{ mediaPickerSelector = @"media"; }
 }	
@@ -1469,7 +1202,7 @@ clubLBCView, clubFacilitiesView;
 											 [[mediaPickerSelector substringToIndex:1] capitalizedString],
 											 [mediaPickerSelector substringFromIndex:1]]);
 	
-	[mediaPickerObject performSelector:thisSelector withObject:[[[mediaPickerController arrangedObjects] objectAtIndex:[mediaPickerController selectionIndex]] rowID]];
+	[mediaPickerObject performSelector:thisSelector withObject:[sender intValue]];
 	
 	[mediaPicker closeSheet:self];
 }
@@ -1479,13 +1212,13 @@ clubLBCView, clubFacilitiesView;
 /******* NEW ONES ******/
 - (IBAction)selectEditorView:(id)sender
 {
-	SXEditorViewController *editorViewController = [[SXEditorViewController alloc] init];
+	editorViewController = [[SXEditorViewController alloc] initWithNibName:@"Editor" bundle:nil];
 	[self replacePlaceholder:placeholderView withView:[editorViewController view]];
 }
 
 - (IBAction)selectScoutView:(id)sender
 {
-	SXScoutViewController *scoutViewController = [[SXScoutViewController alloc] init];
+	SXScoutViewController *scoutViewController = [[[SXScoutViewController alloc] init] autorelease];
 	[self replacePlaceholder:placeholderView withView:[scoutViewController view]];
 }
 
@@ -1499,9 +1232,11 @@ clubLBCView, clubFacilitiesView;
 	NSParameterAssert(placeholder != nil);
 	NSParameterAssert(view != nil);
 	
-	for (NSView *item in [placeholder subviews])
+	int nViews = [[placeholder subviews] count];
+	
+	for (int i = 0; i < nViews; i++)
 	{
-		[item removeFromSuperview];
+		[[[placeholder subviews] objectAtIndex:0] removeFromSuperview];
 	}
 	[placeholder addSubview:view];
 }

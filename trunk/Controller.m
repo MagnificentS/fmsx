@@ -6,6 +6,8 @@
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
+#import "EditorController.h"
+
 #import "Controller.h"
 #import "ContentController.h"
 #import "LangDBLoader.h"
@@ -38,7 +40,7 @@
 continentsController, currenciesController, injuriesController, languagesController, localAreasController, gameID, gameInfo, gameDB,
 mediaController, nationsController, peopleController, stadiumsController, stadiumChangesController, competitionsController, langDB,
 teamsController, weatherController, currentDate, gameDBVersion, databaseChanges, timesSaved, startBuildVersion, currentBuildVersion, 
-langDBLoaded, status, statusMaxValue, statusValue;
+langDBLoaded, status, statusMaxValue, statusValue, editorController, contentController;
 
 - (id)init
 {
@@ -99,6 +101,8 @@ langDBLoaded, status, statusMaxValue, statusValue;
 	gameInfo = [[SXFGameInfo alloc] init];
 	saveGameSummary = [[SXFSaveGameSummary alloc] init];
 	
+	editorController = [[EditorController alloc] init];
+	
 	[self setIdle:TRUE];
 	[self setDataLoaded:FALSE];
 	
@@ -112,6 +116,8 @@ langDBLoaded, status, statusMaxValue, statusValue;
 	[gameInfo release];
 	[gameDB release];
 	[saveGameSummary release];
+	
+	[editorController release];
 	
 	[super dealloc];
 }
