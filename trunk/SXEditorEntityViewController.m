@@ -14,6 +14,8 @@
 
 @implementation SXEditorEntityViewController
 
+@synthesize awardMainViewContainer, awardEntityView, awardGeneralView, awardRulesView, awardSectionView;
+
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
 	if (aTableView==awardsTable) { 
@@ -84,12 +86,12 @@
 	// set to -1 as failsafe
 	int selectionIndex = -1;
 	
-	NSString *arrayString;
+	NSString *arrayString, *classString;
 	
-	// merge stuff into here later so there arent 2 checks of type
 	if (currentSection==EDS_AWARDS) { 
 		selectionIndex = [awardsTable selectedRow]; 
 		arrayString = @"gameDB.database.awards";
+		classString = @"award";
 	}
 	
 	// override selection index if there is a search
@@ -101,19 +103,26 @@
 	
 	[[[[NSApp delegate] editorController] searchResults] removeAllObjects];
 	
-	// move this up and make this dynamic as above
+	SEL selectionSelector = NSSelectorFromString([NSString stringWithFormat:@"setSelected%@:",[classString capitalizedString]]);
+	[[[NSApp delegate] editorController] performSelector:selectionSelector withObject:[[[NSApp delegate] valueForKeyPath:arrayString] objectAtIndex:selectionIndex]];
+	
+	SEL containerViewSelector = NSSelectorFromString([NSString stringWithFormat:@"%@MainViewContainer",classString]);
+	SEL entityViewSelector = NSSelectorFromString([NSString stringWithFormat:@"%@EntityView",classString]);
+	 
+	[[[NSApp delegate] contentController] replacePlaceholder:[self performSelector:containerViewSelector] withView:[self performSelector:entityViewSelector]];
+	 
+	// any extra things that need doing after the view is set
 	if (currentSection==EDS_AWARDS) { 
-		[[[NSApp delegate] editorController] setSelectedAward:[[[NSApp delegate] valueForKeyPath:@"gameDB.database.awards"] objectAtIndex:selectionIndex]]; 
-		[[[NSApp delegate] contentController] replacePlaceholder:awardMainViewContainer withView:awardEntityView];
+		// make the default section the general view
 		[[[NSApp delegate] contentController] replacePlaceholder:awardSectionView withView:awardGeneralView];
 		
 		// set header colour
 		[awardHeaderBox setFillStartingColor:[[[[[NSApp delegate] editorController] selectedAward] colour] backgroundColour]];
 		[awardHeaderBox setFillEndingColor:[[[[[NSApp delegate] editorController] selectedAward] colour] foregroundColour]];
 		[awardBGBox setFillColor:[[[[[NSApp delegate] editorController] selectedAward] colour] foregroundColour]];
-		
-		[awardsTable reloadData];
 	}
+	
+	[self reloadEntityTable:[[[NSApp delegate] editorController] currentSection]];
 }
 
 - (void)controlTextDidEndEditing:(NSNotification *)aNotification
@@ -134,7 +143,7 @@
 	NSString *searchString = [NSString stringWithFormat:@"%@ contains[cd] '%@'",searchVariable,[[aNotification object] stringValue]];
 	[[[[NSApp delegate] editorController] searchResults] addObjectsFromArray:[[[NSApp delegate] valueForKeyPath:searchArray] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:searchString]]];
 	
-	if (currentSection==EDS_AWARDS) { [awardsTable reloadData]; }
+	[self reloadEntityTable:currentSection];
 }
 
 - (IBAction)showCityPicker:(id)sender { [[[NSApp delegate] contentController] showCityPicker:sender]; }
@@ -143,5 +152,26 @@
 - (IBAction)showNationPicker:(id)sender { [[[NSApp delegate] contentController] showNationPicker:sender]; }
 - (IBAction)showPersonPicker:(id)sender { [[[NSApp delegate] contentController] showPersonPicker:sender]; }
 - (IBAction)showStadiumPicker:(id)sender { [[[NSApp delegate] contentController] showStadiumPicker:sender]; }
+
+- (void)reloadEntityTable:(int)section
+{
+	if (section==EDS_AWARDS)				{ [awardsTable reloadData]; }
+//	else if (section==EDS_CITIES)			{ [citiesTable reloadData]; }
+//	else if (section==EDS_CLUBS)			{ [clubsTable reloadData]; }
+//	else if (section==EDS_COMPETITIONS)		{ [competitionsTable reloadData]; }
+//	else if (section==EDS_CONTINENTS)		{ [continentsTable reloadData]; }
+//	else if (section==EDS_CURRENCIES)		{ [currenciesTable reloadData]; }
+//	else if (section==EDS_DERBIES)			{ [derbiesTable reloadData]; }
+//	else if (section==EDS_INJURIES)			{ [injuriesTable reloadData]; }
+//	else if (section==EDS_LANGUAGES)		{ [languagesTable reloadData]; }
+//	else if (section==EDS_LOCAL_AREAS)		{ [localAreasTable reloadData]; }
+//	else if (section==EDS_MEDIA)			{ [mediaTable reloadData]; }
+//	else if (section==EDS_NATIONS)			{ [nationsTable reloadData]; }
+//	else if (section==EDS_PEOPLE)			{ [peopleTable reloadData]; }
+//	else if (section==EDS_SPONSORS)			{ [sponsorsTable reloadData]; }
+//	else if (section==EDS_STADIUMS)			{ [stadiumsTable reloadData]; }
+//	else if (section==EDS_STADIUM_CHANGES)	{ [stadiumChangesTable reloadData]; }
+//	else if (section==EDS_WEATHER)			{ [weatherTable reloadData]; }	
+}
 
 @end
