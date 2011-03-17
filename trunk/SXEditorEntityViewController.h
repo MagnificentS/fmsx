@@ -25,8 +25,20 @@
 	IBOutlet NSTableView	*currenciesTable;
 	IBOutlet NSView			*currencyMainViewContainer, *currencyEntityView;
 	
+	IBOutlet NSTableView	*derbiesTable;
+	IBOutlet NSView			*derbyMainViewContainer, *derbyEntityView;
+	
+	IBOutlet NSTableView	*injuriesTable;
+	IBOutlet NSView			*injuryMainViewContainer, *injuryEntityView;
+	
+	IBOutlet NSTableView	*languagesTable;
+	IBOutlet NSView			*languageMainViewContainer, *languageEntityView;
+	
 	IBOutlet NSTableView	*localAreasTable;
 	IBOutlet NSView			*localAreaMainViewContainer, *localAreaEntityView;
+	
+	IBOutlet NSTableView	*stadiumChangesTable;
+	IBOutlet NSView			*stadiumChangeMainViewContainer, *stadiumChangeEntityView;
 	
 }
 
@@ -37,10 +49,13 @@
 - (IBAction)showPersonPicker:(id)sender;
 - (IBAction)showStadiumPicker:(id)sender;
 
+- (void)selectFromTable;
 - (void)reloadEntityTable:(int)section;
 
 @property(readwrite,assign) IBOutlet NSView	*awardMainViewContainer, *awardEntityView, *awardGeneralView, *awardRulesView, *awardSectionView,
 *cityMainViewContainer, *cityEntityView, *continentMainViewContainer, *continentEntityView,
-*currencyMainViewContainer, *currencyEntityView, *localAreaMainViewContainer, *localAreaEntityView;
+*currencyMainViewContainer, *currencyEntityView, *localAreaMainViewContainer, *localAreaEntityView,
+*stadiumChangeMainViewContainer, *stadiumChangeEntityView, *derbyMainViewContainer, *derbyEntityView,
+*injuryMainViewContainer, *injuryEntityView, *languageMainViewContainer, *languageEntityView;
 
 @end

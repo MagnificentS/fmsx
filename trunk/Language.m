@@ -7,7 +7,7 @@
 //
 
 #import "Language.h"
-
+#import "Nation.h"
 
 @implementation Language
 
@@ -200,6 +200,12 @@ subGroup, databaseFileOffset, nationID, rowID, UID, name;
 						NSLocalizedString(@"Yuat-Waibuk", @"language sub-group"),
 						nil];
 	return strings;
+}
+
+- (NSString *)nationString
+{
+	if (nationID>-1) { return [[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] objectAtIndex:nationID] teamContainer] name]; }
+	return @"---";
 }
 
 @end

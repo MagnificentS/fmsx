@@ -46,6 +46,18 @@ unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 	return str;
 }
 
+- (NSString *)teamShortString
+{
+	NSString *str;
+	if (databaseClass==DBC_NATIONAL_TEAM) {
+		str = [[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] objectAtIndex:teamContainerID] teamContainer] shortName];
+	}
+	else {
+		str = [[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.clubs"] objectAtIndex:teamContainerID] teamContainer] shortName];
+	}
+	return str;
+}
+
 - (NSString *)fullTeamString
 {
 	if (![name isEqualToString:@"---"]) { return name; }

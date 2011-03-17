@@ -19,6 +19,15 @@ unknownDate1, pitchLastRelaidDate, pitchRelayRequiredDate, minPitchLength, minPi
 maxPitchLength, maxPitchWidth, pitchRecoveryRate, pitchCondition, latitude, longitude,
 pitchDeteriorationRate;
 
+- (id)init
+{
+	[super init];
+	
+	name = @"---";
+	
+	return self;
+}
+
 - (NSArray *)stateStrings
 {
 	NSArray *strings = [NSArray arrayWithObjects:

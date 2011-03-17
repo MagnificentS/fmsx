@@ -14,7 +14,9 @@
 
 @synthesize awardMainViewContainer, awardEntityView, awardGeneralView, awardRulesView, awardSectionView,
 cityMainViewContainer, cityEntityView, continentMainViewContainer, continentEntityView,
-currencyMainViewContainer, currencyEntityView, localAreaMainViewContainer, localAreaEntityView;
+currencyMainViewContainer, currencyEntityView, localAreaMainViewContainer, localAreaEntityView, 
+derbyMainViewContainer, derbyEntityView, injuryMainViewContainer, injuryEntityView, 
+languageMainViewContainer, languageEntityView, stadiumChangeMainViewContainer, stadiumChangeEntityView;
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
@@ -31,16 +33,16 @@ currencyMainViewContainer, currencyEntityView, localAreaMainViewContainer, local
 //	else if (aTableView==competitionsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.competitions"] count]; }
 	else if (aTableView==continentsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.continents"] count]; }
 	else if (aTableView==currenciesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.currencies"] count]; }
-//	else if (aTableView==derbiesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.derbies"] count]; }
-//	else if (aTableView==injuriesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.injuries"] count]; }
-//	else if (aTableView==languagesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.languages"] count]; }
+	else if (aTableView==derbiesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.derbies"] count]; }
+	else if (aTableView==injuriesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.injuries"] count]; }
+	else if (aTableView==languagesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.languages"] count]; }
 	else if (aTableView==localAreasTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.localAreas"] count]; }
 //	else if (aTableView==mediaTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.media"] count]; }
 //	else if (aTableView==nationsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] count]; }
 //	else if (aTableView==peopleTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] count]; }
 //	else if (aTableView==sponsorsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.sponsors"] count]; }
 //	else if (aTableView==stadiumsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiums"] count]; }
-//	else if (aTableView==stadiumChangesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiumChanges"] count]; }
+	else if (aTableView==stadiumChangesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiumChanges"] count]; }
 //	else if (aTableView==weatherTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.weather"] count]; }
 
 	return 0;
@@ -88,11 +90,47 @@ currencyMainViewContainer, currencyEntityView, localAreaMainViewContainer, local
 		if ([columnName isEqualToString:@"uid"])			{ return [NSNumber numberWithInt:[object UID]]; }
 		else if ([columnName isEqualToString:@"name"])		{ return [object name]; }
 	}
+	else if (aTableView==derbiesTable) {
+		Derby *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.derbies"] objectAtIndex:rowIndex]; }
+		
+		if ([columnName isEqualToString:@"uid"])			{ return [NSNumber numberWithInt:[object UID]]; }
+		else if ([columnName isEqualToString:@"name"])		{ return [object name]; }
+	}
+	else if (aTableView==injuriesTable) {
+		Injury *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.injuries"] objectAtIndex:rowIndex]; }
+		
+		if ([columnName isEqualToString:@"uid"])			{ return [NSNumber numberWithInt:[object UID]]; }
+		else if ([columnName isEqualToString:@"name"])		{ return [object name]; }
+	}
+	else if (aTableView==languagesTable) {
+		Language *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.languages"] objectAtIndex:rowIndex]; }
+		
+		if ([columnName isEqualToString:@"uid"])			{ return [NSNumber numberWithInt:[object UID]]; }
+		else if ([columnName isEqualToString:@"name"])		{ return [object name]; }
+	}
 	else if (aTableView==localAreasTable) {
 		LocalArea *object;
 		
 		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
 		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.localAreas"] objectAtIndex:rowIndex]; }
+		
+		if ([columnName isEqualToString:@"uid"])			{ return [NSNumber numberWithInt:[object UID]]; }
+		else if ([columnName isEqualToString:@"name"])		{ return [object name]; }
+	}
+	else if (aTableView==stadiumChangesTable) {
+		StadiumChange *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiumChanges"] objectAtIndex:rowIndex]; }
 		
 		if ([columnName isEqualToString:@"uid"])			{ return [NSNumber numberWithInt:[object UID]]; }
 		else if ([columnName isEqualToString:@"name"])		{ return [object name]; }
@@ -138,11 +176,35 @@ currencyMainViewContainer, currencyEntityView, localAreaMainViewContainer, local
 		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
 		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.currencies"] objectAtIndex:rowIndex]; }
 	}
+	else if (aTableView==derbiesTable) {
+		Derby *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.derbies"] objectAtIndex:rowIndex]; }
+	}
+	else if (aTableView==injuriesTable) {
+		Injury *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.injuries"] objectAtIndex:rowIndex]; }
+	}
+	else if (aTableView==languagesTable) {
+		Language *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.languages"] objectAtIndex:rowIndex]; }
+	}
 	else if (aTableView==localAreasTable) {
 		LocalArea *object;
 		
 		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
 		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.localAreas"] objectAtIndex:rowIndex]; }
+	}
+	else if (aTableView==stadiumChangesTable) {
+		StadiumChange *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiumChanges"] objectAtIndex:rowIndex]; }
 	}
 	
 }
@@ -184,19 +246,6 @@ currencyMainViewContainer, currencyEntityView, localAreaMainViewContainer, local
 		selectionIndex = [currenciesTable selectedRow]; 
 		arrayString = @"currencies";	classString = @"currency";
 	}
-	else if (currentSection==EDS_LOCAL_AREAS) { 
-		selectionIndex = [localAreasTable selectedRow]; 
-		arrayString = @"localAreas";	classString = @"localArea";
-	}
-	/*
-	else if (currentSection==EDS_CLUBS) { 
-		selectionIndex = [clubsTable selectedRow]; 
-		arrayString = @"clubs";	classString = @"club";
-	}
-	else if (currentSection==EDS_COMPETITIONS) { 
-		selectionIndex = [competitionsTable selectedRow]; 
-		arrayString = @"competitions";	classString = @"competition";
-	}
 	else if (currentSection==EDS_DERBIES) { 
 		selectionIndex = [derbiesTable selectedRow]; 
 		arrayString = @"derbies";	classString = @"derby";
@@ -208,6 +257,23 @@ currencyMainViewContainer, currencyEntityView, localAreaMainViewContainer, local
 	else if (currentSection==EDS_LANGUAGES) { 
 		selectionIndex = [languagesTable selectedRow]; 
 		arrayString = @"languages";	classString = @"language";
+	}
+	else if (currentSection==EDS_LOCAL_AREAS) { 
+		selectionIndex = [localAreasTable selectedRow]; 
+		arrayString = @"localAreas";	classString = @"localArea";
+	}
+	else if (currentSection==EDS_STADIUM_CHANGES) { 
+		selectionIndex = [stadiumChangesTable selectedRow]; 
+		arrayString = @"stadiumChanges";	classString = @"stadiumChange";
+	}
+	/*
+	else if (currentSection==EDS_CLUBS) { 
+		selectionIndex = [clubsTable selectedRow]; 
+		arrayString = @"clubs";	classString = @"club";
+	}
+	else if (currentSection==EDS_COMPETITIONS) { 
+		selectionIndex = [competitionsTable selectedRow]; 
+		arrayString = @"competitions";	classString = @"competition";
 	}
 	else if (currentSection==EDS_MEDIA) { 
 		selectionIndex = [mediaTable selectedRow]; 
@@ -228,10 +294,6 @@ currencyMainViewContainer, currencyEntityView, localAreaMainViewContainer, local
 	else if (currentSection==EDS_STADIUMS) { 
 		selectionIndex = [stadiumsTable selectedRow]; 
 		arrayString = @"stadiums";	classString = @"stadium";
-	}
-	else if (currentSection==EDS_STADIUM_CHANGES) { 
-		selectionIndex = [stadiumsChangesTable selectedRow]; 
-		arrayString = @"stadiumChanges";	classString = @"stadiumChange";
 	}
 	else if (currentSection==EDS_WEATHER) { 
 		selectionIndex = [weatherTable selectedRow]; 
@@ -282,16 +344,16 @@ currencyMainViewContainer, currencyEntityView, localAreaMainViewContainer, local
 	//	else if (currentSection==EDS_COMPETITIONS)		{ searchArray = @"competitions"; }
 	else if (currentSection==EDS_CONTINENTS)		{ searchArray = @"continents"; }
 	else if (currentSection==EDS_CURRENCIES)		{ searchArray = @"currencies"; }
-	//	else if (currentSection==EDS_DERBIES)			{ searchArray = @"derbies"; }
-	//	else if (currentSection==EDS_INJURIES)			{ searchArray = @"injuries"; }
-	//	else if (currentSection==EDS_LANGUAGES)			{ searchArray = @"languages"; }
+	else if (currentSection==EDS_DERBIES)			{ searchArray = @"derbies"; }
+	else if (currentSection==EDS_INJURIES)			{ searchArray = @"injuries"; }
+	else if (currentSection==EDS_LANGUAGES)			{ searchArray = @"languages"; }
 	else if (currentSection==EDS_LOCAL_AREAS)		{ searchArray = @"localAreas"; }
 	//	else if (currentSection==EDS_MEDIA)				{ searchArray = @"media"; }
 	//	else if (currentSection==EDS_NATIONS)			{ searchArray = @"nations"; }
 	//	else if (currentSection==EDS_PEOPLE)			{ searchArray = @"people"; }
 	//	else if (currentSection==EDS_SPONSORS)			{ searchArray = @"sponsors"; }
 	//	else if (currentSection==EDS_STADIUMS)			{ searchArray = @"stadiums"; }
-	//	else if (currentSection==EDS_STADIUM_CHANGES)	{ searchArray = @"stadiumChanges"; }
+	else if (currentSection==EDS_STADIUM_CHANGES)	{ searchArray = @"stadiumChanges"; }
 	//	else if (currentSection==EDS_WEATHER)			{ searchArray = @"weather"; }	
 	
 	if (!searchVariable || [searchVariable length] < 1) { searchVariable = @"name"; }
@@ -321,16 +383,16 @@ currencyMainViewContainer, currencyEntityView, localAreaMainViewContainer, local
 //	else if (section==EDS_COMPETITIONS)		{ [competitionsTable reloadData]; }
 	else if (section==EDS_CONTINENTS)		{ [continentsTable reloadData]; }
 	else if (section==EDS_CURRENCIES)		{ [currenciesTable reloadData]; }
-//	else if (section==EDS_DERBIES)			{ [derbiesTable reloadData]; }
-//	else if (section==EDS_INJURIES)			{ [injuriesTable reloadData]; }
-//	else if (section==EDS_LANGUAGES)		{ [languagesTable reloadData]; }
+	else if (section==EDS_DERBIES)			{ [derbiesTable reloadData]; }
+	else if (section==EDS_INJURIES)			{ [injuriesTable reloadData]; }
+	else if (section==EDS_LANGUAGES)		{ [languagesTable reloadData]; }
 	else if (section==EDS_LOCAL_AREAS)		{ [localAreasTable reloadData]; }
 //	else if (section==EDS_MEDIA)			{ [mediaTable reloadData]; }
 //	else if (section==EDS_NATIONS)			{ [nationsTable reloadData]; }
 //	else if (section==EDS_PEOPLE)			{ [peopleTable reloadData]; }
 //	else if (section==EDS_SPONSORS)			{ [sponsorsTable reloadData]; }
 //	else if (section==EDS_STADIUMS)			{ [stadiumsTable reloadData]; }
-//	else if (section==EDS_STADIUM_CHANGES)	{ [stadiumChangesTable reloadData]; }
+	else if (section==EDS_STADIUM_CHANGES)	{ [stadiumChangesTable reloadData]; }
 //	else if (section==EDS_WEATHER)			{ [weatherTable reloadData]; }	
 }
 

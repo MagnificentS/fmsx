@@ -7,7 +7,7 @@
 //
 
 #import "LocalArea.h"
-
+#import "Nation.h"
 
 @implementation LocalArea
 

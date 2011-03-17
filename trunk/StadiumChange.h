@@ -33,4 +33,8 @@ newStadiumID, teamID, newCapacity;
 
 - (NSArray *)typeStrings;
 
+- (NSString *)typeString;
+- (NSString *)oldStadiumString;
+- (NSString *)name;
+
 @end

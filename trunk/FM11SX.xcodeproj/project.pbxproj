@@ -458,6 +458,10 @@
 		FBAB2B26133298F1003FA548 /* Editor_Continent.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBAB2B25133298F1003FA548 /* Editor_Continent.xib */; };
 		FBAB2B3913329C9C003FA548 /* Editor_Currency.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBAB2B3813329C9C003FA548 /* Editor_Currency.xib */; };
 		FBAB2B3B13329CA5003FA548 /* Editor_LocalArea.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBAB2B3A13329CA5003FA548 /* Editor_LocalArea.xib */; };
+		FBAB2B661332ABE8003FA548 /* Editor_Derby.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBAB2B651332ABE8003FA548 /* Editor_Derby.xib */; };
+		FBAB2B681332ABF5003FA548 /* Editor_Injury.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBAB2B671332ABF5003FA548 /* Editor_Injury.xib */; };
+		FBAB2B6A1332ABFB003FA548 /* Editor_Language.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBAB2B691332ABFB003FA548 /* Editor_Language.xib */; };
+		FBAB2B6C1332AC0B003FA548 /* Editor_StadiumChange.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBAB2B6B1332AC0B003FA548 /* Editor_StadiumChange.xib */; };
 		FBAE662510DC252C00181B07 /* AlliterationSaver.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAE662410DC252C00181B07 /* AlliterationSaver.m */; };
 		FBAE662810DC25A700181B07 /* ContinentSaver.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAE662710DC25A700181B07 /* ContinentSaver.m */; };
 		FBAE662B10DC25AD00181B07 /* CurrencySaver.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAE662A10DC25AD00181B07 /* CurrencySaver.m */; };
@@ -1359,6 +1363,10 @@
 		FBAB2B25133298F1003FA548 /* Editor_Continent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_Continent.xib; sourceTree = "<group>"; };
 		FBAB2B3813329C9C003FA548 /* Editor_Currency.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_Currency.xib; sourceTree = "<group>"; };
 		FBAB2B3A13329CA5003FA548 /* Editor_LocalArea.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_LocalArea.xib; sourceTree = "<group>"; };
+		FBAB2B651332ABE8003FA548 /* Editor_Derby.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_Derby.xib; sourceTree = "<group>"; };
+		FBAB2B671332ABF5003FA548 /* Editor_Injury.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_Injury.xib; sourceTree = "<group>"; };
+		FBAB2B691332ABFB003FA548 /* Editor_Language.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_Language.xib; sourceTree = "<group>"; };
+		FBAB2B6B1332AC0B003FA548 /* Editor_StadiumChange.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_StadiumChange.xib; sourceTree = "<group>"; };
 		FBAE662310DC252C00181B07 /* AlliterationSaver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlliterationSaver.h; sourceTree = "<group>"; };
 		FBAE662410DC252C00181B07 /* AlliterationSaver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlliterationSaver.m; sourceTree = "<group>"; };
 		FBAE662610DC25A700181B07 /* ContinentSaver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContinentSaver.h; sourceTree = "<group>"; };
@@ -1837,6 +1845,10 @@
 				FBAB2B25133298F1003FA548 /* Editor_Continent.xib */,
 				FBAB2B3813329C9C003FA548 /* Editor_Currency.xib */,
 				FBAB2B3A13329CA5003FA548 /* Editor_LocalArea.xib */,
+				FBAB2B651332ABE8003FA548 /* Editor_Derby.xib */,
+				FBAB2B671332ABF5003FA548 /* Editor_Injury.xib */,
+				FBAB2B691332ABFB003FA548 /* Editor_Language.xib */,
+				FBAB2B6B1332AC0B003FA548 /* Editor_StadiumChange.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -3446,6 +3458,10 @@
 				FBAB2B26133298F1003FA548 /* Editor_Continent.xib in Resources */,
 				FBAB2B3913329C9C003FA548 /* Editor_Currency.xib in Resources */,
 				FBAB2B3B13329CA5003FA548 /* Editor_LocalArea.xib in Resources */,
+				FBAB2B661332ABE8003FA548 /* Editor_Derby.xib in Resources */,
+				FBAB2B681332ABF5003FA548 /* Editor_Injury.xib in Resources */,
+				FBAB2B6A1332ABFB003FA548 /* Editor_Language.xib in Resources */,
+				FBAB2B6C1332AC0B003FA548 /* Editor_StadiumChange.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

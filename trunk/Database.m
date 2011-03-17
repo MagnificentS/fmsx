@@ -1333,22 +1333,6 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 		}
 	}
 	
-	[[NSApp delegate] setStatus:NSLocalizedString(@"sorting Stadium Changes...", @"editor status")];
-	NSEnumerator *oEnum = [[self stadiumChanges] objectEnumerator];
-	StadiumChange *item;
-	while (item = [oEnum nextObject]) {
-		if ([item oldStadiumID]>-1) {
-			[item setOldStadium:[stadiums objectAtIndex:[item oldStadiumID]]];
-		}
-		if ([item newStadiumID]>-1) {
-			[item setNewStadium:[stadiums objectAtIndex:[item newStadiumID]]];
-		}
-		if ([item alternativeStadiumID]>-1) {
-			[item setAlternativeStadium:[stadiums objectAtIndex:[item alternativeStadiumID]]];
-		}
-		[item setName:[NSString stringWithFormat:@"Change %d",[item rowID]]];
-	}
-	
 	return NULL;
 }
 

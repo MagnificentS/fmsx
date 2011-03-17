@@ -34,4 +34,35 @@ alternativeStadium, newStadium, name, type, unknownData1;
 	return strings;
 }
 
+- (NSString *)typeString
+{
+	if (type==SCT_STADIUM_CHANGE) { return @"Stadium Change"; }
+	else if (type==SCT_CAPACITY_CHANGE) { return @"Capacity Change"; }
+	
+	return @"---";
+}
+- (NSString *)oldStadiumString
+{
+	if (oldStadiumID>-1) { return [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiums"] objectAtIndex:oldStadiumID] name]; }
+	return @"---";
+}
+
+- (NSString *)name
+{
+	NSMutableString *changeName = [NSMutableString stringWithString:@""];
+	
+	if (oldStadiumID>-1) { [changeName appendString:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiums"] objectAtIndex:oldStadiumID] name]]; }
+	else { return @"---"; }
+	
+	if (type==SCT_STADIUM_CHANGE) { 
+		[changeName appendString:@" - "];
+		if (newStadiumID==oldStadiumID) { [changeName appendString:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiums"] objectAtIndex:alternativeStadiumID] name]]; }
+		else if (newStadiumID>-1) { [changeName appendString:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiums"] objectAtIndex:newStadiumID] name]]; }
+		else if (alternativeStadiumID>-1) { [changeName appendString:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiums"] objectAtIndex:alternativeStadiumID] name]]; }
+	}
+	else if (type==SCT_CAPACITY_CHANGE) { [changeName appendString:@" Capacity Change"]; }
+	
+	return changeName;
+}
+
 @end

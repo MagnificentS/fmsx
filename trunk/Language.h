@@ -186,4 +186,6 @@
 - (NSArray *)groupStrings;
 - (NSArray *)subGroupStrings;
 
+- (NSString *)nationString;
+
 @end

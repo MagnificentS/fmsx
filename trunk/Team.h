@@ -67,6 +67,7 @@ continentalCupID, futureContinentalCupID, teamContainerID, rowID, UID;
 *unknown8s, *unknowns1;
 
 - (NSString *)teamString;
+- (NSString *)teamShortString;
 - (NSString *)teamTypeString;
 - (NSString *)fullTeamString;
 - (NSArray *)playerObjects;

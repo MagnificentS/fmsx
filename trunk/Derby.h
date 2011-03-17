@@ -27,4 +27,9 @@ team1TotalGamesWon, team1TotalGamesDrawn, team1TotalGamesLost, rowID, UID;
 @property(assign,readwrite) FMDate *firstMatchDate;
 @property(copy,readwrite) NSString *name, *shortName, *alternativeName, *alternativeShortName;
 
+- (NSString *)team1String;
+- (NSString *)team2String;
+- (NSString *)team1ShortString;
+- (NSString *)team2ShortString;
+
 @end
