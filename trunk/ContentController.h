@@ -71,8 +71,6 @@
 
 - (void)replacePlaceholder:(NSView *)placeholder withView:(NSView *)view;
 
-- (void)addRelationship:(id)sender;
-
 @property(readonly,assign) NSView *placeholderView;
 
 @property(readwrite,assign) NSWindow *mainWindow;

@@ -203,12 +203,26 @@
 /******* NEW ONES ******/
 - (IBAction)selectEditorView:(id)sender
 {
+	if (![[NSApp delegate] dataLoaded]) {
+		NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Game Not Loaded",@"error - game not loaded") defaultButton:@"OK" alternateButton:nil 
+										   otherButton:nil informativeTextWithFormat:@"The editor can't be displayed before a game is loaded"];
+		[alert runModal];
+		return;
+	}
+	
 	editorViewController = [[SXEditorViewController alloc] initWithNibName:@"Editor" bundle:nil];
 	[self replacePlaceholder:placeholderView withView:[editorViewController view]];
 }
 
 - (IBAction)selectScoutView:(id)sender
 {
+	if (![[NSApp delegate] dataLoaded]) {
+		NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Game Not Loaded",@"error - game not loaded") defaultButton:@"OK" alternateButton:nil 
+										   otherButton:nil informativeTextWithFormat:@"The scout can't be displayed before a game is loaded"];
+		[alert runModal];
+		return;
+	}
+	
 	SXScoutViewController *scoutViewController = [[[SXScoutViewController alloc] init] autorelease];
 	[self replacePlaceholder:placeholderView withView:[scoutViewController view]];
 }

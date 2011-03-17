@@ -319,6 +319,9 @@
 			FBAB2A4C13326416003FA548 /* PBXTextBookmark */ = FBAB2A4C13326416003FA548 /* PBXTextBookmark */;
 			FBAB2A4D13326416003FA548 /* PBXTextBookmark */ = FBAB2A4D13326416003FA548 /* PBXTextBookmark */;
 			FBAB2A4E13326416003FA548 /* PBXTextBookmark */ = FBAB2A4E13326416003FA548 /* PBXTextBookmark */;
+			FBAB2A51133265A4003FA548 /* PBXTextBookmark */ = FBAB2A51133265A4003FA548 /* PBXTextBookmark */;
+			FBAB2A52133265A4003FA548 /* PBXTextBookmark */ = FBAB2A52133265A4003FA548 /* PBXTextBookmark */;
+			FBAB2A53133265A4003FA548 /* PBXTextBookmark */ = FBAB2A53133265A4003FA548 /* PBXTextBookmark */;
 			FBDBAB06132FBB9A00FF22B8 = FBDBAB06132FBB9A00FF22B8 /* PBXTextBookmark */;
 			FBDBAB07132FBB9A00FF22B8 = FBDBAB07132FBB9A00FF22B8 /* PBXTextBookmark */;
 			FBDBABDA132FF0D400FF22B8 = FBDBABDA132FF0D400FF22B8 /* PBXTextBookmark */;
@@ -991,9 +994,9 @@
 	};
 	FB1D74EC1098840B00EC8BBB /* ContentController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {740, 2808}}";
-			sepNavSelRange = "{1283, 0}";
-			sepNavVisRange = "{222, 791}";
+			sepNavIntBoundsRect = "{{0, 0}, {1132, 3328}}";
+			sepNavSelRange = "{7509, 0}";
+			sepNavVisRange = "{6507, 1262}";
 			sepNavWindowFrame = "{{533, 105}, {717, 584}}";
 		};
 	};
@@ -2119,7 +2122,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1239";
 		rLen = 0;
-		rLoc = 7437;
+		rLoc = 8122;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 50240;
@@ -4071,7 +4074,7 @@
 		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
 		name = "ContentController.m: 1214";
 		rLen = 0;
-		rLoc = 6687;
+		rLoc = 7030;
 		rType = 0;
 		vrLen = 1045;
 		vrLoc = 49713;
@@ -4141,7 +4144,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 222";
 		rLen = 0;
-		rLoc = 2135;
+		rLoc = 2098;
 		rType = 0;
 		vrLen = 1831;
 		vrLoc = 7360;
@@ -4151,7 +4154,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 223";
 		rLen = 0;
-		rLoc = 2260;
+		rLoc = 2223;
 		rType = 0;
 		vrLen = 1841;
 		vrLoc = 7359;
@@ -4161,7 +4164,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 223";
 		rLen = 0;
-		rLoc = 2260;
+		rLoc = 2223;
 		rType = 0;
 		vrLen = 1883;
 		vrLoc = 7359;
@@ -4321,7 +4324,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 224";
 		rLen = 0;
-		rLoc = 2187;
+		rLoc = 2150;
 		rType = 0;
 		vrLen = 1682;
 		vrLoc = 7731;
@@ -4351,7 +4354,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 217";
 		rLen = 0;
-		rLoc = 2135;
+		rLoc = 2098;
 		rType = 0;
 		vrLen = 1682;
 		vrLoc = 7731;
@@ -4361,7 +4364,7 @@
 		fRef = FB1D74EB1098840B00EC8BBB /* ContentController.h */;
 		name = "ContentController.h: 217";
 		rLen = 0;
-		rLoc = 2135;
+		rLoc = 2098;
 		rType = 0;
 		vrLen = 1682;
 		vrLoc = 7731;
@@ -4993,6 +4996,36 @@
 		rType = 0;
 		vrLen = 791;
 		vrLoc = 222;
+	};
+	FBAB2A51133265A4003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBF90D2410923E2B00929934 /* Controller.m */;
+		name = "Controller.m: 313";
+		rLen = 0;
+		rLoc = 13386;
+		rType = 0;
+		vrLen = 845;
+		vrLoc = 13308;
+	};
+	FBAB2A52133265A4003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
+		name = "ContentController.m: 207";
+		rLen = 0;
+		rLoc = 6727;
+		rType = 0;
+		vrLen = 813;
+		vrLoc = 6140;
+	};
+	FBAB2A53133265A4003FA548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FB1D74EC1098840B00EC8BBB /* ContentController.m */;
+		name = "ContentController.m: 221";
+		rLen = 0;
+		rLoc = 7509;
+		rType = 0;
+		vrLen = 1262;
+		vrLoc = 6507;
 	};
 	FBAE662310DC252C00181B07 /* AlliterationSaver.h */ = {
 		uiCtxt = {
@@ -6821,9 +6854,9 @@
 	};
 	FBF90D2410923E2B00929934 /* Controller.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2322, 8138}}";
+			sepNavIntBoundsRect = "{{0, 0}, {2322, 8125}}";
 			sepNavSelRange = "{13386, 0}";
-			sepNavVisRange = "{13153, 323}";
+			sepNavVisRange = "{13308, 845}";
 			sepNavWindowFrame = "{{38, 169}, {717, 584}}";
 		};
 	};
