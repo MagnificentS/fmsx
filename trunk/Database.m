@@ -88,7 +88,6 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 	[[NSApp delegate] setStatusValue:0];
 	[[NSApp delegate] setStatusMaxValue:1];
 	
-	graphics = [[SXImageXMLParser alloc] init];
 	goodAlliterations = [[NSMutableArray alloc] init];
 	badAlliterations = [[NSMutableArray alloc] init];
 	agreements = [[NSMutableArray alloc] init];
@@ -130,8 +129,6 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 
 - (void)dealloc
 {
-	[graphics release];
-	
 	[goodAlliterations release];
 	[badAlliterations release];
 	[agreements release];
@@ -325,7 +322,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 					nil]; 
 		}
 		else { 
-			[object setLogoPath:[[graphics clubLogos] objectForKey:[NSNumber numberWithInt:[object UID]]]];
+		//	[object setLogoPath:[[graphics clubLogos] objectForKey:[NSNumber numberWithInt:[object UID]]]];
 			[clubs addObject:object];
 		}
 	}
@@ -1734,15 +1731,6 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 		[[NSApp delegate] setStatusValue:(i+1)];
 		[ClubLinkSaver saveClubLink:[clubLinks objectAtIndex:i] toData:data];
 	}
-	[pool drain];
-}
-
-- (void)parseGraphics:(NSString *)path
-{
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	
-	[graphics parsePathForGraphics:[path stringByExpandingTildeInPath]];
-	
 	[pool drain];
 }
 

@@ -40,7 +40,7 @@
 continentsController, currenciesController, injuriesController, languagesController, localAreasController, gameID, gameInfo, gameDB,
 mediaController, nationsController, peopleController, stadiumsController, stadiumChangesController, competitionsController, langDB,
 teamsController, weatherController, currentDate, gameDBVersion, databaseChanges, timesSaved, startBuildVersion, currentBuildVersion, 
-langDBLoaded, status, statusMaxValue, statusValue, editorController, contentController;
+langDBLoaded, status, statusMaxValue, statusValue, editorController, contentController, graphics;
 
 - (id)init
 {

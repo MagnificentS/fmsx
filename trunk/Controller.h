@@ -18,6 +18,7 @@
 @class SXFGameInfo;
 @class SXFGameDB;
 @class SXFSaveGameSummary;
+@class SXGraphicsController;
 @class FMDate;
 @class LangDB;
 @class EditorController;
@@ -35,6 +36,7 @@
 	SXFGameDB *gameDB;
 	SXFGameInfo *gameInfo;
 	SXFSaveGameSummary *saveGameSummary;
+	SXGraphicsController *graphics;
 	EditorController *editorController;
 	
 	NSWindowController *preferencesWindowController;
@@ -77,6 +79,7 @@
 @property(assign,readwrite) SXFGameDB *gameDB;
 @property(assign,readwrite) SXFGameInfo *gameInfo;
 @property(assign,readwrite) SXFSaveGameSummary *saveGameSummary;
+@property(assign,readwrite) SXGraphicsController *graphics;
 @property(copy,readwrite) NSString *gamePath, *status;
 @property(copy,readwrite) FMDate *currentDate;
 @property(copy,readwrite) NSMutableDictionary *infoStrings;

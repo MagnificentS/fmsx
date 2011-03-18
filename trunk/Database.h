@@ -38,7 +38,6 @@
 
 - (id)readGameDB:(NSData *)data atOffset:(unsigned int *)byteOffset;
 - (void)saveGameDB:(NSMutableData *)data;
-- (void)parseGraphics:(NSString *)path;
 
 @property(copy,readwrite) NSMutableArray *goodAlliterations, *badAlliterations, *awards,
 *cities, *clubs, *media, *languages, *currencies, *continents, *injuries, *firstNames, 
