@@ -155,8 +155,15 @@
 	
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	[object setUnknownInt1:ibuffer];
-	[object setUnknownData15:[data subdataWithRange:NSMakeRange(offset, (ibuffer*18))]]; 
-	offset += (ibuffer*18);
+	
+	if (version<FM2011_11_2) {
+		[object setUnknownData15:[data subdataWithRange:NSMakeRange(offset, (ibuffer*18))]]; 
+		offset += (ibuffer*18);
+	}
+	else {
+		[object setUnknownData15:[data subdataWithRange:NSMakeRange(offset, (ibuffer*19))]]; 
+		offset += (ibuffer*19);
+	}
 	
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	[object setUnknownInt3:ibuffer];
