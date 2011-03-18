@@ -19,6 +19,11 @@
 	IBOutlet NSTableView	*citiesTable;
 	IBOutlet NSView			*cityMainViewContainer, *cityEntityView;
 	
+	IBOutlet NSTableView	*competitionsTable;
+	IBOutlet NSBox			*competitionBGBox;
+	IBOutlet BWGradientBox	*competitionHeaderBox;
+	IBOutlet NSView			*competitionMainViewContainer, *competitionEntityView;
+	
 	IBOutlet NSTableView	*continentsTable;
 	IBOutlet NSView			*continentMainViewContainer, *continentEntityView;
 	
@@ -66,6 +71,6 @@
 *stadiumChangeMainViewContainer, *stadiumChangeEntityView, *derbyMainViewContainer, *derbyEntityView,
 *injuryMainViewContainer, *injuryEntityView, *languageMainViewContainer, *languageEntityView,
 *sponsorMainViewContainer, *sponsorEntityView, *stadiumMainViewContainer, *stadiumEntityView,
-*weatherMainViewContainer, *weatherEntityView;
+*weatherMainViewContainer, *weatherEntityView, *competitionMainViewContainer, *competitionEntityView;
 
 @end

@@ -92,12 +92,12 @@ unknownChar8, unknownChar9, unknownChar10, unknownShort1, controller;
 
 - (NSString *)nationString
 {
-	if (nationID>-1) { return [[[[[controller database] nations] objectAtIndex:nationID] teamContainer] name]; }
+	if (nationID>-1) { return [[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] objectAtIndex:nationID] teamContainer] name]; }
 	return @"---";
 }
 - (NSString *)continentString
 {
-	if (continentID>-1) { return [[[[controller database] continents] objectAtIndex:continentID] name]; }
+	if (continentID>-1) { return [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.continents"] objectAtIndex:continentID] name]; }
 	return @"---";
 }
 

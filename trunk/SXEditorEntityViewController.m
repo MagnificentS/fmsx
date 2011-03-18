@@ -30,7 +30,7 @@ currencyMainViewContainer, currencyEntityView, localAreaMainViewContainer, local
 derbyMainViewContainer, derbyEntityView, injuryMainViewContainer, injuryEntityView, 
 languageMainViewContainer, languageEntityView, stadiumChangeMainViewContainer, stadiumChangeEntityView,
 sponsorMainViewContainer, sponsorEntityView, stadiumMainViewContainer, stadiumEntityView,
-weatherMainViewContainer, weatherEntityView;
+weatherMainViewContainer, weatherEntityView, competitionMainViewContainer, competitionEntityView;
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
@@ -42,9 +42,8 @@ weatherMainViewContainer, weatherEntityView;
 	
 	if (aTableView==awardsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.awards"] count]; }
 	else if (aTableView==citiesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.cities"] count]; }
-
 //	else if (aTableView==clubsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.clubs"] count]; }
-//	else if (aTableView==competitionsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.competitions"] count]; }
+	else if (aTableView==competitionsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.competitions"] count]; }
 	else if (aTableView==continentsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.continents"] count]; }
 	else if (aTableView==currenciesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.currencies"] count]; }
 	else if (aTableView==derbiesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.derbies"] count]; }
@@ -82,6 +81,15 @@ weatherMainViewContainer, weatherEntityView;
 		
 		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
 		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.cities"] objectAtIndex:rowIndex]; }
+		
+		if ([columnName isEqualToString:@"uid"])			{ return [NSNumber numberWithInt:[object UID]]; }
+		else if ([columnName isEqualToString:@"name"])		{ return [object name]; }
+	}
+	else if (aTableView==competitionsTable) {
+		Competition *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.competitions"] objectAtIndex:rowIndex]; }
 		
 		if ([columnName isEqualToString:@"uid"])			{ return [NSNumber numberWithInt:[object UID]]; }
 		else if ([columnName isEqualToString:@"name"])		{ return [object name]; }
@@ -205,6 +213,16 @@ weatherMainViewContainer, weatherEntityView;
 		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
 		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.cities"] objectAtIndex:rowIndex]; }
 	}
+	else if (aTableView==competitionsTable) {
+		Competition *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.competitions"] objectAtIndex:rowIndex]; }
+	
+		[aCell setDrawsBackground:YES];
+		[aCell setBackgroundColor:[[object colour] backgroundColour]];
+		[aCell setTextColor:[[object colour] foregroundColour]];
+	}
 	else if (aTableView==continentsTable) {
 		Continent *object;
 		
@@ -296,6 +314,10 @@ weatherMainViewContainer, weatherEntityView;
 		selectionIndex = [citiesTable selectedRow]; 
 		arrayString = @"cities";	classString = @"city";
 	}
+	else if (currentSection==EDS_COMPETITIONS) { 
+		selectionIndex = [competitionsTable selectedRow]; 
+		arrayString = @"competitions";	classString = @"competition";
+	}
 	else if (currentSection==EDS_CONTINENTS) { 
 		selectionIndex = [continentsTable selectedRow]; 
 		arrayString = @"continents";	classString = @"continent";
@@ -341,10 +363,6 @@ weatherMainViewContainer, weatherEntityView;
 		selectionIndex = [clubsTable selectedRow]; 
 		arrayString = @"clubs";	classString = @"club";
 	}
-	else if (currentSection==EDS_COMPETITIONS) { 
-		selectionIndex = [competitionsTable selectedRow]; 
-		arrayString = @"competitions";	classString = @"competition";
-	}
 	else if (currentSection==EDS_MEDIA) { 
 		selectionIndex = [mediaTable selectedRow]; 
 		arrayString = @"media";	classString = @"media";
@@ -386,6 +404,12 @@ weatherMainViewContainer, weatherEntityView;
 		[awardHeaderBox setFillEndingColor:[[[[[NSApp delegate] editorController] selectedAward] colour] foregroundColour]];
 		[awardBGBox setFillColor:[[[[[NSApp delegate] editorController] selectedAward] colour] foregroundColour]];
 	}
+	else if (currentSection==EDS_COMPETITIONS) { 
+		// set header colour
+		[competitionHeaderBox setFillStartingColor:[[[[[NSApp delegate] editorController] selectedCompetition] colour] backgroundColour]];
+		[competitionHeaderBox setFillEndingColor:[[[[[NSApp delegate] editorController] selectedCompetition] colour] foregroundColour]];
+		[competitionBGBox setFillColor:[[[[[NSApp delegate] editorController] selectedCompetition] colour] foregroundColour]];
+	}
 	
 	[self reloadEntityTable:[[[NSApp delegate] editorController] currentSection]];
 }
@@ -399,7 +423,7 @@ weatherMainViewContainer, weatherEntityView;
 	if (currentSection==EDS_AWARDS)					{ searchArray = @"awards"; }
 	else if (currentSection==EDS_CITIES)			{ searchArray = @"cities"; }
 	//	else if (currentSection==EDS_CLUBS)				{ searchArray = @"clubs"; }
-	//	else if (currentSection==EDS_COMPETITIONS)		{ searchArray = @"competitions"; }
+	else if (currentSection==EDS_COMPETITIONS)		{ searchArray = @"competitions"; }
 	else if (currentSection==EDS_CONTINENTS)		{ searchArray = @"continents"; }
 	else if (currentSection==EDS_CURRENCIES)		{ searchArray = @"currencies"; }
 	else if (currentSection==EDS_DERBIES)			{ searchArray = @"derbies"; }
@@ -438,7 +462,7 @@ weatherMainViewContainer, weatherEntityView;
 	if (section==EDS_AWARDS)				{ [awardsTable reloadData]; }
 	else if (section==EDS_CITIES)			{ [citiesTable reloadData]; }
 //	else if (section==EDS_CLUBS)			{ [clubsTable reloadData]; }
-//	else if (section==EDS_COMPETITIONS)		{ [competitionsTable reloadData]; }
+	else if (section==EDS_COMPETITIONS)		{ [competitionsTable reloadData]; }
 	else if (section==EDS_CONTINENTS)		{ [continentsTable reloadData]; }
 	else if (section==EDS_CURRENCIES)		{ [currenciesTable reloadData]; }
 	else if (section==EDS_DERBIES)			{ [derbiesTable reloadData]; }

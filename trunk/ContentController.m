@@ -136,6 +136,10 @@
 	if ([sender tag]==1)		{ cityPickerSelector = @"cityID"; }
 	else if ([sender tag]==2)	{ cityPickerSelector = @"capitalID"; }
 	else if ([sender tag]==3)	{ cityPickerSelector = @"cityOfBirthID"; }
+	else if ([sender tag]==4)	{ cityPickerSelector = @"northBoundaryCityID"; }
+	else if ([sender tag]==5)	{ cityPickerSelector = @"eastBoundaryCityID"; }
+	else if ([sender tag]==6)	{ cityPickerSelector = @"southBoundaryCityID"; }
+	else if ([sender tag]==7)	{ cityPickerSelector = @"westBoundaryCityID"; }
 }	
 
 - (IBAction)setCityPickerObject:(id)object
