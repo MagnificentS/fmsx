@@ -156,14 +156,23 @@
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	[object setUnknownInt1:ibuffer];
 	
-	if (version<FM2011_11_2) {
-		[object setUnknownData15:[data subdataWithRange:NSMakeRange(offset, (ibuffer*18))]]; 
-		offset += (ibuffer*18);
+	NSMutableData *newData = [[NSMutableData alloc] init];
+	
+	for (int i=0;i<ibuffer;i++)
+	{
+		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)];
+		
+		// seen in 11.2.1 and earlier
+		if (cbuffer==5) {
+			[newData appendData:[data subdataWithRange:NSMakeRange(offset, 18)]]; offset += 18;
+		}
+		
+		// seen in 11.3
+		else if (cbuffer==6) {
+			[newData appendData:[data subdataWithRange:NSMakeRange(offset, 19)]]; offset += 19;
+		}
 	}
-	else {
-		[object setUnknownData15:[data subdataWithRange:NSMakeRange(offset, (ibuffer*19))]]; 
-		offset += (ibuffer*19);
-	}
+	[object setUnknownData15:newData]; 
 	
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	[object setUnknownInt3:ibuffer];
