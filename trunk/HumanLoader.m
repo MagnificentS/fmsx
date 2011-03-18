@@ -17,7 +17,7 @@
 
 @implementation HumanLoader
 
-+ (Human *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version
++ (Human *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset
 {
 	char cbuffer;
 	short sbuffer;
@@ -56,7 +56,7 @@
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	tempArray = [[NSMutableArray alloc] init];
 	for (int i=0;i<ibuffer;i++) {
-		[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES version:version]];
+		[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES]];
 	}
 	[object setInfos:tempArray];
 	[tempArray release];
@@ -83,7 +83,7 @@
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	tempArray = [[NSMutableArray alloc] init];
 	for (int i=0;i<ibuffer;i++) {
-		[tempArray addObject:[NewsFilterListLoader readFromData:data atOffset:&offset version:version]];
+		[tempArray addObject:[NewsFilterListLoader readFromData:data atOffset:&offset]];
 		NSLog(@"done filter list %d at %d",(i+1),offset);
 	}
 	[object setNewsFilterLists:tempArray];
@@ -109,7 +109,7 @@
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		for (int j=0;j<ibuffer;j++) {
 			NSLog(@"md info %d at %d",j,offset);
-			[tempArray2 addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES version:version]];
+			[tempArray2 addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES]];
 		}
 		[tempArray addObject:tempArray2];
 		[tempArray2 release];
@@ -187,7 +187,7 @@
 	NSLog(@"after 3 arrays at %d",offset);
 	
 	// ???
-	if (version<FM2011_11_2) {
+	if ([[NSApp delegate] valueForKeyPath:@"gameDB.version"]<FM2011_11_2) {
 		[object setUnknownData16:[data subdataWithRange:NSMakeRange(offset, 21)]]; 
 		offset += 21;
 	}
@@ -196,8 +196,6 @@
 		[object setUnknownData16:[data subdataWithRange:NSMakeRange(offset, 29)]]; 
 		offset += 29;
 	}
-	
-	NSLog(@"before twitter with version %d at %d",version,offset);
 	
 	// encrypted strings
 	[object setTwitterLogin:[FMString readFromData:data atOffset:&offset]];
@@ -214,7 +212,7 @@
 	[object setTopLevelBookmarkItems:sbuffer];
 	
 	if ([object topLevelBookmarkItems]>0) {
-		[object setBookmarks:[BookmarkFolderLoader readFromData:data atOffset:&offset version:version]];
+		[object setBookmarks:[BookmarkFolderLoader readFromData:data atOffset:&offset]];
 	}
 	
 	NSLog(@"at home page at %d",offset);
@@ -225,7 +223,7 @@
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		tempArray = [[NSMutableArray alloc] init];
 		for (int i=0;i<ibuffer;i++) {
-			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES version:version]];
+			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES]];
 		}
 		[object setHomePageInfos:tempArray];
 		[tempArray release];

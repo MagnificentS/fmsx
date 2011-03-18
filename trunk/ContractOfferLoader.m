@@ -12,7 +12,7 @@
 
 @implementation ContractOfferLoader
 
-+ (ContractOffer *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version
++ (ContractOffer *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset
 {
 	char cbuffer;
 	int ibuffer;
@@ -31,7 +31,7 @@
 	[object setTransferOfferIndex:ibuffer];
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	[object setWeeklyWageFromOldClub:ibuffer];
-	[object setContract:[ContractLoader readFromData:data atOffset:&offset type:[object type] version:version]];
+	[object setContract:[ContractLoader readFromData:data atOffset:&offset type:[object type]]];
 	
 	// ???
 	[object setUnknownData1:[data subdataWithRange:NSMakeRange(offset, 18)]]; 

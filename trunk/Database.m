@@ -7,7 +7,6 @@
 //
 
 #import "Database.h"
-#import "GameVersions.h"
 #import "Loader.h"
 #import "AlliterationLoader.h"
 #import "AlliterationSaver.h"
@@ -172,7 +171,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 	[super dealloc];
 }
 
-- (id)readGameDB:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version
+- (id)readGameDB:(NSData *)data atOffset:(unsigned int *)byteOffset
 {
 	NSAutoreleasePool *pool;
 	
@@ -308,7 +307,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
 		[[NSApp delegate] setStatusValue:(i+1)];
-		id object = [Loader readClubFromData:data atOffset:byteOffset version:version];
+		id object = [Loader readClubFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Club"]) {
 			return [NSArray arrayWithObjects:
 					@"Club",
@@ -343,7 +342,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 	for (i=0; i<count; i++) {
 		[[NSApp delegate] setStatusValue:(i+1)];
 		
-		id object = [Loader readCompetitionFromData:data atOffset:byteOffset version:version];
+		id object = [Loader readCompetitionFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Competition"]) {
 			return [NSArray arrayWithObjects:
 					@"Competition",
@@ -385,7 +384,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 	for (i=0; i<count; i++) {
 		[[NSApp delegate] setStatusValue:(i+1)];
 		
-		id object = [Loader readContinentFromData:data atOffset:byteOffset version:version];
+		id object = [Loader readContinentFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Continent"]) {
 			return [NSArray arrayWithObjects:
 					@"Continent",
@@ -555,7 +554,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 	[[NSApp delegate] setStatusMaxValue:count];
 	for (i=0; i<count; i++) {
 		[[NSApp delegate] setStatusValue:(i+1)];
-		id object = [Loader readNationFromData:data atOffset:byteOffset version:version];
+		id object = [Loader readNationFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Nation"]) {
 			return [NSArray arrayWithObjects:
 					@"Nation",
@@ -901,7 +900,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 	for (i=0; i<count; i++) {
 		[[NSApp delegate] setStatusValue:(i+1)];
 		
-		id object = [Loader readTeamFromData:data atOffset:byteOffset version:version];
+		id object = [Loader readTeamFromData:data atOffset:byteOffset];
 		if (![[object className] isEqualToString:@"Team"]) {
 			return [NSArray arrayWithObjects:
 					@"Team",
@@ -1077,7 +1076,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 	for (i=0; i<count; i++) {
 		[[NSApp delegate] setStatusValue:(i+1)];
 		
-		id object = [Loader readPersonFromData:data atOffset:byteOffset version:version];
+		id object = [Loader readPersonFromData:data atOffset:byteOffset];
 		
 		if (![[object className] isEqualToString:@"Person"]) {
 			return [NSArray arrayWithObjects:
@@ -1312,7 +1311,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 	[data getBytes:&count range:NSMakeRange(*byteOffset, 4)]; *byteOffset += 4;
 	[self setDatabaseChanges:count];
 	for (int i=0;i<count;i++) {
-		[GeneralInfoLoader readFromData:data atOffset:byteOffset readInfo:NO version:version];
+		[GeneralInfoLoader readFromData:data atOffset:byteOffset readInfo:NO];
 	}
 	NSLog(@"End of %d db changes at %d",count,*byteOffset);
 
@@ -1336,7 +1335,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 	return NULL;
 }
 
-- (void)saveGameDB:(NSMutableData *)data version:(short)version
+- (void)saveGameDB:(NSMutableData *)data
 {
 	int ibuffer;
 	
@@ -1397,7 +1396,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
 		[[NSApp delegate] setStatusValue:(i+1)];
-		[ClubSaver saveClub:[clubs objectAtIndex:i] toData:data version:version];
+		[ClubSaver saveClub:[clubs objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 
@@ -1409,7 +1408,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
 		[[NSApp delegate] setStatusValue:(i+1)];
-		[CompetitionSaver saveCompetition:[competitions objectAtIndex:i] toData:data version:version];
+		[CompetitionSaver saveCompetition:[competitions objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 
@@ -1421,7 +1420,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
 		[[NSApp delegate] setStatusValue:(i+1)];
-		[ContinentSaver saveContinent:[continents objectAtIndex:i] toData:data version:version];
+		[ContinentSaver saveContinent:[continents objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 
@@ -1481,7 +1480,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
 		[[NSApp delegate] setStatusValue:(i+1)];
-		[NationSaver saveNation:[nations objectAtIndex:i] toData:data version:version];
+		[NationSaver saveNation:[nations objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 
@@ -1601,7 +1600,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
 		[[NSApp delegate] setStatusValue:(i+1)];
-		[TeamSaver saveTeam:[teams objectAtIndex:i] toData:data version:version];
+		[TeamSaver saveTeam:[teams objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 
@@ -1661,7 +1660,7 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 	[[NSApp delegate] setStatusMaxValue:ibuffer];
 	for (int i=0; i<ibuffer; i++) {
 		[[NSApp delegate] setStatusValue:(i+1)];
-		[PersonSaver savePerson:[people objectAtIndex:i] toData:data version:version];
+		[PersonSaver savePerson:[people objectAtIndex:i] toData:data];
 	}
 	[pool drain];
 

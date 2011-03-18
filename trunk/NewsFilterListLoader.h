@@ -13,6 +13,6 @@
 
 }
 
-+ (NewsFilterList *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version;
++ (NewsFilterList *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset;
 
 @end

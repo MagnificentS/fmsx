@@ -12,11 +12,10 @@
 #import "FixtureBlockLoader.h"
 #import "Unknown8Loader.h"
 #import "PlayerReplacementLoader.h"
-#import "GameVersions.h"
 
 @implementation Loader (TeamLoader)
 
-+ (Team *)readTeamFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version
++ (Team *)readTeamFromData:(NSData *)data atOffset:(unsigned int *)byteOffset
 {
 	char cbuffer;
 	short sbuffer;

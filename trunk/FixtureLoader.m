@@ -8,11 +8,10 @@
 
 #import "FixtureLoader.h"
 #import "FMDateLoader.h"
-#import "GameVersions.h"
 
 @implementation FixtureLoader
 
-+ (Fixture *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version
++ (Fixture *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset
 {
 	char cbuffer;
 	unsigned char ucbuffer;

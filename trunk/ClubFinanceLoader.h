@@ -13,6 +13,6 @@
 
 }
 
-+ (ClubFinance *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version;
++ (ClubFinance *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset;
 
 @end

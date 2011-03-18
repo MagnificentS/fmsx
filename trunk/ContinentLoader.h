@@ -13,6 +13,6 @@
 @interface Loader (ContinentLoader)
 
 
-+ (Continent *)readContinentFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version;
++ (Continent *)readContinentFromData:(NSData *)data atOffset:(unsigned int *)byteOffset;
 
 @end

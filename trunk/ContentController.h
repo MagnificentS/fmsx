@@ -48,8 +48,6 @@
 	SXEditorViewController *editorViewController;
 }
 
-- (void)selectItem:(id)object;
-
 - (IBAction)showNationPicker:(id)sender;
 - (IBAction)setNationPickerObject:(id)object;
 - (IBAction)pickNation:(id)sender;

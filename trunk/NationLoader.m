@@ -6,7 +6,6 @@
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
-#import "GameVersions.h"
 #import "NationLoader.h"
 #import "FifaRankingMatchLoader.h"
 #import "TransferInfoLoader.h"
@@ -24,7 +23,7 @@
 
 @implementation Loader (NationLoader)
 
-+ (id)readNationFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version
++ (id)readNationFromData:(NSData *)data atOffset:(unsigned int *)byteOffset
 {
 	char cbuffer;
 	short sbuffer;
@@ -99,7 +98,7 @@
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	tempArray = [[NSMutableArray alloc] init];
 	for (int i=0;i<ibuffer;i++) {
-		id info = [GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES version:version];
+		id info = [GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES];
 		if ([[info className] isEqualToString:@"GeneralInfo"]) {
 			[tempArray addObject:info];
 		}

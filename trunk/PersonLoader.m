@@ -24,7 +24,7 @@
 
 @implementation Loader (PersonLoader)
 
-+ (Person *)readPersonFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version
++ (Person *)readPersonFromData:(NSData *)data atOffset:(unsigned int *)byteOffset
 {
 	char cbuffer;
 	int ibuffer;
@@ -39,19 +39,19 @@
 	if (debug) { NSLog(@"type: %d",[object databaseClass]); }
 	
 	if ([object databaseClass]==DBC_PLAYER) {
-		[object setPlayerData:[PlayerLoader readFromData:data atOffset:&offset version:version]];
-		[object setStaffData:[StaffLoader readFromData:data atOffset:&offset version:version]];
+		[object setPlayerData:[PlayerLoader readFromData:data atOffset:&offset]];
+		[object setStaffData:[StaffLoader readFromData:data atOffset:&offset]];
 		[object setPersonData:[ActualPersonLoader readFromData:data atOffset:&offset]];
 	}
 	else if ([object databaseClass]==DBC_NON_PLAYER) {
 		[object setNonPlayerData:[NonPlayerLoader readFromData:data atOffset:&offset]];
-		[object setStaffData:[StaffLoader readFromData:data atOffset:&offset version:version]];
+		[object setStaffData:[StaffLoader readFromData:data atOffset:&offset]];
 		[object setPersonData:[ActualPersonLoader readFromData:data atOffset:&offset]];
 	}
 	else if ([object databaseClass]==DBC_PLAYER_AND_NON_PLAYER) {
-		[object setPlayerData:[PlayerLoader readFromData:data atOffset:&offset version:version]];
+		[object setPlayerData:[PlayerLoader readFromData:data atOffset:&offset]];
 		[object setNonPlayerData:[NonPlayerLoader readFromData:data atOffset:&offset]];
-		[object setStaffData:[StaffLoader readFromData:data atOffset:&offset version:version]];
+		[object setStaffData:[StaffLoader readFromData:data atOffset:&offset]];
 		[object setPersonData:[ActualPersonLoader readFromData:data atOffset:&offset]];
 	}
 	else if ([object databaseClass]==DBC_OFFICIAL) {
@@ -73,9 +73,9 @@
 		[object setPersonData:[ActualPersonLoader readFromData:data atOffset:&offset]];
 	}
 	else if ([object databaseClass]==DBC_HUMAN) {
-		[object setHumanData:[HumanLoader readFromData:data atOffset:&offset version:version]];
+		[object setHumanData:[HumanLoader readFromData:data atOffset:&offset]];
 		[object setNonPlayerData:[NonPlayerLoader readFromData:data atOffset:&offset]];
-		[object setStaffData:[StaffLoader readFromData:data atOffset:&offset version:version]];
+		[object setStaffData:[StaffLoader readFromData:data atOffset:&offset]];
 		[object setPersonData:[ActualPersonLoader readFromData:data atOffset:&offset]];
 	}
 	else if ([object databaseClass]==DBC_UNKNOWN_PERSON_TYPE_1) {

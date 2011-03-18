@@ -13,7 +13,7 @@
 
 @implementation NewsFilterListLoader
 
-+ (NewsFilterList *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version
++ (NewsFilterList *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset
 {
 	int ibuffer;
 	NSMutableArray *tempArray;
@@ -22,7 +22,7 @@
 	
 	NewsFilterList *object = [[NewsFilterList alloc] init];
 	
-	if (version >= FM2010_10_3) {
+	if ([[NSApp delegate] valueForKeyPath:@"gameDB.version"] >= FM2010_10_3) {
 		// sub type?
 		[object setUnknownData1:[data subdataWithRange:NSMakeRange(offset, 4)]]; 
 		offset += 4;
@@ -33,7 +33,7 @@
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	tempArray = [[NSMutableArray alloc] init];
 	for (int i=0;i<ibuffer;i++) {
-		[tempArray addObject:[NewsFilterLoader readFromData:data atOffset:&offset version:version]];
+		[tempArray addObject:[NewsFilterLoader readFromData:data atOffset:&offset]];
 	}
 	[object setFilters:tempArray];
 	[tempArray release];

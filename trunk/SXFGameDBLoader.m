@@ -64,7 +64,7 @@
 	
 	[object setSaveStartOffset:offset];
 	
-	id dbResult = [[object database] readGameDB:data atOffset:&offset version:[object version]];
+	id dbResult = [[object database] readGameDB:data atOffset:&offset];
 	
 	NSLog(@"%@",[dbResult objectAtIndex:2]);
 	if ([[dbResult className] isEqualToString:@"NSArray"] ||

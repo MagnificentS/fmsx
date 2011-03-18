@@ -11,6 +11,6 @@
 
 @interface Loader (CompetitionLoader)
 
-+ (id)readCompetitionFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version;
++ (id)readCompetitionFromData:(NSData *)data atOffset:(unsigned int *)byteOffset;
 
 @end

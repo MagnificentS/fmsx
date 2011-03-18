@@ -13,7 +13,7 @@
 
 @implementation Loader (CompetitionLoader)
 
-+ (id)readCompetitionFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version
++ (id)readCompetitionFromData:(NSData *)data atOffset:(unsigned int *)byteOffset
 {
 	char cbuffer;
 	short sbuffer;
@@ -106,7 +106,7 @@
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		tempArray = [[NSMutableArray alloc] init];
 		for (int i=0;i<ibuffer;i++) {
-			id info = [GeneralInfoLoader readFromData:data atOffset:&offset readInfo:NO version:version];
+			id info = [GeneralInfoLoader readFromData:data atOffset:&offset readInfo:NO];
 			if ([[info className] isEqualToString:@"GeneralInfo"]) {
 				[tempArray addObject:info];
 			}

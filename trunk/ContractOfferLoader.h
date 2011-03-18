@@ -13,6 +13,6 @@
 
 }
 
-+ (ContractOffer *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version;
++ (ContractOffer *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset;
 
 @end

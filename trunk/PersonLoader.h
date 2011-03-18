@@ -12,6 +12,6 @@
 
 @interface Loader (PersonLoader)
 
-+ (Person *)readPersonFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version;
++ (Person *)readPersonFromData:(NSData *)data atOffset:(unsigned int *)byteOffset;
 
 @end

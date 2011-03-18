@@ -15,7 +15,7 @@
 
 @implementation StaffLoader
 
-+ (Staff *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version
++ (Staff *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset
 {
 	char cbuffer, cbuffer2;
 	short sbuffer;
@@ -78,7 +78,7 @@
 	tempArray = [[NSMutableArray alloc] init];
 	for (int i=0;i<cbuffer;i++) {
 		[data getBytes:&cbuffer2 range:NSMakeRange(offset, 1)]; offset += 1;
-		[tempArray addObject:[ContractLoader readFromData:data atOffset:&offset type:cbuffer2 version:version]];
+		[tempArray addObject:[ContractLoader readFromData:data atOffset:&offset type:cbuffer2]];
 	}
 	[object setContracts:tempArray];
 	[tempArray release];
@@ -86,7 +86,7 @@
 	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 	tempArray = [[NSMutableArray alloc] init];
 	for (int i=0;i<cbuffer;i++) {
-		[tempArray addObject:[ContractOfferLoader readFromData:data atOffset:&offset version:version]];
+		[tempArray addObject:[ContractOfferLoader readFromData:data atOffset:&offset]];
 	}
 	[object setContractOffers:tempArray];
 	[tempArray release];

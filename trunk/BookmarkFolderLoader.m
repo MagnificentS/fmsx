@@ -11,7 +11,7 @@
 
 @implementation BookmarkFolderLoader
 
-+ (BookmarkFolder *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version
++ (BookmarkFolder *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset
 {
 	int ibuffer, ibuffer2;
 	NSMutableArray *tempArray, *tempArray2;
@@ -25,7 +25,7 @@
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	tempArray = [[NSMutableArray alloc] init];
 	for (int i=0;i<ibuffer;i++) {
-		[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES version:version]];
+		[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES]];
 	}
 	[object setInfos:tempArray];
 	[tempArray release];
@@ -38,7 +38,7 @@
 		tempArray2 = [[NSMutableArray alloc] init];
 		[data getBytes:&ibuffer2 range:NSMakeRange(offset, 4)]; offset += 4;
 		for (int j=0;j<ibuffer2;j++) {
-			[tempArray2 addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES version:version]];
+			[tempArray2 addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES]];
 		}
 		[tempArray addObject:tempArray2];
 		[tempArray2 release];
@@ -51,7 +51,7 @@
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	tempArray = [[NSMutableArray alloc] init];
 	for (int i=0;i<ibuffer;i++) {
-		[tempArray addObject:[BookmarkFolderLoader readFromData:data atOffset:&offset version:version]];
+		[tempArray addObject:[BookmarkFolderLoader readFromData:data atOffset:&offset]];
 	}
 	[object setSubFolders:tempArray];
 	[tempArray release];

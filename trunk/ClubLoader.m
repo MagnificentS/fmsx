@@ -7,7 +7,6 @@
 //
 
 #import "DatabaseTypes.h"
-#import "GameVersions.h"
 #import "FMDateLoader.h"
 #import "ClubLoader.h"
 #import "ClubFinanceLoader.h"
@@ -20,7 +19,7 @@
 
 @implementation Loader (ClubLoader)
 
-+ (id)readClubFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version
++ (id)readClubFromData:(NSData *)data atOffset:(unsigned int *)byteOffset
 {
 	char cbuffer;
 	short sbuffer;
@@ -119,7 +118,7 @@
 	
 	if (debug) { NSLog(@"before finance at %d",offset); }
 	
-	id finance = [ClubFinanceLoader readFromData:data atOffset:&offset version:version];
+	id finance = [ClubFinanceLoader readFromData:data atOffset:&offset];
 	if ([[finance className] isEqualToString:@"ClubFinance"]) {
 		[object setFinance:finance];
 	}

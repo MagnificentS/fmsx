@@ -36,8 +36,8 @@
 	NSString *status;
 }
 
-- (id)readGameDB:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version;
-- (void)saveGameDB:(NSMutableData *)data version:(short)version;
+- (id)readGameDB:(NSData *)data atOffset:(unsigned int *)byteOffset;
+- (void)saveGameDB:(NSMutableData *)data;
 - (void)parseGraphics:(NSString *)path;
 
 @property(copy,readwrite) NSMutableArray *goodAlliterations, *badAlliterations, *awards,

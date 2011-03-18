@@ -12,6 +12,6 @@
 
 @interface Loader (TeamLoader)
 
-+ (Team *)readTeamFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version;
++ (Team *)readTeamFromData:(NSData *)data atOffset:(unsigned int *)byteOffset;
 
 @end

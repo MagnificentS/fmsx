@@ -13,6 +13,6 @@
 
 }
 
-+ (Staff *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version;
++ (Staff *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset;
 
 @end

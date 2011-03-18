@@ -11,6 +11,6 @@
 
 @interface Loader (ClubLoader)
 
-+ (id)readClubFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version;
++ (id)readClubFromData:(NSData *)data atOffset:(unsigned int *)byteOffset;
 
 @end

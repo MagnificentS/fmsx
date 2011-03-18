@@ -13,6 +13,6 @@
 
 }
 
-+ (BookmarkFolder *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version;
++ (BookmarkFolder *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset;
 
 @end

@@ -12,11 +12,10 @@
 #import "PlayerBanLoader.h"
 #import "PlayerInjuryLoader.h"
 #import "FMDateLoader.h"
-#import "GameVersions.h"
 
 @implementation PlayerLoader
 
-+ (Player *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version
++ (Player *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset
 {
 	char cbuffer;
 	short sbuffer;

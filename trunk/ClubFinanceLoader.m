@@ -10,11 +10,9 @@
 #import "ClubFinanceRecordLoader.h"
 #import "ClubFinanceRevenueRecordLoader.h"
 #import "FMDateLoader.h"
-#import "GameVersions.h"
-
 @implementation ClubFinanceLoader
 
-+ (ClubFinance *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset version:(short)version
++ (ClubFinance *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset
 {
 	char cbuffer;
 	int ibuffer;

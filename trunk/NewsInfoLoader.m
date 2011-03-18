@@ -13,7 +13,7 @@
 
 @implementation NewsInfoLoader
 
-+ (NewsInfo *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset inType:(NSString *)type version:(short)version
++ (NewsInfo *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset inType:(NSString *)type
 {
 	char cbuffer;
 	int ibuffer;
@@ -169,7 +169,7 @@
 			[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 			NSMutableArray *tempArray = [[NSMutableArray alloc] init];
 			for (int i=0;i<ibuffer;i++) {
-				[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:NO version:version]];
+				[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:NO]];
 			}
 			[object setInfos:tempArray];
 			[tempArray release];
@@ -208,7 +208,7 @@
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		NSMutableArray *tempArray = [[NSMutableArray alloc] init];
 		for (int i=0;i<ibuffer;i++) {
-			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES version:version]];
+			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES]];
 		}
 		[object setInfos:tempArray];
 		[tempArray release];
@@ -220,7 +220,7 @@
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		NSMutableArray *tempArray = [[NSMutableArray alloc] init];
 		for (int i=0;i<ibuffer;i++) {
-			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES version:version]];
+			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES]];
 		}
 		[object setInfos:tempArray];
 		[tempArray release];
@@ -232,7 +232,7 @@
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		NSMutableArray *tempArray = [[NSMutableArray alloc] init];
 		for (int i=0;i<ibuffer;i++) {
-			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES version:version]];
+			[tempArray addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES]];
 		}
 		[object setInfos:tempArray];
 		[tempArray release];
