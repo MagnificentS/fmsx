@@ -43,6 +43,11 @@
 	IBOutlet NSTableView	*stadiumChangesTable;
 	IBOutlet NSView			*stadiumChangeMainViewContainer, *stadiumChangeEntityView;
 	
+	IBOutlet NSTableView	*stadiumsTable;
+	IBOutlet NSView			*stadiumMainViewContainer, *stadiumEntityView;
+	
+	IBOutlet NSTableView	*weatherTable;
+	IBOutlet NSView			*weatherMainViewContainer, *weatherEntityView;
 }
 
 - (IBAction)showCityPicker:(id)sender;
@@ -60,6 +65,7 @@
 *currencyMainViewContainer, *currencyEntityView, *localAreaMainViewContainer, *localAreaEntityView,
 *stadiumChangeMainViewContainer, *stadiumChangeEntityView, *derbyMainViewContainer, *derbyEntityView,
 *injuryMainViewContainer, *injuryEntityView, *languageMainViewContainer, *languageEntityView,
-*sponsorMainViewContainer, *sponsorEntityView;
+*sponsorMainViewContainer, *sponsorEntityView, *stadiumMainViewContainer, *stadiumEntityView,
+*weatherMainViewContainer, *weatherEntityView;
 
 @end

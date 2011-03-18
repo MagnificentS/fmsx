@@ -1050,16 +1050,16 @@
 	};
 	FB329EA1133022DD006A7B01 /* SXEditorEntityViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {887, 962}}";
-			sepNavSelRange = "{984, 0}";
-			sepNavVisRange = "{877, 911}";
+			sepNavIntBoundsRect = "{{0, 0}, {999, 936}}";
+			sepNavSelRange = "{1743, 0}";
+			sepNavVisRange = "{204, 1139}";
 		};
 	};
 	FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1167, 5694}}";
-			sepNavSelRange = "{14599, 0}";
-			sepNavVisRange = "{13450, 760}";
+			sepNavIntBoundsRect = "{{0, 0}, {740, 6019}}";
+			sepNavSelRange = "{488, 0}";
+			sepNavVisRange = "{147, 1088}";
 		};
 	};
 	FB35641D10B4AE5C004E3FB7 /* MGRecessedPopUpButtonCell.h */ = {
@@ -3309,7 +3309,7 @@
 		fRef = FB329EA2133022DD006A7B01 /* SXEditorEntityViewController.m */;
 		name = "SXEditorEntityViewController.m: 138";
 		rLen = 0;
-		rLoc = 8177;
+		rLoc = 8507;
 		rType = 0;
 		vrLen = 1593;
 		vrLoc = 7117;

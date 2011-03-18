@@ -9,6 +9,18 @@
 #import "SXEditorEntityViewController.h"
 #import "Controller.h"
 #import "ContentController.h"
+#import "Award.h"
+#import "City.h"
+#import "Currency.h"
+#import "Continent.h"
+#import "Derby.h"
+#import "Injury.h"
+#import "Language.h"
+#import "LocalArea.h"
+#import "Sponsor.h"
+#import "Stadium.h"
+#import "StadiumChange.h"
+#import "Weather.h"
 
 @implementation SXEditorEntityViewController
 
@@ -17,7 +29,8 @@ cityMainViewContainer, cityEntityView, continentMainViewContainer, continentEnti
 currencyMainViewContainer, currencyEntityView, localAreaMainViewContainer, localAreaEntityView, 
 derbyMainViewContainer, derbyEntityView, injuryMainViewContainer, injuryEntityView, 
 languageMainViewContainer, languageEntityView, stadiumChangeMainViewContainer, stadiumChangeEntityView,
-sponsorMainViewContainer, sponsorEntityView;
+sponsorMainViewContainer, sponsorEntityView, stadiumMainViewContainer, stadiumEntityView,
+weatherMainViewContainer, weatherEntityView;
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
@@ -42,9 +55,9 @@ sponsorMainViewContainer, sponsorEntityView;
 //	else if (aTableView==nationsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] count]; }
 //	else if (aTableView==peopleTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] count]; }
 	else if (aTableView==sponsorsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.sponsors"] count]; }
-//	else if (aTableView==stadiumsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiums"] count]; }
+	else if (aTableView==stadiumsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiums"] count]; }
 	else if (aTableView==stadiumChangesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiumChanges"] count]; }
-//	else if (aTableView==weatherTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.weather"] count]; }
+	else if (aTableView==weatherTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.weather"] count]; }
 
 	return 0;
 }
@@ -137,6 +150,15 @@ sponsorMainViewContainer, sponsorEntityView;
 		else if ([columnName isEqualToString:@"name"])		{ return [object name]; }
 		else if ([columnName isEqualToString:@"businessName"])		{ return [object businessName]; }
 	}
+	else if (aTableView==stadiumsTable) {
+		Stadium *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiums"] objectAtIndex:rowIndex]; }
+		
+		if ([columnName isEqualToString:@"uid"])			{ return [NSNumber numberWithInt:[object UID]]; }
+		else if ([columnName isEqualToString:@"name"])		{ return [object name]; }
+	}
 	else if (aTableView==stadiumChangesTable) {
 		StadiumChange *object;
 		
@@ -146,7 +168,15 @@ sponsorMainViewContainer, sponsorEntityView;
 		if ([columnName isEqualToString:@"uid"])			{ return [NSNumber numberWithInt:[object UID]]; }
 		else if ([columnName isEqualToString:@"name"])		{ return [object name]; }
 	}
-	
+	else if (aTableView==weatherTable) {
+		Weather *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.weather"] objectAtIndex:rowIndex]; }
+		
+		if ([columnName isEqualToString:@"uid"])			{ return [NSNumber numberWithInt:[object UID]]; }
+		else if ([columnName isEqualToString:@"name"])		{ return [object name]; }
+	}
 	
 	
 	else if (aTableView==awardSectionsTable) { 
@@ -217,13 +247,24 @@ sponsorMainViewContainer, sponsorEntityView;
 		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
 		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.sponsors"] objectAtIndex:rowIndex]; }
 	}
+	else if (aTableView==stadiumsTable) {
+		Stadium *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiums"] objectAtIndex:rowIndex]; }
+	}
 	else if (aTableView==stadiumChangesTable) {
 		StadiumChange *object;
 		
 		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
 		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiumChanges"] objectAtIndex:rowIndex]; }
 	}
-	
+	else if (aTableView==weatherTable) {
+		Weather *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.weather"] objectAtIndex:rowIndex]; }
+	}
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
@@ -287,6 +328,14 @@ sponsorMainViewContainer, sponsorEntityView;
 		selectionIndex = [stadiumChangesTable selectedRow]; 
 		arrayString = @"stadiumChanges";	classString = @"stadiumChange";
 	}
+	else if (currentSection==EDS_STADIUMS) { 
+		selectionIndex = [stadiumsTable selectedRow]; 
+		arrayString = @"stadiums";	classString = @"stadium";
+	}
+	else if (currentSection==EDS_WEATHER) { 
+		selectionIndex = [weatherTable selectedRow]; 
+		arrayString = @"weather";	classString = @"weather";
+	}
 	/*
 	else if (currentSection==EDS_CLUBS) { 
 		selectionIndex = [clubsTable selectedRow]; 
@@ -307,14 +356,6 @@ sponsorMainViewContainer, sponsorEntityView;
 	else if (currentSection==EDS_PEOPLE) { 
 		selectionIndex = [peopleTable selectedRow]; 
 		arrayString = @"people";	classString = @"person";
-	}
-	else if (currentSection==EDS_STADIUMS) { 
-		selectionIndex = [stadiumsTable selectedRow]; 
-		arrayString = @"stadiums";	classString = @"stadium";
-	}
-	else if (currentSection==EDS_WEATHER) { 
-		selectionIndex = [weatherTable selectedRow]; 
-		arrayString = @"weather";	classString = @"weather";
 	}
 */
 	
@@ -369,9 +410,9 @@ sponsorMainViewContainer, sponsorEntityView;
 	//	else if (currentSection==EDS_NATIONS)			{ searchArray = @"nations"; }
 	//	else if (currentSection==EDS_PEOPLE)			{ searchArray = @"people"; }
 	else if (currentSection==EDS_SPONSORS)			{ searchArray = @"sponsors"; }
-	//	else if (currentSection==EDS_STADIUMS)			{ searchArray = @"stadiums"; }
+	else if (currentSection==EDS_STADIUMS)			{ searchArray = @"stadiums"; }
 	else if (currentSection==EDS_STADIUM_CHANGES)	{ searchArray = @"stadiumChanges"; }
-	//	else if (currentSection==EDS_WEATHER)			{ searchArray = @"weather"; }	
+	else if (currentSection==EDS_WEATHER)			{ searchArray = @"weather"; }	
 	
 	if (!searchVariable || [searchVariable length] < 1) { searchVariable = @"name"; }
 		
@@ -408,9 +449,9 @@ sponsorMainViewContainer, sponsorEntityView;
 //	else if (section==EDS_NATIONS)			{ [nationsTable reloadData]; }
 //	else if (section==EDS_PEOPLE)			{ [peopleTable reloadData]; }
 	else if (section==EDS_SPONSORS)			{ [sponsorsTable reloadData]; }
-//	else if (section==EDS_STADIUMS)			{ [stadiumsTable reloadData]; }
+	else if (section==EDS_STADIUMS)			{ [stadiumsTable reloadData]; }
 	else if (section==EDS_STADIUM_CHANGES)	{ [stadiumChangesTable reloadData]; }
-//	else if (section==EDS_WEATHER)			{ [weatherTable reloadData]; }	
+	else if (section==EDS_WEATHER)			{ [weatherTable reloadData]; }	
 }
 
 @end

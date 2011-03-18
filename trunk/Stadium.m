@@ -90,4 +90,10 @@ pitchDeteriorationRate;
 	else { flags = (flags | SF_STADIUM_NAME_SAVED_LOCALLY); }
 }
 
+- (NSString *)cityString
+{
+	if (cityID>-1) { return [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.cities"] objectAtIndex:cityID] name]; }
+	return @"---";
+}
+
 @end

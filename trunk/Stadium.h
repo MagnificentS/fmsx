@@ -81,4 +81,6 @@ allSeaterCompetitionCapacity, rowID, UID, nearbyStadiumID, cityID;
 - (BOOL)localName;
 - (void)setLocalName:(BOOL)val;
 
+- (NSString *)cityString;
+
 @end

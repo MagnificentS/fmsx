@@ -666,6 +666,8 @@
 		FBE9725010B9771D001F3139 /* NewsFilterLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE9724F10B9771D001F3139 /* NewsFilterLoader.m */; };
 		FBE9725410B97AB4001F3139 /* NewsInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE9725310B97AB4001F3139 /* NewsInfo.m */; };
 		FBE9725710B97AC6001F3139 /* NewsInfoLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE9725610B97AC6001F3139 /* NewsInfoLoader.m */; };
+		FBEE41DD1332CDE800A89FB0 /* Editor_Stadium.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBEE41DC1332CDE800A89FB0 /* Editor_Stadium.xib */; };
+		FBEE41DF1332CDF000A89FB0 /* Editor_Weather.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBEE41DE1332CDF000A89FB0 /* Editor_Weather.xib */; };
 		FBF0823E10CA6B9600BD115A /* PlayerStatsTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF0823D10CA6B9600BD115A /* PlayerStatsTransformer.m */; };
 		FBF4C9A91292CF35002E5632 /* AgentLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF4C9A81292CF35002E5632 /* AgentLoader.m */; };
 		FBF4C9AC1292CF4F002E5632 /* Agent.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF4C9AB1292CF4F002E5632 /* Agent.m */; };
@@ -1678,6 +1680,8 @@
 		FBE9725310B97AB4001F3139 /* NewsInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsInfo.m; sourceTree = "<group>"; };
 		FBE9725510B97AC6001F3139 /* NewsInfoLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsInfoLoader.h; sourceTree = "<group>"; };
 		FBE9725610B97AC6001F3139 /* NewsInfoLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsInfoLoader.m; sourceTree = "<group>"; };
+		FBEE41DC1332CDE800A89FB0 /* Editor_Stadium.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_Stadium.xib; sourceTree = "<group>"; };
+		FBEE41DE1332CDF000A89FB0 /* Editor_Weather.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_Weather.xib; sourceTree = "<group>"; };
 		FBF0823C10CA6B9600BD115A /* PlayerStatsTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerStatsTransformer.h; sourceTree = "<group>"; };
 		FBF0823D10CA6B9600BD115A /* PlayerStatsTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerStatsTransformer.m; sourceTree = "<group>"; };
 		FBF4C9A71292CF35002E5632 /* AgentLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgentLoader.h; sourceTree = "<group>"; };
@@ -1850,8 +1854,10 @@
 				FBAB2B651332ABE8003FA548 /* Editor_Derby.xib */,
 				FBAB2B671332ABF5003FA548 /* Editor_Injury.xib */,
 				FBAB2B691332ABFB003FA548 /* Editor_Language.xib */,
-				FBAB2B6B1332AC0B003FA548 /* Editor_StadiumChange.xib */,
 				FBAB2BD81332C1DB003FA548 /* Editor_Sponsor.xib */,
+				FBAB2B6B1332AC0B003FA548 /* Editor_StadiumChange.xib */,
+				FBEE41DC1332CDE800A89FB0 /* Editor_Stadium.xib */,
+				FBEE41DE1332CDF000A89FB0 /* Editor_Weather.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -3466,6 +3472,8 @@
 				FBAB2B6A1332ABFB003FA548 /* Editor_Language.xib in Resources */,
 				FBAB2B6C1332AC0B003FA548 /* Editor_StadiumChange.xib in Resources */,
 				FBAB2BD91332C1DB003FA548 /* Editor_Sponsor.xib in Resources */,
+				FBEE41DD1332CDE800A89FB0 /* Editor_Stadium.xib in Resources */,
+				FBEE41DF1332CDF000A89FB0 /* Editor_Weather.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
