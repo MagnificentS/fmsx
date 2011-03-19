@@ -1876,6 +1876,26 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 	return strings;
 }
 
+- (NSArray *)clubStrings
+{
+	NSMutableArray *strings = [[NSMutableArray alloc] init];
+	
+	for (Club *item in clubs) { [strings addObject:[[item teamContainer] name]]; }
+	
+	return [strings autorelease];
+}
+- (NSArray *)clubStringInfos
+{
+	NSMutableArray *stringInfos = [[NSMutableArray alloc] init];
+	
+	for (Club *item in clubs) { 
+		[stringInfos addObject:[NSDictionary dictionaryWithObjectsAndKeys:[[item teamContainer] name],@"name",[NSNumber numberWithInt:[item rowID]],@"rowID",[NSNumber numberWithInt:[item UID]],@"UID",nil]]; 
+	}
+	
+	return [stringInfos autorelease];
+}
+
+
 - (NSArray *)localAreaStrings
 {
 	NSMutableArray *strings = [[NSMutableArray alloc] init];

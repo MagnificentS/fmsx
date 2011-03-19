@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "EditorController.h"
-#import "BWToolkitFramework/BWGradientBox.h"
+#import <BWToolkitFramework/BWToolkitFramework.h>
 
 @interface SXEditorEntityViewController : NSViewController {
 	IBOutlet NSTableView	*awardsTable, *awardSectionsTable;
@@ -45,6 +45,10 @@
 	IBOutlet NSTableView	*sponsorsTable;
 	IBOutlet NSView			*sponsorMainViewContainer, *sponsorEntityView;
 	
+	IBOutlet NSTableView	*mediaTable, *mediaSectionsTable;
+	IBOutlet NSView			*mediaMainViewContainer, *mediaEntityView, *mediaGeneralView, *mediaAssociationsView, *mediaSectionView;
+	IBOutlet BWSheetController *mediaNewClubPicker;
+	
 	IBOutlet NSTableView	*stadiumChangesTable;
 	IBOutlet NSView			*stadiumChangeMainViewContainer, *stadiumChangeEntityView;
 	
@@ -56,6 +60,7 @@
 }
 
 - (IBAction)showCityPicker:(id)sender;
+- (IBAction)showClubPicker:(id)sender;
 - (IBAction)showCompetitionPicker:(id)sender;
 - (IBAction)showMediaPicker:(id)sender;
 - (IBAction)showNationPicker:(id)sender;
@@ -71,6 +76,7 @@
 *stadiumChangeMainViewContainer, *stadiumChangeEntityView, *derbyMainViewContainer, *derbyEntityView,
 *injuryMainViewContainer, *injuryEntityView, *languageMainViewContainer, *languageEntityView,
 *sponsorMainViewContainer, *sponsorEntityView, *stadiumMainViewContainer, *stadiumEntityView,
-*weatherMainViewContainer, *weatherEntityView, *competitionMainViewContainer, *competitionEntityView;
+*weatherMainViewContainer, *weatherEntityView, *competitionMainViewContainer, *competitionEntityView,
+*mediaMainViewContainer, *mediaEntityView, *mediaGeneralView, *mediaAssociationsView, *mediaSectionView;
 
 @end

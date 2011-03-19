@@ -11,10 +11,14 @@
 
 @interface MediaClub : NSObject {
 	int clubID;
+	int SXClubRowID;
 	NSString *URL;
 }
 
-@property(assign,readwrite) int clubID;
+- (void)setClubRowID:(int)val;
+- (int)clubRowID;
+
+@property(assign,readwrite) int clubID, SXClubRowID;
 @property(assign,readwrite) NSString *URL;
 
 @end

@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "FMDate.h"
 #import "Club.h"
+#import "MediaClub.h"
 
 // style
 #define MST_NOT_SET		0
@@ -62,9 +63,7 @@
 	NSMutableArray *competitions, *nations, *clubs, *linkedMedia, *types, *journalists;
 	NSString *name, *URL;
 	
-	// new item holders
-	NSString *newClubURL;
-	int newClubUID;
+	MediaClub *newMediaClub;
 }
 
 @property(assign,readwrite) char databaseClass, nameGender, period, scope, style;
@@ -75,19 +74,22 @@
 *journalists;
 @property(copy,readwrite) NSString *name, *URL;
 
-@property(copy,readwrite) NSString *newClubURL;
-@property(assign,readwrite) int newClubUID;
+@property(assign,readwrite) MediaClub *newMediaClub;
 
 - (NSArray *)periodStrings;
 - (NSArray *)scopeStrings;
 - (NSArray *)styleStrings;
 - (NSArray *)typeStrings;
 
+- (NSString *)cityString;
+- (NSString *)localAreaString;
+- (NSString *)typeString;
+
 - (void)setNewCompetitionID:(int)val;
 - (void)setNewJournalistID:(int)val;
 - (void)setNewNationID:(int)val;
 - (void)setNewLinkedMediaID:(int)val;
 
-- (void)addClub:(Club *)object;
+- (void)addNewClub;
 
 @end

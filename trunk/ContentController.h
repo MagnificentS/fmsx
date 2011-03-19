@@ -42,6 +42,10 @@
 	id mediaPickerObject;
 	NSString *mediaPickerSelector;
 	
+	IBOutlet BWSheetController *clubPicker;
+	id clubPickerObject;
+	NSString *clubPickerSelector;
+	
 	NSString *locationString;
 	
 	IBOutlet NSWindow *mainWindow;
@@ -66,6 +70,10 @@
 - (IBAction)showMediaPicker:(id)sender;
 - (IBAction)setMediaPickerObject:(id)object;
 - (IBAction)pickMedia:(id)sender;
+- (IBAction)showClubPicker:(id)sender;
+- (IBAction)setClubPickerObject:(id)object;
+- (IBAction)pickClub:(id)sender;
+
 
 - (void)replacePlaceholder:(NSView *)placeholder withView:(NSView *)view;
 

@@ -13,12 +13,13 @@
 
 @implementation SXEditorViewController
 
-@synthesize editorPlaceholderView, cityPicker, competitionPicker, mediaPicker, 
+@synthesize editorPlaceholderView, cityPicker, clubPicker, competitionPicker, mediaPicker, 
 nationPicker, peoplePicker, stadiumPicker;
 
 - (void)awakeFromNib
 {
 	[cityPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
+	[clubPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
 	[competitionPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
 	[mediaPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
 	[nationPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];

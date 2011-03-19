@@ -72,5 +72,7 @@
 - (NSArray *)localAreaStrings;
 - (NSArray *)languageStrings;
 - (NSArray *)weatherStrings;
+- (NSArray *)clubStrings;
+- (NSArray *)clubStringInfos;
 
 @end

@@ -565,7 +565,7 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 		return image;
 	}
 	else {
-		if (female) { return [NSImage imageNamed:@"defaultperson_female"]; }
+		if ([personData female]) { return [NSImage imageNamed:@"defaultperson_female"]; }
 		else { return [NSImage imageNamed:@"defaultperson_male"]; }
 	}
 }

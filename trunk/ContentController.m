@@ -202,13 +202,37 @@
 	
 }
 
+- (IBAction)showClubPicker:(id)sender
+{
+	clubPickerSelector = @"";
+	[[editorViewController clubPicker] openSheet:self];
+	if ([sender tag]==1)		{ clubPickerSelector = @"clubID"; }
+	else if ([sender tag]==2)	{ clubPickerSelector = @"clubRowID"; }
+}	
+
+- (IBAction)setClubPickerObject:(id)object
+{
+	clubPickerObject = object;
+}
+
+- (IBAction)pickClub:(id)sender
+{
+	SEL thisSelector = NSSelectorFromString([NSString stringWithFormat:@"set%@%@:",
+											 [[clubPickerSelector substringToIndex:1] capitalizedString],
+											 [clubPickerSelector substringFromIndex:1]]);
+	
+	[clubPickerObject performSelector:thisSelector withObject:[sender intValue]];
+	
+}
+
+
 - (IBAction)selectEditorView:(id)sender
 {
 	if (![[NSApp delegate] dataLoaded]) {
 		NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Game Not Loaded",@"error - game not loaded") defaultButton:@"OK" alternateButton:nil 
 										   otherButton:nil informativeTextWithFormat:@"The editor can't be displayed before a game is loaded"];
-//		[alert runModal];
-//		return;
+		[alert runModal];
+		return;
 	}
 	
 	editorViewController = [[SXEditorViewController alloc] initWithNibName:@"Editor" bundle:nil];

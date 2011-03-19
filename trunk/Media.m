@@ -7,20 +7,37 @@
 //
 
 #import "Media.h"
-#import "MediaClub.h"
 
 @implementation Media
 
 @synthesize databaseClass, nameGender, period, scope, style, fake,
 cityID, localAreaID, continentID, rowID, UID, lastPublishedDate,
 competitions, nations, clubs, linkedMedia, name, URL, types,
-journalists, newClubURL, newClubUID;
+journalists, newMediaClub;
+
+- (id)init
+{
+	[super init];
+	
+	name = @"---";
+	newMediaClub = [[MediaClub alloc] init];
+	
+	return self;
+}
+
+- (void)dealloc
+{
+	[newMediaClub release];
+	
+	[super dealloc];
+}
 
 - (void)setNewCompetitionID:(int)val
 {
 	if (val<0) { return; }
 	
-	[[self mutableArrayValueForKey:@"competitions"] addObject:[NSNumber numberWithInt:val]];
+	int newCompID = [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.competitions"] objectAtIndex:val] UID];
+	[[self mutableArrayValueForKey:@"competitions"] addObject:[NSNumber numberWithInt:newCompID]];
 }
 
 - (void)setNewJournalistID:(int)val
@@ -109,17 +126,47 @@ journalists, newClubURL, newClubUID;
 	return strings;
 }
 
-- (void)addClub:(Club *)object
+- (NSString *)cityString
 {
-	if ([object respondsToSelector:NSSelectorFromString(@"UID")]) {
-		MediaClub *newClub = [[MediaClub alloc] init];
-		[newClub setURL:newClubURL];
-		[newClub setClubID:[object UID]];
-		if (![clubs containsObject:newClub]) {
-			[[self mutableArrayValueForKey:@"clubs"] addObject:newClub];
-		}
-		[newClub release];
+	if (cityID>-1) { return [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.cities"] objectAtIndex:cityID] name]; }
+	return @"---";
+}
+
+- (NSString *)localAreaString
+{
+	if (localAreaID>-1) { return [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.localAreas"] objectAtIndex:localAreaID] name]; }
+	return @"---";
+}
+
+- (NSString *)typeString
+{
+	NSMutableString *str = [[[NSMutableString alloc] init] autorelease];
+	
+	for (NSNumber *type in types)
+	{
+		if ([str length]>0) { [str appendString:@" / "]; }
+		
+		if ([type intValue]==0) { [str appendString:NSLocalizedString(@"Not Set", @"general 'not set' option")]; }
+		else if ([type intValue]==1) { [str appendString:NSLocalizedString(@"Newspaper", @"media type")]; }
+		else if ([type intValue]==2) { [str appendString:NSLocalizedString(@"Magazine", @"media type")]; }
+		else if ([type intValue]==3) { [str appendString:NSLocalizedString(@"Fanzine", @"media type")]; }
+		else if ([type intValue]==4) { [str appendString:NSLocalizedString(@"Radio", @"media type")]; }
+		else if ([type intValue]==5) { [str appendString:NSLocalizedString(@"TV", @"media type")]; }
+		else if ([type intValue]==6) { [str appendString:NSLocalizedString(@"Website", @"media type")]; }
+		else if ([type intValue]==7) { [str appendString:NSLocalizedString(@"Bookmaker", @"media type")]; }
+		else if ([type intValue]==8) { [str appendString:NSLocalizedString(@"Injury Sponsor", @"media type")]; }
+		else if ([type intValue]==9) { [str appendString:NSLocalizedString(@"Kit Sponsor", @"media type")]; }
+		else { [str appendString:@"Unknown"]; }
 	}
+	
+	if ([types count]>0) { return str; }
+	
+	return @"None";
+}
+
+- (void)addNewClub
+{
+	if ([newMediaClub clubID]>0) { [[self mutableArrayValueForKey:@"clubs"] addObject:newMediaClub]; }
 }
 
 @end

@@ -12,6 +12,7 @@
 @interface SXEditorViewController : NSViewController {
 	IBOutlet NSView *editorPlaceholderView;
 	IBOutlet BWSheetController *cityPicker;
+	IBOutlet BWSheetController *clubPicker;
 	IBOutlet BWSheetController *competitionPicker;
 	IBOutlet BWSheetController *mediaPicker;
 	IBOutlet BWSheetController *nationPicker;
@@ -23,7 +24,7 @@
 - (void)selectSection:(id)sender;
 
 @property(readwrite,assign) NSView *editorPlaceholderView;
-@property(readwrite,assign) BWSheetController *cityPicker, *competitionPicker, *mediaPicker, 
+@property(readwrite,assign) BWSheetController *cityPicker, *clubPicker, *competitionPicker, *mediaPicker, 
 *nationPicker, *peoplePicker, *stadiumPicker;
 
 @end

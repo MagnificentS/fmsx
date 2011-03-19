@@ -229,6 +229,7 @@
 		FB3D74631335046500B3DEE0 /* defaultperson_male.png in Resources */ = {isa = PBXBuildFile; fileRef = FB3D74611335046500B3DEE0 /* defaultperson_male.png */; };
 		FB3D74671335054A00B3DEE0 /* gkscreenblanked.png in Resources */ = {isa = PBXBuildFile; fileRef = FB3D74651335054A00B3DEE0 /* gkscreenblanked.png */; };
 		FB3D74681335054A00B3DEE0 /* playerscreenblanked.png in Resources */ = {isa = PBXBuildFile; fileRef = FB3D74661335054A00B3DEE0 /* playerscreenblanked.png */; };
+		FB3D747013350B5100B3DEE0 /* Editor_Media.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB3D746F13350B5100B3DEE0 /* Editor_Media.xib */; };
 		FB42CFD310A370F200D928B0 /* FM11SX.icns in Resources */ = {isa = PBXBuildFile; fileRef = FB42CFD210A370F200D928B0 /* FM11SX.icns */; };
 		FB444BEC10AED1E9007932AD /* ClubFinanceRecordLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB444BEB10AED1E9007932AD /* ClubFinanceRecordLoader.m */; };
 		FB444BEF10AED218007932AD /* ClubFinanceRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FB444BEE10AED218007932AD /* ClubFinanceRecord.m */; };
@@ -995,6 +996,7 @@
 		FB3D74611335046500B3DEE0 /* defaultperson_male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultperson_male.png; sourceTree = "<group>"; };
 		FB3D74651335054A00B3DEE0 /* gkscreenblanked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gkscreenblanked.png; sourceTree = "<group>"; };
 		FB3D74661335054A00B3DEE0 /* playerscreenblanked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerscreenblanked.png; sourceTree = "<group>"; };
+		FB3D746F13350B5100B3DEE0 /* Editor_Media.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_Media.xib; sourceTree = "<group>"; };
 		FB42CFD210A370F200D928B0 /* FM11SX.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = FM11SX.icns; sourceTree = "<group>"; };
 		FB444BEA10AED1E9007932AD /* ClubFinanceRecordLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClubFinanceRecordLoader.h; sourceTree = "<group>"; };
 		FB444BEB10AED1E9007932AD /* ClubFinanceRecordLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClubFinanceRecordLoader.m; sourceTree = "<group>"; };
@@ -1855,6 +1857,7 @@
 				FBAB2B651332ABE8003FA548 /* Editor_Derby.xib */,
 				FBAB2B671332ABF5003FA548 /* Editor_Injury.xib */,
 				FBAB2B691332ABFB003FA548 /* Editor_Language.xib */,
+				FB3D746F13350B5100B3DEE0 /* Editor_Media.xib */,
 				FBAB2BD81332C1DB003FA548 /* Editor_Sponsor.xib */,
 				FBEE41DC1332CDE800A89FB0 /* Editor_Stadium.xib */,
 				FBAB2B6B1332AC0B003FA548 /* Editor_StadiumChange.xib */,
@@ -3480,6 +3483,7 @@
 				FB3D74631335046500B3DEE0 /* defaultperson_male.png in Resources */,
 				FB3D74671335054A00B3DEE0 /* gkscreenblanked.png in Resources */,
 				FB3D74681335054A00B3DEE0 /* playerscreenblanked.png in Resources */,
+				FB3D747013350B5100B3DEE0 /* Editor_Media.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
