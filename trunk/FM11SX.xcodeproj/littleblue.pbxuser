@@ -187,7 +187,7 @@
 	};
 	77C8280B06725ACE000B614F /* FM11SX_AppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 377}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 379}}";
 			sepNavSelRange = "{179, 0}";
 			sepNavVisRange = "{0, 768}";
 		};
@@ -196,7 +196,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {789, 2886}}";
 			sepNavSelRange = "{1241, 0}";
-			sepNavVisRange = "{582, 1130}";
+			sepNavVisRange = "{0, 863}";
 		};
 	};
 	8D1107260486CEB800E47090 /* FM11SX */ = {
@@ -752,7 +752,7 @@
 	};
 	FB1C908110A21D3E00F3259A /* PersonStats.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {755, 404}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 331}}";
 			sepNavSelRange = "{384, 115}";
 			sepNavVisRange = "{0, 574}";
 			sepNavWindowFrame = "{{572, 223}, {628, 555}}";
@@ -835,9 +835,9 @@
 	};
 	FB1D74EC1098840B00EC8BBB /* ContentController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1132, 3224}}";
-			sepNavSelRange = "{8323, 0}";
-			sepNavVisRange = "{7979, 349}";
+			sepNavIntBoundsRect = "{{0, 0}, {1132, 3341}}";
+			sepNavSelRange = "{7183, 0}";
+			sepNavVisRange = "{6851, 1134}";
 			sepNavWindowFrame = "{{533, 105}, {717, 584}}";
 		};
 	};
@@ -899,17 +899,17 @@
 	};
 	FB303F02109C8450000C9B58 /* Continent.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {866, 403}}";
-			sepNavSelRange = "{619, 0}";
-			sepNavVisRange = "{0, 949}";
+			sepNavIntBoundsRect = "{{0, 0}, {866, 442}}";
+			sepNavSelRange = "{522, 24}";
+			sepNavVisRange = "{0, 1000}";
 			sepNavWindowFrame = "{{355, 210}, {434, 568}}";
 		};
 	};
 	FB303F03109C8450000C9B58 /* Continent.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {737, 403}}";
-			sepNavSelRange = "{437, 0}";
-			sepNavVisRange = "{19, 606}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 559}}";
+			sepNavSelRange = "{676, 255}";
+			sepNavVisRange = "{427, 510}";
 			sepNavWindowFrame = "{{107, 121}, {434, 568}}";
 		};
 	};
@@ -3294,9 +3294,9 @@
 	};
 	FBBC79481099C2BC00CADF06 /* Person.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1202, 7514}}";
-			sepNavSelRange = "{22123, 59}";
-			sepNavVisRange = "{21436, 1292}";
+			sepNavIntBoundsRect = "{{0, 0}, {1167, 7449}}";
+			sepNavSelRange = "{1469, 0}";
+			sepNavVisRange = "{1346, 1331}";
 			sepNavWindowFrame = "{{183, 194}, {717, 584}}";
 		};
 	};
@@ -3379,7 +3379,7 @@
 	};
 	FBC3BA7210934DC900EFA019 /* Name.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 430}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 331}}";
 			sepNavSelRange = "{333, 0}";
 			sepNavVisRange = "{0, 489}";
 			sepNavWindowFrame = "{{15, 315}, {750, 558}}";
@@ -3387,9 +3387,9 @@
 	};
 	FBC3BA7310934DC900EFA019 /* Name.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {737, 370}}";
-			sepNavSelRange = "{202, 0}";
-			sepNavVisRange = "{0, 256}";
+			sepNavIntBoundsRect = "{{0, 0}, {978, 338}}";
+			sepNavSelRange = "{278, 0}";
+			sepNavVisRange = "{130, 191}";
 		};
 	};
 	FBC3F43912A1A4B00077BC24 /* CompetitionHistorySaver.h */ = {
@@ -3571,9 +3571,9 @@
 	};
 	FBC4B969109B4A4E00AA7331 /* Competition.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1006, 1339}}";
-			sepNavSelRange = "{4008, 0}";
-			sepNavVisRange = "{2705, 1428}";
+			sepNavIntBoundsRect = "{{0, 0}, {1006, 1352}}";
+			sepNavSelRange = "{4332, 0}";
+			sepNavVisRange = "{3737, 657}";
 			sepNavWindowFrame = "{{532, 193}, {717, 584}}";
 		};
 	};
@@ -4786,16 +4786,16 @@
 	};
 	FBEE427D1333841D00A89FB0 /* SXGraphicsController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1328, 468}}";
-			sepNavSelRange = "{1085, 0}";
-			sepNavVisRange = "{142, 1172}";
+			sepNavIntBoundsRect = "{{0, 0}, {1328, 481}}";
+			sepNavSelRange = "{1126, 0}";
+			sepNavVisRange = "{142, 1247}";
 		};
 	};
 	FBEE427E1333841D00A89FB0 /* SXGraphicsController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1300, 2808}}";
-			sepNavSelRange = "{2905, 21}";
-			sepNavVisRange = "{2624, 1062}";
+			sepNavIntBoundsRect = "{{0, 0}, {1300, 3055}}";
+			sepNavSelRange = "{2875, 0}";
+			sepNavVisRange = "{2478, 939}";
 		};
 	};
 	FBEE42841333868000A89FB0 /* PBXTextBookmark */ = {
@@ -4904,6 +4904,11 @@
 		name = SXImageXMLParser.m;
 		path = "/Users/littleblue/ソフト/FM11SXold/SXImageXMLParser.m";
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1300, 2535}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 962}";
+		};
 	};
 	FBEE42DA1334102400A89FB0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -4927,7 +4932,7 @@
 		fRef = FBEE427D1333841D00A89FB0 /* SXGraphicsController.h */;
 		name = "SXGraphicsController.h: 30";
 		rLen = 0;
-		rLoc = 1085;
+		rLoc = 1165;
 		rType = 0;
 		vrLen = 1172;
 		vrLoc = 142;
@@ -4937,7 +4942,7 @@
 		fRef = FBF90D2410923E2B00929934 /* Controller.m */;
 		name = "Controller.m: 637";
 		rLen = 0;
-		rLoc = 25057;
+		rLoc = 25025;
 		rType = 0;
 		vrLen = 668;
 		vrLoc = 24498;
@@ -4957,7 +4962,7 @@
 		fRef = FBEE427E1333841D00A89FB0 /* SXGraphicsController.m */;
 		name = "SXGraphicsController.m: 93";
 		rLen = 0;
-		rLoc = 2803;
+		rLoc = 3102;
 		rType = 0;
 		vrLen = 1098;
 		vrLoc = 2268;
@@ -4966,8 +4971,8 @@
 		isa = PBXTextBookmark;
 		fRef = FBEE427E1333841D00A89FB0 /* SXGraphicsController.m */;
 		name = "SXGraphicsController.m: 97";
-		rLen = 21;
-		rLoc = 2905;
+		rLen = 0;
+		rLoc = 3646;
 		rType = 0;
 		vrLen = 1062;
 		vrLoc = 2624;
@@ -5114,9 +5119,9 @@
 	};
 	FBF90D2410923E2B00929934 /* Controller.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1342, 8541}}";
-			sepNavSelRange = "{25057, 0}";
-			sepNavVisRange = "{24498, 668}";
+			sepNavIntBoundsRect = "{{0, 0}, {1342, 8645}}";
+			sepNavSelRange = "{25027, 0}";
+			sepNavVisRange = "{24173, 872}";
 			sepNavWindowFrame = "{{38, 169}, {717, 584}}";
 		};
 	};

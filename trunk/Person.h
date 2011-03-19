@@ -92,4 +92,6 @@
 - (BOOL)canTransfer;
 - (void)transfer:(Club *)newClub;
 
+- (NSImage *)photo;
+
 @end

@@ -557,4 +557,17 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 	[staffData setLastClubID:[currentClub rowID]];
 }
 
+- (NSImage *)photo
+{
+	if ([[[[NSApp delegate] graphics] personPhotos] objectForKey:[NSNumber numberWithInt:UID]]!=nil)
+	{
+		NSImage *image = [[[NSImage alloc] initWithContentsOfFile:[[[[NSApp delegate] graphics] personPhotos] objectForKey:[NSNumber numberWithInt:UID]]] autorelease];
+		return image;
+	}
+	else {
+		if (female) { return [NSImage imageNamed:@"defaultperson_female"]; }
+		else { return [NSImage imageNamed:@"defaultperson_male"]; }
+	}
+}
+
 @end
