@@ -7,7 +7,7 @@
 //
 
 #import "MediaClub.h"
-
+#import "Club.h"
 
 @implementation MediaClub
 

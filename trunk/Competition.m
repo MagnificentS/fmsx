@@ -11,6 +11,7 @@
 #import "Continent.h"
 #import "Nation.h"
 #import "Database.h"
+#import "SXGraphicsController.h"
 
 @implementation Competition
 

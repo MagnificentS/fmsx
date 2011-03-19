@@ -17,7 +17,9 @@
 #import "Name.h"
 #import "Team.h"
 #import "Contract.h"
+#import "Controller.h"
 #import "ContractOffer.h"
+#import "SXGraphicsController.h"
 
 @implementation Person
 
@@ -440,7 +442,7 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 			Name *name1 = [[Name alloc] init];
 			[name1 setNationID:[personData nationID]];
 			[name1 setName:newFirstName];
-			[name1 setRowID:[[[NSApp delegate] valueForKeyPath:@"gameDB.database.firstNames"] count]];
+			[name1 setRowID:[(NSMutableArray *)[[NSApp delegate] valueForKeyPath:@"gameDB.database.firstNames"] count]];
 			[name1 setUID:UID];
 			[name1 setCount:1];
 			[[[NSApp delegate] valueForKeyPath:@"gameDB.database.firstNames"] addObject:name1];
@@ -449,8 +451,8 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 		}
 		else {
 			[personData setFirstNameID:[[tempArray objectAtIndex:0] rowID]];
-			short newCount = [[tempArray objectAtIndex:0] count] + 1;
-			[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.firstNames"] objectAtIndex:[[tempArray objectAtIndex:0] rowID]] setCount:newCount];
+			short newCount = [(Name *)[tempArray objectAtIndex:0] count] + 1;
+			[(Name *)[(NSMutableArray *)[[NSApp delegate] valueForKeyPath:@"gameDB.database.firstNames"] objectAtIndex:[[tempArray objectAtIndex:0] rowID]] setCount:newCount];
 		}
 		
 		[tempArray release];
@@ -469,7 +471,7 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 			Name *name1 = [[Name alloc] init];
 			[name1 setNationID:[personData nationID]];
 			[name1 setName:newSurname];
-			[name1 setRowID:[[[NSApp delegate] valueForKeyPath:@"gameDB.database.surnames"] count]];
+			[name1 setRowID:[(NSMutableArray *)[[NSApp delegate] valueForKeyPath:@"gameDB.database.surnames"] count]];
 			[name1 setUID:UID];
 			[name1 setCount:1];
 			[[[NSApp delegate] valueForKeyPath:@"gameDB.database.surnames"] addObject:name1];
@@ -478,8 +480,8 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 		}
 		else {
 			[personData setSurnameID:[[tempArray objectAtIndex:0] rowID]];
-			short newCount = [[tempArray objectAtIndex:0] count] + 1;
-			[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.surnames"] objectAtIndex:[[tempArray objectAtIndex:0] rowID]] setCount:newCount];
+			short newCount = [(Name *)[tempArray objectAtIndex:0] count] + 1;
+			[(Name *)[(NSMutableArray *)[[NSApp delegate] valueForKeyPath:@"gameDB.database.surnames"] objectAtIndex:[[tempArray objectAtIndex:0] rowID]] setCount:newCount];
 		}
 		
 		[tempArray release];
@@ -498,7 +500,7 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 			Name *name1 = [[Name alloc] init];
 			[name1 setNationID:[personData nationID]];
 			[name1 setName:newCommonName];
-			[name1 setRowID:[[[NSApp delegate] valueForKeyPath:@"gameDB.database.commonNames"] count]];
+			[name1 setRowID:[(NSMutableArray *)[[NSApp delegate] valueForKeyPath:@"gameDB.database.commonNames"] count]];
 			[name1 setUID:UID];
 			[name1 setCount:1];
 			[[[NSApp delegate] valueForKeyPath:@"gameDB.database.commonNames"] addObject:name1];
@@ -507,8 +509,8 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 		}
 		else {
 			[personData setCommonNameID:[[tempArray objectAtIndex:0] rowID]];
-			short newCount = [[tempArray objectAtIndex:0] count] + 1;
-			[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.commonNames"] objectAtIndex:[[tempArray objectAtIndex:0] rowID]] setCount:newCount];
+			short newCount = [(Name *)[tempArray objectAtIndex:0] count] + 1;
+			[(Name *)[(NSMutableArray *)[[NSApp delegate] valueForKeyPath:@"gameDB.database.commonNames"] objectAtIndex:[[tempArray objectAtIndex:0] rowID]] setCount:newCount];
 		}
 		
 		[tempArray release];
