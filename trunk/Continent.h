@@ -20,6 +20,9 @@
 	NSMutableArray *infos;
 }
 
+- (NSString *)logoPath;
+- (NSString *)bgLogoPath;
+
 @property(assign,readwrite) char databaseClass, nameGender, federationNameGender, shortFederationNameGender, unknownChar1;
 @property(assign,readwrite) float regionalStrength;
 @property(assign,readwrite) BOOL continentSelected, hasInfos;

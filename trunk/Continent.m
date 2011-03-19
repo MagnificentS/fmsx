@@ -7,6 +7,8 @@
 //
 
 #import "Continent.h"
+#import "Controller.h"
+#import "SXGraphicsController.h"
 
 @implementation Continent
 
@@ -25,6 +27,16 @@ federationName, federationShortName, infos, hasInfos, unknownChar1;
 	federationShortName = @"---";
 	
 	return self;
+}
+
+- (NSString *)logoPath
+{
+	return [[[[NSApp delegate] graphics] continentLogos] objectForKey:[NSNumber numberWithInt:UID]];
+}
+
+- (NSString *)bgLogoPath
+{
+	return [[[[NSApp delegate] graphics] continentBGLogos] objectForKey:[NSNumber numberWithInt:UID]];
 }
 
 @end

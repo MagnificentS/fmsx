@@ -633,9 +633,7 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
-	NSLog(@"parsing graphics...");
 	[graphics parseGraphics];
-	NSLog(@"parsed graphics with %d continents",[[graphics continentLogos] count]);
 	
 	[pool release];
 }
