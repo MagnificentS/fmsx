@@ -15,7 +15,7 @@
 @synthesize homeKits, awayKits, thirdKits, smallClubLogos, clubLogos, hugeClubLogos, 
 smallCompetitionLogos, competitionLogos, hugeCompetitionLogos, smallNationLogos, 
 nationLogos, hugeNationLogos, nationFlags, smallContinentLogos, continentLogos, 
-hugeContinentLogos, personPhotos, smallPersonPhotos, continentBGLogos;
+hugeContinentLogos, personPhotos, smallPersonPhotos, continentBGLogos, competitionBGLogos;
 
 - (id)init
 {
@@ -42,6 +42,7 @@ hugeContinentLogos, personPhotos, smallPersonPhotos, continentBGLogos;
 	personPhotos = [[NSMutableDictionary alloc] init];
 	smallPersonPhotos = [[NSMutableDictionary alloc] init];
 	continentBGLogos = [[NSMutableDictionary alloc] init];
+	competitionBGLogos = [[NSMutableDictionary alloc] init];
 	
 	return self;
 }
@@ -62,6 +63,7 @@ hugeContinentLogos, personPhotos, smallPersonPhotos, continentBGLogos;
 	[smallCompetitionLogos release];
 	[competitionLogos release];
 	[hugeCompetitionLogos release];
+	[competitionBGLogos release];
 	[smallNationLogos release];
 	[nationLogos release];
 	[hugeNationLogos release];
@@ -160,6 +162,10 @@ hugeContinentLogos, personPhotos, smallPersonPhotos, continentBGLogos;
 			else if ([type isEqualToString:@"icon"] &&
 					 [subType isEqualToString:@"comp"]) {
 				[smallCompetitionLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
+			}
+			else if ([type isEqualToString:@"logo/background/left"] &&
+					 [subType isEqualToString:@"comp"]) {
+				[competitionBGLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
 			else if ([type isEqualToString:@"logo/huge"] &&
 					 [subType isEqualToString:@"nation"]) {

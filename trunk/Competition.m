@@ -101,4 +101,15 @@ unknownChar8, unknownChar9, unknownChar10, unknownShort1, controller;
 	return @"---";
 }
 
+- (NSString *)logoPath
+{
+	return [[[[NSApp delegate] graphics] competitionLogos] objectForKey:[NSNumber numberWithInt:UID]];
+}
+
+- (NSString *)bgLogoPath
+{
+	return [[[[NSApp delegate] graphics] competitionBGLogos] objectForKey:[NSNumber numberWithInt:UID]];
+}
+
+
 @end
