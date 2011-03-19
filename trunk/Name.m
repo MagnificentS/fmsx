@@ -15,7 +15,7 @@
 
 - (id)init
 {
-	[super init]
+	[super init];
 	
 	name = @"---";
 	

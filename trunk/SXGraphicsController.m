@@ -93,24 +93,26 @@ hugeContinentLogos, personPhotos, smallPersonPhotos, continentBGLogos, competiti
 
 - (void)parseCustomGraphics
 {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	
 	NSString *basePath = [[[NSUserDefaults standardUserDefaults] objectForKey:@"graphicsLocation"] stringByExpandingTildeInPath];
 	
 	if ([[NSFileManager defaultManager] fileExistsAtPath:basePath]) {
-		NSMutableArray *objects = [NSMutableArray arrayWithArray:[[NSFileManager defaultManager] subpathsOfDirectoryAtPath:basePath error:NULL]];
+		NSArray *objects = [[NSFileManager defaultManager] subpathsOfDirectoryAtPath:basePath error:NULL];
 		
 		for (NSString *item in objects) 
 		{
 			if ([[[item lastPathComponent] lowercaseString] isEqualToString:@"config.xml"]) {
-				NSString *filePath = [[NSString alloc] initWithFormat:@"%@/%@",basePath,item];
-				fileBase = [filePath stringByDeletingLastPathComponent];
-				NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL fileURLWithPath:filePath]];
+				fileBase = item;
+				NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@",basePath,item]]];
 				[parser setDelegate:self];
 				[parser parse];
 				[parser release];
-				[filePath release];
 			}
 		}
 	}
+	
+	[pool drain];
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributes
