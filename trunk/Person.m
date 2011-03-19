@@ -53,16 +53,16 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 
 - (NSString *)name {
 	if (personData) {
-		if ([personData commonNameID]>-1 && [personData commonNameID]<[[[NSApp delegate] valueForKeyPath:@"gameDB.database.commonNames"] count]) {
+		if ([personData commonNameID]>-1 && [personData commonNameID]<[(NSMutableArray *)[[NSApp delegate] valueForKeyPath:@"gameDB.database.commonNames"] count]) {
 			return [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.commonNames"] objectAtIndex:[personData commonNameID]] name];
 		}
 		else if ([personData firstNameID]>-1 || [personData surnameID]>-1) {
 			NSString *firstName, *surname;
 			
-			if ([personData firstNameID]>-1 && [personData firstNameID]<[[[NSApp delegate] valueForKeyPath:@"gameDB.database.firstNames"] count]) {
+			if ([personData firstNameID]>-1 && [personData firstNameID]<[(NSMutableArray *)[[NSApp delegate] valueForKeyPath:@"gameDB.database.firstNames"] count]) {
 				firstName = [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.firstNames"] objectAtIndex:[personData firstNameID]] name];
 			}
-			if ([personData surnameID]>-1 && [personData surnameID]<[[[NSApp delegate] valueForKeyPath:@"gameDB.database.surnames"] count]) {
+			if ([personData surnameID]>-1 && [personData surnameID]<[(NSMutableArray *)[[NSApp delegate] valueForKeyPath:@"gameDB.database.surnames"] count]) {
 				surname = [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.surnames"] objectAtIndex:[personData surnameID]] name];
 			}
 			

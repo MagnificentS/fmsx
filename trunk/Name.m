@@ -13,4 +13,13 @@
 
 @synthesize databaseClass, count, name, unknownChar, nationID, rowID, UID;
 
+- (id)init
+{
+	[super init]
+	
+	name = @"---";
+	
+	return self;
+}
+
 @end
