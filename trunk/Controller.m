@@ -24,6 +24,7 @@
 #import "SXFGameInfoLoader.h"
 #import "SXFSaveGameSummary.h"
 #import "SXFSaveGameSummaryLoader.h"
+#import "SXGraphicsController.h"
 
 #import "SXzlib.h"
 #import "SXGeneralViewController.h"
@@ -100,6 +101,7 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	gameDB = [[SXFGameDB alloc] init];
 	gameInfo = [[SXFGameInfo alloc] init];
 	saveGameSummary = [[SXFSaveGameSummary alloc] init];
+	graphics = [[SXGraphicsController alloc] init];
 	
 	editorController = [[EditorController alloc] init];
 	
@@ -116,6 +118,7 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	[gameInfo release];
 	[gameDB release];
 	[saveGameSummary release];
+	[graphics release];
 	
 	[editorController release];
 	
@@ -183,6 +186,7 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 		gameDBThread = [[NSThread alloc] initWithTarget:self selector:@selector(loadGame:) object:gamePath];
 		// start  graphics threads if required
 		if ([[NSUserDefaults standardUserDefaults] boolForKey:@"parseGraphics"]==TRUE) { 
+			parseGraphicsThread = [[NSThread alloc] initWithTarget:self selector:@selector(parseGraphics) object:nil];
 			[parseGraphicsThread start]; 
 			[parseGraphicsThread release];
 		}
@@ -591,7 +595,7 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	[gameDBThread release];
 	
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"parseGraphics"]==TRUE) { 
-		parseGraphicsThread = [[NSThread alloc] initWithTarget:database selector:@selector(parseGraphics:) object:[[NSUserDefaults standardUserDefaults] stringForKey:@"graphicsLocation"]];
+		parseGraphicsThread = [[NSThread alloc] initWithTarget:self selector:@selector(parseGraphics) object:nil];
 		[parseGraphicsThread start]; 
 		[parseGraphicsThread release];
 	}
@@ -625,5 +629,15 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	[donatePanel close];
 }
 
+- (void)parseGraphics
+{
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	
+	NSLog(@"parsing graphics...");
+	[graphics parseGraphics];
+	NSLog(@"parsed graphics with %d continents",[[graphics continentLogos] count]);
+	
+	[pool release];
+}
 
 @end

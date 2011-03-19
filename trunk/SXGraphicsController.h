@@ -18,7 +18,17 @@
 	NSMutableDictionary *smallNationLogos, *nationLogos, *hugeNationLogos, *nationFlags;
 	NSMutableDictionary *smallContinentLogos, *continentLogos, *hugeContinentLogos;
 	NSMutableDictionary *personPhotos, *smallPersonPhotos;
+
+	NSString *fileBase;
 }
+
+@property (copy,readwrite) NSMutableDictionary *homeKits, *awayKits, *thirdKits, *smallClubLogos,
+*clubLogos, *hugeClubLogos, *smallCompetitionLogos, *competitionLogos, *hugeCompetitionLogos,
+*smallNationLogos, *nationLogos, *hugeNationLogos, *nationFlags, *smallContinentLogos, 
+*continentLogos, *hugeContinentLogos, *personPhotos, *smallPersonPhotos;
+
+- (void)parseCustomGraphics;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
 - (void)parseGraphics;
 

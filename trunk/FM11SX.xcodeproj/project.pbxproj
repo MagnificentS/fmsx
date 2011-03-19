@@ -366,8 +366,6 @@
 		FB93C93E10E2C80700576177 /* Unknown1Loader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB93C93D10E2C80700576177 /* Unknown1Loader.m */; };
 		FB9630E110986A04007F25F6 /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9630E010986A04007F25F6 /* Region.m */; };
 		FB9630E410986A14007F25F6 /* RegionLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9630E310986A14007F25F6 /* RegionLoader.m */; };
-		FB9D33D910923BB6000883FF /* PSMTabBarFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9D33D710923BB6000883FF /* PSMTabBarFramework.framework */; };
-		FB9D33E910923BCF000883FF /* PSMTabBarFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FB9D33D710923BB6000883FF /* PSMTabBarFramework.framework */; };
 		FB9D342010923BFC000883FF /* General.png in Resources */ = {isa = PBXBuildFile; fileRef = FB9D33FD10923BFC000883FF /* General.png */; };
 		FB9D342110923BFC000883FF /* Graphics.png in Resources */ = {isa = PBXBuildFile; fileRef = FB9D33FE10923BFC000883FF /* Graphics.png */; };
 		FB9D342D10923BFC000883FF /* Search-s.png in Resources */ = {isa = PBXBuildFile; fileRef = FB9D340A10923BFC000883FF /* Search-s.png */; };
@@ -479,7 +477,6 @@
 		FBC3BA5B10934B3A00EFA019 /* Sponsor.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC3BA5A10934B3A00EFA019 /* Sponsor.m */; };
 		FBC3BA7110934D3000EFA019 /* NameLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC3BA7010934D3000EFA019 /* NameLoader.m */; };
 		FBC3BA7410934DC900EFA019 /* Name.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC3BA7310934DC900EFA019 /* Name.m */; };
-		FBC3F04B109B8F7A00E7DED6 /* SXImageXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC3F04A109B8F7A00E7DED6 /* SXImageXMLParser.m */; };
 		FBC3F43B12A1A4B00077BC24 /* CompetitionHistorySaver.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC3F43A12A1A4B00077BC24 /* CompetitionHistorySaver.m */; };
 		FBC3F44412A1A67C0077BC24 /* DerbySaver.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC3F44312A1A67C0077BC24 /* DerbySaver.m */; };
 		FBC3F45812A1ABF70077BC24 /* TreatedNationsSaver.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC3F45712A1ABF70077BC24 /* TreatedNationsSaver.m */; };
@@ -713,7 +710,6 @@
 			files = (
 				FBFC9E7312999008005089E8 /* Sparkle.framework in CopyFiles */,
 				FBF865C610D3E46E0069B01D /* BWToolkitFramework.framework in CopyFiles */,
-				FB9D33E910923BCF000883FF /* PSMTabBarFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1210,7 +1206,6 @@
 		FB9630E010986A04007F25F6 /* Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Region.m; sourceTree = "<group>"; };
 		FB9630E210986A14007F25F6 /* RegionLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegionLoader.h; sourceTree = "<group>"; };
 		FB9630E310986A14007F25F6 /* RegionLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegionLoader.m; sourceTree = "<group>"; };
-		FB9D33D710923BB6000883FF /* PSMTabBarFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PSMTabBarFramework.framework; sourceTree = "<group>"; };
 		FB9D33FD10923BFC000883FF /* General.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = General.png; sourceTree = "<group>"; };
 		FB9D33FE10923BFC000883FF /* Graphics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Graphics.png; sourceTree = "<group>"; };
 		FB9D340A10923BFC000883FF /* Search-s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search-s.png"; sourceTree = "<group>"; };
@@ -1405,8 +1400,6 @@
 		FBC3BA7010934D3000EFA019 /* NameLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameLoader.m; sourceTree = "<group>"; };
 		FBC3BA7210934DC900EFA019 /* Name.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Name.h; sourceTree = "<group>"; };
 		FBC3BA7310934DC900EFA019 /* Name.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Name.m; sourceTree = "<group>"; };
-		FBC3F049109B8F7A00E7DED6 /* SXImageXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXImageXMLParser.h; sourceTree = "<group>"; };
-		FBC3F04A109B8F7A00E7DED6 /* SXImageXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXImageXMLParser.m; sourceTree = "<group>"; };
 		FBC3F43912A1A4B00077BC24 /* CompetitionHistorySaver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompetitionHistorySaver.h; sourceTree = "<group>"; };
 		FBC3F43A12A1A4B00077BC24 /* CompetitionHistorySaver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompetitionHistorySaver.m; sourceTree = "<group>"; };
 		FBC3F44212A1A67C0077BC24 /* DerbySaver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DerbySaver.h; sourceTree = "<group>"; };
@@ -1743,7 +1736,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				FB9D33D910923BB6000883FF /* PSMTabBarFramework.framework in Frameworks */,
 				FBF8659310D3E45F0069B01D /* BWToolkitFramework.framework in Frameworks */,
 				FB4B6B4712994D68007C50C1 /* QuartzCore.framework in Frameworks */,
 				FBFC9E6A12998FFF005089E8 /* Sparkle.framework in Frameworks */,
@@ -1775,7 +1767,6 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FB9D33D710923BB6000883FF /* PSMTabBarFramework.framework */,
 				77C82804067257F0000B614F /* CoreData.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
@@ -2774,8 +2765,6 @@
 			children = (
 				FBA2B75010924F5600C1A669 /* SupportFunctions.h */,
 				FBA2B75110924F5600C1A669 /* SupportFunctions.m */,
-				FBC3F049109B8F7A00E7DED6 /* SXImageXMLParser.h */,
-				FBC3F04A109B8F7A00E7DED6 /* SXImageXMLParser.m */,
 				FBA2B79310925AEF00C1A669 /* SXzlib.h */,
 				FBA2B79410925AEF00C1A669 /* SXzlib.m */,
 				FB37D244129C423200FCD89A /* SXTableView.h */,
@@ -3566,7 +3555,6 @@
 				FBC4B939109B34CD00AA7331 /* ScoutingKnowledge.m in Sources */,
 				FBC4B967109B495500AA7331 /* CompetitionLoader.m in Sources */,
 				FBC4B96A109B4A4E00AA7331 /* Competition.m in Sources */,
-				FBC3F04B109B8F7A00E7DED6 /* SXImageXMLParser.m in Sources */,
 				FB0794C3109BF52B00C58A27 /* GeneralInfoLoader.m in Sources */,
 				FB0794C6109BF54000C58A27 /* GeneralInfo.m in Sources */,
 				FB303F01109C8417000C9B58 /* ContinentLoader.m in Sources */,

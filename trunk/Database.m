@@ -73,7 +73,7 @@
 @implementation Database
 
 @synthesize goodAlliterations, badAlliterations, awards, cities, currentRecord, 
-totalRecords, status, clubs, graphics, media, languages, currencies, continents,
+totalRecords, status, clubs, media, languages, currencies, continents,
 injuries, firstNames, surnames, commonNames, sponsors, stadiums, stadiumChanges,
 teams, localAreas, stageNames, weather, descriptions, people, personStats, playerStats,
 nonPlayerStats, competitions, nations, langDBLoaded, competitionHistories,
