@@ -45,6 +45,7 @@ fullName, flags, unknownDate1, unknownData1, unknowns1, locationDays;
 						NSLocalizedString(@"Native American", @"ethnicity"),
 						NSLocalizedString(@"Native Australian", @"ethnicity"),
 						NSLocalizedString(@"Mixed Race (Black/White)", @"ethnicity"),
+						NSLocalizedString(@"East Asian", @"ethnicity"),
 						nil];
 	return strings;
 }

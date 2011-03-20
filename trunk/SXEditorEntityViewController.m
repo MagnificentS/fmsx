@@ -35,7 +35,8 @@ derbyMainViewContainer, derbyEntityView, injuryMainViewContainer, injuryEntityVi
 languageMainViewContainer, languageEntityView, stadiumChangeMainViewContainer, stadiumChangeEntityView,
 sponsorMainViewContainer, sponsorEntityView, stadiumMainViewContainer, stadiumEntityView,
 weatherMainViewContainer, weatherEntityView, competitionMainViewContainer, competitionEntityView,
-mediaMainViewContainer, mediaEntityView, mediaGeneralView, mediaAssociationsView, mediaSectionView;
+mediaMainViewContainer, mediaEntityView, mediaGeneralView, mediaAssociationsView, mediaSectionView,
+nationMainViewContainer, nationEntityView, nationGeneralView, nationSectionView;
 
 - (void)awakeFromNib
 {
@@ -47,6 +48,7 @@ mediaMainViewContainer, mediaEntityView, mediaGeneralView, mediaAssociationsView
 	// section tables
 	if (aTableView==awardSectionsTable) { return 2; }
 	else if (aTableView==mediaSectionsTable) { return 2; }
+	else if (aTableView==nationSectionsTable) { return 2; }
 	
 	// entity tables
 	if ([[[[NSApp delegate] editorController] searchResults] count]>0) { return [[[[NSApp delegate] editorController] searchResults] count]; }
@@ -62,7 +64,7 @@ mediaMainViewContainer, mediaEntityView, mediaGeneralView, mediaAssociationsView
 	else if (aTableView==languagesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.languages"] count]; }
 	else if (aTableView==localAreasTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.localAreas"] count]; }
 	else if (aTableView==mediaTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.media"] count]; }
-//	else if (aTableView==nationsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] count]; }
+	else if (aTableView==nationsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] count]; }
 //	else if (aTableView==peopleTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.people"] count]; }
 	else if (aTableView==sponsorsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.sponsors"] count]; }
 	else if (aTableView==stadiumsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiums"] count]; }
@@ -168,6 +170,15 @@ mediaMainViewContainer, mediaEntityView, mediaGeneralView, mediaAssociationsView
 		if ([columnName isEqualToString:@"uid"])			{ return [NSNumber numberWithInt:[object UID]]; }
 		else if ([columnName isEqualToString:@"name"])		{ return [object name]; }
 	}
+	else if (aTableView==nationsTable) {
+		Nation *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] objectAtIndex:rowIndex]; }
+		
+		if ([columnName isEqualToString:@"uid"])			{ return [NSNumber numberWithInt:[object UID]]; }
+		else if ([columnName isEqualToString:@"name"])		{ return [object name]; }
+	}
 	else if (aTableView==sponsorsTable) {
 		Sponsor *object;
 		
@@ -212,6 +223,10 @@ mediaMainViewContainer, mediaEntityView, mediaGeneralView, mediaAssociationsView
 		else if (rowIndex==1)	{ return @"Rules"; }
 	}
 	else if (aTableView==mediaSectionsTable) { 
+		if (rowIndex==0)		{ return @"General"; }
+		else if (rowIndex==1)	{ return @"Associations"; }
+	}
+	else if (aTableView==nationSectionsTable) { 
 		if (rowIndex==0)		{ return @"General"; }
 		else if (rowIndex==1)	{ return @"Associations"; }
 	}
@@ -288,6 +303,16 @@ mediaMainViewContainer, mediaEntityView, mediaGeneralView, mediaAssociationsView
 		
 		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
 		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.media"] objectAtIndex:rowIndex]; }
+	}
+	else if (aTableView==nationsTable) {
+		Nation *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"] objectAtIndex:rowIndex]; }
+		
+		[aCell setDrawsBackground:YES];
+		[aCell setBackgroundColor:[object valueForKeyPath:@"teamContainer.mainColour.backgroundColour"]];
+		[aCell setTextColor:[object valueForKeyPath:@"teamContainer.mainColour.foregroundColour"]];
 	}
 	else if (aTableView==sponsorsTable) {
 		Sponsor *object;
@@ -425,6 +450,11 @@ mediaMainViewContainer, mediaEntityView, mediaGeneralView, mediaAssociationsView
 			[[[NSApp delegate] contentController] replacePlaceholder:mediaSectionView withView:mediaAssociationsView];
 		}
 	}
+	else if ([aNotification object]==nationSectionsTable) {
+		if ([nationSectionsTable selectedRow]==0) {
+			[[[NSApp delegate] contentController] replacePlaceholder:nationSectionView withView:nationGeneralView];
+		}
+	}
 }
 
 - (void)selectFromTable
@@ -476,6 +506,10 @@ mediaMainViewContainer, mediaEntityView, mediaGeneralView, mediaAssociationsView
 		selectionIndex = [mediaTable selectedRow]; 
 		arrayString = @"media";	classString = @"media";
 	}
+	else if (currentSection==EDS_NATIONS) { 
+		selectionIndex = [nationsTable selectedRow]; 
+		arrayString = @"nations";	classString = @"nation";
+	}
 	else if (currentSection==EDS_SPONSORS) { 
 		selectionIndex = [sponsorsTable selectedRow]; 
 		arrayString = @"sponsors";	classString = @"sponsor";
@@ -496,10 +530,6 @@ mediaMainViewContainer, mediaEntityView, mediaGeneralView, mediaAssociationsView
 	else if (currentSection==EDS_CLUBS) { 
 		selectionIndex = [clubsTable selectedRow]; 
 		arrayString = @"clubs";	classString = @"club";
-	}
-	else if (currentSection==EDS_NATIONS) { 
-		selectionIndex = [nationsTable selectedRow]; 
-		arrayString = @"nations";	classString = @"nation";
 	}
 	else if (currentSection==EDS_PEOPLE) { 
 		selectionIndex = [peopleTable selectedRow]; 
@@ -544,6 +574,17 @@ mediaMainViewContainer, mediaEntityView, mediaGeneralView, mediaAssociationsView
 		// make the default section the general view
 		[[[NSApp delegate] contentController] replacePlaceholder:mediaSectionView withView:mediaGeneralView];
 	}
+	else if (currentSection==EDS_NATIONS) { 
+		// make the default section the general view
+		[[[NSApp delegate] contentController] replacePlaceholder:nationSectionView withView:nationGeneralView];
+		
+		
+		
+		// set header colour
+		[nationHeaderBox setFillStartingColor:[[[[[[NSApp delegate] editorController] selectedNation] teamContainer] mainColour] backgroundColour]];
+		[nationHeaderBox setFillEndingColor:[[[[[[NSApp delegate] editorController] selectedNation] teamContainer] mainColour] foregroundColour]];
+		[nationBGBox setFillColor:[[[[[[NSApp delegate] editorController] selectedNation] teamContainer] mainColour] foregroundColour]];
+	}
 	
 	[self reloadEntityTable:[[[NSApp delegate] editorController] currentSection]];
 }
@@ -565,7 +606,7 @@ mediaMainViewContainer, mediaEntityView, mediaGeneralView, mediaAssociationsView
 	else if (currentSection==EDS_LANGUAGES)			{ searchArray = @"languages"; }
 	else if (currentSection==EDS_LOCAL_AREAS)		{ searchArray = @"localAreas"; }
 	else if (currentSection==EDS_MEDIA)				{ searchArray = @"media"; }
-	//	else if (currentSection==EDS_NATIONS)			{ searchArray = @"nations"; }
+	else if (currentSection==EDS_NATIONS)			{ searchArray = @"nations"; }
 	//	else if (currentSection==EDS_PEOPLE)			{ searchArray = @"people"; }
 	else if (currentSection==EDS_SPONSORS)			{ searchArray = @"sponsors"; }
 	else if (currentSection==EDS_STADIUMS)			{ searchArray = @"stadiums"; }
@@ -605,7 +646,7 @@ mediaMainViewContainer, mediaEntityView, mediaGeneralView, mediaAssociationsView
 	else if (section==EDS_LANGUAGES)		{ [languagesTable reloadData]; }
 	else if (section==EDS_LOCAL_AREAS)		{ [localAreasTable reloadData]; }
 	else if (section==EDS_MEDIA)			{ [mediaTable reloadData]; }
-//	else if (section==EDS_NATIONS)			{ [nationsTable reloadData]; }
+	else if (section==EDS_NATIONS)			{ [nationsTable reloadData]; }
 //	else if (section==EDS_PEOPLE)			{ [peopleTable reloadData]; }
 	else if (section==EDS_SPONSORS)			{ [sponsorsTable reloadData]; }
 	else if (section==EDS_STADIUMS)			{ [stadiumsTable reloadData]; }

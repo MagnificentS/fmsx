@@ -118,9 +118,15 @@ continentID, regionID, capitalID, rowID, UID, length, width, area, population;
 - (NSArray *)styleOfFootballStrings;
 - (NSArray *)gameImportanceStrings;
 - (NSArray *)stateOfDevelopmentStrings;
+- (NSArray *)nationalityGainTypeStrings;
+
 - (NSString *)name;
 - (NSString *)continentString;
 - (NSString *)competitionString;
 - (short)reputation;
+
+- (NSString *)flagPath;
+- (NSString *)logoPath;
+- (NSString *)bgLogoPath;
 
 @end

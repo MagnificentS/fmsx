@@ -49,6 +49,11 @@
 	IBOutlet NSView			*mediaMainViewContainer, *mediaEntityView, *mediaGeneralView, *mediaAssociationsView, *mediaSectionView;
 	IBOutlet BWSheetController *mediaNewClubPicker;
 	
+	IBOutlet NSTableView	*nationsTable, *nationSectionsTable;
+	IBOutlet BWGradientBox	*nationHeaderBox;
+	IBOutlet NSBox			*nationBGBox;
+	IBOutlet NSView			*nationMainViewContainer, *nationEntityView, *nationGeneralView, *nationSectionView;
+	
 	IBOutlet NSTableView	*stadiumChangesTable;
 	IBOutlet NSView			*stadiumChangeMainViewContainer, *stadiumChangeEntityView;
 	
@@ -77,6 +82,7 @@
 *injuryMainViewContainer, *injuryEntityView, *languageMainViewContainer, *languageEntityView,
 *sponsorMainViewContainer, *sponsorEntityView, *stadiumMainViewContainer, *stadiumEntityView,
 *weatherMainViewContainer, *weatherEntityView, *competitionMainViewContainer, *competitionEntityView,
-*mediaMainViewContainer, *mediaEntityView, *mediaGeneralView, *mediaAssociationsView, *mediaSectionView;
+*mediaMainViewContainer, *mediaEntityView, *mediaGeneralView, *mediaAssociationsView, *mediaSectionView,
+*nationMainViewContainer, *nationEntityView, *nationGeneralView, *nationSectionView;
 
 @end

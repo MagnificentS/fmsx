@@ -24,7 +24,7 @@
 	[data appendBytes:&cbuffer length:1];
 	cbuffer = [object willingnessToToutPlayers];
 	[data appendBytes:&cbuffer length:1];
-	cbuffer = [object unknownChar1];
+	cbuffer = [object sizeOfAgency];
 	[data appendBytes:&cbuffer length:1];
 	[FMDateSaver saveDate:[object unknownDate1] toData:data];
 	ibuffer = [object basedNationID];

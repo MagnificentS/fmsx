@@ -15,7 +15,7 @@
 	NSMutableDictionary *homeKits, *awayKits, *thirdKits;
 	NSMutableDictionary *smallClubLogos, *clubLogos, *hugeClubLogos;
 	NSMutableDictionary *competitionBGLogos, *smallCompetitionLogos, *competitionLogos, *hugeCompetitionLogos;
-	NSMutableDictionary *smallNationLogos, *nationLogos, *hugeNationLogos, *nationFlags;
+	NSMutableDictionary *nationBGLogos, *smallNationLogos, *nationLogos, *hugeNationLogos, *nationFlags;
 	NSMutableDictionary *continentBGLogos, *smallContinentLogos, *continentLogos, *hugeContinentLogos;
 	NSMutableDictionary *personPhotos, *smallPersonPhotos;
 
@@ -26,7 +26,7 @@
 *clubLogos, *hugeClubLogos, *smallCompetitionLogos, *competitionLogos, *hugeCompetitionLogos,
 *smallNationLogos, *nationLogos, *hugeNationLogos, *nationFlags, *smallContinentLogos, 
 *continentLogos, *hugeContinentLogos, *personPhotos, *smallPersonPhotos, *continentBGLogos,
-*competitionBGLogos;
+*competitionBGLogos, *nationBGLogos;
 
 - (void)parseCustomGraphics;
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;

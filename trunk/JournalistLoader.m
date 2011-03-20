@@ -21,17 +21,16 @@
 	
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	[object setFavouriteClubID:ibuffer];
-	
-	// ???
-	[object setUnknownData1:[data subdataWithRange:NSMakeRange(offset, 3)]]; 
-	offset += 3;
-	
-	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
-	[object setMedia:ibuffer];
-	
-	// ???
 	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-	[object setUnknownChar1:cbuffer];
+	[object setStyleOfWriting:cbuffer];
+	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
+	[object setHonesty:cbuffer];
+	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
+	[object setCuriosity:cbuffer];
+	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
+	[object setCurrentEmployerID:ibuffer];
+	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
+	[object setCharacterFlags:cbuffer];
 		
 	*byteOffset = offset;
 	

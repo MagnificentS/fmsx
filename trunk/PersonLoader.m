@@ -64,6 +64,9 @@
 	else if ([object databaseClass]==DBC_JOURNALIST) {
 		[object setJournalistData:[JournalistLoader readFromData:data atOffset:&offset]];
 		[object setPersonData:[ActualPersonLoader readFromData:data atOffset:&offset]];
+	
+		NSLog(@"at journo (%@) at %d",[object name],offset);
+		
 	}
 	else if ([object databaseClass]==DBC_VIRTUAL_PLAYER) {
 		[object setVirtualPlayerData:[VirtualPlayerLoader readFromData:data atOffset:&offset]];

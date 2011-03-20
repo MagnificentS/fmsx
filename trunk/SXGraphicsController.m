@@ -15,7 +15,8 @@
 @synthesize homeKits, awayKits, thirdKits, smallClubLogos, clubLogos, hugeClubLogos, 
 smallCompetitionLogos, competitionLogos, hugeCompetitionLogos, smallNationLogos, 
 nationLogos, hugeNationLogos, nationFlags, smallContinentLogos, continentLogos, 
-hugeContinentLogos, personPhotos, smallPersonPhotos, continentBGLogos, competitionBGLogos;
+hugeContinentLogos, personPhotos, smallPersonPhotos, continentBGLogos, competitionBGLogos,
+nationBGLogos;
 
 - (id)init
 {
@@ -43,6 +44,7 @@ hugeContinentLogos, personPhotos, smallPersonPhotos, continentBGLogos, competiti
 	smallPersonPhotos = [[NSMutableDictionary alloc] init];
 	continentBGLogos = [[NSMutableDictionary alloc] init];
 	competitionBGLogos = [[NSMutableDictionary alloc] init];
+	nationBGLogos = [[NSMutableDictionary alloc] init];
 	
 	return self;
 }
@@ -67,6 +69,7 @@ hugeContinentLogos, personPhotos, smallPersonPhotos, continentBGLogos, competiti
 	[smallNationLogos release];
 	[nationLogos release];
 	[hugeNationLogos release];
+	[nationBGLogos release];
 	[nationFlags release];
 	[smallContinentLogos release];
 	[continentLogos release];
@@ -89,6 +92,8 @@ hugeContinentLogos, personPhotos, smallPersonPhotos, continentBGLogos, competiti
 	
 	// parse graphics in the graphics folder
 	[self parseCustomGraphics];
+	
+	NSLog(@"Graphics Parsed");
 }
 
 - (void)parseCustomGraphics
@@ -103,7 +108,7 @@ hugeContinentLogos, personPhotos, smallPersonPhotos, continentBGLogos, competiti
 		for (NSString *item in objects) 
 		{
 			if ([[[item lastPathComponent] lowercaseString] isEqualToString:@"config.xml"]) {
-				fileBase = item;
+				fileBase = [[NSString stringWithFormat:@"%@/%@",basePath,item] stringByDeletingLastPathComponent];
 				NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@",basePath,item]]];
 				[parser setDelegate:self];
 				[parser parse];
@@ -180,6 +185,10 @@ hugeContinentLogos, personPhotos, smallPersonPhotos, continentBGLogos, competiti
 			else if ([type isEqualToString:@"icon"] &&
 					 [subType isEqualToString:@"nation"]) {
 				[smallNationLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
+			}
+			else if ([type isEqualToString:@"logo/background/left"] &&
+					 [subType isEqualToString:@"nation"]) {
+				[nationBGLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
 			else if ([type isEqualToString:@"flag"] &&
 					 [subType isEqualToString:@"nation"]) {

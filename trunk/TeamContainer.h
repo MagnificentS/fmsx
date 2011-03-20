@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "Controller.h"
+#import "Colour.h"
 
 @interface TeamContainer : NSObject {
 	char teamContainerType, nameGender, shortNameGender;
@@ -39,6 +40,8 @@ preferredFormation2, defensiveFormation, attackingFormation;
 - (NSColor *)bgColour;
 - (NSColor *)textColour;
 - (NSColor *)trimColour;
+
+- (Colour *)mainColour;
 
 - (void)removeBTeam:(int)val;
 

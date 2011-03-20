@@ -96,6 +96,16 @@ nonEUTreatedNations, unknownShort1, unknownShort2, gainNationalityType, unknownD
 	return strings;
 }
 
+- (NSArray *)nationalityGainTypeStrings
+{
+	NSArray *strings = [NSArray arrayWithObjects:
+						NSLocalizedString(@"Invalid", @"general 'invalid' option"),
+						NSLocalizedString(@"Continuous", @"nation nationality gain type"),
+						NSLocalizedString(@"Accumulative", @"nation nationality gain type"),
+						nil];
+	return strings;
+}
+
 - (NSString *)name
 {
 	return [teamContainer name];
@@ -124,6 +134,21 @@ nonEUTreatedNations, unknownShort1, unknownShort2, gainNationalityType, unknownD
 		return [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.teams"] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] reputation];
 	}
 	return 0;
+}
+
+- (NSString *)flagPath
+{
+	return [[[[NSApp delegate] graphics] nationFlags] objectForKey:[NSNumber numberWithInt:UID]];
+}
+
+- (NSString *)logoPath
+{
+	return [[[[NSApp delegate] graphics] nationLogos] objectForKey:[NSNumber numberWithInt:UID]];
+}
+
+- (NSString *)bgLogoPath
+{
+	return [[[[NSApp delegate] graphics] nationBGLogos] objectForKey:[NSNumber numberWithInt:UID]];
 }
 
 @end

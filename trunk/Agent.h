@@ -16,14 +16,14 @@
 #define AGS_WORLDWIDE	3
 
 @interface Agent : NSObject {
-	char scope, patience, agentFeeDemands, willingnessToToutPlayers, unknownChar1;
+	char scope, patience, agentFeeDemands, willingnessToToutPlayers, sizeOfAgency;
 	int basedNationID;
 	NSMutableArray *clients;
 	FMDate *unknownDate1;
 }
 
 @property(assign,readwrite) char scope, patience, agentFeeDemands, willingnessToToutPlayers,
-unknownChar1;
+sizeOfAgency;
 @property(assign,readwrite) int basedNationID;
 @property(readwrite,assign) FMDate *unknownDate1;
 @property(copy,readwrite) NSMutableArray *clients;

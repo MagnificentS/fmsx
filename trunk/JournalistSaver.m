@@ -17,10 +17,15 @@
 	
 	ibuffer = [object favouriteClubID];
 	[data appendBytes:&ibuffer length:4];
-	[data appendData:[object unknownData1]];
-	ibuffer = [object media];
+	cbuffer = [object styleOfWriting];
+	[data appendBytes:&cbuffer length:1];
+	cbuffer = [object honesty];
+	[data appendBytes:&cbuffer length:1];
+	cbuffer = [object curiosity];
+	[data appendBytes:&cbuffer length:1];
+	ibuffer = [object currentEmployerID];
 	[data appendBytes:&ibuffer length:4];
-	cbuffer = [object unknownChar1];
+	cbuffer = [object characterFlags];
 	[data appendBytes:&cbuffer length:1];
 }
 

@@ -11,7 +11,7 @@
 @implementation Agent
 
 @synthesize scope, patience, agentFeeDemands, willingnessToToutPlayers, clients, basedNationID,
-unknownChar1, unknownDate1;
+sizeOfAgency, unknownDate1;
 
 - (void)setNewClientID:(int)val
 {

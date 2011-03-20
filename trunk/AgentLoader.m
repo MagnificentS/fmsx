@@ -32,9 +32,9 @@
 	[object setAgentFeeDemands:cbuffer];
 	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 	[object setWillingnessToToutPlayers:cbuffer];
-	
 	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-	[object setUnknownChar1:cbuffer];
+	[object setSizeOfAgency:cbuffer];
+	
 	[object setUnknownDate1:[FMDateLoader readFromData:data atOffset:&offset]];
 	
 	

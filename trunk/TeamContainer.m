@@ -192,4 +192,16 @@ attackingFormation, bTeams, unknowns2, transferInfos, physios, coaches;
 	return [NSColor whiteColor];
 }
 
+- (Colour *)mainColour
+{
+	if ([colours count]>0) { return [colours objectAtIndex:0]; }
+	
+	Colour *plainColour = [[Colour alloc] init];
+	[plainColour setBackgroundColour:[[NSColor whiteColor] colorUsingColorSpaceName:NSCalibratedRGBColorSpace]];
+	[plainColour setForegroundColour:[[NSColor blackColor] colorUsingColorSpaceName:NSCalibratedRGBColorSpace]];
+	[plainColour setTrimColour:[[NSColor blueColor] colorUsingColorSpaceName:NSCalibratedRGBColorSpace]];
+
+	return plainColour;
+}
+
 @end
