@@ -114,6 +114,10 @@ continentID, regionID, capitalID, rowID, UID, length, width, area, population;
 *u19FwShortlist, *transferInfos, *bannedPlayers, *futureRegenPlayers, *futureRegenStaff, *famousPlayers,
 *spokenLanguages, *transferPreferences, *infos, *unknowns1, *unknowns2, *unknowns3, *unknowns4, *unknowns5;
 
+- (void)setNewAgentID:(int)val;
+- (void)setNewBannedPlayerID:(int)val;
+- (void)setNewHumanPlayerPoolPlayerID:(int)val;
+
 - (NSArray *)groupMembershipStrings;
 - (NSArray *)styleOfFootballStrings;
 - (NSArray *)gameImportanceStrings;

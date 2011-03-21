@@ -224,6 +224,8 @@
 		FB35642310B4AE5C004E3FB7 /* MGScopeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FB35642010B4AE5C004E3FB7 /* MGScopeBar.m */; };
 		FB37D246129C423200FCD89A /* SXTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB37D245129C423200FCD89A /* SXTableView.m */; };
 		FB37D2A6129C6BC300FCD89A /* SXPredicateEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = FB37D2A5129C6BC300FCD89A /* SXPredicateEditor.m */; };
+		FB3AFD3C1336D3F100D6476F /* SXFloatHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3AFD3B1336D3F100D6476F /* SXFloatHolder.m */; };
+		FB3AFD4B1336D64700D6476F /* SXShortHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3AFD4A1336D64700D6476F /* SXShortHolder.m */; };
 		FB3CB449109AFFA900CA7897 /* View.png in Resources */ = {isa = PBXBuildFile; fileRef = FB3CB448109AFFA900CA7897 /* View.png */; };
 		FB3D74621335046500B3DEE0 /* defaultperson_female.png in Resources */ = {isa = PBXBuildFile; fileRef = FB3D74601335046500B3DEE0 /* defaultperson_female.png */; };
 		FB3D74631335046500B3DEE0 /* defaultperson_male.png in Resources */ = {isa = PBXBuildFile; fileRef = FB3D74611335046500B3DEE0 /* defaultperson_male.png */; };
@@ -992,6 +994,10 @@
 		FB37D245129C423200FCD89A /* SXTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXTableView.m; sourceTree = "<group>"; };
 		FB37D2A4129C6BC300FCD89A /* SXPredicateEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXPredicateEditor.h; sourceTree = "<group>"; };
 		FB37D2A5129C6BC300FCD89A /* SXPredicateEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXPredicateEditor.m; sourceTree = "<group>"; };
+		FB3AFD3A1336D3F100D6476F /* SXFloatHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXFloatHolder.h; sourceTree = "<group>"; };
+		FB3AFD3B1336D3F100D6476F /* SXFloatHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXFloatHolder.m; sourceTree = "<group>"; };
+		FB3AFD491336D64700D6476F /* SXShortHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXShortHolder.h; sourceTree = "<group>"; };
+		FB3AFD4A1336D64700D6476F /* SXShortHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXShortHolder.m; sourceTree = "<group>"; };
 		FB3CB448109AFFA900CA7897 /* View.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = View.png; sourceTree = "<group>"; };
 		FB3D74601335046500B3DEE0 /* defaultperson_female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultperson_female.png; sourceTree = "<group>"; };
 		FB3D74611335046500B3DEE0 /* defaultperson_male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultperson_male.png; sourceTree = "<group>"; };
@@ -2783,6 +2789,10 @@
 				FB37D245129C423200FCD89A /* SXTableView.m */,
 				FB37D2A4129C6BC300FCD89A /* SXPredicateEditor.h */,
 				FB37D2A5129C6BC300FCD89A /* SXPredicateEditor.m */,
+				FB3AFD3A1336D3F100D6476F /* SXFloatHolder.h */,
+				FB3AFD3B1336D3F100D6476F /* SXFloatHolder.m */,
+				FB3AFD491336D64700D6476F /* SXShortHolder.h */,
+				FB3AFD4A1336D64700D6476F /* SXShortHolder.m */,
 			);
 			name = "Support Classes";
 			sourceTree = "<group>";
@@ -3837,6 +3847,8 @@
 				FB329EA3133022DD006A7B01 /* SXEditorEntityViewController.m in Sources */,
 				FBAB2943133231BA003FA548 /* SXEditorViewController.m in Sources */,
 				FBEE427F1333841D00A89FB0 /* SXGraphicsController.m in Sources */,
+				FB3AFD3C1336D3F100D6476F /* SXFloatHolder.m in Sources */,
+				FB3AFD4B1336D64700D6476F /* SXShortHolder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

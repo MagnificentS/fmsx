@@ -36,7 +36,8 @@ languageMainViewContainer, languageEntityView, stadiumChangeMainViewContainer, s
 sponsorMainViewContainer, sponsorEntityView, stadiumMainViewContainer, stadiumEntityView,
 weatherMainViewContainer, weatherEntityView, competitionMainViewContainer, competitionEntityView,
 mediaMainViewContainer, mediaEntityView, mediaGeneralView, mediaAssociationsView, mediaSectionView,
-nationMainViewContainer, nationEntityView, nationGeneralView, nationSectionView;
+nationMainViewContainer, nationEntityView, nationGeneralView, nationSectionView, nationBannedPlayersView,
+nationAgentsView, nationCoefficientsView, nationRankingPointsView, nationHumanPlayerPoolView;
 
 - (void)awakeFromNib
 {
@@ -48,7 +49,7 @@ nationMainViewContainer, nationEntityView, nationGeneralView, nationSectionView;
 	// section tables
 	if (aTableView==awardSectionsTable) { return 2; }
 	else if (aTableView==mediaSectionsTable) { return 2; }
-	else if (aTableView==nationSectionsTable) { return 2; }
+	else if (aTableView==nationSectionsTable) { return [NATION_SECTIONS count]; }
 	
 	// entity tables
 	if ([[[[NSApp delegate] editorController] searchResults] count]>0) { return [[[[NSApp delegate] editorController] searchResults] count]; }
@@ -227,8 +228,7 @@ nationMainViewContainer, nationEntityView, nationGeneralView, nationSectionView;
 		else if (rowIndex==1)	{ return @"Associations"; }
 	}
 	else if (aTableView==nationSectionsTable) { 
-		if (rowIndex==0)		{ return @"General"; }
-		else if (rowIndex==1)	{ return @"Associations"; }
+		return [[NATION_SECTIONS objectAtIndex:rowIndex] objectForKey:@"title"];
 	}
 	
 	return @"--Invalid--";
@@ -349,6 +349,15 @@ nationMainViewContainer, nationEntityView, nationGeneralView, nationSectionView;
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
+	else if ([[aTableColumn identifier] isEqualToString:@"agreementIDtxt"]) {
+		int UID = [[aCell stringValue] intValue];
+		
+		if (UID < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.agreements"] count] && UID > -1) {
+			[aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.agreements"] objectAtIndex:UID] name]];
+		}
+		else { [aCell setStringValue:@"---"]; }
+	}
+	
 	else if ([[aTableColumn identifier] isEqualToString:@"personIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
@@ -451,9 +460,9 @@ nationMainViewContainer, nationEntityView, nationGeneralView, nationSectionView;
 		}
 	}
 	else if ([aNotification object]==nationSectionsTable) {
-		if ([nationSectionsTable selectedRow]==0) {
-			[[[NSApp delegate] contentController] replacePlaceholder:nationSectionView withView:nationGeneralView];
-		}
+		if ([nationSectionsTable selectedRow]<0 || [nationSectionsTable selectedRow] >= [NATION_SECTIONS count]) { return; }
+		
+		[[[NSApp delegate] contentController] replacePlaceholder:nationSectionView withView:[[NATION_SECTIONS objectAtIndex:[nationSectionsTable selectedRow]] objectForKey:@"view"]];
 	}
 }
 

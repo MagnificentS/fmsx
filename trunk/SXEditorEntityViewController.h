@@ -10,6 +10,15 @@
 #import "EditorController.h"
 #import <BWToolkitFramework/BWToolkitFramework.h>
 
+#define NATION_SECTIONS [NSMutableArray arrayWithObjects:\
+[NSDictionary dictionaryWithObjectsAndKeys:@"General",@"title",nationGeneralView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Agents",@"title",nationAgentsView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Banned Players",@"title",nationBannedPlayersView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Coefficients",@"title",nationCoefficientsView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"FIFA Ranking Points",@"title",nationRankingPointsView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Human Player Pool",@"title",nationHumanPlayerPoolView,@"view",nil],\
+	nil]
+
 @interface SXEditorEntityViewController : NSViewController {
 	IBOutlet NSTableView	*awardsTable, *awardSectionsTable;
 	IBOutlet NSBox			*awardBGBox;
@@ -52,7 +61,10 @@
 	IBOutlet NSTableView	*nationsTable, *nationSectionsTable;
 	IBOutlet BWGradientBox	*nationHeaderBox;
 	IBOutlet NSBox			*nationBGBox;
-	IBOutlet NSView			*nationMainViewContainer, *nationEntityView, *nationGeneralView, *nationSectionView;
+	IBOutlet NSView			*nationMainViewContainer, *nationEntityView, *nationGeneralView, *nationSectionView,
+	*nationBannedPlayersView, *nationAgentsView, *nationCoefficientsView, *nationHumanPlayerPoolView,
+	*nationRankingPointsView;
+	NSMutableArray *nationSections;
 	
 	IBOutlet NSTableView	*stadiumChangesTable;
 	IBOutlet NSView			*stadiumChangeMainViewContainer, *stadiumChangeEntityView;
@@ -83,6 +95,7 @@
 *sponsorMainViewContainer, *sponsorEntityView, *stadiumMainViewContainer, *stadiumEntityView,
 *weatherMainViewContainer, *weatherEntityView, *competitionMainViewContainer, *competitionEntityView,
 *mediaMainViewContainer, *mediaEntityView, *mediaGeneralView, *mediaAssociationsView, *mediaSectionView,
-*nationMainViewContainer, *nationEntityView, *nationGeneralView, *nationSectionView;
+*nationMainViewContainer, *nationEntityView, *nationGeneralView, *nationSectionView, *nationBannedPlayersView,
+*nationAgentsView, *nationCoefficientsView, *nationRankingPointsView, *nationHumanPlayerPoolView;
 
 @end

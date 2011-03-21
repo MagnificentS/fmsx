@@ -21,6 +21,9 @@
 #import "Unknown5Loader.h"
 #import "Unknown6Loader.h"
 
+#import "SXShortHolder.h"
+#import "SXFloatHolder.h"
+
 @implementation Loader (NationLoader)
 
 + (id)readNationFromData:(NSData *)data atOffset:(unsigned int *)byteOffset
@@ -113,7 +116,7 @@
 	tempArray = [[NSMutableArray alloc] init];
 	for (int i=0;i<cbuffer;i++) {
 		[data getBytes:&sbuffer range:NSMakeRange(offset, 2)]; offset += 2;
-		[tempArray addObject:[NSNumber numberWithShort:sbuffer]];
+		[tempArray addObject:[SXShortHolder holderWithShort:sbuffer]];
 	}
 	[object setRankingPoints:tempArray];
 	[tempArray release];
@@ -140,7 +143,7 @@
 	tempArray = [[NSMutableArray alloc] init];
 	for (int i=0;i<cbuffer;i++) {
 		[data getBytes:&fbuffer range:NSMakeRange(offset, 4)]; offset += 4;
-		[tempArray addObject:[NSNumber numberWithFloat:fbuffer]];
+		[tempArray addObject:[SXFloatHolder holderWithFloat:fbuffer]];
 	}
 	[object setCoefficients:tempArray];
 	[tempArray release];

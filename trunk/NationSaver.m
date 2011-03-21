@@ -19,6 +19,8 @@
 #import "Unknown4Saver.h"
 #import "Unknown5Saver.h"
 #import "Unknown6Saver.h"
+#import "SXFloatHolder.h"
+#import "SXShortHolder.h"
 
 @implementation NationSaver
 

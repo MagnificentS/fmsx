@@ -136,6 +136,27 @@ nonEUTreatedNations, unknownShort1, unknownShort2, gainNationalityType, unknownD
 	return 0;
 }
 
+- (void)setNewAgentID:(int)val
+{
+	if (val<0) { return; }
+	
+	[[self mutableArrayValueForKey:@"agents"] addObject:[NSNumber numberWithInt:val]];
+}
+
+- (void)setNewBannedPlayerID:(int)val
+{
+	if (val<0) { return; }
+	
+	[[self mutableArrayValueForKey:@"bannedPlayers"] addObject:[NSNumber numberWithInt:val]];
+}
+
+- (void)setNewHumanPlayerPoolPlayerID:(int)val
+{
+	if (val<0) { return; }
+	
+	[[self mutableArrayValueForKey:@"humanPlayerPool"] addObject:[NSNumber numberWithInt:val]];
+}
+
 - (NSString *)flagPath
 {
 	return [[[[NSApp delegate] graphics] nationFlags] objectForKey:[NSNumber numberWithInt:UID]];

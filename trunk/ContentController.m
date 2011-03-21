@@ -162,6 +162,9 @@
 	[[editorViewController peoplePicker] openSheet:self];
 	if ([sender tag]==1)		{ personPickerSelector = @"newJournalistID"; }
 	else if ([sender tag]==2)	{ personPickerSelector = @"newClientID"; }
+	else if ([sender tag]==3)	{ personPickerSelector = @"newBannedPlayerID"; }
+	else if ([sender tag]==4)	{ personPickerSelector = @"newAgentID"; }
+	else if ([sender tag]==5)	{ personPickerSelector = @"newHumanPlayerPoolPlayerID"; }
 }	
 
 - (IBAction)setPersonPickerObject:(id)object
