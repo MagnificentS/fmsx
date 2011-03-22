@@ -37,7 +37,8 @@ sponsorMainViewContainer, sponsorEntityView, stadiumMainViewContainer, stadiumEn
 weatherMainViewContainer, weatherEntityView, competitionMainViewContainer, competitionEntityView,
 mediaMainViewContainer, mediaEntityView, mediaGeneralView, mediaAssociationsView, mediaSectionView,
 nationMainViewContainer, nationEntityView, nationGeneralView, nationSectionView, nationBannedPlayersView,
-nationAgentsView, nationCoefficientsView, nationRankingPointsView, nationHumanPlayerPoolView;
+nationAgentsView, nationCoefficientsView, nationRankingPointsView, nationHumanPlayerPoolView,
+nationShortlistsView;
 
 - (void)awakeFromNib
 {

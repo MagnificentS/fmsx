@@ -17,6 +17,7 @@
 [NSDictionary dictionaryWithObjectsAndKeys:@"Coefficients",@"title",nationCoefficientsView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"FIFA Ranking Points",@"title",nationRankingPointsView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Human Player Pool",@"title",nationHumanPlayerPoolView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Shortlists",@"title",nationShortlistsView,@"view",nil],\
 	nil]
 
 @interface SXEditorEntityViewController : NSViewController {
@@ -63,7 +64,7 @@
 	IBOutlet NSBox			*nationBGBox;
 	IBOutlet NSView			*nationMainViewContainer, *nationEntityView, *nationGeneralView, *nationSectionView,
 	*nationBannedPlayersView, *nationAgentsView, *nationCoefficientsView, *nationHumanPlayerPoolView,
-	*nationRankingPointsView;
+	*nationRankingPointsView, *nationShortlistsView;
 	NSMutableArray *nationSections;
 	
 	IBOutlet NSTableView	*stadiumChangesTable;
@@ -96,6 +97,7 @@
 *weatherMainViewContainer, *weatherEntityView, *competitionMainViewContainer, *competitionEntityView,
 *mediaMainViewContainer, *mediaEntityView, *mediaGeneralView, *mediaAssociationsView, *mediaSectionView,
 *nationMainViewContainer, *nationEntityView, *nationGeneralView, *nationSectionView, *nationBannedPlayersView,
-*nationAgentsView, *nationCoefficientsView, *nationRankingPointsView, *nationHumanPlayerPoolView;
+*nationAgentsView, *nationCoefficientsView, *nationRankingPointsView, *nationHumanPlayerPoolView,
+*nationShortlistsView;
 
 @end
