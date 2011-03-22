@@ -38,7 +38,8 @@ weatherMainViewContainer, weatherEntityView, competitionMainViewContainer, compe
 mediaMainViewContainer, mediaEntityView, mediaGeneralView, mediaAssociationsView, mediaSectionView,
 nationMainViewContainer, nationEntityView, nationGeneralView, nationSectionView, nationBannedPlayersView,
 nationAgentsView, nationCoefficientsView, nationRankingPointsView, nationHumanPlayerPoolView,
-nationShortlistsView;
+nationShortlistsView, nationTransferPreferencesView, nationSpokenLanguagesView, nationTreatedAsEUView,
+nationTreatedAsNonForeignView, nationRankingMatchesView, nationFutureRegenView, nationTacticsView;
 
 - (void)awakeFromNib
 {
@@ -355,6 +356,31 @@ nationShortlistsView;
 		
 		if (UID < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.agreements"] count] && UID > -1) {
 			[aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.agreements"] objectAtIndex:UID] name]];
+		}
+		else { [aCell setStringValue:@"---"]; }
+	}
+	else if ([[aTableColumn identifier] isEqualToString:@"localAreaIDtxt"]) {
+		int UID = [[aCell stringValue] intValue];
+		
+		if (UID < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.localAreas"] count] && UID > -1) {
+			[aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.localAreas"] objectAtIndex:UID] name]];
+		}
+		else { [aCell setStringValue:@"---"]; }
+	}
+	
+	else if ([[aTableColumn identifier] isEqualToString:@"continentIDtxt"]) {
+		int UID = [[aCell stringValue] intValue];
+		
+		if (UID < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.continents"] count] && UID > -1) {
+			[aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.continents"] objectAtIndex:UID] name]];
+		}
+		else { [aCell setStringValue:@"---"]; }
+	}
+	else if ([[aTableColumn identifier] isEqualToString:@"languageIDtxt"]) {
+		int UID = [[aCell stringValue] intValue];
+		
+		if (UID < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.languages"] count] && UID > -1) {
+			[aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.languages"] objectAtIndex:UID] name]];
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}

@@ -14,4 +14,15 @@
 @synthesize birthDay, birthMonth, age, firstName, surname, commonName, favouriteClub, unknownChar,
 unknownData1;
 
+- (id)init
+{
+	[super init];
+	
+	firstName = @"---";
+	surname = @"---";
+	commonName = @"---";
+	
+	return self;
+}
+
 @end

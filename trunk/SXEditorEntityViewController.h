@@ -15,9 +15,16 @@
 [NSDictionary dictionaryWithObjectsAndKeys:@"Agents",@"title",nationAgentsView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Banned Players",@"title",nationBannedPlayersView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Coefficients",@"title",nationCoefficientsView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"FIFA Ranking Matches",@"title",nationRankingMatchesView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"FIFA Ranking Points",@"title",nationRankingPointsView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Future Regens",@"title",nationFutureRegenView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Human Player Pool",@"title",nationHumanPlayerPoolView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Nations Treated As EU",@"title",nationTreatedAsEUView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Nations Treated As Non-Foreign",@"title",nationTreatedAsNonForeignView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Shortlists",@"title",nationShortlistsView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Spoken Languages",@"title",nationSpokenLanguagesView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Tactics",@"title",nationTacticsView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Transfer Preferences",@"title",nationTransferPreferencesView,@"view",nil],\
 	nil]
 
 @interface SXEditorEntityViewController : NSViewController {
@@ -64,7 +71,9 @@
 	IBOutlet NSBox			*nationBGBox;
 	IBOutlet NSView			*nationMainViewContainer, *nationEntityView, *nationGeneralView, *nationSectionView,
 	*nationBannedPlayersView, *nationAgentsView, *nationCoefficientsView, *nationHumanPlayerPoolView,
-	*nationRankingPointsView, *nationShortlistsView;
+	*nationRankingPointsView, *nationShortlistsView, *nationTransferPreferencesView, *nationSpokenLanguagesView,
+	*nationTreatedAsEUView, *nationTreatedAsNonForeignView, *nationRankingMatchesView, *nationFutureRegenView,
+	*nationTacticsView;
 	NSMutableArray *nationSections;
 	
 	IBOutlet NSTableView	*stadiumChangesTable;
@@ -98,6 +107,7 @@
 *mediaMainViewContainer, *mediaEntityView, *mediaGeneralView, *mediaAssociationsView, *mediaSectionView,
 *nationMainViewContainer, *nationEntityView, *nationGeneralView, *nationSectionView, *nationBannedPlayersView,
 *nationAgentsView, *nationCoefficientsView, *nationRankingPointsView, *nationHumanPlayerPoolView,
-*nationShortlistsView;
+*nationShortlistsView, *nationSpokenLanguagesView, *nationTransferPreferencesView, *nationTreatedAsEUView,
+*nationTreatedAsNonForeignView, *nationRankingMatchesView, *nationFutureRegenView, *nationTacticsView;
 
 @end

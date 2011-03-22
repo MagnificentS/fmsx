@@ -83,17 +83,28 @@ nationBGLogos;
 
 - (void)parseGraphics
 {
-	// parse any graphics.fmf file there is in the FM directory first
-	NSString *graphicsFMFPath = [NSString stringWithFormat:@"%@/data/graphics.fmf",[[NSUserDefaults standardUserDefaults] stringForKey:@"fmLocation"]];
-	
-	if ([[NSFileManager defaultManager] fileExistsAtPath:graphicsFMFPath]) {
-		
-	}
+	// parse any graphics.fmf files there are in the FM directory first
+	[self parseCoreGraphics];
 	
 	// parse graphics in the graphics folder
 	[self parseCustomGraphics];
 	
 	NSLog(@"Graphics Parsed");
+}
+
+- (void)parseCoreGraphics
+{
+	NSString *graphicsFMFPath = [NSString stringWithFormat:@"%@/data/graphics.fmf",[[NSUserDefaults standardUserDefaults] stringForKey:@"fmLocation"]];
+	
+	if ([[NSFileManager defaultManager] fileExistsAtPath:graphicsFMFPath]) {
+		int fp = open([graphicsFMFPath cStringUsingEncoding:[NSString defaultCStringEncoding]], O_RDONLY);
+		unsigned int fmf1Length;
+		
+		// get fmf1 length
+		lseek(fp,9,SEEK_SET);
+		read(fp,&fmf1Length,4);
+		close(fp);
+	}
 }
 
 - (void)parseCustomGraphics

@@ -28,9 +28,10 @@
 *continentLogos, *hugeContinentLogos, *personPhotos, *smallPersonPhotos, *continentBGLogos,
 *competitionBGLogos, *nationBGLogos;
 
-- (void)parseCustomGraphics;
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
 - (void)parseGraphics;
+- (void)parseCoreGraphics;
+- (void)parseCustomGraphics;
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 
 @end
