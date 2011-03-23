@@ -76,6 +76,7 @@
 - (NSString *)nationalTeamString;
 - (NSString *)teamString;
 - (NSString *)jobString;
+- (NSString *)nationJobString;
 - (NSString *)typeString;
 - (NSString *)positionString;
 - (NSString *)dobPreviewString;

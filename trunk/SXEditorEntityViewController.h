@@ -23,6 +23,7 @@
 [NSDictionary dictionaryWithObjectsAndKeys:@"Nations Treated As Non-Foreign",@"title",nationTreatedAsNonForeignView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Shortlists",@"title",nationShortlistsView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Spoken Languages",@"title",nationSpokenLanguagesView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Staff",@"title",nationStaffView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Tactics",@"title",nationTacticsView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Transfer Preferences",@"title",nationTransferPreferencesView,@"view",nil],\
 	nil]
@@ -73,7 +74,7 @@
 	*nationBannedPlayersView, *nationAgentsView, *nationCoefficientsView, *nationHumanPlayerPoolView,
 	*nationRankingPointsView, *nationShortlistsView, *nationTransferPreferencesView, *nationSpokenLanguagesView,
 	*nationTreatedAsEUView, *nationTreatedAsNonForeignView, *nationRankingMatchesView, *nationFutureRegenView,
-	*nationTacticsView;
+	*nationTacticsView, *nationStaffView;
 	NSMutableArray *nationSections;
 	
 	IBOutlet NSTableView	*stadiumChangesTable;
@@ -108,6 +109,7 @@
 *nationMainViewContainer, *nationEntityView, *nationGeneralView, *nationSectionView, *nationBannedPlayersView,
 *nationAgentsView, *nationCoefficientsView, *nationRankingPointsView, *nationHumanPlayerPoolView,
 *nationShortlistsView, *nationSpokenLanguagesView, *nationTransferPreferencesView, *nationTreatedAsEUView,
-*nationTreatedAsNonForeignView, *nationRankingMatchesView, *nationFutureRegenView, *nationTacticsView;
+*nationTreatedAsNonForeignView, *nationRankingMatchesView, *nationFutureRegenView, *nationTacticsView,
+*nationStaffView;
 
 @end

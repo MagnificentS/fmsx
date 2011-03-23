@@ -39,7 +39,8 @@ mediaMainViewContainer, mediaEntityView, mediaGeneralView, mediaAssociationsView
 nationMainViewContainer, nationEntityView, nationGeneralView, nationSectionView, nationBannedPlayersView,
 nationAgentsView, nationCoefficientsView, nationRankingPointsView, nationHumanPlayerPoolView,
 nationShortlistsView, nationTransferPreferencesView, nationSpokenLanguagesView, nationTreatedAsEUView,
-nationTreatedAsNonForeignView, nationRankingMatchesView, nationFutureRegenView, nationTacticsView;
+nationTreatedAsNonForeignView, nationRankingMatchesView, nationFutureRegenView, nationTacticsView,
+nationStaffView;
 
 - (void)awakeFromNib
 {

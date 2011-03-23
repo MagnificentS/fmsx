@@ -196,6 +196,49 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 	return @"---";
 }
 
+- (NSString *)nationJobString 
+{
+	if (officialData) {
+		if ([officialData assistantRefereeOnly]) { return NSLocalizedString(@"Assistant Referee", @"person job"); }
+		else { return NSLocalizedString(@"Referee", @"person job"); }
+	}
+	else if (journalistData) { return NSLocalizedString(@"Journalist", @"person job"); }
+	else if (agentData) { return NSLocalizedString(@"Agent", @"person job"); }
+	else if (spokespersonData) { return NSLocalizedString(@"Spokesperson", @"person job"); }
+	else if (staffData) {
+		int job;
+		if (staffData) { job = [staffData nationalJob]; }
+		
+		if (job==JOB_PLAYER) { return NSLocalizedString(@"Player", @"person job"); }
+		else if (job==JOB_COACH) { return NSLocalizedString(@"Coach", @"person job"); }
+		else if (job==JOB_CHAIRMAN) { return NSLocalizedString(@"Chairman", @"person job"); }
+		else if (job==JOB_DIRECTOR) { return NSLocalizedString(@"Director", @"person job"); }
+		else if (job==JOB_MANAGING_DIRECTOR) { return NSLocalizedString(@"Managing Director", @"person job"); }
+		else if (job==JOB_DIRECTOR_OF_FOOTBALL) { return NSLocalizedString(@"Director Of Football", @"person job"); }
+		else if (job==JOB_PHYSIO) { return NSLocalizedString(@"Physio", @"person job"); }
+		else if (job==JOB_SCOUT) { return NSLocalizedString(@"Scout", @"person job"); }
+		else if (job==JOB_MANAGER) { return NSLocalizedString(@"Manager", @"person job"); }
+		else if (job==JOB_HEAD_COACH) { return NSLocalizedString(@"Head Coach", @"person job"); }
+		else if (job==JOB_ASSISTANT_MANAGER) { return NSLocalizedString(@"Assistant Manager", @"person job"); }
+		else if (job==JOB_GENERAL_MANAGER) { return NSLocalizedString(@"General Manager", @"person job"); }
+		else if (job==JOB_CARETAKER_COACH) { return NSLocalizedString(@"Caretaker Coach", @"person job"); }
+		else if (job==JOB_PLAYER_MANAGER) { return NSLocalizedString(@"Player / Manager", @"person job"); }
+		else if (job==JOB_COACH) { return NSLocalizedString(@"Coach", @"person job"); }
+		else if (job==JOB_PLAYER_COACH) { return NSLocalizedString(@"Player / Coach", @"person job"); }
+		else if (job==JOB_PLAYER_ASSISTANT_MANAGER) { return NSLocalizedString(@"Player / Assistant Manager", @"person job"); }
+		else if (job==JOB_FITNESS_COACH) { return NSLocalizedString(@"Fitness Coach", @"person job"); }
+		else if (job==JOB_PLAYER_FITNESS_COACH) { return NSLocalizedString(@"Player / Fitness Coach", @"person job"); }
+		else if (job==JOB_CARETAKER_COACH) { return NSLocalizedString(@"Caretaker / Coach", @"person job"); }
+		else if (job==JOB_GOALKEEPING_COACH) { return NSLocalizedString(@"Goalkeeping Coach", @"person job"); }
+		else if (job==JOB_PLAYER_GOALKEEPING_COACH) { return NSLocalizedString(@"Player / Goalkeeping Coach", @"person job"); }
+		else if (job==JOB_YOUTH_TEAM_COACH) { return NSLocalizedString(@"Youth Team Coach", @"person job"); }
+		else if (job==JOB_PLAYER_YOUTH_TEAM_COACH) { return NSLocalizedString(@"Player / Youth Team Coach", @"person job"); }
+		else if (job==JOB_FIRST_TEAM_COACH) { return NSLocalizedString(@"First Team Coach", @"person job"); }
+		else if (job==JOB_PLAYER_FIRST_TEAM_COACH) { return NSLocalizedString(@"Player / First Team Coach", @"person job"); }
+	}
+	return @"---";
+}
+
 - (NSString *)positionString
 {
 	if (!playerStats) { return @""; }
