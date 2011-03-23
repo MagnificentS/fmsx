@@ -13,6 +13,7 @@
 #define NATION_SECTIONS [NSMutableArray arrayWithObjects:\
 [NSDictionary dictionaryWithObjectsAndKeys:@"General",@"title",nationGeneralView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Agents",@"title",nationAgentsView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Alternative Stadiums",@"title",nationAlternativeStadiumsView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Banned Players",@"title",nationBannedPlayersView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Coefficients",@"title",nationCoefficientsView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"FIFA Ranking Matches",@"title",nationRankingMatchesView,@"view",nil],\
@@ -21,6 +22,7 @@
 [NSDictionary dictionaryWithObjectsAndKeys:@"Human Player Pool",@"title",nationHumanPlayerPoolView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Nations Treated As EU",@"title",nationTreatedAsEUView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Nations Treated As Non-Foreign",@"title",nationTreatedAsNonForeignView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Relationships",@"title",nationRelationshipsView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Shortlists",@"title",nationShortlistsView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Spoken Languages",@"title",nationSpokenLanguagesView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Staff",@"title",nationStaffView,@"view",nil],\
@@ -74,7 +76,7 @@
 	*nationBannedPlayersView, *nationAgentsView, *nationCoefficientsView, *nationHumanPlayerPoolView,
 	*nationRankingPointsView, *nationShortlistsView, *nationTransferPreferencesView, *nationSpokenLanguagesView,
 	*nationTreatedAsEUView, *nationTreatedAsNonForeignView, *nationRankingMatchesView, *nationFutureRegenView,
-	*nationTacticsView, *nationStaffView;
+	*nationTacticsView, *nationStaffView, *nationRelationshipsView, *nationAlternativeStadiumsView;
 	NSMutableArray *nationSections;
 	
 	IBOutlet NSTableView	*stadiumChangesTable;
@@ -110,6 +112,6 @@
 *nationAgentsView, *nationCoefficientsView, *nationRankingPointsView, *nationHumanPlayerPoolView,
 *nationShortlistsView, *nationSpokenLanguagesView, *nationTransferPreferencesView, *nationTreatedAsEUView,
 *nationTreatedAsNonForeignView, *nationRankingMatchesView, *nationFutureRegenView, *nationTacticsView,
-*nationStaffView;
+*nationStaffView, *nationRelationshipsView, *nationAlternativeStadiumsView;
 
 @end

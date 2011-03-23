@@ -40,7 +40,7 @@ nationMainViewContainer, nationEntityView, nationGeneralView, nationSectionView,
 nationAgentsView, nationCoefficientsView, nationRankingPointsView, nationHumanPlayerPoolView,
 nationShortlistsView, nationTransferPreferencesView, nationSpokenLanguagesView, nationTreatedAsEUView,
 nationTreatedAsNonForeignView, nationRankingMatchesView, nationFutureRegenView, nationTacticsView,
-nationStaffView;
+nationStaffView, nationRelationshipsView, nationAlternativeStadiumsView;
 
 - (void)awakeFromNib
 {
@@ -399,6 +399,14 @@ nationStaffView;
 		
 		if (UID < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.media"] count] && UID > -1) {
 			[aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.media"] objectAtIndex:UID] name]];
+		}
+		else { [aCell setStringValue:@"---"]; }
+	}
+	else if ([[aTableColumn identifier] isEqualToString:@"stadiumIDtxt"]) {
+		int UID = [[aCell stringValue] intValue];
+		
+		if (UID < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiums"] count] && UID > -1) {
+			[aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.stadiums"] objectAtIndex:UID] name]];
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
