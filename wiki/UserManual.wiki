@@ -71,7 +71,6 @@ You can save a saved game file either by clicking on the Save Game icon in the u
 === 3.1 Main Menu===
 The Main Menu contains most of the normal OS X functions (including About FM11SX, Preferences (these are discussed in depth in 2.2 Preferences above), File Open, Save As, Print, etc.).  The top apron (shown below) also contains an Open Game button as well as quick access to the Scout features and a Game Info button all located on the left while a Save Game button is opposite on the right.  The Game Info lists some details about the saved game file currently loaded (which leagues are playable, human managers in the game, etc.).
 
-https://lh6.googleusercontent.com/_CjLl-iz68fw/TVndHNFUvsI/AAAAAAAAAWA/SYA8g3UO8ic/s800/mainmenu.jpg
 
 Within in the Main Menu are also links to donate to the project, documentation (basically a link back here), and a way to Check For Updates.  Although as noted in the Preferences section there is a means for FM11SX to automatically check for updates.  But for those who wish to check manually, here's your way.  Additionally there are some pretty cool Tools (see the 7. Tools section for more details).  There are also some links to the FMScout and sigames websites.
 
@@ -88,7 +87,7 @@ When you select an Entity from the list on the left, the right side frame will t
 
 To view details of particular records within an Entity merely double click on the record within the right side frame.  For example, double clicking on Ipswich Town within the Clubs Entity will bring up the detailed view as seen below.  _*(Note the top of the detailed view contains tabs of recently viewed Entities or specific records within an Entity.  Enabling you to quickly click back to say, Clubs while still maintaining a link to Tottenham).*_
 
-https://lh4.googleusercontent.com/_CjLl-iz68fw/TVndHXUJVNI/AAAAAAAAAWE/iLCc2xCfv1Q/s800/mainmenu2.jpg
+
 
 Each Entity has a variety of information available to view (and in most cases) edit.  The following is brief list.  Please note that due to screen space some items are accessed via pull down menus (note the pull down menu with the item titled "General" slightly above the Name attribute for Tottenham in the picture above).
 
@@ -121,12 +120,12 @@ Selecting this icon will open the corresponding inspector view.
 
 A good example of this type of view is the Club Team Inspector which provides access to such items as Players, Coaches and Physio as seen below for Tottenham.
 
-https://lh3.googleusercontent.com/_CjLl-iz68fw/TVndHaiIDiI/AAAAAAAAAWI/gVVrLAZA74s/s800/mainmenu3.jpg
+
 
 === 3.3 Scout Window===
 The Scout window contains the main scouting window to scout for Players, Staff, and Clubs.  Additionally there are pop up windows for setting the various searching criteria.  The scout tool in FM11SX is as powerful as the editor and as such contains a complex scouting engine.  Here you can scout based on a vast set of criteria including regular player attributes (like Finishing, Marking, Composure, etc.) as well as some of the hidden data (like Current Ability (CA) and Potential Ability (PA), Reputation,  Professionalism, etc.).
 
-http://lh6.ggpht.com/_CjLl-iz68fw/TFmi9M-QmZI/AAAAAAAAAUo/-ABVfK2nvG0/s800/scout1.jpg
+
 
 ==4. Editor==
 FM11SX is a full featured in-game editor.  The concept of "in-game" editing is that you can alter data within your game after it has been started.  By comparison the editor which ships with the FM2011 can ONLY make edits prior to the starting of a new game. Once the game has started (i.e., you begin to play), there is no way to edit the game file with the SI's editor.  FM11SX can open both compressed and uncompressed saved games, however currently FM11SX will ONLY save the game as an uncompressed game file.  If you have any issues with your game file you may wish to uncompress your game prior to using FM11SX (see 8. Helpful Hints).
@@ -139,11 +138,11 @@ With all this power to change your game, however, there are some risks and it is
 === 4.1  Player Edits===
 FM11SX groups Players and Staff within the People category since FM2011 treats both as "people".  To access a Player's data first select the Player within the People category.  You can search for a player using their first name or last name or any combination (including a partial spelling of the name).  
 
-http://lh3.ggpht.com/_CjLl-iz68fw/TFmUZLd9K3I/AAAAAAAAAUQ/tvr2G_6ECoo/s800/playerdetail4.jpg
+
 
 Once you have selected the player you wish, double clicking on the player will bring up the detail views for the player selected.  There are 8 different views available: Person Data, Person Stats, Relationships, Player Data, Player Stats, Preferred Moves, Staff Data, and Contracts.  Within each detailed view are a plethora of attributes and data items which can be viewed and edited.
 
-http://lh5.ggpht.com/_CjLl-iz68fw/TFmUY3u0UgI/AAAAAAAAAUI/NyXigGVU3Zc/s800/playerdetail2.jpg
+
 
 _*Please Note: Some attributes are actually based on a 1-100 scale although when you play the game you only see them as 1-20.  Most of the Player attributes are good examples.  Those which differ are presented in the editor both as the true attribute based on a 1-100 scale (the one you would edit) and as the 1-20 scaled (shown next to an edit box). *_
 
@@ -153,14 +152,14 @@ Staff editing is nearly identical to Player editing.  Keep in mind both are trea
 
 The detail views of Staff people differ a bit from Players.  For Staff there are 7 different sub views (Person Data, Person Stats, Relationships, Non-Player Data, Non-Player Stats, Staff Data, and Contracts).
 
-http://lh6.ggpht.com/_CjLl-iz68fw/TFmX02uRX5I/AAAAAAAAAUY/6V5sYw59JZc/s800/staffdetail1.jpg
+
 
 _*Please Note: Some attributes are actually based on a 1-100 scale although when you play the game you only see them as 1-20.  Most of the Player attributes are good examples.  Those which differ are presented in the editor both as the true attribute based on a 1-100 scale (the one you would edit) and as the 1-20 scaled (shown next to an edit box). *_
 
 === 4.3  Club Edits===
 Access a Club's data by selecting it in the Club category.  You can search for a club using _*the club name only*_ not nicknames (example, "Manchester" not "Red Devils").  You can including a partial spelling of the name.  The Club detail views show the extensive data that can be edited.  They are grouped into 13 sub views (General, Alternate Kits, Staff, Coefficients, Finances, IDPCs, Regional Division, Relationships, Scouting Knowledges, Sponsors, Tactics, Teams, and Training).
 
-http://lh4.ggpht.com/_CjLl-iz68fw/TFmda6xjbvI/AAAAAAAAAUg/lhvDmIPjHDc/s800/clubdetail1.jpg
+
 
 
 
@@ -199,20 +198,8 @@ http://lh3.ggpht.com/_CjLl-iz68fw/S0-380JsmEI/AAAAAAAAARg/8c4NzwOla4Y/s800/eye%2
 
 
 ==9. Credits==
-First and foremost littleblue.  This project which began in the FM2005 timeframe has been her baby.  And yes, I did say "her".  As the original FM09SX had as its famous banner "I just can't believe a woman made it".
+First and foremost littleblue.  This project which began in the FM2005 timeframe has been her baby.  And yes, I did say "her".  As the original FM09SX had as its famous banner "I just can't believe a woman made it".  And, of course, that's why it's so good.
 
 Various others have generously contributed code snipets, beta testing, documentation (sorry had to give a plug for my own contributions), etc.  And this project, in a sense, is *_by_* folks playing Football Manager on the Mac and *_for_* folks playing FM2011 on a Mac.  Being a pure Mac user for many years now it was great to see a few posts on the forums like these:
-
-"I must admit, I'm a little jealous of those with a mac that can use this editor. It looks absolutely stunning."
-
-"Does this work on Windows? And where can I get it from?" 
-
-Or this exchange:
-
-"Is there anyone here that can tell me if there is a cross over or emulation programmes that make it possible using this on Vista or windows 7?"
-
-*_reply_* "There's tons of editing tools available for the PC."
-
-"I know, but this tool is having options they don't and also all the PC tools are real-time, which are giving a higher risk of errors."
 
 I would like to add that the work littleblue has put into this project has been huge (keep in mind this isn't her real job) so if you like the application and find it useful please note there is a means to donate.
