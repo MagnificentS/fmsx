@@ -7,6 +7,7 @@
 //
 
 #import "SXFGameDB.h"
+#import "SXGraphicsController.h"
 #import "Nation.h"
 #import "Team.h"
 #import "Database.h"
@@ -162,6 +163,18 @@ nonEUTreatedNations, unknownShort1, unknownShort2, gainNationalityType, unknownD
 	return [[[[NSApp delegate] graphics] nationFlags] objectForKey:[NSNumber numberWithInt:UID]];
 }
 
+- (NSImage *)logo
+{
+	if ([[[[NSApp delegate] graphics] nationLogos] objectForKey:[NSNumber numberWithInt:UID]]!=nil) 
+	{
+		NSImage *logo = [[NSImage alloc] initWithContentsOfFile:[[[[NSApp delegate] graphics] nationLogos] objectForKey:[NSNumber numberWithInt:UID]]];
+		return logo;
+	}
+	else { return [teamContainer defaultLogo]; }
+	
+	return nil;
+}
+
 - (NSString *)logoPath
 {
 	return [[[[NSApp delegate] graphics] nationLogos] objectForKey:[NSNumber numberWithInt:UID]];
@@ -171,5 +184,18 @@ nonEUTreatedNations, unknownShort1, unknownShort2, gainNationalityType, unknownD
 {
 	return [[[[NSApp delegate] graphics] nationBGLogos] objectForKey:[NSNumber numberWithInt:UID]];
 }
+
+- (NSImage *)bgLogo
+{
+	if ([[[[NSApp delegate] graphics] nationBGLogos] objectForKey:[NSNumber numberWithInt:UID]]!=nil) 
+	{
+		NSImage *logo = [[NSImage alloc] initWithContentsOfFile:[[[[NSApp delegate] graphics] nationBGLogos] objectForKey:[NSNumber numberWithInt:UID]]];
+		return logo;
+	}
+	else { return [teamContainer defaultTitleBG]; }
+	
+	return nil;
+}
+
 
 @end

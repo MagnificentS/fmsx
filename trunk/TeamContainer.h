@@ -36,6 +36,7 @@ preferredFormation2, defensiveFormation, attackingFormation;
 
 - (NSArray *)coachObjects;
 - (NSArray *)physioObjects;
+- (NSImage *)defaultLogo;
 - (NSImage *)defaultTitleBG;
 - (NSColor *)bgColour;
 - (NSColor *)textColour;

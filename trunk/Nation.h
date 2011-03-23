@@ -130,7 +130,9 @@ continentID, regionID, capitalID, rowID, UID, length, width, area, population;
 - (short)reputation;
 
 - (NSString *)flagPath;
+- (NSImage *)logo;
 - (NSString *)logoPath;
+- (NSImage *)bgLogo;
 - (NSString *)bgLogoPath;
 
 @end

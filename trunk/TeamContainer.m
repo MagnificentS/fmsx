@@ -92,7 +92,8 @@ attackingFormation, bTeams, unknowns2, transferInfos, physios, coaches;
 	return array;
 }
 
-- (NSImage *)defaultLogo {
+- (NSImage *)defaultLogo 
+{
 	if ([colours count]>0) {
 		int main = -1;
 		int text = -1;
