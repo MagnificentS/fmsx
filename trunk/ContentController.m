@@ -257,7 +257,7 @@
 
 - (IBAction)selectIDLookupView:(id)sender
 {
-
+	[self replacePlaceholder:placeholderView withView:IDLookupView];
 }
 
 - (void)replacePlaceholder:(NSView *)placeholder withView:(NSView *)view
