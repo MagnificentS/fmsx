@@ -44,4 +44,6 @@ unknownShort3, unknownShort4;
 *unknownData7, *unknownData8, *unknownData9, *unknownData10, *unknownData11, *unknownData12, 
 *unknownData13, *unknownData14, *unknownData15, *unknownData16, *unknownData17, *unknownData18, *unknownData19;
 
+- (NSArray *)twitterUpdateTypeStrings;
+
 @end

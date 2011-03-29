@@ -86,7 +86,8 @@
 	IBOutlet BWSheetController *socksPicker;	
 	
 	IBOutlet NSTableView	*peopleTable, *peopleSectionsTable;
-	IBOutlet NSView			*personMainViewContainer, *personEntityView, *personGeneralView, *personSectionView;
+	IBOutlet NSView			*personMainViewContainer, *personEntityView, *personGeneralView, *personSectionView,
+	*personActualPersonView, *personSpokespersonView, *personHumanView, *personRetiredPersonView;
 	
 	IBOutlet NSTableView	*stadiumChangesTable;
 	IBOutlet NSView			*stadiumChangeMainViewContainer, *stadiumChangeEntityView;
@@ -122,6 +123,7 @@
 *nationShortlistsView, *nationSpokenLanguagesView, *nationTransferPreferencesView, *nationTreatedAsEUView,
 *nationTreatedAsNonForeignView, *nationRankingMatchesView, *nationFutureRegenView, *nationTacticsView,
 *nationStaffView, *nationRelationshipsView, *nationAlternativeStadiumsView, *nationKitsView,
-*personMainViewContainer, *personEntityView, *personGeneralView, *personSectionView;
+*personMainViewContainer, *personEntityView, *personGeneralView, *personSectionView, *personActualPersonView,
+*personSpokespersonView, *personHumanView, *personRetiredPersonView;
 
 @end

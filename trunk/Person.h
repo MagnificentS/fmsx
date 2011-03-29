@@ -24,6 +24,8 @@
 #import "NonPlayerStats.h"
 #import "Club.h"
 
+#import "SXEditorEntityViewController.h"
+
 @interface Person : NSObject {
 	char databaseClass, unknownChar1;
 	unsigned char flags;
@@ -94,5 +96,6 @@
 - (void)transfer:(Club *)newClub;
 
 - (NSImage *)photo;
+- (NSMutableArray *)sections:(SXEditorEntityViewController *)entityController;
 
 @end

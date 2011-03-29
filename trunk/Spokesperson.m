@@ -10,6 +10,6 @@
 
 @implementation Spokesperson
 
-@synthesize unknownInt1;
+@synthesize associatedClubID;
 
 @end

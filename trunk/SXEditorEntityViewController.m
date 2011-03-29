@@ -41,7 +41,8 @@ nationAgentsView, nationCoefficientsView, nationRankingPointsView, nationHumanPl
 nationShortlistsView, nationTransferPreferencesView, nationSpokenLanguagesView, nationTreatedAsEUView,
 nationTreatedAsNonForeignView, nationRankingMatchesView, nationFutureRegenView, nationTacticsView,
 nationStaffView, nationRelationshipsView, nationAlternativeStadiumsView, nationKitsView,
-personMainViewContainer, personEntityView, personGeneralView, personSectionView;
+personMainViewContainer, personEntityView, personGeneralView, personSectionView, personActualPersonView,
+personSpokespersonView, personHumanView, personRetiredPersonView;
 
 - (void)awakeFromNib
 {
@@ -57,6 +58,7 @@ personMainViewContainer, personEntityView, personGeneralView, personSectionView;
 	if (aTableView==awardSectionsTable) { return 2; }
 	else if (aTableView==mediaSectionsTable) { return 2; }
 	else if (aTableView==nationSectionsTable) { return [NATION_SECTIONS count]; }
+	else if (aTableView==peopleSectionsTable) { return [[[[[NSApp delegate] editorController] selectedPerson] sections:self] count]; }
 	
 	// entity tables
 	if ([[[[NSApp delegate] editorController] searchResults] count]>0) { return [[[[NSApp delegate] editorController] searchResults] count]; }
@@ -205,6 +207,7 @@ personMainViewContainer, personEntityView, personGeneralView, personSectionView;
 		
 		if ([columnName isEqualToString:@"uid"])			{ return [NSNumber numberWithInt:[object UID]]; }
 		else if ([columnName isEqualToString:@"name"])		{ return [object name]; }
+		else if ([columnName isEqualToString:@"type"])		{ return [object typeString]; }
 	}
 	else if (aTableView==stadiumsTable) {
 		Stadium *object;
@@ -245,6 +248,9 @@ personMainViewContainer, personEntityView, personGeneralView, personSectionView;
 	}
 	else if (aTableView==nationSectionsTable) { 
 		return [[NATION_SECTIONS objectAtIndex:rowIndex] objectForKey:@"title"];
+	}
+	else if (aTableView==peopleSectionsTable) { 
+		return [[[[[[NSApp delegate] editorController] selectedPerson] sections:self] objectAtIndex:rowIndex] objectForKey:@"title"];
 	}
 	
 	return @"--Invalid--";
@@ -519,6 +525,11 @@ personMainViewContainer, personEntityView, personGeneralView, personSectionView;
 		
 		[[[NSApp delegate] contentController] replacePlaceholder:nationSectionView withView:[[NATION_SECTIONS objectAtIndex:[nationSectionsTable selectedRow]] objectForKey:@"view"]];
 	}
+	else if ([aNotification object]==peopleSectionsTable) {
+		if ([peopleSectionsTable selectedRow]<0 || [peopleSectionsTable selectedRow] >= [[[[[NSApp delegate] editorController] selectedPerson] sections:self] count]) { return; }
+		
+		[[[NSApp delegate] contentController] replacePlaceholder:personSectionView withView:[[[[[[NSApp delegate] editorController] selectedPerson] sections:self] objectAtIndex:[peopleSectionsTable selectedRow]] objectForKey:@"view"]];
+	}
 }
 
 - (void)selectFromTable
@@ -649,7 +660,7 @@ personMainViewContainer, personEntityView, personGeneralView, personSectionView;
 	}
 	else if (currentSection==EDS_PEOPLE) { 
 		// make the default section the general view
-		[[[NSApp delegate] contentController] replacePlaceholder:personSectionView withView:personGeneralView];
+		[[[NSApp delegate] contentController] replacePlaceholder:personSectionView withView:[[[[[[NSApp delegate] editorController] selectedPerson] sections:self] objectAtIndex:0] objectForKey:@"view"]];
 	}
 	
 	[self reloadEntityTable:[[[NSApp delegate] editorController] currentSection]];

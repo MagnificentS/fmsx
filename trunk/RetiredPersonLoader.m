@@ -28,7 +28,6 @@
 	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 	[object setUnknownChar2:cbuffer];
 	
-	
 	*byteOffset = offset;
 	
 	return object;

@@ -10,9 +10,9 @@
 
 
 @interface Spokesperson : NSObject {
-	int unknownInt1;
+	int associatedClubID;
 }
 
-@property(assign,readwrite) int unknownInt1;
+@property(assign,readwrite) int associatedClubID;
 
 @end

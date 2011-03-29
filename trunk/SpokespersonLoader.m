@@ -18,9 +18,8 @@
 	
 	Spokesperson *object = [[Spokesperson alloc] init];
 	
-	// ???
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
-	[object setUnknownInt1:ibuffer];
+	[object setAssociatedClubID:ibuffer];
 	
 	*byteOffset = offset;
 	

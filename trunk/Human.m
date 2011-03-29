@@ -19,4 +19,13 @@ unknownData13, unknownData14, unknownData15, unknownData16, unknownData17, infos
 twitterLogin, twitterPassword, youtubeLogin, youtubePassword, twitterUpdateType, unknownData18,
 unknownData19;
 
+- (NSArray *)twitterUpdateTypeStrings
+{
+	NSArray *strings = [NSArray arrayWithObjects:
+						NSLocalizedString(@"Manual",@"twitter update type"),
+						NSLocalizedString(@"Automatic",@"twitter update type"),
+						nil];
+	return strings;
+}
+
 @end

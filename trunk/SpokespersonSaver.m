@@ -14,7 +14,7 @@
 {
 	int ibuffer;
 	
-	ibuffer = [object unknownInt1];
+	ibuffer = [object associatedClubID];
 	[data appendBytes:&ibuffer length:4];
 }
 

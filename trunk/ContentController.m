@@ -211,6 +211,7 @@
 	[[editorViewController clubPicker] openSheet:self];
 	if ([sender tag]==1)		{ clubPickerSelector = @"clubID"; }
 	else if ([sender tag]==2)	{ clubPickerSelector = @"clubRowID"; }
+	else if ([sender tag]==3)	{ clubPickerSelector = @"associatedClubID"; }
 }	
 
 - (IBAction)setClubPickerObject:(id)object
