@@ -328,6 +328,56 @@ MLSRightsClubID, MLSLastDraftClubID, MLSLastDraftYear, MLSDiscoveryPlayerDate, M
 	else { preferredMoves = (preferredMoves | PPM_RUNS_WITH_BALL_RARELY); }
 }
 
+- (BOOL)playsOneTwos { if (preferredMoves & PPM_PLAYS_ONE_TWOS) { return TRUE; } return FALSE; }
+- (void)setPlaysOneTwos:(BOOL)val {
+	if (preferredMoves & PPM_PLAYS_ONE_TWOS) {
+		if (!val) { preferredMoves = (preferredMoves ^ PPM_PLAYS_ONE_TWOS); }
+	}
+	else { preferredMoves = (preferredMoves | PPM_PLAYS_ONE_TWOS); }
+}
+
+- (BOOL)dictatesTempo { if (preferredMoves & PPM_DICTATES_TEMPO) { return TRUE; } return FALSE; }
+- (void)setDictatesTempo:(BOOL)val {
+	if (preferredMoves & PPM_DICTATES_TEMPO) {
+		if (!val) { preferredMoves = (preferredMoves ^ PPM_DICTATES_TEMPO); }
+	}
+	else { preferredMoves = (preferredMoves | PPM_DICTATES_TEMPO); }
+}
+
+- (BOOL)attemptsOverheadKicks { if (preferredMoves & PPM_ATTEMPTS_OVERHEAD_KICKS) { return TRUE; } return FALSE; }
+- (void)setAttemptsOverheadKicks:(BOOL)val {
+	if (preferredMoves & PPM_ATTEMPTS_OVERHEAD_KICKS) {
+		if (!val) { preferredMoves = (preferredMoves ^ PPM_ATTEMPTS_OVERHEAD_KICKS); }
+	}
+	else { preferredMoves = (preferredMoves | PPM_ATTEMPTS_OVERHEAD_KICKS); }
+}
+
+- (BOOL)knocksBallPastOpponent { if (preferredMoves & PPM_KNOCKS_BALL_PAST_OPPONENT) { return TRUE; } return FALSE; }
+- (void)setKnocksBallPastOpponent:(BOOL)val {
+	if (preferredMoves & PPM_KNOCKS_BALL_PAST_OPPONENT) {
+		if (!val) { preferredMoves = (preferredMoves ^ PPM_KNOCKS_BALL_PAST_OPPONENT); }
+	}
+	else { preferredMoves = (preferredMoves | PPM_KNOCKS_BALL_PAST_OPPONENT); }
+}
+
+- (BOOL)triesLongRangePasses { if (preferredMoves & PPM_TRIES_LONG_RANGE_PASSES) { return TRUE; } return FALSE; }
+- (void)setTriesLongRangePasses:(BOOL)val {
+	if (preferredMoves & PPM_TRIES_LONG_RANGE_PASSES) {
+		if (!val) { preferredMoves = (preferredMoves ^ PPM_TRIES_LONG_RANGE_PASSES); }
+	}
+	else { preferredMoves = (preferredMoves | PPM_TRIES_LONG_RANGE_PASSES); }
+}
+
+- (BOOL)likesToSwitchBallToOtherFlank { if (preferredMoves & PPM_LIKES_TO_SWITCH_BALL_TO_OTHER_FLANK) { return TRUE; } return FALSE; }
+- (void)setLikesToSwitchBallToOtherFlank:(BOOL)val {
+	if (preferredMoves & PPM_LIKES_TO_SWITCH_BALL_TO_OTHER_FLANK) {
+		if (!val) { preferredMoves = (preferredMoves ^ PPM_LIKES_TO_SWITCH_BALL_TO_OTHER_FLANK); }
+	}
+	else { preferredMoves = (preferredMoves | PPM_LIKES_TO_SWITCH_BALL_TO_OTHER_FLANK); }
+}
+
+
+
 - (int)conditionPercent { return (condition / 100); }
 
 - (NSString *)heightString { return [NSString stringWithFormat:@"%d cm",height]; }

@@ -43,7 +43,7 @@ nationTreatedAsNonForeignView, nationRankingMatchesView, nationFutureRegenView, 
 nationStaffView, nationRelationshipsView, nationAlternativeStadiumsView, nationKitsView,
 personMainViewContainer, personEntityView, personGeneralView, personSectionView, personActualPersonView,
 personSpokespersonView, personHumanView, personRetiredPersonView, personAgentView, personJournalistView,
-personOfficialView, personOfficialPastGamesView;
+personOfficialView, personOfficialPastGamesView,personStatsView, personActualStaffView, personPreferredMovesView;
 
 - (void)awakeFromNib
 {

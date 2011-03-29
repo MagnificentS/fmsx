@@ -46,13 +46,16 @@
 #define PPM_ARGUES_WITH_OFFICIALS							0x0000000000020000
 #define PPM_PLAYS_WITH_BACK_TO_GOAL							0x0000000000040000
 #define PPM_COMES_DEEP_TO_GET_BALL							0x0000000000080000
-// #define PPM_PLAYS_ONE_TWOS								0x0000000000100000
+#define PPM_PLAYS_ONE_TWOS									0x0000000000100000
 #define PPM_LIKES_TO_LOB_KEEPER								0x0000000000200000
-// #define PPM_DICTATES_TEMPO								0x0000000000400000
+#define PPM_DICTATES_TEMPO									0x0000000000400000
+#define PPM_ATTEMPTS_OVERHEAD_KICKS							0x0000000000800000
 #define PPM_LOOKS_FOR_PASS_RATHER_THAN_ATTEMPTING_TO_SCORE	0x0000000001000000
 #define PPM_PLAYS_NO_THROUGH_BALLS							0x0000000002000000
 #define PPM_STOPS_PLAY										0x0000000004000000
-// #define PPM_KNOCKS_BALL_PAST_OPPONENT					0x0000000008000000
+#define PPM_KNOCKS_BALL_PAST_OPPONENT						0x0000000008000000
+// #define PPM_UNKNOWN										0x0000000010000000
+// #define PPM_UNKNOWN										0x0000000020000000
 #define PPM_DWELLS_ON_BALL									0x0000000040000000
 #define PPM_ARRIVES_LATE_IN_OPPOSITION_AREA					0x0000000080000000
 #define PPM_TRIES_TO_PLAY_WAY_OUT_OF_TROUBLE				0x0000000100000000
@@ -66,16 +69,27 @@
 #define PPM_HUGS_LINE										0x0000010000000000
 // #define PPM_GETS_CROWD_GOING								0x0000020000000000
 #define PPM_TRIES_FIRST_TIME_SHOTS							0x0000040000000000
-// #define PPM_TRIES_LONG_RANGE_PASSES						0x0000080000000000
+#define PPM_TRIES_LONG_RANGE_PASSES							0x0000080000000000
 // #define PPM_LIKES_BALL_PLAYED_INTO_FEET					0x0000100000000000
 #define PPM_HITS_FREE_KICKS_WITH_POWER						0x0000200000000000
 // #define PPM_LIKES_TO_BEAT_MAN_REPEATEDLY					0x0000400000000000
-// #define PPM_LIKES_TO_SWITCH_BALL_TO_OTHER_FLANK			0x0000800000000000
-
-
+#define PPM_LIKES_TO_SWITCH_BALL_TO_OTHER_FLANK				0x0000800000000000
+// #define PPM_UNKNOWN										0x0001000000000000
+// #define PPM_UNKNOWN										0x0002000000000000
 #define PPM_POSSESSES_LONG_FLAT_THROW						0x0004000000000000
 #define PPM_RUNS_WITH_BALL_OFTEN							0x0008000000000000
 #define PPM_RUNS_WITH_BALL_RARELY							0x0010000000000000
+// #define PPM_UNKNOWN										0x0020000000000000
+// #define PPM_UNKNOWN										0x0040000000000000
+// #define PPM_UNKNOWN										0x0080000000000000
+// #define PPM_UNKNOWN										0x0100000000000000
+// #define PPM_UNKNOWN										0x0200000000000000
+// #define PPM_UNKNOWN										0x0400000000000000
+// #define PPM_UNKNOWN										0x0800000000000000
+// #define PPM_UNKNOWN										0x1000000000000000
+// #define PPM_UNKNOWN										0x2000000000000000
+// #define PPM_UNKNOWN										0x4000000000000000
+// #define PPM_UNKNOWN										0x8000000000000000
 
 
 
@@ -95,7 +109,8 @@
 	comesDeepToGetBall, likesToLobKeeper, looksForPassRatherThanAttemptingToScore, playsNoThroughBalls, stopsPlay, dwellsOnBall, 
 	arrivesLateInOppositionArea, triesToPlayWayOutOfTrouble, staysBackAtAllTimes, avoidsUsingWeakerFoot, triesLongRangeFreeKicks,
 	divesIntoTackles, doesNotDiveIntoTackles, cutsInside, hugsLine, triesFirstTimeShots, hitsFreeKicksWithPower, possessesLongFlatThrow,
-	runsWithBallOften, runsWithBallRarely, MLSGuaranteedDealPlayer, MLSGuaranteedDealClub;
+	runsWithBallOften, runsWithBallRarely, MLSGuaranteedDealPlayer, MLSGuaranteedDealClub,
+	playsOneTwos, dictatesTempo, attemptsOverheadKicks, knocksBallPastOpponent, triesLongRangePasses, likesToSwitchBallToOtherFlank;
 	short homeReputation, currentReputation, worldReputation, currentAbility, potentialAbility, careerLeagueAppearances,
 	fitness, jadedness, condition, weight, height, clubLeagueGoals, clubGoals, clubAppearances, MLSLastDraftYear,
 	leagueGoals, goals, appearances, clubLeagueAppearances, leagueAppearances, daysSinceLastMatch;
@@ -125,7 +140,7 @@ placesShots, curlsBall, likesToRoundKeeper, likesToTryToBreakOffsideTrap, marksO
 comesDeepToGetBall, likesToLobKeeper, looksForPassRatherThanAttemptingToScore, playsNoThroughBalls, stopsPlay, dwellsOnBall, 
 arrivesLateInOppositionArea, triesToPlayWayOutOfTrouble, staysBackAtAllTimes, avoidsUsingWeakerFoot, triesLongRangeFreeKicks,
 divesIntoTackles, doesNotDiveIntoTackles, cutsInside, hugsLine, triesFirstTimeShots, hitsFreeKicksWithPower, possessesLongFlatThrow,
-runsWithBallOften, runsWithBallRarely;
+runsWithBallOften, runsWithBallRarely, playsOneTwos, dictatesTempo, attemptsOverheadKicks, knocksBallPastOpponent, triesLongRangePasses, likesToSwitchBallToOtherFlank;
 @property(assign,readwrite) float unknownFloat1;
 @property(assign,readwrite) short homeReputation, currentReputation, worldReputation, currentAbility, potentialAbility,
 fitness, jadedness, condition, weight, height, clubLeagueGoals, clubGoals, clubAppearances, careerLeagueAppearances,
