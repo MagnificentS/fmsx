@@ -14,6 +14,7 @@
 #import "BookmarkFolderLoader.h"
 #import "NewsFilterListLoader.h"
 #import "SupportFunctions.h"
+#import "SXFGameDB.h"
 
 @implementation HumanLoader
 
@@ -187,7 +188,7 @@
 	NSLog(@"after 3 arrays at %d",offset);
 	
 	// ???
-	if ([[NSApp delegate] valueForKeyPath:@"gameDB.version"]<FM2011_11_2) {
+	if ([[[NSApp delegate] gameDB] version] < FM2011_11_2) {
 		[object setUnknownData16:[data subdataWithRange:NSMakeRange(offset, 21)]]; 
 		offset += 21;
 	}

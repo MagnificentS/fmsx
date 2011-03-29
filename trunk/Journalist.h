@@ -35,4 +35,17 @@
 @property(assign,readwrite) char curiosity, honesty, styleOfWriting;
 @property(assign,readwrite) int currentEmployerID, favouriteClubID;
 
+- (BOOL)characterExperienced;
+- (void)setCharacterExperienced:(BOOL)val;
+- (BOOL)characterCunning;
+- (void)setCharacterCunning:(BOOL)val;
+- (BOOL)characterNice;
+- (void)setCharacterNice:(BOOL)val;
+- (BOOL)characterDishonest;
+- (void)setCharacterDishonest:(BOOL)val;
+- (BOOL)characterIllTempered;
+- (void)setCharacterIllTempered:(BOOL)val;
+- (BOOL)characterDull;
+- (void)setCharacterDull:(BOOL)val;
+
 @end

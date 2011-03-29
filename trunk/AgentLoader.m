@@ -37,7 +37,6 @@
 	
 	[object setUnknownDate1:[FMDateLoader readFromData:data atOffset:&offset]];
 	
-	
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 	[object setBasedNationID:ibuffer];
 	

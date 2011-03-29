@@ -11,6 +11,7 @@
 #import "ContractBonusLoader.h"
 #import "FMDateLoader.h"
 #import "GameVersions.h"
+#import "SXFGameDB.h"
 
 @implementation ContractLoader
 
@@ -114,7 +115,7 @@
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		[object setUnknownInt1:ibuffer];
 		
-		if ([[NSApp delegate] valueForKeyPath:@"gameDB.version"] < FM2011_11_2) {
+		if ([[[NSApp delegate] gameDB] version] < FM2011_11_2) {
 			[object setUnknownData3:[data subdataWithRange:NSMakeRange(offset, (ibuffer*18))]]; 
 			offset += (ibuffer*18);
 		}

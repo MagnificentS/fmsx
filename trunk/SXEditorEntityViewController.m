@@ -42,7 +42,8 @@ nationShortlistsView, nationTransferPreferencesView, nationSpokenLanguagesView, 
 nationTreatedAsNonForeignView, nationRankingMatchesView, nationFutureRegenView, nationTacticsView,
 nationStaffView, nationRelationshipsView, nationAlternativeStadiumsView, nationKitsView,
 personMainViewContainer, personEntityView, personGeneralView, personSectionView, personActualPersonView,
-personSpokespersonView, personHumanView, personRetiredPersonView;
+personSpokespersonView, personHumanView, personRetiredPersonView, personAgentView, personJournalistView,
+personOfficialView, personOfficialPastGamesView;
 
 - (void)awakeFromNib
 {

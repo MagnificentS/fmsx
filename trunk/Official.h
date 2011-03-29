@@ -26,4 +26,7 @@ runningLine, timekeeping;
 @property(readwrite,assign) FMDate *unknownDate1;
 @property(readwrite,copy) NSMutableArray *competitionsAsReferee, *competitionsAsAssistant, *pastGames;
 
+- (void)setNewRefereeCompetitionID:(int)val;
+- (void)setNewAssistantCompetitionID:(int)val;
+
 @end

@@ -10,6 +10,7 @@
 #import "NewsFilterListLoader.h"
 #import "NewsFilterLoader.h"
 #import "SupportFunctions.h"
+#import "SXFGameDB.h"
 
 @implementation NewsFilterListLoader
 
@@ -22,7 +23,7 @@
 	
 	NewsFilterList *object = [[NewsFilterList alloc] init];
 	
-	if ([[NSApp delegate] valueForKeyPath:@"gameDB.version"] >= FM2010_10_3) {
+	if ([[[NSApp delegate] gameDB] version] >= FM2010_10_3) {
 		// sub type?
 		[object setUnknownData1:[data subdataWithRange:NSMakeRange(offset, 4)]]; 
 		offset += 4;

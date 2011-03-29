@@ -632,8 +632,6 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 	if (spokespersonData) {
 		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Spokesperson Data",@"title",[entityController personSpokespersonView],@"view",nil]];
 	}
-	
-	/*
 	if (agentData) {
 		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Agent Data",@"title",[entityController personAgentView],@"view",nil]];
 	}
@@ -642,9 +640,10 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 	}
 	if (officialData) {
 		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Official Data",@"title",[entityController personOfficialView],@"view",nil]];
+		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Official Past Games",@"title",[entityController personOfficialPastGamesView],@"view",nil]];
 	}
 	
-	
+	/*
 	if (playerData) {
 		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Player Data",@"title",[entityController personPlayerView],@"view",nil]]; 
 		if ([playerData playerStatsID]>-1) {

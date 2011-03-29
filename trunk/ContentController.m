@@ -113,6 +113,8 @@
 	else if ([sender tag]==7)	{ competitionPickerSelector = @"futureContinentalCupID"; }
 	else if ([sender tag]==8)	{ competitionPickerSelector = @"firstMatchCompetitionID"; }
 	else if ([sender tag]==9)	{ competitionPickerSelector = @"newCompetitionID"; }
+	else if ([sender tag]==10)	{ competitionPickerSelector = @"newRefereeCompetitionID"; }
+	else if ([sender tag]==11)	{ competitionPickerSelector = @"newAssistantCompetitionID"; }
 }	
 
 - (IBAction)setCompetitionPickerObject:(id)object
@@ -187,7 +189,7 @@
 	mediaPickerSelector = @"";
 	[[editorViewController mediaPicker] openSheet:self];
 	if ([sender tag]==1)		{ mediaPickerSelector = @"newLinkedMediaID"; }
-	else if ([sender tag]==2)	{ mediaPickerSelector = @"media"; }
+	else if ([sender tag]==2)	{ mediaPickerSelector = @"currentEmployerID"; }
 }	
 
 - (IBAction)setMediaPickerObject:(id)object
@@ -212,6 +214,7 @@
 	if ([sender tag]==1)		{ clubPickerSelector = @"clubID"; }
 	else if ([sender tag]==2)	{ clubPickerSelector = @"clubRowID"; }
 	else if ([sender tag]==3)	{ clubPickerSelector = @"associatedClubID"; }
+	else if ([sender tag]==4)	{ clubPickerSelector = @"favouriteClubID"; }
 }	
 
 - (IBAction)setClubPickerObject:(id)object
