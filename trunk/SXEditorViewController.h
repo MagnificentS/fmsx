@@ -18,7 +18,6 @@
 	IBOutlet BWSheetController *nationPicker;
 	IBOutlet BWSheetController *peoplePicker;
 	IBOutlet BWSheetController *stadiumPicker;
-	
 }
 
 - (void)selectSection:(id)sender;

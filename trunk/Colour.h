@@ -105,6 +105,8 @@
 #define SHS_STRIPES					8
 #define SHS_HOOPS					9
 
+#define SHS_MAX						9
+
 @interface Colour : NSObject {
 	BOOL outfieldKit;
 	char kitNumber, type, alternativeKitNumber;
@@ -115,7 +117,7 @@
 	unsigned short foreground, background, trim, number, numberTrim;
 	
 	NSColor *foregroundColour, *backgroundColour, *trimColour;
-	NSImage *image1;
+	NSImage *image1, *image2;
 }
 
 @property (assign,readwrite) char kitStyle;
@@ -123,7 +125,7 @@
 number, numberTrim;
 @property (retain,readwrite) NSColor *foregroundColour, *backgroundColour, *trimColour,
 *numberColour, *numberTrimColour;
-@property(assign,readwrite) NSImage *image1;
+@property(assign,readwrite) NSImage *image1, *image2;
 
 @property(assign,readwrite) BOOL outfieldKit;
 @property(assign,readwrite) char kitNumber, type, alternativeKitNumber;
@@ -141,14 +143,31 @@ number, numberTrim;
 - (NSImage *)image1;
 - (NSImage *)image2;
 
-- (NSArray *)kitStyleStrings;
+- (NSArray *)shirtStyleStrings;
+- (NSArray *)shortsStyleStrings;
+- (NSArray *)socksStyleStrings;
 
 - (NSArray *)kitNumberStrings;
 - (NSArray *)typeStrings;
+
+- (NSString *)kitNumberString;
+- (NSString *)typeString;
 
 - (void)redrawImages;
 - (NSBitmapImageRep *)transformImage:(NSBitmapImageRep *)bitmapImageRep type:(int)colourType;
 - (NSImage *)bgImageWithDefault:(BOOL)isDefault customStyle:(int)customStyle;
 - (NSImage *)logoImageWithDefault:(BOOL)isDefault customStyle:(int)customStyle;
+
+- (NSImage *)shortsImage:(NSNumber *)val;
+
+- (void)setKitStyleFromButton:(NSNumber *)val;
+
+- (BOOL)isShirt;
+- (BOOL)isShorts;
+- (BOOL)isSocks;
+- (BOOL)showsTrim;
+- (BOOL)showsNumber;
+- (BOOL)showsNumberTrim;
+
 
 @end

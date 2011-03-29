@@ -40,11 +40,14 @@ nationMainViewContainer, nationEntityView, nationGeneralView, nationSectionView,
 nationAgentsView, nationCoefficientsView, nationRankingPointsView, nationHumanPlayerPoolView,
 nationShortlistsView, nationTransferPreferencesView, nationSpokenLanguagesView, nationTreatedAsEUView,
 nationTreatedAsNonForeignView, nationRankingMatchesView, nationFutureRegenView, nationTacticsView,
-nationStaffView, nationRelationshipsView, nationAlternativeStadiumsView;
+nationStaffView, nationRelationshipsView, nationAlternativeStadiumsView, nationKitsView;
 
 - (void)awakeFromNib
 {
 	[mediaNewClubPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
+	[shirtPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
+	[shortsPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
+	[socksPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView

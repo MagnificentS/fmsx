@@ -20,6 +20,7 @@
 [NSDictionary dictionaryWithObjectsAndKeys:@"FIFA Ranking Points",@"title",nationRankingPointsView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Future Regens",@"title",nationFutureRegenView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Human Player Pool",@"title",nationHumanPlayerPoolView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Kits & Colours",@"title",nationKitsView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Nations Treated As EU",@"title",nationTreatedAsEUView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Nations Treated As Non-Foreign",@"title",nationTreatedAsNonForeignView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Relationships",@"title",nationRelationshipsView,@"view",nil],\
@@ -76,8 +77,13 @@
 	*nationBannedPlayersView, *nationAgentsView, *nationCoefficientsView, *nationHumanPlayerPoolView,
 	*nationRankingPointsView, *nationShortlistsView, *nationTransferPreferencesView, *nationSpokenLanguagesView,
 	*nationTreatedAsEUView, *nationTreatedAsNonForeignView, *nationRankingMatchesView, *nationFutureRegenView,
-	*nationTacticsView, *nationStaffView, *nationRelationshipsView, *nationAlternativeStadiumsView;
+	*nationTacticsView, *nationStaffView, *nationRelationshipsView, *nationAlternativeStadiumsView,
+	*nationKitsView;
 	NSMutableArray *nationSections;
+	
+	IBOutlet BWSheetController *shirtPicker;
+	IBOutlet BWSheetController *shortsPicker;
+	IBOutlet BWSheetController *socksPicker;	
 	
 	IBOutlet NSTableView	*stadiumChangesTable;
 	IBOutlet NSView			*stadiumChangeMainViewContainer, *stadiumChangeEntityView;
@@ -112,6 +118,6 @@
 *nationAgentsView, *nationCoefficientsView, *nationRankingPointsView, *nationHumanPlayerPoolView,
 *nationShortlistsView, *nationSpokenLanguagesView, *nationTransferPreferencesView, *nationTreatedAsEUView,
 *nationTreatedAsNonForeignView, *nationRankingMatchesView, *nationFutureRegenView, *nationTacticsView,
-*nationStaffView, *nationRelationshipsView, *nationAlternativeStadiumsView;
+*nationStaffView, *nationRelationshipsView, *nationAlternativeStadiumsView, *nationKitsView;
 
 @end

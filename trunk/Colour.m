@@ -44,21 +44,21 @@ kitNumber, type, alternativeKitNumber, year, competitionUID, outfieldKit;
 }
 
 - (NSColor *)backgroundColour					{ return [[Colour getColor:background] retain]; }
-- (void)setBackgroundColour:(NSColor *)color	{ background = [Colour setColor:color]; }
+- (void)setBackgroundColour:(NSColor *)color	{ background = [Colour setColor:color]; [self redrawImages]; }
 
 - (NSColor *)foregroundColour					{ return [[Colour getColor:foreground] retain]; }
-- (void)setForegroundColour:(NSColor *)color	{ foreground = [Colour setColor:color]; }
+- (void)setForegroundColour:(NSColor *)color	{ foreground = [Colour setColor:color]; [self redrawImages]; }
 
 - (NSColor *)trimColour							{ return [[Colour getColor:trim] retain]; }
-- (void)setTrimColour:(NSColor *)color			{ trim = [Colour setColor:color]; }
+- (void)setTrimColour:(NSColor *)color			{ trim = [Colour setColor:color]; [self redrawImages]; }
 
 - (NSColor *)numberColour						{ return [[Colour getColor:number] retain]; }
-- (void)setNumberColour:(NSColor *)color		{ number = [Colour setColor:color]; }
+- (void)setNumberColour:(NSColor *)color		{ number = [Colour setColor:color]; [self redrawImages]; }
 
 - (NSColor *)numberTrimColour					{ return [[Colour getColor:numberTrim] retain]; }
-- (void)setNumberTrimColour:(NSColor *)color	{ numberTrim = [Colour setColor:color]; }
+- (void)setNumberTrimColour:(NSColor *)color	{ numberTrim = [Colour setColor:color]; [self redrawImages]; }
 
-- (NSArray *)kitStyleStrings
+- (NSArray *)shirtStyleStrings
 {
 	NSArray *strings = [NSArray arrayWithObjects:
 						NSLocalizedString(@"Invalid", @"general 'invalid' option"),
@@ -118,6 +118,44 @@ kitNumber, type, alternativeKitNumber, year, competitionUID, outfieldKit;
 						nil];
 	return strings;
 }
+- (NSArray *)shortsStyleStrings
+{
+	NSArray *strings = [NSArray arrayWithObjects:
+						NSLocalizedString(@"Invalid", @"general 'invalid' option"),
+						NSLocalizedString(@"Plain", @"kit style"),
+						NSLocalizedString(@"Side Stripe", @"kit style"),
+						NSLocalizedString(@"Two Side Stripes", @"kit style"),
+						NSLocalizedString(@"Three Side Stripes", @"kit style"),
+						NSLocalizedString(@"Halves (Left-Right)", @"kit style"),
+						NSLocalizedString(@"Halves (Top-Bottom)", @"kit style"),
+						NSLocalizedString(@"Quarters", @"kit style"),
+						NSLocalizedString(@"Stripes", @"kit style"),
+						NSLocalizedString(@"Hoops", @"kit style"),
+						nil];
+	return strings;
+}
+- (NSArray *)socksStyleStrings
+{
+	NSArray *strings = [NSArray arrayWithObjects:
+						NSLocalizedString(@"Invalid", @"general 'invalid' option"),
+						NSLocalizedString(@"Plain", @"kit style"),
+						NSLocalizedString(@"Halves (Top-Bottom)", @"kit style"),
+						NSLocalizedString(@"Halves (Back-Front)", @"kit style"),
+						NSLocalizedString(@"Quarters", @"kit style"),
+						NSLocalizedString(@"Top Different Colour", @"kit style"),
+						NSLocalizedString(@"Hoop (Middle)", @"kit style"),
+						NSLocalizedString(@"Hoop (Top)", @"kit style"),
+						NSLocalizedString(@"Two Top Hoops", @"kit style"),
+						NSLocalizedString(@"Three Top Hoops", @"kit style"),
+						NSLocalizedString(@"Hoops", @"kit style"),
+						NSLocalizedString(@"Middle Thin Hoop", @"kit style"),
+						NSLocalizedString(@"Middle Hoops Different", @"kit style"),
+						NSLocalizedString(@"Top Two Hoops Different", @"kit style"),
+						NSLocalizedString(@"Stripes", @"kit style"),
+						NSLocalizedString(@"Checks", @"kit style"),
+						nil];
+	return strings;
+}
 
 - (NSArray *)kitNumberStrings
 {
@@ -127,6 +165,15 @@ kitNumber, type, alternativeKitNumber, year, competitionUID, outfieldKit;
 						NSLocalizedString(@"Third", @"kit type"),
 						nil];
 	return strings;
+}
+
+- (NSString *)kitNumberString
+{
+	if (kitNumber==0) { return NSLocalizedString(@"Home", @"kit type"); }
+	else if (kitNumber==1) { return NSLocalizedString(@"Away", @"kit type"); }
+	else if (kitNumber==2) { return NSLocalizedString(@"Third", @"kit type"); }
+	
+	return @"---";
 }
 
 - (NSArray *)typeStrings
@@ -140,6 +187,37 @@ kitNumber, type, alternativeKitNumber, year, competitionUID, outfieldKit;
 						NSLocalizedString(@"Socks", @"kit type"),
 						nil];
 	return strings;
+}
+
+- (NSString *)typeString
+{
+	if (type==0) { return NSLocalizedString(@"Invalid", @"general 'invalid' option"); }
+	else if (type==1) { return NSLocalizedString(@"Shirt", @"kit type"); }
+	else if (type==2) { return NSLocalizedString(@"Icon", @"kit type"); }
+	else if (type==3) { return NSLocalizedString(@"Text", @"kit type"); }
+	else if (type==4) { return NSLocalizedString(@"Shorts", @"kit type"); }
+	else if (type==5) { return NSLocalizedString(@"Socks", @"kit type"); }
+	
+	return @"---";
+}
+
+- (BOOL)isShirt { if (type==1) { return TRUE; } return FALSE; }
+- (BOOL)isShorts { if (type==4) { return TRUE; } return FALSE; }
+- (BOOL)isSocks { if (type==5) { return TRUE; } return FALSE; }
+- (BOOL)showsTrim
+{
+	if (type==3) { return NO; }
+	return YES;
+}
+- (BOOL)showsNumber
+{
+	if (type==1 || type==2) { return YES; }
+	return NO;
+}
+- (BOOL)showsNumberTrim
+{
+	if (type==1) { return YES; }
+	return NO;
 }
 
 - (NSImage *)image1
@@ -171,14 +249,14 @@ kitNumber, type, alternativeKitNumber, year, competitionUID, outfieldKit;
 		[filter1 setDefaults];
 		[filter1 setValue:inputImage forKey:@"inputBackgroundImage"];
 		[filter1 setValue:effectImage forKey:@"inputImage"];
-		
+		/*
 		CIFilter *filter3 = [CIFilter filterWithName:@"CISourceOverCompositing"];
 		[filter3 setDefaults];
 		[filter3 setValue:[filter1 valueForKey:@"outputImage"] forKey:@"inputBackgroundImage"];
 		[filter3 setValue:effectImage forKey:@"inputImage"];
-		
-		finalImage = [[NSImage alloc] initWithSize:NSMakeSize([[filter3 valueForKey:@"outputImage"] extent].size.width,[[filter3 valueForKey:@"outputImage"] extent].size.height)];
-		NSCIImageRep *rep = [NSCIImageRep imageRepWithCIImage:[filter3 valueForKey:@"outputImage"]];
+		*/
+		finalImage = [[NSImage alloc] initWithSize:NSMakeSize([[filter1 valueForKey:@"outputImage"] extent].size.width,[[filter1 valueForKey:@"outputImage"] extent].size.height)];
+		NSCIImageRep *rep = [NSCIImageRep imageRepWithCIImage:[filter1 valueForKey:@"outputImage"]];
 		
 		[finalImage addRepresentation:rep];
 		return finalImage;
@@ -199,10 +277,34 @@ kitNumber, type, alternativeKitNumber, year, competitionUID, outfieldKit;
 
 - (NSImage *)image2
 {
+	char styleImage;
+	if (kitStyle>53 || kitStyle<1) { styleImage = 1; }
+	else { styleImage = kitStyle; }
+	
+	NSString *imgType;
+	
+	if (type==AKT_SHIRT) { imgType = @"back"; }
+	else if (type==AKT_SHORTS) { imgType = @"shorts"; }
+	else if (type==AKT_SOCKS) { imgType = @"socks"; }
+	else { return nil; }
+	
+	NSBitmapImageRep *bitmapImageRep = [[NSBitmapImageRep alloc] initWithData:[[NSImage imageNamed:[NSString stringWithFormat:@"kit_%@_%d.png",imgType,styleImage]] TIFFRepresentation]];
+	
+	NSImage *colouredImage = [[NSImage alloc] init];
+	[colouredImage addRepresentation:[self transformImage:bitmapImageRep type:0]];
+	[bitmapImageRep release];
+	
+	if (type==AKT_SHIRT) {
+		return colouredImage;
+	}
 	return nil;
 }
+- (void)setImage2:(NSImage *)img
+{
+	image2 = [img copy];
+}
 
-- (void)redrawImages { [self setImage1:[self image1]]; }
+- (void)redrawImages { [self setImage1:[self image1]]; [self setImage2:[self image2]]; }
 
 - (NSBitmapImageRep *)transformImage:(NSBitmapImageRep *)bitmapImageRep type:(int)colourType
 {
@@ -279,4 +381,20 @@ kitNumber, type, alternativeKitNumber, year, competitionUID, outfieldKit;
 	
 	return colouredImage;
 }
+
+- (void)setKitStyleFromButton:(NSNumber *)val { NSLog(@"%d",[val intValue]); [self setKitStyle:[val intValue]]; }
+
+- (NSImage *)shortsImage:(NSNumber *)val
+{
+	NSString *imagestr = [NSString stringWithFormat:@"kit_shorts_%d.png",[val intValue]];
+	char styleImage;
+	if (kitStyle>SHS_MAX || kitStyle<1) { styleImage = 1; }
+	else { styleImage = kitStyle; }
+	NSBitmapImageRep *bitmapImageRep = [[NSBitmapImageRep alloc] initWithData:[[NSImage imageNamed:imagestr] TIFFRepresentation]];
+	NSImage *colouredImage = [[NSImage alloc] init];
+	[colouredImage addRepresentation:[self transformImage:bitmapImageRep type:0]];
+	[bitmapImageRep release];
+	return colouredImage;
+}
+
 @end
