@@ -40,7 +40,7 @@
 	// ???
 	[object setUnknownData1:[data subdataWithRange:NSMakeRange(offset, 6)]]; 
 	offset += 6;
-	
+
 	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 	[object setDecision:cbuffer];
 	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;

@@ -27,27 +27,27 @@
 #define PBT_MILITARY_SERVICE	13
 
 // ban scopes
-#define BAN_SCOPE_TYPE_COMPETITION			1	// Bans must be added so that scopes are in ascending order.
-#define BAN_SCOPE_TYPE_DOMESTIC_CUP			5	// This order is used to work out which games are covered by which bans
-#define BAN_SCOPE_TYPE_DOMESTIC_LEAGUE		6	// there are gaps so that more can be added in later on
-#define BAN_SCOPE_TYPE_NATIONAL				10
-#define BAN_SCOPE_TYPE_CONTINENTAL			15
-#define BAN_SCOPE_TYPE_INTERNATIONAL		20
-#define BAN_SCOPE_TYPE_GLOBAL				25
+#define PBS_COMPETITION			1	// Bans must be added so that scopes are in ascending order.
+#define PBS_DOMESTIC_CUP		5	// This order is used to work out which games are covered by which bans
+#define PBS_DOMESTIC_LEAGUE		6	// there are gaps so that more can be added in later on
+#define PBS_NATIONAL			10
+#define PBS_CONTINENTAL			15
+#define PBS_INTERNATIONAL		20
+#define PBS_GLOBAL				25
 
 // ban reasons
-#define BAN_REASON_INVALID					-1
-#define BAN_REASON_YELLOW_CARDS				0
-#define BAN_REASON_POINTS					1
-#define BAN_REASON_RED_CARDS				2
-#define BAN_REASON_YELLOW_CARDS_IN_LAST_TEN_GAMES		3
+#define PBR_INVALID								-1
+#define PBR_YELLOW_CARDS						0
+#define PBR_POINTS								1
+#define PBR_RED_CARDS							2
+#define PBR_YELLOW_CARDS_IN_LAST_TEN_GAMES		3
 
 // decisions
-#define BAN_DECISION_INVALID	-1
-#define BAN_DECISION_WRONG		0	// completely wrong decision
-#define BAN_DECISION_DOUBTFUL	1	// there was doubt and/or room for subjective interpretation
-#define BAN_DECISION_FAIR		2	// ban was fair enough (nothing inherently wrong with it)
-#define BAN_DECISION_RIGHT		3	// absolutely right
+#define PBD_INVALID		-1
+#define PBD_WRONG		0	// completely wrong decision
+#define PBD_DOUBTFUL	1	// there was doubt and/or room for subjective interpretation
+#define PBD_FAIR		2	// ban was fair enough (nothing inherently wrong with it)
+#define PBD_RIGHT		3	// absolutely right
 
 @interface PlayerBan : NSObject {
 	char gamesBannedFor, gamesMissed, reason, scope, decision;
@@ -64,5 +64,9 @@
 @property (readwrite,assign) FMDate *startDate;
 @property (readwrite,assign) ShortFixture *fixture;
 @property(readwrite,copy) NSData *unknownData1;
+
++ (NSString *)reasonStringWithType:(int)val;
++ (NSString *)decisionStringWithType:(int)val;
++ (NSString *)scopeStringWithType:(int)val;
 
 @end

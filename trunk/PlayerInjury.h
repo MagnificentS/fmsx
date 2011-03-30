@@ -10,6 +10,12 @@
 #import "ShortFixture.h"
 #import "FMDate.h"
 
+// receive types
+#define IRT_UNKNOWN		0
+#define IRT_MATCH		1
+#define IRT_TRAINING	2
+#define IRT_PUB			3
+
 @interface PlayerInjury : NSObject {
 	char receiveType;
 	BOOL beenToPhysio;
@@ -27,5 +33,7 @@
 @property(assign,readwrite) ShortFixture *fixture;
 @property(assign,readwrite) FMDate *injuredDate;
 @property(readwrite,copy) NSData *unknownData1;
+
++ (NSString *)receiveTypeStringWithType:(int)val;
 
 @end

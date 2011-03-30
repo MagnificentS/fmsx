@@ -26,6 +26,8 @@
 #import "Team.h"
 #import "Weather.h"
 #import "StaffTendency.h"
+#import "PlayerInjury.h"
+#import "PlayerBan.h"
 
 @implementation SXEditorEntityViewController
 
@@ -45,7 +47,7 @@ nationStaffView, nationRelationshipsView, nationAlternativeStadiumsView, nationK
 personMainViewContainer, personEntityView, personGeneralView, personSectionView, personActualPersonView,
 personSpokespersonView, personHumanView, personRetiredPersonView, personAgentView, personJournalistView,
 personOfficialView, personOfficialPastGamesView,personStatsView, personActualStaffView, personPreferredMovesView,
-personPlayerView, personNonPlayerView, personNonPlayerStatsView;
+personPlayerView, personNonPlayerView, personNonPlayerStatsView, personInjuriesView, personBansView, personPlayerFormsView;
 
 - (void)awakeFromNib
 {
@@ -413,6 +415,14 @@ personPlayerView, personNonPlayerView, personNonPlayerStatsView;
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
+	else if ([[aTableColumn identifier] isEqualToString:@"injuryIDtxt"]) {
+		int UID = [[aCell stringValue] intValue];
+		
+		if (UID < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.injuries"] count] && UID > -1) {
+			[aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.injuries"] objectAtIndex:UID] name]];
+		}
+		else { [aCell setStringValue:@"---"]; }
+	}
 	
 	else if ([[aTableColumn identifier] isEqualToString:@"personIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
@@ -484,6 +494,23 @@ personPlayerView, personNonPlayerView, personNonPlayerStatsView;
 		int UID = [[aCell stringValue] intValue];
 		
 		[aCell setStringValue:[StaffTendency typeStringWithType:UID]];
+	}
+	else if ([[aTableColumn identifier] isEqualToString:@"injuryReceiveTypetxt"]) {
+		int UID = [[aCell stringValue] intValue];
+		
+		[aCell setStringValue:[PlayerInjury receiveTypeStringWithType:UID]];
+	}
+	else if ([[aTableColumn identifier] isEqualToString:@"banReasontxt"]) {
+		int UID = [[aCell stringValue] intValue];
+		[aCell setStringValue:[PlayerBan reasonStringWithType:UID]];
+	}
+	else if ([[aTableColumn identifier] isEqualToString:@"banDecisiontxt"]) {
+		int UID = [[aCell stringValue] intValue];
+		[aCell setStringValue:[PlayerBan decisionStringWithType:UID]];
+	}
+	else if ([[aTableColumn identifier] isEqualToString:@"banScopetxt"]) {
+		int UID = [[aCell stringValue] intValue];
+		[aCell setStringValue:[PlayerBan scopeStringWithType:UID]];
 	}
 	
 	else if ([[aTableColumn identifier] isEqualToString:@"relnametxt"]) {

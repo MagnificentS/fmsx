@@ -89,7 +89,8 @@
 	IBOutlet NSView			*personMainViewContainer, *personEntityView, *personGeneralView, *personSectionView,
 	*personActualPersonView, *personSpokespersonView, *personHumanView, *personRetiredPersonView, *personAgentView,
 	*personJournalistView, *personOfficialView, *personOfficialPastGamesView, *personStatsView, *personActualStaffView,
-	*personPreferredMovesView, *personPlayerView, *personNonPlayerView, *personNonPlayerStatsView;
+	*personPreferredMovesView, *personPlayerView, *personNonPlayerView, *personNonPlayerStatsView, *personInjuriesView,
+	*personBansView, *personPlayerFormsView;
 	
 	IBOutlet NSTableView	*stadiumChangesTable;
 	IBOutlet NSView			*stadiumChangeMainViewContainer, *stadiumChangeEntityView;
@@ -128,6 +129,6 @@
 *personMainViewContainer, *personEntityView, *personGeneralView, *personSectionView, *personActualPersonView,
 *personSpokespersonView, *personHumanView, *personRetiredPersonView, *personAgentView, *personJournalistView,
 *personOfficialView, *personOfficialPastGamesView, *personStatsView, *personActualStaffView, *personPreferredMovesView,
-*personPlayerView, *personNonPlayerView, *personNonPlayerStatsView;
+*personPlayerView, *personNonPlayerView, *personNonPlayerStatsView, *personInjuriesView, *personBansView, *personPlayerFormsView;
 
 @end

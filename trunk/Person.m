@@ -647,9 +647,9 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 	//		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Player Stats",@"title",[entityController personPlayerStatsView],@"view",nil]]; 
 	//	}
 		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Preferred Moves",@"title",[entityController personPreferredMovesView],@"view",nil]]; 
-	//	[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Bans",@"title",[entityController personBansView],@"view",nil]]; 
-	//	[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Injuries",@"title",[entityController personInjuriesView],@"view",nil]]; 
-	//	[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Forms",@"title",[entityController personFormsView],@"view",nil]]; 
+		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Bans",@"title",[entityController personBansView],@"view",nil]]; 
+		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Injuries",@"title",[entityController personInjuriesView],@"view",nil]]; 
+		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Forms",@"title",[entityController personPlayerFormsView],@"view",nil]]; 
 	}
 	if (nonPlayerData) {
 		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Non-Player Data",@"title",[entityController personNonPlayerView],@"view",nil]]; 

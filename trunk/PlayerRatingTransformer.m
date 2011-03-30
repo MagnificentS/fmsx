@@ -34,9 +34,9 @@
 	else { NSLog (@"isnt a number!"); }
 	
 	newRating = oldRating;
-	NSLog(@"%f %d",newRating, oldRating);
+	
 	newRating = newRating / 10;
-	NSLog(@"%f",newRating);
+	
 	if (newRating > 10) { newRating = 10; }
 	else if (newRating < 0) { newRating = 0; }
 	
