@@ -7,6 +7,7 @@
 //
 
 #import "Official.h"
+#import "Competition.h"
 
 @implementation Official
 

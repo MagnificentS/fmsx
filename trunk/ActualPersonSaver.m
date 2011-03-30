@@ -58,11 +58,11 @@
 			[RelationshipSaver saveRelationship:[[object unknowns1] objectAtIndex:i] toData:data];
 		}
 		
-		cbuffer = [[object unknownChar1] count];
+		cbuffer = [object unknownChar1];
 		[data appendBytes:&cbuffer length:1];
-		cbuffer = [[object unknownChar2] count];
+		cbuffer = [object unknownChar2];
 		[data appendBytes:&cbuffer length:1];
-		cbuffer = [[object unknownChar3] count];
+		cbuffer = [object unknownChar3];
 		[data appendBytes:&cbuffer length:1];
 		
 		cbuffer = [[object locationDays] count];
