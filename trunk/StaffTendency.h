@@ -29,4 +29,6 @@
 
 @property(assign,readwrite) char type, level;
 
++ (NSString *)typeStringWithType:(int)val;
+
 @end

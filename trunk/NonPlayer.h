@@ -26,4 +26,6 @@ unknownChar1, unknownChar2, unknownChar3;
 @property(copy,readwrite) NSMutableArray *scoutingKnowledges, *tendencies;
 @property(readwrite,copy) NSData *unknownData1, *unknownData2, *unknownData3;
 
+- (void)setNewScoutingKnowledgeNationID:(int)val;
+
 @end

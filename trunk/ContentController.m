@@ -56,8 +56,8 @@
 	[[editorViewController nationPicker] openSheet:self];
 	if ([sender tag]==1) { nationPickerSelector = @"nationID"; }
 	else if ([sender tag]==2) { nationPickerSelector = @"basedNationID"; }
-	
 	else if ([sender tag]==3) { nationPickerSelector = @"newNationID"; }
+	else if ([sender tag]==4) { nationPickerSelector = @"newScoutingKnowledgeNationID"; }
 }
 
 - (IBAction)setNationPickerObject:(id)object

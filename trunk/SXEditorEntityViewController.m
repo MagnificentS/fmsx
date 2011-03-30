@@ -25,6 +25,7 @@
 #import "StadiumChange.h"
 #import "Team.h"
 #import "Weather.h"
+#import "StaffTendency.h"
 
 @implementation SXEditorEntityViewController
 
@@ -43,7 +44,8 @@ nationTreatedAsNonForeignView, nationRankingMatchesView, nationFutureRegenView, 
 nationStaffView, nationRelationshipsView, nationAlternativeStadiumsView, nationKitsView,
 personMainViewContainer, personEntityView, personGeneralView, personSectionView, personActualPersonView,
 personSpokespersonView, personHumanView, personRetiredPersonView, personAgentView, personJournalistView,
-personOfficialView, personOfficialPastGamesView,personStatsView, personActualStaffView, personPreferredMovesView;
+personOfficialView, personOfficialPastGamesView,personStatsView, personActualStaffView, personPreferredMovesView,
+personPlayerView, personNonPlayerView, personNonPlayerStatsView;
 
 - (void)awakeFromNib
 {
@@ -477,6 +479,11 @@ personOfficialView, personOfficialPastGamesView,personStatsView, personActualSta
 			[aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.teams"] objectAtIndex:UID] fullTeamString]];
 		}
 		else { [aCell setStringValue:@"---"]; }
+	}
+	else if ([[aTableColumn identifier] isEqualToString:@"staffTendencytxt"]) {
+		int UID = [[aCell stringValue] intValue];
+		
+		[aCell setStringValue:[StaffTendency typeStringWithType:UID]];
 	}
 	
 	else if ([[aTableColumn identifier] isEqualToString:@"relnametxt"]) {
