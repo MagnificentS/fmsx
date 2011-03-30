@@ -76,7 +76,7 @@
 totalRecords, status, clubs, media, languages, currencies, continents,
 injuries, firstNames, surnames, commonNames, sponsors, stadiums, stadiumChanges,
 teams, localAreas, stageNames, weather, descriptions, people, personStats, playerStats,
-nonPlayerStats, competitions, nations, langDBLoaded, competitionHistories,
+nonPlayerStats, competitions, nations, competitionHistories,
 clubLinks, saveEndOffset, unknowns1, derbies, agreements, databaseChanges, unknownData1,
 unknownData2, unknownData3, unknownData4, unknownData5, unknownData6, unknownData7,
 unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionStrings;

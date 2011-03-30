@@ -45,7 +45,6 @@
 @property(copy,readwrite) NSString *status;
 @property(assign,readwrite) unsigned int currentRecord, totalRecords, saveEndOffset, databaseChanges;
 @property(assign,readwrite) int unknownInt1, unknownInt2, unknownInt3, unknownInt4;
-@property(assign,readwrite) BOOL langDBLoaded;
 @property(readwrite,copy) NSData *unknownData1, *unknownData2, *unknownData3, *unknownData4, *unknownData5, 
 *unknownData6, *unknownData7;
 
