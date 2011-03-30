@@ -624,9 +624,9 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 		if ([personData personStatsID]>-1) {
 			[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Person Stats",@"title",[entityController personStatsView],@"view",nil]]; 
 		}
-//		if ([personData hasRelationships]) {
-//			[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Relationships",@"title",[entityController personRelationshipsView],@"view",nil]];
-//		}
+		if ([personData hasRelationships]) {
+			[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Relationships",@"title",[entityController personRelationshipsView],@"view",nil]];
+		}
 	}
 	if (spokespersonData) {
 		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Spokesperson Data",@"title",[entityController personSpokespersonView],@"view",nil]];
@@ -643,9 +643,9 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 	}
 	if (playerData) {
 		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Player Data",@"title",[entityController personPlayerView],@"view",nil]]; 
-	//	if ([playerData playerStatsID]>-1) {
-	//		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Player Stats",@"title",[entityController personPlayerStatsView],@"view",nil]]; 
-	//	}
+		if ([playerData playerStatsID]>-1) {
+			[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Player Stats",@"title",[entityController personPlayerStatsView],@"view",nil]]; 
+		}
 		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Preferred Moves",@"title",[entityController personPreferredMovesView],@"view",nil]]; 
 		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Bans",@"title",[entityController personBansView],@"view",nil]]; 
 		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Injuries",@"title",[entityController personInjuriesView],@"view",nil]]; 
