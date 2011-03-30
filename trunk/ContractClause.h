@@ -52,5 +52,6 @@
 @property(assign,readwrite) int fee;
 
 - (NSArray *)typeStrings;
+- (NSString *)typeString;
 
 @end

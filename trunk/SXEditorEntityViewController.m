@@ -48,7 +48,7 @@ personMainViewContainer, personEntityView, personGeneralView, personSectionView,
 personSpokespersonView, personHumanView, personRetiredPersonView, personAgentView, personJournalistView,
 personOfficialView, personOfficialPastGamesView,personStatsView, personActualStaffView, personPreferredMovesView,
 personPlayerView, personNonPlayerView, personNonPlayerStatsView, personInjuriesView, personBansView, personPlayerFormsView,
-personPlayerStatsView, personRelationshipsView;
+personPlayerStatsView, personRelationshipsView, personContractsView, personDebugPersonView;
 
 - (void)awakeFromNib
 {

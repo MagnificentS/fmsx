@@ -50,10 +50,13 @@
 	PersonStats *personStats;
 	PlayerStats *playerStats;
 	NonPlayerStats *nonPlayerStats;
+	
+	unsigned int fileStartOffset, fileEndOffset;
 }
 
 @property(assign,readwrite) char databaseClass, unknownChar1;
 @property(assign,readwrite) unsigned char flags;
+@property(assign,readwrite) unsigned int fileStartOffset, fileEndOffset;
 @property(assign,readwrite) int rowID, UID, transferID;
 @property(readwrite,copy) NSData *unknownData1;
 @property(copy,readwrite) NSString *name, *newFirstName, *newSurname, *newCommonName;

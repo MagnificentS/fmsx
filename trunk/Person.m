@@ -25,7 +25,7 @@
 
 @synthesize databaseClass, rowID, UID, playerData, staffData, personData, nonPlayerData, flags,
 playerAndNonPlayerData, officialData, retiredPersonData, virtualPlayerData, spokespersonData,
-journalistData, humanData, name, personStats, nonPlayerStats, playerStats,
+journalistData, humanData, name, personStats, nonPlayerStats, playerStats,fileStartOffset, fileEndOffset,
 unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID, agentData;
 
 - (id)init
@@ -659,13 +659,16 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 	}
 	if (staffData) {
 		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Staff Data",@"title",[entityController personActualStaffView],@"view",nil]];
-	//	[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Contracts",@"title",[entityController personContractsView],@"view",nil]];
+		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Contracts",@"title",[entityController personContractsView],@"view",nil]];
 	}
 	if (humanData) {
 		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Human Data",@"title",[entityController personHumanView],@"view",nil]];
 	}
 	if (retiredPersonData) {
 		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Retired Person Data",@"title",[entityController personRetiredPersonView],@"view",nil]];
+	}
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"debugMode"]) {
+		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Debug - Person",@"title",[entityController personDebugPersonView],@"view",nil]];
 	}
 	
 	return [sections autorelease];

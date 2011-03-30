@@ -23,4 +23,14 @@
 	return strings;
 }
 
+- (NSString *)typeString
+{
+	if (type==CBT_APPEARANCE_FEE) { return NSLocalizedString(@"Appearance Fee",@"contract bonus type"); }
+	else if (type==CBT_GOAL_BONUS) { return NSLocalizedString(@"Goal Bonus",@"contract bonus type"); }
+	else if (type==CBT_CLEAN_SHEET_BONUS) { return NSLocalizedString(@"Clean Sheet Bonus",@"contract bonus type"); }
+	else if (type==CBT_TEAM_OF_THE_YEAR_BONUS_DIVISION) { return NSLocalizedString(@"Team Of The Year Bonus (Division)",@"contract bonus type"); }
+	
+	return [NSString stringWithFormat:@"Unknown - %d",type];
+}
+
 @end

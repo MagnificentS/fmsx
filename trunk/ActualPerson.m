@@ -12,7 +12,7 @@
 
 @synthesize ethnicity, hairColour, skinTone, hasRelationships, firstNameID, surnameID, 
 commonNameID, nationID, personStatsID, cityOfBirthID, dateOfBirth, relationships, nicknames,
-fullName, flags, unknownDate1, unknownData1, unknowns1, locationDays;
+fullName, flags, unknownDate1, unknownData1, unknowns1, locationDays, unknownChar1, unknownChar2, unknownChar3;
 
 - (BOOL)male { 
 	if (flags & APF_FEMALE) { return FALSE; } 

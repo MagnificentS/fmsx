@@ -1869,9 +1869,9 @@ unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionSt
 						NSLocalizedString(@"4-2-3-1 Defensive Midfielder", @"formation"),
 						NSLocalizedString(@"5-3-2 Serbia & Montenegro", @"formation"),
 						NSLocalizedString(@"3-6-1", @"formation"),
-						NSLocalizedString(@"Unknown 1", @"formation"),
-						NSLocalizedString(@"Unknown 2", @"formation"),
-						NSLocalizedString(@"Unknown 3", @"formation"),
+						NSLocalizedString(@"4-1-4-1", @"formation"),
+						NSLocalizedString(@"4-2-2-1-1", @"formation"),
+						NSLocalizedString(@"3-4-1 (2 Defensive Midfielders)", @"formation"),
 						nil];
 	return strings;
 }

@@ -93,4 +93,6 @@ agreedPrice, unknownInt1;
 - (BOOL)isFullContract;
 - (BOOL)isYouthContract;
 
+- (NSString *)typeString;
+
 @end

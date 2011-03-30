@@ -59,7 +59,7 @@
 	[data getBytes:&sbuffer range:NSMakeRange(offset, 2)]; offset += 2;
 	[object setCondition:sbuffer];
 	
-	// ???
+	// ??? looks like 4 chars
 	[object setUnknownData1:[data subdataWithRange:NSMakeRange(offset, 4)]]; 
 	offset += 4;
 	
@@ -96,7 +96,7 @@
 	[object setUnknownData4:[data subdataWithRange:NSMakeRange(offset, (cbuffer*12))]]; 
 	offset += (cbuffer*12);
 	
-	// ???
+	// 3 chars, int, rest dont know
 	[object setUnknownData5:[data subdataWithRange:NSMakeRange(offset, 30)]]; 
 	offset += 30;
 	

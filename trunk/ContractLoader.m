@@ -141,6 +141,8 @@
 		[object setClubChoiceFactor:cbuffer];
 		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 		[object setTransferOfferOptions:cbuffer];
+		
+		// these arent right
 		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 		[object setGamesMissedInARow:cbuffer];
 		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
@@ -151,7 +153,6 @@
 		[object setUnknownChar7:cbuffer];
 		[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 		[object setUnknownChar8:cbuffer];
-		
 	}
 	
 	*byteOffset = offset;

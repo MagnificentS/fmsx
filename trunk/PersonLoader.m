@@ -34,6 +34,8 @@
 	
 	Person *object = [[Person alloc] init];
 	
+	[object setFileStartOffset:offset];
+	
 	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
 	[object setDatabaseClass:cbuffer];
 	if (debug) { NSLog(@"type: %d",[object databaseClass]); }
@@ -121,6 +123,8 @@
 		[object setPlayerAndNonPlayerData:[PlayerAndNonPlayerLoader readFromData:data atOffset:&offset]];
 	}
 	if (debug) { NSLog(@"person %d (%d) at %d",[object rowID],[object UID],offset); }
+	
+	[object setFileEndOffset:offset];
 	
 	*byteOffset = offset;
 	

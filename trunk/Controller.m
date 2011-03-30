@@ -71,7 +71,10 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"backupBeforeSave"]==nil) {
 		[[NSUserDefaults standardUserDefaults] setObject:@"Yes" forKey:@"backupBeforeSave"];
 	}
-
+	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"debugMode"]==nil) {
+		[[NSUserDefaults standardUserDefaults] setObject:@"Yes" forKey:@"debugMode"];
+	}
+	
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"autoUpdate"] ||
 		[[NSUserDefaults standardUserDefaults] boolForKey:@"autoDownload"]) {
 		[[SUUpdater sharedUpdater] checkForUpdatesInBackground];

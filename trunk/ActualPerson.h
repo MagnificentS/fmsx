@@ -60,7 +60,7 @@
 #define	APF_REGEN		0x00000800
 
 @interface ActualPerson : NSObject {
-	char ethnicity, hairColour, skinTone;
+	char ethnicity, hairColour, skinTone, unknownChar1, unknownChar2, unknownChar3;
 	BOOL hasRelationships;
 	int firstNameID, surnameID, commonNameID, nationID, personStatsID, cityOfBirthID;
 	unsigned int flags;
@@ -74,7 +74,7 @@
 - (NSArray *)hairColourStrings;
 - (NSArray *)ethnicityStrings;
 
-@property(readwrite,assign) char ethnicity, hairColour, skinTone;
+@property(readwrite,assign) char ethnicity, hairColour, skinTone, unknownChar1, unknownChar2, unknownChar3;
 @property(readwrite,assign) unsigned int flags;
 @property(readwrite,assign) BOOL hasRelationships;
 @property(readwrite,assign) int firstNameID, surnameID, commonNameID, nationID, personStatsID, cityOfBirthID;

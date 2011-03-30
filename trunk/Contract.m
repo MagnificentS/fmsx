@@ -104,4 +104,17 @@ unknownChar8, unknownInt1, unknownData3;
 - (BOOL)isFullContract { if (type == CT_FULL_CONTRACT) { return TRUE; } return FALSE; }
 - (BOOL)isYouthContract { if (status == COT_YOUTH) { return TRUE; } return FALSE; }
 
+- (NSString *)typeString
+{
+	if (type==CT_INVALID_CONTRACT) { return NSLocalizedString(@"Invalid",nil); }
+	else if (type==CT_FULL_CONTRACT) { return NSLocalizedString(@"Full Contract",@"contract type"); }
+	else if (type==CT_LOAN_CONTRACT) { return NSLocalizedString(@"Loan Contract",@"contract type"); }
+	else if (type==CT_TRIAL_CONTRACT) { return NSLocalizedString(@"Trial Contract",@"contract type"); }
+	else if (type==CT_FIRST_OPTION_CONTRACT) { return NSLocalizedString(@"First Option Contract",@"contract type"); }
+	else if (type==CT_CO_OWNERSHIP_CONTRACT) { return NSLocalizedString(@"Co-ownership Contract",@"contract type"); }
+	else if (type==CT_LEAGUE_CONTRACT) { return NSLocalizedString(@"League Contract",@"contract type"); }
+	
+	return [NSString stringWithFormat:@"Unknown: %d",type];
+}
+
 @end
