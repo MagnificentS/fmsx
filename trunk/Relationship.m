@@ -20,6 +20,7 @@
 	else if (recordType==RRT_PERSON) { return [NSString stringWithFormat:@"pe%d",associatedID]; }
 	else if (recordType==RRT_TEAM) { return [NSString stringWithFormat:@"te%d",associatedID]; }
 	else if (recordType==RRT_STADIUM) { return [NSString stringWithFormat:@"st%d",associatedID]; }
+	else if (recordType==-1) { return @"None"; }
 	else { return [NSString stringWithFormat:@"Unknown: %d",associatedID]; }
 }
 
@@ -48,6 +49,7 @@
 	else if (relationshipType==RT_INTERNATIONAL_RETIREMENT) { return @"International Retirement"; }
 	else if (relationshipType==RT_TRAINED_IN_NATION) { return @"Trained In Nation"; }
 	else if (relationshipType==RT_TRAINED_AT_CLUB) { return @"Trained At Club"; }
+	else if (relationshipType==RT_CLUB_HAS_SQUAD_SELECTION) { return @"Has Squad Selection"; }
 	else { return [NSString stringWithFormat:@"Unknown Type: %d",relationshipType]; }
 }
 @end

@@ -195,7 +195,13 @@ attackingFormation, bTeams, unknowns2, transferInfos, physios, coaches;
 
 - (Colour *)mainColour
 {
-	if ([colours count]>0) { return [colours objectAtIndex:0]; }
+	// find main home colour
+	for (Colour *item in colours) {
+		if ([item outfieldKit] && [item kitNumber]==AKN_HOME_KIT && [item type]==AKT_SHIRT) {
+			return item;
+			break;
+		}
+	}
 	
 	Colour *plainColour = [[Colour alloc] init];
 	[plainColour setBackgroundColour:[[NSColor whiteColor] colorUsingColorSpaceName:NSCalibratedRGBColorSpace]];

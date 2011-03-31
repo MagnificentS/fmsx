@@ -72,7 +72,7 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 		[[NSUserDefaults standardUserDefaults] setObject:@"Yes" forKey:@"backupBeforeSave"];
 	}
 	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"debugMode"]==nil) {
-		[[NSUserDefaults standardUserDefaults] setObject:@"Yes" forKey:@"debugMode"];
+		[[NSUserDefaults standardUserDefaults] setObject:@"No" forKey:@"debugMode"];
 	}
 	
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"autoUpdate"] ||

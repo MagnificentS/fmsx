@@ -20,6 +20,7 @@
 #define RT_HAS_NATIONALITY				9	// record is a nation which the person has nationality of
 #define RT_INTERNATIONAL_RETIREMENT		10  // record not used person has retired from all nations
 
+#define RT_CLUB_HAS_SQUAD_SELECTION		29	// no record - this club has a squad selection currently active
 #define RT_TRAINED_IN_NATION			70	// record is the nation in which the person was trained
 #define RT_TRAINED_AT_CLUB				72	// record is the first team of the club at which the person was trained
 
@@ -43,7 +44,6 @@
 #define RT_SELECTED_IN_SQUAD_NEW				26	// record is a club which the person has just been selected for
 #define RT_UNSELECTED_FROM_SQUAD_NEW			27	// record is a club which the person has just been unselected for
 #define RT_INELGIBLE_SELECTED_FOR_OTHER_TEAM	28	// record is a club which the person cannot be selected for this club as he has played for another team
-#define RT_CLUB_HAS_SQUAD_SELECTION				29	// no record - this club has a squad selection currently active
 // media relationships
 #define RT_MEDIA_PLAYER_FORM						30
 #define RT_MEDIA_BIG_NAME_PURCHASE					31

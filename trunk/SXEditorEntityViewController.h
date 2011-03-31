@@ -10,6 +10,15 @@
 #import "EditorController.h"
 #import <BWToolkitFramework/BWToolkitFramework.h>
 
+#define CLUB_SECTIONS [NSMutableArray arrayWithObjects:\
+[NSDictionary dictionaryWithObjectsAndKeys:@"General",@"title",clubGeneralView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Alternative Stadiums",@"title",clubAlternativeStadiumsView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Kits & Colours",@"title",clubKitsView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Relationships",@"title",clubRelationshipsView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Tactics",@"title",clubTacticsView,@"view",nil],\
+nil]
+
+
 #define NATION_SECTIONS [NSMutableArray arrayWithObjects:\
 [NSDictionary dictionaryWithObjectsAndKeys:@"General",@"title",nationGeneralView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Agents",@"title",nationAgentsView,@"view",nil],\
@@ -39,6 +48,16 @@
 	
 	IBOutlet NSTableView	*citiesTable;
 	IBOutlet NSView			*cityMainViewContainer, *cityEntityView;
+	
+	IBOutlet NSTableView	*clubsTable, *clubSectionsTable;
+	IBOutlet BWGradientBox	*clubHeaderBox;
+	IBOutlet NSBox			*clubBGBox;
+	IBOutlet NSView			*clubMainViewContainer, *clubEntityView, *clubGeneralView, *clubSectionView, *clubTacticsView, 
+	*clubRelationshipsView, *clubAlternativeStadiumsView, *clubKitsView;
+	
+	IBOutlet BWSheetController *clubShirtPicker;
+	IBOutlet BWSheetController *clubShortsPicker;
+	IBOutlet BWSheetController *clubSocksPicker;	
 	
 	IBOutlet NSTableView	*competitionsTable;
 	IBOutlet NSBox			*competitionBGBox;
@@ -131,6 +150,8 @@
 *personSpokespersonView, *personHumanView, *personRetiredPersonView, *personAgentView, *personJournalistView,
 *personOfficialView, *personOfficialPastGamesView, *personStatsView, *personActualStaffView, *personPreferredMovesView,
 *personPlayerView, *personNonPlayerView, *personNonPlayerStatsView, *personInjuriesView, *personBansView, *personPlayerFormsView,
-*personPlayerStatsView, *personRelationshipsView, *personContractsView, *personDebugPersonView;
+*personPlayerStatsView, *personRelationshipsView, *personContractsView, *personDebugPersonView,
+*clubMainViewContainer, *clubEntityView, *clubGeneralView, *clubSectionView, *clubTacticsView, 
+*clubRelationshipsView, *clubAlternativeStadiumsView, *clubKitsView;
 
 @end

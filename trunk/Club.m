@@ -121,6 +121,29 @@ newRegionalDivisionLevel;
 	return 0;
 }
 
+- (NSImage *)logo
+{
+	if ([[[[NSApp delegate] graphics] clubLogos] objectForKey:[NSNumber numberWithInt:UID]]!=nil) 
+	{
+		NSImage *logo = [[NSImage alloc] initWithContentsOfFile:[[[[NSApp delegate] graphics] clubLogos] objectForKey:[NSNumber numberWithInt:UID]]];
+		return logo;
+	}
+	else { return [teamContainer defaultLogo]; }
+	
+	return nil;
+}
+- (NSImage *)bgLogo
+{
+	if ([[[[NSApp delegate] graphics] clubBGLogos] objectForKey:[NSNumber numberWithInt:UID]]!=nil) 
+	{
+		NSImage *logo = [[NSImage alloc] initWithContentsOfFile:[[[[NSApp delegate] graphics] clubBGLogos] objectForKey:[NSNumber numberWithInt:UID]]];
+		return logo;
+	}
+	else { return [teamContainer defaultTitleBG]; }
+	
+	return nil;
+}
+
 - (void)addRegionalDivision:(Competition *)object
 {
 	if ([object respondsToSelector:NSSelectorFromString(@"UID")]) {

@@ -48,7 +48,9 @@ personMainViewContainer, personEntityView, personGeneralView, personSectionView,
 personSpokespersonView, personHumanView, personRetiredPersonView, personAgentView, personJournalistView,
 personOfficialView, personOfficialPastGamesView,personStatsView, personActualStaffView, personPreferredMovesView,
 personPlayerView, personNonPlayerView, personNonPlayerStatsView, personInjuriesView, personBansView, personPlayerFormsView,
-personPlayerStatsView, personRelationshipsView, personContractsView, personDebugPersonView;
+personPlayerStatsView, personRelationshipsView, personContractsView, personDebugPersonView,
+clubMainViewContainer, clubEntityView, clubGeneralView, clubSectionView, clubTacticsView, 
+clubRelationshipsView, clubAlternativeStadiumsView, clubKitsView;
 
 - (void)awakeFromNib
 {
@@ -56,6 +58,9 @@ personPlayerStatsView, personRelationshipsView, personContractsView, personDebug
 	[shirtPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
 	[shortsPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
 	[socksPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
+	[clubShirtPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
+	[clubShortsPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
+	[clubSocksPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
@@ -63,6 +68,7 @@ personPlayerStatsView, personRelationshipsView, personContractsView, personDebug
 	// section tables
 	if (aTableView==awardSectionsTable) { return 2; }
 	else if (aTableView==mediaSectionsTable) { return 2; }
+	else if (aTableView==clubSectionsTable) { return [CLUB_SECTIONS count]; }
 	else if (aTableView==nationSectionsTable) { return [NATION_SECTIONS count]; }
 	else if (aTableView==peopleSectionsTable) { return [[[[[NSApp delegate] editorController] selectedPerson] sections:self] count]; }
 	
@@ -71,7 +77,7 @@ personPlayerStatsView, personRelationshipsView, personContractsView, personDebug
 	
 	if (aTableView==awardsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.awards"] count]; }
 	else if (aTableView==citiesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.cities"] count]; }
-//	else if (aTableView==clubsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.clubs"] count]; }
+	else if (aTableView==clubsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.clubs"] count]; }
 	else if (aTableView==competitionsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.competitions"] count]; }
 	else if (aTableView==continentsTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.continents"] count]; }
 	else if (aTableView==currenciesTable) { return [[[NSApp delegate] valueForKeyPath:@"gameDB.database.currencies"] count]; }
@@ -110,6 +116,15 @@ personPlayerStatsView, personRelationshipsView, personContractsView, personDebug
 		
 		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
 		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.cities"] objectAtIndex:rowIndex]; }
+		
+		if ([columnName isEqualToString:@"uid"])			{ return [NSNumber numberWithInt:[object UID]]; }
+		else if ([columnName isEqualToString:@"name"])		{ return [object name]; }
+	}
+	else if (aTableView==clubsTable) {
+		Club *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.clubs"] objectAtIndex:rowIndex]; }
 		
 		if ([columnName isEqualToString:@"uid"])			{ return [NSNumber numberWithInt:[object UID]]; }
 		else if ([columnName isEqualToString:@"name"])		{ return [object name]; }
@@ -255,6 +270,9 @@ personPlayerStatsView, personRelationshipsView, personContractsView, personDebug
 	else if (aTableView==nationSectionsTable) { 
 		return [[NATION_SECTIONS objectAtIndex:rowIndex] objectForKey:@"title"];
 	}
+	else if (aTableView==clubSectionsTable) { 
+		return [[CLUB_SECTIONS objectAtIndex:rowIndex] objectForKey:@"title"];
+	}
 	else if (aTableView==peopleSectionsTable) { 
 		return [[[[[[NSApp delegate] editorController] selectedPerson] sections:self] objectAtIndex:rowIndex] objectForKey:@"title"];
 	}
@@ -279,6 +297,16 @@ personPlayerStatsView, personRelationshipsView, personContractsView, personDebug
 		
 		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
 		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.cities"] objectAtIndex:rowIndex]; }
+	}
+	else if (aTableView==clubsTable) {
+		Club *object;
+		
+		if ([[[[NSApp delegate] editorController] searchResults] count]>0) { object = [[[[NSApp delegate] editorController] searchResults] objectAtIndex:rowIndex]; }
+		else { object = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.clubs"] objectAtIndex:rowIndex]; }
+		
+		[aCell setDrawsBackground:YES];
+		[aCell setBackgroundColor:[object valueForKeyPath:@"teamContainer.mainColour.backgroundColour"]];
+		[aCell setTextColor:[object valueForKeyPath:@"teamContainer.mainColour.foregroundColour"]];
 	}
 	else if (aTableView==competitionsTable) {
 		Competition *object;
@@ -561,6 +589,11 @@ personPlayerStatsView, personRelationshipsView, personContractsView, personDebug
 		
 		[[[NSApp delegate] contentController] replacePlaceholder:nationSectionView withView:[[NATION_SECTIONS objectAtIndex:[nationSectionsTable selectedRow]] objectForKey:@"view"]];
 	}
+	else if ([aNotification object]==clubSectionsTable) {
+		if ([clubSectionsTable selectedRow]<0 || [clubSectionsTable selectedRow] >= [CLUB_SECTIONS count]) { return; }
+		
+		[[[NSApp delegate] contentController] replacePlaceholder:clubSectionView withView:[[CLUB_SECTIONS objectAtIndex:[clubSectionsTable selectedRow]] objectForKey:@"view"]];
+	}
 	else if ([aNotification object]==peopleSectionsTable) {
 		if ([peopleSectionsTable selectedRow]<0 || [peopleSectionsTable selectedRow] >= [[[[[NSApp delegate] editorController] selectedPerson] sections:self] count]) { return; }
 		
@@ -584,6 +617,10 @@ personPlayerStatsView, personRelationshipsView, personContractsView, personDebug
 	else if (currentSection==EDS_CITIES) { 
 		selectionIndex = [citiesTable selectedRow]; 
 		arrayString = @"cities";	classString = @"city";
+	}
+	else if (currentSection==EDS_CLUBS) { 
+		selectionIndex = [clubsTable selectedRow]; 
+		arrayString = @"clubs";	classString = @"club";
 	}
 	else if (currentSection==EDS_COMPETITIONS) { 
 		selectionIndex = [competitionsTable selectedRow]; 
@@ -641,13 +678,7 @@ personPlayerStatsView, personRelationshipsView, personContractsView, personDebug
 		selectionIndex = [weatherTable selectedRow]; 
 		arrayString = @"weather";	classString = @"weather";
 	}
-	/*
-	else if (currentSection==EDS_CLUBS) { 
-		selectionIndex = [clubsTable selectedRow]; 
-		arrayString = @"clubs";	classString = @"club";
-	}
-*/
-	
+
 	// override selection index if there is a search
 	if ([[[[NSApp delegate] editorController] searchResults] count]>0) { 
 		selectionIndex = [[[NSApp delegate] valueForKeyPath:[NSString stringWithFormat:@"gameDB.database.%@",arrayString]] indexOfObjectIdenticalTo:[[[[NSApp delegate] editorController] searchResults] objectAtIndex:selectionIndex]];
@@ -694,6 +725,15 @@ personPlayerStatsView, personRelationshipsView, personContractsView, personDebug
 		[nationHeaderBox setFillEndingColor:[[[[[[NSApp delegate] editorController] selectedNation] teamContainer] mainColour] foregroundColour]];
 		[nationBGBox setFillColor:[[[[[[NSApp delegate] editorController] selectedNation] teamContainer] mainColour] foregroundColour]];
 	}
+	else if (currentSection==EDS_CLUBS) { 
+		// make the default section the general view
+		[[[NSApp delegate] contentController] replacePlaceholder:clubSectionView withView:clubGeneralView];
+		
+		// set header colour
+		[clubHeaderBox setFillStartingColor:[[[[[[NSApp delegate] editorController] selectedClub] teamContainer] mainColour] backgroundColour]];
+		[clubHeaderBox setFillEndingColor:[[[[[[NSApp delegate] editorController] selectedClub] teamContainer] mainColour] foregroundColour]];
+		[clubBGBox setFillColor:[[[[[[NSApp delegate] editorController] selectedClub] teamContainer] mainColour] foregroundColour]];
+	}
 	else if (currentSection==EDS_PEOPLE) { 
 		// make the default section the general view
 		[[[NSApp delegate] contentController] replacePlaceholder:personSectionView withView:[[[[[[NSApp delegate] editorController] selectedPerson] sections:self] objectAtIndex:0] objectForKey:@"view"]];
@@ -710,7 +750,7 @@ personPlayerStatsView, personRelationshipsView, personContractsView, personDebug
 	
 	if (currentSection==EDS_AWARDS)					{ searchArray = @"awards"; }
 	else if (currentSection==EDS_CITIES)			{ searchArray = @"cities"; }
-	//	else if (currentSection==EDS_CLUBS)				{ searchArray = @"clubs"; }
+	else if (currentSection==EDS_CLUBS)				{ searchArray = @"clubs"; }
 	else if (currentSection==EDS_COMPETITIONS)		{ searchArray = @"competitions"; }
 	else if (currentSection==EDS_CONTINENTS)		{ searchArray = @"continents"; }
 	else if (currentSection==EDS_CURRENCIES)		{ searchArray = @"currencies"; }
@@ -750,7 +790,7 @@ personPlayerStatsView, personRelationshipsView, personContractsView, personDebug
 {
 	if (section==EDS_AWARDS)				{ [awardsTable reloadData]; }
 	else if (section==EDS_CITIES)			{ [citiesTable reloadData]; }
-//	else if (section==EDS_CLUBS)			{ [clubsTable reloadData]; }
+	else if (section==EDS_CLUBS)			{ [clubsTable reloadData]; }
 	else if (section==EDS_COMPETITIONS)		{ [competitionsTable reloadData]; }
 	else if (section==EDS_CONTINENTS)		{ [continentsTable reloadData]; }
 	else if (section==EDS_CURRENCIES)		{ [currenciesTable reloadData]; }

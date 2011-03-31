@@ -498,6 +498,7 @@
 		FBC4B939109B34CD00AA7331 /* ScoutingKnowledge.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC4B938109B34CD00AA7331 /* ScoutingKnowledge.m */; };
 		FBC4B967109B495500AA7331 /* CompetitionLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC4B966109B495500AA7331 /* CompetitionLoader.m */; };
 		FBC4B96A109B4A4E00AA7331 /* Competition.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC4B969109B4A4E00AA7331 /* Competition.m */; };
+		FBC9C0E51343E42B00EF4861 /* Editor_Club.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC9C0E41343E42B00EF4861 /* Editor_Club.xib */; };
 		FBCAE20110E686DA0016899A /* TransferInfoSaver.m in Sources */ = {isa = PBXBuildFile; fileRef = FB93C8AB10E2B36000576177 /* TransferInfoSaver.m */; };
 		FBCAE20210E686DF0016899A /* ClubSaver.m in Sources */ = {isa = PBXBuildFile; fileRef = FB93C8BD10E2B3C000576177 /* ClubSaver.m */; };
 		FBCFCD9B10ECC8C1006471F5 /* CompetitionSaver.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCFCD9A10ECC8C1006471F5 /* CompetitionSaver.m */; };
@@ -1443,6 +1444,7 @@
 		FBC4B966109B495500AA7331 /* CompetitionLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompetitionLoader.m; sourceTree = "<group>"; };
 		FBC4B968109B4A4E00AA7331 /* Competition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Competition.h; sourceTree = "<group>"; };
 		FBC4B969109B4A4E00AA7331 /* Competition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Competition.m; sourceTree = "<group>"; };
+		FBC9C0E41343E42B00EF4861 /* Editor_Club.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_Club.xib; sourceTree = "<group>"; };
 		FBCFCD9910ECC8C1006471F5 /* CompetitionSaver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompetitionSaver.h; sourceTree = "<group>"; };
 		FBCFCD9A10ECC8C1006471F5 /* CompetitionSaver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompetitionSaver.m; sourceTree = "<group>"; };
 		FBCFCDA510ECCBBF006471F5 /* Unknown3Loader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unknown3Loader.h; sourceTree = "<group>"; };
@@ -1860,6 +1862,7 @@
 				FBA7AA0E132EC6FA00CF7843 /* Editor.xib */,
 				FB4E637F132FFB52000CE49D /* Editor_Award.xib */,
 				FBAB2AD1133282FE003FA548 /* Editor_City.xib */,
+				FBC9C0E41343E42B00EF4861 /* Editor_Club.xib */,
 				FBEE42061332E0AB00A89FB0 /* Editor_Competition.xib */,
 				FBAB2B25133298F1003FA548 /* Editor_Continent.xib */,
 				FBAB2B3813329C9C003FA548 /* Editor_Currency.xib */,
@@ -3502,6 +3505,7 @@
 				FB3D747013350B5100B3DEE0 /* Editor_Media.xib in Resources */,
 				FB3D756413355BF100B3DEE0 /* Editor_Nation.xib in Resources */,
 				FB26DC6E1341FE0100D6E82B /* Editor_Person.xib in Resources */,
+				FBC9C0E51343E42B00EF4861 /* Editor_Club.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

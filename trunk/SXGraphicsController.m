@@ -16,7 +16,7 @@
 smallCompetitionLogos, competitionLogos, hugeCompetitionLogos, smallNationLogos, 
 nationLogos, hugeNationLogos, nationFlags, smallContinentLogos, continentLogos, 
 hugeContinentLogos, personPhotos, smallPersonPhotos, continentBGLogos, competitionBGLogos,
-nationBGLogos;
+nationBGLogos, clubBGLogos;
 
 - (id)init
 {
@@ -45,6 +45,7 @@ nationBGLogos;
 	continentBGLogos = [[NSMutableDictionary alloc] init];
 	competitionBGLogos = [[NSMutableDictionary alloc] init];
 	nationBGLogos = [[NSMutableDictionary alloc] init];
+	clubBGLogos = [[NSMutableDictionary alloc] init];
 	
 	return self;
 }
@@ -62,6 +63,7 @@ nationBGLogos;
 	[smallClubLogos release];
 	[clubLogos release];
 	[hugeClubLogos release];
+	[clubBGLogos release];
 	[smallCompetitionLogos release];
 	[competitionLogos release];
 	[hugeCompetitionLogos release];
@@ -168,6 +170,10 @@ nationBGLogos;
 			else if ([type isEqualToString:@"icon"] &&
 					 [subType isEqualToString:@"club"]) {
 				[smallClubLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
+			}
+			else if ([type isEqualToString:@"logo/background/left"] &&
+					 [subType isEqualToString:@"club"]) {
+				[clubBGLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
 			else if ([type isEqualToString:@"logo/huge"] &&
 					 [subType isEqualToString:@"comp"]) {

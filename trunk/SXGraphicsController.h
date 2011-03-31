@@ -13,7 +13,7 @@
 	NSMutableDictionary *graphicsFMFInfos;
 	
 	NSMutableDictionary *homeKits, *awayKits, *thirdKits;
-	NSMutableDictionary *smallClubLogos, *clubLogos, *hugeClubLogos;
+	NSMutableDictionary *smallClubLogos, *clubLogos, *hugeClubLogos, *clubBGLogos;
 	NSMutableDictionary *competitionBGLogos, *smallCompetitionLogos, *competitionLogos, *hugeCompetitionLogos;
 	NSMutableDictionary *nationBGLogos, *smallNationLogos, *nationLogos, *hugeNationLogos, *nationFlags;
 	NSMutableDictionary *continentBGLogos, *smallContinentLogos, *continentLogos, *hugeContinentLogos;
@@ -26,7 +26,7 @@
 *clubLogos, *hugeClubLogos, *smallCompetitionLogos, *competitionLogos, *hugeCompetitionLogos,
 *smallNationLogos, *nationLogos, *hugeNationLogos, *nationFlags, *smallContinentLogos, 
 *continentLogos, *hugeContinentLogos, *personPhotos, *smallPersonPhotos, *continentBGLogos,
-*competitionBGLogos, *nationBGLogos;
+*competitionBGLogos, *nationBGLogos, *clubBGLogos;
 
 
 - (void)parseGraphics;
