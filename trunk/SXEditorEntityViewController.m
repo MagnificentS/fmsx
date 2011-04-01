@@ -50,8 +50,8 @@ personOfficialView, personOfficialPastGamesView,personStatsView, personActualSta
 personPlayerView, personNonPlayerView, personNonPlayerStatsView, personInjuriesView, personBansView, personPlayerFormsView,
 personPlayerStatsView, personRelationshipsView, personContractsView, personDebugPersonView,
 clubMainViewContainer, clubEntityView, clubGeneralView, clubSectionView, clubTacticsView, 
-clubRelationshipsView, clubAlternativeStadiumsView, clubKitsView, clubStaffView,
-clubScoutingKnowledgesView, clubIDPCView, clubRegionalDivisionsView, clubSponsorsView;
+clubRelationshipsView, clubAlternativeStadiumsView, clubKitsView, clubStaffView, clubTrainingView, clubFacilitiesView, 
+clubFinancesView, clubScoutingKnowledgesView, clubIDPCView, clubRegionalDivisionsView, clubSponsorsView;
 
 - (void)awakeFromNib
 {

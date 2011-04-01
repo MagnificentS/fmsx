@@ -168,6 +168,7 @@
 	else if ([sender tag]==3)	{ personPickerSelector = @"newBannedPlayerID"; }
 	else if ([sender tag]==4)	{ personPickerSelector = @"newAgentID"; }
 	else if ([sender tag]==5)	{ personPickerSelector = @"newHumanPlayerPoolPlayerID"; }
+	else if ([sender tag]==6)	{ personPickerSelector = @"chairmanID"; }
 }	
 
 - (IBAction)setPersonPickerObject:(id)object
