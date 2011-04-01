@@ -41,7 +41,7 @@
 continentsController, currenciesController, injuriesController, languagesController, localAreasController, gameID, gameInfo, gameDB,
 mediaController, nationsController, peopleController, stadiumsController, stadiumChangesController, competitionsController, langDB,
 teamsController, weatherController, currentDate, gameDBVersion, databaseChanges, timesSaved, startBuildVersion, currentBuildVersion, 
-langDBLoaded, status, statusMaxValue, statusValue, editorController, contentController, graphics;
+langDBLoaded, status, statusMaxValue, statusValue, editorController, contentController, graphics, showDetails;
 
 - (id)init
 {
@@ -297,6 +297,8 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 		[SupportFunctions showErrorWindow:@"Error Loading Game" withInfo:@"Your game could not be loaded"];
 		[self setIdle:TRUE]; return;
 	}
+
+	[self setShowDetails:YES];
 	
 #pragma mark game_db.dat
 	[self setStatus:NSLocalizedString(@"Reading game_db.dat...", @"editor status")];

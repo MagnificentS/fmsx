@@ -1268,6 +1268,31 @@
 							<reference key="NSWindow"/>
 							<string key="NSClassName">NSView</string>
 						</object>
+						<object class="NSTextField" id="830639445">
+							<reference key="NSNextResponder" ref="363112275"/>
+							<int key="NSvFlags">292</int>
+							<string key="NSFrame">{{17, 11}, {746, 14}}</string>
+							<reference key="NSSuperview" ref="363112275"/>
+							<reference key="NSWindow"/>
+							<bool key="NSEnabled">YES</bool>
+							<object class="NSTextFieldCell" key="NSCell" id="809746722">
+								<int key="NSCellFlags">68288064</int>
+								<int key="NSCellFlags2">272761856</int>
+								<string key="NSContents">gamename.fm</string>
+								<reference key="NSSupport" ref="26"/>
+								<reference key="NSControlView" ref="830639445"/>
+								<object class="NSColor" key="NSBackgroundColor" id="81019784">
+									<int key="NSColorSpace">6</int>
+									<string key="NSCatalogName">System</string>
+									<string key="NSColorName">controlColor</string>
+									<object class="NSColor" key="NSColor">
+										<int key="NSColorSpace">3</int>
+										<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
+									</object>
+								</object>
+								<reference key="NSTextColor" ref="25918122"/>
+							</object>
+						</object>
 					</array>
 					<string key="NSFrameSize">{1152, 768}</string>
 					<reference key="NSSuperview"/>
@@ -1356,15 +1381,7 @@
 											<string key="NSContents">Award</string>
 											<reference key="NSSupport" ref="849492307"/>
 											<reference key="NSControlView" ref="109438941"/>
-											<object class="NSColor" key="NSBackgroundColor" id="81019784">
-												<int key="NSColorSpace">6</int>
-												<string key="NSCatalogName">System</string>
-												<string key="NSColorName">controlColor</string>
-												<object class="NSColor" key="NSColor">
-													<int key="NSColorSpace">3</int>
-													<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
-												</object>
-											</object>
+											<reference key="NSBackgroundColor" ref="81019784"/>
 											<object class="NSColor" key="NSTextColor" id="434296707">
 												<int key="NSColorSpace">1</int>
 												<bytes key="NSRGB">MCAwIDAAA</bytes>
@@ -3862,6 +3879,88 @@
 					</object>
 					<int key="connectionID">28798</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">displayPatternValue1: gamePath.lastPathComponent</string>
+						<reference key="source" ref="830639445"/>
+						<reference key="destination" ref="1073404721"/>
+						<object class="NSNibBindingConnector" key="connector" id="323926958">
+							<reference key="NSSource" ref="830639445"/>
+							<reference key="NSDestination" ref="1073404721"/>
+							<string key="NSLabel">displayPatternValue1: gamePath.lastPathComponent</string>
+							<string key="NSBinding">displayPatternValue1</string>
+							<string key="NSKeyPath">gamePath.lastPathComponent</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSDisplayPattern</string>
+								<string key="NS.object.0">%{value1}@ (Version: %{value2}@ ID: %{value3}@)</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">28811</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">displayPatternValue2: saveGameSummary.infoStrings.FMVersion</string>
+						<reference key="source" ref="830639445"/>
+						<reference key="destination" ref="1073404721"/>
+						<object class="NSNibBindingConnector" key="connector" id="854006657">
+							<reference key="NSSource" ref="830639445"/>
+							<reference key="NSDestination" ref="1073404721"/>
+							<string key="NSLabel">displayPatternValue2: saveGameSummary.infoStrings.FMVersion</string>
+							<string key="NSBinding">displayPatternValue2</string>
+							<string key="NSKeyPath">saveGameSummary.infoStrings.FMVersion</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSDisplayPattern</string>
+								<string key="NS.object.0">%{value1}@ (Version: %{value2}@ ID: %{value3}@)</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="323926958"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">28814</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">displayPatternValue3: gameInfo.gameID</string>
+						<reference key="source" ref="830639445"/>
+						<reference key="destination" ref="1073404721"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="830639445"/>
+							<reference key="NSDestination" ref="1073404721"/>
+							<string key="NSLabel">displayPatternValue3: gameInfo.gameID</string>
+							<string key="NSBinding">displayPatternValue3</string>
+							<string key="NSKeyPath">gameInfo.gameID</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSDisplayPattern</string>
+								<string key="NS.object.0">%{value1}@ (Version: %{value2}@ ID: %{value3}@)</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="854006657"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">28815</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: showDetails</string>
+						<reference key="source" ref="830639445"/>
+						<reference key="destination" ref="1073404721"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="830639445"/>
+							<reference key="NSDestination" ref="1073404721"/>
+							<string key="NSLabel">hidden: showDetails</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">showDetails</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">28818</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -4661,6 +4760,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="223599795"/>
 							<reference ref="454595697"/>
+							<reference ref="830639445"/>
 							<reference ref="730904582"/>
 						</array>
 						<reference key="parent" ref="134351275"/>
@@ -5869,6 +5969,19 @@
 						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="363112275"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">28799</int>
+						<reference key="object" ref="830639445"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="809746722"/>
+						</array>
+						<reference key="parent" ref="363112275"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">28800</int>
+						<reference key="object" ref="809746722"/>
+						<reference key="parent" ref="830639445"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -5938,9 +6051,9 @@
 				<integer value="1" key="245.ImportedFromIB2"/>
 				<string key="246.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="246.ImportedFromIB2"/>
-				<string key="26837.IBEditorWindowLastContentRect">{{6, 4}, {1152, 768}}</string>
+				<string key="26837.IBEditorWindowLastContentRect">{{104, 8}, {1152, 768}}</string>
 				<string key="26837.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="26837.IBWindowTemplateEditedContentRect">{{6, 4}, {1152, 768}}</string>
+				<string key="26837.IBWindowTemplateEditedContentRect">{{104, 8}, {1152, 768}}</string>
 				<integer value="1" key="26837.ImportedFromIB2"/>
 				<boolean value="YES" key="26837.NSWindowTemplate.visibleAtLaunch"/>
 				<integer value="1" key="26837.windowTemplate.hasMinSize"/>
@@ -6123,6 +6236,8 @@
 				<string key="27996.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="28004.IBPluginDependency">com.brandonwalkin.BWToolkit</string>
 				<string key="28007.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="28799.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="28800.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="29.IBEditorWindowLastContentRect">{{351, 816}, {415, 20}}</string>
 				<string key="29.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="29.ImportedFromIB2"/>
@@ -6208,7 +6323,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">28798</int>
+			<int key="maxID">28818</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
