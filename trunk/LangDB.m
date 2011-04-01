@@ -16,12 +16,12 @@
 stadiumLang, compLang, regionLang, descriptionLang, mediaLang, stageNameLang, localAreaLang,
 agreementLang, derbyLang;
 
-+ (void)extractLangDB:(NSString *)path
++ (void)extractLangDB:(NSString *)path toPath:(NSString *)savePath
 {
 	unsigned int byteOffset = 0;
 	unsigned int i;
 	
-	NSString *decompressPath = [NSString stringWithFormat:@"%@",[path stringByDeletingPathExtension]];
+	NSString *decompressPath = [NSString stringWithFormat:@"%@/%@",savePath,[[path lastPathComponent] stringByDeletingPathExtension]];
 	[[NSFileManager defaultManager] createDirectoryAtPath:decompressPath withIntermediateDirectories:YES attributes:nil error:nil];
 	
 	// load the file into memory

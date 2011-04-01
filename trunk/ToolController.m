@@ -284,12 +284,19 @@
 	[op setAllowedFileTypes:[NSArray arrayWithObjects:@"dat",nil]];
 	int result = [op runModal];
 	if (result==NSFileHandlingPanelOKButton) {
-		[LangDB extractLangDB:[op filename]];
+		NSOpenPanel *sp = [NSOpenPanel openPanel];
+		[sp setCanChooseFiles:NO];
+		[sp setCanChooseDirectories:YES];
+		[sp setTitle:@"Choose a directory to extract files into"];
+		int sresult = [sp runModal];
+		if (sresult==NSFileHandlingPanelOKButton) {
+			[LangDB extractLangDB:[op filename] toPath:[sp filename]];
+			
+			NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"lang_db.dat succesfully extracted",@"info message")] defaultButton:@"OK" alternateButton:nil 
+											   otherButton:nil informativeTextWithFormat:nil];
+			[alert runModal];
+		}
 	}
-	
-	NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"lang_db.dat succesfully extracted",@"info message")] defaultButton:@"OK" alternateButton:nil 
-									   otherButton:nil informativeTextWithFormat:NSLocalizedString(@"",@"info message")];
-	[alert runModal];
 }
 
 - (IBAction)extractFMFFile:(id)sender

@@ -21,6 +21,6 @@
 *regionLang, *descriptionLang, *mediaLang, *stageNameLang, *localAreaLang,
 *agreementLang, *derbyLang;
 
-+ (void)extractLangDB:(NSString *)path;
++ (void)extractLangDB:(NSString *)path toPath:(NSString *)savePath;
 
 @end
