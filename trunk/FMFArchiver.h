@@ -13,7 +13,7 @@
 
 }
 
-+ (void)extractFMF:(NSString *)path;
++ (void)extractFMF:(NSString *)path toPath:(NSString *)savePath;
 + (void)parseFMFDirectory:(NSData *)decompressedData atOffset:(unsigned int *)offset path:(NSString *)path fromFile:(NSString *)filePath withData:(NSData *)fileData isCompressed:(BOOL)compressed;
 
 @end

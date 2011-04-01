@@ -296,14 +296,22 @@
 {
 	NSOpenPanel *op = [NSOpenPanel openPanel];
 	[op setAllowedFileTypes:[NSArray arrayWithObjects:@"fmf",@"fm",nil]];
+	[op setTitle:@"Select a .fmf file to extract"];
 	int result = [op runModal];
 	if (result==NSFileHandlingPanelOKButton) {
-		[FMFArchiver extractFMF:[op filename]];
+		NSOpenPanel *sp = [NSOpenPanel openPanel];
+		[sp setCanChooseFiles:NO];
+		[sp setCanChooseDirectories:YES];
+		[sp setTitle:@"Choose a directory to extract files into"];
+		int sresult = [sp runModal];
+		if (sresult==NSFileHandlingPanelOKButton) {
+			[FMFArchiver extractFMF:[op filename] toPath:[sp filename]];
+			
+			NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"File succesfully extracted",@"info message")] defaultButton:@"OK" alternateButton:nil 
+											   otherButton:nil informativeTextWithFormat:nil];
+			[alert runModal];
+		}
 	}
-	
-	NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"File succesfully extracted",@"info message")] defaultButton:@"OK" alternateButton:nil 
-									   otherButton:nil informativeTextWithFormat:NSLocalizedString(@"",@"info message")];
-	[alert runModal];
 }
 
 @end
