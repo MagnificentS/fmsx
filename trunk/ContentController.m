@@ -267,6 +267,12 @@
 	[self replacePlaceholder:placeholderView withView:IDLookupView];
 }
 
+- (IBAction)selectToolsView:(id)sender
+{
+	NSViewController *toolsViewController = [[NSViewController alloc] initWithNibName:@"Tools" bundle:nil];
+	[self replacePlaceholder:placeholderView withView:[toolsViewController view]];
+}
+
 - (void)replacePlaceholder:(NSView *)placeholder withView:(NSView *)view
 {
 	NSParameterAssert(placeholder != nil);

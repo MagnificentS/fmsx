@@ -11,6 +11,7 @@
 			<string key="com.brandonwalkin.BWToolkit">1.2.5</string>
 		</dictionary>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
+			<integer value="26838"/>
 			<integer value="29"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
@@ -878,13 +879,13 @@
 							<object class="NSMutableString" key="NSToolbarItemIdentifier">
 								<characters key="NS.bytes">0B42A7C3-071F-4E9F-8C84-04E28E94957A</characters>
 							</object>
-							<string key="NSToolbarItemLabel">Game Info</string>
-							<string key="NSToolbarItemPaletteLabel">Game Info</string>
+							<string key="NSToolbarItemLabel">Tools</string>
+							<string key="NSToolbarItemPaletteLabel">Tools</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<nil key="NSToolbarItemView"/>
-							<object class="NSCustomResource" key="NSToolbarItemImage" id="332799048">
+							<object class="NSCustomResource" key="NSToolbarItemImage" id="215345356">
 								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">info</string>
+								<string key="NSResourceName">tools</string>
 							</object>
 							<nil key="NSToolbarItemTarget"/>
 							<nil key="NSToolbarItemAction"/>
@@ -948,7 +949,7 @@
 							<string key="NSToolbarItemPaletteLabel">ID Lookup</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<nil key="NSToolbarItemView"/>
-							<reference key="NSToolbarItemImage" ref="332799048"/>
+							<reference key="NSToolbarItemImage" ref="215345356"/>
 							<nil key="NSToolbarItemTarget"/>
 							<nil key="NSToolbarItemAction"/>
 							<string key="NSToolbarItemMinSize">{0, 0}</string>
@@ -967,7 +968,10 @@
 							<string key="NSToolbarItemPaletteLabel">Editor</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<nil key="NSToolbarItemView"/>
-							<reference key="NSToolbarItemImage" ref="332799048"/>
+							<object class="NSCustomResource" key="NSToolbarItemImage">
+								<string key="NSClassName">NSImage</string>
+								<string key="NSResourceName">editor</string>
+							</object>
 							<nil key="NSToolbarItemTarget"/>
 							<nil key="NSToolbarItemAction"/>
 							<string key="NSToolbarItemMinSize">{0, 0}</string>
@@ -989,6 +993,28 @@
 							<object class="NSCustomResource" key="NSToolbarItemImage">
 								<string key="NSClassName">NSImage</string>
 								<string key="NSResourceName">open</string>
+							</object>
+							<nil key="NSToolbarItemTarget"/>
+							<nil key="NSToolbarItemAction"/>
+							<string key="NSToolbarItemMinSize">{0, 0}</string>
+							<string key="NSToolbarItemMaxSize">{0, 0}</string>
+							<bool key="NSToolbarItemEnabled">YES</bool>
+							<bool key="NSToolbarItemAutovalidates">YES</bool>
+							<int key="NSToolbarItemTag">-1</int>
+							<bool key="NSToolbarIsUserRemovable">YES</bool>
+							<int key="NSToolbarItemVisibilityPriority">0</int>
+						</object>
+						<object class="NSToolbarItem" key="E6C9317B-46D6-42CD-BAE5-BC00B3E36518" id="185623677">
+							<object class="NSMutableString" key="NSToolbarItemIdentifier">
+								<characters key="NS.bytes">E6C9317B-46D6-42CD-BAE5-BC00B3E36518</characters>
+							</object>
+							<string key="NSToolbarItemLabel">Game Info</string>
+							<string key="NSToolbarItemPaletteLabel">Game Info</string>
+							<nil key="NSToolbarItemToolTip"/>
+							<nil key="NSToolbarItemView"/>
+							<object class="NSCustomResource" key="NSToolbarItemImage">
+								<string key="NSClassName">NSImage</string>
+								<string key="NSResourceName">info</string>
 							</object>
 							<nil key="NSToolbarItemTarget"/>
 							<nil key="NSToolbarItemAction"/>
@@ -1102,11 +1128,12 @@
 							</object>
 						</object>
 					</dictionary>
-					<array key="NSToolbarIBAllowedItems">
+					<array class="NSMutableArray" key="NSToolbarIBAllowedItems">
 						<reference ref="554912470"/>
 						<reference ref="82840006"/>
 						<reference ref="940160176"/>
 						<reference ref="930430988"/>
+						<reference ref="185623677"/>
 						<reference ref="837276188"/>
 						<reference ref="906299685"/>
 						<reference ref="834028811"/>
@@ -1120,7 +1147,6 @@
 						<reference ref="906299685"/>
 						<reference ref="940160176"/>
 						<reference ref="834028811"/>
-						<reference ref="837276188"/>
 						<reference ref="930430988"/>
 						<reference ref="419025337"/>
 						<reference ref="82840006"/>
@@ -1155,7 +1181,6 @@
 															<object class="NSPSMatrix" key="NSDrawMatrix"/>
 															<string key="NSFrame">{{178, 3}, {173, 20}}</string>
 															<reference key="NSSuperview" ref="777959440"/>
-															<reference key="NSWindow"/>
 															<int key="NSpiFlags">16392</int>
 															<double key="NSMaxValue">100</double>
 														</object>
@@ -1164,7 +1189,6 @@
 															<int key="NSvFlags">268</int>
 															<string key="NSFrame">{{0, 7}, {175, 14}}</string>
 															<reference key="NSSuperview" ref="777959440"/>
-															<reference key="NSWindow"/>
 															<bool key="NSEnabled">YES</bool>
 															<object class="NSTextFieldCell" key="NSCell" id="758821031">
 																<int key="NSCellFlags">68288064</int>
@@ -1194,12 +1218,10 @@
 													</array>
 													<string key="NSFrameSize">{352, 25}</string>
 													<reference key="NSSuperview" ref="1062138179"/>
-													<reference key="NSWindow"/>
 												</object>
 											</array>
 											<string key="NSFrame">{{16, -2}, {352, 25}}</string>
 											<reference key="NSSuperview" ref="1053032994"/>
-											<reference key="NSWindow"/>
 											<string key="NSOffsets">{0, 0}</string>
 											<object class="NSTextFieldCell" key="NSTitleCell">
 												<int key="NSCellFlags">67239424</int>
@@ -1229,12 +1251,10 @@
 									</array>
 									<string key="NSFrameSize">{399, 27}</string>
 									<reference key="NSSuperview" ref="223599795"/>
-									<reference key="NSWindow"/>
 								</object>
 							</array>
 							<string key="NSFrame">{{766, 5}, {399, 27}}</string>
 							<reference key="NSSuperview" ref="363112275"/>
-							<reference key="NSWindow"/>
 							<string key="NSOffsets">{0, 0}</string>
 							<object class="NSTextFieldCell" key="NSTitleCell">
 								<int key="NSCellFlags">67239424</int>
@@ -1258,29 +1278,26 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{478, -14}, {46, 46}}</string>
 							<reference key="NSSuperview" ref="363112275"/>
-							<reference key="NSWindow"/>
 						</object>
 						<object class="NSCustomView" id="730904582">
 							<reference key="NSNextResponder" ref="363112275"/>
 							<int key="NSvFlags">274</int>
 							<string key="NSFrame">{{0, 34}, {1152, 734}}</string>
 							<reference key="NSSuperview" ref="363112275"/>
-							<reference key="NSWindow"/>
 							<string key="NSClassName">NSView</string>
 						</object>
-						<object class="NSTextField" id="830639445">
+						<object class="NSTextField" id="336377769">
 							<reference key="NSNextResponder" ref="363112275"/>
 							<int key="NSvFlags">292</int>
 							<string key="NSFrame">{{17, 11}, {746, 14}}</string>
 							<reference key="NSSuperview" ref="363112275"/>
-							<reference key="NSWindow"/>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSTextFieldCell" key="NSCell" id="809746722">
+							<object class="NSTextFieldCell" key="NSCell" id="651003699">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">272761856</int>
 								<string key="NSContents">gamename.fm</string>
 								<reference key="NSSupport" ref="26"/>
-								<reference key="NSControlView" ref="830639445"/>
+								<reference key="NSControlView" ref="336377769"/>
 								<object class="NSColor" key="NSBackgroundColor" id="81019784">
 									<int key="NSColorSpace">6</int>
 									<string key="NSCatalogName">System</string>
@@ -1296,7 +1313,6 @@
 					</array>
 					<string key="NSFrameSize">{1152, 768}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{800, 678}</string>
@@ -3360,14 +3376,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">showGameInfo:</string>
-						<reference key="source" ref="716969148"/>
-						<reference key="destination" ref="930430988"/>
-					</object>
-					<int key="connectionID">26947</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">openGame:</string>
 						<reference key="source" ref="1073404721"/>
 						<reference key="destination" ref="554912470"/>
@@ -3882,10 +3890,10 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">displayPatternValue1: gamePath.lastPathComponent</string>
-						<reference key="source" ref="830639445"/>
+						<reference key="source" ref="336377769"/>
 						<reference key="destination" ref="1073404721"/>
-						<object class="NSNibBindingConnector" key="connector" id="323926958">
-							<reference key="NSSource" ref="830639445"/>
+						<object class="NSNibBindingConnector" key="connector" id="532107851">
+							<reference key="NSSource" ref="336377769"/>
 							<reference key="NSDestination" ref="1073404721"/>
 							<string key="NSLabel">displayPatternValue1: gamePath.lastPathComponent</string>
 							<string key="NSBinding">displayPatternValue1</string>
@@ -3902,10 +3910,10 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">displayPatternValue2: saveGameSummary.infoStrings.FMVersion</string>
-						<reference key="source" ref="830639445"/>
+						<reference key="source" ref="336377769"/>
 						<reference key="destination" ref="1073404721"/>
-						<object class="NSNibBindingConnector" key="connector" id="854006657">
-							<reference key="NSSource" ref="830639445"/>
+						<object class="NSNibBindingConnector" key="connector" id="35896816">
+							<reference key="NSSource" ref="336377769"/>
 							<reference key="NSDestination" ref="1073404721"/>
 							<string key="NSLabel">displayPatternValue2: saveGameSummary.infoStrings.FMVersion</string>
 							<string key="NSBinding">displayPatternValue2</string>
@@ -3914,7 +3922,7 @@
 								<string key="NS.key.0">NSDisplayPattern</string>
 								<string key="NS.object.0">%{value1}@ (Version: %{value2}@ ID: %{value3}@)</string>
 							</object>
-							<reference key="NSPreviousConnector" ref="323926958"/>
+							<reference key="NSPreviousConnector" ref="532107851"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3923,10 +3931,10 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">displayPatternValue3: gameInfo.gameID</string>
-						<reference key="source" ref="830639445"/>
+						<reference key="source" ref="336377769"/>
 						<reference key="destination" ref="1073404721"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="830639445"/>
+							<reference key="NSSource" ref="336377769"/>
 							<reference key="NSDestination" ref="1073404721"/>
 							<string key="NSLabel">displayPatternValue3: gameInfo.gameID</string>
 							<string key="NSBinding">displayPatternValue3</string>
@@ -3935,7 +3943,7 @@
 								<string key="NS.key.0">NSDisplayPattern</string>
 								<string key="NS.object.0">%{value1}@ (Version: %{value2}@ ID: %{value3}@)</string>
 							</object>
-							<reference key="NSPreviousConnector" ref="854006657"/>
+							<reference key="NSPreviousConnector" ref="35896816"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3944,10 +3952,10 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">hidden: showDetails</string>
-						<reference key="source" ref="830639445"/>
+						<reference key="source" ref="336377769"/>
 						<reference key="destination" ref="1073404721"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="830639445"/>
+							<reference key="NSSource" ref="336377769"/>
 							<reference key="NSDestination" ref="1073404721"/>
 							<string key="NSLabel">hidden: showDetails</string>
 							<string key="NSBinding">hidden</string>
@@ -3960,6 +3968,38 @@
 						</object>
 					</object>
 					<int key="connectionID">28818</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: dataLoaded</string>
+						<reference key="source" ref="185623677"/>
+						<reference key="destination" ref="1073404721"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="185623677"/>
+							<reference key="NSDestination" ref="1073404721"/>
+							<string key="NSLabel">enabled: dataLoaded</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">dataLoaded</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">28820</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showGameInfo:</string>
+						<reference key="source" ref="716969148"/>
+						<reference key="destination" ref="185623677"/>
+					</object>
+					<int key="connectionID">28821</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">selectToolsView:</string>
+						<reference key="source" ref="716969148"/>
+						<reference key="destination" ref="930430988"/>
+					</object>
+					<int key="connectionID">28822</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -4751,6 +4791,7 @@
 							<reference ref="834028811"/>
 							<reference ref="930430988"/>
 							<reference ref="837276188"/>
+							<reference ref="185623677"/>
 						</array>
 						<reference key="parent" ref="134351275"/>
 					</object>
@@ -4760,7 +4801,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="223599795"/>
 							<reference ref="454595697"/>
-							<reference ref="830639445"/>
+							<reference ref="336377769"/>
 							<reference ref="730904582"/>
 						</array>
 						<reference key="parent" ref="134351275"/>
@@ -5971,16 +6012,21 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">28799</int>
-						<reference key="object" ref="830639445"/>
+						<reference key="object" ref="336377769"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="809746722"/>
+							<reference ref="651003699"/>
 						</array>
 						<reference key="parent" ref="363112275"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">28800</int>
-						<reference key="object" ref="809746722"/>
-						<reference key="parent" ref="830639445"/>
+						<reference key="object" ref="651003699"/>
+						<reference key="parent" ref="336377769"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">28819</int>
+						<reference key="object" ref="185623677"/>
+						<reference key="parent" ref="756461202"/>
 					</object>
 				</array>
 			</object>
@@ -6051,15 +6097,15 @@
 				<integer value="1" key="245.ImportedFromIB2"/>
 				<string key="246.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="246.ImportedFromIB2"/>
-				<string key="26837.IBEditorWindowLastContentRect">{{104, 8}, {1152, 768}}</string>
+				<string key="26837.IBEditorWindowLastContentRect">{{426, -30}, {1152, 768}}</string>
 				<string key="26837.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="26837.IBWindowTemplateEditedContentRect">{{104, 8}, {1152, 768}}</string>
+				<string key="26837.IBWindowTemplateEditedContentRect">{{426, -30}, {1152, 768}}</string>
 				<integer value="1" key="26837.ImportedFromIB2"/>
 				<boolean value="YES" key="26837.NSWindowTemplate.visibleAtLaunch"/>
 				<integer value="1" key="26837.windowTemplate.hasMinSize"/>
 				<string key="26837.windowTemplate.maxSize">{1.79769e+308, 1.79769e+308}</string>
 				<string key="26837.windowTemplate.minSize">{800, 600}</string>
-				<string key="26838.IBEditorWindowLastContentRect">{{339, 800}, {616, 0}}</string>
+				<string key="26838.IBEditorWindowLastContentRect">{{694, 511}, {616, 227}}</string>
 				<string key="26838.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="26839.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="26839.ImportedFromIB2"/>
@@ -6238,6 +6284,7 @@
 				<string key="28007.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="28799.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="28800.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="28819.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="29.IBEditorWindowLastContentRect">{{351, 816}, {415, 20}}</string>
 				<string key="29.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="29.ImportedFromIB2"/>
@@ -6323,7 +6370,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">28818</int>
+			<int key="maxID">28822</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -6341,6 +6388,7 @@
 						<string key="selectEditorView:">id</string>
 						<string key="selectIDLookupView:">id</string>
 						<string key="selectScoutView:">id</string>
+						<string key="selectToolsView:">id</string>
 						<string key="setCityPickerObject:">id</string>
 						<string key="setClubPickerObject:">id</string>
 						<string key="setCompetitionPickerObject:">id</string>
@@ -6395,6 +6443,10 @@
 						</object>
 						<object class="IBActionInfo" key="selectScoutView:">
 							<string key="name">selectScoutView:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="selectToolsView:">
+							<string key="name">selectToolsView:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="setCityPickerObject:">
@@ -6474,6 +6526,7 @@
 						<string key="placeholderView">NSView</string>
 						<string key="stadiumPicker">BWSheetController</string>
 						<string key="stadiumPickerObject">id</string>
+						<string key="toolView">NSView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="IDLookupView">
@@ -6551,6 +6604,10 @@
 						<object class="IBToOneOutletInfo" key="stadiumPickerObject">
 							<string key="name">stadiumPickerObject</string>
 							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="toolView">
+							<string key="name">toolView</string>
+							<string key="candidateClassName">NSView</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -7966,10 +8023,12 @@
 			<string key="NSMenuCheckmark">{9, 8}</string>
 			<string key="NSMenuMixedState">{7, 2}</string>
 			<string key="NSToolbarCustomizeToolbarItemImage">{32, 32}</string>
+			<string key="editor">{57, 57}</string>
 			<string key="info">{57, 57}</string>
 			<string key="open">{57, 57}</string>
 			<string key="save">{57, 57}</string>
 			<string key="scout">{57, 57}</string>
+			<string key="tools">{57, 57}</string>
 		</dictionary>
 	</data>
 </archive>

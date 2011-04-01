@@ -575,16 +575,16 @@
 	};
 	FB0C9368132C2FC300CF3BFC /* ToolController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {737, 754}}";
-			sepNavSelRange = "{888, 0}";
-			sepNavVisRange = "{161, 1202}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 806}}";
+			sepNavSelRange = "{2024, 0}";
+			sepNavVisRange = "{1277, 753}";
 		};
 	};
 	FB0C9369132C2FC300CF3BFC /* ToolController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1328, 3679}}";
-			sepNavSelRange = "{10071, 0}";
-			sepNavVisRange = "{9058, 1737}";
+			sepNavIntBoundsRect = "{{0, 0}, {1349, 4134}}";
+			sepNavSelRange = "{12884, 37}";
+			sepNavVisRange = "{12533, 930}";
 		};
 	};
 	FB17EDC710B6B5F4006B17CE /* StaffLoader.h */ = {
@@ -890,17 +890,17 @@
 	};
 	FB1D74EB1098840B00EC8BBB /* ContentController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {737, 1313}}";
-			sepNavSelRange = "{1200, 0}";
-			sepNavVisRange = "{782, 681}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 1222}}";
+			sepNavSelRange = "{2613, 18}";
+			sepNavVisRange = "{1957, 733}";
 			sepNavWindowFrame = "{{63, 294}, {717, 584}}";
 		};
 	};
 	FB1D74EC1098840B00EC8BBB /* ContentController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {796, 3835}}";
-			sepNavSelRange = "{6422, 0}";
-			sepNavVisRange = "{5499, 1011}";
+			sepNavIntBoundsRect = "{{0, 0}, {1132, 3835}}";
+			sepNavSelRange = "{9803, 0}";
+			sepNavVisRange = "{490, 744}";
 			sepNavWindowFrame = "{{533, 105}, {717, 584}}";
 		};
 	};
@@ -5821,22 +5821,22 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {2826, 8489}}";
 			sepNavSelRange = "{6956, 0}";
-			sepNavVisRange = "{6734, 668}";
+			sepNavVisRange = "{6734, 699}";
 			sepNavWindowFrame = "{{38, 169}, {717, 584}}";
 		};
 	};
 	FBF90D2610923E5100929934 /* DebugController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {737, 767}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 793}}";
 			sepNavSelRange = "{169, 23}";
-			sepNavVisRange = "{0, 764}";
+			sepNavVisRange = "{0, 717}";
 		};
 	};
 	FBF90D2710923E5100929934 /* DebugController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1349, 3432}}";
-			sepNavSelRange = "{422, 7402}";
-			sepNavVisRange = "{7824, 1151}";
+			sepNavIntBoundsRect = "{{0, 0}, {1349, 3497}}";
+			sepNavSelRange = "{7825, 572}";
+			sepNavVisRange = "{7605, 946}";
 			sepNavWindowFrame = "{{82, 320}, {750, 558}}";
 		};
 	};

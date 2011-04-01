@@ -11,6 +11,7 @@
 #import "Club.h"
 #import "DatabaseTypes.h"
 #import "Team.h"
+#import "FMFArchiver.h"
 
 @implementation ToolController
 
@@ -275,6 +276,34 @@
 	}
 	else { [derbyUIDField setStringValue:@"---"]; }
 	
+}
+
+- (IBAction)extractLangDBFile:(id)sender
+{
+	NSOpenPanel *op = [NSOpenPanel openPanel];
+	[op setAllowedFileTypes:[NSArray arrayWithObjects:@"dat",nil]];
+	int result = [op runModal];
+	if (result==NSFileHandlingPanelOKButton) {
+		[LangDB extractLangDB:[op filename]];
+	}
+	
+	NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"lang_db.dat succesfully extracted",@"info message")] defaultButton:@"OK" alternateButton:nil 
+									   otherButton:nil informativeTextWithFormat:NSLocalizedString(@"",@"info message")];
+	[alert runModal];
+}
+
+- (IBAction)extractFMFFile:(id)sender
+{
+	NSOpenPanel *op = [NSOpenPanel openPanel];
+	[op setAllowedFileTypes:[NSArray arrayWithObjects:@"fmf",@"fm",nil]];
+	int result = [op runModal];
+	if (result==NSFileHandlingPanelOKButton) {
+		[FMFArchiver extractFMF:[op filename]];
+	}
+	
+	NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"File succesfully extracted",@"info message")] defaultButton:@"OK" alternateButton:nil 
+									   otherButton:nil informativeTextWithFormat:NSLocalizedString(@"",@"info message")];
+	[alert runModal];
 }
 
 @end

@@ -88,5 +88,6 @@
 - (IBAction)selectEditorView:(id)sender;
 - (IBAction)selectScoutView:(id)sender;
 - (IBAction)selectIDLookupView:(id)sender;
+- (IBAction)selectToolsView:(id)sender;
 
 @end

@@ -55,5 +55,7 @@
 }
 
 - (IBAction)IDLookup:(id)sender;
+- (IBAction)extractLangDBFile:(id)sender;
+- (IBAction)extractFMFFile:(id)sender;
 
 @end
