@@ -115,6 +115,7 @@
 	else if ([sender tag]==9)	{ competitionPickerSelector = @"newCompetitionID"; }
 	else if ([sender tag]==10)	{ competitionPickerSelector = @"newRefereeCompetitionID"; }
 	else if ([sender tag]==11)	{ competitionPickerSelector = @"newAssistantCompetitionID"; }
+	else if ([sender tag]==12)	{ competitionPickerSelector = @"newRegionalDivisionID"; }
 }	
 
 - (IBAction)setCompetitionPickerObject:(id)object

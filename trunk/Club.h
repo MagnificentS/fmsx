@@ -74,7 +74,7 @@
 	int nationID, futureTransferManagerID, chairmanID, cityID;
 	int averageAttendance, minimumAttendance, maximumAttendance, seasonTicketHolders;
 	int rowID, UID, maximumWeeklyWage, competitionID, UEFA5YearTotal;
-	int newRegionalDivisionLevel;
+	int newRegionalDivisionLevel, newRegionalDivisionID;
 	BOOL hasYouthAcademy, hasUEFACoefficient, hasScoutingKnowledges, allowSponsorshipForTopPlayers,
 	isPLC, paysHighWages, needsShortlistUpdate, isLeagueBodyClub;
 	ClubFinance *finance;
@@ -121,7 +121,7 @@ maximumWeeklyWage, competitionID, UEFA5YearTotal, cityID;
 *unknownDate2;
 @property(readwrite,copy) NSData *unknownData1, *unknownData2, *unknownData3, *unknownData4, *unknownData5, *unknownData6;
 
-@property(assign,readwrite) int newRegionalDivisionLevel;
+@property(assign,readwrite) int newRegionalDivisionLevel, newRegionalDivisionID;
 
 - (NSArray *)professionalStatusStrings;
 - (NSArray *)directorObjects;
@@ -133,6 +133,6 @@ maximumWeeklyWage, competitionID, UEFA5YearTotal, cityID;
 - (NSImage *)logo;
 - (NSImage *)bgLogo;
 
-- (void)addRegionalDivision:(Competition *)object;
+- (void)addRegionalDivision;
 
 @end
