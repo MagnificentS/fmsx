@@ -62,12 +62,14 @@ unknown8s, unknowns1, unknownShort1, unknownData4, unknownChar4;
 {
 	if (![name isEqualToString:@"---"]) { return name; }
 	
+	if (teamType==TT_FIRST_TEAM) { return [self teamString]; }
+	
 	return [NSString stringWithFormat:@"%@ %@",[[[self club] teamContainer] name],[[self teamTypeString] retain]];
 }
 
 - (NSString *)teamTypeString
 {
-	if (teamType==TT_FIRST_TEAM) { return NSLocalizedString(@"", @"team type"); } // returning blank for nicer UI
+	if (teamType==TT_FIRST_TEAM) { return NSLocalizedString(@"First Team", @"team type"); } // returning blank for nicer UI
 	if (teamType==TT_RESERVE_TEAM) { return NSLocalizedString(@"Reserves", @"team type"); }
 	if (teamType==TT_A_TEAM) { return NSLocalizedString(@"A", @"team type"); }
 	if (teamType==TT_B_TEAM) { return NSLocalizedString(@"B", @"team type"); }

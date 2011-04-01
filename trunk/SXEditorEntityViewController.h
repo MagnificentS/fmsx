@@ -23,6 +23,7 @@
 [NSDictionary dictionaryWithObjectsAndKeys:@"Sponsors",@"title",clubSponsorsView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Staff",@"title",clubStaffView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Tactics",@"title",clubTacticsView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Teams",@"title",clubTeamsView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Training",@"title",clubTrainingView,@"view",nil],\
 nil]
 
@@ -63,7 +64,7 @@ nil]
 	IBOutlet NSView			*clubMainViewContainer, *clubEntityView, *clubGeneralView, *clubSectionView, *clubTacticsView, 
 	*clubRelationshipsView, *clubAlternativeStadiumsView, *clubKitsView, *clubStaffView,
 	*clubScoutingKnowledgesView, *clubIDPCView, *clubRegionalDivisionsView, *clubSponsorsView,
-	*clubTrainingView, *clubFacilitiesView, *clubFinancesView;
+	*clubTrainingView, *clubFacilitiesView, *clubFinancesView, *clubTeamsView;
 	
 	IBOutlet BWSheetController *clubShirtPicker;
 	IBOutlet BWSheetController *clubShortsPicker;
@@ -163,6 +164,6 @@ nil]
 *personPlayerStatsView, *personRelationshipsView, *personContractsView, *personDebugPersonView,
 *clubMainViewContainer, *clubEntityView, *clubGeneralView, *clubSectionView, *clubTacticsView, *clubStaffView,
 *clubRelationshipsView, *clubAlternativeStadiumsView, *clubKitsView, *clubScoutingKnowledgesView, *clubIDPCView, *clubRegionalDivisionsView,
-*clubSponsorsView, *clubTrainingView, *clubFacilitiesView, *clubFinancesView;
+*clubSponsorsView, *clubTrainingView, *clubFacilitiesView, *clubFinancesView, *clubTeamsView;
 
 @end

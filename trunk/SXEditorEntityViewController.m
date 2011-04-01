@@ -49,7 +49,7 @@ personSpokespersonView, personHumanView, personRetiredPersonView, personAgentVie
 personOfficialView, personOfficialPastGamesView,personStatsView, personActualStaffView, personPreferredMovesView,
 personPlayerView, personNonPlayerView, personNonPlayerStatsView, personInjuriesView, personBansView, personPlayerFormsView,
 personPlayerStatsView, personRelationshipsView, personContractsView, personDebugPersonView,
-clubMainViewContainer, clubEntityView, clubGeneralView, clubSectionView, clubTacticsView, 
+clubMainViewContainer, clubEntityView, clubGeneralView, clubSectionView, clubTacticsView, clubTeamsView,
 clubRelationshipsView, clubAlternativeStadiumsView, clubKitsView, clubStaffView, clubTrainingView, clubFacilitiesView, 
 clubFinancesView, clubScoutingKnowledgesView, clubIDPCView, clubRegionalDivisionsView, clubSponsorsView;
 

@@ -24,8 +24,8 @@ attackingFormation, bTeams, unknowns2, transferInfos, physios, coaches;
 	NSMutableArray *array = [[NSMutableArray alloc] init];
 	
 	for (id item in teams) {
-		if ([item intValue] < [[[[NSApp delegate] database] teams] count]) {
-			[array addObject:[[[[NSApp delegate] database] teams] objectAtIndex:[item intValue]]];
+		if ([item intValue] < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.teams"] count]) {
+			[array addObject:[[[NSApp delegate] valueForKeyPath:@"gameDB.database.teams"] objectAtIndex:[item intValue]]];
 		}
 	}
 	
@@ -37,8 +37,8 @@ attackingFormation, bTeams, unknowns2, transferInfos, physios, coaches;
 	NSMutableArray *array = [[NSMutableArray alloc] init];
 	
 	for (id item in bTeams) {
-		if ([item intValue] < [[[[NSApp delegate] database] teams] count]) {
-			[array addObject:[[[[NSApp delegate] database] teams] objectAtIndex:[item intValue]]];
+		if ([item intValue] < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.teams"] count]) {
+			[array addObject:[[[NSApp delegate] valueForKeyPath:@"gameDB.database.teams"] objectAtIndex:[item intValue]]];
 		}
 	}
 	
