@@ -321,4 +321,40 @@
 	}
 }
 
+- (IBAction)convertFMDateToHuman:(id)sender
+{
+	int year = [FMYearBox intValue];
+	if (year<1900) { year = 2010; }
+	
+	int day = [FMDayBox intValue];
+	if (day<0 || day>366) { day = 0; }
+	
+	NSDate *jan1 = [[NSDate alloc] initWithString:[NSString stringWithFormat:@"%d-01-01 01:45:00 +0000",year]];
+	int seconds = 86400 * day;
+	NSDate *actualDate = [[[NSDate alloc] initWithTimeInterval:seconds sinceDate:jan1] autorelease];
+	
+	[humanDateResultBox setDateValue:actualDate];
+	[jan1 release];
+}
+
+- (IBAction)convertHumanDateToFM:(id)sender
+{
+	NSDate *date = [humanDateBox dateValue];
+	NSCalendar *gregorian = [[NSCalendar alloc]
+							 initWithCalendarIdentifier:NSGregorianCalendar];
+	
+	NSDateComponents *components =
+	[gregorian components:(NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit) fromDate:date];
+	
+	int year = [components year];
+	
+	NSDate *jan1 = [[NSDate alloc] initWithString:[NSString stringWithFormat:@"%d-01-01 01:45:00 +0000",year]];
+	int days = [date timeIntervalSinceDate:jan1] / 86400;
+	
+	[gregorian release];
+	
+	[FMDayResultBox setIntValue:days];
+	[FMYearResultBox setStringValue:[NSString stringWithFormat:@"%X",year]];
+}
+
 @end

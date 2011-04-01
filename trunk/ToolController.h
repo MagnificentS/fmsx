@@ -52,10 +52,21 @@
 	IBOutlet NSSearchField *IDSearchField;
 	
 	IBOutlet Controller *controller;
+	
+	// date converter
+	IBOutlet NSDatePicker	*humanDateResultBox;
+	IBOutlet NSTextField	*FMDayResultBox;
+	IBOutlet NSTextField	*FMYearResultBox;
+	IBOutlet NSTextField	*FMDayBox;
+	IBOutlet NSTextField	*FMYearBox;
+	IBOutlet NSDatePicker	*humanDateBox;
 }
 
 - (IBAction)IDLookup:(id)sender;
 - (IBAction)extractLangDBFile:(id)sender;
 - (IBAction)extractFMFFile:(id)sender;
+
+- (IBAction)convertHumanDateToFM:(id)sender;
+- (IBAction)convertFMDateToHuman:(id)sender;
 
 @end

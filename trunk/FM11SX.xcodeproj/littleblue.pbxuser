@@ -575,16 +575,16 @@
 	};
 	FB0C9368132C2FC300CF3BFC /* ToolController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {737, 806}}";
-			sepNavSelRange = "{2024, 0}";
-			sepNavVisRange = "{1277, 753}";
+			sepNavIntBoundsRect = "{{0, 0}, {978, 949}}";
+			sepNavSelRange = "{2102, 0}";
+			sepNavVisRange = "{1532, 624}";
 		};
 	};
 	FB0C9369132C2FC300CF3BFC /* ToolController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1349, 4134}}";
-			sepNavSelRange = "{12884, 37}";
-			sepNavVisRange = "{12533, 930}";
+			sepNavIntBoundsRect = "{{0, 0}, {978, 4641}}";
+			sepNavSelRange = "{269, 0}";
+			sepNavVisRange = "{24, 334}";
 		};
 	};
 	FB17EDC710B6B5F4006B17CE /* StaffLoader.h */ = {
@@ -1083,16 +1083,16 @@
 	};
 	FB2D7D1C120B05A000808951 /* FMFArchiver.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1377, 410}}";
-			sepNavSelRange = "{431, 0}";
-			sepNavVisRange = "{0, 439}";
+			sepNavIntBoundsRect = "{{0, 0}, {1377, 301}}";
+			sepNavSelRange = "{235, 28}";
+			sepNavVisRange = "{0, 467}";
 		};
 	};
 	FB2D7D1D120B05A000808951 /* FMFArchiver.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1370, 1508}}";
-			sepNavSelRange = "{1523, 194}";
-			sepNavVisRange = "{1718, 1470}";
+			sepNavIntBoundsRect = "{{0, 0}, {950, 1677}}";
+			sepNavSelRange = "{536, 0}";
+			sepNavVisRange = "{206, 742}";
 			sepNavWindowFrame = "{{14, 319}, {750, 558}}";
 		};
 	};
@@ -1301,6 +1301,13 @@
 			sepNavIntBoundsRect = "{{0, 0}, {754, 380}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 528}";
+		};
+	};
+	FB35641E10B4AE5C004E3FB7 /* MGRecessedPopUpButtonCell.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {737, 715}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{841, 515}";
 		};
 	};
 	FB37D244129C423200FCD89A /* SXTableView.h */ = {
@@ -1680,17 +1687,17 @@
 	};
 	FB59D8F81097222100E2AE40 /* LangDB.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 430}}";
-			sepNavSelRange = "{492, 0}";
-			sepNavVisRange = "{0, 806}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 351}}";
+			sepNavSelRange = "{798, 28}";
+			sepNavVisRange = "{27, 807}";
 			sepNavWindowFrame = "{{492, 320}, {750, 558}}";
 		};
 	};
 	FB59D8F91097222100E2AE40 /* LangDB.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1286, 754}}";
-			sepNavSelRange = "{413, 0}";
-			sepNavVisRange = "{530, 1347}";
+			sepNavIntBoundsRect = "{{0, 0}, {950, 832}}";
+			sepNavSelRange = "{631, 0}";
+			sepNavVisRange = "{204, 903}";
 		};
 	};
 	FB6B355910B2FB900098125F /* FamousPlayer.h */ = {
@@ -5819,25 +5826,23 @@
 	};
 	FBF90D2410923E2B00929934 /* Controller.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2826, 8489}}";
-			sepNavSelRange = "{6956, 0}";
-			sepNavVisRange = "{6734, 699}";
+			sepNavIntBoundsRect = "{{0, 0}, {2826, 8502}}";
+			sepNavSelRange = "{14879, 499}";
+			sepNavVisRange = "{14826, 939}";
 			sepNavWindowFrame = "{{38, 169}, {717, 584}}";
 		};
 	};
 	FBF90D2610923E5100929934 /* DebugController.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = DebugController.h;
+		path = "/Users/littleblue/ソフト/FM11SX/DebugController.h";
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {737, 793}}";
-			sepNavSelRange = "{169, 23}";
-			sepNavVisRange = "{0, 717}";
-		};
-	};
-	FBF90D2710923E5100929934 /* DebugController.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1349, 3497}}";
-			sepNavSelRange = "{7825, 572}";
-			sepNavVisRange = "{7605, 946}";
-			sepNavWindowFrame = "{{82, 320}, {750, 558}}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 767}}";
+			sepNavSelRange = "{1420, 245}";
+			sepNavVisRange = "{1154, 727}";
 		};
 	};
 	FBFD90751092AF860023F307 /* Alliteration.h */ = {

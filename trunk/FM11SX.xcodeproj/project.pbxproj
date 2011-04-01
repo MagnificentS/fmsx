@@ -695,7 +695,6 @@
 		FBF8659310D3E45F0069B01D /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF8659210D3E45F0069B01D /* BWToolkitFramework.framework */; };
 		FBF865C610D3E46E0069B01D /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FBF8659210D3E45F0069B01D /* BWToolkitFramework.framework */; };
 		FBF90D2510923E2B00929934 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF90D2410923E2B00929934 /* Controller.m */; };
-		FBF90D2810923E5100929934 /* DebugController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF90D2710923E5100929934 /* DebugController.m */; };
 		FBFC9D7F12998D9A005089E8 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFC9D7B12998D9A005089E8 /* info.png */; };
 		FBFC9D8012998D9A005089E8 /* open.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFC9D7C12998D9A005089E8 /* open.png */; };
 		FBFC9D8112998D9A005089E8 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFC9D7D12998D9A005089E8 /* save.png */; };
@@ -1727,8 +1726,6 @@
 		FBF8659210D3E45F0069B01D /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BWToolkitFramework.framework; sourceTree = "<group>"; };
 		FBF90D2310923E2B00929934 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		FBF90D2410923E2B00929934 /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
-		FBF90D2610923E5100929934 /* DebugController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugController.h; sourceTree = "<group>"; };
-		FBF90D2710923E5100929934 /* DebugController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugController.m; sourceTree = "<group>"; };
 		FBFC9D7B12998D9A005089E8 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		FBFC9D7C12998D9A005089E8 /* open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = open.png; sourceTree = "<group>"; };
 		FBFC9D7D12998D9A005089E8 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
@@ -3008,8 +3005,6 @@
 				FB1D74EC1098840B00EC8BBB /* ContentController.m */,
 				FBF90D2310923E2B00929934 /* Controller.h */,
 				FBF90D2410923E2B00929934 /* Controller.m */,
-				FBF90D2610923E5100929934 /* DebugController.h */,
-				FBF90D2710923E5100929934 /* DebugController.m */,
 				FB59D8F81097222100E2AE40 /* LangDB.h */,
 				FB59D8F91097222100E2AE40 /* LangDB.m */,
 				FB2E734E130C73B3009537D2 /* ScoutController.h */,
@@ -3548,7 +3543,6 @@
 				77C8280E06725ACE000B614F /* FM11SX_AppDelegate.m in Sources */,
 				770B37ED0679A11B001EADE2 /* FM11SX_DataModel.xcdatamodel in Sources */,
 				FBF90D2510923E2B00929934 /* Controller.m in Sources */,
-				FBF90D2810923E5100929934 /* DebugController.m in Sources */,
 				FBA2B75210924F5600C1A669 /* SupportFunctions.m in Sources */,
 				FBA2B79510925AEF00C1A669 /* SXzlib.m in Sources */,
 				FBA2B8C7109289E300C1A669 /* MBPreferencesController.m in Sources */,
