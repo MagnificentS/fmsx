@@ -8,6 +8,7 @@
 
 #import "Club.h"
 #import "SXFGameDB.h"
+#import "SXGraphicsController.h"
 #import "Team.h"
 #import "Database.h"
 #import "RegionalDivision.h"
