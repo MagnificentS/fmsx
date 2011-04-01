@@ -293,7 +293,7 @@
 			[LangDB extractLangDB:[op filename] toPath:[sp filename]];
 			
 			NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"lang_db.dat succesfully extracted",@"info message")] defaultButton:@"OK" alternateButton:nil 
-											   otherButton:nil informativeTextWithFormat:nil];
+											   otherButton:nil informativeTextWithFormat:@""];
 			[alert runModal];
 		}
 	}
@@ -315,7 +315,7 @@
 			[FMFArchiver extractFMF:[op filename] toPath:[sp filename]];
 			
 			NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"File succesfully extracted",@"info message")] defaultButton:@"OK" alternateButton:nil 
-											   otherButton:nil informativeTextWithFormat:nil];
+											   otherButton:nil informativeTextWithFormat:@""];
 			[alert runModal];
 		}
 	}
