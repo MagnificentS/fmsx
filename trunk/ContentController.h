@@ -12,7 +12,7 @@
 
 @interface ContentController : NSObject {
 	IBOutlet NSBox *mainViewContainer;
-	IBOutlet NSView *editorView, *IDLookupView;
+	IBOutlet NSView *editorView, *IDLookupView, *gameInfoView;
 	IBOutlet NSView *placeholderView;
 	
 	NSMutableDictionary *selectedRows;
@@ -88,6 +88,7 @@
 - (IBAction)selectEditorView:(id)sender;
 - (IBAction)selectScoutView:(id)sender;
 - (IBAction)selectIDLookupView:(id)sender;
+- (IBAction)selectGameInfoView:(id)sender;
 - (IBAction)selectToolsView:(id)sender;
 
 @end

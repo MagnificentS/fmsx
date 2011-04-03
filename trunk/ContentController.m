@@ -267,6 +267,11 @@
 	[self replacePlaceholder:placeholderView withView:IDLookupView];
 }
 
+- (IBAction)selectGameInfoView:(id)sender
+{
+	[self replacePlaceholder:placeholderView withView:gameInfoView];
+}
+
 - (IBAction)selectToolsView:(id)sender
 {
 	NSViewController *toolsViewController = [[NSViewController alloc] initWithNibName:@"Tools" bundle:nil];

@@ -12,4 +12,18 @@
 
 @synthesize nManagers, infoStrings;
 
+- (NSString *)managers
+{
+	NSMutableString *string = [NSMutableString string];
+	
+	for (int i=1;i<=nManagers;i++) {
+		if (![[infoStrings objectForKey:[NSString stringWithFormat:@"manager%dname",i]] isEqualToString:@"---"]) {
+			if ([string length]>0) { [string appendString:@", "]; }
+			[string appendFormat:@"%@ (%@)",[infoStrings objectForKey:[NSString stringWithFormat:@"manager%dname",i]],
+			 [infoStrings objectForKey:[NSString stringWithFormat:@"manager%dclub",i]]];
+		}
+	}
+	return [NSString stringWithString:string];
+}
+
 @end

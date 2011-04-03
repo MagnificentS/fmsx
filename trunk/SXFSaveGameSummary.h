@@ -18,4 +18,6 @@
 @property(assign,readwrite) int nManagers;
 @property(copy,readwrite) NSMutableDictionary *infoStrings;
 
+- (NSString *)managers;
+
 @end
