@@ -46,6 +46,7 @@ nil]
 [NSDictionary dictionaryWithObjectsAndKeys:@"Spoken Languages",@"title",nationSpokenLanguagesView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Staff",@"title",nationStaffView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Tactics",@"title",nationTacticsView,@"view",nil],\
+[NSDictionary dictionaryWithObjectsAndKeys:@"Teams",@"title",nationTeamsView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Transfer Preferences",@"title",nationTransferPreferencesView,@"view",nil],\
 	nil]
 
@@ -108,7 +109,7 @@ nil]
 	*nationRankingPointsView, *nationShortlistsView, *nationTransferPreferencesView, *nationSpokenLanguagesView,
 	*nationTreatedAsEUView, *nationTreatedAsNonForeignView, *nationRankingMatchesView, *nationFutureRegenView,
 	*nationTacticsView, *nationStaffView, *nationRelationshipsView, *nationAlternativeStadiumsView,
-	*nationKitsView;
+	*nationKitsView, *nationTeamsView;
 	NSMutableArray *nationSections;
 	
 	IBOutlet BWSheetController *shirtPicker;
@@ -164,6 +165,6 @@ nil]
 *personPlayerStatsView, *personRelationshipsView, *personContractsView, *personDebugPersonView,
 *clubMainViewContainer, *clubEntityView, *clubGeneralView, *clubSectionView, *clubTacticsView, *clubStaffView,
 *clubRelationshipsView, *clubAlternativeStadiumsView, *clubKitsView, *clubScoutingKnowledgesView, *clubIDPCView, *clubRegionalDivisionsView,
-*clubSponsorsView, *clubTrainingView, *clubFacilitiesView, *clubFinancesView, *clubTeamsView;
+*clubSponsorsView, *clubTrainingView, *clubFacilitiesView, *clubFinancesView, *clubTeamsView, *nationTeamsView;
 
 @end
