@@ -68,4 +68,26 @@ selectedPerson, selectedSponsor, selectedStadium, selectedStadiumChange, selecte
 	[[[NSApp delegate] contentController] replacePlaceholder:[[[[NSApp delegate] contentController] editorViewController] editorPlaceholderView] withView:[viewController view]];
 }
 
+- (void)selectSection:(int)newSection andPerson:(Person *)person
+{
+	// leave without doing anything if it's an invalid section
+	if (newSection <= 0 || newSection > EDITOR_SECTIONS) { return; }
+	
+	[[[NSApp delegate] editorController] setCurrentSection:newSection];
+	
+	// remove previous search results
+	[searchResults removeAllObjects];
+	
+	NSString *nibToLoad = @"Editor_Person";
+	
+	SXEditorEntityViewController *viewController = [[SXEditorEntityViewController alloc] initWithNibName:nibToLoad bundle:nil];
+	[[[NSApp delegate] contentController] replacePlaceholder:[[[[NSApp delegate] contentController] editorViewController] editorPlaceholderView] withView:[viewController view]];
+	
+	// select current person
+	[self setSelectedPerson:person];
+	
+	// change view
+	[[[NSApp delegate] contentController] replacePlaceholder:[viewController personMainViewContainer] withView:[viewController personEntityView]];
+}
+
 @end

@@ -145,6 +145,7 @@ nil]
 - (IBAction)showStadiumPicker:(id)sender;
 
 - (void)selectFromTable;
+- (void)selectPerson:(Person *)person;
 - (void)reloadEntityTable:(int)section;
 
 @property(readwrite,assign) IBOutlet NSView	*awardMainViewContainer, *awardEntityView, *awardGeneralView, *awardRulesView, *awardSectionView,

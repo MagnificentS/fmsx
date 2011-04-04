@@ -1236,6 +1236,34 @@
 							<reference key="NSNextResponder" ref="363112275"/>
 							<int key="NSvFlags">274</int>
 							<array class="NSMutableArray" key="NSSubviews">
+								<object class="NSTextField" id="364885627">
+									<reference key="NSNextResponder" ref="730904582"/>
+									<int key="NSvFlags">266</int>
+									<string key="NSFrame">{{444, 621}, {233, 24}}</string>
+									<reference key="NSSuperview" ref="730904582"/>
+									<bool key="NSEnabled">YES</bool>
+									<object class="NSTextFieldCell" key="NSCell" id="777754016">
+										<int key="NSCellFlags">68288064</int>
+										<int key="NSCellFlags2">272630784</int>
+										<string key="NSContents">Quick Start Instructions</string>
+										<object class="NSFont" key="NSSupport" id="1019657979">
+											<string key="NSName">LucidaGrande</string>
+											<double key="NSSize">20</double>
+											<int key="NSfFlags">16</int>
+										</object>
+										<reference key="NSControlView" ref="364885627"/>
+										<object class="NSColor" key="NSBackgroundColor" id="81019784">
+											<int key="NSColorSpace">6</int>
+											<string key="NSCatalogName">System</string>
+											<string key="NSColorName">controlColor</string>
+											<object class="NSColor" key="NSColor">
+												<int key="NSColorSpace">3</int>
+												<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
+											</object>
+										</object>
+										<reference key="NSTextColor" ref="25918122"/>
+									</object>
+								</object>
 								<object class="NSButton" id="1038446354">
 									<reference key="NSNextResponder" ref="730904582"/>
 									<int key="NSvFlags">267</int>
@@ -1246,11 +1274,7 @@
 										<int key="NSCellFlags">67239424</int>
 										<int key="NSCellFlags2">134217728</int>
 										<string key="NSContents">Step 2 - Edit the contents of your game</string>
-										<object class="NSFont" key="NSSupport" id="1019657979">
-											<string key="NSName">LucidaGrande</string>
-											<double key="NSSize">20</double>
-											<int key="NSfFlags">16</int>
-										</object>
+										<reference key="NSSupport" ref="1019657979"/>
 										<reference key="NSControlView" ref="1038446354"/>
 										<int key="NSButtonFlags">-2034482945</int>
 										<int key="NSButtonFlags2">130</int>
@@ -1377,15 +1401,7 @@
 								<string key="NSContents">gamename.fm</string>
 								<reference key="NSSupport" ref="26"/>
 								<reference key="NSControlView" ref="963473316"/>
-								<object class="NSColor" key="NSBackgroundColor" id="81019784">
-									<int key="NSColorSpace">6</int>
-									<string key="NSCatalogName">System</string>
-									<string key="NSColorName">controlColor</string>
-									<object class="NSColor" key="NSColor">
-										<int key="NSColorSpace">3</int>
-										<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
-									</object>
-								</object>
+								<reference key="NSBackgroundColor" ref="81019784"/>
 								<reference key="NSTextColor" ref="25918122"/>
 							</object>
 						</object>
@@ -6477,6 +6493,7 @@
 							<reference ref="947485307"/>
 							<reference ref="1038446354"/>
 							<reference ref="691640518"/>
+							<reference ref="364885627"/>
 						</array>
 						<reference key="parent" ref="363112275"/>
 					</object>
@@ -6971,6 +6988,19 @@
 						<reference key="object" ref="893399973"/>
 						<reference key="parent" ref="691640518"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">29086</int>
+						<reference key="object" ref="364885627"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="777754016"/>
+						</array>
+						<reference key="parent" ref="730904582"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">29087</int>
+						<reference key="object" ref="777754016"/>
+						<reference key="parent" ref="364885627"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -7306,6 +7336,8 @@
 				<string key="29079.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="29080.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="29081.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="29086.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="29087.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="444.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="445.IBEditorWindowLastContentRect">{{137, 453}, {254, 283}}</string>
 				<string key="445.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -7384,7 +7416,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">29085</int>
+			<int key="maxID">29087</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

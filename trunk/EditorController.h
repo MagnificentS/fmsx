@@ -60,6 +60,7 @@ Nation, Person, Sponsor, Stadium, StadiumChange, Weather;
 }
 
 - (void)selectSection:(int)newSection;
+- (void)selectSection:(int)newSection andPerson:(Person *)person;
 
 @property(readwrite,assign) int currentSection;
 @property(readwrite,assign) Award *selectedAward;

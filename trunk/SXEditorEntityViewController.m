@@ -782,6 +782,13 @@ nationTeamsView, personToolsView;
 	[self reloadEntityTable:currentSection];
 }
 
+- (void)selectPerson:(Person *)person
+{
+	// change main section
+	[[[NSApp delegate] editorController] selectSection:EDS_PEOPLE andPerson:person];
+}
+	 
+
 - (IBAction)showCityPicker:(id)sender { [[[NSApp delegate] contentController] showCityPicker:sender]; }
 - (IBAction)showClubPicker:(id)sender { [[[NSApp delegate] contentController] showClubPicker:sender]; }
 - (IBAction)showCompetitionPicker:(id)sender { [[[NSApp delegate] contentController] showCompetitionPicker:sender]; }
