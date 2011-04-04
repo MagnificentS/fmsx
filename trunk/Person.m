@@ -566,8 +566,10 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 	return FALSE;
 }
 
-- (void)transfer:(Club *)newClub
+- (void)transfer
 {
+	Club *newClub = [[[NSApp delegate] valueForKeyPath:@"gameDB.database.clubs"] objectAtIndex:transferID];
+	
 	NSLog(@"Transferring to %@...",[[newClub teamContainer] name]);
 	
 	if (![self canTransfer] || [[[newClub teamContainer] teams] count]==0) { return; }
@@ -667,9 +669,11 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 	if (retiredPersonData) {
 		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Retired Person Data",@"title",[entityController personRetiredPersonView],@"view",nil]];
 	}
+	[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Tools",@"title",[entityController personToolsView],@"view",nil]];
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"debugMode"]) {
-		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Debug - Person",@"title",[entityController personDebugPersonView],@"view",nil]];
+	//	[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Debug - Person",@"title",[entityController personDebugPersonView],@"view",nil]];
 	}
+	
 	
 	return [sections autorelease];
 }

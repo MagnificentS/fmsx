@@ -96,7 +96,7 @@
 - (BOOL)isTransferListed;
 - (BOOL)isListedForLoan;
 - (BOOL)canTransfer;
-- (void)transfer:(Club *)newClub;
+- (void)transfer;
 
 - (NSImage *)photo;
 - (NSMutableArray *)sections:(SXEditorEntityViewController *)entityController;

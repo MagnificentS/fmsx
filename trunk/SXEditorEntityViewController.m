@@ -52,7 +52,7 @@ personPlayerStatsView, personRelationshipsView, personContractsView, personDebug
 clubMainViewContainer, clubEntityView, clubGeneralView, clubSectionView, clubTacticsView, clubTeamsView,
 clubRelationshipsView, clubAlternativeStadiumsView, clubKitsView, clubStaffView, clubTrainingView, clubFacilitiesView, 
 clubFinancesView, clubScoutingKnowledgesView, clubIDPCView, clubRegionalDivisionsView, clubSponsorsView,
-nationTeamsView;
+nationTeamsView, personToolsView;
 
 - (void)awakeFromNib
 {
@@ -63,6 +63,8 @@ nationTeamsView;
 	[clubShirtPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
 	[clubShortsPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
 	[clubSocksPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
+	[renamePersonPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
+	[transferPersonPicker setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView

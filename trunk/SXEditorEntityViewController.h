@@ -122,7 +122,9 @@ nil]
 	*personJournalistView, *personOfficialView, *personOfficialPastGamesView, *personStatsView, *personActualStaffView,
 	*personPreferredMovesView, *personPlayerView, *personNonPlayerView, *personNonPlayerStatsView, *personInjuriesView,
 	*personBansView, *personPlayerFormsView, *personPlayerStatsView, *personRelationshipsView, *personContractsView,
-	*personDebugPersonView;
+	*personDebugPersonView, *personToolsView;
+	
+	IBOutlet BWSheetController *renamePersonPicker, *transferPersonPicker;
 	
 	IBOutlet NSTableView	*stadiumChangesTable;
 	IBOutlet NSView			*stadiumChangeMainViewContainer, *stadiumChangeEntityView;
@@ -165,6 +167,7 @@ nil]
 *personPlayerStatsView, *personRelationshipsView, *personContractsView, *personDebugPersonView,
 *clubMainViewContainer, *clubEntityView, *clubGeneralView, *clubSectionView, *clubTacticsView, *clubStaffView,
 *clubRelationshipsView, *clubAlternativeStadiumsView, *clubKitsView, *clubScoutingKnowledgesView, *clubIDPCView, *clubRegionalDivisionsView,
-*clubSponsorsView, *clubTrainingView, *clubFacilitiesView, *clubFinancesView, *clubTeamsView, *nationTeamsView;
+*clubSponsorsView, *clubTrainingView, *clubFacilitiesView, *clubFinancesView, *clubTeamsView, *nationTeamsView,
+*personToolsView;
 
 @end

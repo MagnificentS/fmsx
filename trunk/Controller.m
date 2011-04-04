@@ -310,7 +310,6 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 		[SXFGameDBLoader readFileFromData:[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"fileLength"] intValue])] intoObject:gameDB];
 		[gameDB setSaveStartOffset:([gameDB saveStartOffset]+([[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"startOffset"] intValue]+18))];
 		[[gameDB database] setSaveEndOffset:([gameDB saveEndOffset]+([[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"startOffset"] intValue]+18))];
-		NSLog(@"so:%d eo:%d",[gameDB saveStartOffset],[gameDB saveEndOffset]);
 	}
 	
 	if (!gameDB) { 

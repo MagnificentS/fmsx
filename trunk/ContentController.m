@@ -218,6 +218,7 @@
 	else if ([sender tag]==2)	{ clubPickerSelector = @"clubRowID"; }
 	else if ([sender tag]==3)	{ clubPickerSelector = @"associatedClubID"; }
 	else if ([sender tag]==4)	{ clubPickerSelector = @"favouriteClubID"; }
+	else if ([sender tag]==5)	{ clubPickerSelector = @"transferID"; }
 }	
 
 - (IBAction)setClubPickerObject:(id)object
