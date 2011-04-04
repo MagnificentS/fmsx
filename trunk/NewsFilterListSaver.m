@@ -13,20 +13,18 @@
 
 @implementation NewsFilterListSaver
 
-+ (void)saveFilterList:(NewsFilterList *)object toData:(NSMutableData *)data version:(short)version
++ (void)saveFilterList:(NewsFilterList *)object toData:(NSMutableData *)data
 {
 	int ibuffer;
 	
-	if (version >= FM2010_10_3) {
-		[data appendData:[object unknownData1]];
-	}
+	[data appendData:[object unknownData1]];
 	
 	[SupportFunctions saveCString:[object type] toData:data];
 	
 	ibuffer = [[object filters] count];
 	[data appendBytes:&ibuffer length:4];
 	for (int i = 0; i<[[object filters] count]; i++) {
-		[NewsFilterSaver saveFilter:[[object filters] objectAtIndex:i] toData:data version:version];
+		[NewsFilterSaver saveFilter:[[object filters] objectAtIndex:i] toData:data];
 	}
 	
 	if ([[object type] isEqualToString:@"tslntslf"]) {

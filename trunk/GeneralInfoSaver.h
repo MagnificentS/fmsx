@@ -13,6 +13,6 @@
 
 }
 
-+ (void)saveInfo:(GeneralInfo *)object toData:(NSMutableData *)data saveInfo:(BOOL)saveInfo version:(short)version;
++ (void)saveInfo:(GeneralInfo *)object toData:(NSMutableData *)data saveInfo:(BOOL)saveInfo;
 
 @end

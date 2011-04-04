@@ -17,7 +17,7 @@
 
 @implementation HumanSaver
 
-+ (void)saveHuman:(Human *)object toData:(NSMutableData *)data version:(short)version
++ (void)saveHuman:(Human *)object toData:(NSMutableData *)data
 {
 	char cbuffer;
 	short sbuffer;
@@ -38,7 +38,7 @@
 	ibuffer = [[object infos] count];
 	[data appendBytes:&ibuffer length:4];
 	for (int i = 0; i<[[object infos] count]; i++) {
-		[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:YES version:version];
+		[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:YES];
 	}
 	
 	[data appendData:[object unknownData4]];
@@ -50,7 +50,7 @@
 	ibuffer = [[object newsFilterLists] count];
 	[data appendBytes:&ibuffer length:4];
 	for (int i = 0; i<[[object newsFilterLists] count]; i++) {
-		[NewsFilterListSaver saveFilterList:[[object newsFilterLists] objectAtIndex:i] toData:data version:version];
+		[NewsFilterListSaver saveFilterList:[[object newsFilterLists] objectAtIndex:i] toData:data];
 	}
 	
 	cbuffer = [object unknownChar2];
@@ -66,7 +66,7 @@
 		ibuffer = [[[object mediaDecisions] objectAtIndex:i] count];
 		[data appendBytes:&ibuffer length:4];
 		for (int j = 0; j<[[[object mediaDecisions] objectAtIndex:i] count]; j++) {
-			[GeneralInfoSaver saveInfo:[[[object mediaDecisions] objectAtIndex:i] objectAtIndex:j] toData:data saveInfo:YES version:version];
+			[GeneralInfoSaver saveInfo:[[[object mediaDecisions] objectAtIndex:i] objectAtIndex:j] toData:data saveInfo:YES];
 		}
 		
 	}
@@ -111,7 +111,7 @@
 	[data appendBytes:&sbuffer length:2];
 	
 	if ([object topLevelBookmarkItems]>0) {
-		[BookmarkFolderSaver saveFolder:[object bookmarks] toData:data version:version];
+		[BookmarkFolderSaver saveFolder:[object bookmarks] toData:data];
 	}
 	
 	bbuffer = [object homePageSet];
@@ -121,7 +121,7 @@
 		ibuffer = [[object homePageInfos] count];
 		[data appendBytes:&ibuffer length:4];
 		for (int i = 0; i<[[object homePageInfos] count]; i++) {
-			[GeneralInfoSaver saveInfo:[[object homePageInfos] objectAtIndex:i] toData:data saveInfo:YES version:version];
+			[GeneralInfoSaver saveInfo:[[object homePageInfos] objectAtIndex:i] toData:data saveInfo:YES];
 		}
 	}
 }

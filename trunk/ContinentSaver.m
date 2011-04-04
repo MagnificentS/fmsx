@@ -11,7 +11,7 @@
 
 @implementation ContinentSaver
 
-+ (void)saveContinent:(Continent *)object toData:(NSMutableData *)data version:(short)version
++ (void)saveContinent:(Continent *)object toData:(NSMutableData *)data
 {
 	BOOL bbuffer;
 	char cbuffer;
@@ -37,7 +37,7 @@
 		ibuffer = [[object infos] count];
 		[data appendBytes:&ibuffer length:4];
 		for (int i = 0; i<[[object infos] count]; i++) {
-			[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:NO version:version];
+			[GeneralInfoSaver saveInfo:[[object infos] objectAtIndex:i] toData:data saveInfo:NO];
 		}
 	}
 	

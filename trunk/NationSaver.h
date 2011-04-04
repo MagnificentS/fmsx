@@ -13,6 +13,6 @@
 
 }
 
-+ (void)saveNation:(Nation *)object toData:(NSMutableData *)data version:(short)version;
++ (void)saveNation:(Nation *)object toData:(NSMutableData *)data;
 
 @end

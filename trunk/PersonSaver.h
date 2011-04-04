@@ -13,6 +13,6 @@
 
 }
 
-+ (void)savePerson:(Person *)object toData:(NSMutableData *)data version:(short)version;
++ (void)savePerson:(Person *)object toData:(NSMutableData *)data;
 
 @end

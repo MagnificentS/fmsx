@@ -20,7 +20,7 @@
 
 @implementation ClubSaver
 
-+ (void)saveClub:(Club *)object toData:(NSMutableData *)data version:(short)version
++ (void)saveClub:(Club *)object toData:(NSMutableData *)data
 {
 	char cbuffer;
 	unsigned char ucbuffer;
@@ -95,7 +95,7 @@
 		[data appendBytes:&ibuffer length:4];
 	}
 	
-	[ClubFinanceSaver saveFinance:[object finance] toData:data version:version];
+	[ClubFinanceSaver saveFinance:[object finance] toData:data];
 	
 	sbuffer = [[object transferOffers] count];
 	[data appendBytes:&sbuffer length:2];

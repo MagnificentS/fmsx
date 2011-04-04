@@ -13,6 +13,6 @@
 
 }
 
-+ (void)saveInfo:(NewsInfo *)object toData:(NSMutableData *)data inType:(NSString *)type version:(short)version;
++ (void)saveInfo:(NewsInfo *)object toData:(NSMutableData *)data inType:(NSString *)type;
 
 @end

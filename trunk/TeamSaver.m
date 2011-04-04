@@ -17,7 +17,7 @@
 
 @implementation TeamSaver
 
-+ (void)saveTeam:(Team *)object toData:(NSMutableData *)data version:(short)version
++ (void)saveTeam:(Team *)object toData:(NSMutableData *)data
 {
 	char cbuffer;
 	unsigned char ucbuffer;

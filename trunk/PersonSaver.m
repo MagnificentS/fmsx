@@ -23,7 +23,7 @@
 
 @implementation PersonSaver
 
-+ (void)savePerson:(Person *)object toData:(NSMutableData *)data version:(short)version
++ (void)savePerson:(Person *)object toData:(NSMutableData *)data
 {
 	char cbuffer;
 	unsigned char ucbuffer;
@@ -33,19 +33,19 @@
 	[data appendBytes:&cbuffer length:1];
 	
 	if ([object databaseClass]==DBC_PLAYER) {
-		[PlayerSaver savePlayer:[object playerData] toData:data version:version];
-		[StaffSaver saveStaff:[object staffData] toData:data version:version];
+		[PlayerSaver savePlayer:[object playerData] toData:data];
+		[StaffSaver saveStaff:[object staffData] toData:data];
 		[ActualPersonSaver saveActualPerson:[object personData] toData:data];
 	}
 	else if ([object databaseClass]==DBC_NON_PLAYER) {
 		[NonPlayerSaver saveNonPlayer:[object nonPlayerData] toData:data];
-		[StaffSaver saveStaff:[object staffData] toData:data version:version];
+		[StaffSaver saveStaff:[object staffData] toData:data];
 		[ActualPersonSaver saveActualPerson:[object personData] toData:data];
 	}
 	else if ([object databaseClass]==DBC_PLAYER_AND_NON_PLAYER) {
-		[PlayerSaver savePlayer:[object playerData] toData:data version:version];
+		[PlayerSaver savePlayer:[object playerData] toData:data];
 		[NonPlayerSaver saveNonPlayer:[object nonPlayerData] toData:data];
-		[StaffSaver saveStaff:[object staffData] toData:data version:version];
+		[StaffSaver saveStaff:[object staffData] toData:data];
 		[ActualPersonSaver saveActualPerson:[object personData] toData:data];
 	}
 	else if ([object databaseClass]==DBC_OFFICIAL) {
@@ -67,9 +67,9 @@
 		[ActualPersonSaver saveActualPerson:[object personData] toData:data];
 	}
 	else if ([object databaseClass]==DBC_HUMAN) {
-		[HumanSaver saveHuman:[object humanData] toData:data version:version];
+		[HumanSaver saveHuman:[object humanData] toData:data];
 		[NonPlayerSaver saveNonPlayer:[object nonPlayerData] toData:data];
-		[StaffSaver saveStaff:[object staffData] toData:data version:version];
+		[StaffSaver saveStaff:[object staffData] toData:data];
 		[ActualPersonSaver saveActualPerson:[object personData] toData:data];
 	}
 	else if ([object databaseClass]==DBC_UNKNOWN_PERSON_TYPE_1) {

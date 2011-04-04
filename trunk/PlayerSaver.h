@@ -13,6 +13,6 @@
 
 }
 
-+ (void)savePlayer:(Player *)object toData:(NSMutableData *)data version:(short)version;
++ (void)savePlayer:(Player *)object toData:(NSMutableData *)data;
 
 @end

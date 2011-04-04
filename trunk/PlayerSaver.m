@@ -16,7 +16,7 @@
 
 @implementation PlayerSaver
 
-+ (void)savePlayer:(Player *)object toData:(NSMutableData *)data version:(short)version
++ (void)savePlayer:(Player *)object toData:(NSMutableData *)data
 {
 	char cbuffer;
 	short sbuffer;

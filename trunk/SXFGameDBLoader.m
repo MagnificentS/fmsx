@@ -79,6 +79,9 @@
 		return;
 	}
 	
+	[object setSaveEndOffset:[[object database] saveEndOffset]];
+	NSLog(@"%d",[[object database] saveEndOffset]);
+	
 	NSLog(@"game_db.dat: %d of %d read",offset,[data length]);
 }
 

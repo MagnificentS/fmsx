@@ -129,7 +129,7 @@ nonEUTreatedNations, unknownShort1, unknownShort2, gainNationalityType, unknownD
 	return @"---";
 }
 
-- (short)reputation
+- (short)teamReputation
 {
 	if ([[teamContainer teams] count]>0) {
 		return [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.teams"] objectAtIndex:[[[teamContainer teams] objectAtIndex:0] intValue]] reputation];

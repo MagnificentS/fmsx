@@ -13,6 +13,6 @@
 
 }
 
-+ (void)saveFilterList:(NewsFilterList *)object toData:(NSMutableData *)data version:(short)version;
++ (void)saveFilterList:(NewsFilterList *)object toData:(NSMutableData *)data;
 
 @end

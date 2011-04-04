@@ -13,6 +13,6 @@
 	
 }
 
-+ (void)saveClub:(Club *)object toData:(NSMutableData *)data version:(short)version;
++ (void)saveClub:(Club *)object toData:(NSMutableData *)data;
 
 @end

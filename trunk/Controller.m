@@ -308,8 +308,9 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	}
 	else {
 		[SXFGameDBLoader readFileFromData:[gameData subdataWithRange:NSMakeRange(([[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"startOffset"] intValue] +18),[[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"fileLength"] intValue])] intoObject:gameDB];
-		[gameDB setSaveStartOffset:([gameDB saveStartOffset]+18)];
-		[[gameDB database] setSaveEndOffset:([gameDB saveEndOffset]+18)];
+		[gameDB setSaveStartOffset:([gameDB saveStartOffset]+([[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"startOffset"] intValue]+18))];
+		[[gameDB database] setSaveEndOffset:([gameDB saveEndOffset]+([[[fileInfos objectForKey:@"game_db.dat"] objectForKey:@"startOffset"] intValue]+18))];
+		NSLog(@"so:%d eo:%d",[gameDB saveStartOffset],[gameDB saveEndOffset]);
 	}
 	
 	if (!gameDB) { 
@@ -330,7 +331,7 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 
 - (IBAction)saveGame:(id)sender
 {
-	BOOL canSave = NO;
+	BOOL canSave = YES;
 	
 	if (!canSave) {
 		// If not loaded, inform user
@@ -411,9 +412,10 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	
 	NSMutableData *saveData = [[NSMutableData alloc] init];
 	
-	[saveData appendData:[originalFile subdataWithRange:NSMakeRange(0,saveStartOffset)]];
+	// write as before down to gameDB's start offset
+	[saveData appendData:[originalFile subdataWithRange:NSMakeRange(0,[gameDB saveStartOffset])]];
 	
-	[database saveGameDB:saveData];
+	[[gameDB database] saveGameDB:saveData];
 	
 	[self setStatus:NSLocalizedString(@"saving excess...", @"editor status")];
 	
@@ -423,7 +425,7 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	[originalFile getBytes:&originalFmf1length range:NSMakeRange(9, 4)];
 	
 	// append rest of fmf 1 and fmf 2 header
-	[saveData appendData:[originalFile subdataWithRange:NSMakeRange([database saveEndOffset],(originalFmf1length + 18) - [database saveEndOffset])]];
+	[saveData appendData:[originalFile subdataWithRange:NSMakeRange([[gameDB database] saveEndOffset],(originalFmf1length + 18) - [[gameDB database] saveEndOffset])]];
 	
 	// check the change between the two offsets
 	unsigned int gameDBDifference = [saveData length] - (originalFmf1length + 18);
@@ -526,7 +528,7 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	
 	[self setIdle:TRUE];
 	
-	[pool drain];
+	[pool release];
 }
 
 #pragma mark Preferences Functions

@@ -127,7 +127,7 @@ continentID, regionID, capitalID, rowID, UID, length, width, area, population;
 - (NSString *)name;
 - (NSString *)continentString;
 - (NSString *)competitionString;
-- (short)reputation;
+- (short)teamReputation;
 
 - (NSString *)flagPath;
 - (NSImage *)logo;

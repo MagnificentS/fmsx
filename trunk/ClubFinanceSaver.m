@@ -14,7 +14,7 @@
 
 @implementation ClubFinanceSaver
 
-+ (void)saveFinance:(ClubFinance *)object toData:(NSMutableData *)data version:(short)version
++ (void)saveFinance:(ClubFinance *)object toData:(NSMutableData *)data
 {
 	BOOL bbuffer;
 	char cbuffer;

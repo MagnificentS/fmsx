@@ -13,6 +13,6 @@
 
 }
 
-+ (void)saveStaff:(Staff *)object toData:(NSMutableData *)data version:(short)version;
++ (void)saveStaff:(Staff *)object toData:(NSMutableData *)data;
 
 @end

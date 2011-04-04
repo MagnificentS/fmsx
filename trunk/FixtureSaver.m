@@ -12,7 +12,7 @@
 
 @implementation FixtureSaver
 
-+ (void)saveFixture:(Fixture *)object toData:(NSMutableData *)data version:(short)version
++ (void)saveFixture:(Fixture *)object toData:(NSMutableData *)data
 {
 	char cbuffer;
 	short sbuffer;

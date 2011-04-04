@@ -16,7 +16,7 @@
 
 @implementation StaffSaver
 
-+ (void)saveStaff:(Staff *)object toData:(NSMutableData *)data version:(short)version
++ (void)saveStaff:(Staff *)object toData:(NSMutableData *)data
 {
 	char cbuffer;
 	short sbuffer;

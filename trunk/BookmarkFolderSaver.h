@@ -13,6 +13,6 @@
 
 }
 
-+ (void)saveFolder:(BookmarkFolder *)object toData:(NSMutableData *)data version:(short)version;
++ (void)saveFolder:(BookmarkFolder *)object toData:(NSMutableData *)data;
 
 @end
