@@ -7,17 +7,17 @@
 //
 
 #import "SXScoutViewController.h"
+#import "Controller.h"
 
 @implementation SXScoutViewController
 
-- (id)init
+- (void)awakeFromNib
 {
-	self = [super initWithNibName:@"Scout" bundle:nil];
-	if (self != nil)
-	{
-		
-	}
-	return self;
+	[playerFilters setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
+	[staffFilters setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
+	[clubColumns setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
+	[playerColumns setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
+	[staffColumns setParentWindow:[[[NSApp delegate] contentController] mainWindow]];
 }
 
 @end

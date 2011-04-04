@@ -254,11 +254,11 @@
 	if (![[NSApp delegate] dataLoaded]) {
 		NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Game Not Loaded",@"error - game not loaded") defaultButton:@"OK" alternateButton:nil 
 										   otherButton:nil informativeTextWithFormat:@"The scout can't be displayed before a game is loaded"];
-		[alert runModal];
-		return;
+//		[alert runModal];
+//		return;
 	}
 	
-	SXScoutViewController *scoutViewController = [[[SXScoutViewController alloc] init] autorelease];
+	SXScoutViewController *scoutViewController = [[SXScoutViewController alloc] initWithNibName:@"Scout" bundle:nil];
 	[self replacePlaceholder:placeholderView withView:[scoutViewController view]];
 }
 
