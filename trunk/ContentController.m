@@ -284,6 +284,12 @@
 	NSParameterAssert(placeholder != nil);
 	NSParameterAssert(view != nil);
 	
+	NSRect fr = [placeholder frame];
+	if (placeholder==placeholderView) { fr.origin.y-=33; }
+	
+	[view setFrame:fr];
+//	[view setAutoresizingMask:[placeholder autoresizingMask]];
+	
 	int nViews = [[placeholder subviews] count];
 	
 	for (int i = 0; i < nViews; i++)
