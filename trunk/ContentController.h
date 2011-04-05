@@ -16,6 +16,7 @@
 	IBOutlet NSView *placeholderView;
 	
 	NSMutableDictionary *selectedRows;
+	NSMutableArray *history;
 	
 	// Pickers
 	IBOutlet BWSheetController *nationPicker;

@@ -33,6 +33,7 @@
 {
 	[super init];
 	
+	history = [[NSMutableArray alloc] init];
 	selectedRows = [[NSMutableDictionary alloc] init];
 	
 	id playerStatsTransformer = [[[PlayerStatsTransformer alloc] init] autorelease];
@@ -45,6 +46,7 @@
 
 - (void)dealloc
 {
+	[history release];
 	[selectedRows release];
 	
 	[super dealloc];
@@ -288,7 +290,6 @@
 	if (placeholder==placeholderView) { fr.origin.y-=33; }
 	
 	[view setFrame:fr];
-//	[view setAutoresizingMask:[placeholder autoresizingMask]];
 	
 	int nViews = [[placeholder subviews] count];
 	
