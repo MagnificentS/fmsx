@@ -59,16 +59,24 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 			return [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.commonNames"] objectAtIndex:[personData commonNameID]] name];
 		}
 		else if ([personData firstNameID]>-1 || [personData surnameID]>-1) {
+			NSMutableString *madeName = [NSMutableString string];
 			NSString *firstName, *surname;
 			
 			if ([personData firstNameID]>-1 && [personData firstNameID]<[(NSMutableArray *)[[NSApp delegate] valueForKeyPath:@"gameDB.database.firstNames"] count]) {
 				firstName = [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.firstNames"] objectAtIndex:[personData firstNameID]] name];
+				if (firstName!=nil && [firstName length]>0) {
+					[madeName appendFormat:@"%@",firstName];
+				}
 			}
 			if ([personData surnameID]>-1 && [personData surnameID]<[(NSMutableArray *)[[NSApp delegate] valueForKeyPath:@"gameDB.database.surnames"] count]) {
 				surname = [[[[NSApp delegate] valueForKeyPath:@"gameDB.database.surnames"] objectAtIndex:[personData surnameID]] name];
+				if ([madeName length]>0) { [madeName appendString:@" "]; }
+				if (surname!=nil && [surname length]>0) {
+					[madeName appendFormat:@"%@",surname];
+				}
 			}
 			
-			return [NSString stringWithFormat:@"%@ %@",firstName, surname];
+			return madeName;
 		}
 	}
 	else if (retiredPersonData) {
