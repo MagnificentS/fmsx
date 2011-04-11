@@ -333,7 +333,7 @@ clubScoutResults, staffScoutResults,  playerScoutResults, currentPlayerExpressio
 	NSOpenPanel *op = [NSOpenPanel openPanel];
 	
 	[op setAllowedFileTypes:[NSArray arrayWithObjects:@"slf",nil]];
-	[op setDirectory:DEFAULT_SHORTLIST_LOCATION];
+	[op setDirectory:[DEFAULT_SHORTLIST_LOCATION stringByExpandingTildeInPath]];
 	
 	int result = [op runModal];
 	
@@ -384,7 +384,7 @@ clubScoutResults, staffScoutResults,  playerScoutResults, currentPlayerExpressio
 	
 	NSSavePanel *op = [NSSavePanel savePanel];
 	[op setAllowedFileTypes:[NSArray arrayWithObjects:@"slf",nil]];
-	[op setDirectory:DEFAULT_SHORTLIST_LOCATION];
+	[op setDirectory:[DEFAULT_SHORTLIST_LOCATION stringByExpandingTildeInPath]];
 	[op setCanCreateDirectories:YES];
 	int result = [op runModal];
 	if (result==NSFileHandlingPanelOKButton) {
@@ -459,7 +459,7 @@ clubScoutResults, staffScoutResults,  playerScoutResults, currentPlayerExpressio
 	
 	NSSavePanel *op = [NSSavePanel savePanel];
 	[op setAllowedFileTypes:[NSArray arrayWithObjects:@"slf",nil]];
-	[op setDirectory:DEFAULT_SHORTLIST_LOCATION];
+	[op setDirectory:[DEFAULT_SHORTLIST_LOCATION stringByExpandingTildeInPath]];
 	[op setCanCreateDirectories:YES];
 	int result = [op runModal];
 	if (result==NSFileHandlingPanelOKButton) {
@@ -488,7 +488,7 @@ clubScoutResults, staffScoutResults,  playerScoutResults, currentPlayerExpressio
 	
 	NSSavePanel *op = [NSSavePanel savePanel];
 	[op setAllowedFileTypes:[NSArray arrayWithObjects:@"slf",nil]];
-	[op setDirectory:DEFAULT_SHORTLIST_LOCATION];
+	[op setDirectory:[DEFAULT_SHORTLIST_LOCATION stringByExpandingTildeInPath]];
 	[op setCanCreateDirectories:YES];
 	int result = [op runModal];
 	if (result==NSFileHandlingPanelOKButton) {

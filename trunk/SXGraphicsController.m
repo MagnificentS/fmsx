@@ -96,7 +96,7 @@ nationBGLogos, clubBGLogos;
 
 - (void)parseCoreGraphics
 {
-	NSString *graphicsFMFPath = [NSString stringWithFormat:@"%@/data/graphics.fmf",[[NSUserDefaults standardUserDefaults] stringForKey:@"fmLocation"]];
+	NSString *graphicsFMFPath = [NSString stringWithFormat:@"%@/data/graphics.fmf",[[[NSUserDefaults standardUserDefaults] stringForKey:@"fmLocation"] stringByExpandingTildeInPath]];
 	
 	if ([[NSFileManager defaultManager] fileExistsAtPath:graphicsFMFPath]) {
 		int fp = open([graphicsFMFPath cStringUsingEncoding:[NSString defaultCStringEncoding]], O_RDONLY);

@@ -230,8 +230,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -296,13 +294,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>553</integer>
-									<integer>542</integer>
+									<integer>504</integer>
+									<integer>490</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 9248}, {229, 546}}</string>
+							<string>{{0, 8052}, {229, 546}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -334,12 +332,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>FM11SX.icns</string>
+								<string>SXGraphicsController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -347,11 +347,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>FM11SX.icns</string>
+										<string>SXGraphicsController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FB9EAD0A1352EC4D00DDD460</string>
+										<string>FB9EAD121352EDAD00DDD460</string>
 										<key>history</key>
 										<array>
 											<string>FB264A79134358A600A22C9F</string>
@@ -527,12 +527,12 @@
 											<string>FBFE40DC134BE5D800B87F5B</string>
 											<string>FBFE40DE134BE5D800B87F5B</string>
 											<string>FBFE40DF134BE5D800B87F5B</string>
-											<string>FB9EACF41352EB4900DDD460</string>
 											<string>FB9EACF51352EB4900DDD460</string>
-											<string>FB9EACF61352EB4900DDD460</string>
 											<string>FB9EACF71352EB4900DDD460</string>
 											<string>FB9EAD081352EC4D00DDD460</string>
-											<string>FB9EAD091352EC4D00DDD460</string>
+											<string>FB9EAD0F1352EDAD00DDD460</string>
+											<string>FB9EAD101352EDAD00DDD460</string>
+											<string>FB9EAD111352EDAD00DDD460</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
