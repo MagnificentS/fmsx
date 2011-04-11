@@ -16,6 +16,7 @@
 #import "CityIDTransformer.h"
 #import "ClubIDTransformer.h"
 #import "CompetitionIDTransformer.h"
+#import "LocalAreaIDTransformer.h"
 #import "MediaIDTransformer.h"
 #import "NationIDTransformer.h"
 #import "PersonIDTransformer.h"
@@ -40,6 +41,8 @@ selectedPerson, selectedSponsor, selectedStadium, selectedStadiumChange, selecte
 	[NSValueTransformer setValueTransformer:clubIDTransformer forName:@"ClubIDTransformer"];
 	id competitionIDTransformer = [[[CompetitionIDTransformer alloc] init] autorelease];
 	[NSValueTransformer setValueTransformer:competitionIDTransformer forName:@"CompetitionIDTransformer"];
+	id localAreaIDTransformer = [[[LocalAreaIDTransformer alloc] init] autorelease];
+	[NSValueTransformer setValueTransformer:localAreaIDTransformer forName:@"LocalAreaIDTransformer"];
 	id mediaIDTransformer = [[[MediaIDTransformer alloc] init] autorelease];
 	[NSValueTransformer setValueTransformer:mediaIDTransformer forName:@"MediaIDTransformer"];
 	id nationIDTransformer = [[[NationIDTransformer alloc] init] autorelease];

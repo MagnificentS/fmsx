@@ -82,7 +82,7 @@ unknownData2, unknownData3, unknownData4, unknownData5, unknownData6, unknownDat
 unknownInt1, unknownInt2, unknownInt3, unknownInt4, nationStrings, competitionStrings,
 peopleStrings, cityStrings, clubStrings, stadiumStrings, mediaStrings,
 cityStringInfos, clubStringInfos, competitionStringInfos, mediaStringInfos, peopleStringInfos,
-stadiumStringInfos, nationStringInfos;
+stadiumStringInfos, nationStringInfos, localAreaStringInfos;
 
 - (id)init
 {
@@ -1347,6 +1347,13 @@ stadiumStringInfos, nationStringInfos;
 		[tempArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:[item name],@"name",[NSNumber numberWithInt:[item rowID]],@"rowID",nil]]; 
 	}
 	[self setCompetitionStringInfos:tempArray];
+	[tempArray removeAllObjects];
+	
+	[[NSApp delegate] setStatus:NSLocalizedString(@"assigning Local Area Strings...", @"editor status")];
+	for (LocalArea *item in localAreas) { 
+		[tempArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:[item name],@"name",[NSNumber numberWithInt:[item rowID]],@"rowID",nil]]; 
+	}
+	[self setLocalAreaStringInfos:tempArray];
 	[tempArray removeAllObjects];
 	
 	[[NSApp delegate] setStatus:NSLocalizedString(@"assigning Media Strings...", @"editor status")];

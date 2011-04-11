@@ -792,6 +792,7 @@ nationTeamsView, personToolsView;
 - (IBAction)showCityPicker:(id)sender { [[[NSApp delegate] contentController] showCityPicker:sender]; }
 - (IBAction)showClubPicker:(id)sender { [[[NSApp delegate] contentController] showClubPicker:sender]; }
 - (IBAction)showCompetitionPicker:(id)sender { [[[NSApp delegate] contentController] showCompetitionPicker:sender]; }
+- (IBAction)showLocalAreaPicker:(id)sender { [[[NSApp delegate] contentController] showLocalAreaPicker:sender]; }
 - (IBAction)showMediaPicker:(id)sender { [[[NSApp delegate] contentController] showMediaPicker:sender]; }
 - (IBAction)showNationPicker:(id)sender { [[[NSApp delegate] contentController] showNationPicker:sender]; }
 - (IBAction)showPersonPicker:(id)sender { [[[NSApp delegate] contentController] showPersonPicker:sender]; }

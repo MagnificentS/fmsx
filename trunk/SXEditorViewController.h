@@ -14,6 +14,7 @@
 	IBOutlet BWSheetController *cityPicker;
 	IBOutlet BWSheetController *clubPicker;
 	IBOutlet BWSheetController *competitionPicker;
+	IBOutlet BWSheetController *localAreaPicker;
 	IBOutlet BWSheetController *mediaPicker;
 	IBOutlet BWSheetController *nationPicker;
 	IBOutlet BWSheetController *peoplePicker;
@@ -24,6 +25,6 @@
 
 @property(readwrite,assign) NSView *editorPlaceholderView;
 @property(readwrite,assign) BWSheetController *cityPicker, *clubPicker, *competitionPicker, *mediaPicker, 
-*nationPicker, *peoplePicker, *stadiumPicker;
+*nationPicker, *peoplePicker, *stadiumPicker, *localAreaPicker;
 
 @end

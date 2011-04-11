@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>FBEA9029135384C1004C4A68</string>
+						<string>FBEA9051135387F4004C4A68</string>
 						<key>history</key>
 						<array>
 							<string>FBEA8FC4135376EC004C4A68</string>
@@ -271,8 +271,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -337,13 +335,18 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>430</integer>
-									<integer>397</integer>
+									<integer>551</integer>
+									<integer>532</integer>
+									<integer>0</integer>
+								</array>
+								<array>
+									<integer>552</integer>
+									<integer>532</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 7070}, {229, 546}}</string>
+							<string>{{0, 9739}, {229, 546}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -375,12 +378,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Official.h</string>
+								<string>EditorController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -388,11 +393,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Official.h</string>
+										<string>EditorController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FBEA9024135384C1004C4A68</string>
+										<string>FBEA9050135387F4004C4A68</string>
 										<key>history</key>
 										<array>
 											<string>FB264A79134358A600A22C9F</string>
@@ -428,7 +433,6 @@
 											<string>FBEED0E11346191000061233</string>
 											<string>FB66C3EC1348E102003DA994</string>
 											<string>FB66C3ED1348E102003DA994</string>
-											<string>FB66C3F01348E102003DA994</string>
 											<string>FB66C3F21348E102003DA994</string>
 											<string>FB66C3F41348E102003DA994</string>
 											<string>FB66C3F71348E102003DA994</string>
@@ -551,8 +555,6 @@
 											<string>FB210F581349F8A600B8559B</string>
 											<string>FBAE7960134A1214000ABFF0</string>
 											<string>FB24A298134A80D100EBA972</string>
-											<string>FB24A299134A80D100EBA972</string>
-											<string>FB24A29A134A80D100EBA972</string>
 											<string>FB747DBF134B867400E870E4</string>
 											<string>FB747DC4134B867400E870E4</string>
 											<string>FB747DC5134B867400E870E4</string>
@@ -565,35 +567,40 @@
 											<string>FBA62B6313533E66002AF6EA</string>
 											<string>FBA62B6413533E66002AF6EA</string>
 											<string>FBEA9006135384C1004C4A68</string>
-											<string>FBEA9007135384C1004C4A68</string>
 											<string>FBEA9008135384C1004C4A68</string>
-											<string>FBEA9009135384C1004C4A68</string>
 											<string>FBEA900A135384C1004C4A68</string>
 											<string>FBEA900B135384C1004C4A68</string>
 											<string>FBEA900C135384C1004C4A68</string>
 											<string>FBEA900D135384C1004C4A68</string>
-											<string>FBEA900E135384C1004C4A68</string>
-											<string>FBEA900F135384C1004C4A68</string>
 											<string>FBEA9010135384C1004C4A68</string>
 											<string>FBEA9011135384C1004C4A68</string>
 											<string>FBEA9012135384C1004C4A68</string>
 											<string>FBEA9013135384C1004C4A68</string>
 											<string>FBEA9014135384C1004C4A68</string>
 											<string>FBEA9015135384C1004C4A68</string>
-											<string>FBEA9016135384C1004C4A68</string>
-											<string>FBEA9017135384C1004C4A68</string>
-											<string>FBEA9018135384C1004C4A68</string>
 											<string>FBEA9019135384C1004C4A68</string>
 											<string>FBEA901A135384C1004C4A68</string>
 											<string>FBEA901B135384C1004C4A68</string>
 											<string>FBEA901C135384C1004C4A68</string>
 											<string>FBEA901D135384C1004C4A68</string>
 											<string>FBEA901E135384C1004C4A68</string>
-											<string>FBEA901F135384C1004C4A68</string>
-											<string>FBEA9020135384C1004C4A68</string>
-											<string>FBEA9021135384C1004C4A68</string>
 											<string>FBEA9022135384C1004C4A68</string>
-											<string>FBEA9023135384C1004C4A68</string>
+											<string>FBEA90311353861F004C4A68</string>
+											<string>FBEA90321353861F004C4A68</string>
+											<string>FBEA90331353861F004C4A68</string>
+											<string>FBEA90341353861F004C4A68</string>
+											<string>FBEA90351353861F004C4A68</string>
+											<string>FBEA90361353861F004C4A68</string>
+											<string>FBEA90391353867C004C4A68</string>
+											<string>FBEA903A1353867C004C4A68</string>
+											<string>FBEA903B1353867C004C4A68</string>
+											<string>FBEA903C1353867C004C4A68</string>
+											<string>FBEA904B135387F4004C4A68</string>
+											<string>FBEA904C135387F4004C4A68</string>
+											<string>FBEA904D135387F4004C4A68</string>
+											<string>FBEA904E135387F4004C4A68</string>
+											<string>FBEA904F135387F4004C4A68</string>
+											<string>FBEA9021135384C1004C4A68</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -791,12 +798,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>FBEA9052135387F4004C4A68</string>
 		<string>FBEA902A135384C1004C4A68</string>
 		<string>FBEA902B135384C1004C4A68</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>FB9D33D310923BAA000883FF</string>
 		<string>FBEA9027135384C1004C4A68</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>FB9D33D310923BAA000883FF</string>
 		<string>/Users/littleblue/ソフト/FM11SX/FM11SX.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -816,8 +824,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -840,6 +846,8 @@
 							<string>272pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -892,7 +900,7 @@
 			<key>WindowToolGUID</key>
 			<string>FB9D33D310923BAA000883FF</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

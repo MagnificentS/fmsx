@@ -678,6 +678,7 @@
 		FBEA8FC3135376BF004C4A68 /* PersonIDTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEA8FC2135376BF004C4A68 /* PersonIDTransformer.m */; };
 		FBEA8FE413537F0F004C4A68 /* ClubIDTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEA8FE313537F0F004C4A68 /* ClubIDTransformer.m */; };
 		FBEA8FF1135382FE004C4A68 /* MediaIDTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEA8FF0135382FE004C4A68 /* MediaIDTransformer.m */; };
+		FBEA90481353879F004C4A68 /* LocalAreaIDTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEA90471353879F004C4A68 /* LocalAreaIDTransformer.m */; };
 		FBEE41DD1332CDE800A89FB0 /* Editor_Stadium.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBEE41DC1332CDE800A89FB0 /* Editor_Stadium.xib */; };
 		FBEE41DF1332CDF000A89FB0 /* Editor_Weather.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBEE41DE1332CDF000A89FB0 /* Editor_Weather.xib */; };
 		FBEE42071332E0AB00A89FB0 /* Editor_Competition.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBEE42061332E0AB00A89FB0 /* Editor_Competition.xib */; };
@@ -1716,6 +1717,8 @@
 		FBEA8FE313537F0F004C4A68 /* ClubIDTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClubIDTransformer.m; sourceTree = "<group>"; };
 		FBEA8FEF135382FE004C4A68 /* MediaIDTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaIDTransformer.h; sourceTree = "<group>"; };
 		FBEA8FF0135382FE004C4A68 /* MediaIDTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaIDTransformer.m; sourceTree = "<group>"; };
+		FBEA90461353879F004C4A68 /* LocalAreaIDTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalAreaIDTransformer.h; sourceTree = "<group>"; };
+		FBEA90471353879F004C4A68 /* LocalAreaIDTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalAreaIDTransformer.m; sourceTree = "<group>"; };
 		FBEE41DC1332CDE800A89FB0 /* Editor_Stadium.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_Stadium.xib; sourceTree = "<group>"; };
 		FBEE41DE1332CDF000A89FB0 /* Editor_Weather.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_Weather.xib; sourceTree = "<group>"; };
 		FBEE42061332E0AB00A89FB0 /* Editor_Competition.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_Competition.xib; sourceTree = "<group>"; };
@@ -3029,6 +3032,8 @@
 				FBEA8FE313537F0F004C4A68 /* ClubIDTransformer.m */,
 				FBEA8FEF135382FE004C4A68 /* MediaIDTransformer.h */,
 				FBEA8FF0135382FE004C4A68 /* MediaIDTransformer.m */,
+				FBEA90461353879F004C4A68 /* LocalAreaIDTransformer.h */,
+				FBEA90471353879F004C4A68 /* LocalAreaIDTransformer.m */,
 			);
 			name = Transformers;
 			sourceTree = "<group>";
@@ -3905,6 +3910,7 @@
 				FBEA8FC3135376BF004C4A68 /* PersonIDTransformer.m in Sources */,
 				FBEA8FE413537F0F004C4A68 /* ClubIDTransformer.m in Sources */,
 				FBEA8FF1135382FE004C4A68 /* MediaIDTransformer.m in Sources */,
+				FBEA90481353879F004C4A68 /* LocalAreaIDTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

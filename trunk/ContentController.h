@@ -43,6 +43,11 @@
 	id mediaPickerObject;
 	NSString *mediaPickerSelector;
 	
+	IBOutlet BWSheetController *localAreaPicker;
+	id localAreaPickerObject;
+	NSString *localAreaPickerSelector;
+	
+	
 	IBOutlet BWSheetController *clubPicker;
 	id clubPickerObject;
 	NSString *clubPickerSelector;
@@ -53,6 +58,9 @@
 	SXEditorViewController *editorViewController;
 }
 
+- (IBAction)showLocalAreaPicker:(id)sender;
+- (IBAction)setLocalAreaPickerObject:(id)object;
+- (IBAction)pickLocalArea:(id)sender;
 - (IBAction)showNationPicker:(id)sender;
 - (IBAction)setNationPickerObject:(id)object;
 - (IBAction)pickNation:(id)sender;

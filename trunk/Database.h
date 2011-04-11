@@ -29,7 +29,7 @@
 	NSMutableArray *nationStrings, *competitionStrings, *peopleStrings, *cityStrings,
 	*clubStrings, *stadiumStrings, *mediaStrings, *cityStringInfos, *clubStringInfos, 
 	*competitionStringInfos, *mediaStringInfos, *peopleStringInfos, *stadiumStringInfos,
-	*nationStringInfos;
+	*nationStringInfos, *localAreaStringInfos;
 	
 	NSData *unknownData1, *unknownData2, *unknownData3, *unknownData4, *unknownData5, 
 	*unknownData6, *unknownData7;
@@ -46,7 +46,7 @@
 *competitions, *nations, *competitionHistories, *clubLinks, *unknowns1, *derbies, *agreements,
 *nationStrings, *competitionStrings, *peopleStrings, *cityStrings, *clubStrings, *stadiumStrings,
 *cityStringInfos, *clubStringInfos, *competitionStringInfos, *mediaStringInfos, *peopleStringInfos,
-*stadiumStringInfos, *mediaStrings, *nationStringInfos;
+*stadiumStringInfos, *mediaStrings, *nationStringInfos, *localAreaStringInfos;
 @property(copy,readwrite) NSString *status;
 @property(assign,readwrite) unsigned int currentRecord, totalRecords, saveEndOffset, databaseChanges;
 @property(assign,readwrite) int unknownInt1, unknownInt2, unknownInt3, unknownInt4;

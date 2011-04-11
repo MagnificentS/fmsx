@@ -139,6 +139,7 @@ nil]
 - (IBAction)showCityPicker:(id)sender;
 - (IBAction)showClubPicker:(id)sender;
 - (IBAction)showCompetitionPicker:(id)sender;
+- (IBAction)showLocalAreaPicker:(id)sender;
 - (IBAction)showMediaPicker:(id)sender;
 - (IBAction)showNationPicker:(id)sender;
 - (IBAction)showPersonPicker:(id)sender;

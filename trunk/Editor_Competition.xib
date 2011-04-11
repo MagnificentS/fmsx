@@ -1555,7 +1555,7 @@
 									<object class="NSPopUpButton" id="222377375">
 										<reference key="NSNextResponder" ref="640195614"/>
 										<int key="NSvFlags">268</int>
-										<string key="NSFrame">{{111, 419}, {354, 26}}</string>
+										<string key="NSFrame">{{111, 419}, {330, 26}}</string>
 										<reference key="NSSuperview" ref="640195614"/>
 										<reference key="NSWindow"/>
 										<bool key="NSEnabled">YES</bool>
@@ -5284,6 +5284,7 @@
 							<string>showCityPicker:</string>
 							<string>showClubPicker:</string>
 							<string>showCompetitionPicker:</string>
+							<string>showLocalAreaPicker:</string>
 							<string>showMediaPicker:</string>
 							<string>showNationPicker:</string>
 							<string>showPersonPicker:</string>
@@ -5291,6 +5292,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -5307,6 +5309,7 @@
 							<string>showCityPicker:</string>
 							<string>showClubPicker:</string>
 							<string>showCompetitionPicker:</string>
+							<string>showLocalAreaPicker:</string>
 							<string>showMediaPicker:</string>
 							<string>showNationPicker:</string>
 							<string>showPersonPicker:</string>
@@ -5324,6 +5327,10 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">showCompetitionPicker:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">showLocalAreaPicker:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">

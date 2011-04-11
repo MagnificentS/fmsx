@@ -52,6 +52,28 @@
 	[super dealloc];
 }
 
+- (IBAction)showLocalAreaPicker:(id)sender
+{
+	localAreaPickerSelector = @"";
+	[[editorViewController localAreaPicker] openSheet:self];
+	if ([sender tag]==1) { localAreaPickerSelector = @"localAreaID"; }
+}
+
+- (IBAction)setLocalAreaPickerObject:(id)object
+{
+	localAreaPickerObject = object;
+}
+
+- (IBAction)pickLocalArea:(id)sender
+{
+	SEL thisSelector = NSSelectorFromString([NSString stringWithFormat:@"set%@%@:",
+											 [[localAreaPickerSelector substringToIndex:1] capitalizedString],
+											 [localAreaPickerSelector substringFromIndex:1]]);
+	
+	[localAreaPickerObject performSelector:thisSelector withObject:[sender intValue]];
+	
+}
+
 - (IBAction)showNationPicker:(id)sender
 {
 	nationPickerSelector = @"";
