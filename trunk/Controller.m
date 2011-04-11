@@ -49,15 +49,15 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	
 	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"lang_db_location"]==nil ||
 		![[NSFileManager defaultManager] fileExistsAtPath:[[NSUserDefaults standardUserDefaults] objectForKey:@"lang_db_location"]]) {
-		[[NSUserDefaults standardUserDefaults] setObject:DEFAULT_LANGDB_LOCATION forKey:@"lang_db_location"];
+		[[NSUserDefaults standardUserDefaults] setObject:[DEFAULT_LANGDB_LOCATION stringByExpandingTildeInPath] forKey:@"lang_db_location"];
 	}
 	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"graphicsLocation"]==nil ||
 		![[NSFileManager defaultManager] fileExistsAtPath:[[NSUserDefaults standardUserDefaults] objectForKey:@"graphicsLocation"]]) {
-		[[NSUserDefaults standardUserDefaults] setObject:DEFAULT_GRAPHICS_LOCATION forKey:@"graphicsLocation"];
+		[[NSUserDefaults standardUserDefaults] setObject:[DEFAULT_GRAPHICS_LOCATION stringByExpandingTildeInPath] forKey:@"graphicsLocation"];
 	}
 	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"gameLocation"]==nil ||
 		![[NSFileManager defaultManager] fileExistsAtPath:[[NSUserDefaults standardUserDefaults] objectForKey:@"gameLocation"]]) {
-		[[NSUserDefaults standardUserDefaults] setObject:DEFAULT_GAME_LOCATION forKey:@"gameLocation"];
+		[[NSUserDefaults standardUserDefaults] setObject:[DEFAULT_GAME_LOCATION stringByExpandingTildeInPath] forKey:@"gameLocation"];
 	}
 	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"loadLangDB"]==nil) {
 		[[NSUserDefaults standardUserDefaults] setObject:@"Yes" forKey:@"loadLangDB"];
@@ -170,7 +170,7 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	// Set only files of type .fm to be visible 
 	[op setAllowedFileTypes:[NSArray arrayWithObjects:@"fm",nil]];
 	// Point file browser at know fm saved game location
-	[op setDirectory:[[NSUserDefaults standardUserDefaults] stringForKey:@"gameLocation"]];
+	[op setDirectory:[[[NSUserDefaults standardUserDefaults] stringForKey:@"gameLocation"] stringByExpandingTildeInPath]];
 	
 	int result = [op runModal];
 	
@@ -206,7 +206,7 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"loadLangDB"]==TRUE) { 
 		[self setStatus:NSLocalizedString(@"loading lang_db.dat", @"editor status")];
-		langDB = [LangDBLoader readFromFile:[[NSUserDefaults standardUserDefaults] stringForKey:@"lang_db_location"]];
+		langDB = [LangDBLoader readFromFile:[[[NSUserDefaults standardUserDefaults] stringForKey:@"lang_db_location"] stringByExpandingTildeInPath]];
 	}
 		
 	unsigned int gameLength;
@@ -352,7 +352,7 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	// Prompt user to set save location
 	NSSavePanel *op = [NSSavePanel savePanel];
 	[op setAllowedFileTypes:[NSArray arrayWithObjects:@"fm",nil]];
-	[op setDirectory:[[NSUserDefaults standardUserDefaults] stringForKey:@"gameLocation"]];
+	[op setDirectory:[[[NSUserDefaults standardUserDefaults] stringForKey:@"gameLocation"] stringByExpandingTildeInPath]];
 	[op setCanCreateDirectories:YES];
 	int result = [op runModal];
 	if (result==NSFileHandlingPanelOKButton) {
@@ -545,7 +545,7 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	if (result==NSFileHandlingPanelOKButton) {
 		
 		if ([[[op filename] lastPathComponent] isEqualToString:@"lang_db.dat"]) {
-			[[NSUserDefaults standardUserDefaults] setObject:[[op URL] path] forKey:@"lang_db_location"];
+			[[NSUserDefaults standardUserDefaults] setObject:[[[op URL] path] stringByExpandingTildeInPath] forKey:@"lang_db_location"];
 			
 		}
 	}
@@ -557,7 +557,7 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	[op setCanChooseDirectories:YES];
 	int result = [op runModal];
 	if (result==NSFileHandlingPanelOKButton) {
-		[[NSUserDefaults standardUserDefaults] setObject:[[op URL] path] forKey:@"graphicsLocation"];
+		[[NSUserDefaults standardUserDefaults] setObject:[[[op URL] path] stringByExpandingTildeInPath] forKey:@"graphicsLocation"];
 	}
 }
 - (void)changeGameLocation:(id)sender
@@ -567,7 +567,7 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	[op setCanChooseDirectories:YES];
 	int result = [op runModal];
 	if (result==NSFileHandlingPanelOKButton) {
-		[[NSUserDefaults standardUserDefaults] setObject:[[op URL] path] forKey:@"gameLocation"];
+		[[NSUserDefaults standardUserDefaults] setObject:[[[op URL] path] stringByExpandingTildeInPath] forKey:@"gameLocation"];
 	}
 }
 - (void)changeLangDBLanguage:(id)sender
