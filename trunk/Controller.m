@@ -49,7 +49,10 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 	
 	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"lang_db_location"]==nil ||
 		![[NSFileManager defaultManager] fileExistsAtPath:[[NSUserDefaults standardUserDefaults] objectForKey:@"lang_db_location"]]) {
-		[[NSUserDefaults standardUserDefaults] setObject:[DEFAULT_LANGDB_LOCATION stringByExpandingTildeInPath] forKey:@"lang_db_location"];
+		if ([[NSFileManager defaultManager] fileExistsAtPath:DEFAULT_STEAM_LANGDB_LOCATION]) {
+			[[NSUserDefaults standardUserDefaults] setObject:[DEFAULT_STEAM_LANGDB_LOCATION stringByExpandingTildeInPath] forKey:@"lang_db_location"];
+		}
+		else { [[NSUserDefaults standardUserDefaults] setObject:[DEFAULT_LANGDB_LOCATION stringByExpandingTildeInPath] forKey:@"lang_db_location"]; }
 	}
 	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"graphicsLocation"]==nil ||
 		![[NSFileManager defaultManager] fileExistsAtPath:[[NSUserDefaults standardUserDefaults] objectForKey:@"graphicsLocation"]]) {

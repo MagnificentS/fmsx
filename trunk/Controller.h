@@ -8,10 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
-#define DEFAULT_GRAPHICS_LOCATION	@"~/Documents/Sports Interactive/Football Manager 2011/graphics"
-#define DEFAULT_SHORTLIST_LOCATION	@"~/Documents/Sports Interactive/Football Manager 2011/shortlists"
-#define DEFAULT_GAME_LOCATION		@"~/Documents/Sports Interactive/Football Manager 2011/games"
-#define DEFAULT_LANGDB_LOCATION		@"/Applications/Sports Interactive/Football Manager 2011/data/db/1100/lang_db.dat"
+#define DEFAULT_GRAPHICS_LOCATION		@"~/Documents/Sports Interactive/Football Manager 2011/graphics"
+#define DEFAULT_SHORTLIST_LOCATION		@"~/Documents/Sports Interactive/Football Manager 2011/shortlists"
+#define DEFAULT_GAME_LOCATION			@"~/Documents/Sports Interactive/Football Manager 2011/games"
+#define DEFAULT_LANGDB_LOCATION			@"/Applications/Sports Interactive/Football Manager 2011/data/db/1100/lang_db.dat"
+#define DEFAULT_STEAM_LANGDB_LOCATION	@"~/Library/Application Support/Steam/SteamApps/Common/Football Manager 2011/data/db/1100/lang_db.dat"
+#define DEFAULT_FM_LOCATION				@"/Applications/Sports Interactive/Football Manager 2011"
+#define DEFAULT_STEAM_FM_LOCATION		@"~/Library/Application Support/Steam/SteamApps/Common/Football Manager 2011"
 
 @class ContentController;
 @class Database;

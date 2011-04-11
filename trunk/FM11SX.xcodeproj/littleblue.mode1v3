@@ -294,7 +294,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>504</integer>
+									<integer>494</integer>
 									<integer>490</integer>
 									<integer>0</integer>
 								</array>
@@ -339,7 +339,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SXGraphicsController.m</string>
+								<string>Controller.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -347,11 +347,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SXGraphicsController.m</string>
+										<string>Controller.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FB9EAD171352EE9E00DDD460</string>
+										<string>FB9EAD1D1352F06E00DDD460</string>
 										<key>history</key>
 										<array>
 											<string>FB264A79134358A600A22C9F</string>
@@ -527,12 +527,12 @@
 											<string>FBFE40DC134BE5D800B87F5B</string>
 											<string>FBFE40DE134BE5D800B87F5B</string>
 											<string>FBFE40DF134BE5D800B87F5B</string>
-											<string>FB9EACF51352EB4900DDD460</string>
-											<string>FB9EACF71352EB4900DDD460</string>
 											<string>FB9EAD081352EC4D00DDD460</string>
 											<string>FB9EAD0F1352EDAD00DDD460</string>
 											<string>FB9EAD101352EDAD00DDD460</string>
-											<string>FB9EAD111352EDAD00DDD460</string>
+											<string>FB9EAD1A1352F06E00DDD460</string>
+											<string>FB9EAD1B1352F06E00DDD460</string>
+											<string>FB9EAD1C1352F06E00DDD460</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
