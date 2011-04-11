@@ -671,6 +671,13 @@
 		FBE9725010B9771D001F3139 /* NewsFilterLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE9724F10B9771D001F3139 /* NewsFilterLoader.m */; };
 		FBE9725410B97AB4001F3139 /* NewsInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE9725310B97AB4001F3139 /* NewsInfo.m */; };
 		FBE9725710B97AC6001F3139 /* NewsInfoLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE9725610B97AC6001F3139 /* NewsInfoLoader.m */; };
+		FBEA8FAD135373B7004C4A68 /* CompetitionIDTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEA8FAC135373B7004C4A68 /* CompetitionIDTransformer.m */; };
+		FBEA8FBA135376A8004C4A68 /* NationIDTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEA8FB9135376A8004C4A68 /* NationIDTransformer.m */; };
+		FBEA8FBD135376AF004C4A68 /* StadiumIDTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEA8FBC135376AF004C4A68 /* StadiumIDTransformer.m */; };
+		FBEA8FC0135376B5004C4A68 /* CityIDTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEA8FBF135376B5004C4A68 /* CityIDTransformer.m */; };
+		FBEA8FC3135376BF004C4A68 /* PersonIDTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEA8FC2135376BF004C4A68 /* PersonIDTransformer.m */; };
+		FBEA8FE413537F0F004C4A68 /* ClubIDTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEA8FE313537F0F004C4A68 /* ClubIDTransformer.m */; };
+		FBEA8FF1135382FE004C4A68 /* MediaIDTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEA8FF0135382FE004C4A68 /* MediaIDTransformer.m */; };
 		FBEE41DD1332CDE800A89FB0 /* Editor_Stadium.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBEE41DC1332CDE800A89FB0 /* Editor_Stadium.xib */; };
 		FBEE41DF1332CDF000A89FB0 /* Editor_Weather.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBEE41DE1332CDF000A89FB0 /* Editor_Weather.xib */; };
 		FBEE42071332E0AB00A89FB0 /* Editor_Competition.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBEE42061332E0AB00A89FB0 /* Editor_Competition.xib */; };
@@ -1695,6 +1702,20 @@
 		FBE9725310B97AB4001F3139 /* NewsInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsInfo.m; sourceTree = "<group>"; };
 		FBE9725510B97AC6001F3139 /* NewsInfoLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsInfoLoader.h; sourceTree = "<group>"; };
 		FBE9725610B97AC6001F3139 /* NewsInfoLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsInfoLoader.m; sourceTree = "<group>"; };
+		FBEA8FAB135373B7004C4A68 /* CompetitionIDTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompetitionIDTransformer.h; sourceTree = "<group>"; };
+		FBEA8FAC135373B7004C4A68 /* CompetitionIDTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompetitionIDTransformer.m; sourceTree = "<group>"; };
+		FBEA8FB8135376A8004C4A68 /* NationIDTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NationIDTransformer.h; sourceTree = "<group>"; };
+		FBEA8FB9135376A8004C4A68 /* NationIDTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NationIDTransformer.m; sourceTree = "<group>"; };
+		FBEA8FBB135376AF004C4A68 /* StadiumIDTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StadiumIDTransformer.h; sourceTree = "<group>"; };
+		FBEA8FBC135376AF004C4A68 /* StadiumIDTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StadiumIDTransformer.m; sourceTree = "<group>"; };
+		FBEA8FBE135376B5004C4A68 /* CityIDTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityIDTransformer.h; sourceTree = "<group>"; };
+		FBEA8FBF135376B5004C4A68 /* CityIDTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityIDTransformer.m; sourceTree = "<group>"; };
+		FBEA8FC1135376BF004C4A68 /* PersonIDTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonIDTransformer.h; sourceTree = "<group>"; };
+		FBEA8FC2135376BF004C4A68 /* PersonIDTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonIDTransformer.m; sourceTree = "<group>"; };
+		FBEA8FE213537F0F004C4A68 /* ClubIDTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClubIDTransformer.h; sourceTree = "<group>"; };
+		FBEA8FE313537F0F004C4A68 /* ClubIDTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClubIDTransformer.m; sourceTree = "<group>"; };
+		FBEA8FEF135382FE004C4A68 /* MediaIDTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaIDTransformer.h; sourceTree = "<group>"; };
+		FBEA8FF0135382FE004C4A68 /* MediaIDTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaIDTransformer.m; sourceTree = "<group>"; };
 		FBEE41DC1332CDE800A89FB0 /* Editor_Stadium.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_Stadium.xib; sourceTree = "<group>"; };
 		FBEE41DE1332CDF000A89FB0 /* Editor_Weather.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_Weather.xib; sourceTree = "<group>"; };
 		FBEE42061332E0AB00A89FB0 /* Editor_Competition.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Editor_Competition.xib; sourceTree = "<group>"; };
@@ -2994,6 +3015,20 @@
 				FBF0823D10CA6B9600BD115A /* PlayerStatsTransformer.m */,
 				FBF5789B10E77BF60029EEB1 /* PlayerRatingTransformer.h */,
 				FBF5789C10E77BF60029EEB1 /* PlayerRatingTransformer.m */,
+				FBEA8FAB135373B7004C4A68 /* CompetitionIDTransformer.h */,
+				FBEA8FAC135373B7004C4A68 /* CompetitionIDTransformer.m */,
+				FBEA8FB8135376A8004C4A68 /* NationIDTransformer.h */,
+				FBEA8FB9135376A8004C4A68 /* NationIDTransformer.m */,
+				FBEA8FBB135376AF004C4A68 /* StadiumIDTransformer.h */,
+				FBEA8FBC135376AF004C4A68 /* StadiumIDTransformer.m */,
+				FBEA8FBE135376B5004C4A68 /* CityIDTransformer.h */,
+				FBEA8FBF135376B5004C4A68 /* CityIDTransformer.m */,
+				FBEA8FC1135376BF004C4A68 /* PersonIDTransformer.h */,
+				FBEA8FC2135376BF004C4A68 /* PersonIDTransformer.m */,
+				FBEA8FE213537F0F004C4A68 /* ClubIDTransformer.h */,
+				FBEA8FE313537F0F004C4A68 /* ClubIDTransformer.m */,
+				FBEA8FEF135382FE004C4A68 /* MediaIDTransformer.h */,
+				FBEA8FF0135382FE004C4A68 /* MediaIDTransformer.m */,
 			);
 			name = Transformers;
 			sourceTree = "<group>";
@@ -3863,6 +3898,13 @@
 				FBEE427F1333841D00A89FB0 /* SXGraphicsController.m in Sources */,
 				FB3AFD3C1336D3F100D6476F /* SXFloatHolder.m in Sources */,
 				FB3AFD4B1336D64700D6476F /* SXShortHolder.m in Sources */,
+				FBEA8FAD135373B7004C4A68 /* CompetitionIDTransformer.m in Sources */,
+				FBEA8FBA135376A8004C4A68 /* NationIDTransformer.m in Sources */,
+				FBEA8FBD135376AF004C4A68 /* StadiumIDTransformer.m in Sources */,
+				FBEA8FC0135376B5004C4A68 /* CityIDTransformer.m in Sources */,
+				FBEA8FC3135376BF004C4A68 /* PersonIDTransformer.m in Sources */,
+				FBEA8FE413537F0F004C4A68 /* ClubIDTransformer.m in Sources */,
+				FBEA8FF1135382FE004C4A68 /* MediaIDTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

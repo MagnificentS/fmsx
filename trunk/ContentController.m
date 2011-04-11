@@ -245,7 +245,7 @@
 		NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Game Not Loaded",@"error - game not loaded") defaultButton:@"OK" alternateButton:nil 
 										   otherButton:nil informativeTextWithFormat:@"The editor can't be displayed before a game is loaded"];
 		[alert runModal];
-		return;
+	//	return;
 	}
 	
 	editorViewController = [[SXEditorViewController alloc] initWithNibName:@"Editor" bundle:nil];

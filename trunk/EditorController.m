@@ -13,6 +13,15 @@
 #import "EditorController.h"
 #import "SXEditorEntityViewController.h"
 
+#import "CityIDTransformer.h"
+#import "ClubIDTransformer.h"
+#import "CompetitionIDTransformer.h"
+#import "MediaIDTransformer.h"
+#import "NationIDTransformer.h"
+#import "PersonIDTransformer.h"
+#import "StadiumIDTransformer.h"
+
+
 @implementation EditorController
 
 @synthesize currentSection, selectedAward, selectedCity, selectedClub, selectedCompetition, selectedContinent,
@@ -24,6 +33,21 @@ selectedPerson, selectedSponsor, selectedStadium, selectedStadiumChange, selecte
 	[super init];
 	
 	searchResults = [[NSMutableArray alloc] init];
+	
+	id cityIDTransformer = [[[CityIDTransformer alloc] init] autorelease];
+	[NSValueTransformer setValueTransformer:cityIDTransformer forName:@"CityIDTransformer"];
+	id clubIDTransformer = [[[ClubIDTransformer alloc] init] autorelease];
+	[NSValueTransformer setValueTransformer:clubIDTransformer forName:@"ClubIDTransformer"];
+	id competitionIDTransformer = [[[CompetitionIDTransformer alloc] init] autorelease];
+	[NSValueTransformer setValueTransformer:competitionIDTransformer forName:@"CompetitionIDTransformer"];
+	id mediaIDTransformer = [[[MediaIDTransformer alloc] init] autorelease];
+	[NSValueTransformer setValueTransformer:mediaIDTransformer forName:@"MediaIDTransformer"];
+	id nationIDTransformer = [[[NationIDTransformer alloc] init] autorelease];
+	[NSValueTransformer setValueTransformer:nationIDTransformer forName:@"NationIDTransformer"];
+	id personIDTransformer = [[[PersonIDTransformer alloc] init] autorelease];
+	[NSValueTransformer setValueTransformer:personIDTransformer forName:@"PersonIDTransformer"];
+	id stadiumIDTransformer = [[[StadiumIDTransformer alloc] init] autorelease];
+	[NSValueTransformer setValueTransformer:stadiumIDTransformer forName:@"StadiumIDTransformer"];
 	
 	return self;
 }

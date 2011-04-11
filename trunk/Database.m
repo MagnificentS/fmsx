@@ -1329,9 +1329,6 @@ stadiumStringInfos, nationStringInfos;
 	NSMutableArray *tempArray = [[NSMutableArray alloc] init];
 	
 	[[NSApp delegate] setStatus:NSLocalizedString(@"assigning City Strings...", @"editor status")];
-	for (City *item in cities) { [tempArray addObject:[item name]]; }
-	[self setCityStrings:tempArray];
-	[tempArray removeAllObjects];
 	for (City *item in cities) { 
 		[tempArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:[item name],@"name",[NSNumber numberWithInt:[item rowID]],@"rowID",nil]]; 
 	}
@@ -1339,9 +1336,6 @@ stadiumStringInfos, nationStringInfos;
 	[tempArray removeAllObjects];
 	
 	[[NSApp delegate] setStatus:NSLocalizedString(@"assigning Club Strings...", @"editor status")];
-	for (Club *item in clubs) { [tempArray addObject:[[item teamContainer] name]]; }
-	[self setClubStrings:tempArray];
-	[tempArray removeAllObjects];
 	for (Club *item in clubs) { 
 		[tempArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:[[item teamContainer] name],@"name",[NSNumber numberWithInt:[item rowID]],@"rowID",[NSNumber numberWithInt:[item UID]],@"UID",nil]]; 
 	}
@@ -1349,9 +1343,6 @@ stadiumStringInfos, nationStringInfos;
 	[tempArray removeAllObjects];
 	
 	[[NSApp delegate] setStatus:NSLocalizedString(@"assigning Competition Strings...", @"editor status")];
-	for (Competition *item in competitions) { [tempArray addObject:[item name]]; }
-	[self setCompetitionStrings:tempArray];
-	[tempArray removeAllObjects];
 	for (Competition *item in competitions) { 
 		[tempArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:[item name],@"name",[NSNumber numberWithInt:[item rowID]],@"rowID",nil]]; 
 	}
@@ -1359,9 +1350,6 @@ stadiumStringInfos, nationStringInfos;
 	[tempArray removeAllObjects];
 	
 	[[NSApp delegate] setStatus:NSLocalizedString(@"assigning Media Strings...", @"editor status")];
-	for (Media *item in media) { [tempArray addObject:[item name]]; }
-	[self setMediaStrings:tempArray];
-	[tempArray removeAllObjects];
 	for (Media *item in media) { 
 		[tempArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:[item name],@"name",[NSNumber numberWithInt:[item rowID]],@"rowID",nil]]; 
 	}
@@ -1369,9 +1357,6 @@ stadiumStringInfos, nationStringInfos;
 	[tempArray removeAllObjects];
 	
 	[[NSApp delegate] setStatus:NSLocalizedString(@"assigning Nation Strings...", @"editor status")];
-	for (Nation *item in nations) { [tempArray addObject:[[item teamContainer] name]]; }
-	[self setNationStrings:tempArray];
-	[tempArray removeAllObjects];
 	for (Nation *item in nations) { 
 		[tempArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:[[item teamContainer] name],@"name",[NSNumber numberWithInt:[item rowID]],@"rowID",nil]]; 
 	}
@@ -1379,9 +1364,6 @@ stadiumStringInfos, nationStringInfos;
 	[tempArray removeAllObjects];
 	
 	[[NSApp delegate] setStatus:NSLocalizedString(@"assigning People Strings...", @"editor status")];
-	for (Person *item in people) { [tempArray addObject:[item name]]; }
-	[self setPeopleStrings:tempArray];
-	[tempArray removeAllObjects];
 	for (Person *item in people) { 
 		[tempArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:[item name],@"name",[NSNumber numberWithInt:[item rowID]],@"rowID",nil]]; 
 	}
@@ -1389,9 +1371,6 @@ stadiumStringInfos, nationStringInfos;
 	[tempArray removeAllObjects];
 	
 	[[NSApp delegate] setStatus:NSLocalizedString(@"assigning Stadium Strings...", @"editor status")];
-	for (Stadium *item in stadiums) { [tempArray addObject:[item name]]; }
-	[self setStadiumStrings:tempArray];
-	[tempArray removeAllObjects];
 	for (Stadium *item in stadiums) { 
 		[tempArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:[item name],@"name",[NSNumber numberWithInt:[item rowID]],@"rowID",nil]]; 
 	}
