@@ -1931,14 +1931,6 @@ stadiumStringInfos, nationStringInfos, localAreaStringInfos;
 	return strings;
 }
 
-- (NSArray *)localAreaStrings
-{
-	NSMutableArray *strings = [[NSMutableArray alloc] init];
-	
-	for (LocalArea *item in localAreas) { [strings addObject:[item name]]; }
-	
-	return [strings autorelease];
-}
 - (NSArray *)weatherStrings
 {
 	NSMutableArray *strings = [[NSMutableArray alloc] init];

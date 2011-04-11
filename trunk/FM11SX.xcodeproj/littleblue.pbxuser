@@ -370,6 +370,9 @@
 			FBEA904F135387F4004C4A68 /* PBXTextBookmark */ = FBEA904F135387F4004C4A68 /* PBXTextBookmark */;
 			FBEA9050135387F4004C4A68 /* PBXTextBookmark */ = FBEA9050135387F4004C4A68 /* PBXTextBookmark */;
 			FBEA9051135387F4004C4A68 /* PBXTextBookmark */ = FBEA9051135387F4004C4A68 /* PBXTextBookmark */;
+			FBEA9063135389A6004C4A68 /* PBXTextBookmark */ = FBEA9063135389A6004C4A68 /* PBXTextBookmark */;
+			FBEA9064135389A6004C4A68 /* PBXTextBookmark */ = FBEA9064135389A6004C4A68 /* PBXTextBookmark */;
+			FBEA9065135389A6004C4A68 /* PBXTextBookmark */ = FBEA9065135389A6004C4A68 /* PBXTextBookmark */;
 			FBEED0371345E9C400061233 = FBEED0371345E9C400061233 /* PBXTextBookmark */;
 			FBEED03B1345E9C400061233 = FBEED03B1345E9C400061233 /* PBXTextBookmark */;
 			FBEED03C1345E9C400061233 = FBEED03C1345E9C400061233 /* PBXTextBookmark */;
@@ -5762,7 +5765,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {824, 1716}}";
 			sepNavSelRange = "{2340, 0}";
-			sepNavVisRange = "{260, 1448}";
+			sepNavVisRange = "{260, 1614}";
 			sepNavWindowFrame = "{{15, 315}, {750, 558}}";
 		};
 	};
@@ -7279,6 +7282,36 @@
 		vrLen = 1448;
 		vrLoc = 260;
 	};
+	FBEA9063135389A6004C4A68 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
+		name = "EditorController.m: 45";
+		rLen = 0;
+		rLoc = 1691;
+		rType = 0;
+		vrLen = 1322;
+		vrLoc = 1084;
+	};
+	FBEA9064135389A6004C4A68 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBFD90791092AFE40023F307 /* Database.m */;
+		name = "Database.m: 1934";
+		rLen = 0;
+		rLoc = 70599;
+		rType = 0;
+		vrLen = 443;
+		vrLoc = 70439;
+	};
+	FBEA9065135389A6004C4A68 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBDBAB02132FB6C900FF22B8 /* EditorController.m */;
+		name = "EditorController.m: 53";
+		rLen = 0;
+		rLoc = 2340;
+		rType = 0;
+		vrLen = 1614;
+		vrLoc = 260;
+	};
 	FBEE427D1333841D00A89FB0 /* SXGraphicsController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1328, 494}}";
@@ -7643,9 +7676,9 @@
 	};
 	FBFD90791092AFE40023F307 /* Database.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {737, 25779}}";
-			sepNavSelRange = "{2693, 20}";
-			sepNavVisRange = "{1846, 979}";
+			sepNavIntBoundsRect = "{{0, 0}, {737, 25636}}";
+			sepNavSelRange = "{70599, 0}";
+			sepNavVisRange = "{70439, 443}";
 			sepNavWindowFrame = "{{15, 189}, {717, 584}}";
 		};
 	};
