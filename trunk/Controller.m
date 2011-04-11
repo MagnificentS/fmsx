@@ -154,6 +154,24 @@ langDBLoaded, status, statusMaxValue, statusValue, editorController, contentCont
 			[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=aoumi83%40gmail%2ecom&lc=GB&item_name=FM11SX&currency_code=GBP"]];
 		}
 	}
+	
+	// check all locations are valid
+	NSString *locationTestPath;
+	locationTestPath = [[[NSUserDefaults standardUserDefaults] stringForKey:@"gameLocation"] stringByExpandingTildeInPath];
+	
+	if (![[NSFileManager defaultManager] fileExistsAtPath:locationTestPath]) {
+		NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Invalid Game Location", @"error - invalid path") defaultButton:@"OK" alternateButton:nil 
+										   otherButton:nil informativeTextWithFormat:NSLocalizedString(@"Your FM location doesn't seem to be right.  You can correct this by selecting your game directory in preferences.  Leaving it as it is may cause some issues or cause you to miss out on some features.",@"error - invalid path")];
+		[alert runModal];
+	}
+	
+	locationTestPath = [[[NSUserDefaults standardUserDefaults] stringForKey:@"lang_db_location"] stringByExpandingTildeInPath];
+	
+	if (![[NSFileManager defaultManager] fileExistsAtPath:locationTestPath]) {
+		NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Invalid lang_db.dat Location", @"error - invalid path") defaultButton:@"OK" alternateButton:nil 
+										   otherButton:nil informativeTextWithFormat:NSLocalizedString(@"Your lang_db.dat location doesn't seem to be right.  You can correct this by selecting the directory of lang_db.dat in preferences.  Leaving it as it is may cause some issues or cause you to miss out on some features.",@"error - invalid path")];
+		[alert runModal];
+	}
 }
 
 - (void)resetDB
