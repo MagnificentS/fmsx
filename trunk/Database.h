@@ -60,7 +60,6 @@
 - (void)assignAwardNames:(NSString *)path;
 
 - (NSArray *)continentStrings;
-- (NSArray *)localAreaStrings;
 - (NSArray *)languageStrings;
 - (NSArray *)weatherStrings;
 
