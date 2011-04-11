@@ -351,7 +351,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FB9EAD1D1352F06E00DDD460</string>
+										<string>FB9EAD261352F10D00DDD460</string>
 										<key>history</key>
 										<array>
 											<string>FB264A79134358A600A22C9F</string>
@@ -531,8 +531,8 @@
 											<string>FB9EAD0F1352EDAD00DDD460</string>
 											<string>FB9EAD101352EDAD00DDD460</string>
 											<string>FB9EAD1A1352F06E00DDD460</string>
-											<string>FB9EAD1B1352F06E00DDD460</string>
-											<string>FB9EAD1C1352F06E00DDD460</string>
+											<string>FB9EAD241352F10D00DDD460</string>
+											<string>FB9EAD251352F10D00DDD460</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -776,6 +776,8 @@
 							<string>272pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -828,7 +830,7 @@
 			<key>WindowToolGUID</key>
 			<string>FB9D33D310923BAA000883FF</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
