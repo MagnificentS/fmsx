@@ -150,6 +150,7 @@ nationBGLogos, clubBGLogos;
 		NSString *type = [[NSString alloc] initWithString:[[NSString pathWithComponents:pathComponents] lowercaseString]];
 		
 		if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+			/*	
 			if ([type isEqualToString:@"kits/home"]) {
 				[homeKits setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
@@ -159,50 +160,62 @@ nationBGLogos, clubBGLogos;
 			else if ([type isEqualToString:@"kits/third"]) {
 				[thirdKits setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
-			else if ([type isEqualToString:@"logo/huge"] &&
+			/*	
+			 else if ([type isEqualToString:@"logo/huge"] &&
 					 [subType isEqualToString:@"club"]) {
 				[hugeClubLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
-			else if ([type isEqualToString:@"logo"] &&
+			*/
+			if ([type isEqualToString:@"logo"] &&
 					 [subType isEqualToString:@"club"]) {
 				[clubLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
-			else if ([type isEqualToString:@"icon"] &&
+			/*	
+			 else if ([type isEqualToString:@"icon"] &&
 					 [subType isEqualToString:@"club"]) {
 				[smallClubLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
+			*/
 			else if ([type isEqualToString:@"logo/background/left"] &&
 					 [subType isEqualToString:@"club"]) {
 				[clubBGLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
-			else if ([type isEqualToString:@"logo/huge"] &&
+			/*	
+			 else if ([type isEqualToString:@"logo/huge"] &&
 					 [subType isEqualToString:@"comp"]) {
 				[hugeCompetitionLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
+			*/
 			else if ([type isEqualToString:@"logo"] &&
 					 [subType isEqualToString:@"comp"]) {
 				[competitionLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
-			else if ([type isEqualToString:@"icon"] &&
+			/*	
+			 else if ([type isEqualToString:@"icon"] &&
 					 [subType isEqualToString:@"comp"]) {
 				[smallCompetitionLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
+			*/
 			else if ([type isEqualToString:@"logo/background/left"] &&
 					 [subType isEqualToString:@"comp"]) {
 				[competitionBGLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
-			else if ([type isEqualToString:@"logo/huge"] &&
+			/*	
+			 else if ([type isEqualToString:@"logo/huge"] &&
 					 [subType isEqualToString:@"nation"]) {
 				[hugeNationLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
+			*/
 			else if ([type isEqualToString:@"logo"] &&
 					 [subType isEqualToString:@"nation"]) {
 				[nationLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
-			else if ([type isEqualToString:@"icon"] &&
+			/*	
+			 else if ([type isEqualToString:@"icon"] &&
 					 [subType isEqualToString:@"nation"]) {
 				[smallNationLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
+			*/
 			else if ([type isEqualToString:@"logo/background/left"] &&
 					 [subType isEqualToString:@"nation"]) {
 				[nationBGLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
@@ -211,10 +224,12 @@ nationBGLogos, clubBGLogos;
 					 [subType isEqualToString:@"nation"]) {
 				[nationFlags setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
-			else if ([type isEqualToString:@"logo/huge"] &&
+			/*	
+			 else if ([type isEqualToString:@"logo/huge"] &&
 					 [subType isEqualToString:@"continent"]) {
 				[hugeContinentLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
+			*/
 			else if ([type isEqualToString:@"logo"] &&
 					 [subType isEqualToString:@"continent"]) {
 				[continentLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
@@ -223,19 +238,22 @@ nationBGLogos, clubBGLogos;
 					 [subType isEqualToString:@"continent"]) {
 				[continentBGLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
-			else if ([type isEqualToString:@"icon"] &&
+			/*	
+			 else if ([type isEqualToString:@"icon"] &&
 					 [subType isEqualToString:@"continent"]) {
 				[smallContinentLogos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
+			*/
 			else if ([type isEqualToString:@"portrait"] &&
 					 [subType isEqualToString:@"person"]) {
 				[personPhotos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
+		/*	
 			else if ([type isEqualToString:@"icon"] &&
 					 [subType isEqualToString:@"person"]) {
 				[smallPersonPhotos setObject:filePath forKey:[NSNumber numberWithInt:UID]];
 			}
-			
+		*/	
 			[type release];
 			[subType release];
 			[filePath release];

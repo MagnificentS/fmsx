@@ -9,7 +9,7 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeExecutable = FB9D33C410923BA1000883FF /* FM11SX */;
 		activeSDKPreference = macosx10.5;
 		activeTarget = 8D1107260486CEB800E47090 /* FM11SX */;
@@ -314,6 +314,7 @@
 			FB9EAD101352EDAD00DDD460 /* PBXTextBookmark */ = FB9EAD101352EDAD00DDD460 /* PBXTextBookmark */;
 			FB9EAD111352EDAD00DDD460 /* PBXTextBookmark */ = FB9EAD111352EDAD00DDD460 /* PBXTextBookmark */;
 			FB9EAD121352EDAD00DDD460 /* PBXTextBookmark */ = FB9EAD121352EDAD00DDD460 /* PBXTextBookmark */;
+			FB9EAD171352EE9E00DDD460 /* PBXTextBookmark */ = FB9EAD171352EE9E00DDD460 /* PBXTextBookmark */;
 			FBAE7960134A1214000ABFF0 = FBAE7960134A1214000ABFF0 /* PBXTextBookmark */;
 			FBEED0371345E9C400061233 = FBEED0371345E9C400061233 /* PBXTextBookmark */;
 			FBEED0381345E9C400061233 = FBEED0381345E9C400061233 /* PBXTextBookmark */;
@@ -4162,6 +4163,16 @@
 		vrLen = 653;
 		vrLoc = 6978;
 	};
+	FB9EAD171352EE9E00DDD460 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FBEE427E1333841D00A89FB0 /* SXGraphicsController.m */;
+		name = "SXGraphicsController.m: 169";
+		rLen = 0;
+		rLoc = 5886;
+		rType = 0;
+		vrLen = 535;
+		vrLoc = 5694;
+	};
 	FBA0F74C1099D4B100982364 /* SXMainMediaController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {556, 450}}";
@@ -6577,9 +6588,9 @@
 	};
 	FBEE427E1333841D00A89FB0 /* SXGraphicsController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1286, 3107}}";
-			sepNavSelRange = "{3094, 0}";
-			sepNavVisRange = "{6978, 653}";
+			sepNavIntBoundsRect = "{{0, 0}, {915, 3224}}";
+			sepNavSelRange = "{5886, 0}";
+			sepNavVisRange = "{5694, 535}";
 		};
 	};
 	FBEED0371345E9C400061233 /* PBXTextBookmark */ = {
