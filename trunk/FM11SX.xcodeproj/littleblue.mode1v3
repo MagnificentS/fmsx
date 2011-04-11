@@ -351,7 +351,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FB9EAD261352F10D00DDD460</string>
+										<string>FB9EAD2C135309CA00DDD460</string>
 										<key>history</key>
 										<array>
 											<string>FB264A79134358A600A22C9F</string>
@@ -830,7 +830,7 @@
 			<key>WindowToolGUID</key>
 			<string>FB9D33D310923BAA000883FF</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

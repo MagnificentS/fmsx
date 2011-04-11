@@ -9,6 +9,7 @@
 #import "ScoutController.h"
 #import "Controller.h"
 #import "SXFGameDB.h"
+#import "SXFGameInfo.h"
 #import "Person.h"
 #import "Database.h"
 #import "SupportFunctions.h"
@@ -417,7 +418,7 @@ clubScoutResults, staffScoutResults,  playerScoutResults, currentPlayerExpressio
 	[shortlist appendBytes:&cbuffer length:1];
 	
 	// unique game ID
-	ibuffer = [[NSApp delegate] gameID];
+	ibuffer = [[[NSApp delegate] gameInfo] gameID];
 	[shortlist appendBytes:&ibuffer length:4];
 	
 	// shortlist name
