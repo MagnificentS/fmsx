@@ -109,7 +109,6 @@
 		tempArray2 = [[NSMutableArray alloc] init];
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		for (int j=0;j<ibuffer;j++) {
-			NSLog(@"md info %d at %d",j,offset);
 			[tempArray2 addObject:[GeneralInfoLoader readFromData:data atOffset:&offset readInfo:YES]];
 		}
 		[tempArray addObject:tempArray2];

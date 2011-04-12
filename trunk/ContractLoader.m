@@ -86,7 +86,7 @@
 		[object setUnknownData1:[data subdataWithRange:NSMakeRange(offset, 4)]]; 
 		offset += 4;
 	}
-	else { NSLog(@"unknown contract type - %d at %d",[object type],offset); }
+	else if ([object type]!=CT_INVALID_CONTRACT){ NSLog(@"unknown contract type - %d at %d",[object type],offset); }
 	
 	if (type!=CT_INVALID_CONTRACT) {
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;

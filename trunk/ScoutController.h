@@ -15,6 +15,12 @@
 
 #define SXS_VERSION		1
 
+// smart filter types
+#define SFL_WONDERKIDS						1
+#define SFL_CHEAP_SOLID_BACKUPS				2
+#define SFL_YOUNG_STARS_FOR_LOWER_LEAGUES	3
+#define SFL_VETERANS_FOR_LOWER_LEAGUES		4
+
 @interface ScoutController : NSObject {
 	NSMutableArray *playerScoutResults, *staffScoutResults, *clubScoutResults;
 

@@ -78,7 +78,6 @@
 	[tempArray release];
 	
 	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-	
 	tempArray = [[NSMutableArray alloc] init];
 	for (int i=0;i<cbuffer;i++) {
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;

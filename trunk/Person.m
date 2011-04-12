@@ -679,7 +679,7 @@ unknownData1, unknownChar1, newFirstName, newSurname, newCommonName, transferID,
 	}
 	[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Tools",@"title",[entityController personToolsView],@"view",nil]];
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"debugMode"]) {
-	//	[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Debug - Person",@"title",[entityController personDebugPersonView],@"view",nil]];
+		[sections addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Debug - Person",@"title",[entityController personDebugPersonView],@"view",nil]];
 	}
 	
 	
