@@ -909,6 +909,32 @@ clubScoutResults, staffScoutResults,  playerScoutResults, currentPlayerExpressio
 		}
 	}
 	
+	//If preset filter is choosen add to predicate    1=Wonderkids, 2=Cheap Solid Backups, 3=Young Stars for Lower leagues, 4=Veterans for Lower Leagues
+	if ([presetPlayerFilters indexOfSelectedItem]==1)
+	{
+		if ([expression length] > 0) { [expression appendString:@" AND "]; }
+		[expression appendString:@"(playerData.potentialAbility >= 160) AND (playerData.currentAbility <= 125) AND (age < 23) AND (playerGrowthPotentialVal >= 2.5)"]; 
+	}
+
+	if ([presetPlayerFilters indexOfSelectedItem]==2)
+	{
+		if ([expression length] > 0) { [expression appendString:@" AND "]; }
+		[expression appendString:@"(playerData.currentAbility >= 115) AND (playerData.currentAbility <= 140) AND (playerData.askingPrice <= 500000) AND (playerData.askingPrice >= 0) AND (playerData.currentReputation <= 7000)"]; 
+	}
+	
+	if ([presetPlayerFilters indexOfSelectedItem]==3)
+	{
+		if ([expression length] > 0) { [expression appendString:@" AND "]; }
+		[expression appendString:@"(playerData.potentialAbility >= 130) AND (playerData.currentAbility <= 90) AND (age < 23) AND (playerData.currentReputation <= 4100) AND (playerData.worldReputation <= 4000)"]; 
+	}
+	
+	if ([presetPlayerFilters indexOfSelectedItem]==4)
+	{
+		if ([expression length] > 0) { [expression appendString:@" AND "]; }
+		[expression appendString:@"(playerData.currentAbility >= 90) AND (age >= 30) AND (playerData.currentReputation <= 5100)"]; 
+	}
+	
+	
 	if ([expression length] > 0) {
 		[expression appendString:@" AND (playerData != NIL)"];
 		[self setCurrentPlayerExpression:expression];
