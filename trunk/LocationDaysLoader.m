@@ -24,8 +24,6 @@
 	//[object setBetween15And21Only:cbuffer];
 	[object setUnknownChar1:cbuffer];
 	
-	if (cbuffer>1) { NSLog(@"%d at %d",cbuffer,offset); }
-	
 	[data getBytes:&sbuffer range:NSMakeRange(offset, 2)]; offset += 2;
 	[object setDays:sbuffer];
 	// nation or club

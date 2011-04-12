@@ -112,5 +112,17 @@ unknownChar8, unknownChar9, unknownChar10, unknownShort1, controller;
 	return [[[[NSApp delegate] graphics] competitionBGLogos] objectForKey:[NSNumber numberWithInt:UID]];
 }
 
+- (NSArray *)historyObjects
+{
+	NSMutableArray *array = [[NSMutableArray alloc] init];
+	
+	for (id item in [[NSApp delegate] valueForKeyPath:@"gameDB.database.competitionHistories"]) {
+		if ([item competitionID]==rowID) {
+			[array addObject:[[[NSApp delegate] valueForKeyPath:@"gameDB.database.competitionHistories"] objectAtIndex:[item competitionID]]];
+		}
+	}
+	
+	return array;
+}
 
 @end

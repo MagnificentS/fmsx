@@ -52,7 +52,7 @@ personPlayerStatsView, personRelationshipsView, personContractsView, personDebug
 clubMainViewContainer, clubEntityView, clubGeneralView, clubSectionView, clubTacticsView, clubTeamsView,
 clubRelationshipsView, clubAlternativeStadiumsView, clubKitsView, clubStaffView, clubTrainingView, clubFacilitiesView, 
 clubFinancesView, clubScoutingKnowledgesView, clubIDPCView, clubRegionalDivisionsView, clubSponsorsView,
-nationTeamsView, personToolsView;
+nationTeamsView, personToolsView, competitionGeneralView, competitionSectionView, competitionHistoryView;
 
 - (void)awakeFromNib
 {
@@ -72,6 +72,7 @@ nationTeamsView, personToolsView;
 	// section tables
 	if (aTableView==awardSectionsTable) { return 2; }
 	else if (aTableView==mediaSectionsTable) { return 2; }
+	else if (aTableView==competitionSectionsTable) { return [COMPETITION_SECTIONS count]; }
 	else if (aTableView==clubSectionsTable) { return [CLUB_SECTIONS count]; }
 	else if (aTableView==nationSectionsTable) { return [NATION_SECTIONS count]; }
 	else if (aTableView==peopleSectionsTable) { return [[[[[NSApp delegate] editorController] selectedPerson] sections:self] count]; }
@@ -276,6 +277,9 @@ nationTeamsView, personToolsView;
 	}
 	else if (aTableView==clubSectionsTable) { 
 		return [[CLUB_SECTIONS objectAtIndex:rowIndex] objectForKey:@"title"];
+	}
+	else if (aTableView==competitionSectionsTable) { 
+		return [[COMPETITION_SECTIONS objectAtIndex:rowIndex] objectForKey:@"title"];
 	}
 	else if (aTableView==peopleSectionsTable) { 
 		return [[[[[[NSApp delegate] editorController] selectedPerson] sections:self] objectAtIndex:rowIndex] objectForKey:@"title"];
@@ -502,6 +506,14 @@ nationTeamsView, personToolsView;
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
+	else if ([[aTableColumn identifier] isEqualToString:@"clubIDShorttxt"]) {
+		int UID = [[aCell stringValue] intValue];
+		
+		if (UID < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.clubs"] count] && UID > -1) {
+			[aCell setStringValue:[[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.clubs"] objectAtIndex:UID] teamContainer] shortName]];
+		}
+		else { [aCell setStringValue:@"---"]; }
+	}
 	else if ([[aTableColumn identifier] isEqualToString:@"clubUIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		
@@ -533,6 +545,14 @@ nationTeamsView, personToolsView;
 		
 		if (UID < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.teams"] count] && UID > -1) {
 			[aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.teams"] objectAtIndex:UID] fullTeamString]];
+		}
+		else { [aCell setStringValue:@"---"]; }
+	}
+	else if ([[aTableColumn identifier] isEqualToString:@"teamIDShorttxt"]) {
+		int UID = [[aCell stringValue] intValue];
+		
+		if (UID < [[[NSApp delegate] valueForKeyPath:@"gameDB.database.teams"] count] && UID > -1) {
+			[aCell setStringValue:[[[[NSApp delegate] valueForKeyPath:@"gameDB.database.teams"] objectAtIndex:UID] teamShortString]];
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
@@ -600,6 +620,11 @@ nationTeamsView, personToolsView;
 		else if ([mediaSectionsTable selectedRow]==1) {
 			[[[NSApp delegate] contentController] replacePlaceholder:mediaSectionView withView:mediaAssociationsView];
 		}
+	}
+	else if ([aNotification object]==competitionSectionsTable) {
+		if ([competitionSectionsTable selectedRow]<0 || [competitionSectionsTable selectedRow] >= [COMPETITION_SECTIONS count]) { return; }
+		
+		[[[NSApp delegate] contentController] replacePlaceholder:competitionSectionView withView:[[COMPETITION_SECTIONS objectAtIndex:[competitionSectionsTable selectedRow]] objectForKey:@"view"]];
 	}
 	else if ([aNotification object]==nationSectionsTable) {
 		if ([nationSectionsTable selectedRow]<0 || [nationSectionsTable selectedRow] >= [NATION_SECTIONS count]) { return; }
@@ -724,6 +749,9 @@ nationTeamsView, personToolsView;
 		[awardBGBox setFillColor:[[[[[NSApp delegate] editorController] selectedAward] colour] foregroundColour]];
 	}
 	else if (currentSection==EDS_COMPETITIONS) { 
+		// make the default section the general view
+		[[[NSApp delegate] contentController] replacePlaceholder:competitionSectionView withView:competitionGeneralView];
+		
 		// set header colour
 		[competitionHeaderBox setFillStartingColor:[[[[[NSApp delegate] editorController] selectedCompetition] colour] backgroundColour]];
 		[competitionHeaderBox setFillEndingColor:[[[[[NSApp delegate] editorController] selectedCompetition] colour] foregroundColour]];

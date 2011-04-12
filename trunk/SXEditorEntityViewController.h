@@ -10,6 +10,11 @@
 #import "EditorController.h"
 #import <BWToolkitFramework/BWToolkitFramework.h>
 
+#define COMPETITION_SECTIONS [NSMutableArray arrayWithObjects:\
+[NSDictionary dictionaryWithObjectsAndKeys:@"General",@"title",competitionGeneralView,@"view",nil],\
+//[NSDictionary dictionaryWithObjectsAndKeys:@"New Histories",@"title",competitionHistoryView,@"view",nil],\
+nil]
+
 #define CLUB_SECTIONS [NSMutableArray arrayWithObjects:\
 [NSDictionary dictionaryWithObjectsAndKeys:@"General",@"title",clubGeneralView,@"view",nil],\
 [NSDictionary dictionaryWithObjectsAndKeys:@"Alternative Stadiums",@"title",clubAlternativeStadiumsView,@"view",nil],\
@@ -71,10 +76,11 @@ nil]
 	IBOutlet BWSheetController *clubShortsPicker;
 	IBOutlet BWSheetController *clubSocksPicker;	
 	
-	IBOutlet NSTableView	*competitionsTable;
+	IBOutlet NSTableView	*competitionsTable, *competitionSectionsTable;
 	IBOutlet NSBox			*competitionBGBox;
 	IBOutlet BWGradientBox	*competitionHeaderBox;
-	IBOutlet NSView			*competitionMainViewContainer, *competitionEntityView;
+	IBOutlet NSView			*competitionMainViewContainer, *competitionEntityView, *competitionGeneralView, *competitionSectionView,
+	*competitionHistoryView;
 	
 	IBOutlet NSTableView	*continentsTable;
 	IBOutlet NSView			*continentMainViewContainer, *continentEntityView;
@@ -170,6 +176,6 @@ nil]
 *clubMainViewContainer, *clubEntityView, *clubGeneralView, *clubSectionView, *clubTacticsView, *clubStaffView,
 *clubRelationshipsView, *clubAlternativeStadiumsView, *clubKitsView, *clubScoutingKnowledgesView, *clubIDPCView, *clubRegionalDivisionsView,
 *clubSponsorsView, *clubTrainingView, *clubFacilitiesView, *clubFinancesView, *clubTeamsView, *nationTeamsView,
-*personToolsView;
+*personToolsView, *competitionGeneralView, *competitionSectionView, *competitionHistoryView;
 
 @end

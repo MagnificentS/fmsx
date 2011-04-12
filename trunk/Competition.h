@@ -97,6 +97,8 @@ historyIndexID, averageClubCashAtStart;
 - (BOOL)usesSquadNumbers;
 - (BOOL)isExtinct;
 
+- (NSArray *)historyObjects;
+
 - (NSArray *)typeStrings;
 - (NSString *)nationString;
 - (NSString *)continentString;
