@@ -1174,4 +1174,16 @@ clubScoutResults, staffScoutResults,  playerScoutResults, currentPlayerExpressio
 	}
 }
 
+- (NSArray *)smartFilterStrings
+{
+	NSArray *strings = [NSArray arrayWithObjects:
+						NSLocalizedString(@"Preset Player Filters...", @"player scout smart filter"),
+						NSLocalizedString(@"Wonderkids", @"player scout smart filter"),
+						NSLocalizedString(@"Cheap Solid Backups", @"player scout smart filter"),
+						NSLocalizedString(@"Young Stars For Lower Leagues", @"player scout smart filter"),
+						NSLocalizedString(@"Veterans For Lower Leagues", @"player scout smart filter"),
+						nil];
+	return strings;
+}
+
 @end
