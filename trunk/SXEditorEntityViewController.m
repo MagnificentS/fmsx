@@ -415,6 +415,19 @@ nationTeamsView, personToolsView;
 		}
 		else { [aCell setStringValue:@"---"]; }
 	}
+	else if ([[aTableColumn identifier] isEqualToString:@"clubNationUIDtxt"]) {
+		int UID = [[aCell stringValue] intValue];
+		
+		for (Nation *object in [[NSApp delegate] valueForKeyPath:@"gameDB.database.nations"])
+		{
+			if ([object UID]==UID) { [aCell setStringValue:[[object teamContainer] name]]; return; }
+		}
+		
+		for (Club *object in [[NSApp delegate] valueForKeyPath:@"gameDB.database.clubs"])
+		{
+			if ([object UID]==UID) { [aCell setStringValue:[[object teamContainer] name]]; return; }
+		}
+	}
 	else if ([[aTableColumn identifier] isEqualToString:@"agreementIDtxt"]) {
 		int UID = [[aCell stringValue] intValue];
 		

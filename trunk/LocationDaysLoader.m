@@ -12,7 +12,7 @@
 
 + (LocationDays *)readFromData:(NSData *)data atOffset:(unsigned int *)byteOffset
 {
-	BOOL bbuffer;
+	char cbuffer;
 	short sbuffer;
 	int ibuffer;
 	
@@ -20,12 +20,17 @@
 	
 	LocationDays *object = [[LocationDays alloc] init];
 	
-	[data getBytes:&bbuffer range:NSMakeRange(offset, 1)]; offset += 1;
-	[object setBetween15And21Only:bbuffer];
+	[data getBytes:&cbuffer range:NSMakeRange(offset, 1)]; offset += 1;
+	//[object setBetween15And21Only:cbuffer];
+	[object setUnknownChar1:cbuffer];
+	
+	if (cbuffer>1) { NSLog(@"%d at %d",cbuffer,offset); }
+	
 	[data getBytes:&sbuffer range:NSMakeRange(offset, 2)]; offset += 2;
 	[object setDays:sbuffer];
+	// nation or club
 	[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
-	[object setTeamID:ibuffer];
+	[object setLocationUID:ibuffer];
 	
 	*byteOffset = offset;
 	

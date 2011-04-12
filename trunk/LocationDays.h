@@ -10,12 +10,16 @@
 
 @interface LocationDays : NSObject {
 	short days;
-	int teamID;
+	int locationUID;
 	BOOL between15And21Only;
+	
+	// flags seen 0x01, 0x02, 0x04
+	unsigned char unknownChar1;
 }
 
+@property(readwrite,assign) unsigned char unknownChar1;
 @property(readwrite,assign) short days;
-@property(readwrite,assign) int teamID;
+@property(readwrite,assign) int locationUID;
 @property(readwrite,assign) BOOL between15And21Only;
 
 @end

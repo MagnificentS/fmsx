@@ -13,15 +13,15 @@
 
 + (void)saveDays:(LocationDays *)object toData:(NSMutableData *)data
 {
-	BOOL bbuffer;
+	char cbuffer;
 	short sbuffer;
 	int ibuffer;
 	
-	bbuffer = [object between15And21Only];
-	[data appendBytes:&bbuffer length:1];
+	cbuffer = [object unknownChar1];
+	[data appendBytes:&cbuffer length:1];
 	sbuffer = [object days];
 	[data appendBytes:&sbuffer length:2];
-	ibuffer = [object teamID];
+	ibuffer = [object locationUID];
 	[data appendBytes:&ibuffer length:4];
 }
 
