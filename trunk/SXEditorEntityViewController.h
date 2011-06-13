@@ -12,7 +12,7 @@
 
 #define COMPETITION_SECTIONS [NSMutableArray arrayWithObjects:\
 [NSDictionary dictionaryWithObjectsAndKeys:@"General",@"title",competitionGeneralView,@"view",nil],\
-//[NSDictionary dictionaryWithObjectsAndKeys:@"New Histories",@"title",competitionHistoryView,@"view",nil],\
+/*[NSDictionary dictionaryWithObjectsAndKeys:@"New Histories",@"title",competitionHistoryView,@"view",nil],\*/ \
 nil]
 
 #define CLUB_SECTIONS [NSMutableArray arrayWithObjects:\

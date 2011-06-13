@@ -214,8 +214,8 @@
 		[tempArray release];
 	}
 	else if ([[object type] isEqualToString:@"vafp"]) {
-		[object setUnknownData1:[data subdataWithRange:NSMakeRange(offset, 9)]];
-		offset += 9;
+		[object setUnknownData1:[data subdataWithRange:NSMakeRange(offset, 8)]];
+		offset += 8;
 		
 		[data getBytes:&ibuffer range:NSMakeRange(offset, 4)]; offset += 4;
 		NSMutableArray *tempArray = [[NSMutableArray alloc] init];

@@ -56,7 +56,7 @@
 #define JOB_PLAYER_FIRST_TEAM_COACH			0x37
 
 // formations
-#define FO_NOT_SET						0
+#define FO_NOT_SET                          0
 #define FO_5_3_2_SWEEPER					1
 #define FO_5_3_2							2
 #define FO_4_4_2							3
@@ -93,4 +93,4 @@
 #define FO_4_2_2_1_1						34
 #define FO_3_4_1_2_DEFENSIVE MIDFIELDERS	35
 
-#define FO_MAX							35
+#define FO_MAX                              35
