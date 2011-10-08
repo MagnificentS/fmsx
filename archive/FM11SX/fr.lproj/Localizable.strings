@@ -1,0 +1,1810 @@
+/* No comment provided by engineer. */
+"(Multiple)" = "(Multiple)";
+
+/* No comment provided by engineer. */
+"(None)" = "(Aucun)";
+
+/* city inhabitants */
+"0 - 1,000" = "0 - 1,000";
+
+/* city inhabitants */
+"1,000,001 - 2,500,000" = "1,000,001 - 2,500,000";
+
+/* city inhabitants */
+"1,001 - 2,500" = "1,001 - 2,500";
+
+/* city inhabitants */
+"10,000,001 - 20,000,000" = "10,000,001 - 20,000,000";
+
+/* city inhabitants */
+"10,001 - 25,000" = "10,001 - 25,000";
+
+/* city inhabitants */
+"100,001 - 250,000" = "100,001 - 250,000";
+
+/* award no. placings */
+"1st - 3rd Place" = "1ère - 3ème Place";
+
+/* award no. placings */
+"1st and 2nd Place" = "1ère and 2ème Place";
+
+/* award no. placings */
+"1st Place Only" = "1ère Place Uniquement";
+
+/* team type */
+"2" = "2";
+
+/* city inhabitants */
+"2,500,001 - 5,000,000" = "2,500,001 - 5,000,000";
+
+/* city inhabitants */
+"2,501 - 5,000" = "2,501 - 5,000";
+
+/* city inhabitants */
+"25,001 - 50,000" = "25,001 - 50,000";
+
+/* city inhabitants */
+"250,001 - 500,000" = "250,001 - 500,000";
+
+/* team type */
+"3" = "3";
+
+/* formation */
+"3-1-3-1-2" = "3-1-3-1-2";
+
+/* formation */
+"3-4-1-2" = "3-4-1-2";
+
+/* formation */
+"3-4-2-1" = "3-4-2-1";
+
+/* formation */
+"3-4-3" = "3-4-3";
+
+/* formation */
+"3-5-2" = "3-5-2";
+
+/* formation */
+"3-5-2 Sweeper" = "3-5-2 Libéro";
+
+/* formation */
+"3-6-1" = "3-6-1";
+
+/* formation */
+"4-1-2-1-2" = "4-1-2-1-2";
+
+/* formation */
+"4-1-2-2-1" = "4-1-2-2-1";
+
+/* formation */
+"4-1-2-3 Attacking" = "4-1-2-3 Offensif";
+
+/* formation */
+"4-1-3-1-1" = "4-1-3-1-1";
+
+/* formation */
+"4-1-3-2" = "4-1-3-2";
+
+/* formation */
+"4-2-2-2" = "4-2-2-2";
+
+/* formation */
+"4-2-2-2 Defensive Midfielder" = "4-2-2-2 Milieu Défensif";
+
+/* formation */
+"4-2-3-1" = "4-2-3-1";
+
+/* formation */
+"4-2-3-1 Defensive Midfielder" = "4-2-3-1 Milieu Défensif ";
+
+/* formation */
+"4-2-3-1 Denmark" = "4-2-3-1 Danemark";
+
+/* formation */
+"4-2-4" = "4-2-4";
+
+/* formation */
+"4-3-1-2" = "4-3-1-2";
+
+/* formation */
+"4-3-2-1" = "4-3-2-1";
+
+/* formation */
+"4-3-3" = "4-3-3";
+
+/* formation */
+"4-4-1-1" = "4-4-1-1";
+
+/* formation */
+"4-4-2" = "4-4-2";
+
+/* formation */
+"4-4-2 Defensive Midfielder" = "4-4-2 Milieu Défensif ";
+
+/* formation */
+"4-4-2 Diamond" = "4-4-2 Diamant";
+
+/* formation */
+"4-4-2 Sweeper" = "4-4-2 Libéro";
+
+/* formation */
+"4-5-1" = "4-5-1";
+
+/* formation */
+"4-5-1 Defensive Midfielder" = "4-5-1 Milieu Défensif ";
+
+/* city inhabitants */
+"5,000,001 - 10,000,000" = "5,000,001 - 10,000,000";
+
+/* city inhabitants */
+"5,001 - 10,000" = "5,001 - 10,000";
+
+/* formation */
+"5-3-2" = "5-3-2";
+
+/* formation */
+"5-3-2 Serbia & Montenegro" = "5-3-2 Serbie-Monténégro";
+
+/* formation */
+"5-3-2 Sweeper" = "5-3-2 Libéro";
+
+/* formation */
+"5-4-1" = "5-4-1";
+
+/* city inhabitants */
+"50,001 - 100,000" = "50,001 - 100,000";
+
+/* city inhabitants */
+"500,001 - 1,000,000" = "500,001 - 1,000,000";
+
+/* team type */
+"A" = "A";
+
+/* club sponsor type */
+"Additional Kit Sponsor" = "Sponsor Maillot Supplémentaire";
+
+/* nation style of football */
+"Africa" = "Afrique";
+
+/* ethnicity */
+"African / Caribbean" = "Africain / Caribéen";
+
+/* language family */
+"Afro-Asiatic" = "Afro-Asiatique";
+
+/* language family */
+"Alacalufan" = "Alakalufane";
+
+/* language group */
+"Albanian" = "Albanais";
+
+/* language family */
+"Algic" = "Algique";
+
+/* stadium used by national team */
+"All Matches" = "Tous les Matches";
+
+/* language family */
+"Altaic" = "Altaïque";
+
+/* club professional status
+   contract status */
+"Amateur" = "Amateur";
+
+/* team type */
+"Amateurs" = "Amateurs";
+
+/* language family */
+"Amto-Musan" = "Amto-Musan";
+
+/* language family */
+"Andamanese" = "Andamanaise";
+
+/* award side
+   general 'any' option */
+"Any" = "N’importe Lequel";
+
+/* award voting */
+"Any Manager" = "N’importe Quel Entraîneur";
+
+/* media period */
+"Anytime" = "N’importe Quel Moment";
+
+/* language family */
+"Arauan" = "Arauanaise";
+
+/* language family */
+"Araucanian" = "Araucanaise";
+
+/* language family */
+"Arawakan" = "Arawakienne";
+
+/* injury category */
+"Arm" = "Bras";
+
+/* language group
+   language sub-group */
+"Armenian" = "Arménien";
+
+/* language family */
+"Artificial" = "Artificielle";
+
+/* language family */
+"Arutani-Sape" = "Arutani-Sapé";
+
+/* nation style of football */
+"Asia" = "Asie";
+
+/* ethnicity */
+"Asian" = "Asiatique";
+
+/* editor status */
+"assigning clubs..." = "affectation des clubs...";
+
+/* editor status */
+"assigning competitions..." = "affectation des compétitions...";
+
+/* editor status */
+"assigning people..." = "affectation des personnes...";
+
+/* editor status */
+"assigning Person Stats..." = "affectation des statisques personnelles...";
+
+/* editor status */
+"assigning stadium changes..." = "affectation des changements de stade...";
+
+/* editor status */
+"assigning stadiums..." = "affectation des stades...";
+
+/* person job */
+"Assistant Manager" = "Entraîneur Adjoint";
+
+/* person job */
+"Assistant Referee" = "Arbitre Assistant";
+
+/* language sub-group */
+"Atlantic" = "Atlantique";
+
+/* language group */
+"Atlantic Congo" = "Atlantico-Congolais";
+
+/* language sub-group */
+"Attic" = "Attique";
+
+/* language family */
+"Australian" = "Australienne";
+
+/* language family */
+"Austro-Asiatic" = "Austro-Asiatique";
+
+/* language family */
+"Austronesian" = "Austronésienne";
+
+/* stadium state */
+"Average" = "Moyen";
+
+/* kit type */
+"Away" = "Extérieur";
+
+/* language family */
+"Aymaran" = "Aymarienne";
+
+/* team type */
+"B" = "B";
+
+/* editor status */
+"Backing up original..." = "Sauvegarde de l’original...";
+
+/* sugar daddy type */
+"Backround" = "Arrière-Plan";
+
+/* hair colour */
+"Bald" = "Chauve";
+
+/* nation style of football */
+"Balkan" = "Balkans";
+
+/* language group */
+"Baltic" = "Baltique";
+
+/* language family */
+"Barbacon" = "Barbacoane";
+
+/* award based */
+"Based Anywhere Anyone" = "Quiconque Basé N’importe Où";
+
+/* award based */
+"Based Anywhere Nationals" = "Nationaux Basé N’importe Où";
+
+/* award based */
+"Based Continent Anyone" = "Quiconque Basé Continentalement";
+
+/* language family */
+"Basque" = "Basque";
+
+/* language family */
+"Bayono-Awbono" = "Bayono-Awbono";
+
+/* language sub-group */
+"Be-Tai" = "Be-Tai";
+
+/* media period */
+"Bi-Monthly" = "Bimensuel";
+
+/* hair colour */
+"Black" = "Noir";
+
+/* hair colour */
+"Blonde" = "Blond";
+
+/* media type */
+"Bookmaker" = "Bookmaker";
+
+/* nation style of football */
+"Brasil" = "Brésil";
+
+/* nation style of football */
+"Britain" = "Grande-Bretagne";
+
+/* media style */
+"Broadsheet" = "Journal Grand Format";
+
+/* team type */
+"C" = "C";
+
+/* language family */
+"Caddoan" = "Caddoane";
+
+/* language family */
+"Cahuapanan" = "Cahuapanane";
+
+/* Cancel button title */
+"Cancel" = "Annuler";
+
+/* language family */
+"Cant" = "Cryptolecte";
+
+/* stadium change type */
+"Capacity Change" = "Changement de Capacité";
+
+/* person job */
+"Caretaker / Coach" = "Entraîneur Intérimaire / Préparateur";
+
+/* person job */
+"Caretaker Coach" = "Entraîneur Intérimaire";
+
+/* language family */
+"Carib" = "Caraïbe";
+
+/* nation style of football */
+"Caribbean" = "Caraïbes";
+
+/* injury cause */
+"Catching Ball" = "Rattrapant une Balle";
+
+/* language sub-group */
+"Central" = "Central";
+
+/* nation style of football */
+"Central American" = "Amérique Centrale";
+
+/* award side */
+"Centre" = "Centre";
+
+/* person job */
+"Chairman" = "Président";
+
+/* language family */
+"Chapacura-Wanham" = "Chapakura";
+
+/* kit style */
+"Checks" = "à Carreuax";
+
+/* language family */
+"Chibchan" = "Chibchane";
+
+/* language family */
+"Chimakuan" = "Chimakuane";
+
+/* language group
+   language sub-group */
+"Chinese" = "Chinois";
+
+/* language family */
+"Choco" = "Chocó";
+
+/* language family */
+"Chon" = "Chon";
+
+/* language family */
+"Chukotko-Kamchatkan" = "Tchoukotko-Kamtchatkienne";
+
+/* language family */
+"Chumash" = "Chumash";
+
+/* stadium pitch type */
+"Clay" = "Terre Batue";
+
+/* media scope */
+"Club" = "Club";
+
+/* club sponsor type */
+"Club Membership" = "Membre du Club";
+
+/* award recipient type */
+"Club Or Nation" = "Club Ou Pays";
+
+/* person job */
+"Coach" = "Préparateur";
+
+/* language family */
+"Coahuiltecan" = "Coahuiltecan";
+
+/* media scope */
+"Competition" = "Compétition";
+
+/* award voting */
+"Competition Club Manager" = "Entraîneurs de Club de la Compétition";
+
+/* nation game importance */
+"Completely Useless" = "Totalement Inutile";
+
+/* award voting */
+"Continent Club Manager" = "Entraîneurs de Club du Continent";
+
+/* award voting */
+"Continent Nation Manager" = "Sélectioneurs Nationaux du Continent";
+
+/* award use stats from
+   media scope */
+"Continental" = "Continental";
+
+/* Quit without saves error question message */
+"Could not save changes while quitting.  Quit anyway?" = "Les changements pourraient ne pas être sauvegardés rn quittant.  Quitter quand même?";
+
+/* language family */
+"Creole" = "Créole";
+
+/* language group */
+"Cushitic" = "Couchitique";
+
+/* hair colour */
+"Dark Brown" = "Marron Foncé";
+
+/* language family */
+"Deaf Sign Language" = "Langue Des Signes";
+
+/* squad status */
+"Decent Youngster" = "Jeune";
+
+/* nation state of development */
+"Developed" = "Développée";
+
+/* nation state of development */
+"Developing" = "En Développement";
+
+/* kit style */
+"Diagonal Halves" = "Division Diagonale";
+
+/* kit style */
+"Diagonal Stripe (Bottom-Top)" = "Rayure Diagonale (Bas-Haut)";
+
+/* kit style */
+"Diagonal Stripe (Top-Bottom)" = "Rayure Diagonale (Haut-Bas)";
+
+/* person job */
+"Director" = "Directeur";
+
+/* person job */
+"Director Of Football" = "Directeur Sportif";
+
+/* award based */
+"Domestic Based" = "Jouant Localement";
+
+/* award based */
+"Domestic Based African" = "Africains Jouant Localement";
+
+/* award based */
+"Domestic Based Foreigners" = "Etrangers Jouant Localement";
+
+/* award based */
+"Domestic Based Nationals" = "Nationaux Jouant Localement";
+
+/* award use stats from */
+"Domestic Cup" = "Coupe Nationale";
+
+/* award use stats from */
+"Domestic League" = "Championnat National";
+
+/* award use stats from */
+"Domestic Overall" = "Compétitions Nationales";
+
+/* kit style */
+"Double Horizontal Stripe (Middle Space)" = "Doubles Rayures Horizontales (Espace Intermédiare)";
+
+/* kit style */
+"Double Vertical Stripe (Centre Space)" = "Doubles Rayures Verticales (Espace au Central)";
+
+/* kit style */
+"Double Vertical Stripe (Left Space)" = "Doubles Rayures Verticales (Espace à Gauche)";
+
+/* kit style */
+"Double Vertical Stripe (Right Space)" = "Doubles Rayures Verticales (Espace à Droite)";
+
+/* language family */
+"Dravidian" = "Dravidienne";
+
+/* language sub-group */
+"East" = "Oriental";
+
+/* language family */
+"East Birds Head" = "East Birds Head-Sentani";
+
+/* language family */
+"East Papuan" = "Papoue Orientale";
+
+/* nation style of football */
+"Eastern European" = "Europe de l'Est";
+
+/* nation group membership */
+"EC Country" = "Pays de l'UE";
+
+/* language family */
+"Eskimo-Aleut" = "Eskimo-Aléoute";
+
+/* injury cause */
+"Fall Impact" = "Chute";
+
+/* media type */
+"Fanzine" = "Fanzine";
+
+/* language sub-group */
+"Finno-Permic" = "Finno-Permienne";
+
+/* language group */
+"Finno-Ugric" = "Finno-Ougrienne";
+
+/* team type */
+"First Team" = "Equipe Première";
+
+/* person job */
+"First Team Coach" = "Préparateur de l'Equipe Première";
+
+/* squad status */
+"First Team Regular" = "Equipe Première";
+
+/* squad status */
+"First Team Squad Rotation" = "Rotation";
+
+/* person job */
+"Fitness Coach" = "Préparateur Physique";
+
+/* injury category */
+"Foot" = "Pied";
+
+/* award run by */
+"Football Association" = "Fédération";
+
+/* sugar daddy type */
+"Foreground" = "Premier-Plan";
+
+/* award based */
+"Foreign Based Nationals" = "Nationaux Jouant à l'Etranger";
+
+/* nation style of football */
+"France" = "France";
+
+/* No comment provided by engineer. */
+"Friday" = "Vendredi";
+
+/* contract status */
+"Full-Time" = "Temps-Plein";
+
+/* language family */
+"Geelvink Bay" = "Baie de Geelvink";
+
+/* Title of 'General' preference pane */
+"General" = "Général";
+
+/* person job */
+"General Manager" = "Manageur Général";
+
+/* club sponsor type */
+"General Sponsor" = "Sponsor Général";
+
+/* language group
+   language sub-group */
+"Georgian" = "Géorgien";
+
+/* language group */
+"Germanic" = "Germanique";
+
+/* nation style of football */
+"Germany" = "Allemagne";
+
+/* person job */
+"Goalkeeping Coach" = "Entraîneur des Gardiens";
+
+/* stadium state */
+"Good" = "Bon";
+
+/* club sponsor type */
+"Government Council Grant" = "Subvention du Conseil Municipal";
+
+/* stadium pitch type */
+"Grass" = "Naturel";
+
+/* stadium pitch type */
+"Gravel" = "Gravier";
+
+/* stadium pitch type */
+"Gravel / Clay / Sand" = "Gravier / Terre Battue / Sable";
+
+/* language group */
+"Greek" = "Grec";
+
+/* hair colour */
+"Grey" = "Gris";
+
+/* injury category */
+"Groin" = "Aine";
+
+/* language family */
+"Guahiban" = "Guahibanne";
+
+/* language family */
+"Gulf" = "Golfe du Mexique";
+
+/* kit style */
+"Halves (Left-Right)" = "Division (Droite-Gauche)";
+
+/* kit style */
+"Halves (Top-Bottom)" = "Division (Haut-Bas)";
+
+/* injury category */
+"Hand" = "Main";
+
+/* language family */
+"Harakmbet" = "Harakmbut";
+
+/* injury category */
+"Head" = "Tête";
+
+/* person job */
+"Head Coach" = "Entraîneur";
+
+/* language family */
+"Hmong-Mien" = "Hmong-Mien";
+
+/* language family */
+"Hokan" = "Hokane";
+
+/* nation style of football */
+"Holland" = "Hollande";
+
+/* kit type */
+"Home" = "Domicile";
+
+/* kit style */
+"Hoop (Boca)" = "Rayure Cerclée (Boca)";
+
+/* kit style */
+"Hoops" = "Rayures";
+
+/* kit style */
+"Hoops (Pinstripes)" = "Rayures (Fines Rayures)";
+
+/* kit style */
+"Hoops (Wide)" = "Rayures (Large)";
+
+/* kit style */
+"Horizontal Stripe (Middle)" = "Rayure Horizontale (Milieu)";
+
+/* squad status */
+"Hot Prospect For The Future" = "Grand Espoir";
+
+/* language family */
+"Huavean" = "Huave";
+
+/* language sub-group */
+"Hungarian" = "Hongrois";
+
+/* kit type */
+"Icon" = "Icon";
+
+/* team type */
+"II" = "II";
+
+/* injury cause */
+"Impact With Player" = "Choc Avec Un Joueur";
+
+/* nation game importance */
+"Important" = "Important";
+
+/* language sub-group */
+"Indio-Aryan" = "Indo-Aryen";
+
+/* club sponsor type */
+"Individual TV Deal" = "Droits TV Individuels";
+
+/* language family */
+"Indo-European" = "Indo-Européenne";
+
+/* language group */
+"Indo-Iranian" = "Indo-Iranien";
+
+/* media type */
+"Injury Sponsor" = "Spécialisé Dans Les Blessures";
+
+/* injury category */
+"Internal" = "Interne";
+
+/* award use stats from
+   sponsor business type */
+"International" = "International";
+
+/* general 'invalid' option */
+"Invalid" = "Invalide";
+
+/* language sub-group */
+"Iranian" = "Iranien";
+
+/* language family */
+"Iroquoian" = "Iroquoise";
+
+/* language group */
+"Italic" = "Italique";
+
+/* nation style of football */
+"Italy" = "Italie";
+
+/* nation style of football */
+"Japan" = "Japon";
+
+/* language family
+   language group
+   language sub-group */
+"Japanese" = "Japonais";
+
+/* language family */
+"Jivaroan" = "Jivaro";
+
+/* person job */
+"Journalist" = "Journaliste";
+
+/* injury cause */
+"Jumping" = "Sautant";
+
+/* language group */
+"Kam-Tai" = "Kam-Tai";
+
+/* language family */
+"Katukinan" = "Catuquina";
+
+/* language family */
+"Keres" = "Keresan";
+
+/* squad status */
+"Key Player" = "Joueur-Clé";
+
+/* language family */
+"Khoisan" = "Khoïsan";
+
+/* injury cause */
+"Kicking Ball" = "Frappant la Balle";
+
+/* language family */
+"Kiowa-Tanoan" = "Kiowa-Tanoane";
+
+/* media type */
+"Kit Sponsor" = "Sponsor Maillot";
+
+/* injury category */
+"Knee" = "Genou";
+
+/* language family
+   language sub-group */
+"Korean" = "Coréen";
+
+/* language family */
+"Kwomtari-Baibai" = "Kwomtari-Baibai";
+
+/* language family */
+"Language Isolate" = "Langues Isolées";
+
+/* Language Preferences */
+"Languages" = "Langues";
+
+/* kit style */
+"Large Horizontal Stripe (Top)" = "Large Bande Horizontale (Haut)";
+
+/* award side */
+"Left" = "Gauche";
+
+/* language family */
+"Left May" = "Left May";
+
+/* award side */
+"Left Or Right" = "Gauche Ou Droit";
+
+/* injury cause */
+"Lifting Weights" = "Soulevant Des Poids";
+
+/* hair colour */
+"Light Brown" = "Marron Clair";
+
+/* editor status */
+"loading awards..." = "chargement des récompenses...";
+
+/* editor status */
+"loading bad alliterations..." = "chargement des mauvaises allitérations...";
+
+/* editor status */
+"loading cities..." = "chargement des villes...";
+
+/* editor status */
+"loading club links..." = "chargement des liens de clubs...";
+
+/* editor status */
+"loading clubs..." = "chargement des clubs...";
+
+/* editor status */
+"loading common names..." = "chargement des noms d'usage...";
+
+/* editor status */
+"loading competition histories..." = "chargement des historiques de compétition...";
+
+/* editor status */
+"loading competitions..." = "chargement des compétitions...";
+
+/* editor status */
+"loading continents..." = "chargement des continents...";
+
+/* editor status */
+"loading currencies..." = "chargement des cours...";
+
+/* editor status */
+"loading descriptions..." = "chargment des descriptions...";
+
+/* editor status */
+"loading first names..." = "chargement des prénoms...";
+
+/* editor status */
+"loading good alliterations..." = "chargement des bonnes allitérations...";
+
+/* editor status */
+"loading injuries..." = "chargement des blessures...";
+
+/* editor status */
+"loading lang_db.dat" = "chargement de lang_db.dat";
+
+/* editor status */
+"loading languages..." = "chargement des langues...";
+
+/* editor status */
+"loading local areas..." = "chargement des régions...";
+
+/* editor status */
+"loading media..." = "chargement des médias...";
+
+/* editor status */
+"loading nations..." = "chargmenet des pays...";
+
+/* editor status */
+"loading non-player stats..." = "chargement des statistiques de non-joueur...";
+
+/* editor status */
+"loading people..." = "chargement des gens...";
+
+/* editor status */
+"loading person stats..." = "chargement des statistiques personnelles...";
+
+/* editor status */
+"loading player stats..." = "chargement des statistiques de joueur...";
+
+/* editor status */
+"loading sponsors..." = "chargement des sponsors...";
+
+/* editor status */
+"loading stadium changes..." = "chargement des changements de stade...";
+
+/* editor status */
+"loading stadiums..." = "chargement des stades...";
+
+/* editor status */
+"loading stage names..." = "chargement des noms de division...";
+
+/* editor status */
+"loading surnames..." = "chargement des surnoms...";
+
+/* editor status */
+"loading teams..." = "chargement des équipes...";
+
+/* editor status */
+"loading unknowns 1..." = "chargement inconnus 1...";
+
+/* editor status */
+"loading unknowns 10..." = "chargement inconnus 10...";
+
+/* editor status */
+"loading unknowns 11..." = "chargement inconnus 11...";
+
+/* editor status */
+"loading unknowns 12..." = "chargement inconnus 12...";
+
+/* editor status */
+"loading unknowns 13..." = "chargement inconnus 13...";
+
+/* editor status */
+"loading unknowns 14..." = "chargement inconnus 14...";
+
+/* editor status */
+"loading unknowns 15..." = "chargement inconnus 15...";
+
+/* editor status */
+"loading unknowns 16..." = "chargement inconnus 16...";
+
+/* editor status */
+"loading unknowns 17..." = "chargement inconnus 17...";
+
+/* editor status */
+"loading unknowns 18..." = "chargement inconnus 18...";
+
+/* editor status */
+"loading unknowns 19..." = "chargement inconnus 19...";
+
+/* editor status */
+"loading unknowns 2..." = "chargement inconnus 2...";
+
+/* editor status */
+"loading unknowns 20..." = "chargement inconnus 20...";
+
+/* editor status */
+"loading unknowns 21..." = "chargement inconnus 21...";
+
+/* editor status */
+"loading unknowns 21.5..." = "chargement inconnus 21.5...";
+
+/* editor status */
+"loading unknowns 22..." = "chargement inconnus 22...";
+
+/* editor status */
+"loading unknowns 23..." = "chargement inconnus 23...";
+
+/* editor status */
+"loading unknowns 24..." = "chargement inconnus 24...";
+
+/* editor status */
+"loading unknowns 3..." = "chargement inconnus 3...";
+
+/* editor status */
+"loading unknowns 4..." = "chargement inconnus 4...";
+
+/* editor status */
+"loading unknowns 5..." = "chargement inconnus 5...";
+
+/* editor status */
+"loading unknowns 6..." = "chargement inconnus 6...";
+
+/* editor status */
+"loading unknowns 7..." = "chargement inconnus 7...";
+
+/* editor status */
+"loading unknowns 8..." = "chargement inconnus 8...";
+
+/* editor status */
+"loading unknowns 9..." = "chargement inconnus 9...";
+
+/* editor status */
+"loading weather..." = "chargement de la météo...";
+
+/* media scope
+   sponsor business type */
+"Local" = "Local";
+
+/* language sub-group */
+"Lolo-Burmese" = "Lolo-Birman";
+
+/* language family */
+"Lower Mamberamo" = "Bas Mamberamo";
+
+/* language family */
+"Lule-Vilela" = "Lule-Vilela";
+
+/* language family */
+"Macro-Ge" = "Macro-Jê";
+
+/* media type */
+"Magazine" = "Magazine";
+
+/* squad status */
+"Main Backup Player" = "Soutien";
+
+/* club sponsor type */
+"Main Kit Sponsor" = "Sponsor Maillot Principal";
+
+/* stadium used by national team */
+"Major Matches" = "Matches Principaux";
+
+/* language family */
+"Maku" = "Maku";
+
+/* language group */
+"Malayo-Polynesian" = "Malayo-Polynésien";
+
+/* person job */
+"Manager" = "Manageur";
+
+/* person job */
+"Managing Director" = "Gérant";
+
+/* language family */
+"Masconian" = "Lengua-Mascoy";
+
+/* language family */
+"Mataco-Guaicuru" = "Mataco-Guaicuru";
+
+/* language family */
+"Mayan" = "Maya";
+
+/* award run by */
+"Media" = "Média";
+
+/* ethnicity */
+"Mediterranean Hispanic" = "Hispanique Méditerranéen";
+
+/* stadium used by national team */
+"Medium Matches" = "Matches Moyens";
+
+/* nation style of football */
+"Middle-East" = "Moyen-Orient";
+
+/* injury seriousness */
+"Minor Injury" = "Blessure Mineure";
+
+/* stadium used by national team */
+"Minor Matches" = "Matches Mineurs";
+
+/* language family */
+"Misumalpan" = "Misumalpa";
+
+/* language family */
+"Mixe-Zoque" = "Mixe-Zoqueane";
+
+/* language family */
+"Mixed Language" = "Langue Mélangée";
+
+/* ethnicity */
+"Mixed Race (Black/White)" = "Métis (Noir/Blanc)";
+
+/* injury seriousness */
+"Moderate Injury" = "Blessure Modérée";
+
+/* language group */
+"Mon-Khmer" = "Môn-Khmer";
+
+/* No comment provided by engineer. */
+"Monday" = "Lundi";
+
+/* media period */
+"Monthly" = "Mensuel";
+
+/* language family */
+"Mosetanan" = "Mosetanane";
+
+/* language family */
+"Mura" = "Mura";
+
+/* language family */
+"Muskogean" = "Muskogéenne";
+
+/* language family */
+"Na-Dene" = "Na-Déné";
+
+/* language family */
+"Nambiquaran" = "Nambikwarane";
+
+/* award voting */
+"Nation Club Manager" = "Entraîneur de Club du Pays";
+
+/* media scope
+   sponsor business type */
+"National" = "National";
+
+/* ethnicity */
+"Native American" = "Amérindien";
+
+/* ethnicity */
+"Native Australian" = "Aborigène";
+
+/* injury category */
+"Neck" = "Cou";
+
+/* award allow previous winner */
+"Never" = "Jamais";
+
+/* media type */
+"Newspaper" = "Journal";
+
+/* language family */
+"Niger-Congo" = "Nigéro-Congolaise";
+
+/* language family */
+"Nilo-Saharan" = "Nilo-Saharienne";
+
+/* stadium used by national team */
+"No Matches" = "Aucun Match";
+
+/* award voting */
+"No Voting" = "Aucun Vote";
+
+/* nation group membership */
+"Non-EC Country" = "Pays Hors UE";
+
+/* award recipient type */
+"Non-Player" = "Non-Joueur";
+
+/* sugar daddy type */
+"None" = "Aucun";
+
+/* language sub-group */
+"North" = "Nord";
+
+/* nation style of football */
+"North Africa" = "Afrique du Nord";
+
+/* ethnicity */
+"North African / Middle-Eastern" = "Nord-Africain / Moyen-Oriental";
+
+/* nation style of football */
+"North America" = "Amérique du Nord";
+
+/* language family */
+"North Caucasian" = "Nord-Caucasienne";
+
+/* nation style of football */
+"Northern Europe" = "Europe du Nord";
+
+/* ethnicity */
+"Northern European" = "Européen du Nord";
+
+/* squad status */
+"Not Needed" = "Inutile";
+
+/* general 'not set' option */
+"Not Set" = "Non Sélectionné";
+
+/* nation style of football */
+"Oceania" = "Océanie";
+
+/* award period */
+"Of The Competition" = "De La Compétition";
+
+/* award period */
+"Of The Month" = "Du Mois";
+
+/* award period */
+"Of The Opening Or Closing Season" = "De La Saison D'Ouverture De Fermeture";
+
+/* award period */
+"Of The Round" = "Du Tour";
+
+/* award period */
+"Of The Season" = "De La Saison";
+
+/* award period */
+"Of The Week" = "De La Semaine";
+
+/* award period */
+"Of The Year" = "De L'Année";
+
+/* award period */
+"On A Specified Date" = "A Une Date Spécifique";
+
+/* award voting format */
+"One Vote Each" = "Un Vote Chacun";
+
+/* club sponsor type */
+"Other Income" = "Autre Ressource";
+
+/* language family */
+"Oto-Manguean" = "Oto-Mangue";
+
+/* city inhabitants */
+"Over 20,000,000" = "Plus De 20,000,000";
+
+/* injury age rule */
+"Over 28" = "Plus de 28 ans";
+
+/* award use stats from */
+"Overall" = "Toutes";
+
+/* award use stats from */
+"Overall Club" = "En Club";
+
+/* ethnicity */
+"Pacific Islander" = "Insulaire Du Pacifique";
+
+/* language family */
+"Paezan" = "Paezane";
+
+/* language family */
+"Panoan" = "Panoanes";
+
+/* contract status */
+"Part-Time" = "Mi-Temps";
+
+/* language family */
+"Peba-Yaguan" = "Peba-Yagua";
+
+/* language family */
+"Penutian" = "Pénutienne";
+
+/* person job */
+"Physio" = "Kiné";
+
+/* language family */
+"Pidgin" = "Pidgin";
+
+/* kit style */
+"Plain" = "Uni";
+
+/* kit style */
+"Plain (Different Sleeves)" = "Uni (Manches Différents)";
+
+/* kit style */
+"Plain One Sleeve (Left)" = "Uni Une Manche (Gauche)";
+
+/* kit style */
+"Plain One Sleeve (Right)" = "Uni Une Manche (Droite)";
+
+/* award recipient type
+   person job */
+"Player" = "Joueur";
+
+/* person job */
+"Player / Assistant Manager" = "Joueur / Entraîneur Adjoint";
+
+/* person job */
+"Player / Coach" = "Joueur / Préparateur";
+
+/* person job */
+"Player / First Team Coach" = "Joueur / Préparateir Equipe Première";
+
+/* person job */
+"Player / Fitness Coach" = "Joueur / Préparaeur Physique";
+
+/* person job */
+"Player / Goalkeeping Coach" = "Joueur / Entraîneur des Gardiens";
+
+/* person job */
+"Player / Manager" = "Joueur / Entraîneur";
+
+/* person job */
+"Player / Youth Team Coach" = "Joueur / Entraîneur des Jeunes";
+
+/* award recipient type */
+"Player Or Non-Player" = "Joueur Ou Non-Joueur";
+
+/* award run by */
+"Players" = "Joueurs";
+
+/* stadium state */
+"Poor" = "Mauvais";
+
+/* injury seriousness */
+"Potentially Career Threatening" = "Menaçant Potentiellement La Carrière";
+
+/* editor status */
+"Preparing To Save..." = "Préparation De La Sauvegarde...";
+
+/* club professional status */
+"Professional" = "Professionel";
+
+/* media period */
+"Quarterly" = "Trimestriel";
+
+/* kit style */
+"Quarters" = "Quartiers";
+
+/* language family */
+"Quechuan" = "Quechua";
+
+/* Quit anyway button title */
+"Quit anyway" = "Quitter quand même";
+
+/* Quit without saves error question info */
+"Quitting now will lose any changes you have made since the last successful save" = "Quitter maintenant vous fera perdre toutes vos modifications depuis votre dernière sauvegarde réussiee";
+
+/* media type */
+"Radio" = "Radio";
+
+/* language group */
+"Ramu" = "Ramu";
+
+/* award allow previous winner */
+"Rarely" = "Rarement";
+
+/* editor status */
+"Reading file header..." = "Lecture du fichier d'en-tête...";
+
+/* editor status */
+"Reading game_db.dat header..." = "Lecture de game_db.dat header...";
+
+/* editor status */
+"Reading game_info.dat..." = "Lecture de game_info.dat...";
+
+/* editor status */
+"Reading save_game_summary.dat..." = "Lecture de save_game_summary.dat...";
+
+/* hair colour */
+"Red" = "Rouge";
+
+/* award recipient type
+   person job */
+"Referee" = "Arbitre";
+
+/* media scope
+   sponsor business type */
+"Regional" = "Régional";
+
+/* injury category */
+"Rehabilitation" = "Rééducation";
+
+/* team type */
+"Reserves" = "Réserve";
+
+/* award side */
+"Right" = "Droit";
+
+/* language sub-group */
+"Romance" = "Roman";
+
+/* award recipient type */
+"Rookie" = "Débutant";
+
+/* nation style of football */
+"Russia" = "Russie";
+
+/* language family */
+"Salishan" = "Salish";
+
+/* language family */
+"Salivan" = "Salivane";
+
+/* stadium pitch type */
+"Sand" = "Sable";
+
+/* No comment provided by engineer. */
+"Saturday" = "Samedi";
+
+/* editor status */
+"Saving Header..." = "Sauvegarde de l'en-tête...";
+
+/* nation style of football */
+"Scandinavia" = "Scandinavie";
+
+/* person job */
+"Scout" = "Recruteur";
+
+/* club professional status */
+"Semi-Professional" = "Semi-Professionel";
+
+/* language group */
+"Semitic" = "Semitique";
+
+/* language family */
+"Sepik-Ramu" = "Sepik-Ramu";
+
+/* injury seriousness */
+"Serious Injury" = "Blessure Sérieuse";
+
+/* injury category */
+"Shin" = "Tibia";
+
+/* kit type */
+"Shirt" = "Maillot";
+
+/* kit type */
+"Shorts" = "Shorts";
+
+/* injury category */
+"Shoulder" = "Epaule";
+
+/* kit style */
+"Side Stripes" = "Bandes Latérales";
+
+/* language family */
+"Sign Language" = "Langue des Signes";
+
+/* language family */
+"Sino-Tibetan" = "Sino-Tibétenne";
+
+/* language family */
+"Siouan" = "Siouane";
+
+/* No comment provided by engineer. */
+"Skin Tone 1" = "Couleur de Peau 1";
+
+/* No comment provided by engineer. */
+"Skin Tone 10" = "Couleur de Peau 10";
+
+/* No comment provided by engineer. */
+"Skin Tone 11" = "Couleur de Peau 11";
+
+/* No comment provided by engineer. */
+"Skin Tone 12" = "Couleur de Peau 12";
+
+/* No comment provided by engineer. */
+"Skin Tone 13" = "Couleur de Peau 13";
+
+/* No comment provided by engineer. */
+"Skin Tone 14" = "Couleur de Peau 14";
+
+/* No comment provided by engineer. */
+"Skin Tone 15" = "Couleur de Peau 15";
+
+/* No comment provided by engineer. */
+"Skin Tone 16" = "Couleur de Peau 16";
+
+/* No comment provided by engineer. */
+"Skin Tone 17" = "Couleur de Peau 17";
+
+/* No comment provided by engineer. */
+"Skin Tone 18" = "Couleur de Peau 18";
+
+/* No comment provided by engineer. */
+"Skin Tone 19" = "Couleur de Peau 19";
+
+/* No comment provided by engineer. */
+"Skin Tone 2" = "Couleur de Peau 2";
+
+/* No comment provided by engineer. */
+"Skin Tone 20" = "Couleur de Peau 20";
+
+/* No comment provided by engineer. */
+"Skin Tone 3" = "Couleur de Peau 3";
+
+/* No comment provided by engineer. */
+"Skin Tone 4" = "Couleur de Peau 4";
+
+/* No comment provided by engineer. */
+"Skin Tone 5" = "Couleur de Peau 5";
+
+/* No comment provided by engineer. */
+"Skin Tone 6" = "Couleur de Peau 6";
+
+/* No comment provided by engineer. */
+"Skin Tone 7" = "Couleur de Peau 7";
+
+/* No comment provided by engineer. */
+"Skin Tone 8" = "Couleur de Peau 8";
+
+/* No comment provided by engineer. */
+"Skin Tone 9" = "Couleur de Peau 9";
+
+/* language family */
+"Sko" = "Sko";
+
+/* language group */
+"Slavic" = "Slave";
+
+/* kit type */
+"Socks" = "Chaussettes";
+
+/* editor status */
+"sorting Stadium Changes..." = "tri des Changements de Stade...";
+
+/* language sub-group */
+"South" = "Sud";
+
+/* nation style of football */
+"South Africa" = "Afrique Australe";
+
+/* nation style of football */
+"South America" = "Amérique du Sud";
+
+/* language family */
+"South Caucasian" = "Sud-Caucasienne";
+
+/* ethnicity */
+"South-East Asian" = "Sud-Est Asiatique";
+
+/* language group */
+"Southern" = "Méridional";
+
+/* nation style of football */
+"Southern Europe" = "Europe Méridionale";
+
+/* person job */
+"Spokesperson" = "Porte-Parole";
+
+/* injury cause */
+"Sprinting" = "Sprintant";
+
+/* award recipient type */
+"Squad Of Players" = "Equipe De Joueurs";
+
+/* stadium change type */
+"Stadium Change" = "Changement de Stade";
+
+/* club sponsor type */
+"Stadium Sponsor" = "Sponsor de Stade";
+
+/* kit style */
+"Stripe (Ajax)" = "Bande (Ajax)";
+
+/* kit style */
+"Stripe (Left)" = "Bande (Gauche)";
+
+/* kit style */
+"Stripe (PSG)" = "Bande (PSG)";
+
+/* kit style */
+"Stripe (Right)" = "Bande (Droite)";
+
+/* kit style */
+"Stripes" = Rayures";
+
+/* kit style */
+"Stripes (Pinstripe)" = "Rayures (Fines)";
+
+/* kit style */
+"Stripes (Wide)" = "Rayures (Large)";
+
+/* language family */
+"Subtiaba-Tlapanec" = "Subtiaba-Tlapanec";
+
+/* injury season */
+"Summer" = "Eté";
+
+/* No comment provided by engineer. */
+"Sunday" = "Dimanche";
+
+/* team type */
+"Superdraft A Team" = "Equipe A de La Superdraft";
+
+/* team type */
+"Superdraft B Team" = "Equipe B de La Superdraft";
+
+/* team type */
+"Superdraft C Team" = "Equipe C de La Superdraft";
+
+/* team type */
+"Superdraft D Team" = "Equipe D de La Superdraft";
+
+/* stadium pitch type */
+"Synthetic (New Type - Soft)" = "Synthétique (Nouveau Type - Souple)";
+
+/* stadium pitch type */
+"Synthetic (Old Type - Hard)" = "Synthetique (Ancien Type - Dur)";
+
+/* media style */
+"Tabloid" = "Tabloïd";
+
+/* language family */
+"Tacanan" = "Tacanane";
+
+/* language family */
+"Tai-Kadai" = "Tai-Kadai";
+
+/* language sub-group */
+"Tamil-Kannada" = "Tamil-Kannada";
+
+/* kit type */
+"Text" = "Text";
+
+/* injury category */
+"Thigh" = "Cuisse";
+
+/* kit type */
+"Third" = "Troisème";
+
+/* nation state of development */
+"Third World" = "Tiers-Monde";
+
+/* award voting format */
+"Three Votes Weighted" = "Trois Votes Pondérés";
+
+/* No comment provided by engineer. */
+"Thursday" = "Jeudi";
+
+/* language group */
+"Tibeto-Burman" = "Tibéto-Birman";
+
+/* language family */
+"Torricelli" = "Torricelli";
+
+/* language sub-group */
+"Tosk" = "Tosque";
+
+/* language family */
+"Totonacan" = "Totonaco-Tephuane";
+
+/* language family */
+"Trans New Guinea" = "Trans-Nouvelle Guinée";
+
+/* language family */
+"Tucanoan" = "Tucanoane";
+
+/* No comment provided by engineer. */
+"Tuesday" = "Mardi";
+
+/* language family */
+"Tupi" = "Tupi";
+
+/* language group */
+"Turkic" = "Turc";
+
+/* injury cause */
+"Turning Sharply" = "Rotation Brusque";
+
+/* media type */
+"TV" = "TV";
+
+/* language family */
+"Unclassified" = "Non-Classée";
+
+/* team type */
+"Under-18" = "-18";
+
+/* team type */
+"Under-19" = "-19";
+
+/* team type */
+"Under-20" = "-20";
+
+/* team type */
+"Under-21" = "-21";
+
+/* team type */
+"Under-23" = "-23";
+
+/* sugar daddy type */
+"Underwriter" = "Courtier";
+
+/* nation game importance */
+"Unimportant" = "Sans Importance";
+
+/* hair colour */
+"Unknown" = "Inconnu";
+
+/* formation */
+"Unknown 1" = "Inconnu 1";
+
+/* formation */
+"Unknown 2" = "Inconnu 2";
+
+/* formation */
+"Unknown 3" = "Inconnu 3";
+
+/* nation style of football */
+"Unknown Style 1" = "Style Inconnu 1";
+
+/* Update Preferences */
+"Updates" = "Mises à Jour";
+
+/* injury category */
+"Upper Body" = "Haut du Corps";
+
+/* language family */
+"Uralic" = "Ouralienbe";
+
+/* language family */
+"Uru-Chipaya" = "Uru-Chipaya";
+
+/* language family */
+"Uto-Aztecan" = "Uto-Aztèque";
+
+/* kit style */
+"V Stripe" = "Rayure en V";
+
+/* kit style */
+"Vertical Stripe (Centre)" = "Rayure Verticale (Centre)";
+
+/* kit style */
+"Vertical Stripe (Left)" = "Rayure Verticale (Gauche)";
+
+/* kit style */
+"Vertical Stripe (Right)" = "Rayure Verticale (Droite)";
+
+/* stadium state */
+"Very Good" = "Très Bon";
+
+/* nation game importance */
+"Very Important" = "Très Important";
+
+/* stadium state */
+"Very Poor" = "Très Mauvais";
+
+/* language sub-group */
+"Viet-Muong" = "Viêt-Muong";
+
+/* No comment provided by engineer. */
+"Virtual Player" = "Joueur Virtuel";
+
+/* language sub-group */
+"Volta-Congo" = "Voltaïco-Congolais";
+
+/* team type */
+"Waiver Team" = "Equipe de Licenciés";
+
+/* language family */
+"Wakashan" = "Wakashane";
+
+/* injury seriousness */
+"Walking Wounded" = "Marche en Boitant";
+
+/* injury cause */
+"Wear And Tear" = "Epuisement et Torsion";
+
+/* media type */
+"Website" = "Site Internet";
+
+/* No comment provided by engineer. */
+"Wednesday" = "Mercredi";
+
+/* media period */
+"Weekday Evening" = "Soirs de Semaine";
+
+/* media period */
+"Weekday Morning" = "Matins de Semaine";
+
+/* media period */
+"Weekly" = "Hebdomadaire";
+
+/* language sub-group */
+"West" = "Ouest";
+
+/* language family */
+"West Papuan" = "Ouest-Papoue";
+
+/* injury season */
+"Winter" = "Hiver";
+
+/* language family */
+"Witotoan" = "Witotoane";
+
+/* award voting */
+"World Club Manager" = "Entraîneur de Club";
+
+/* award voting */
+"World Nation Manager" = "Sélectionneur";
+
+/* media scope */
+"Worldwide" = "Mondial";
+
+/* language family */
+"Yanomam" = "Yanomane";
+
+/* media period */
+"Yearly" = "Annuel";
+
+/* language family */
+"Yenisei-Ostyak" = "Ienisseïenne";
+
+/* No comment provided by engineer. */
+"Yes" = "Oui";
+
+/* contract status */
+"Youth" = "Jeune";
+
+/* person job */
+"Youth Team Coach" = "Entraîneur des Jeunes";
+
+/* language sub-group */
+"Yuat-Waibuk" = "Yurok-Wiyot";
+
+/* language family */
+"Yukaghir" = "Youkaguire";
+
+/* language family */
+"Yuki" = "Yuki";
+
+/* language family */
+"Zamucoan" = "Zamucoane";
+
+/* language family */
+"Zaparoan" = "Zaparoane";
+
+
