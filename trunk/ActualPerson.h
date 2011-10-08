@@ -59,7 +59,8 @@
 #define	APF_FEMALE		0x00100000
 #define	APF_REGEN		0x00000800
 
-@interface ActualPerson : NSObject {
+@interface ActualPerson : NSObject 
+{
 	char ethnicity, hairColour, skinTone, unknownChar1, unknownChar2, unknownChar3;
 	BOOL hasRelationships;
 	int firstNameID, surnameID, commonNameID, nationID, personStatsID, cityOfBirthID;
